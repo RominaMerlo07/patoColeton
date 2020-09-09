@@ -85,3 +85,132 @@ C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardi
 C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\bin\Debug\GestionJardin.application
 C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.exe.manifest
 C:\Users\gaston\Dropbox\Cervantes\Programacion III\ProyectoSistemas\GestionJardin\obj\Debug\GestionJardin.application
+C:\Users\Laura\Source\Repos\ProyectoSistemas3\GestionJardin\bin\Debug\GestionJardin.exe.manifest
+C:\Users\Laura\Source\Repos\ProyectoSistemas3\GestionJardin\bin\Debug\GestionJardin.application
+C:\Users\Laura\Source\Repos\ProyectoSistemas3\GestionJardin\obj\Debug\GestionJardin.exe.manifest
+C:\Users\Laura\Source\Repos\ProyectoSistemas3\GestionJardin\obj\Debug\GestionJardin.application
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.csprojAssemblyReference.cache
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.frmCobros.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.frmConceptos2.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.frmGestionCuotas.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.frmLogin.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.frmPersonas2.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.frmPopUpFlia.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.frmPrincipal.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.Properties.Resources.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.csproj.GenerateResource.cache
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.csproj.CoreCompileInputs.cache
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.exe
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.pdb
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\bin\Debug\GestionJardin.exe.config
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\bin\Debug\GestionJardin.exe.manifest
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\bin\Debug\GestionJardin.application
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\bin\Debug\GestionJardin.exe
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\bin\Debug\GestionJardin.pdb
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\bin\Debug\MetroFramework.Design.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\bin\Debug\MetroFramework.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.exe.manifest
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.application
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.csproj.CopyComplete
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.frmUsuarios.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.frmUsuariosPopUpAgregar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.frmUsuariosPopUpEditar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk\GestionJardin\obj\Debug\GestionJardin.frmUsuariosPopUpEliminar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\bin\Debug\GestionJardin.exe.config
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\bin\Debug\GestionJardin.exe.manifest
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\bin\Debug\GestionJardin.application
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\bin\Debug\GestionJardin.exe
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\bin\Debug\GestionJardin.pdb
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\bin\Debug\MetroFramework.Design.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\bin\Debug\MetroFramework.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.csprojAssemblyReference.cache
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.frmAlumnos.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.frmCobros.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.frmConceptos2.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.frmGestionCuotas.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.frmLogin.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.frmPersonas2.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.frmPopUpFlia.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.frmPrincipal.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.frmUsuarios.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.frmUsuariosPopUpAgregar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.frmUsuariosPopUpEditar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.frmUsuariosPopUpEliminar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.Properties.Resources.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.csproj.GenerateResource.cache
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.csproj.CoreCompileInputs.cache
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.exe.manifest
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.application
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.csproj.CopyComplete
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.exe
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2\GestionJardin\obj\Debug\GestionJardin.pdb
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\bin\Debug\GestionJardin.exe.config
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\bin\Debug\GestionJardin.exe.manifest
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\bin\Debug\GestionJardin.application
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\bin\Debug\GestionJardin.exe
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\bin\Debug\GestionJardin.pdb
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\bin\Debug\MetroFramework.Design.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\bin\Debug\MetroFramework.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.csprojAssemblyReference.cache
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.frmAlumnos.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.frmCobros.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.frmConceptos2.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.frmGestionCuotas.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.frmLogin.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.frmPersonas2.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.frmPopUpFlia.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.frmPrincipal.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.frmUsuarios.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.frmUsuariosPopUpAgregar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.frmUsuariosPopUpEditar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.frmUsuariosPopUpEliminar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.Properties.Resources.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.csproj.GenerateResource.cache
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.csproj.CoreCompileInputs.cache
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.exe.manifest
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.application
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.csproj.CopyComplete
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.exe
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.pdb
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v2 - copia\GestionJardin\obj\Debug\GestionJardin.frmAlumnosMatriculacion.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.csprojAssemblyReference.cache
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmAlumnos.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmCobros.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmConceptos2.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmGestionCuotas.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmLogin.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmPersonas2.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmPopUpFlia.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmPrincipal.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmUsuarios.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmUsuariosPopUpAgregar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmUsuariosPopUpEditar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmUsuariosPopUpEliminar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.Properties.Resources.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.csproj.GenerateResource.cache
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.csproj.CoreCompileInputs.cache
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.exe
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.pdb
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\bin\Debug\GestionJardin.exe.config
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\bin\Debug\GestionJardin.exe.manifest
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\bin\Debug\GestionJardin.application
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\bin\Debug\GestionJardin.exe
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\bin\Debug\GestionJardin.pdb
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\bin\Debug\MetroFramework.Design.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\bin\Debug\MetroFramework.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.exe.manifest
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.application
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.csproj.CopyComplete
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.FrmAlumnosGestionar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmAlumnosPopUpAgregar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmAlumnosGrupoFlia.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmAlumnosPopUpEliminar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmAlumnosPopUpEditar.resources

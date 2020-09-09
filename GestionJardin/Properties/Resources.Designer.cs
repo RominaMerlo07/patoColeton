@@ -193,6 +193,17 @@ namespace GestionJardin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_computer_icons_user_symbol_symbol_miscellaneous_black_computer_icons {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-computer-icons-user-symbol-symbol-miscellaneous-black-computer-ic" +
+                        "ons", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap recibo {
             get {
                 object obj = ResourceManager.GetObject("recibo", resourceCulture);

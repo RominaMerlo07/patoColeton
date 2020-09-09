@@ -24,8 +24,10 @@ namespace GestionJardin
             InitializeComponent();
             leftBorderBtn = new Panel();// Inicializamos el leftBorderBtn
             leftBorderBtn.Size = new Size(7, 60);
+            //iconChildFormCurrent.Visible = false;
+            btn_inicio.Visible = true;
 
-            panel_Menu.Controls.Add(leftBorderBtn); //se agrega borde al panel
+            //panel_Menu.Controls.Add(leftBorderBtn); //se agrega borde al panel
             this.Text = string.Empty; // como texto del form va una cadena vacia
             this.ControlBox = false; // se desactiva la caja de control
             this.DoubleBuffered = true; //reduce el parpadeo del form
@@ -67,8 +69,8 @@ namespace GestionJardin
                 leftBorderBtn.BringToFront(); //trae al frente
 
                 //Icono Form actual
-                iconChildFormCurrent.IconChar = currentBtn.IconChar; // el icono del titulo sea igual al icono que esta activo
-                iconChildFormCurrent.IconColor = color;
+               // iconChildFormCurrent.IconChar = currentBtn.IconChar; // el icono del titulo sea igual al icono que esta activo
+               // iconChildFormCurrent.IconColor = color;
 
             }
 
@@ -146,9 +148,8 @@ namespace GestionJardin
         {
             DisableButton();
             leftBorderBtn.Visible = false;
-            iconChildFormCurrent.IconChar = IconChar.Home;
-            iconChildFormCurrent.IconColor = Color.MediumPurple;
             lbl_Titulo.Text = "INICIO";
+            btn_inicio.Visible = true;
         }
 
 
@@ -167,12 +168,7 @@ namespace GestionJardin
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void HoraFecha_Tick(object sender, EventArgs e)
-        {
-            lbl_Hora.Text = DateTime.Now.ToString("HH:mm:ss");
-            lbl_Fecha.Text = DateTime.Now.ToShortDateString();
-        }
-
+    
         private void btn_Cerrar_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("¿Está seguro que desea salir?", "Aviso", MessageBoxButtons.YesNo);
@@ -198,5 +194,111 @@ namespace GestionJardin
         {
             WindowState = FormWindowState.Minimized;
         }
+                          
+
+        /* PARTE NUEVA             */
+
+        private void btn_inicio_Click(object sender, EventArgs e)
+        {
+            currentFormChild.Close();
+            Reset();
+        }
+
+       
+
+        //Gestion Alumnos
+        private void btnAlumnos_MouseHover(object sender, EventArgs e)
+        {
+            ((Button)sender).TextImageRelation = TextImageRelation.TextAboveImage;
+            ((Button)sender).ImageAlign = ContentAlignment.BottomCenter;
+        }
+
+        private void btnAlumnos_MouseLeave(object sender, EventArgs e)
+        {
+            ((Button)sender).TextImageRelation = TextImageRelation.ImageAboveText;
+            ((Button)sender).ImageAlign = ContentAlignment.MiddleCenter;
+        }
+
+        private void btnAlumnos_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new GestionJardin.frmAlumnos());        
+        }
+        //Gestion Cobros
+
+        private void btnCobros_MouseHover(object sender, EventArgs e)
+        {
+            ((Button)sender).TextImageRelation = TextImageRelation.TextAboveImage;
+            ((Button)sender).ImageAlign = ContentAlignment.BottomCenter;
+        }
+
+        private void btnCobros_MouseLeave(object sender, EventArgs e)
+        {
+            ((Button)sender).TextImageRelation = TextImageRelation.ImageAboveText;
+            ((Button)sender).ImageAlign = ContentAlignment.MiddleCenter;
+        }
+
+        //Gestion Salas
+
+        private void btnSalas_MouseHover(object sender, EventArgs e)
+        {
+            ((Button)sender).TextImageRelation = TextImageRelation.TextAboveImage;
+            ((Button)sender).ImageAlign = ContentAlignment.BottomCenter;
+        }
+
+        private void btnSalas_MouseLeave(object sender, EventArgs e)
+        {
+            ((Button)sender).TextImageRelation = TextImageRelation.ImageAboveText;
+            ((Button)sender).ImageAlign = ContentAlignment.MiddleCenter;
+        }
+
+        //Gestion Docentes
+
+        private void btnDocentes_MouseHover(object sender, EventArgs e)
+        {
+            ((Button)sender).TextImageRelation = TextImageRelation.TextAboveImage;
+            ((Button)sender).ImageAlign = ContentAlignment.BottomCenter;
+        }
+
+        private void btnDocentes_MouseLeave(object sender, EventArgs e)
+        {
+            ((Button)sender).TextImageRelation = TextImageRelation.ImageAboveText;
+            ((Button)sender).ImageAlign = ContentAlignment.MiddleCenter;
+        }
+
+        //Gestion Usuarios
+
+        private void btnUsuarios_MouseHover(object sender, EventArgs e)
+        {
+            ((Button)sender).TextImageRelation = TextImageRelation.TextAboveImage;
+            ((Button)sender).ImageAlign = ContentAlignment.BottomCenter;
+        }
+
+        private void btnUsuarios_MouseLeave(object sender, EventArgs e)
+        {
+            ((Button)sender).TextImageRelation = TextImageRelation.ImageAboveText;
+            ((Button)sender).ImageAlign = ContentAlignment.MiddleCenter;
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new GestionJardin.frmUsuarios());          
+        }
+
+
+        //Gestion Informes
+
+        private void btnInformes_MouseHover(object sender, EventArgs e)
+        {
+            ((Button)sender).TextImageRelation = TextImageRelation.TextAboveImage;
+            ((Button)sender).ImageAlign = ContentAlignment.BottomCenter;
+
+        }
+
+        private void btnInformes_MouseLeave(object sender, EventArgs e)
+        {
+            ((Button)sender).TextImageRelation = TextImageRelation.ImageAboveText;
+            ((Button)sender).ImageAlign = ContentAlignment.MiddleCenter;
+        }
+
     }
 }

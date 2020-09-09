@@ -59,7 +59,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.52">
@@ -100,6 +100,42 @@
     <Compile Include="entSala.cs" />
     <Compile Include="entTipoPersona.cs" />
     <Compile Include="entUsuario.cs" />
+    <Compile Include="frmAlumnosGrupoFlia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnosGrupoFlia.Designer.cs">
+      <DependentUpon>frmAlumnosGrupoFlia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnosPopUpEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnosPopUpEditar.Designer.cs">
+      <DependentUpon>frmAlumnosPopUpEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnosPopUpEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnosPopUpEliminar.Designer.cs">
+      <DependentUpon>frmAlumnosPopUpEliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos.Designer.cs">
+      <DependentUpon>frmAlumnos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnosGestionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnosGestionar.Designer.cs">
+      <DependentUpon>frmAlumnosGestionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnosPopUpAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnosPopUpAgregar.Designer.cs">
+      <DependentUpon>frmAlumnosPopUpAgregar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCobros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +179,30 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuarios.Designer.cs">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuariosPopUpAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuariosPopUpAgregar.Designer.cs">
+      <DependentUpon>frmUsuariosPopUpAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuariosPopUpEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuariosPopUpEditar.Designer.cs">
+      <DependentUpon>frmUsuariosPopUpEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuariosPopUpEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuariosPopUpEliminar.Designer.cs">
+      <DependentUpon>frmUsuariosPopUpEliminar.cs</DependentUpon>
+    </Compile>
     <Compile Include="metCobros.cs" />
     <Compile Include="metConcepto.cs" />
     <Compile Include="metCuota.cs" />
@@ -155,6 +215,24 @@
     <Compile Include="metUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAlumnosGrupoFlia.resx">
+      <DependentUpon>frmAlumnosGrupoFlia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnosPopUpEditar.resx">
+      <DependentUpon>frmAlumnosPopUpEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnosPopUpEliminar.resx">
+      <DependentUpon>frmAlumnosPopUpEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos.resx">
+      <DependentUpon>frmAlumnos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnosGestionar.resx">
+      <DependentUpon>frmAlumnosGestionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnosPopUpAgregar.resx">
+      <DependentUpon>frmAlumnosPopUpAgregar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCobros.resx">
       <DependentUpon>frmCobros.cs</DependentUpon>
     </EmbeddedResource>
@@ -175,6 +253,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuariosPopUpAgregar.resx">
+      <DependentUpon>frmUsuariosPopUpAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuariosPopUpEditar.resx">
+      <DependentUpon>frmUsuariosPopUpEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuariosPopUpEliminar.resx">
+      <DependentUpon>frmUsuariosPopUpEliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -203,6 +293,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LEEME.txt" />
+    <None Include="Resources\png-transparent-computer-icons-user-symbol-symbol-miscellaneous-black-computer-icons.png" />
     <None Include="Resources\iconfinder_search_172546.png" />
     <None Include="Resources\El Patito Coletón.png" />
     <None Include="Resources\Group 31.png" />
