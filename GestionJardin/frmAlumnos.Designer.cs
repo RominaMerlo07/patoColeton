@@ -58,8 +58,7 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.btnEstudiantes);
             this.panel1.Controls.Add(this.btnInformeSemestral);
             this.panel1.Controls.Add(this.panelIndiceNavbar);
@@ -149,9 +148,9 @@
             this.panelAsistencia.Controls.Add(this.btn_Asis_Consultar);
             this.panelAsistencia.Controls.Add(this.btnAsis_Agregar);
             this.panelAsistencia.Controls.Add(this.Ind_PnlAsistencia);
-            this.panelAsistencia.Location = new System.Drawing.Point(600, 96);
+            this.panelAsistencia.Location = new System.Drawing.Point(600, 123);
             this.panelAsistencia.Name = "panelAsistencia";
-            this.panelAsistencia.Size = new System.Drawing.Size(392, 710);
+            this.panelAsistencia.Size = new System.Drawing.Size(392, 250);
             this.panelAsistencia.TabIndex = 2;
             this.panelAsistencia.Visible = false;
             this.panelAsistencia.MouseEnter += new System.EventHandler(this.panelAsistencia_MouseEnter);
@@ -167,7 +166,7 @@
             this.btn_Asis_Consultar.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck;
             this.btn_Asis_Consultar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btn_Asis_Consultar.IconSize = 80;
-            this.btn_Asis_Consultar.Location = new System.Drawing.Point(19, 113);
+            this.btn_Asis_Consultar.Location = new System.Drawing.Point(19, 121);
             this.btn_Asis_Consultar.Name = "btn_Asis_Consultar";
             this.btn_Asis_Consultar.Rotation = 0D;
             this.btn_Asis_Consultar.Size = new System.Drawing.Size(370, 112);
@@ -216,9 +215,9 @@
             this.panelInformeSemestral.Controls.Add(this.btnIS_Materia);
             this.panelInformeSemestral.Controls.Add(this.btnIS_Consultar);
             this.panelInformeSemestral.Controls.Add(this.btnIS_Generar);
-            this.panelInformeSemestral.Location = new System.Drawing.Point(1006, 99);
+            this.panelInformeSemestral.Location = new System.Drawing.Point(1006, 123);
             this.panelInformeSemestral.Name = "panelInformeSemestral";
-            this.panelInformeSemestral.Size = new System.Drawing.Size(386, 677);
+            this.panelInformeSemestral.Size = new System.Drawing.Size(386, 350);
             this.panelInformeSemestral.TabIndex = 87;
             this.panelInformeSemestral.Visible = false;
             this.panelInformeSemestral.MouseEnter += new System.EventHandler(this.panelInformeSemestral_MouseEnter);
@@ -244,7 +243,7 @@
             this.btnIS_Materia.IconChar = FontAwesome.Sharp.IconChar.Cubes;
             this.btnIS_Materia.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnIS_Materia.IconSize = 80;
-            this.btnIS_Materia.Location = new System.Drawing.Point(20, 222);
+            this.btnIS_Materia.Location = new System.Drawing.Point(17, 222);
             this.btnIS_Materia.Name = "btnIS_Materia";
             this.btnIS_Materia.Rotation = 0D;
             this.btnIS_Materia.Size = new System.Drawing.Size(366, 112);
@@ -265,7 +264,7 @@
             this.btnIS_Consultar.IconChar = FontAwesome.Sharp.IconChar.BookReader;
             this.btnIS_Consultar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnIS_Consultar.IconSize = 80;
-            this.btnIS_Consultar.Location = new System.Drawing.Point(20, 110);
+            this.btnIS_Consultar.Location = new System.Drawing.Point(17, 110);
             this.btnIS_Consultar.Name = "btnIS_Consultar";
             this.btnIS_Consultar.Rotation = 0D;
             this.btnIS_Consultar.Size = new System.Drawing.Size(366, 112);
@@ -286,7 +285,7 @@
             this.btnIS_Generar.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
             this.btnIS_Generar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnIS_Generar.IconSize = 80;
-            this.btnIS_Generar.Location = new System.Drawing.Point(20, 0);
+            this.btnIS_Generar.Location = new System.Drawing.Point(17, 0);
             this.btnIS_Generar.Name = "btnIS_Generar";
             this.btnIS_Generar.Rotation = 0D;
             this.btnIS_Generar.Size = new System.Drawing.Size(366, 112);
@@ -305,9 +304,9 @@
             this.panelEstudiantes.Controls.Add(this.btnEst_Documentacion);
             this.panelEstudiantes.Controls.Add(this.btnEst_GrupoFlia);
             this.panelEstudiantes.Controls.Add(this.Ind_PnlEstudiante);
-            this.panelEstudiantes.Location = new System.Drawing.Point(200, 93);
+            this.panelEstudiantes.Location = new System.Drawing.Point(200, 121);
             this.panelEstudiantes.Name = "panelEstudiantes";
-            this.panelEstudiantes.Size = new System.Drawing.Size(392, 804);
+            this.panelEstudiantes.Size = new System.Drawing.Size(392, 350);
             this.panelEstudiantes.TabIndex = 2;
             this.panelEstudiantes.Visible = false;
             this.panelEstudiantes.MouseEnter += new System.EventHandler(this.panelEstudiantes_MouseEnter);
@@ -389,9 +388,9 @@
             // panelContenedor_GA
             // 
             this.panelContenedor_GA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelContenedor_GA.Location = new System.Drawing.Point(104, 220);
+            this.panelContenedor_GA.Location = new System.Drawing.Point(12, 220);
             this.panelContenedor_GA.Name = "panelContenedor_GA";
-            this.panelContenedor_GA.Size = new System.Drawing.Size(1428, 540);
+            this.panelContenedor_GA.Size = new System.Drawing.Size(1639, 627);
             this.panelContenedor_GA.TabIndex = 88;
             // 
             // btn_VolverGA
@@ -409,7 +408,7 @@
             this.btn_VolverGA.IconChar = FontAwesome.Sharp.IconChar.ChevronCircleLeft;
             this.btn_VolverGA.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_VolverGA.IconSize = 50;
-            this.btn_VolverGA.Location = new System.Drawing.Point(1413, 163);
+            this.btn_VolverGA.Location = new System.Drawing.Point(1398, 161);
             this.btn_VolverGA.Name = "btn_VolverGA";
             this.btn_VolverGA.Rotation = 0D;
             this.btn_VolverGA.Size = new System.Drawing.Size(60, 57);
@@ -421,9 +420,10 @@
             // 
             // lbl_Ruta
             // 
+            this.lbl_Ruta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Ruta.AutoSize = true;
             this.lbl_Ruta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.lbl_Ruta.Location = new System.Drawing.Point(141, 183);
+            this.lbl_Ruta.Location = new System.Drawing.Point(195, 181);
             this.lbl_Ruta.Name = "lbl_Ruta";
             this.lbl_Ruta.Size = new System.Drawing.Size(13, 17);
             this.lbl_Ruta.TabIndex = 89;

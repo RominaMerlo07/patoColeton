@@ -36,6 +36,11 @@ namespace GestionJardin
 
         }
 
+        private void frmPrincipal_Load(object sender, EventArgs e)
+        {
+            Size = new Size(1405, 907);
+        }
+
         private struct RGBColors
         {
             public static Color color1 = Color.FromArgb(172, 126, 241);
