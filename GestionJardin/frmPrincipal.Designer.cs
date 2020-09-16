@@ -52,14 +52,13 @@
             // 
             // panel_Titulo
             // 
-            this.panel_Titulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.panel_Titulo.Controls.Add(this.btn_inicio);
             this.panel_Titulo.Controls.Add(this.btnMinimizar);
             this.panel_Titulo.Controls.Add(this.btnMaximizar);
             this.panel_Titulo.Controls.Add(this.btn_Cerrar);
             this.panel_Titulo.Controls.Add(this.lbl_Titulo);
+            this.panel_Titulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Titulo.Location = new System.Drawing.Point(0, 0);
             this.panel_Titulo.Name = "panel_Titulo";
             this.panel_Titulo.Size = new System.Drawing.Size(1405, 139);
@@ -136,9 +135,6 @@
             // 
             // panel_Contenedor
             // 
-            this.panel_Contenedor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Contenedor.AutoSize = true;
             this.panel_Contenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.panel_Contenedor.Controls.Add(this.btnInformes);
@@ -147,6 +143,7 @@
             this.panel_Contenedor.Controls.Add(this.btnDocentes);
             this.panel_Contenedor.Controls.Add(this.btnAlumnos);
             this.panel_Contenedor.Controls.Add(this.btnUsuarios);
+            this.panel_Contenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel_Contenedor.Location = new System.Drawing.Point(0, 148);
             this.panel_Contenedor.Name = "panel_Contenedor";
             this.panel_Contenedor.Size = new System.Drawing.Size(1405, 907);
@@ -163,7 +160,7 @@
             this.btnInformes.IconChar = FontAwesome.Sharp.IconChar.ClipboardCheck;
             this.btnInformes.IconColor = System.Drawing.Color.Aqua;
             this.btnInformes.IconSize = 160;
-            this.btnInformes.Location = new System.Drawing.Point(994, 457);
+            this.btnInformes.Location = new System.Drawing.Point(994, 487);
             this.btnInformes.Name = "btnInformes";
             this.btnInformes.Rotation = 0D;
             this.btnInformes.Size = new System.Drawing.Size(353, 379);
@@ -185,7 +182,7 @@
             this.btnCobros.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
             this.btnCobros.IconColor = System.Drawing.Color.Red;
             this.btnCobros.IconSize = 160;
-            this.btnCobros.Location = new System.Drawing.Point(541, 25);
+            this.btnCobros.Location = new System.Drawing.Point(541, 55);
             this.btnCobros.Name = "btnCobros";
             this.btnCobros.Rotation = 0D;
             this.btnCobros.Size = new System.Drawing.Size(353, 379);
@@ -207,7 +204,7 @@
             this.btnSalas.IconChar = FontAwesome.Sharp.IconChar.School;
             this.btnSalas.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnSalas.IconSize = 180;
-            this.btnSalas.Location = new System.Drawing.Point(994, 25);
+            this.btnSalas.Location = new System.Drawing.Point(994, 55);
             this.btnSalas.Name = "btnSalas";
             this.btnSalas.Rotation = 0D;
             this.btnSalas.Size = new System.Drawing.Size(353, 379);
@@ -229,7 +226,7 @@
             this.btnDocentes.IconChar = FontAwesome.Sharp.IconChar.Chalkboard;
             this.btnDocentes.IconColor = System.Drawing.Color.Yellow;
             this.btnDocentes.IconSize = 180;
-            this.btnDocentes.Location = new System.Drawing.Point(72, 457);
+            this.btnDocentes.Location = new System.Drawing.Point(72, 487);
             this.btnDocentes.Name = "btnDocentes";
             this.btnDocentes.Rotation = 0D;
             this.btnDocentes.Size = new System.Drawing.Size(353, 379);
@@ -251,7 +248,7 @@
             this.btnAlumnos.IconChar = FontAwesome.Sharp.IconChar.Child;
             this.btnAlumnos.IconColor = System.Drawing.Color.Magenta;
             this.btnAlumnos.IconSize = 160;
-            this.btnAlumnos.Location = new System.Drawing.Point(72, 25);
+            this.btnAlumnos.Location = new System.Drawing.Point(72, 55);
             this.btnAlumnos.Name = "btnAlumnos";
             this.btnAlumnos.Rotation = 0D;
             this.btnAlumnos.Size = new System.Drawing.Size(353, 379);
@@ -274,7 +271,7 @@
             this.btnUsuarios.IconChar = FontAwesome.Sharp.IconChar.UserCircle;
             this.btnUsuarios.IconColor = System.Drawing.Color.Lime;
             this.btnUsuarios.IconSize = 180;
-            this.btnUsuarios.Location = new System.Drawing.Point(541, 457);
+            this.btnUsuarios.Location = new System.Drawing.Point(541, 487);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Rotation = 0D;
             this.btnUsuarios.Size = new System.Drawing.Size(353, 379);
@@ -288,9 +285,8 @@
             // 
             // panel_Shadow
             // 
-            this.panel_Shadow.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel_Shadow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
+            this.panel_Shadow.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Shadow.Location = new System.Drawing.Point(0, 139);
             this.panel_Shadow.Name = "panel_Shadow";
             this.panel_Shadow.Size = new System.Drawing.Size(1405, 9);
@@ -306,6 +302,7 @@
             this.Controls.Add(this.panel_Shadow);
             this.Controls.Add(this.panel_Titulo);
             this.ForeColor = System.Drawing.Color.Black;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPrincipal";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

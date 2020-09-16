@@ -166,7 +166,7 @@
             this.btn_Asis_Consultar.IconChar = FontAwesome.Sharp.IconChar.CalendarCheck;
             this.btn_Asis_Consultar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.btn_Asis_Consultar.IconSize = 80;
-            this.btn_Asis_Consultar.Location = new System.Drawing.Point(19, 121);
+            this.btn_Asis_Consultar.Location = new System.Drawing.Point(19, 112);
             this.btn_Asis_Consultar.Name = "btn_Asis_Consultar";
             this.btn_Asis_Consultar.Rotation = 0D;
             this.btn_Asis_Consultar.Size = new System.Drawing.Size(370, 112);
@@ -388,9 +388,9 @@
             // panelContenedor_GA
             // 
             this.panelContenedor_GA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelContenedor_GA.Location = new System.Drawing.Point(12, 220);
+            this.panelContenedor_GA.Location = new System.Drawing.Point(0, 201);
             this.panelContenedor_GA.Name = "panelContenedor_GA";
-            this.panelContenedor_GA.Size = new System.Drawing.Size(1639, 627);
+            this.panelContenedor_GA.Size = new System.Drawing.Size(1622, 907);
             this.panelContenedor_GA.TabIndex = 88;
             // 
             // btn_VolverGA

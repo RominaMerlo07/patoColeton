@@ -28,27 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuariosPopUpAgregar));
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.btn_CancelarUsuNuevo = new FontAwesome.Sharp.IconButton();
-            this.btn_GuardarUsuNuevo = new FontAwesome.Sharp.IconButton();
+            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.SuspendLayout();
-            // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 24;
-            this.metroComboBox1.Location = new System.Drawing.Point(76, 37);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.PromptText = "SELECCIONE DOCENTE";
-            this.metroComboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.metroComboBox1.Size = new System.Drawing.Size(420, 30);
-            this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroComboBox1.TabIndex = 0;
-            this.metroComboBox1.UseCustomBackColor = true;
-            this.metroComboBox1.UseSelectable = true;
             // 
             // metroTextBox1
             // 
@@ -57,9 +42,9 @@
             // 
             this.metroTextBox1.CustomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(187, 2);
+            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(181, 1);
             this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox1.CustomButton.TabIndex = 1;
             this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -69,7 +54,7 @@
             this.metroTextBox1.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.metroTextBox1.IconRight = true;
             this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(177, 119);
+            this.metroTextBox1.Location = new System.Drawing.Point(227, 129);
             this.metroTextBox1.MaxLength = 32767;
             this.metroTextBox1.Name = "metroTextBox1";
             this.metroTextBox1.PasswordChar = '\0';
@@ -79,47 +64,69 @@
             this.metroTextBox1.SelectionLength = 0;
             this.metroTextBox1.SelectionStart = 0;
             this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(215, 30);
+            this.metroTextBox1.Size = new System.Drawing.Size(215, 40);
             this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTextBox1.TabIndex = 1;
             this.metroTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.metroTextBox1.UseCustomBackColor = true;
             this.metroTextBox1.UseSelectable = true;
             this.metroTextBox1.UseStyleColors = true;
             this.metroTextBox1.WaterMark = "USUARIO";
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.Lime;
+            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // btn_CancelarUsuNuevo
+            // iconButton1
             // 
-            this.btn_CancelarUsuNuevo.BackColor = System.Drawing.Color.DarkGray;
-            this.btn_CancelarUsuNuevo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btn_CancelarUsuNuevo.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
-            this.btn_CancelarUsuNuevo.IconColor = System.Drawing.Color.Black;
-            this.btn_CancelarUsuNuevo.IconSize = 36;
-            this.btn_CancelarUsuNuevo.Location = new System.Drawing.Point(326, 298);
-            this.btn_CancelarUsuNuevo.Name = "btn_CancelarUsuNuevo";
-            this.btn_CancelarUsuNuevo.Rotation = 0D;
-            this.btn_CancelarUsuNuevo.Size = new System.Drawing.Size(170, 52);
-            this.btn_CancelarUsuNuevo.TabIndex = 4;
-            this.btn_CancelarUsuNuevo.Text = "CANCELAR";
-            this.btn_CancelarUsuNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_CancelarUsuNuevo.UseVisualStyleBackColor = false;
+            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.iconButton1.IconSize = 50;
+            this.iconButton1.Location = new System.Drawing.Point(82, 331);
+            this.iconButton1.Name = "iconButton1";
+            this.iconButton1.Rotation = 0D;
+            this.iconButton1.Size = new System.Drawing.Size(216, 66);
+            this.iconButton1.TabIndex = 41;
+            this.iconButton1.Text = "GUARDAR";
+            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton1.UseVisualStyleBackColor = true;
             // 
-            // btn_GuardarUsuNuevo
+            // iconButton2
             // 
-            this.btn_GuardarUsuNuevo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(97)))), ((int)(((byte)(183)))), ((int)(((byte)(87)))));
-            this.btn_GuardarUsuNuevo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btn_GuardarUsuNuevo.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
-            this.btn_GuardarUsuNuevo.IconColor = System.Drawing.Color.Black;
-            this.btn_GuardarUsuNuevo.IconSize = 36;
-            this.btn_GuardarUsuNuevo.Location = new System.Drawing.Point(76, 298);
-            this.btn_GuardarUsuNuevo.Name = "btn_GuardarUsuNuevo";
-            this.btn_GuardarUsuNuevo.Rotation = 0D;
-            this.btn_GuardarUsuNuevo.Size = new System.Drawing.Size(170, 52);
-            this.btn_GuardarUsuNuevo.TabIndex = 3;
-            this.btn_GuardarUsuNuevo.Text = "GUARDAR";
-            this.btn_GuardarUsuNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btn_GuardarUsuNuevo.UseVisualStyleBackColor = false;
+            this.iconButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.iconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.iconButton2.IconSize = 50;
+            this.iconButton2.Location = new System.Drawing.Point(382, 331);
+            this.iconButton2.Name = "iconButton2";
+            this.iconButton2.Rotation = 0D;
+            this.iconButton2.Size = new System.Drawing.Size(216, 66);
+            this.iconButton2.TabIndex = 42;
+            this.iconButton2.Text = "CANCELAR";
+            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.iconButton2.UseVisualStyleBackColor = true;
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 24;
+            this.metroComboBox1.Location = new System.Drawing.Point(130, 36);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.PromptText = "SELECCIONE DOCENTE";
+            this.metroComboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.metroComboBox1.Size = new System.Drawing.Size(420, 30);
+            this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Green;
+            this.metroComboBox1.TabIndex = 43;
+            this.metroComboBox1.UseCustomBackColor = true;
+            this.metroComboBox1.UseCustomForeColor = true;
+            this.metroComboBox1.UseSelectable = true;
             // 
             // metroTextBox2
             // 
@@ -128,9 +135,9 @@
             // 
             this.metroTextBox2.CustomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(187, 2);
+            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(181, 1);
             this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(25, 25);
+            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox2.CustomButton.TabIndex = 1;
             this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -138,10 +145,9 @@
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.metroTextBox2.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
-            this.metroTextBox2.Icon = ((System.Drawing.Image)(resources.GetObject("metroTextBox2.Icon")));
             this.metroTextBox2.IconRight = true;
             this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(177, 205);
+            this.metroTextBox2.Location = new System.Drawing.Point(227, 218);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
@@ -151,27 +157,28 @@
             this.metroTextBox2.SelectionLength = 0;
             this.metroTextBox2.SelectionStart = 0;
             this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(215, 30);
+            this.metroTextBox2.Size = new System.Drawing.Size(215, 40);
             this.metroTextBox2.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTextBox2.TabIndex = 2;
+            this.metroTextBox2.TabIndex = 44;
             this.metroTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.metroTextBox2.UseCustomBackColor = true;
             this.metroTextBox2.UseSelectable = true;
             this.metroTextBox2.UseStyleColors = true;
             this.metroTextBox2.WaterMark = "CONTRASEÑA";
-            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.Lime;
+            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
             // frmUsuariosPopUpAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(245)))), ((int)(((byte)(242)))));
-            this.ClientSize = new System.Drawing.Size(587, 420);
-            this.Controls.Add(this.btn_CancelarUsuNuevo);
-            this.Controls.Add(this.btn_GuardarUsuNuevo);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.ClientSize = new System.Drawing.Size(666, 450);
             this.Controls.Add(this.metroTextBox2);
-            this.Controls.Add(this.metroTextBox1);
             this.Controls.Add(this.metroComboBox1);
+            this.Controls.Add(this.iconButton2);
+            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.metroTextBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Location = new System.Drawing.Point(32, 177);
             this.Name = "frmUsuariosPopUpAgregar";
@@ -181,11 +188,10 @@
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton iconButton2;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
         private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private FontAwesome.Sharp.IconButton btn_GuardarUsuNuevo;
-        private FontAwesome.Sharp.IconButton btn_CancelarUsuNuevo;
     }
 }

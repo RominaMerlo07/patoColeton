@@ -248,9 +248,9 @@
             // 
             // 
             this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(261, 2);
+            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(272, 1);
             this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(35, 35);
+            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(43, 43);
             this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.metroTextBox2.CustomButton.TabIndex = 1;
             this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -369,9 +369,9 @@
             // 
             // 
             this.txtEmail.CustomButton.Image = null;
-            this.txtEmail.CustomButton.Location = new System.Drawing.Point(200, 2);
+            this.txtEmail.CustomButton.Location = new System.Drawing.Point(335, 2);
             this.txtEmail.CustomButton.Name = "";
-            this.txtEmail.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtEmail.CustomButton.Size = new System.Drawing.Size(35, 35);
             this.txtEmail.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtEmail.CustomButton.TabIndex = 1;
             this.txtEmail.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -404,9 +404,9 @@
             // 
             // 
             this.txtCelular.CustomButton.Image = null;
-            this.txtCelular.CustomButton.Location = new System.Drawing.Point(200, 2);
+            this.txtCelular.CustomButton.Location = new System.Drawing.Point(333, 2);
             this.txtCelular.CustomButton.Name = "";
-            this.txtCelular.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtCelular.CustomButton.Size = new System.Drawing.Size(35, 35);
             this.txtCelular.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCelular.CustomButton.TabIndex = 1;
             this.txtCelular.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -439,9 +439,9 @@
             // 
             // 
             this.txtTelefono.CustomButton.Image = null;
-            this.txtTelefono.CustomButton.Location = new System.Drawing.Point(200, 2);
+            this.txtTelefono.CustomButton.Location = new System.Drawing.Point(276, 2);
             this.txtTelefono.CustomButton.Name = "";
-            this.txtTelefono.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtTelefono.CustomButton.Size = new System.Drawing.Size(35, 35);
             this.txtTelefono.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtTelefono.CustomButton.TabIndex = 1;
             this.txtTelefono.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -474,7 +474,7 @@
             // 
             // 
             this.txtCPostal.CustomButton.Image = null;
-            this.txtCPostal.CustomButton.Location = new System.Drawing.Point(96, 1);
+            this.txtCPostal.CustomButton.Location = new System.Drawing.Point(116, 1);
             this.txtCPostal.CustomButton.Name = "";
             this.txtCPostal.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.txtCPostal.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -509,9 +509,9 @@
             // 
             // 
             this.txtDepto.CustomButton.Image = null;
-            this.txtDepto.CustomButton.Location = new System.Drawing.Point(75, 2);
+            this.txtDepto.CustomButton.Location = new System.Drawing.Point(67, 2);
             this.txtDepto.CustomButton.Name = "";
-            this.txtDepto.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtDepto.CustomButton.Size = new System.Drawing.Size(35, 35);
             this.txtDepto.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtDepto.CustomButton.TabIndex = 1;
             this.txtDepto.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -544,7 +544,7 @@
             // 
             // 
             this.txtNumero.CustomButton.Image = null;
-            this.txtNumero.CustomButton.Location = new System.Drawing.Point(79, 1);
+            this.txtNumero.CustomButton.Location = new System.Drawing.Point(94, 1);
             this.txtNumero.CustomButton.Name = "";
             this.txtNumero.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.txtNumero.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -591,9 +591,9 @@
             // 
             // 
             this.txtBarrio.CustomButton.Image = null;
-            this.txtBarrio.CustomButton.Location = new System.Drawing.Point(200, 2);
+            this.txtBarrio.CustomButton.Location = new System.Drawing.Point(276, 2);
             this.txtBarrio.CustomButton.Name = "";
-            this.txtBarrio.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtBarrio.CustomButton.Size = new System.Drawing.Size(35, 35);
             this.txtBarrio.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtBarrio.CustomButton.TabIndex = 1;
             this.txtBarrio.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -626,9 +626,9 @@
             // 
             // 
             this.txtPiso.CustomButton.Image = null;
-            this.txtPiso.CustomButton.Location = new System.Drawing.Point(75, 2);
+            this.txtPiso.CustomButton.Location = new System.Drawing.Point(67, 2);
             this.txtPiso.CustomButton.Name = "";
-            this.txtPiso.CustomButton.Size = new System.Drawing.Size(27, 27);
+            this.txtPiso.CustomButton.Size = new System.Drawing.Size(35, 35);
             this.txtPiso.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtPiso.CustomButton.TabIndex = 1;
             this.txtPiso.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -661,7 +661,7 @@
             // 
             // 
             this.txtCalle.CustomButton.Image = null;
-            this.txtCalle.CustomButton.Location = new System.Drawing.Point(352, 1);
+            this.txtCalle.CustomButton.Location = new System.Drawing.Point(339, 1);
             this.txtCalle.CustomButton.Name = "";
             this.txtCalle.CustomButton.Size = new System.Drawing.Size(33, 33);
             this.txtCalle.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
@@ -998,6 +998,8 @@
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.panelContacto);
             this.Controls.Add(this.panelDatos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "frmAlumnosPopUpAgregar";
             this.metroPanel3.ResumeLayout(false);
             this.panelContacto.ResumeLayout(false);

@@ -986,6 +986,7 @@
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.panelContacto);
             this.Controls.Add(this.panelDatos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmAlumnosPopUpEditar";
             this.metroPanel3.ResumeLayout(false);
             this.panelContacto.ResumeLayout(false);

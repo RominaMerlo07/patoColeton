@@ -44,7 +44,7 @@
             this.iconPictureBox1.ForeColor = System.Drawing.Color.Red;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ExclamationCircle;
             this.iconPictureBox1.IconColor = System.Drawing.Color.Red;
-            this.iconPictureBox1.IconSize = 160;
+            this.iconPictureBox1.IconSize = 144;
             this.iconPictureBox1.Location = new System.Drawing.Point(25, 135);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Padding = new System.Windows.Forms.Padding(5);
@@ -100,10 +100,10 @@
             this.btn_CancelarUsuNuevo.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.btn_CancelarUsuNuevo.IconColor = System.Drawing.Color.Black;
             this.btn_CancelarUsuNuevo.IconSize = 36;
-            this.btn_CancelarUsuNuevo.Location = new System.Drawing.Point(423, 283);
+            this.btn_CancelarUsuNuevo.Location = new System.Drawing.Point(423, 313);
             this.btn_CancelarUsuNuevo.Name = "btn_CancelarUsuNuevo";
             this.btn_CancelarUsuNuevo.Rotation = 0D;
-            this.btn_CancelarUsuNuevo.Size = new System.Drawing.Size(87, 52);
+            this.btn_CancelarUsuNuevo.Size = new System.Drawing.Size(112, 52);
             this.btn_CancelarUsuNuevo.TabIndex = 6;
             this.btn_CancelarUsuNuevo.Text = "NO";
             this.btn_CancelarUsuNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -117,10 +117,10 @@
             this.btn_GuardarUsuNuevo.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
             this.btn_GuardarUsuNuevo.IconColor = System.Drawing.Color.Black;
             this.btn_GuardarUsuNuevo.IconSize = 36;
-            this.btn_GuardarUsuNuevo.Location = new System.Drawing.Point(252, 283);
+            this.btn_GuardarUsuNuevo.Location = new System.Drawing.Point(252, 313);
             this.btn_GuardarUsuNuevo.Name = "btn_GuardarUsuNuevo";
             this.btn_GuardarUsuNuevo.Rotation = 0D;
-            this.btn_GuardarUsuNuevo.Size = new System.Drawing.Size(94, 52);
+            this.btn_GuardarUsuNuevo.Size = new System.Drawing.Size(111, 52);
             this.btn_GuardarUsuNuevo.TabIndex = 5;
             this.btn_GuardarUsuNuevo.Text = "SI";
             this.btn_GuardarUsuNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -131,7 +131,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MistyRose;
-            this.ClientSize = new System.Drawing.Size(663, 415);
+            this.ClientSize = new System.Drawing.Size(770, 463);
             this.Controls.Add(this.btn_CancelarUsuNuevo);
             this.Controls.Add(this.btn_GuardarUsuNuevo);
             this.Controls.Add(this.label4);

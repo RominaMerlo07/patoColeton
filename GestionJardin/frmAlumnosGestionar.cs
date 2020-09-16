@@ -12,6 +12,7 @@ namespace GestionJardin
 {
     public partial class frmAlumnosGestionar : Form
     {
+
         public frmAlumnosGestionar()
         {
             InitializeComponent();
