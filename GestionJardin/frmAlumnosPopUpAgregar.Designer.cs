@@ -796,7 +796,7 @@
             this.metroLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
             this.metroLabel1.Location = new System.Drawing.Point(10, 10);
             this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(129, 30);
+            this.metroLabel1.Size = new System.Drawing.Size(153, 30);
             this.metroLabel1.TabIndex = 21;
             this.metroLabel1.Text = "Fecha de Nac.";
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -999,7 +999,6 @@
             this.Controls.Add(this.panelContacto);
             this.Controls.Add(this.panelDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
-            this.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.Name = "frmAlumnosPopUpAgregar";
             this.metroPanel3.ResumeLayout(false);
             this.panelContacto.ResumeLayout(false);

@@ -154,6 +154,24 @@
     <Compile Include="frmDocentes.Designer.cs">
       <DependentUpon>frmDocentes.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDocentesPopUpAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDocentesPopUpAgregar.Designer.cs">
+      <DependentUpon>frmDocentesPopUpAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDocentesPopUpEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDocentesPopUpEditar.Designer.cs">
+      <DependentUpon>frmDocentesPopUpEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmDocentesPopUpEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDocentesPopUpEliminar.Designer.cs">
+      <DependentUpon>frmDocentesPopUpEliminar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGestionCuotas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +265,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmDocentes.resx">
       <DependentUpon>frmDocentes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDocentesPopUpAgregar.resx">
+      <DependentUpon>frmDocentesPopUpAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDocentesPopUpEditar.resx">
+      <DependentUpon>frmDocentesPopUpEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDocentesPopUpEliminar.resx">
+      <DependentUpon>frmDocentesPopUpEliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionCuotas.resx">
       <DependentUpon>frmGestionCuotas.cs</DependentUpon>

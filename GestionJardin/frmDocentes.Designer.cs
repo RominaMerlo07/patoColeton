@@ -32,13 +32,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnGD_Filtrar = new FontAwesome.Sharp.IconPictureBox();
-            this.btnGD_Excel = new FontAwesome.Sharp.IconPictureBox();
-            this.btnGD_Pdf = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnGD_Eliminar = new FontAwesome.Sharp.IconButton();
-            this.btnGD_Editar = new FontAwesome.Sharp.IconButton();
-            this.btnGD_Agregar = new FontAwesome.Sharp.IconButton();
             this.txtGU_Buscar = new MetroFramework.Controls.MetroTextBox();
             this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
             this.alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,59 +42,17 @@
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGD_Filtrar = new FontAwesome.Sharp.IconPictureBox();
+            this.btnGD_Excel = new FontAwesome.Sharp.IconPictureBox();
+            this.btnGD_Pdf = new FontAwesome.Sharp.IconPictureBox();
+            this.btnGD_Eliminar = new FontAwesome.Sharp.IconButton();
+            this.btnGD_Editar = new FontAwesome.Sharp.IconButton();
+            this.btnGD_Agregar = new FontAwesome.Sharp.IconButton();
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGD_Filtrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGD_Excel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGD_Pdf)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnGD_Filtrar
-            // 
-            this.btnGD_Filtrar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGD_Filtrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnGD_Filtrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnGD_Filtrar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGD_Filtrar.IconChar = FontAwesome.Sharp.IconChar.Filter;
-            this.btnGD_Filtrar.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGD_Filtrar.IconSize = 81;
-            this.btnGD_Filtrar.Location = new System.Drawing.Point(879, 54);
-            this.btnGD_Filtrar.Name = "btnGD_Filtrar";
-            this.btnGD_Filtrar.Padding = new System.Windows.Forms.Padding(5);
-            this.btnGD_Filtrar.Size = new System.Drawing.Size(91, 81);
-            this.btnGD_Filtrar.TabIndex = 41;
-            this.btnGD_Filtrar.TabStop = false;
-            // 
-            // btnGD_Excel
-            // 
-            this.btnGD_Excel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGD_Excel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnGD_Excel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnGD_Excel.ForeColor = System.Drawing.Color.Chartreuse;
-            this.btnGD_Excel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
-            this.btnGD_Excel.IconColor = System.Drawing.Color.Chartreuse;
-            this.btnGD_Excel.IconSize = 81;
-            this.btnGD_Excel.Location = new System.Drawing.Point(999, 54);
-            this.btnGD_Excel.Name = "btnGD_Excel";
-            this.btnGD_Excel.Padding = new System.Windows.Forms.Padding(5);
-            this.btnGD_Excel.Size = new System.Drawing.Size(91, 81);
-            this.btnGD_Excel.TabIndex = 40;
-            this.btnGD_Excel.TabStop = false;
-            // 
-            // btnGD_Pdf
-            // 
-            this.btnGD_Pdf.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGD_Pdf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnGD_Pdf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnGD_Pdf.ForeColor = System.Drawing.Color.Salmon;
-            this.btnGD_Pdf.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
-            this.btnGD_Pdf.IconColor = System.Drawing.Color.Salmon;
-            this.btnGD_Pdf.IconSize = 81;
-            this.btnGD_Pdf.Location = new System.Drawing.Point(1108, 54);
-            this.btnGD_Pdf.Name = "btnGD_Pdf";
-            this.btnGD_Pdf.Padding = new System.Windows.Forms.Padding(5);
-            this.btnGD_Pdf.Size = new System.Drawing.Size(91, 81);
-            this.btnGD_Pdf.TabIndex = 39;
-            this.btnGD_Pdf.TabStop = false;
             // 
             // label1
             // 
@@ -115,63 +67,6 @@
             this.label1.TabIndex = 38;
             this.label1.Text = "* Para poder editar los datos de un docente o dar de baja al mismo, debe seleccio" +
     "nar el registro previamente";
-            // 
-            // btnGD_Eliminar
-            // 
-            this.btnGD_Eliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGD_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGD_Eliminar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnGD_Eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGD_Eliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnGD_Eliminar.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
-            this.btnGD_Eliminar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnGD_Eliminar.IconSize = 100;
-            this.btnGD_Eliminar.Location = new System.Drawing.Point(1349, 463);
-            this.btnGD_Eliminar.Name = "btnGD_Eliminar";
-            this.btnGD_Eliminar.Rotation = 0D;
-            this.btnGD_Eliminar.Size = new System.Drawing.Size(293, 134);
-            this.btnGD_Eliminar.TabIndex = 37;
-            this.btnGD_Eliminar.Text = "ELIMINAR";
-            this.btnGD_Eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGD_Eliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnGD_Editar
-            // 
-            this.btnGD_Editar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGD_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGD_Editar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnGD_Editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGD_Editar.ForeColor = System.Drawing.Color.Cyan;
-            this.btnGD_Editar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
-            this.btnGD_Editar.IconColor = System.Drawing.Color.Cyan;
-            this.btnGD_Editar.IconSize = 100;
-            this.btnGD_Editar.Location = new System.Drawing.Point(1349, 305);
-            this.btnGD_Editar.Name = "btnGD_Editar";
-            this.btnGD_Editar.Rotation = 0D;
-            this.btnGD_Editar.Size = new System.Drawing.Size(293, 134);
-            this.btnGD_Editar.TabIndex = 36;
-            this.btnGD_Editar.Text = "EDITAR";
-            this.btnGD_Editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGD_Editar.UseVisualStyleBackColor = true;
-            // 
-            // btnGD_Agregar
-            // 
-            this.btnGD_Agregar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGD_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGD_Agregar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnGD_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGD_Agregar.ForeColor = System.Drawing.Color.Lime;
-            this.btnGD_Agregar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
-            this.btnGD_Agregar.IconColor = System.Drawing.Color.Lime;
-            this.btnGD_Agregar.IconSize = 100;
-            this.btnGD_Agregar.Location = new System.Drawing.Point(1349, 149);
-            this.btnGD_Agregar.Name = "btnGD_Agregar";
-            this.btnGD_Agregar.Rotation = 0D;
-            this.btnGD_Agregar.Size = new System.Drawing.Size(293, 134);
-            this.btnGD_Agregar.TabIndex = 35;
-            this.btnGD_Agregar.Text = "AGREGAR";
-            this.btnGD_Agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGD_Agregar.UseVisualStyleBackColor = true;
             // 
             // txtGU_Buscar
             // 
@@ -304,6 +199,114 @@
             this.telefono_2.HeaderText = "FECHA BAJA";
             this.telefono_2.Name = "telefono_2";
             // 
+            // btnGD_Filtrar
+            // 
+            this.btnGD_Filtrar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGD_Filtrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btnGD_Filtrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnGD_Filtrar.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnGD_Filtrar.IconChar = FontAwesome.Sharp.IconChar.Filter;
+            this.btnGD_Filtrar.IconColor = System.Drawing.Color.WhiteSmoke;
+            this.btnGD_Filtrar.IconSize = 81;
+            this.btnGD_Filtrar.Location = new System.Drawing.Point(879, 54);
+            this.btnGD_Filtrar.Name = "btnGD_Filtrar";
+            this.btnGD_Filtrar.Padding = new System.Windows.Forms.Padding(5);
+            this.btnGD_Filtrar.Size = new System.Drawing.Size(91, 81);
+            this.btnGD_Filtrar.TabIndex = 41;
+            this.btnGD_Filtrar.TabStop = false;
+            // 
+            // btnGD_Excel
+            // 
+            this.btnGD_Excel.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGD_Excel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btnGD_Excel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnGD_Excel.ForeColor = System.Drawing.Color.Chartreuse;
+            this.btnGD_Excel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
+            this.btnGD_Excel.IconColor = System.Drawing.Color.Chartreuse;
+            this.btnGD_Excel.IconSize = 81;
+            this.btnGD_Excel.Location = new System.Drawing.Point(999, 54);
+            this.btnGD_Excel.Name = "btnGD_Excel";
+            this.btnGD_Excel.Padding = new System.Windows.Forms.Padding(5);
+            this.btnGD_Excel.Size = new System.Drawing.Size(91, 81);
+            this.btnGD_Excel.TabIndex = 40;
+            this.btnGD_Excel.TabStop = false;
+            // 
+            // btnGD_Pdf
+            // 
+            this.btnGD_Pdf.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGD_Pdf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btnGD_Pdf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btnGD_Pdf.ForeColor = System.Drawing.Color.Salmon;
+            this.btnGD_Pdf.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
+            this.btnGD_Pdf.IconColor = System.Drawing.Color.Salmon;
+            this.btnGD_Pdf.IconSize = 81;
+            this.btnGD_Pdf.Location = new System.Drawing.Point(1108, 54);
+            this.btnGD_Pdf.Name = "btnGD_Pdf";
+            this.btnGD_Pdf.Padding = new System.Windows.Forms.Padding(5);
+            this.btnGD_Pdf.Size = new System.Drawing.Size(91, 81);
+            this.btnGD_Pdf.TabIndex = 39;
+            this.btnGD_Pdf.TabStop = false;
+            // 
+            // btnGD_Eliminar
+            // 
+            this.btnGD_Eliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGD_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGD_Eliminar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnGD_Eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGD_Eliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnGD_Eliminar.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
+            this.btnGD_Eliminar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnGD_Eliminar.IconSize = 100;
+            this.btnGD_Eliminar.Location = new System.Drawing.Point(1349, 463);
+            this.btnGD_Eliminar.Name = "btnGD_Eliminar";
+            this.btnGD_Eliminar.Rotation = 0D;
+            this.btnGD_Eliminar.Size = new System.Drawing.Size(293, 134);
+            this.btnGD_Eliminar.TabIndex = 37;
+            this.btnGD_Eliminar.Text = "ELIMINAR";
+            this.btnGD_Eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGD_Eliminar.UseVisualStyleBackColor = true;
+            this.btnGD_Eliminar.Click += new System.EventHandler(this.btnGD_Eliminar_Click);
+            // 
+            // btnGD_Editar
+            // 
+            this.btnGD_Editar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGD_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGD_Editar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnGD_Editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGD_Editar.ForeColor = System.Drawing.Color.Cyan;
+            this.btnGD_Editar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.btnGD_Editar.IconColor = System.Drawing.Color.Cyan;
+            this.btnGD_Editar.IconSize = 100;
+            this.btnGD_Editar.Location = new System.Drawing.Point(1349, 305);
+            this.btnGD_Editar.Name = "btnGD_Editar";
+            this.btnGD_Editar.Rotation = 0D;
+            this.btnGD_Editar.Size = new System.Drawing.Size(293, 134);
+            this.btnGD_Editar.TabIndex = 36;
+            this.btnGD_Editar.Text = "EDITAR";
+            this.btnGD_Editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGD_Editar.UseVisualStyleBackColor = true;
+            this.btnGD_Editar.Click += new System.EventHandler(this.btnGD_Editar_Click);
+            // 
+            // btnGD_Agregar
+            // 
+            this.btnGD_Agregar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGD_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGD_Agregar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnGD_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGD_Agregar.ForeColor = System.Drawing.Color.Lime;
+            this.btnGD_Agregar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnGD_Agregar.IconColor = System.Drawing.Color.Lime;
+            this.btnGD_Agregar.IconSize = 100;
+            this.btnGD_Agregar.Location = new System.Drawing.Point(1349, 149);
+            this.btnGD_Agregar.Name = "btnGD_Agregar";
+            this.btnGD_Agregar.Rotation = 0D;
+            this.btnGD_Agregar.Size = new System.Drawing.Size(293, 134);
+            this.btnGD_Agregar.TabIndex = 35;
+            this.btnGD_Agregar.Text = "AGREGAR";
+            this.btnGD_Agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGD_Agregar.UseVisualStyleBackColor = true;
+            this.btnGD_Agregar.Click += new System.EventHandler(this.btnGD_Agregar_Click);
+            // 
             // frmDocentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -321,10 +324,10 @@
             this.Controls.Add(this.metroGrid1);
             this.Name = "frmDocentes";
             this.Text = "GESTIÓN DOCENTES";
+            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGD_Filtrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGD_Excel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGD_Pdf)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

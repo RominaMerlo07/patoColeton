@@ -215,3 +215,6 @@ C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJar
 C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmAlumnosPopUpEliminar.resources
 C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmAlumnosPopUpEditar.resources
 C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmDocentes.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmDocentesPopUpAgregar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmDocentesPopUpEditar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmDocentesPopUpEliminar.resources
