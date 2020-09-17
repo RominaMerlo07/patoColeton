@@ -271,6 +271,12 @@ namespace GestionJardin
             ((Button)sender).ImageAlign = ContentAlignment.MiddleCenter;
         }
 
+        private void btnDocentes_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new GestionJardin.frmDocentes());
+        }
+
+
         //Gestion Usuarios
 
         private void btnUsuarios_MouseHover(object sender, EventArgs e)

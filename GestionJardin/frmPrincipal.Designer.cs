@@ -234,6 +234,7 @@
             this.btnDocentes.Text = "GESTION DOCENTES";
             this.btnDocentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDocentes.UseVisualStyleBackColor = false;
+            this.btnDocentes.Click += new System.EventHandler(this.btnDocentes_Click);
             this.btnDocentes.MouseLeave += new System.EventHandler(this.btnDocentes_MouseLeave);
             this.btnDocentes.MouseHover += new System.EventHandler(this.btnDocentes_MouseHover);
             // 
