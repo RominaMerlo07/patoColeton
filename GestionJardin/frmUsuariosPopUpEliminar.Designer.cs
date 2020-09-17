@@ -93,7 +93,7 @@
             this.btn_CancelarUsuNuevo.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.btn_CancelarUsuNuevo.IconColor = System.Drawing.Color.DarkGray;
             this.btn_CancelarUsuNuevo.IconSize = 36;
-            this.btn_CancelarUsuNuevo.Location = new System.Drawing.Point(540, 335);
+            this.btn_CancelarUsuNuevo.Location = new System.Drawing.Point(501, 335);
             this.btn_CancelarUsuNuevo.Name = "btn_CancelarUsuNuevo";
             this.btn_CancelarUsuNuevo.Rotation = 0D;
             this.btn_CancelarUsuNuevo.Size = new System.Drawing.Size(125, 52);
@@ -113,7 +113,7 @@
             this.btn_GuardarUsuNuevo.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
             this.btn_GuardarUsuNuevo.IconColor = System.Drawing.Color.Red;
             this.btn_GuardarUsuNuevo.IconSize = 36;
-            this.btn_GuardarUsuNuevo.Location = new System.Drawing.Point(335, 335);
+            this.btn_GuardarUsuNuevo.Location = new System.Drawing.Point(300, 335);
             this.btn_GuardarUsuNuevo.Name = "btn_GuardarUsuNuevo";
             this.btn_GuardarUsuNuevo.Rotation = 0D;
             this.btn_GuardarUsuNuevo.Size = new System.Drawing.Size(125, 52);

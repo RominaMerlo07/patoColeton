@@ -58,7 +58,6 @@
             // 
             // panel1
             // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.Controls.Add(this.btnEstudiantes);
             this.panel1.Controls.Add(this.btnInformeSemestral);
             this.panel1.Controls.Add(this.panelIndiceNavbar);
@@ -70,8 +69,6 @@
             // 
             // btnEstudiantes
             // 
-            this.btnEstudiantes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEstudiantes.FlatAppearance.BorderSize = 0;
             this.btnEstudiantes.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnEstudiantes.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnEstudiantes.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -79,7 +76,7 @@
             this.btnEstudiantes.IconChar = FontAwesome.Sharp.IconChar.Child;
             this.btnEstudiantes.IconColor = System.Drawing.Color.Yellow;
             this.btnEstudiantes.IconSize = 80;
-            this.btnEstudiantes.Location = new System.Drawing.Point(198, 12);
+            this.btnEstudiantes.Location = new System.Drawing.Point(21, 12);
             this.btnEstudiantes.Name = "btnEstudiantes";
             this.btnEstudiantes.Rotation = 0D;
             this.btnEstudiantes.Size = new System.Drawing.Size(394, 143);
@@ -87,12 +84,11 @@
             this.btnEstudiantes.Text = "ESTUDIANTES";
             this.btnEstudiantes.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnEstudiantes.UseVisualStyleBackColor = true;
+            this.btnEstudiantes.Click += new System.EventHandler(this.btnEstudiantes_Click);
             this.btnEstudiantes.MouseHover += new System.EventHandler(this.btnEstudiantes_MouseHover);
             // 
             // btnInformeSemestral
             // 
-            this.btnInformeSemestral.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnInformeSemestral.FlatAppearance.BorderSize = 0;
             this.btnInformeSemestral.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInformeSemestral.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnInformeSemestral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -100,7 +96,7 @@
             this.btnInformeSemestral.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
             this.btnInformeSemestral.IconColor = System.Drawing.Color.Magenta;
             this.btnInformeSemestral.IconSize = 80;
-            this.btnInformeSemestral.Location = new System.Drawing.Point(998, 12);
+            this.btnInformeSemestral.Location = new System.Drawing.Point(821, 12);
             this.btnInformeSemestral.Name = "btnInformeSemestral";
             this.btnInformeSemestral.Rotation = 0D;
             this.btnInformeSemestral.Size = new System.Drawing.Size(394, 143);
@@ -108,13 +104,14 @@
             this.btnInformeSemestral.Text = "INFORME SEMESTRAL";
             this.btnInformeSemestral.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnInformeSemestral.UseVisualStyleBackColor = true;
+            this.btnInformeSemestral.Click += new System.EventHandler(this.btnInformeSemestral_Click);
             this.btnInformeSemestral.MouseHover += new System.EventHandler(this.btnInformeSemestral_MouseHover);
             // 
             // panelIndiceNavbar
             // 
             this.panelIndiceNavbar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelIndiceNavbar.BackColor = System.Drawing.Color.Yellow;
-            this.panelIndiceNavbar.Location = new System.Drawing.Point(198, 3);
+            this.panelIndiceNavbar.Location = new System.Drawing.Point(18, 3);
             this.panelIndiceNavbar.Name = "panelIndiceNavbar";
             this.panelIndiceNavbar.Size = new System.Drawing.Size(399, 13);
             this.panelIndiceNavbar.TabIndex = 78;
@@ -122,8 +119,6 @@
             // 
             // btnAsistencia
             // 
-            this.btnAsistencia.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAsistencia.FlatAppearance.BorderSize = 0;
             this.btnAsistencia.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnAsistencia.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -131,7 +126,7 @@
             this.btnAsistencia.IconChar = FontAwesome.Sharp.IconChar.UserClock;
             this.btnAsistencia.IconColor = System.Drawing.Color.Aqua;
             this.btnAsistencia.IconSize = 80;
-            this.btnAsistencia.Location = new System.Drawing.Point(598, 12);
+            this.btnAsistencia.Location = new System.Drawing.Point(421, 12);
             this.btnAsistencia.Name = "btnAsistencia";
             this.btnAsistencia.Rotation = 0D;
             this.btnAsistencia.Size = new System.Drawing.Size(394, 143);
@@ -139,16 +134,16 @@
             this.btnAsistencia.Text = "ASISTENCIA";
             this.btnAsistencia.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnAsistencia.UseVisualStyleBackColor = true;
+            this.btnAsistencia.Click += new System.EventHandler(this.btnAsistencia_Click);
             this.btnAsistencia.MouseHover += new System.EventHandler(this.btnAsistencia_MouseHover);
             // 
             // panelAsistencia
             // 
-            this.panelAsistencia.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelAsistencia.BackColor = System.Drawing.Color.Transparent;
             this.panelAsistencia.Controls.Add(this.btn_Asis_Consultar);
             this.panelAsistencia.Controls.Add(this.btnAsis_Agregar);
             this.panelAsistencia.Controls.Add(this.Ind_PnlAsistencia);
-            this.panelAsistencia.Location = new System.Drawing.Point(600, 123);
+            this.panelAsistencia.Location = new System.Drawing.Point(423, 125);
             this.panelAsistencia.Name = "panelAsistencia";
             this.panelAsistencia.Size = new System.Drawing.Size(392, 250);
             this.panelAsistencia.TabIndex = 2;
@@ -209,13 +204,12 @@
             // 
             // panelInformeSemestral
             // 
-            this.panelInformeSemestral.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelInformeSemestral.BackColor = System.Drawing.Color.Transparent;
             this.panelInformeSemestral.Controls.Add(this.Ind_PnlInfSemestral);
             this.panelInformeSemestral.Controls.Add(this.btnIS_Materia);
             this.panelInformeSemestral.Controls.Add(this.btnIS_Consultar);
             this.panelInformeSemestral.Controls.Add(this.btnIS_Generar);
-            this.panelInformeSemestral.Location = new System.Drawing.Point(1006, 123);
+            this.panelInformeSemestral.Location = new System.Drawing.Point(829, 124);
             this.panelInformeSemestral.Name = "panelInformeSemestral";
             this.panelInformeSemestral.Size = new System.Drawing.Size(386, 350);
             this.panelInformeSemestral.TabIndex = 87;
@@ -298,13 +292,12 @@
             // 
             // panelEstudiantes
             // 
-            this.panelEstudiantes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelEstudiantes.BackColor = System.Drawing.Color.Transparent;
             this.panelEstudiantes.Controls.Add(this.btnEst_Consultar);
             this.panelEstudiantes.Controls.Add(this.btnEst_Documentacion);
             this.panelEstudiantes.Controls.Add(this.btnEst_GrupoFlia);
             this.panelEstudiantes.Controls.Add(this.Ind_PnlEstudiante);
-            this.panelEstudiantes.Location = new System.Drawing.Point(200, 121);
+            this.panelEstudiantes.Location = new System.Drawing.Point(23, 124);
             this.panelEstudiantes.Name = "panelEstudiantes";
             this.panelEstudiantes.Size = new System.Drawing.Size(392, 350);
             this.panelEstudiantes.TabIndex = 2;
@@ -387,10 +380,11 @@
             // 
             // panelContenedor_GA
             // 
-            this.panelContenedor_GA.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panelContenedor_GA.Location = new System.Drawing.Point(0, 201);
+            this.panelContenedor_GA.BackColor = System.Drawing.Color.Transparent;
+            this.panelContenedor_GA.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedor_GA.Location = new System.Drawing.Point(0, 0);
             this.panelContenedor_GA.Name = "panelContenedor_GA";
-            this.panelContenedor_GA.Size = new System.Drawing.Size(1622, 907);
+            this.panelContenedor_GA.Size = new System.Drawing.Size(1654, 853);
             this.panelContenedor_GA.TabIndex = 88;
             // 
             // btn_VolverGA
@@ -398,7 +392,7 @@
             this.btn_VolverGA.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btn_VolverGA.BackColor = System.Drawing.Color.Transparent;
             this.btn_VolverGA.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.btn_VolverGA.FlatAppearance.BorderSize = 3;
+            this.btn_VolverGA.FlatAppearance.BorderSize = 0;
             this.btn_VolverGA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btn_VolverGA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.btn_VolverGA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -408,7 +402,7 @@
             this.btn_VolverGA.IconChar = FontAwesome.Sharp.IconChar.ChevronCircleLeft;
             this.btn_VolverGA.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_VolverGA.IconSize = 50;
-            this.btn_VolverGA.Location = new System.Drawing.Point(1398, 161);
+            this.btn_VolverGA.Location = new System.Drawing.Point(870, 126);
             this.btn_VolverGA.Name = "btn_VolverGA";
             this.btn_VolverGA.Rotation = 0D;
             this.btn_VolverGA.Size = new System.Drawing.Size(60, 57);
@@ -420,12 +414,12 @@
             // 
             // lbl_Ruta
             // 
-            this.lbl_Ruta.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_Ruta.AutoSize = true;
+            this.lbl_Ruta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Ruta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.lbl_Ruta.Location = new System.Drawing.Point(195, 181);
+            this.lbl_Ruta.Location = new System.Drawing.Point(37, 196);
             this.lbl_Ruta.Name = "lbl_Ruta";
-            this.lbl_Ruta.Size = new System.Drawing.Size(13, 17);
+            this.lbl_Ruta.Size = new System.Drawing.Size(15, 20);
             this.lbl_Ruta.TabIndex = 89;
             this.lbl_Ruta.Text = "*";
             this.lbl_Ruta.Visible = false;

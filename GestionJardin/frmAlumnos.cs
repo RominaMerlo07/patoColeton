@@ -67,6 +67,13 @@ namespace GestionJardin
             Ind_PnlEstudiante.Height = btn.Height;
         }
 
+        private void btnEstudiantes_Click(object sender, EventArgs e)
+        {
+            panelEstudiantes.Visible = true;
+            moverIndiceNavbar(btnEstudiantes);
+            panelAsistencia.Visible = false;
+            panelInformeSemestral.Visible = false;
+        }
 
         private void btnEstudiantes_MouseHover(object sender, EventArgs e)
         {
@@ -156,6 +163,14 @@ namespace GestionJardin
             Ind_PnlAsistencia.Height = btn.Height;
         }
 
+        private void btnAsistencia_Click(object sender, EventArgs e)
+        {
+            panelAsistencia.Visible = true;
+            moverIndiceNavbar(btnAsistencia);
+            panelEstudiantes.Visible = false;
+            panelInformeSemestral.Visible = false;
+        }
+
         private void btnAsistencia_MouseHover(object sender, EventArgs e)
         {
             panelAsistencia.Visible = true;
@@ -222,6 +237,14 @@ namespace GestionJardin
         {
             Ind_PnlInfSemestral.Location = new Point(0, btn.Location.Y);
             Ind_PnlInfSemestral.Height = btn.Height;
+        }
+
+        private void btnInformeSemestral_Click(object sender, EventArgs e)
+        {
+            panelInformeSemestral.Visible = true;
+            moverIndiceNavbar(btnInformeSemestral);
+            panelEstudiantes.Visible = false;
+            panelAsistencia.Visible = false;
         }
 
         private void btnInformeSemestral_MouseHover(object sender, EventArgs e)
@@ -329,5 +352,6 @@ namespace GestionJardin
             lbl_Ruta.Visible = true;           
             
         }
+
     }
 }

@@ -39,6 +39,7 @@ namespace GestionJardin
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
             Size = new Size(1405, 907);
+            StartPosition = FormStartPosition.CenterScreen;                       
         }
 
         private struct RGBColors

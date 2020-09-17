@@ -305,7 +305,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPrincipal";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PATITO COLETÓN";
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.panel_Titulo.ResumeLayout(false);
