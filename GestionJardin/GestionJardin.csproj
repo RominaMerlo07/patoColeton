@@ -100,58 +100,58 @@
     <Compile Include="entSala.cs" />
     <Compile Include="entTipoPersona.cs" />
     <Compile Include="entUsuario.cs" />
-    <Compile Include="frmAlumnosGrupoFlia.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFlia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnosGrupoFlia.Designer.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFlia.Designer.cs">
       <DependentUpon>frmAlumnosGrupoFlia.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnosGrupoFliaPopUpAgregar.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFliaPopUpAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnosGrupoFliaPopUpAgregar.Designer.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFliaPopUpAgregar.Designer.cs">
       <DependentUpon>frmAlumnosGrupoFliaPopUpAgregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnosGrupoFliaPopUpEditar.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFliaPopUpEditar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnosGrupoFliaPopUpEditar.Designer.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFliaPopUpEditar.Designer.cs">
       <DependentUpon>frmAlumnosGrupoFliaPopUpEditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnosGrupoFliaPopUpEliminar.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFliaPopUpEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnosGrupoFliaPopUpEliminar.Designer.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFliaPopUpEliminar.Designer.cs">
       <DependentUpon>frmAlumnosGrupoFliaPopUpEliminar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnosPopUpEditar.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosPopUpEditar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnosPopUpEditar.Designer.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosPopUpEditar.Designer.cs">
       <DependentUpon>frmAlumnosPopUpEditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnosPopUpEliminar.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosPopUpEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnosPopUpEliminar.Designer.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosPopUpEliminar.Designer.cs">
       <DependentUpon>frmAlumnosPopUpEliminar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnos.cs">
+    <Compile Include="frmAlumnos\frmAlumnos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnos.Designer.cs">
+    <Compile Include="frmAlumnos\frmAlumnos.Designer.cs">
       <DependentUpon>frmAlumnos.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnosGestionar.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosGestionar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnosGestionar.Designer.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosGestionar.Designer.cs">
       <DependentUpon>frmAlumnosGestionar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnosPopUpAgregar.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosPopUpAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnosPopUpAgregar.Designer.cs">
+    <Compile Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosPopUpAgregar.Designer.cs">
       <DependentUpon>frmAlumnosPopUpAgregar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCobros.cs">
@@ -166,28 +166,28 @@
     <Compile Include="frmConceptos2.Designer.cs">
       <DependentUpon>frmConceptos2.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDocentes.cs">
+    <Compile Include="frmDocentes\frmDocentes.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDocentes.Designer.cs">
+    <Compile Include="frmDocentes\frmDocentes.Designer.cs">
       <DependentUpon>frmDocentes.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDocentesPopUpAgregar.cs">
+    <Compile Include="frmDocentes\frmDocentesPopUpAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDocentesPopUpAgregar.Designer.cs">
+    <Compile Include="frmDocentes\frmDocentesPopUpAgregar.Designer.cs">
       <DependentUpon>frmDocentesPopUpAgregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDocentesPopUpEditar.cs">
+    <Compile Include="frmDocentes\frmDocentesPopUpEditar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDocentesPopUpEditar.Designer.cs">
+    <Compile Include="frmDocentes\frmDocentesPopUpEditar.Designer.cs">
       <DependentUpon>frmDocentesPopUpEditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDocentesPopUpEliminar.cs">
+    <Compile Include="frmDocentes\frmDocentesPopUpEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmDocentesPopUpEliminar.Designer.cs">
+    <Compile Include="frmDocentes\frmDocentesPopUpEliminar.Designer.cs">
       <DependentUpon>frmDocentesPopUpEliminar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmGestionCuotas.cs">
@@ -221,28 +221,28 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUsuarios.cs">
+    <Compile Include="frmUsuarios\frmUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUsuarios.Designer.cs">
+    <Compile Include="frmUsuarios\frmUsuarios.Designer.cs">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUsuariosPopUpAgregar.cs">
+    <Compile Include="frmUsuarios\frmUsuariosPopUpAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUsuariosPopUpAgregar.Designer.cs">
+    <Compile Include="frmUsuarios\frmUsuariosPopUpAgregar.Designer.cs">
       <DependentUpon>frmUsuariosPopUpAgregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUsuariosPopUpEditar.cs">
+    <Compile Include="frmUsuarios\frmUsuariosPopUpEditar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUsuariosPopUpEditar.Designer.cs">
+    <Compile Include="frmUsuarios\frmUsuariosPopUpEditar.Designer.cs">
       <DependentUpon>frmUsuariosPopUpEditar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUsuariosPopUpEliminar.cs">
+    <Compile Include="frmUsuarios\frmUsuariosPopUpEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmUsuariosPopUpEliminar.Designer.cs">
+    <Compile Include="frmUsuarios\frmUsuariosPopUpEliminar.Designer.cs">
       <DependentUpon>frmUsuariosPopUpEliminar.cs</DependentUpon>
     </Compile>
     <Compile Include="metCobros.cs" />
@@ -257,31 +257,31 @@
     <Compile Include="metUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmAlumnosGrupoFlia.resx">
+    <EmbeddedResource Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFlia.resx">
       <DependentUpon>frmAlumnosGrupoFlia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnosGrupoFliaPopUpAgregar.resx">
+    <EmbeddedResource Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFliaPopUpAgregar.resx">
       <DependentUpon>frmAlumnosGrupoFliaPopUpAgregar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnosGrupoFliaPopUpEditar.resx">
+    <EmbeddedResource Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFliaPopUpEditar.resx">
       <DependentUpon>frmAlumnosGrupoFliaPopUpEditar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnosGrupoFliaPopUpEliminar.resx">
+    <EmbeddedResource Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFliaPopUpEliminar.resx">
       <DependentUpon>frmAlumnosGrupoFliaPopUpEliminar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnosPopUpEditar.resx">
+    <EmbeddedResource Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosPopUpEditar.resx">
       <DependentUpon>frmAlumnosPopUpEditar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnosPopUpEliminar.resx">
+    <EmbeddedResource Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosPopUpEliminar.resx">
       <DependentUpon>frmAlumnosPopUpEliminar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnos.resx">
+    <EmbeddedResource Include="frmAlumnos\frmAlumnos.resx">
       <DependentUpon>frmAlumnos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnosGestionar.resx">
+    <EmbeddedResource Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosGestionar.resx">
       <DependentUpon>frmAlumnosGestionar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnosPopUpAgregar.resx">
+    <EmbeddedResource Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosPopUpAgregar.resx">
       <DependentUpon>frmAlumnosPopUpAgregar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCobros.resx">
@@ -290,16 +290,16 @@
     <EmbeddedResource Include="frmConceptos2.resx">
       <DependentUpon>frmConceptos2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDocentes.resx">
+    <EmbeddedResource Include="frmDocentes\frmDocentes.resx">
       <DependentUpon>frmDocentes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDocentesPopUpAgregar.resx">
+    <EmbeddedResource Include="frmDocentes\frmDocentesPopUpAgregar.resx">
       <DependentUpon>frmDocentesPopUpAgregar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDocentesPopUpEditar.resx">
+    <EmbeddedResource Include="frmDocentes\frmDocentesPopUpEditar.resx">
       <DependentUpon>frmDocentesPopUpEditar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDocentesPopUpEliminar.resx">
+    <EmbeddedResource Include="frmDocentes\frmDocentesPopUpEliminar.resx">
       <DependentUpon>frmDocentesPopUpEliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionCuotas.resx">
@@ -317,16 +317,16 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuarios.resx">
+    <EmbeddedResource Include="frmUsuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuariosPopUpAgregar.resx">
+    <EmbeddedResource Include="frmUsuarios\frmUsuariosPopUpAgregar.resx">
       <DependentUpon>frmUsuariosPopUpAgregar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuariosPopUpEditar.resx">
+    <EmbeddedResource Include="frmUsuarios\frmUsuariosPopUpEditar.resx">
       <DependentUpon>frmUsuariosPopUpEditar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuariosPopUpEliminar.resx">
+    <EmbeddedResource Include="frmUsuarios\frmUsuariosPopUpEliminar.resx">
       <DependentUpon>frmUsuariosPopUpEliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
