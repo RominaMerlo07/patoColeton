@@ -366,6 +366,7 @@
             this.btnEst_GrupoFlia.Text = "GRUPO FAMILIAR";
             this.btnEst_GrupoFlia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEst_GrupoFlia.UseVisualStyleBackColor = false;
+            this.btnEst_GrupoFlia.Click += new System.EventHandler(this.btnEst_GrupoFlia_Click);
             this.btnEst_GrupoFlia.MouseLeave += new System.EventHandler(this.btnEst_GrupoFlia_MouseLeave);
             this.btnEst_GrupoFlia.MouseHover += new System.EventHandler(this.btnEst_GrupoFlia_MouseHover);
             // 

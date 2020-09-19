@@ -353,5 +353,14 @@ namespace GestionJardin
             
         }
 
+        private void btnEst_GrupoFlia_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new GestionJardin.frmAlumnosGrupoFlia());
+            btnAsistencia.Enabled = false;
+            btnInformeSemestral.Enabled = false;
+            btn_VolverGA.Visible = true;
+            btn_VolverGA.BringToFront();
+            lbl_Ruta.Visible = true;
+        }
     }
 }

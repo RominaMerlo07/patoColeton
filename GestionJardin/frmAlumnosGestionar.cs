@@ -45,6 +45,34 @@ namespace GestionJardin
             frmAlumnoPopUpEliminar.ShowDialog();
         }
 
-        
+        private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGA_Filtrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGA_Excel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnGA_Pdf_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtGA_Buscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

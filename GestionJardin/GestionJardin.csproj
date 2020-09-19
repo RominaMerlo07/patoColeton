@@ -106,6 +106,24 @@
     <Compile Include="frmAlumnosGrupoFlia.Designer.cs">
       <DependentUpon>frmAlumnosGrupoFlia.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAlumnosGrupoFliaPopUpAgregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnosGrupoFliaPopUpAgregar.Designer.cs">
+      <DependentUpon>frmAlumnosGrupoFliaPopUpAgregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnosGrupoFliaPopUpEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnosGrupoFliaPopUpEditar.Designer.cs">
+      <DependentUpon>frmAlumnosGrupoFliaPopUpEditar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnosGrupoFliaPopUpEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnosGrupoFliaPopUpEliminar.Designer.cs">
+      <DependentUpon>frmAlumnosGrupoFliaPopUpEliminar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAlumnosPopUpEditar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -241,6 +259,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAlumnosGrupoFlia.resx">
       <DependentUpon>frmAlumnosGrupoFlia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnosGrupoFliaPopUpAgregar.resx">
+      <DependentUpon>frmAlumnosGrupoFliaPopUpAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnosGrupoFliaPopUpEditar.resx">
+      <DependentUpon>frmAlumnosGrupoFliaPopUpEditar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnosGrupoFliaPopUpEliminar.resx">
+      <DependentUpon>frmAlumnosGrupoFliaPopUpEliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAlumnosPopUpEditar.resx">
       <DependentUpon>frmAlumnosPopUpEditar.cs</DependentUpon>
