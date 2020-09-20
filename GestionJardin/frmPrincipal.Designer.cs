@@ -212,6 +212,7 @@
             this.btnSalas.Text = "GESTION SALAS";
             this.btnSalas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalas.UseVisualStyleBackColor = false;
+            this.btnSalas.Click += new System.EventHandler(this.btnSalas_Click);
             this.btnSalas.MouseLeave += new System.EventHandler(this.btnSalas_MouseLeave);
             this.btnSalas.MouseHover += new System.EventHandler(this.btnSalas_MouseHover);
             // 
@@ -223,7 +224,7 @@
             this.btnDocentes.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnDocentes.Font = new System.Drawing.Font("Verdana Pro Cond", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDocentes.ForeColor = System.Drawing.Color.Yellow;
-            this.btnDocentes.IconChar = FontAwesome.Sharp.IconChar.Chalkboard;
+            this.btnDocentes.IconChar = FontAwesome.Sharp.IconChar.ChalkboardTeacher;
             this.btnDocentes.IconColor = System.Drawing.Color.Yellow;
             this.btnDocentes.IconSize = 180;
             this.btnDocentes.Location = new System.Drawing.Point(72, 487);

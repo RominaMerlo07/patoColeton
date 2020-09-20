@@ -70,12 +70,15 @@
             this.btnGA_Pdf = new FontAwesome.Sharp.IconPictureBox();
             this.btnGA_Excel = new FontAwesome.Sharp.IconPictureBox();
             this.btnBloqueo = new FontAwesome.Sharp.IconButton();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.checkAutorizacion = new MetroFramework.Controls.MetroCheckBox();
             this.metroPanel3.SuspendLayout();
             this.panelContacto.SuspendLayout();
             this.panelDatos.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Pdf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Excel)).BeginInit();
+            this.metroPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // iconButton2
@@ -178,7 +181,7 @@
             // 
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel2.ForeColor = System.Drawing.Color.Lime;
+            this.metroLabel2.ForeColor = System.Drawing.Color.Cyan;
             this.metroLabel2.Location = new System.Drawing.Point(25, 80);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(370, 44);
@@ -246,7 +249,7 @@
             // 
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel3.ForeColor = System.Drawing.Color.Lime;
+            this.metroLabel3.ForeColor = System.Drawing.Color.Cyan;
             this.metroLabel3.Location = new System.Drawing.Point(25, 19);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(387, 44);
@@ -259,6 +262,7 @@
             // 
             this.panelContacto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.panelContacto.Controls.Add(this.metroPanel2);
             this.panelContacto.Controls.Add(this.metroComboBox2);
             this.panelContacto.Controls.Add(this.label10);
             this.panelContacto.Controls.Add(this.label9);
@@ -999,6 +1003,37 @@
             this.btnBloqueo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnBloqueo.UseVisualStyleBackColor = false;
             // 
+            // metroPanel2
+            // 
+            this.metroPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.metroPanel2.Controls.Add(this.checkAutorizacion);
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(439, 364);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(319, 46);
+            this.metroPanel2.TabIndex = 37;
+            this.metroPanel2.UseCustomBackColor = true;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // checkAutorizacion
+            // 
+            this.checkAutorizacion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkAutorizacion.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.checkAutorizacion.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
+            this.checkAutorizacion.Location = new System.Drawing.Point(3, 12);
+            this.checkAutorizacion.Name = "checkAutorizacion";
+            this.checkAutorizacion.Size = new System.Drawing.Size(302, 24);
+            this.checkAutorizacion.Style = MetroFramework.MetroColorStyle.Black;
+            this.checkAutorizacion.TabIndex = 29;
+            this.checkAutorizacion.Text = "Autorizado a retirar: ";
+            this.checkAutorizacion.UseCustomBackColor = true;
+            this.checkAutorizacion.UseSelectable = true;
+            this.checkAutorizacion.UseStyleColors = true;
+            // 
             // frmAlumnosGrupoFliaPopUpEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1022,6 +1057,7 @@
             this.metroPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Pdf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Excel)).EndInit();
+            this.metroPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1070,5 +1106,7 @@
         private FontAwesome.Sharp.IconPictureBox btnGA_Pdf;
         private FontAwesome.Sharp.IconPictureBox btnGA_Excel;
         private FontAwesome.Sharp.IconButton btnBloqueo;
+        private MetroFramework.Controls.MetroPanel metroPanel2;
+        private MetroFramework.Controls.MetroCheckBox checkAutorizacion;
     }
 }

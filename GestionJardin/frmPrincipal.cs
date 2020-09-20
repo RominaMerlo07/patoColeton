@@ -245,6 +245,11 @@ namespace GestionJardin
 
         //Gestion Salas
 
+        private void btnSalas_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new GestionJardin.frmSalas());
+        }
+
         private void btnSalas_MouseHover(object sender, EventArgs e)
         {
             ((Button)sender).TextImageRelation = TextImageRelation.TextAboveImage;

@@ -44,7 +44,7 @@
             this.btnIS_Generar = new FontAwesome.Sharp.IconButton();
             this.panelEstudiantes = new System.Windows.Forms.Panel();
             this.btnEst_Consultar = new FontAwesome.Sharp.IconButton();
-            this.btnEst_Documentacion = new FontAwesome.Sharp.IconButton();
+            this.btnEst_CambioCiclo = new FontAwesome.Sharp.IconButton();
             this.btnEst_GrupoFlia = new FontAwesome.Sharp.IconButton();
             this.Ind_PnlEstudiante = new System.Windows.Forms.Panel();
             this.panelContenedor_GA = new System.Windows.Forms.Panel();
@@ -294,7 +294,7 @@
             // 
             this.panelEstudiantes.BackColor = System.Drawing.Color.Transparent;
             this.panelEstudiantes.Controls.Add(this.btnEst_Consultar);
-            this.panelEstudiantes.Controls.Add(this.btnEst_Documentacion);
+            this.panelEstudiantes.Controls.Add(this.btnEst_CambioCiclo);
             this.panelEstudiantes.Controls.Add(this.btnEst_GrupoFlia);
             this.panelEstudiantes.Controls.Add(this.Ind_PnlEstudiante);
             this.panelEstudiantes.Location = new System.Drawing.Point(23, 124);
@@ -327,26 +327,26 @@
             this.btnEst_Consultar.MouseLeave += new System.EventHandler(this.btnEst_Consultar_MouseLeave);
             this.btnEst_Consultar.MouseHover += new System.EventHandler(this.btnEst_Consultar_MouseHover);
             // 
-            // btnEst_Documentacion
+            // btnEst_CambioCiclo
             // 
-            this.btnEst_Documentacion.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEst_Documentacion.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnEst_Documentacion.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEst_Documentacion.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnEst_Documentacion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnEst_Documentacion.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.btnEst_Documentacion.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnEst_Documentacion.IconSize = 80;
-            this.btnEst_Documentacion.Location = new System.Drawing.Point(18, 222);
-            this.btnEst_Documentacion.Name = "btnEst_Documentacion";
-            this.btnEst_Documentacion.Rotation = 0D;
-            this.btnEst_Documentacion.Size = new System.Drawing.Size(371, 112);
-            this.btnEst_Documentacion.TabIndex = 81;
-            this.btnEst_Documentacion.Text = "DOCUMENTACIÓN";
-            this.btnEst_Documentacion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEst_Documentacion.UseVisualStyleBackColor = false;
-            this.btnEst_Documentacion.MouseLeave += new System.EventHandler(this.btnEst_Documentacion_MouseLeave);
-            this.btnEst_Documentacion.MouseHover += new System.EventHandler(this.btnEst_Documentacion_MouseHover);
+            this.btnEst_CambioCiclo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEst_CambioCiclo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btnEst_CambioCiclo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnEst_CambioCiclo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnEst_CambioCiclo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnEst_CambioCiclo.IconChar = FontAwesome.Sharp.IconChar.File;
+            this.btnEst_CambioCiclo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnEst_CambioCiclo.IconSize = 80;
+            this.btnEst_CambioCiclo.Location = new System.Drawing.Point(18, 222);
+            this.btnEst_CambioCiclo.Name = "btnEst_CambioCiclo";
+            this.btnEst_CambioCiclo.Rotation = 0D;
+            this.btnEst_CambioCiclo.Size = new System.Drawing.Size(371, 112);
+            this.btnEst_CambioCiclo.TabIndex = 81;
+            this.btnEst_CambioCiclo.Text = "CAMBIO DE CICLO";
+            this.btnEst_CambioCiclo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEst_CambioCiclo.UseVisualStyleBackColor = false;
+            this.btnEst_CambioCiclo.MouseLeave += new System.EventHandler(this.btnEst_CambioCiclo_MouseLeave);
+            this.btnEst_CambioCiclo.MouseHover += new System.EventHandler(this.btnEst_CambioCiclo_MouseHover);
             // 
             // btnEst_GrupoFlia
             // 
@@ -469,7 +469,7 @@
         private System.Windows.Forms.Panel Ind_PnlInfSemestral;
         private System.Windows.Forms.Panel panelEstudiantes;
         private FontAwesome.Sharp.IconButton btnEst_Consultar;
-        private FontAwesome.Sharp.IconButton btnEst_Documentacion;
+        private FontAwesome.Sharp.IconButton btnEst_CambioCiclo;
         private FontAwesome.Sharp.IconButton btnEst_GrupoFlia;
         private System.Windows.Forms.Panel Ind_PnlEstudiante;
         private System.Windows.Forms.Panel panelContenedor_GA;

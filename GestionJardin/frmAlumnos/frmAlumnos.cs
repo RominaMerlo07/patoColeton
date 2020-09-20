@@ -129,21 +129,21 @@ namespace GestionJardin
             Ind_PnlEstudiante.Visible = false;
         }
 
-        private void btnEst_Documentacion_MouseHover(object sender, EventArgs e)
+        private void btnEst_CambioCiclo_MouseHover(object sender, EventArgs e)
         {
-            btnEst_Documentacion.FlatStyle = FlatStyle.Flat;
-            btnEst_Documentacion.BringToFront();
-            btnEst_Documentacion.TextImageRelation = TextImageRelation.TextBeforeImage;
+            btnEst_CambioCiclo.FlatStyle = FlatStyle.Flat;
+            btnEst_CambioCiclo.BringToFront();
+            btnEst_CambioCiclo.TextImageRelation = TextImageRelation.TextBeforeImage;
             Ind_PnlInfSemestral.Visible = false;
             Ind_PnlAsistencia.Visible = false;
             Ind_PnlEstudiante.Visible = true;
-            moverIndicePnl_Estudiantes(btnEst_Documentacion);
+            moverIndicePnl_Estudiantes(btnEst_CambioCiclo);
         }
 
-        private void btnEst_Documentacion_MouseLeave(object sender, EventArgs e)
+        private void btnEst_CambioCiclo_MouseLeave(object sender, EventArgs e)
         {
-            btnEst_Documentacion.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnEst_Documentacion.FlatStyle = FlatStyle.Popup;
+            btnEst_CambioCiclo.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnEst_CambioCiclo.FlatStyle = FlatStyle.Popup;
             Ind_PnlInfSemestral.Visible = false;
             Ind_PnlAsistencia.Visible = false;
             Ind_PnlEstudiante.Visible = false;
@@ -362,5 +362,6 @@ namespace GestionJardin
             btn_VolverGA.BringToFront();
             lbl_Ruta.Visible = true;
         }
+
     }
 }
