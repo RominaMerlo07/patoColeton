@@ -18,6 +18,7 @@ namespace GestionJardin
         SqlDataAdapter dta;
         DataTable dt;
         SqlDataReader dr;
+        DataTable cardoc;
 
         public AutoCompleteStringCollection traerPersonasAutocompetar(string tipo_persona) //FILTRA POR TIPO DE PERSONA. "0" TRAE TODOS. 
         {
@@ -57,8 +58,35 @@ namespace GestionJardin
             return autoComplete;
 
         }
+        public DataTable Mostrardocente()//muestra docente en la grilla
+        {
+            con = generarConexion();
+            con.Open();
+            SqlCommand com = new SqlCommand();
+            com.Connection = con;
+            string CargarDocente = "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE,PER_DOCUMENTO 'DOCUMENTO', PER_TELEFONO 'TELEFONO',PER_EMAIL 'EMAIL', SAL_NOMBRE 'SALA', SAL_TURNO 'TURNO', PER_FECHA_ALTA ' FECHA DE ALTA'," +
+                                "PER_FECHA_MOD 'FECHA DE MODIFICACION', PER_FECHA_BAJA 'FECHA DE BAJA'  " +
+                                "FROM T_PERSONAS, T_GRUPO_SALA, T_SALA " +
+                                "WHERE PER_ID = GRS_PER_ID  " +
+                                "AND GRS_SAL_ID = SAL_ID  " +
+                                "AND PER_TPE_ID = 1  " +
+                                "UNION  " +
+                                "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, PER_DOCUMENTO,PER_TELEFONO,PER_EMAIL,'', '',PER_FECHA_ALTA," +
+                                "PER_FECHA_MOD, PER_FECHA_BAJA  " +
+                                "FROM T_PERSONAS  " +
+                                "WHERE PER_TPE_ID = 1  " +
+                                "AND PER_ID not in (SELECT GRS_PER_ID FROM T_GRUPO_SALA )";
 
-        public string Insertar(entPersona persona)
+
+            com = new SqlCommand(CargarDocente, con);
+            cardoc = new DataTable();
+            dta = new SqlDataAdapter(com);
+            dta.Fill(cardoc);
+            con.Close();
+            return cardoc;
+        }
+
+        public string EliminarDocente(entPersona eli_Docente)//metodo que elimina docente, le coloca fecha de baja no elimina de la base 
         {
             string result;
 
@@ -66,39 +94,10 @@ namespace GestionJardin
             {
                 con = generarConexion();
                 con.Open();
-
-                string consulta = "INSERT INTO T_PERSONAS " +
-                                                "(PER_NOMBRE" +
-                                                ", PER_APELLIDO" +
-                                                ", PER_DOCUMENTO" +
-                                                ", PER_GENERO" +
-                                                ", PER_FECHA_NAC" +
-                                                ", PER_TELEFONO" +
-                                                ", PER_TELEFONO_2" +
-                                                ", PER_EMAIL" +
-                                                ", PER_TPE_ID" +
-                                                ", PER_LEGAJO" +
-                                                ", PER_ESTADO" +
-                                                ", PER_FECHA_ALTA" +
-                                                ", PER_FECHA_MOD" +
-                                                ", PER_FECHA_BAJA) " +
-                                        "VALUES " +
-                                                "('" + persona.PER_NOMBRE + "'" +
-                                                ", '" + persona.PER_APELLIDO + "'" +
-                                                ", '" + persona.PER_DOCUMENTO + "'" +
-                                                ", '" + persona.PER_GENERO + "'" +
-                                                ", '" + persona.PER_FECHA_NAC + "'" +
-                                                ", '" + persona.PER_TELEFONO + "'" +
-                                                ", '" + persona.PER_TELEFONO_2 + "'" +
-                                                ", '" + persona.PER_EMAIL + "'" +
-                                                ", '" + persona.PER_TPE_ID + "'" +
-                                                ", '" + persona.PER_LEGAJO + "'" +
-                                                ", '" + persona.PER_ESTADO + "'" +
-                                                ", GETDATE()" +
-                                                ", NULL" +
-                                                ", NULL);";
-
-
+                string consulta = "UPDATE T_PERSONAS " +
+                                             "  set per_fecha_baja = getdate()" +
+                                             "WHERE PER_ID = " + "'" + eli_Docente.PER_ID + "'" +
+                                               ";";
                 cmd = new SqlCommand(consulta, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -112,9 +111,98 @@ namespace GestionJardin
                 MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+            return result;
+
+        }
+
+        public AutoCompleteStringCollection traerdocente() //autocompleta el txtGu_Buscar
+        {
+            con = generarConexion();
+
+            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            con.Open();
+
+            string consulta = "SELECT CONCAT(PER_NOMBRE, ', ', PER_APELLIDO ) from t_personas where PER_TPE_ID =1 order by 1";
+
+
+            cmd = new SqlCommand(consulta, con);
+
+            dr = cmd.ExecuteReader();
+
+
+            while (dr.Read())
+            {
+                autoComplete.Add(dr.GetString(0));
+            }
+            dr.Close();
+
+            con.Close();
+            return autoComplete;
+
+
+        }
+        public string Insertar(entPersona persona)//inserta persona (docente usa el mismo insert)
+        {
+            string result;
+
+            DateTime nacimiento = persona.PER_FECHA_NAC;
+            string nacimiento2 = nacimiento.ToString("yyyy-MM-dd");//cadena para que corrija mi fecha en mi compu
+
+            try
+            {
+                con = generarConexion();
+                con.Open();
+
+                string consulta = "INSERT INTO T_PERSONAS " +
+                                                "(PER_NOMBRE, " +
+                                                "PER_APELLIDO, " +
+                                                "PER_DOCUMENTO, " +
+                                                "PER_GENERO, " +
+                                                " PER_FECHA_NAC," + 
+                                                "PER_TELEFONO, " +
+                                                "PER_TELEFONO_2, " +
+                                                "PER_EMAIL," +
+                                                "PER_TPE_ID," +
+                                                "PER_LEGAJO," +
+                                                "PER_ESTADO," +
+                                                "PER_FECHA_ALTA," +
+                                                "PER_FECHA_MOD," +
+                                                "PER_FECHA_BAJA) " +
+                                        "VALUES " +
+                                                "('" + persona.PER_NOMBRE + "'" +
+                                                ", '" + persona.PER_APELLIDO + "'" +
+                                                ", '" + persona.PER_DOCUMENTO + "'" +
+                                                ", '" + persona.PER_GENERO + "'" +
+                                                ",CAST('" + nacimiento2 + "' AS Date)" +//aca lo alplica al string
+                                                ", '" + persona.PER_TELEFONO + "'" +
+                                                ", '" + persona.PER_TELEFONO_2 + "'" +
+                                                ", '" + persona.PER_EMAIL + "'" +
+                                                ", " + persona.PER_TPE_ID +
+                                                ", '" + persona.PER_LEGAJO + "'" +
+                                                ", '" + persona.PER_ESTADO + "'" +
+                                                ", GETDATE()" +
+                                                ", NULL " +
+                                                ", NULL);";
+
+
+                cmd = new SqlCommand(consulta, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                result = "OK";
+
+            }
+            catch (Exception ex)
+            {
+                result = "ERROR";
+                // MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error-" + ex.ToString());
+
+            }
 
             return result;
         }
+
 
         public entPersona BuscaPersona(string nombre, string apellido, string documento)
         {
@@ -269,6 +357,33 @@ namespace GestionJardin
             }
             return Edad_D;
 
+        }
+        public DataTable llenarGrilla(string docente)// filtro grilla docente
+        {
+            con = generarConexion();
+            con.Open();
+            DataTable dt = new DataTable();
+            cmd = new SqlCommand();
+            cmd.Connection = this.con;
+            cmd.CommandText = "WITH t1 AS(SELECT PER_NOMBRE +' ' + PER_APELLIDO 'DOCENTE',PER_DOCUMENTO 'DOCUMENTO', PER_TELEFONO 'TELEFONO',PER_EMAIL 'EMAIL', SAL_NOMBRE 'SALA', SAL_TURNO 'TURNO', PER_FECHA_ALTA ' FECHA DE ALTA'," +
+                               "PER_FECHA_MOD 'FECHA DE MODIFICACION', PER_FECHA_BAJA 'FECHA DE BAJA'  " +
+                                "FROM T_PERSONAS, T_GRUPO_SALA, T_SALA " +
+                                "WHERE PER_ID = GRS_PER_ID  " +
+                                "AND GRS_SAL_ID = SAL_ID  " +
+                                "AND PER_TPE_ID = 1  " +
+                                "UNION  " +
+                                "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, PER_DOCUMENTO,PER_TELEFONO,PER_EMAIL,'', '',PER_FECHA_ALTA," +
+                                "PER_FECHA_MOD, PER_FECHA_BAJA  " +
+                                "FROM T_PERSONAS  " +
+                                "WHERE PER_TPE_ID = 1  " +
+                                "AND PER_ID not in (SELECT GRS_PER_ID FROM T_GRUPO_SALA ))" +
+                                "SELECT t1.*FROM t1 " +
+                                "WHERE UPPER(t1.DOCENTE) LIKE UPPER ('" + docente + "%')";
+
+
+            dr = cmd.ExecuteReader();
+            dt.Load(dr);
+            return dt;
         }
 
         public bool ValidarEmail(String pEmail)

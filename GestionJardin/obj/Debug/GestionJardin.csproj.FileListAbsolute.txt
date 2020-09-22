@@ -265,3 +265,46 @@ C:\Users\Soporte\Desktop\facu\patito\conexiongit\GestionJardin\bin\Debug\MetroFr
 C:\Users\Soporte\Desktop\facu\patito\conexiongit\GestionJardin\obj\Debug\GestionJardin.exe.manifest
 C:\Users\Soporte\Desktop\facu\patito\conexiongit\GestionJardin\obj\Debug\GestionJardin.application
 C:\Users\Soporte\Desktop\facu\patito\conexiongit\GestionJardin\obj\Debug\GestionJardin.csproj.CopyComplete
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\bin\Debug\GestionJardin.exe.config
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\bin\Debug\GestionJardin.exe.manifest
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\bin\Debug\GestionJardin.application
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\bin\Debug\GestionJardin.exe
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\bin\Debug\GestionJardin.pdb
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\bin\Debug\MetroFramework.Design.dll
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\bin\Debug\MetroFramework.dll
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\bin\Debug\MetroFramework.Fonts.dll
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.csprojAssemblyReference.cache
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmAlumnosGrupoFlia.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmAlumnosGrupoFliaPopUpAgregar.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmAlumnosGrupoFliaPopUpEditar.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmAlumnosGrupoFliaPopUpEliminar.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmAlumnosPopUpEditar.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmAlumnosPopUpEliminar.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmAlumnos.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmAlumnosGestionar.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmAlumnosPopUpAgregar.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmCobros.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmConceptos2.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmDocentes.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmDocentesPopUpAgregar.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmDocentesPopUpEditar.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmDocentesPopUpEliminar.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmGestionCuotas.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmLogin.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmPersonas2.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmPopUpFlia.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmPrincipal.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmSalas.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmUsuarios.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmUsuariosPopUpAgregar.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmUsuariosPopUpEditar.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.frmUsuariosPopUpEliminar.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.Properties.Resources.resources
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.csproj.GenerateResource.cache
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.csproj.CoreCompileInputs.cache
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.exe.manifest
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.application
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.csproj.CopyComplete
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.exe
+C:\Users\ASUS\Desktop\no mover repositorio git\GestionJardin\obj\Debug\GestionJardin.pdb
