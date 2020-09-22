@@ -292,5 +292,42 @@ namespace GestionJardin
         {
             this.Close();
         }
+
+        private void btnBloqueo_Click(object sender, EventArgs e)
+        {
+            if (this.btnBloqueo.IconChar == FontAwesome.Sharp.IconChar.Lock)
+            {
+                this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Unlock;
+                onOffCampos(true);
+            }
+            else
+            {
+                this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Lock;
+                onOffCampos(false);
+            }
+        }
+        private void onOffCampos(bool onOff)
+        {
+
+            txtNombre.Enabled = onOff;
+            txtApellidos.Enabled = onOff;
+            txtDocumento.Enabled = onOff;
+            dtNacimiento.Enabled = onOff;
+            cbGenero.Enabled = onOff;
+            txtCalle.Enabled = onOff;
+            txtNumero.Enabled = onOff;
+            txtCPostal.Enabled = onOff;
+            txtPiso.Enabled = onOff;
+            txtDepto.Enabled = onOff;
+            txtBarrio.Enabled = onOff;
+            txtTelefono.Enabled = onOff;
+            txtCelular.Enabled = onOff;
+            txtEmail.Enabled = onOff;
+            cbSala.Enabled = onOff;
+            cbTurno.Enabled = onOff;
+
+        }
+
+
     }
 }
