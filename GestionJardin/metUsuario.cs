@@ -253,6 +253,7 @@ namespace GestionJardin
             return nombre_usuario;
 
         }
+
         public string AutocompletarenDocente(MetroFramework.Controls.MetroTextBox pbarrabuscar)
         {
             con = generarConexion();
@@ -269,6 +270,7 @@ namespace GestionJardin
             con.Close();
             return consulta;
         }
+
         public DataTable llenarGrilla(string docente)
         {
 

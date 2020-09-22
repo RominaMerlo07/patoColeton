@@ -132,7 +132,7 @@ namespace GestionJardin
             txtDocumento.Text = "";
             txtDocumento.Style = MetroFramework.MetroColorStyle.Default;
             cbGenero.SelectedItem = null;
-            dtNacimiento.Value = DateTime.Now;
+            dtNacimiento.Value = DateTime.Today;
             txtCalle.Text = "";
             txtCalle.Style = MetroFramework.MetroColorStyle.Default;
             txtNumero.Text = "";

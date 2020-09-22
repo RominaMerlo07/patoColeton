@@ -102,7 +102,7 @@ namespace GestionJardin
         private void txtGU_Buscar_Enter(object sender, EventArgs e)
         {
             string docente = txtGU_Buscar.Text;
-            ObjetoUsu.llenarGrilla(docente);
+            dgv_UsuariosActivos.DataSource = ObjetoUsu.llenarGrilla(docente);
         }
 
         private void frmUsuarios_Load(object sender, EventArgs e)

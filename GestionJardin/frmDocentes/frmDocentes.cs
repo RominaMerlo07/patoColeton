@@ -19,18 +19,15 @@ namespace GestionJardin
 
         AutoCompleteStringCollection traerdocente = new AutoCompleteStringCollection();
         metPersonas metPersonas = new metPersonas();
-
-
-
-
+                        
         public frmDocentes()
         {
             InitializeComponent();           
-            CargarGrilla();
+            CargarGrilla();            
         }
         public void CargarGrilla()
         {
-            dtgrdocente.DataSource = objMetPersonas.Mostrardocente();
+            dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
         }
 
 
@@ -43,87 +40,80 @@ namespace GestionJardin
 
         private void btnGD_Editar_Click(object sender, EventArgs e)
         {
-            frmDocentesPopUpEditar frmDocentesPopUpEditar = new frmDocentesPopUpEditar();
-            frmDocentesPopUpEditar.Text = "GESTION DOCENTES / MODIFICAR/VISUALIZAR DATOS DEL DOCENTE";
-
-
-            if (dtgrdocente.SelectedRows.Count > 0)
+                        
+            if (dgv_Docentes.SelectedRows.Count > 0)
             {
+                btnGD_Editar.IconColor = Color.Cyan;
+                btnGD_Editar.ForeColor = Color.Cyan;
+                frmDocentesPopUpEditar frmDocentesPopUpEditar = new frmDocentesPopUpEditar();
+                frmDocentesPopUpEditar.Text = "GESTION DOCENTES / MODIFICAR/VISUALIZAR DATOS DEL DOCENTE";
                 frmDocentesPopUpEditar.ShowDialog();
-
             }
             else
             {
-                MessageBox.Show("Por favor seleccione un registro/fila para poder modificar el Docente");
-
+                btnGD_Editar.IconColor = Color.Gray;
+                btnGD_Editar.ForeColor = Color.Gray;
+                MessageBox.Show("Por favor seleccione un registro/fila para poder visualizar/modificar los datos del Docente");
             }
-
-
-            frmDocentesPopUpEditar.ShowDialog();
+                                  
 
         }
 
         private void btnGD_Eliminar_Click(object sender, EventArgs e)
         {
-            frmDocentesPopUpEliminar frmDocentesPopUpEliminar = new frmDocentesPopUpEliminar();
-            frmDocentesPopUpEliminar.Text = "GESTION DOCENTES / ELIMINAR DOCENTE";
-            frmDocentesPopUpEliminar.ShowDialog();
-        }
 
-        private void txtGU_Buscar_Click(object sender, EventArgs e)
-        {
-            AutoCompleteStringCollection traerdocente = new AutoCompleteStringCollection();
-            metPersonas metPersonas = new metPersonas();
-            traerdocente = metPersonas.traerdocente();
-
-            txtGU_Buscar.AutoCompleteMode = AutoCompleteMode.Suggest;
-            txtGU_Buscar.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtGU_Buscar.AutoCompleteCustomSource = traerdocente;
-
-
-            string nombreB = "";
-            string apellidoB = "";
-            string documentoB = "";
-            int contador = 0;
-
-            string busqueda = txtGU_Buscar.Text;
-
-            char[] separadores = { ',', '(', ')' };
-            string[] palabras = busqueda.Split(separadores);
-
-            foreach (var palabra in palabras)
+            if (dgv_Docentes.SelectedRows.Count > 0)
             {
-                contador += 1;
-                if (contador == 1)
-                {
-                    nombreB = palabra.Trim();
-                }
-                else if (contador == 2)
-                {
-                    apellidoB = palabra.Trim();
-                }
-                else if (contador == 3)
-                {
-                    documentoB = palabra.Trim();
-                }
 
-                entPersona personadocente = new entPersona();
-                personadocente = objMetPersonas.BuscaPersona(nombreB, apellidoB, documentoB);
-
-
+                btnGD_Eliminar.IconColor = Color.FromArgb(255, 128, 0);
+                btnGD_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
+                frmDocentesPopUpEliminar frmDocentesPopUpEliminar = new frmDocentesPopUpEliminar();
+                frmDocentesPopUpEliminar.Text = "GESTION DOCENTES / ELIMINAR DOCENTE";
+                frmDocentesPopUpEliminar.ShowDialog();
+            }
+            else
+            {
+                btnGD_Eliminar.IconColor = Color.Gray;
+                btnGD_Eliminar.ForeColor = Color.Gray;
+                MessageBox.Show("Por favor seleccione un registro/fila para poder dar de baja al Docente");
+            }
+                
+        }
+                   
+        private void dgv_Docentes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv_Docentes.SelectedRows.Count > 0)
+            {
+                btnGD_Editar.IconColor = Color.Cyan;
+                btnGD_Editar.ForeColor = Color.Cyan;
+                btnGD_Eliminar.IconColor = Color.FromArgb(255, 128, 0);
+                btnGD_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
+            }
+            else
+            {
+                btnGD_Editar.IconColor = Color.Gray;
+                btnGD_Editar.ForeColor = Color.Gray;
+                btnGD_Eliminar.IconColor = Color.Gray;
+                btnGD_Eliminar.ForeColor = Color.Gray;
             }
         }
 
-        private void txtGU_Buscar_Enter(object sender, EventArgs e)
+        private void txtGD_Buscar_Enter(object sender, EventArgs e)
         {
-            string docente = txtGU_Buscar.Text;
-            objMetPersonas.llenarGrilla(docente);
+            string docente = txtGD_Buscar.Text;
+            dgv_Docentes.DataSource = objMetPersonas.llenarGrilla(docente);
         }
 
-        private void txtGU_Buscar_ButtonClick(object sender, EventArgs e)
+        private void txtGD_Buscar_ButtonClick(object sender, EventArgs e)
         {
-            string docente = txtGU_Buscar.Text;
-            dtgrdocente.DataSource = objMetPersonas.llenarGrilla(docente);
+            string docente = txtGD_Buscar.Text;
+            dgv_Docentes.DataSource = objMetPersonas.llenarGrilla(docente);
+
+        }
+
+        private void txtGD_Buscar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

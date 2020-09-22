@@ -64,18 +64,31 @@ namespace GestionJardin
             con.Open();
             SqlCommand com = new SqlCommand();
             com.Connection = con;
-            string CargarDocente = "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE,PER_DOCUMENTO 'DOCUMENTO', PER_TELEFONO 'TELEFONO',PER_EMAIL 'EMAIL', SAL_NOMBRE 'SALA', SAL_TURNO 'TURNO', PER_FECHA_ALTA ' FECHA DE ALTA'," +
-                                "PER_FECHA_MOD 'FECHA DE MODIFICACION', PER_FECHA_BAJA 'FECHA DE BAJA'  " +
-                                "FROM T_PERSONAS, T_GRUPO_SALA, T_SALA " +
-                                "WHERE PER_ID = GRS_PER_ID  " +
-                                "AND GRS_SAL_ID = SAL_ID  " +
-                                "AND PER_TPE_ID = 1  " +
-                                "UNION  " +
-                                "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, PER_DOCUMENTO,PER_TELEFONO,PER_EMAIL,'', '',PER_FECHA_ALTA," +
-                                "PER_FECHA_MOD, PER_FECHA_BAJA  " +
-                                "FROM T_PERSONAS  " +
-                                "WHERE PER_TPE_ID = 1  " +
-                                "AND PER_ID not in (SELECT GRS_PER_ID FROM T_GRUPO_SALA )";
+            string CargarDocente = "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, " +
+                                           "PER_DOCUMENTO 'DOCUMENTO', " +
+                                           "PER_TELEFONO 'TELEFONO', " +
+                                           "PER_EMAIL 'EMAIL', " +
+                                           "CASE SAL_TURNO WHEN 'MANANA' THEN 'MAÑANA' ELSE 'TARDE' END 'TURNO', " +
+                                           "SAL_NOMBRE 'SALA', " +
+                                           "PER_FECHA_ALTA FECHA_DE_ALTA, " +
+                                           "PER_FECHA_MOD FECHA_DE_MODIFICACION, " +
+                                           "PER_FECHA_BAJA FECHA_DE_BAJA " +
+                                     "FROM T_PERSONAS, T_GRUPO_SALA, T_SALA " +
+                                    "WHERE PER_ID = GRS_PER_ID " +
+                                      "AND GRS_SAL_ID = SAL_ID " +
+                                      "AND PER_TPE_ID = 1 " +
+                                   "UNION " +
+                                   "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, " +
+                                           "PER_DOCUMENTO, " +
+                                           "PER_TELEFONO, PER_EMAIL, " +
+                                           "'', " +
+                                           "'', " +
+                                           "PER_FECHA_ALTA, " +
+                                           "PER_FECHA_MOD, " +
+                                           "PER_FECHA_BAJA " +
+                                     "FROM T_PERSONAS " +
+                                    "WHERE PER_TPE_ID = 1 " +
+                                      "AND PER_ID not in (SELECT GRS_PER_ID FROM T_GRUPO_SALA );";
 
 
             com = new SqlCommand(CargarDocente, con);
@@ -146,7 +159,7 @@ namespace GestionJardin
             string result;
 
             DateTime nacimiento = persona.PER_FECHA_NAC;
-            string nacimiento2 = nacimiento.ToString("yyyy-MM-dd");//cadena para que corrija mi fecha en mi compu
+            string nacimiento2 = nacimiento.ToString("yyyy-MM-dd");
 
             try
             {
@@ -173,7 +186,7 @@ namespace GestionJardin
                                                 ", '" + persona.PER_APELLIDO + "'" +
                                                 ", '" + persona.PER_DOCUMENTO + "'" +
                                                 ", '" + persona.PER_GENERO + "'" +
-                                                ",CAST('" + nacimiento2 + "' AS Date)" +//aca lo alplica al string
+                                                ",CAST('" + nacimiento2 + "' AS Date)" +
                                                 ", '" + persona.PER_TELEFONO + "'" +
                                                 ", '" + persona.PER_TELEFONO_2 + "'" +
                                                 ", '" + persona.PER_EMAIL + "'" +
@@ -195,7 +208,6 @@ namespace GestionJardin
             catch (Exception ex)
             {
                 result = "ERROR";
-                // MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error); 
                 MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error-" + ex.ToString());
 
             }
@@ -206,7 +218,7 @@ namespace GestionJardin
 
         public entPersona BuscaPersona(string nombre, string apellido, string documento)
         {
-            //string result = "";
+            
             entPersona ent = new entPersona();
 
             try
@@ -365,20 +377,45 @@ namespace GestionJardin
             DataTable dt = new DataTable();
             cmd = new SqlCommand();
             cmd.Connection = this.con;
-            cmd.CommandText = "WITH t1 AS(SELECT PER_NOMBRE +' ' + PER_APELLIDO 'DOCENTE',PER_DOCUMENTO 'DOCUMENTO', PER_TELEFONO 'TELEFONO',PER_EMAIL 'EMAIL', SAL_NOMBRE 'SALA', SAL_TURNO 'TURNO', PER_FECHA_ALTA ' FECHA DE ALTA'," +
-                               "PER_FECHA_MOD 'FECHA DE MODIFICACION', PER_FECHA_BAJA 'FECHA DE BAJA'  " +
-                                "FROM T_PERSONAS, T_GRUPO_SALA, T_SALA " +
-                                "WHERE PER_ID = GRS_PER_ID  " +
-                                "AND GRS_SAL_ID = SAL_ID  " +
-                                "AND PER_TPE_ID = 1  " +
-                                "UNION  " +
-                                "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, PER_DOCUMENTO,PER_TELEFONO,PER_EMAIL,'', '',PER_FECHA_ALTA," +
-                                "PER_FECHA_MOD, PER_FECHA_BAJA  " +
-                                "FROM T_PERSONAS  " +
-                                "WHERE PER_TPE_ID = 1  " +
-                                "AND PER_ID not in (SELECT GRS_PER_ID FROM T_GRUPO_SALA ))" +
-                                "SELECT t1.*FROM t1 " +
-                                "WHERE UPPER(t1.DOCENTE) LIKE UPPER ('" + docente + "%')";
+            cmd.CommandText = "WITH t1 AS(SELECT PER_NOMBRE +' ' + PER_APELLIDO 'DOCENTE', " +
+                                                "PER_DOCUMENTO 'DOCUMENTO', " +
+                                                "PER_TELEFONO 'TELEFONO', " +
+                                                "PER_EMAIL 'EMAIL', " +
+                                                "SAL_NOMBRE 'SALA', " +
+                                                "SAL_TURNO 'TURNO', " +
+                                                "PER_FECHA_ALTA 'FECHA_DE_ALTA', " +
+                                                "PER_FECHA_MOD 'FECHA_DE_MODIFICACION', " +
+                                                "PER_FECHA_BAJA 'FECHA_DE_BAJA' " +
+                                          "FROM T_PERSONAS, T_GRUPO_SALA, T_SALA " +
+                                         "WHERE PER_ID = GRS_PER_ID " +
+                                                "AND GRS_SAL_ID = SAL_ID " +
+                                                "AND PER_TPE_ID = 1 " +
+                                   "UNION " +
+                                          "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, " +
+                                                  "PER_DOCUMENTO, " +
+                                                  "PER_TELEFONO, " +
+                                                  "PER_EMAIL, " +
+                                                  "'', " +
+                                                  "'', " +
+                                                  "PER_FECHA_ALTA, " +
+                                                  "PER_FECHA_MOD, " +
+                                                  "PER_FECHA_BAJA " +
+                                            "FROM T_PERSONAS " +
+                                           "WHERE PER_TPE_ID = 1 " +
+                                           "AND PER_ID not in (SELECT GRS_PER_ID FROM T_GRUPO_SALA )) " +
+                                   "SELECT t1.DOCENTE, " +
+                                           "t1.DOCUMENTO, " +
+                                           "t1.TELEFONO, " +
+                                           "t1.EMAIL, " +
+                                           "CASE t1.TURNO WHEN 'MANANA' THEN 'MAÑANA' " +
+                                                         "ELSE 'TARDE' " +
+                                                         "END TURNO, " +
+                                           "t1.SALA, " +
+                                           "t1.FECHA_DE_ALTA, " +
+                                           "t1.FECHA_DE_BAJA, " +
+                                           "t1.FECHA_DE_MODIFICACION " +
+                                   "FROM t1 " +
+                                  "WHERE UPPER(t1.DOCENTE) LIKE UPPER('" + docente + "%');";
 
 
             dr = cmd.ExecuteReader();
