@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnGD_Filtrar = new FontAwesome.Sharp.IconPictureBox();
             this.btnGD_Excel = new FontAwesome.Sharp.IconPictureBox();
             this.btnGD_Pdf = new FontAwesome.Sharp.IconPictureBox();
@@ -39,7 +38,7 @@
             this.btnGS_Editar = new FontAwesome.Sharp.IconButton();
             this.btnGS_Agregar = new FontAwesome.Sharp.IconButton();
             this.txtGS_Buscar = new MetroFramework.Controls.MetroTextBox();
-            this.dgv_Salas = new MetroFramework.Controls.MetroGrid();
+            this.dgv_Salas = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.btnGD_Filtrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGD_Excel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGD_Pdf)).BeginInit();
@@ -114,9 +113,9 @@
             this.btnGS_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGS_Eliminar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnGS_Eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGS_Eliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnGS_Eliminar.ForeColor = System.Drawing.Color.Gray;
             this.btnGS_Eliminar.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
-            this.btnGS_Eliminar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnGS_Eliminar.IconColor = System.Drawing.Color.Gray;
             this.btnGS_Eliminar.IconSize = 100;
             this.btnGS_Eliminar.Location = new System.Drawing.Point(1343, 525);
             this.btnGS_Eliminar.Name = "btnGS_Eliminar";
@@ -126,6 +125,7 @@
             this.btnGS_Eliminar.Text = "ELIMINAR";
             this.btnGS_Eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGS_Eliminar.UseVisualStyleBackColor = true;
+            this.btnGS_Eliminar.Click += new System.EventHandler(this.btnGS_Eliminar_Click);
             // 
             // btnGS_Editar
             // 
@@ -133,9 +133,9 @@
             this.btnGS_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGS_Editar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnGS_Editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGS_Editar.ForeColor = System.Drawing.Color.Cyan;
+            this.btnGS_Editar.ForeColor = System.Drawing.Color.Gray;
             this.btnGS_Editar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
-            this.btnGS_Editar.IconColor = System.Drawing.Color.Cyan;
+            this.btnGS_Editar.IconColor = System.Drawing.Color.Gray;
             this.btnGS_Editar.IconSize = 100;
             this.btnGS_Editar.Location = new System.Drawing.Point(1343, 367);
             this.btnGS_Editar.Name = "btnGS_Editar";
@@ -145,6 +145,7 @@
             this.btnGS_Editar.Text = "EDITAR";
             this.btnGS_Editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGS_Editar.UseVisualStyleBackColor = true;
+            this.btnGS_Editar.Click += new System.EventHandler(this.btnGS_Editar_Click);
             // 
             // btnGS_Agregar
             // 
@@ -205,51 +206,34 @@
             // 
             this.dgv_Salas.AllowUserToAddRows = false;
             this.dgv_Salas.AllowUserToDeleteRows = false;
-            this.dgv_Salas.AllowUserToResizeRows = false;
             this.dgv_Salas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgv_Salas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_Salas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgv_Salas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgv_Salas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.dgv_Salas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(201)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_Salas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Salas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(201)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_Salas.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_Salas.EnableHeadersVisualStyles = false;
-            this.dgv_Salas.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dgv_Salas.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.dgv_Salas.Location = new System.Drawing.Point(58, 185);
+            this.dgv_Salas.Location = new System.Drawing.Point(58, 187);
+            this.dgv_Salas.MultiSelect = false;
             this.dgv_Salas.Name = "dgv_Salas";
             this.dgv_Salas.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(170)))), ((int)(((byte)(173)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(201)))), ((int)(((byte)(206)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Salas.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_Salas.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dgv_Salas.RowTemplate.Height = 24;
-            this.dgv_Salas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv_Salas.Size = new System.Drawing.Size(1141, 501);
-            this.dgv_Salas.Style = MetroFramework.MetroColorStyle.Teal;
+            this.dgv_Salas.Size = new System.Drawing.Size(1175, 487);
             this.dgv_Salas.TabIndex = 51;
-            this.dgv_Salas.UseStyleColors = true;
+            this.dgv_Salas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Salas_CellClick);
             // 
             // frmSalas
             // 
@@ -289,6 +273,6 @@
         private FontAwesome.Sharp.IconButton btnGS_Editar;
         private FontAwesome.Sharp.IconButton btnGS_Agregar;
         private MetroFramework.Controls.MetroTextBox txtGS_Buscar;
-        private MetroFramework.Controls.MetroGrid dgv_Salas;
+        private System.Windows.Forms.DataGridView dgv_Salas;
     }
 }
