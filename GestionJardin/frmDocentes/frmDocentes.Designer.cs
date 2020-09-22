@@ -95,7 +95,7 @@
             this.txtGD_Buscar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtGD_Buscar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGD_Buscar.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.txtGD_Buscar_ButtonClick);
-            this.txtGD_Buscar.Click += new System.EventHandler(this.txtGD_Buscar_Click);
+            
             this.txtGD_Buscar.Enter += new System.EventHandler(this.txtGD_Buscar_Enter);
             // 
             // btnGD_Filtrar

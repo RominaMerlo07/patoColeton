@@ -111,9 +111,6 @@ namespace GestionJardin
 
         }
 
-        private void txtGD_Buscar_Click(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

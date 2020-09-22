@@ -21,6 +21,23 @@ namespace GestionJardin
             ObjetoUsu.AutocompletarenDocente(txtGU_Buscar);
             CargarGrilla();
         }
+
+        private void frmUsuarios_Load(object sender, EventArgs e)
+        {
+          dgv_UsuariosActivos.ClearSelection();
+
+            //if (txtGU_Buscar.Text.Length > 0)
+            //{                 
+            //    dgv_UsuariosActivos.DataSource = ObjetoUsu.llenarGrilla(txtGU_Buscar.Text);
+            //}
+            //else 
+            //{
+            //    txtGU_Buscar.Clear();
+            //    dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
+            //}
+            
+        }
+
         private void Settooltip()
         {
             ToolTip Tip = new ToolTip();
@@ -105,12 +122,7 @@ namespace GestionJardin
             dgv_UsuariosActivos.DataSource = ObjetoUsu.llenarGrilla(docente);
         }
 
-        private void frmUsuarios_Load(object sender, EventArgs e)
-        {
-            dgv_UsuariosActivos.ClearSelection();
-           
-        }
-               
+
 
         private void dgv_UsuariosActivos_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -127,6 +139,19 @@ namespace GestionJardin
                 btnGU_Editar.ForeColor = Color.Gray;
                 btnGU_Eliminar.IconColor = Color.Gray;
                 btnGU_Eliminar.ForeColor = Color.Gray;                
+            }
+        }
+
+        private void txtGU_Buscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtGU_Buscar.Text.Length > 0)
+            {
+                dgv_UsuariosActivos.DataSource = ObjetoUsu.llenarGrilla(txtGU_Buscar.Text);
+            }
+            else
+            {
+                txtGU_Buscar.Clear();
+                dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
             }
         }
     }

@@ -58,7 +58,7 @@
             this.btnGU_Filtrar.Location = new System.Drawing.Point(873, 30);
             this.btnGU_Filtrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGU_Filtrar.Name = "btnGU_Filtrar";
-            this.btnGU_Filtrar.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnGU_Filtrar.Padding = new System.Windows.Forms.Padding(5);
             this.btnGU_Filtrar.Size = new System.Drawing.Size(91, 81);
             this.btnGU_Filtrar.TabIndex = 32;
             this.btnGU_Filtrar.TabStop = false;
@@ -75,7 +75,7 @@
             this.btnGU_Excel.Location = new System.Drawing.Point(993, 30);
             this.btnGU_Excel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGU_Excel.Name = "btnGU_Excel";
-            this.btnGU_Excel.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnGU_Excel.Padding = new System.Windows.Forms.Padding(5);
             this.btnGU_Excel.Size = new System.Drawing.Size(91, 81);
             this.btnGU_Excel.TabIndex = 31;
             this.btnGU_Excel.TabStop = false;
@@ -92,7 +92,7 @@
             this.btnGU_Pdf.Location = new System.Drawing.Point(1101, 30);
             this.btnGU_Pdf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGU_Pdf.Name = "btnGU_Pdf";
-            this.btnGU_Pdf.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnGU_Pdf.Padding = new System.Windows.Forms.Padding(5);
             this.btnGU_Pdf.Size = new System.Drawing.Size(91, 81);
             this.btnGU_Pdf.TabIndex = 30;
             this.btnGU_Pdf.TabStop = false;
@@ -215,6 +215,7 @@
             this.txtGU_Buscar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtGU_Buscar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGU_Buscar.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.txtGU_Buscar_ButtonClick);
+            this.txtGU_Buscar.TextChanged += new System.EventHandler(this.txtGU_Buscar_TextChanged);
             this.txtGU_Buscar.Enter += new System.EventHandler(this.txtGU_Buscar_Enter);
             // 
             // dgv_UsuariosActivos
