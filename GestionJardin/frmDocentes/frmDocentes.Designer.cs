@@ -29,29 +29,20 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtGU_Buscar = new MetroFramework.Controls.MetroTextBox();
-            this.metroGrid1 = new MetroFramework.Controls.MetroGrid();
-            this.alumno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.documento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FechaNac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono_2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGD_Filtrar = new FontAwesome.Sharp.IconPictureBox();
             this.btnGD_Excel = new FontAwesome.Sharp.IconPictureBox();
             this.btnGD_Pdf = new FontAwesome.Sharp.IconPictureBox();
             this.btnGD_Eliminar = new FontAwesome.Sharp.IconButton();
             this.btnGD_Editar = new FontAwesome.Sharp.IconButton();
             this.btnGD_Agregar = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).BeginInit();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.btnGD_Filtrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGD_Excel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGD_Pdf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -103,101 +94,6 @@
             this.txtGU_Buscar.WaterMark = "BUSCAR DOCENTE";
             this.txtGU_Buscar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtGU_Buscar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // metroGrid1
-            // 
-            this.metroGrid1.AllowUserToDeleteRows = false;
-            this.metroGrid1.AllowUserToResizeRows = false;
-            this.metroGrid1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.metroGrid1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.metroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.metroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 7.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.metroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.metroGrid1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.alumno,
-            this.documento,
-            this.FechaNac,
-            this.Edad,
-            this.telefono,
-            this.direccion,
-            this.telefono_2});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.metroGrid1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.metroGrid1.EnableHeadersVisualStyles = false;
-            this.metroGrid1.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.metroGrid1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.metroGrid1.Location = new System.Drawing.Point(57, 176);
-            this.metroGrid1.Name = "metroGrid1";
-            this.metroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 14F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.metroGrid1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.metroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.metroGrid1.RowTemplate.Height = 24;
-            this.metroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.metroGrid1.Size = new System.Drawing.Size(1142, 497);
-            this.metroGrid1.Style = MetroFramework.MetroColorStyle.Silver;
-            this.metroGrid1.TabIndex = 33;
-            this.metroGrid1.UseCustomBackColor = true;
-            // 
-            // alumno
-            // 
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            this.alumno.DefaultCellStyle = dataGridViewCellStyle2;
-            this.alumno.HeaderText = "DOCENTE";
-            this.alumno.Name = "alumno";
-            // 
-            // documento
-            // 
-            this.documento.HeaderText = "USUARIO";
-            this.documento.Name = "documento";
-            // 
-            // FechaNac
-            // 
-            this.FechaNac.HeaderText = "CONTRASEÑA";
-            this.FechaNac.Name = "FechaNac";
-            // 
-            // Edad
-            // 
-            this.Edad.HeaderText = "ROL";
-            this.Edad.Name = "Edad";
-            // 
-            // telefono
-            // 
-            this.telefono.HeaderText = "FECHA ALTA";
-            this.telefono.Name = "telefono";
-            // 
-            // direccion
-            // 
-            this.direccion.HeaderText = "FECHA MODIFICACIÓN";
-            this.direccion.Name = "direccion";
-            // 
-            // telefono_2
-            // 
-            this.telefono_2.HeaderText = "FECHA BAJA";
-            this.telefono_2.Name = "telefono_2";
             // 
             // btnGD_Filtrar
             // 
@@ -257,7 +153,7 @@
             this.btnGD_Eliminar.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
             this.btnGD_Eliminar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnGD_Eliminar.IconSize = 100;
-            this.btnGD_Eliminar.Location = new System.Drawing.Point(1349, 463);
+            this.btnGD_Eliminar.Location = new System.Drawing.Point(1349, 500);
             this.btnGD_Eliminar.Name = "btnGD_Eliminar";
             this.btnGD_Eliminar.Rotation = 0D;
             this.btnGD_Eliminar.Size = new System.Drawing.Size(293, 134);
@@ -277,7 +173,7 @@
             this.btnGD_Editar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.btnGD_Editar.IconColor = System.Drawing.Color.Cyan;
             this.btnGD_Editar.IconSize = 100;
-            this.btnGD_Editar.Location = new System.Drawing.Point(1349, 305);
+            this.btnGD_Editar.Location = new System.Drawing.Point(1349, 342);
             this.btnGD_Editar.Name = "btnGD_Editar";
             this.btnGD_Editar.Rotation = 0D;
             this.btnGD_Editar.Size = new System.Drawing.Size(293, 134);
@@ -297,7 +193,7 @@
             this.btnGD_Agregar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             this.btnGD_Agregar.IconColor = System.Drawing.Color.Lime;
             this.btnGD_Agregar.IconSize = 100;
-            this.btnGD_Agregar.Location = new System.Drawing.Point(1349, 149);
+            this.btnGD_Agregar.Location = new System.Drawing.Point(1349, 186);
             this.btnGD_Agregar.Name = "btnGD_Agregar";
             this.btnGD_Agregar.Rotation = 0D;
             this.btnGD_Agregar.Size = new System.Drawing.Size(293, 134);
@@ -307,12 +203,44 @@
             this.btnGD_Agregar.UseVisualStyleBackColor = true;
             this.btnGD_Agregar.Click += new System.EventHandler(this.btnGD_Agregar_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.Location = new System.Drawing.Point(58, 168);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1141, 495);
+            this.dataGridView1.TabIndex = 42;
+            // 
             // frmDocentes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(1697, 774);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnGD_Filtrar);
             this.Controls.Add(this.btnGD_Excel);
             this.Controls.Add(this.btnGD_Pdf);
@@ -321,13 +249,12 @@
             this.Controls.Add(this.btnGD_Editar);
             this.Controls.Add(this.btnGD_Agregar);
             this.Controls.Add(this.txtGU_Buscar);
-            this.Controls.Add(this.metroGrid1);
             this.Name = "frmDocentes";
             this.Text = "GESTIÓN DOCENTES";
-            ((System.ComponentModel.ISupportInitialize)(this.metroGrid1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGD_Filtrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGD_Excel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGD_Pdf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -343,13 +270,6 @@
         private FontAwesome.Sharp.IconButton btnGD_Editar;
         private FontAwesome.Sharp.IconButton btnGD_Agregar;
         private MetroFramework.Controls.MetroTextBox txtGU_Buscar;
-        private MetroFramework.Controls.MetroGrid metroGrid1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alumno;
-        private System.Windows.Forms.DataGridViewTextBoxColumn documento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FechaNac;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn telefono_2;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }
