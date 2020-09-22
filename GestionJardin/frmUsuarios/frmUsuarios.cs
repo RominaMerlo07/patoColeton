@@ -76,7 +76,7 @@ namespace GestionJardin
                 btnGU_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
                 frmUsuariosPopUpEliminar.lblUSUARIOELIMINAR.Text = "'" + dgv_UsuariosActivos.CurrentRow.Cells[1].Value.ToString() + "'";
                 frmUsuariosPopUpEliminar.ShowDialog();
-                /*Agregar efecto parpadeante al icono de alerta (Romi)*/
+             
             }
             else
             {
@@ -84,7 +84,7 @@ namespace GestionJardin
                 btnGU_Eliminar.IconColor = Color.Gray;
                 btnGU_Eliminar.ForeColor = Color.Gray;
                 MessageBox.Show("Por favor seleccione un registro/fila para poder ELIMINARLO");
-                /*Agregar notificacion con icono de alerta amarillo (Romi)*/
+                
             }
         }
         public void CargarGrilla()
@@ -108,8 +108,7 @@ namespace GestionJardin
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
             dgv_UsuariosActivos.ClearSelection();
-            //btnGU_Editar.Enabled = false;
-            //btnGU_Eliminar.Enabled = false;
+           
         }
                
 
