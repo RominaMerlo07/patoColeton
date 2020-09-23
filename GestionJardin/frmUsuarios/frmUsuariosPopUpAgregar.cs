@@ -36,6 +36,7 @@ namespace GestionJardin
             MessageBox.Show(" Registro de Usuario Exitoso ");
             U.dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
             this.Close();
+            
         }
 
         private void btn_CancelarUsuNuevo_Click(object sender, EventArgs e)

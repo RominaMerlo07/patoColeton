@@ -258,6 +258,8 @@ namespace GestionJardin
         {
             con = generarConexion();
             con.Open();
+            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+           
             string consulta = "SELECT DISTINCT [PER_NOMBRE] +' ' +  [PER_APELLIDO ] 'DOCENTE' FROM T_PERSONAS p, T_USUARIOS u " +
                               " WHERE  p.PER_ID = u.USU_PER_ID and p.PER_TPE_ID = 1 ";
             comando = new SqlCommand(consulta, con);

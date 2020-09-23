@@ -128,29 +128,28 @@ namespace GestionJardin
 
         }
 
-        public AutoCompleteStringCollection traerdocente() //autocompleta el txtGu_Buscar
+        public string  traerdocente(MetroFramework.Controls.MetroTextBox pbarrabuscar) //autocompleta el txtGu_Buscar
         {
             con = generarConexion();
-
-            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
             con.Open();
 
-            string consulta = "SELECT CONCAT(PER_NOMBRE, ', ', PER_APELLIDO ) from t_personas where PER_TPE_ID =1 order by 1";
+            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            
+
+            string consulta = "SELECT PER_NOMBRE+' '+ PER_APELLIDO 'DOCENTE' from t_personas where PER_TPE_ID =1 order by 1";
 
 
             cmd = new SqlCommand(consulta, con);
-
             dr = cmd.ExecuteReader();
-
-
             while (dr.Read())
             {
-                autoComplete.Add(dr.GetString(0));
+                pbarrabuscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());
             }
             dr.Close();
 
             con.Close();
-            return autoComplete;
+
+            return consulta;
 
 
         }

@@ -22,13 +22,11 @@ namespace GestionJardin
                         
         public frmDocentes()
         {
-            InitializeComponent();           
-            CargarGrilla();            
-        }
-        public void CargarGrilla()
-        {
+            InitializeComponent();
             dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
+            objMetPersonas.traerdocente(txtGD_Buscar);
         }
+        
 
 
         private void btnGD_Agregar_Click(object sender, EventArgs e)
@@ -111,6 +109,18 @@ namespace GestionJardin
 
         }
 
-       
+        private void txtGD_Buscar_TextChanged(object sender, EventArgs e)
+        {
+            txtGD_Buscar.CharacterCasing = CharacterCasing.Upper;
+            if (txtGD_Buscar.Text.Length > 0)
+            {
+                dgv_Docentes.DataSource = objMetPersonas.llenarGrilla(txtGD_Buscar.Text);
+            }
+            else
+            {
+                txtGD_Buscar.Clear();
+                dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
+            }
+        }
     }
 }

@@ -162,6 +162,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmUsuariosPopUpEliminar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ELIMINAR USUARIO";
             this.Load += new System.EventHandler(this.frmUsuariosPopUpEliminar_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmUsuariosPopUpEliminar_MouseDown);

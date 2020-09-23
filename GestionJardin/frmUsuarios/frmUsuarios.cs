@@ -33,7 +33,7 @@ namespace GestionJardin
         private void txtGU_Buscar_ButtonClick(object sender, EventArgs e)
         {
             string docente = txtGU_Buscar.Text;
-            dgv_UsuariosActivos.DataSource = ObjetoUsu.llenarGrilla(docente);
+            dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
         }
 
         private void txtGU_Buscar_Enter(object sender, EventArgs e)
@@ -46,6 +46,7 @@ namespace GestionJardin
 
         private void txtGU_Buscar_TextChanged(object sender, EventArgs e)
         {
+            
             if (txtGU_Buscar.Text.Length > 0)
             {
                 dgv_UsuariosActivos.DataSource = ObjetoUsu.llenarGrilla(txtGU_Buscar.Text);
@@ -165,6 +166,10 @@ namespace GestionJardin
                 
             }
         }
-               
+
+        private void txtGU_Buscar_Click(object sender, EventArgs e)
+        {
+            txtGU_Buscar.CharacterCasing = CharacterCasing.Upper;//esto me pone las letras en mayusculas siempre 
+        }
     }
 }
