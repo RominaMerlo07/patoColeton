@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.lbldnidoc = new System.Windows.Forms.Label();
+            this.txt_id_Docente = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,12 +161,23 @@
             this.lbldnidoc.TabIndex = 21;
             this.lbldnidoc.Text = "label2";
             // 
+            // txt_id_Docente
+            // 
+            this.txt_id_Docente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.txt_id_Docente.Location = new System.Drawing.Point(11, 326);
+            this.txt_id_Docente.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_id_Docente.Name = "txt_id_Docente";
+            this.txt_id_Docente.Size = new System.Drawing.Size(76, 20);
+            this.txt_id_Docente.TabIndex = 57;
+            this.txt_id_Docente.Visible = false;
+            // 
             // frmDocentesPopUpEliminar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(630, 409);
+            this.Controls.Add(this.txt_id_Docente);
             this.Controls.Add(this.lbldnidoc);
             this.Controls.Add(this.btn_noeliminar);
             this.Controls.Add(this.btn_sieliminar);
@@ -196,5 +208,6 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         public System.Windows.Forms.Label lblnombredocente;
         public System.Windows.Forms.Label lbldnidoc;
+        public System.Windows.Forms.TextBox txt_id_Docente;
     }
 }

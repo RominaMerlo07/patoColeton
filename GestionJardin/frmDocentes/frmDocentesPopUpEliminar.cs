@@ -18,6 +18,7 @@ namespace GestionJardin
         metPersonas objetopersona = new metPersonas();
         entPersona Docentes = new entPersona();
         int documento;
+        int idPersonaBuscar;
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -42,7 +43,7 @@ namespace GestionJardin
         private void btn_sieliminar_Click(object sender, EventArgs e)
         {
             frmDocentes Fdocentes= Owner as frmDocentes;
-            var docente = new entPersona();
+            
             
             
             if (lbldnidoc.Text== " ")
@@ -50,12 +51,16 @@ namespace GestionJardin
                 }
             else
             {
-                string documentoE = lbldnidoc.Text.Trim();
-               
-                entPersona doc = new entPersona();
-                doc.PER_DOCUMENTO = Convert.ToInt32(documentoE);
+                
+                idPersonaBuscar = Convert.ToInt32(txt_id_Docente.Text);
+                entPersona personaEditar = new entPersona();
+                personaEditar.PER_ID = idPersonaBuscar;
+
+                //entPersona doc = new entPersona();
+                //doc.PER_DOCUMENTO = Convert.ToInt32(documentoE);
+                
                 var usumetodo = new metUsuario();
-                string resultadoE = objetopersona.EliminarDocente(doc);
+                string resultadoE = objetopersona.EliminarDocente(personaEditar);
                 MessageBox.Show("SE DIO DE BAJA CORRECTAMENTE" + lblnombredocente.Text);
                 Fdocentes.dgv_Docentes.DataSource = objetopersona.Mostrardocente();
                 this.Hide();

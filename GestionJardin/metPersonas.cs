@@ -110,8 +110,7 @@ namespace GestionJardin
                 string consulta = "set dateformat dmy UPDATE T_PERSONAS set per_fecha_baja = convert(varchar, GETDATE(), 103)," +
                     "PER_FECHA_MOD = convert(varchar, GETDATE(), 103)," +
                     "PER_ESTADO = 'N' " +
-                    "WHERE PER_DOCUMENTO = '" + eli_Docente.PER_DOCUMENTO + "'" +
-                                               ";";
+                    "WHERE PER_DOCUMENTO = " + eli_Docente.PER_ID +  ";";
                 cmd = new SqlCommand(consulta, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
