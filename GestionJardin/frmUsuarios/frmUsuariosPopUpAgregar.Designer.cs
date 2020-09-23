@@ -70,7 +70,7 @@
             this.txt_nombre_usuario.ShortcutsEnabled = true;
             this.txt_nombre_usuario.Size = new System.Drawing.Size(178, 39);
             this.txt_nombre_usuario.Style = MetroFramework.MetroColorStyle.Green;
-            this.txt_nombre_usuario.TabIndex = 1;
+            this.txt_nombre_usuario.TabIndex = 2;
             this.txt_nombre_usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_nombre_usuario.UseCustomBackColor = true;
             this.txt_nombre_usuario.UseCustomForeColor = true;
@@ -155,7 +155,7 @@
             this.txt_contra_usu.ShortcutsEnabled = true;
             this.txt_contra_usu.Size = new System.Drawing.Size(325, 39);
             this.txt_contra_usu.Style = MetroFramework.MetroColorStyle.Green;
-            this.txt_contra_usu.TabIndex = 44;
+            this.txt_contra_usu.TabIndex = 3;
             this.txt_contra_usu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txt_contra_usu.UseCustomBackColor = true;
             this.txt_contra_usu.UseCustomForeColor = true;
@@ -204,7 +204,7 @@
             this.txtSeleccionarDocente.ShowClearButton = true;
             this.txtSeleccionarDocente.Size = new System.Drawing.Size(401, 43);
             this.txtSeleccionarDocente.Style = MetroFramework.MetroColorStyle.Lime;
-            this.txtSeleccionarDocente.TabIndex = 74;
+            this.txtSeleccionarDocente.TabIndex = 1;
             this.txtSeleccionarDocente.UseSelectable = true;
             this.txtSeleccionarDocente.UseStyleColors = true;
             this.txtSeleccionarDocente.WaterMark = "INGRESE DOCENTE";

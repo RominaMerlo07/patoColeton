@@ -239,6 +239,7 @@ namespace GestionJardin
                 string telefono = txtTelefono.Text.Trim();
                 string celular = txtCelular.Text.Trim();
                 string email = txtEmail.Text.Trim();
+                string estado = "S";
 
                 entPersona personaInsert = new entPersona();
 
@@ -251,6 +252,7 @@ namespace GestionJardin
                 personaInsert.PER_TELEFONO_2 = celular;
                 personaInsert.PER_EMAIL = email;
                 personaInsert.PER_TPE_ID = "1";
+                personaInsert.PER_ESTADO = estado;
 
                 metPersonas metPersona = new metPersonas();
                 string resultado = metPersona.Insertar(personaInsert);
@@ -281,10 +283,29 @@ namespace GestionJardin
                     resultado = metDomicilio.Insertar(domicilioInsertar);
 
 
+                    string id_sala;
+                    if (cbSala.SelectedItem == null)
+                    {
+                        id_sala = "";
+                    }
+                    else
+                    {
+                        id_sala = cbSala.SelectedValue.ToString();
+                    }
+
+                    entGrupoSala grupoSalaInsertar = new entGrupoSala();
+
+                    grupoSalaInsertar.GRS_PER_ID = Convert.ToInt32(id_persona);
+                    grupoSalaInsertar.GRS_SAL_ID = Convert.ToInt32(id_sala);
+
+                    metSalas metSalas = new metSalas();
+                    resultado = metSalas.insertarGrupoSala(grupoSalaInsertar);
+
 
                     if (resultado == "OK")
                     {
                         MessageBox.Show("Se ha ingresado el registro con éxito.", "Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);                        
+
                         this.Close();
                     }
                 }

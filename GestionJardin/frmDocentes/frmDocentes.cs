@@ -93,6 +93,8 @@ namespace GestionJardin
             frmDocentesPopUpAgregar frmDocentesPopUpAgregar = new frmDocentesPopUpAgregar();
             frmDocentesPopUpAgregar.Text = "GESTION DOCENTES / INGRESAR NUEVO DOCENTE";
             frmDocentesPopUpAgregar.ShowDialog();
+
+            dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
         }
 
         /**************************************************/

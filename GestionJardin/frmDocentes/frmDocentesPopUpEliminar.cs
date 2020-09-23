@@ -55,8 +55,6 @@ namespace GestionJardin
 
                 MessageBox.Show("SE DIO DE BAJA CORRECTAMENTE AL DOCENTE " + lblnombredocente.Text);                
                 this.Close();
-
-
         }
 
         private void btn_noeliminar_Click(object sender, EventArgs e)
