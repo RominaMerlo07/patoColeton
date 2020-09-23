@@ -107,9 +107,10 @@ namespace GestionJardin
             {
                 con = generarConexion();
                 con.Open();
-                string consulta = "UPDATE T_PERSONAS " +
-                                             "  set per_fecha_baja = getdate()" +
-                                             "WHERE PER_ID = " + "'" + eli_Docente.PER_ID + "'" +
+                string consulta = "set dateformat dmy UPDATE T_PERSONAS set per_fecha_baja = convert(varchar, GETDATE(), 103)," +
+                    "PER_FECHA_MOD = convert(varchar, GETDATE(), 103)," +
+                    "PER_ESTADO = 'N' " +
+                    "WHERE PER_DOCUMENTO = '" + eli_Docente.PER_DOCUMENTO + "'" +
                                                ";";
                 cmd = new SqlCommand(consulta, con);
                 cmd.ExecuteNonQuery();
@@ -286,6 +287,78 @@ namespace GestionJardin
         }
 
 
+        public entPersona BuscaDocente(string documento)
+        {
+
+            entPersona ent = new entPersona();
+
+            try
+            {
+                con = generarConexion();
+                con.Open();
+
+
+                string consulta = "SELECT * FROM T_PERSONAS P WHERE P.PER_DOCUMENTO = '" + documento + "';";
+
+
+                cmd = new SqlCommand(consulta, con);
+                dta = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                dta.Fill(dt);
+
+                con.Close();
+
+
+                if (dt != null)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        //result = Convert.ToString(dr["PER_ID"]);
+
+
+                        if (dr["PER_ID"] != DBNull.Value)
+                            ent.PER_ID = Convert.ToInt32(dr["PER_ID"]);
+                        if (dr["PER_NOMBRE"] != DBNull.Value)
+                            ent.PER_NOMBRE = Convert.ToString(dr["PER_NOMBRE"]);
+                        if (dr["PER_APELLIDO"] != DBNull.Value)
+                            ent.PER_APELLIDO = Convert.ToString(dr["PER_APELLIDO"]);
+                        if (dr["PER_DOCUMENTO"] != DBNull.Value)
+                            ent.PER_DOCUMENTO = Convert.ToInt32(dr["PER_DOCUMENTO"]);
+                        if (dr["PER_GENERO"] != DBNull.Value)
+                            ent.PER_GENERO = Convert.ToString(dr["PER_GENERO"]);
+                        if (dr["PER_FECHA_NAC"] != DBNull.Value)
+                            ent.PER_FECHA_NAC = Convert.ToDateTime(dr["PER_FECHA_NAC"]);
+                        if (dr["PER_TELEFONO"] != DBNull.Value)
+                            ent.PER_TELEFONO = Convert.ToString(dr["PER_TELEFONO"]);
+                        if (dr["PER_TELEFONO_2"] != DBNull.Value)
+                            ent.PER_TELEFONO_2 = Convert.ToString(dr["PER_TELEFONO_2"]);
+                        if (dr["PER_EMAIL"] != DBNull.Value)
+                            ent.PER_EMAIL = Convert.ToString(dr["PER_EMAIL"]);
+                        if (dr["PER_TPE_ID"] != DBNull.Value)
+                            ent.PER_TPE_ID = Convert.ToString(dr["PER_TPE_ID"]);
+                        if (dr["PER_LEGAJO"] != DBNull.Value)
+                            ent.PER_LEGAJO = Convert.ToString(dr["PER_LEGAJO"]);
+
+                    }
+                }
+
+
+
+            }
+            catch(Exception ex)
+            {
+                //result = "ERROR";
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error :" + ex.ToString());
+
+
+            }
+
+            return ent;
+
+        }
+
+
+
         public string editarPersona(entPersona personaEditar)
         {
             string result;
@@ -324,6 +397,7 @@ namespace GestionJardin
 
             return result;
         }
+                              
 
 
         public string ValidarDni(string pDNI)

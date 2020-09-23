@@ -33,7 +33,7 @@ namespace GestionJardin
         private void txtGU_Buscar_ButtonClick(object sender, EventArgs e)
         {
             string docente = txtGU_Buscar.Text;
-            dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
+            dgv_UsuariosActivos.DataSource = ObjetoUsu.llenarGrilla(docente);
         }
 
         private void txtGU_Buscar_Enter(object sender, EventArgs e)

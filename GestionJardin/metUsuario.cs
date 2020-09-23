@@ -163,7 +163,7 @@ namespace GestionJardin
                 SqlCommand com = new SqlCommand();
                 com.Connection = con;
                 com.CommandText = "set dateformat dmy UPDATE T_USUARIOS set USU_FECHA_MOD = convert (varchar, GETDATE(),103), " +
-                    " USU_FECHA_BAJA = convert (varchar, GETDATE(),103), " +
+                     " USU_FECHA_BAJA = convert (varchar, GETDATE(),103), " +
                     " USU_ESTADO=  'INACTIVO' " +
                     "WHERE USU_USUARIO = " + Usuario.USU_USUARIO;
                 com.ExecuteNonQuery();

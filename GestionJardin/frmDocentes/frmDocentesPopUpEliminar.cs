@@ -11,8 +11,14 @@ using System.Runtime.InteropServices;
 
 namespace GestionJardin
 {
+    
     public partial class frmDocentesPopUpEliminar : Form
     {
+
+        metPersonas objetopersona = new metPersonas();
+        entPersona Docentes = new entPersona();
+        int documento;
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -37,7 +43,29 @@ namespace GestionJardin
         {
             frmDocentes Fdocentes= Owner as frmDocentes;
             var docente = new entPersona();
+            
+            
+            if (lbldnidoc.Text== " ")
+            {
+                }
+            else
+            {
+                string documentoE = lbldnidoc.Text.Trim();
+               
+                entPersona doc = new entPersona();
+                doc.PER_DOCUMENTO = Convert.ToInt32(documentoE);
+                var usumetodo = new metUsuario();
+                string resultadoE = objetopersona.EliminarDocente(doc);
+                MessageBox.Show("SE DIO DE BAJA CORRECTAMENTE" + lblnombredocente.Text);
+                Fdocentes.dgv_Docentes.DataSource = objetopersona.Mostrardocente();
+                this.Hide();
+            }
 
+        }
+
+        private void btn_noeliminar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
