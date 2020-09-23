@@ -253,7 +253,6 @@
             this.dgv_UsuariosActivos.Size = new System.Drawing.Size(855, 397);
             this.dgv_UsuariosActivos.TabIndex = 34;
             this.dgv_UsuariosActivos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_UsuariosActivos_CellClick_1);
-            this.dgv_UsuariosActivos.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgv_UsuariosActivos_CellFormatting);
             // 
             // frmUsuarios
             // 

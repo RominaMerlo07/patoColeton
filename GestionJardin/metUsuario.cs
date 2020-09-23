@@ -118,12 +118,12 @@ namespace GestionJardin
             SqlCommand com = new SqlCommand();
             com.Connection = con;
             string CargarUsu = "SELECT D.PER_NOMBRE +' ' + D.PER_APELLIDO DOCENTE," +
-                                "USU.USU_USUARIO USUARIO," +
-                                "USU.USU_CLAVE CONTRASEÑA," +
+                               " USU.USU_USUARIO USUARIO," +
+                               "USU.USU_CLAVE CONTRASEÑA," +
                                 "USU.USU_FECHA_ALTA 'FECHA DE ALTA' ," +
-                                "USU.USU_FECHA_MOD 'FECHA DE MODIFICACION'," +
-                                "USU.USU_ESTADO ESTADO FROM T_PERSONAS AS D, T_USUARIOS AS USU " +
-                                "WHERE USU.USU_PER_ID = D.PER_ID";
+                                "USU.USU_FECHA_MOD 'FECHA DE MODIFICACION'" +
+                                "FROM T_PERSONAS AS D, T_USUARIOS AS USU " +
+                                "WHERE USU.USU_PER_ID = D.PER_ID AND USU.USU_ESTADO = 'ACTIVO'";
             comando = new SqlCommand(CargarUsu, con);
             tablaUsu = new DataTable();
             dta = new SqlDataAdapter(comando);
@@ -259,9 +259,12 @@ namespace GestionJardin
             con = generarConexion();
             con.Open();
             AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-           
-            string consulta = "SELECT DISTINCT [PER_NOMBRE] +' ' +  [PER_APELLIDO ] 'DOCENTE' FROM T_PERSONAS p, T_USUARIOS u " +
-                              " WHERE  p.PER_ID = u.USU_PER_ID and p.PER_TPE_ID = 1 ";
+
+            string consulta = "SELECT CONCAT  (PER_NOMBRE, ' ', PER_APELLIDO,  ' ' , '(' , PER_DOCUMENTO, ')' ) DOCENTE , PER_ID FROM T_PERSONAS " +
+                                    "WHERE PER_TPE_ID = 1 AND PER_ID NOT IN (SELECT DISTINCT PER_ID FROM T_PERSONAS , T_USUARIOS  where PER_ID = USU_PER_ID)";
+
+            //string consulta = "SELECT DISTINCT [PER_NOMBRE] +' ' +  [PER_APELLIDO ] 'DOCENTE' FROM T_PERSONAS p, T_USUARIOS u " +
+            //                  " WHERE  p.PER_ID = u.USU_PER_ID and p.PER_TPE_ID = 1 ";
             comando = new SqlCommand(consulta, con);
             dr = comando.ExecuteReader();
             while (dr.Read())

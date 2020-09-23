@@ -172,20 +172,6 @@ namespace GestionJardin
             txtGU_Buscar.CharacterCasing = CharacterCasing.Upper;//esto me pone las letras en mayusculas siempre 
         }
 
-        private void dgv_UsuariosActivos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
-        {
-            if(this.dgv_UsuariosActivos.Columns[e.ColumnIndex].Name== "ESTADO")
-            {
-                if (e.Value.ToString()== "INACTIVO")
-                {
-                    e.CellStyle.BackColor = Color.Red;
-                }
-                if (e.Value.ToString()== "ACTIVO")
-                {
-                    e.CellStyle.BackColor = Color.Green;
-                }
-
-            }
-        }
+       
     }
 }
