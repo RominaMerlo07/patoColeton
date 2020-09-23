@@ -66,6 +66,7 @@ namespace GestionJardin
             com.Connection = con;
             string CargarDocente = "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, " +
                                            "PER_DOCUMENTO 'DOCUMENTO', " +
+                                           "PER_TELEFONO_2 'CELULAR', " +
                                            "PER_TELEFONO 'TELEFONO', " +
                                            "PER_EMAIL 'EMAIL', " +
                                            "CASE SAL_TURNO WHEN 'MANANA' THEN 'MAÑANA' ELSE 'TARDE' END 'TURNO', " +
@@ -77,18 +78,22 @@ namespace GestionJardin
                                     "WHERE PER_ID = GRS_PER_ID " +
                                       "AND GRS_SAL_ID = SAL_ID " +
                                       "AND PER_TPE_ID = 1 " +
-                                   "UNION " +
+                                      "AND PER_ESTADO = 'S' " +
+                                      "UNION " +
                                    "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, " +
                                            "PER_DOCUMENTO, " +
-                                           "PER_TELEFONO, PER_EMAIL, " +
+                                           "PER_TELEFONO_2 'CELULAR', " +
+                                           "PER_TELEFONO, " +
+                                           "PER_EMAIL, " +
                                            "'', " +
                                            "'', " +
                                            "PER_FECHA_ALTA, " +
                                            "PER_FECHA_MOD, " +
-                                           "PER_FECHA_BAJA " +
+                                           "PER_FECHA_BAJA " +                                           
                                      "FROM T_PERSONAS " +
                                     "WHERE PER_TPE_ID = 1 " +
-                                      "AND PER_ID not in (SELECT GRS_PER_ID FROM T_GRUPO_SALA );";
+                                      "AND PER_ID not in (SELECT GRS_PER_ID FROM T_GRUPO_SALA) " +
+                                      "AND PER_ESTADO = 'S' ";
 
 
             com = new SqlCommand(CargarDocente, con);
@@ -108,9 +113,9 @@ namespace GestionJardin
                 con = generarConexion();
                 con.Open();
                 string consulta = "set dateformat dmy UPDATE T_PERSONAS set per_fecha_baja = convert(varchar, GETDATE(), 103)," +
-                    "PER_FECHA_MOD = convert(varchar, GETDATE(), 103)," +
-                    "PER_ESTADO = 'N' " +
-                    "WHERE PER_DOCUMENTO = " + eli_Docente.PER_ID +  ";";
+                                                            "PER_FECHA_MOD = convert(varchar, GETDATE(), 103)," +
+                                                            "PER_ESTADO = 'N' " +
+                                                            "WHERE PER_ID = " + eli_Docente.PER_ID +  ";";
                 cmd = new SqlCommand(consulta, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -127,6 +132,34 @@ namespace GestionJardin
             return result;
 
         }
+
+        public string EliminarDocenteGrupoSala(entPersona eli_Docente)//metodo que elimina docente, le coloca fecha de baja no elimina de la base 
+        {
+            string result;
+
+            try
+            {
+                con = generarConexion();
+                con.Open();
+                string consulta = "set dateformat dmy DELETE FROM T_GRUPO_SALA WHERE GRS_PER_ID = " + eli_Docente.PER_ID + ";";
+                cmd = new SqlCommand(consulta, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                result = "OK";
+
+            }
+            catch
+            {
+                result = "ERROR";
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            return result;
+
+        }
+
+
 
         public string  traerdocente(MetroFramework.Controls.MetroTextBox pbarrabuscar) //autocompleta el txtGu_Buscar
         {
@@ -451,6 +484,7 @@ namespace GestionJardin
             cmd.Connection = this.con;
             cmd.CommandText = "WITH t1 AS(SELECT PER_NOMBRE +' ' + PER_APELLIDO 'DOCENTE', " +
                                                 "PER_DOCUMENTO 'DOCUMENTO', " +
+                                                "PER_TELEFONO_2 'CELULAR', " +
                                                 "PER_TELEFONO 'TELEFONO', " +
                                                 "PER_EMAIL 'EMAIL', " +
                                                 "SAL_NOMBRE 'SALA', " +
@@ -462,9 +496,11 @@ namespace GestionJardin
                                          "WHERE PER_ID = GRS_PER_ID " +
                                                 "AND GRS_SAL_ID = SAL_ID " +
                                                 "AND PER_TPE_ID = 1 " +
+                                                "AND PER_ESTADO = 'S' " +
                                    "UNION " +
                                           "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, " +
                                                   "PER_DOCUMENTO, " +
+                                                  "PER_TELEFONO_2 'CELULAR', " +
                                                   "PER_TELEFONO, " +
                                                   "PER_EMAIL, " +
                                                   "'', " +
@@ -474,20 +510,23 @@ namespace GestionJardin
                                                   "PER_FECHA_BAJA " +
                                             "FROM T_PERSONAS " +
                                            "WHERE PER_TPE_ID = 1 " +
-                                           "AND PER_ID not in (SELECT GRS_PER_ID FROM T_GRUPO_SALA )) " +
-                                   "SELECT t1.DOCENTE, " +
+                                           "AND PER_ID not in (SELECT GRS_PER_ID FROM T_GRUPO_SALA ) " +
+                                           "AND PER_ESTADO = 'S') " +
+                                           "SELECT t1.DOCENTE, " +
                                            "t1.DOCUMENTO, " +
+                                           "T1.CELULAR, " +
                                            "t1.TELEFONO, " +
                                            "t1.EMAIL, " +
                                            "CASE t1.TURNO WHEN 'MANANA' THEN 'MAÑANA' " +
-                                                         "ELSE 'TARDE' " +
-                                                         "END TURNO, " +
+                                                         "WHEN 'TARDE' THEN 'TARDE' " +
+                                                         "ELSE '' " +
+                                                    "END TURNO, " +
                                            "t1.SALA, " +
                                            "t1.FECHA_DE_ALTA, " +
                                            "t1.FECHA_DE_BAJA, " +
                                            "t1.FECHA_DE_MODIFICACION " +
                                    "FROM t1 " +
-                                  "WHERE UPPER(t1.DOCENTE) LIKE UPPER('" + docente + "%');";
+                                  "WHERE UPPER(t1.DOCENTE) LIKE UPPER('" + docente + "%'); ";
 
 
             dr = cmd.ExecuteReader();
@@ -518,8 +557,62 @@ namespace GestionJardin
                 return false;
             }
 
+        }
+
+        public string Llenar_Combo_Salas(MetroFramework.Controls.MetroComboBox pcomboboxturno, MetroFramework.Controls.MetroComboBox pcomboboxsalas)
+
+        {
+            con = generarConexion();
+            con.Open();
+
+            if (pcomboboxturno.SelectedIndex == 0)
+            {
+                string consulta = "SELECT SAL_NOMBRE, SAL_ID FROM T_SALA WHERE SAL_TURNO = 'MANANA';";
+
+                cmd = new SqlCommand(consulta, con);
+                dta = new SqlDataAdapter(cmd);
+                dt = new DataTable("SAL_NOMBRE");
+                dta.Fill(dt);
+
+
+                pcomboboxsalas.DataSource = dt;
+                pcomboboxsalas.DisplayMember = "SAL_NOMBRE";
+                pcomboboxsalas.ValueMember = "SAL_ID";
+               // pcomboboxsalas.SelectedItem = 0;
+
+
+            }
+            else
+            {
+                if (pcomboboxturno.SelectedIndex == 1)
+                {
+
+                    string consulta = "SELECT SAL_NOMBRE, SAL_ID FROM T_SALA WHERE SAL_TURNO = 'TARDE';";
+
+                    cmd = new SqlCommand(consulta, con);
+                    dta = new SqlDataAdapter(cmd);
+                    dt = new DataTable("SAL_NOMBRE");
+                    dta.Fill(dt);
+                    pcomboboxsalas.DataSource = dt;
+                    pcomboboxsalas.DisplayMember = "SAL_NOMBRE";
+                    pcomboboxsalas.ValueMember = "SAL_ID";
+               //     pcomboboxsalas.SelectedItem = 0;
+
+
+                }
+                else
+                {
+                    pcomboboxsalas.Enabled = false;
+                }
+            }
+
+
+
+            con.Close();
+
+            return "OK";
 
         }
-        
+
     }
 }

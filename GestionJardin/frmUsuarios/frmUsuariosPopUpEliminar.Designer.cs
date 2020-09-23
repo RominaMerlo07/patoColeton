@@ -43,10 +43,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(148, 66);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(180, 75);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(322, 24);
+            this.label1.Size = new System.Drawing.Size(409, 29);
             this.label1.TabIndex = 1;
             this.label1.Text = "¿Esta seguro que desea ELIMINAR a";
             // 
@@ -55,10 +54,9 @@
             this.lblUSUARIOELIMINAR.AutoSize = true;
             this.lblUSUARIOELIMINAR.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUSUARIOELIMINAR.ForeColor = System.Drawing.Color.Yellow;
-            this.lblUSUARIOELIMINAR.Location = new System.Drawing.Point(265, 110);
-            this.lblUSUARIOELIMINAR.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblUSUARIOELIMINAR.Location = new System.Drawing.Point(353, 135);
             this.lblUSUARIOELIMINAR.Name = "lblUSUARIOELIMINAR";
-            this.lblUSUARIOELIMINAR.Size = new System.Drawing.Size(131, 26);
+            this.lblUSUARIOELIMINAR.Size = new System.Drawing.Size(165, 32);
             this.lblUSUARIOELIMINAR.TabIndex = 2;
             this.lblUSUARIOELIMINAR.Text = "USUARIO ?";
             // 
@@ -67,10 +65,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(211, 159);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(269, 206);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(231, 18);
+            this.label3.Size = new System.Drawing.Size(299, 24);
             this.label3.TabIndex = 3;
             this.label3.Text = "Tenga en cuenta que al confirmar,";
             // 
@@ -79,10 +76,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(231, 196);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(296, 251);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(206, 18);
+            this.label4.Size = new System.Drawing.Size(259, 24);
             this.label4.TabIndex = 4;
             this.label4.Text = "NO podrá reactivar el mismo. ";
             // 
@@ -97,11 +93,11 @@
             this.btn_CancelarUsuNuevo.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.btn_CancelarUsuNuevo.IconColor = System.Drawing.Color.DarkGray;
             this.btn_CancelarUsuNuevo.IconSize = 36;
-            this.btn_CancelarUsuNuevo.Location = new System.Drawing.Point(376, 272);
-            this.btn_CancelarUsuNuevo.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_CancelarUsuNuevo.Location = new System.Drawing.Point(475, 347);
+            this.btn_CancelarUsuNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_CancelarUsuNuevo.Name = "btn_CancelarUsuNuevo";
             this.btn_CancelarUsuNuevo.Rotation = 0D;
-            this.btn_CancelarUsuNuevo.Size = new System.Drawing.Size(94, 42);
+            this.btn_CancelarUsuNuevo.Size = new System.Drawing.Size(125, 52);
             this.btn_CancelarUsuNuevo.TabIndex = 16;
             this.btn_CancelarUsuNuevo.Text = "NO";
             this.btn_CancelarUsuNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -119,11 +115,11 @@
             this.btn_GuardarUsuNuevo.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
             this.btn_GuardarUsuNuevo.IconColor = System.Drawing.Color.Red;
             this.btn_GuardarUsuNuevo.IconSize = 36;
-            this.btn_GuardarUsuNuevo.Location = new System.Drawing.Point(225, 272);
-            this.btn_GuardarUsuNuevo.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_GuardarUsuNuevo.Location = new System.Drawing.Point(273, 347);
+            this.btn_GuardarUsuNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_GuardarUsuNuevo.Name = "btn_GuardarUsuNuevo";
             this.btn_GuardarUsuNuevo.Rotation = 0D;
-            this.btn_GuardarUsuNuevo.Size = new System.Drawing.Size(94, 42);
+            this.btn_GuardarUsuNuevo.Size = new System.Drawing.Size(125, 52);
             this.btn_GuardarUsuNuevo.TabIndex = 15;
             this.btn_GuardarUsuNuevo.Text = "SI";
             this.btn_GuardarUsuNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -137,21 +133,21 @@
             this.iconPictureBox1.ForeColor = System.Drawing.Color.Red;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ExclamationCircle;
             this.iconPictureBox1.IconColor = System.Drawing.Color.Red;
-            this.iconPictureBox1.IconSize = 138;
-            this.iconPictureBox1.Location = new System.Drawing.Point(9, 110);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox1.IconSize = 170;
+            this.iconPictureBox1.Location = new System.Drawing.Point(12, 135);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.iconPictureBox1.Size = new System.Drawing.Size(142, 138);
+            this.iconPictureBox1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.iconPictureBox1.Size = new System.Drawing.Size(189, 170);
             this.iconPictureBox1.TabIndex = 14;
             this.iconPictureBox1.TabStop = false;
             // 
             // frmUsuariosPopUpEliminar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(578, 376);
+            this.ClientSize = new System.Drawing.Size(771, 463);
             this.Controls.Add(this.btn_CancelarUsuNuevo);
             this.Controls.Add(this.btn_GuardarUsuNuevo);
             this.Controls.Add(this.iconPictureBox1);
@@ -159,8 +155,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblUSUARIOELIMINAR);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmUsuariosPopUpEliminar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ELIMINAR USUARIO";

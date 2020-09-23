@@ -105,7 +105,7 @@ namespace GestionJardin
 
                 if (resultadoE == "OK")
                 {
-                    MessageBox.Show("Se han editado los datos con éxito.", "Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("SE EDITARON CORRECTAMENTE LOS DATOS DEL DOCENTE '" + nombreE + " " + apellidosE + "'");
                     this.Close();
 
                     
@@ -114,7 +114,7 @@ namespace GestionJardin
             }
             else
             {
-                MessageBox.Show("No olvide ingresar " + validacionE + ".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("NO OLVIDE INGRESAR " + validacionE + ".", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -197,15 +197,7 @@ namespace GestionJardin
 
 
         /* Validaciones Particulares */
-
-        private void Solonumeros(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
-
+              
         private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
             Solonumeros(sender, e);
@@ -229,12 +221,7 @@ namespace GestionJardin
         {
             Solonumeros(sender, e);
         }
-        private void soloLetras(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
-
-        }
-
+        
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
         {
             soloLetras(sender, e);
@@ -272,6 +259,22 @@ namespace GestionJardin
                 txtEmail.Focus();
 
             }
+        }
+
+        /* Metodos tipeo */
+
+        private void Solonumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void soloLetras(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+
         }
 
         /*************************************/

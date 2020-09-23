@@ -121,7 +121,8 @@ namespace GestionJardin
                                " USU.USU_USUARIO USUARIO," +
                                "USU.USU_CLAVE CONTRASEÑA," +
                                 "USU.USU_FECHA_ALTA 'FECHA DE ALTA' ," +
-                                "USU.USU_FECHA_MOD 'FECHA DE MODIFICACION'" +
+                                "USU.USU_FECHA_MOD 'FECHA DE MODIFICACION', " +
+                                "USU.USU_ESTADO 'ESTADO'" +
                                 "FROM T_PERSONAS AS D, T_USUARIOS AS USU " +
                                 "WHERE USU.USU_PER_ID = D.PER_ID AND USU.USU_ESTADO = 'ACTIVO'";
             comando = new SqlCommand(CargarUsu, con);

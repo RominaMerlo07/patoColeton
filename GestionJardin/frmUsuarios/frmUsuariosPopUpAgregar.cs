@@ -24,8 +24,7 @@ namespace GestionJardin
         public frmUsuariosPopUpAgregar()
         {
             InitializeComponent();
-            lblNvoUsu.Visible = false;
-
+            txtSeleccionarDocente.Focus();
         }
 
         private void btn_GuardarUsuNuevo_Click(object sender, EventArgs e)
@@ -53,7 +52,6 @@ namespace GestionJardin
         private void txtSeleccionarDocente_ButtonClick(object sender, EventArgs e)
         {
             ObjetoUsu.CrearUsuario(txtSeleccionarDocente, txt_nombre_usuario);
-          
         }
 
         private void txt_contra_usu_KeyPress(object sender, KeyPressEventArgs e)
@@ -80,6 +78,11 @@ namespace GestionJardin
                 MessageBox.Show("Solo se permiten letras y numeros!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
+        }
+
+        private void frmUsuariosPopUpAgregar_Load(object sender, EventArgs e)
+        {
+            txtSeleccionarDocente.Focus();
         }
     }
 }

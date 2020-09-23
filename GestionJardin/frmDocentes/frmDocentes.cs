@@ -17,20 +17,76 @@ namespace GestionJardin
         entPersona objPersona = new entPersona();
         metDomicilio objmetDomicilio = new metDomicilio();
         metSalas objMetSalas = new metSalas();
-
         AutoCompleteStringCollection traerdocente = new AutoCompleteStringCollection();
         metPersonas metPersonas = new metPersonas();
-
-        int idPersonaBuscar;
+              
 
         public frmDocentes()
         {
-            InitializeComponent();
+            InitializeComponent();            
+        }
+        
+        private void frmDocentes_Load(object sender, EventArgs e)
+        {
             dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
             objMetPersonas.traerdocente(txtGD_Buscar);
         }
+
+        /*  FUNCIONALIDAS BUSCAR, filtra la grilla */
+
+        private void txtGD_Buscar_TextChanged_1(object sender, EventArgs e)
+        {
+            if (txtGD_Buscar.Text.Length > 0)
+            {
+                dgv_Docentes.DataSource = objMetPersonas.llenarGrilla(txtGD_Buscar.Text);
+            }
+            else
+            {
+                txtGD_Buscar.Clear();
+                dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
+            }
+        }
+
+        private void txtGD_Buscar_Click(object sender, EventArgs e)
+        {            
+            txtGD_Buscar.CharacterCasing = CharacterCasing.Upper;//esto me pone las letras en mayusculas siempre
+        }
+
+        private void txtGD_Buscar_Enter(object sender, EventArgs e)
+        {
+            string docente = txtGD_Buscar.Text;
+            dgv_Docentes.DataSource = objMetPersonas.llenarGrilla(docente);
+        }
+
+        private void txtGD_Buscar_ButtonClick(object sender, EventArgs e)
+        {
+            string docente = txtGD_Buscar.Text;
+            dgv_Docentes.DataSource = objMetPersonas.llenarGrilla(docente);
+
+        }
+        
+        private void dgv_Docentes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv_Docentes.SelectedRows.Count > 0)
+            {
+                btnGD_Editar.IconColor = Color.Cyan;
+                btnGD_Editar.ForeColor = Color.Cyan;
+                btnGD_Eliminar.IconColor = Color.FromArgb(255, 128, 0);
+                btnGD_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
+            }
+            else
+            {
+                btnGD_Editar.IconColor = Color.Gray;
+                btnGD_Editar.ForeColor = Color.Gray;
+                btnGD_Eliminar.IconColor = Color.Gray;
+                btnGD_Eliminar.ForeColor = Color.Gray;
+            }
+        }        
         
 
+        /***************************************************/
+        /***************** AGREGAR DOCENTE *****************/
+        /***************************************************/
 
         private void btnGD_Agregar_Click(object sender, EventArgs e)
         {
@@ -38,6 +94,10 @@ namespace GestionJardin
             frmDocentesPopUpAgregar.Text = "GESTION DOCENTES / INGRESAR NUEVO DOCENTE";
             frmDocentesPopUpAgregar.ShowDialog();
         }
+
+        /**************************************************/
+        /***************** EDITAR DOCENTE *****************/
+        /**************************************************/
 
         private void btnGD_Editar_Click(object sender, EventArgs e)
         {
@@ -120,26 +180,39 @@ namespace GestionJardin
                 btnGD_Editar.IconColor = Color.Gray;
                 btnGD_Editar.ForeColor = Color.Gray;
                 MessageBox.Show("Por favor seleccione un registro/fila para poder visualizar/modificar los datos del Docente");
-            }
-                                  
+            }                                 
 
         }
+
+        /**************************************************/
+        /***************** ELIMINAR DOCENTE *****************/
+        /**************************************************/
 
         private void btnGD_Eliminar_Click(object sender, EventArgs e)
         {
             frmDocentesPopUpEliminar frmDocentesPopUpEliminar = new frmDocentesPopUpEliminar();
-            AddOwnedForm(frmDocentesPopUpEliminar);
-
+            entPersona personaBuscar = new entPersona();          
 
             if (dgv_Docentes.SelectedRows.Count > 0)
             {
 
                 btnGD_Eliminar.IconColor = Color.FromArgb(255, 128, 0);
                 btnGD_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
-                frmDocentesPopUpEliminar.lblnombredocente.Text = "'" + dgv_Docentes.CurrentRow.Cells[0].Value.ToString() + "'";
-                frmDocentesPopUpEliminar.lbldnidoc.Text =  dgv_Docentes.CurrentRow.Cells[1].Value.ToString() ;
+
+                string documento = dgv_Docentes.CurrentRow.Cells[1].Value.ToString();
+                personaBuscar = objMetPersonas.BuscaDocente(documento);
+
+                if (personaBuscar.PER_NOMBRE != null)
+                {
+                    frmDocentesPopUpEliminar.txt_id_Docente.Text = Convert.ToString(personaBuscar.PER_ID); // se usara en el editar                                     
+                    frmDocentesPopUpEliminar.lblnombredocente.Text = "'" + dgv_Docentes.CurrentRow.Cells[0].Value.ToString() + "'";
+                }
+
+               // frmDocentesPopUpEliminar.lbldnidoc.Text =  dgv_Docentes.CurrentRow.Cells[1].Value.ToString() ;
                 frmDocentesPopUpEliminar.Text = "GESTION DOCENTES / ELIMINAR DOCENTE";
                 frmDocentesPopUpEliminar.ShowDialog();
+                dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();                
+                
             }
             else
             {
@@ -148,57 +221,7 @@ namespace GestionJardin
                 MessageBox.Show("Por favor seleccione un registro/fila para poder dar de baja al Docente");
             }
                 
-        }
-                   
-        private void dgv_Docentes_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgv_Docentes.SelectedRows.Count > 0)
-            {
-                btnGD_Editar.IconColor = Color.Cyan;
-                btnGD_Editar.ForeColor = Color.Cyan;
-                btnGD_Eliminar.IconColor = Color.FromArgb(255, 128, 0);
-                btnGD_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
-            }
-            else
-            {
-                btnGD_Editar.IconColor = Color.Gray;
-                btnGD_Editar.ForeColor = Color.Gray;
-                btnGD_Eliminar.IconColor = Color.Gray;
-                btnGD_Eliminar.ForeColor = Color.Gray;
-            }
-        }
+        }                    
 
-        private void txtGD_Buscar_Enter(object sender, EventArgs e)
-        {
-            string docente = txtGD_Buscar.Text;
-            dgv_Docentes.DataSource = objMetPersonas.llenarGrilla(docente);
-        }
-
-        private void txtGD_Buscar_ButtonClick(object sender, EventArgs e)
-        {
-            string docente = txtGD_Buscar.Text;
-            dgv_Docentes.DataSource = objMetPersonas.llenarGrilla(docente);
-
-        }
-
-        private void txtGD_Buscar_TextChanged(object sender, EventArgs e)
-        {
-          
-            if (txtGD_Buscar.Text.Length > 0)
-            {
-                dgv_Docentes.DataSource = objMetPersonas.llenarGrilla(txtGD_Buscar.Text);
-            }
-            else
-            {
-                txtGD_Buscar.Clear();
-                dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
-            }
-        }
-
-        private void txtGD_Buscar_Click(object sender, EventArgs e)
-        {
-            
-            txtGD_Buscar.CharacterCasing = CharacterCasing.Upper;//esto me pone las letras en mayusculas siempre
-        }
     }
 }

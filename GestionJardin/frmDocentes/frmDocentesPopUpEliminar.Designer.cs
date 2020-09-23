@@ -51,11 +51,11 @@
             this.btn_noeliminar.IconChar = FontAwesome.Sharp.IconChar.TimesCircle;
             this.btn_noeliminar.IconColor = System.Drawing.Color.DarkGray;
             this.btn_noeliminar.IconSize = 36;
-            this.btn_noeliminar.Location = new System.Drawing.Point(466, 313);
-            this.btn_noeliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_noeliminar.Location = new System.Drawing.Point(550, 384);
+            this.btn_noeliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_noeliminar.Name = "btn_noeliminar";
             this.btn_noeliminar.Rotation = 0D;
-            this.btn_noeliminar.Size = new System.Drawing.Size(94, 42);
+            this.btn_noeliminar.Size = new System.Drawing.Size(125, 52);
             this.btn_noeliminar.TabIndex = 20;
             this.btn_noeliminar.Text = "NO";
             this.btn_noeliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -73,11 +73,11 @@
             this.btn_sieliminar.IconChar = FontAwesome.Sharp.IconChar.CheckCircle;
             this.btn_sieliminar.IconColor = System.Drawing.Color.Red;
             this.btn_sieliminar.IconSize = 36;
-            this.btn_sieliminar.Location = new System.Drawing.Point(313, 313);
-            this.btn_sieliminar.Margin = new System.Windows.Forms.Padding(2);
+            this.btn_sieliminar.Location = new System.Drawing.Point(346, 384);
+            this.btn_sieliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_sieliminar.Name = "btn_sieliminar";
             this.btn_sieliminar.Rotation = 0D;
-            this.btn_sieliminar.Size = new System.Drawing.Size(94, 42);
+            this.btn_sieliminar.Size = new System.Drawing.Size(125, 52);
             this.btn_sieliminar.TabIndex = 19;
             this.btn_sieliminar.Text = "SI";
             this.btn_sieliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -90,10 +90,9 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(310, 245);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(342, 301);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(206, 18);
+            this.label4.Size = new System.Drawing.Size(259, 24);
             this.label4.TabIndex = 18;
             this.label4.Text = "NO podrá reactivar el mismo. ";
             // 
@@ -103,10 +102,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(288, 203);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(313, 249);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(231, 18);
+            this.label3.Size = new System.Drawing.Size(299, 24);
             this.label3.TabIndex = 17;
             this.label3.Text = "Tenga en cuenta que al confirmar,";
             // 
@@ -116,10 +114,9 @@
             this.lblnombredocente.AutoSize = true;
             this.lblnombredocente.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblnombredocente.ForeColor = System.Drawing.Color.Yellow;
-            this.lblnombredocente.Location = new System.Drawing.Point(358, 133);
-            this.lblnombredocente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblnombredocente.Location = new System.Drawing.Point(357, 157);
             this.lblnombredocente.Name = "lblnombredocente";
-            this.lblnombredocente.Size = new System.Drawing.Size(137, 26);
+            this.lblnombredocente.Size = new System.Drawing.Size(175, 32);
             this.lblnombredocente.TabIndex = 16;
             this.lblnombredocente.Text = "DOCENTE ?";
             // 
@@ -129,10 +126,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(108, 51);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(123, 62);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(400, 24);
+            this.label1.Size = new System.Drawing.Size(508, 29);
             this.label1.TabIndex = 15;
             this.label1.Text = "¿Esta seguro que desea ELIMINAR al docente";
             // 
@@ -143,40 +139,42 @@
             this.iconPictureBox1.ForeColor = System.Drawing.Color.Red;
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.ExclamationCircle;
             this.iconPictureBox1.IconColor = System.Drawing.Color.Red;
-            this.iconPictureBox1.IconSize = 138;
-            this.iconPictureBox1.Location = new System.Drawing.Point(70, 150);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.iconPictureBox1.IconSize = 170;
+            this.iconPictureBox1.Location = new System.Drawing.Point(38, 184);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.iconPictureBox1.Size = new System.Drawing.Size(142, 138);
+            this.iconPictureBox1.Padding = new System.Windows.Forms.Padding(5);
+            this.iconPictureBox1.Size = new System.Drawing.Size(189, 170);
             this.iconPictureBox1.TabIndex = 14;
             this.iconPictureBox1.TabStop = false;
             // 
             // lbldnidoc
             // 
             this.lbldnidoc.AutoSize = true;
-            this.lbldnidoc.Location = new System.Drawing.Point(26, 363);
+            this.lbldnidoc.Location = new System.Drawing.Point(35, 447);
+            this.lbldnidoc.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbldnidoc.Name = "lbldnidoc";
-            this.lbldnidoc.Size = new System.Drawing.Size(35, 13);
+            this.lbldnidoc.Size = new System.Drawing.Size(46, 17);
             this.lbldnidoc.TabIndex = 21;
             this.lbldnidoc.Text = "label2";
+            this.lbldnidoc.Visible = false;
             // 
             // txt_id_Docente
             // 
             this.txt_id_Docente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.txt_id_Docente.Location = new System.Drawing.Point(11, 326);
-            this.txt_id_Docente.Margin = new System.Windows.Forms.Padding(2);
+            this.txt_id_Docente.Location = new System.Drawing.Point(15, 401);
+            this.txt_id_Docente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_id_Docente.Name = "txt_id_Docente";
-            this.txt_id_Docente.Size = new System.Drawing.Size(76, 20);
+            this.txt_id_Docente.Size = new System.Drawing.Size(100, 22);
             this.txt_id_Docente.TabIndex = 57;
             this.txt_id_Docente.Visible = false;
             // 
             // frmDocentesPopUpEliminar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(630, 409);
+            this.ClientSize = new System.Drawing.Size(840, 503);
             this.Controls.Add(this.txt_id_Docente);
             this.Controls.Add(this.lbldnidoc);
             this.Controls.Add(this.btn_noeliminar);
@@ -186,8 +184,7 @@
             this.Controls.Add(this.lblnombredocente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconPictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmDocentesPopUpEliminar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmDocentesPopUpEliminar_Load);
