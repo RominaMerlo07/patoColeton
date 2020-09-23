@@ -28,30 +28,43 @@ namespace GestionJardin
         private void btn_GuardarUsuNuevo_Click(object sender, EventArgs e)
         {
             frmUsuarios U = Owner as frmUsuarios;//esto me indica q es el padre frmUsuarios y me deja usar sus metodos
-            DialogResult resp = MessageBox.Show("¿Confirma la Modificación?", "Modificar", MessageBoxButtons.YesNo,
-                                                    MessageBoxIcon.Question);
+           
             var usu = new entUsuario();
-            if ((resp == DialogResult.Yes))
+            if (lblUSUARIOELIMINAR.Text== " ")
             {
-                usu.USU_USUARIO = lblUSUARIOELIMINAR.Text;
-                // usu.USU_FECHA_MOD = metroDateTimeBaja.Value;
-                // usu.USU_FECHA_BAJA = metroDateTimeBaja.Value;
-
-                var usumetodo = new metUsuario();
-                usumetodo.EliminarUsuario(usu);
-                MessageBox.Show("Se actualizo Elimino! ");
-                U.CargarGrilla();
-                this.Hide();
+               
             }
             else
             {
-                MessageBox.Show("Ocurrio un problema, contacte con su servidor!");
+                usu.USU_USUARIO = lblUSUARIOELIMINAR.Text;
+                var usumetodo = new metUsuario();
+                usumetodo.EliminarUsuario(usu);
+                MessageBox.Show("SE DIO DE BAJA CORRECTAMENTE" + lblUSUARIOELIMINAR.Text);
+                U.dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
+                this.Hide();
             }
         }
 
         private void btn_CancelarUsuNuevo_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frmUsuariosPopUpEliminar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void frmUsuariosPopUpEliminar_Load(object sender, EventArgs e)
+        {
+            frmUsuarios U = Owner as frmUsuarios;
+            if (U.dgv_UsuariosActivos.CurrentRow.Cells[5].Value.ToString() == "INACTIVO")
+            {
+                this.Close();
+                MessageBox.Show("NO SE PUEDE ELIMINAR USUARIO INACTIVO!");
+
+            }
         }
     }
 }

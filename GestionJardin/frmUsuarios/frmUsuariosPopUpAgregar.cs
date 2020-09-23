@@ -24,8 +24,8 @@ namespace GestionJardin
         public frmUsuariosPopUpAgregar()
         {
             InitializeComponent();
-            lblIngresarctrasena.Visible = false;
-            lblApellidodoc.Visible = true;
+            lblNvoUsu.Visible = false;
+
         }
 
         private void btn_GuardarUsuNuevo_Click(object sender, EventArgs e)
@@ -34,22 +34,13 @@ namespace GestionJardin
 
             ObjetoUsu.Ingresar_Usuario(txtSeleccionarDocente, txt_nombre_usuario, txt_contra_usu);
             MessageBox.Show(" Registro de Usuario Exitoso ");
-            U.CargarGrilla();
+            U.dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
             this.Close();
         }
 
         private void btn_CancelarUsuNuevo_Click(object sender, EventArgs e)
         {
-            DialogResult resp = MessageBox.Show("¿Seguro desea salir?", "salir", MessageBoxButtons.YesNo,
-                          MessageBoxIcon.Question);
-            if ((resp == DialogResult.Yes))
-            {
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Escriba una contraseña");
-            }
+            this.Close();
         }
 
         private void frmUsuariosPopUpAgregar_MouseDown(object sender, MouseEventArgs e)
@@ -61,8 +52,7 @@ namespace GestionJardin
         private void txtSeleccionarDocente_ButtonClick(object sender, EventArgs e)
         {
             ObjetoUsu.CrearUsuario(txtSeleccionarDocente, txt_nombre_usuario);
-            lblIngresarctrasena.Visible = true;
-            lblApellidodoc.Visible = false;
+          
         }
 
         private void txt_contra_usu_KeyPress(object sender, KeyPressEventArgs e)

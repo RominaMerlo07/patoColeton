@@ -19,6 +19,7 @@ namespace GestionJardin
         public frmUsuariosPopUpEditar()
         {
             InitializeComponent();
+            
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -28,22 +29,22 @@ namespace GestionJardin
         private void btn_GuardarUsuMod_Click(object sender, EventArgs e)
         {
             frmUsuarios U = Owner as frmUsuarios;//esto me indica q es el padre frmUsuarios y me deja usar sus metodos
-            DialogResult resp = MessageBox.Show("¿Confirma la Modificación?", "Modificar", MessageBoxButtons.YesNo,
-                                                    MessageBoxIcon.Question);
             var usu = new entUsuario();
-            if ((resp == DialogResult.Yes))
+            if (metroTextBoxContrasenaEdit.Text == " ")
+            {
+                MessageBox.Show("ingrese contraseña!");
+            }
+            else
             {
                 usu.USU_USUARIO = lblEditarUsu.Text;
                 usu.USU_CLAVE = metroTextBoxContrasenaEdit.Text;
                 var usumetodo = new metUsuario();
                 usumetodo.EditarUsuario(usu);
-                MessageBox.Show("Se actualizo Correctamente! ");
+                MessageBox.Show("SE MODIFICO LA CONTRASEÑA DEL USUARIO :  " + lblEditarUsu.Text);
+                U.dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
+                ObjetoUsu.MostrarUsu();
                 this.Close();
-                U.CargarGrilla();
-            }
-            else
-            {
-                MessageBox.Show("Ocurrio un problema, contacte con su servidor!");
+
             }
         }
 
@@ -92,6 +93,18 @@ namespace GestionJardin
                 MessageBox.Show("Solo se permiten letras y numeros!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
+        }
+
+        private void frmUsuariosPopUpEditar_Load(object sender, EventArgs e)
+        {
+            frmUsuarios U = Owner as frmUsuarios;
+            if (U.dgv_UsuariosActivos.CurrentRow.Cells[5].Value.ToString() == "INACTIVO")
+            {
+                this.Close();
+                MessageBox.Show("NO SE PUEDE EDITAR USUARIO DADO DE BAJA!");
+
+            }
+
         }
     }
 }

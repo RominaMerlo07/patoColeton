@@ -98,7 +98,7 @@
             this.btn_CancelarUsuNuevo.IconColor = System.Drawing.Color.DarkGray;
             this.btn_CancelarUsuNuevo.IconSize = 36;
             this.btn_CancelarUsuNuevo.Location = new System.Drawing.Point(376, 272);
-            this.btn_CancelarUsuNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_CancelarUsuNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btn_CancelarUsuNuevo.Name = "btn_CancelarUsuNuevo";
             this.btn_CancelarUsuNuevo.Rotation = 0D;
             this.btn_CancelarUsuNuevo.Size = new System.Drawing.Size(94, 42);
@@ -120,7 +120,7 @@
             this.btn_GuardarUsuNuevo.IconColor = System.Drawing.Color.Red;
             this.btn_GuardarUsuNuevo.IconSize = 36;
             this.btn_GuardarUsuNuevo.Location = new System.Drawing.Point(225, 272);
-            this.btn_GuardarUsuNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_GuardarUsuNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btn_GuardarUsuNuevo.Name = "btn_GuardarUsuNuevo";
             this.btn_GuardarUsuNuevo.Rotation = 0D;
             this.btn_GuardarUsuNuevo.Size = new System.Drawing.Size(94, 42);
@@ -139,9 +139,9 @@
             this.iconPictureBox1.IconColor = System.Drawing.Color.Red;
             this.iconPictureBox1.IconSize = 138;
             this.iconPictureBox1.Location = new System.Drawing.Point(9, 110);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBox1.Padding = new System.Windows.Forms.Padding(4);
             this.iconPictureBox1.Size = new System.Drawing.Size(142, 138);
             this.iconPictureBox1.TabIndex = 14;
             this.iconPictureBox1.TabStop = false;
@@ -160,9 +160,11 @@
             this.Controls.Add(this.lblUSUARIOELIMINAR);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "frmUsuariosPopUpEliminar";
             this.Text = "ELIMINAR USUARIO";
+            this.Load += new System.EventHandler(this.frmUsuariosPopUpEliminar_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmUsuariosPopUpEliminar_MouseDown);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

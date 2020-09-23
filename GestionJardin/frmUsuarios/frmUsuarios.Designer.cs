@@ -54,12 +54,12 @@
             this.btnGU_Filtrar.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnGU_Filtrar.IconChar = FontAwesome.Sharp.IconChar.Filter;
             this.btnGU_Filtrar.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGU_Filtrar.IconSize = 81;
-            this.btnGU_Filtrar.Location = new System.Drawing.Point(873, 30);
-            this.btnGU_Filtrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGU_Filtrar.IconSize = 66;
+            this.btnGU_Filtrar.Location = new System.Drawing.Point(655, 24);
+            this.btnGU_Filtrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGU_Filtrar.Name = "btnGU_Filtrar";
-            this.btnGU_Filtrar.Padding = new System.Windows.Forms.Padding(5);
-            this.btnGU_Filtrar.Size = new System.Drawing.Size(91, 81);
+            this.btnGU_Filtrar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGU_Filtrar.Size = new System.Drawing.Size(69, 66);
             this.btnGU_Filtrar.TabIndex = 32;
             this.btnGU_Filtrar.TabStop = false;
             // 
@@ -71,12 +71,12 @@
             this.btnGU_Excel.ForeColor = System.Drawing.Color.Chartreuse;
             this.btnGU_Excel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
             this.btnGU_Excel.IconColor = System.Drawing.Color.Chartreuse;
-            this.btnGU_Excel.IconSize = 81;
-            this.btnGU_Excel.Location = new System.Drawing.Point(993, 30);
-            this.btnGU_Excel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGU_Excel.IconSize = 66;
+            this.btnGU_Excel.Location = new System.Drawing.Point(745, 24);
+            this.btnGU_Excel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGU_Excel.Name = "btnGU_Excel";
-            this.btnGU_Excel.Padding = new System.Windows.Forms.Padding(5);
-            this.btnGU_Excel.Size = new System.Drawing.Size(91, 81);
+            this.btnGU_Excel.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGU_Excel.Size = new System.Drawing.Size(69, 66);
             this.btnGU_Excel.TabIndex = 31;
             this.btnGU_Excel.TabStop = false;
             // 
@@ -88,12 +88,12 @@
             this.btnGU_Pdf.ForeColor = System.Drawing.Color.Salmon;
             this.btnGU_Pdf.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
             this.btnGU_Pdf.IconColor = System.Drawing.Color.Salmon;
-            this.btnGU_Pdf.IconSize = 81;
-            this.btnGU_Pdf.Location = new System.Drawing.Point(1101, 30);
-            this.btnGU_Pdf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGU_Pdf.IconSize = 66;
+            this.btnGU_Pdf.Location = new System.Drawing.Point(826, 24);
+            this.btnGU_Pdf.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGU_Pdf.Name = "btnGU_Pdf";
-            this.btnGU_Pdf.Padding = new System.Windows.Forms.Padding(5);
-            this.btnGU_Pdf.Size = new System.Drawing.Size(91, 81);
+            this.btnGU_Pdf.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGU_Pdf.Size = new System.Drawing.Size(69, 66);
             this.btnGU_Pdf.TabIndex = 30;
             this.btnGU_Pdf.TabStop = false;
             // 
@@ -104,9 +104,10 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(48, 677);
+            this.label1.Location = new System.Drawing.Point(36, 550);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(815, 20);
+            this.label1.Size = new System.Drawing.Size(692, 17);
             this.label1.TabIndex = 29;
             this.label1.Text = "* Para poder editar los datos de un usuario o dar de baja al mismo, debe seleccio" +
     "nar el registro previamente";
@@ -121,11 +122,11 @@
             this.btnGU_Eliminar.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
             this.btnGU_Eliminar.IconColor = System.Drawing.Color.Gray;
             this.btnGU_Eliminar.IconSize = 100;
-            this.btnGU_Eliminar.Location = new System.Drawing.Point(1329, 490);
-            this.btnGU_Eliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGU_Eliminar.Location = new System.Drawing.Point(997, 398);
+            this.btnGU_Eliminar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGU_Eliminar.Name = "btnGU_Eliminar";
             this.btnGU_Eliminar.Rotation = 0D;
-            this.btnGU_Eliminar.Size = new System.Drawing.Size(293, 134);
+            this.btnGU_Eliminar.Size = new System.Drawing.Size(220, 109);
             this.btnGU_Eliminar.TabIndex = 28;
             this.btnGU_Eliminar.Text = "ELIMINAR";
             this.btnGU_Eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -142,11 +143,11 @@
             this.btnGU_Editar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.btnGU_Editar.IconColor = System.Drawing.Color.Gray;
             this.btnGU_Editar.IconSize = 100;
-            this.btnGU_Editar.Location = new System.Drawing.Point(1329, 333);
-            this.btnGU_Editar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGU_Editar.Location = new System.Drawing.Point(997, 271);
+            this.btnGU_Editar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGU_Editar.Name = "btnGU_Editar";
             this.btnGU_Editar.Rotation = 0D;
-            this.btnGU_Editar.Size = new System.Drawing.Size(293, 134);
+            this.btnGU_Editar.Size = new System.Drawing.Size(220, 109);
             this.btnGU_Editar.TabIndex = 27;
             this.btnGU_Editar.Text = "EDITAR";
             this.btnGU_Editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -163,11 +164,11 @@
             this.btnGU_Agregar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             this.btnGU_Agregar.IconColor = System.Drawing.Color.Lime;
             this.btnGU_Agregar.IconSize = 100;
-            this.btnGU_Agregar.Location = new System.Drawing.Point(1329, 176);
-            this.btnGU_Agregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnGU_Agregar.Location = new System.Drawing.Point(997, 143);
+            this.btnGU_Agregar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGU_Agregar.Name = "btnGU_Agregar";
             this.btnGU_Agregar.Rotation = 0D;
-            this.btnGU_Agregar.Size = new System.Drawing.Size(293, 134);
+            this.btnGU_Agregar.Size = new System.Drawing.Size(220, 109);
             this.btnGU_Agregar.TabIndex = 26;
             this.btnGU_Agregar.Text = "AGREGAR";
             this.btnGU_Agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -184,10 +185,10 @@
             // 
             this.txtGU_Buscar.CustomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGU_Buscar.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
-            this.txtGU_Buscar.CustomButton.Location = new System.Drawing.Point(376, 2);
-            this.txtGU_Buscar.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGU_Buscar.CustomButton.Location = new System.Drawing.Point(278, 1);
+            this.txtGU_Buscar.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGU_Buscar.CustomButton.Name = "";
-            this.txtGU_Buscar.CustomButton.Size = new System.Drawing.Size(45, 45);
+            this.txtGU_Buscar.CustomButton.Size = new System.Drawing.Size(39, 39);
             this.txtGU_Buscar.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtGU_Buscar.CustomButton.TabIndex = 1;
             this.txtGU_Buscar.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -195,8 +196,8 @@
             this.txtGU_Buscar.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtGU_Buscar.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtGU_Buscar.Lines = new string[0];
-            this.txtGU_Buscar.Location = new System.Drawing.Point(52, 42);
-            this.txtGU_Buscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtGU_Buscar.Location = new System.Drawing.Point(39, 34);
+            this.txtGU_Buscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtGU_Buscar.MaxLength = 32767;
             this.txtGU_Buscar.Name = "txtGU_Buscar";
             this.txtGU_Buscar.PasswordChar = '\0';
@@ -207,7 +208,7 @@
             this.txtGU_Buscar.SelectionStart = 0;
             this.txtGU_Buscar.ShortcutsEnabled = true;
             this.txtGU_Buscar.ShowButton = true;
-            this.txtGU_Buscar.Size = new System.Drawing.Size(424, 50);
+            this.txtGU_Buscar.Size = new System.Drawing.Size(318, 41);
             this.txtGU_Buscar.Style = MetroFramework.MetroColorStyle.Lime;
             this.txtGU_Buscar.TabIndex = 33;
             this.txtGU_Buscar.UseSelectable = true;
@@ -242,21 +243,22 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgv_UsuariosActivos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_UsuariosActivos.Location = new System.Drawing.Point(52, 154);
+            this.dgv_UsuariosActivos.Location = new System.Drawing.Point(39, 125);
+            this.dgv_UsuariosActivos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dgv_UsuariosActivos.MultiSelect = false;
             this.dgv_UsuariosActivos.Name = "dgv_UsuariosActivos";
             this.dgv_UsuariosActivos.ReadOnly = true;
             this.dgv_UsuariosActivos.RowTemplate.Height = 24;
-            this.dgv_UsuariosActivos.Size = new System.Drawing.Size(1140, 489);
+            this.dgv_UsuariosActivos.Size = new System.Drawing.Size(855, 397);
             this.dgv_UsuariosActivos.TabIndex = 34;
             this.dgv_UsuariosActivos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_UsuariosActivos_CellClick_1);
             // 
             // frmUsuarios
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(1697, 774);
+            this.ClientSize = new System.Drawing.Size(1028, 609);
             this.Controls.Add(this.dgv_UsuariosActivos);
             this.Controls.Add(this.txtGU_Buscar);
             this.Controls.Add(this.btnGU_Filtrar);
@@ -266,7 +268,7 @@
             this.Controls.Add(this.btnGU_Eliminar);
             this.Controls.Add(this.btnGU_Editar);
             this.Controls.Add(this.btnGU_Agregar);
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frmUsuarios";
             this.Text = "GESTIÓN USUARIOS";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
@@ -289,6 +291,6 @@
         private FontAwesome.Sharp.IconButton btnGU_Editar;
         private FontAwesome.Sharp.IconButton btnGU_Agregar;
         private MetroFramework.Controls.MetroTextBox txtGU_Buscar;
-        private System.Windows.Forms.DataGridView dgv_UsuariosActivos;
+        public System.Windows.Forms.DataGridView dgv_UsuariosActivos;
     }
 }
