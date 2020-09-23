@@ -16,10 +16,13 @@ namespace GestionJardin
         metPersonas objMetPersonas = new metPersonas();
         entPersona objPersona = new entPersona();
         metDomicilio objmetDomicilio = new metDomicilio();
+        metSalas objMetSalas = new metSalas();
 
         AutoCompleteStringCollection traerdocente = new AutoCompleteStringCollection();
         metPersonas metPersonas = new metPersonas();
-                        
+
+        int idPersonaBuscar;
+
         public frmDocentes()
         {
             InitializeComponent();           
@@ -40,15 +43,80 @@ namespace GestionJardin
 
         private void btnGD_Editar_Click(object sender, EventArgs e)
         {
-                        
+
+            entPersona personaBuscar = new entPersona();
+            frmDocentesPopUpEditar frmDocentesPopUpEditar = new frmDocentesPopUpEditar();
+            entDomicilio domicilioBuscar = new entDomicilio();
+            entSala salaBuscar = new entSala();            
+            
             if (dgv_Docentes.SelectedRows.Count > 0)
             {
                 btnGD_Editar.IconColor = Color.Cyan;
                 btnGD_Editar.ForeColor = Color.Cyan;
-                frmDocentesPopUpEditar frmDocentesPopUpEditar = new frmDocentesPopUpEditar();
+
+
+                string documento = dgv_Docentes.CurrentRow.Cells[1].Value.ToString();
+
+                personaBuscar = objMetPersonas.BuscaDocente(documento);
+
+                if (personaBuscar.PER_NOMBRE != null)
+                {
+                    frmDocentesPopUpEditar.txt_id_Docente.Text = Convert.ToString(personaBuscar.PER_ID); // se usara en el editar
+                     
+
+                    frmDocentesPopUpEditar.txtNombre.Text = personaBuscar.PER_NOMBRE;
+                    frmDocentesPopUpEditar.txtApellidos.Text = personaBuscar.PER_APELLIDO;
+                    frmDocentesPopUpEditar.txtDocumento.Text = documento;
+                    frmDocentesPopUpEditar.dtNacimiento.Value = personaBuscar.PER_FECHA_NAC;
+
+                    if (personaBuscar.PER_GENERO.StartsWith("M"))
+                    {
+                        frmDocentesPopUpEditar.cbGenero.SelectedIndex = frmDocentesPopUpEditar.cbGenero.FindStringExact("MASCULINO");
+                    }
+                    else
+                    {
+                        frmDocentesPopUpEditar.cbGenero.SelectedIndex = frmDocentesPopUpEditar.cbGenero.FindStringExact("FEMENINO");
+                    }
+
+                    domicilioBuscar = objmetDomicilio.buscarDomicilioXPersona(personaBuscar.PER_ID);
+
+                    frmDocentesPopUpEditar.txtCalle.Text = domicilioBuscar.DOM_CALLE;
+                    frmDocentesPopUpEditar.txtNumero.Text = Convert.ToString(domicilioBuscar.DOM_NUMERO);
+                    frmDocentesPopUpEditar.txtCPostal.Text = Convert.ToString(domicilioBuscar.DOM_CP);
+                    frmDocentesPopUpEditar.txtPiso.Text = Convert.ToString(domicilioBuscar.DOM_PISO);
+                    frmDocentesPopUpEditar.txtDepto.Text = domicilioBuscar.DOM_DPTO;
+                    frmDocentesPopUpEditar.txtBarrio.Text = domicilioBuscar.DOM_BARRIO;
+                    frmDocentesPopUpEditar.txtTelefono.Text = personaBuscar.PER_TELEFONO;
+                    frmDocentesPopUpEditar.txtCelular.Text = personaBuscar.PER_TELEFONO_2;
+                    frmDocentesPopUpEditar.txtEmail.Text = personaBuscar.PER_EMAIL;
+
+
+                    salaBuscar = objMetSalas.buscarSalaXPersona(personaBuscar.PER_ID);
+
+
+                    if (salaBuscar.SALA_TURNO.Trim() == "TARDE")
+                    {
+                        frmDocentesPopUpEditar.cbTurno.SelectedIndex = frmDocentesPopUpEditar.cbTurno.FindStringExact("TARDE");
+                    }
+                    else
+                    {
+                        frmDocentesPopUpEditar.cbTurno.SelectedIndex = frmDocentesPopUpEditar.cbTurno.FindStringExact("MAÑANA");
+                    }
+
+                    string indexTurno = frmDocentesPopUpEditar.cbTurno.SelectedIndex.ToString();
+                    frmDocentesPopUpEditar.cbSala.DataSource = objMetSalas.ListarSalas(indexTurno);
+                    frmDocentesPopUpEditar.cbSala.DisplayMember = "SAL_NOMBRE";
+                    frmDocentesPopUpEditar.cbSala.ValueMember = "SAL_ID";
+
+                    frmDocentesPopUpEditar.cbSala.SelectedIndex = frmDocentesPopUpEditar.cbSala.FindStringExact(salaBuscar.SAL_NOMBRE);
+                }
+
                 frmDocentesPopUpEditar.Text = "GESTION DOCENTES / MODIFICAR/VISUALIZAR DATOS DEL DOCENTE";
+                AddOwnedForm(frmDocentesPopUpEditar);
                 frmDocentesPopUpEditar.ShowDialog();
+
             }
+            
             else
             {
                 btnGD_Editar.IconColor = Color.Gray;

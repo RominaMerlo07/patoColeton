@@ -15,25 +15,39 @@ namespace GestionJardin
         metPersonas objMetPersonas = new metPersonas();
         entPersona objPersona = new entPersona();
         metDomicilio objmetDomicilio = new metDomicilio();
+        metSalas objMetSalas = new metSalas();
         string resultadoValidacion;
         int idPersonaBuscar;
-        int EdadAnos;
-
-
+       
+        
         public frmDocentesPopUpEditar()
         {
-            InitializeComponent();
+            InitializeComponent();     
+            
         }
+
+        private void frmDocentesPopUpEditar_Load(object sender, EventArgs e)
+        {
+            onOffCampos(false);
+        }
+
+        /*********************************/
+        /*********GUARDAR EDITAR**********/
+        /*********************************/
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            metPersonas ObjMetOersonas = new metPersonas();
+           
+            frmDocentes Docentes = Owner as frmDocentes;
+
             objMetPersonas.EdadDocente(dtNacimiento.Value);
 
             string validacionE = validaCampos();
             if (validacionE == "OK")
 
             {
+                idPersonaBuscar = Convert.ToInt32(txt_id_Docente.Text);
+
                 string nombreE = txtNombre.Text.Trim();
                 string apellidosE = txtApellidos.Text.Trim();
                 string documentoE = txtDocumento.Text.Trim();
@@ -92,7 +106,10 @@ namespace GestionJardin
                 if (resultadoE == "OK")
                 {
                     MessageBox.Show("Se han editado los datos con éxito.", "Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    limpiarCampos();
+                    this.Close();
+
+                    
+                    Docentes.dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
                 }
             }
             else
@@ -101,43 +118,8 @@ namespace GestionJardin
             }
         }
 
-        private void limpiarCampos()
-        {
-
-            txtNombre.Text = "";
-            txtNombre.Style = MetroFramework.MetroColorStyle.Default;
-            txtApellidos.Text = "";
-            txtApellidos.Style = MetroFramework.MetroColorStyle.Default;
-            txtDocumento.Text = "";
-            txtDocumento.Style = MetroFramework.MetroColorStyle.Default;
-            cbGenero.SelectedItem = null;
-            dtNacimiento.Value = DateTime.Now;
-            txtCalle.Text = "";
-            txtCalle.Style = MetroFramework.MetroColorStyle.Default;
-            txtNumero.Text = "";
-            txtNumero.Style = MetroFramework.MetroColorStyle.Default;
-            txtCPostal.Text = "";
-            txtCPostal.Style = MetroFramework.MetroColorStyle.Default;
-            txtPiso.Text = "";
-            txtPiso.Style = MetroFramework.MetroColorStyle.Default;
-            txtDepto.Text = "";
-            txtDepto.Style = MetroFramework.MetroColorStyle.Default;
-            txtBarrio.Text = "";
-            txtBarrio.Style = MetroFramework.MetroColorStyle.Default;
-            txtTelefono.Text = "";
-            txtTelefono.Style = MetroFramework.MetroColorStyle.Default;
-            txtCelular.Text = "";
-            txtCelular.Style = MetroFramework.MetroColorStyle.Default;
-            txtEmail.Text = "";
-            txtEmail.Style = MetroFramework.MetroColorStyle.Default;
-            AutoCompleteStringCollection traerdocente = new AutoCompleteStringCollection();
-            metPersonas metPersonas = new metPersonas();
-            //traerdocente = metPersonas.traerdocente();
-
-            // txtBuscarDocente.AutoCompleteMode = AutoCompleteMode.Suggest;
-            //txtBuscarDocente.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            //txtBuscarDocente.AutoCompleteCustomSource = traerdocente;
-        }
+        /* Validacion General */
+        
         private string validaCampos()
         {
             metPersonas ObjMetOersonas = new metPersonas();
@@ -212,6 +194,10 @@ namespace GestionJardin
             }
             return resultadoValidacion;
         }
+
+
+        /* Validaciones Particulares */
+
         private void Solonumeros(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -288,6 +274,10 @@ namespace GestionJardin
             }
         }
 
+        /*************************************/
+        /********* GUARDAR CANCELAR **********/
+        /*************************************/
+
         private void btncancelar_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -306,6 +296,9 @@ namespace GestionJardin
                 onOffCampos(false);
             }
         }
+
+        /* Boton Candado Editar */
+
         private void onOffCampos(bool onOff)
         {
 
@@ -327,7 +320,6 @@ namespace GestionJardin
             cbTurno.Enabled = onOff;
 
         }
-
 
     }
 }

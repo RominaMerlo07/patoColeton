@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtGD_Buscar = new MetroFramework.Controls.MetroTextBox();
             this.btnGD_Filtrar = new FontAwesome.Sharp.IconPictureBox();
@@ -95,7 +95,6 @@
             this.txtGD_Buscar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtGD_Buscar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGD_Buscar.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.txtGD_Buscar_ButtonClick);
-            
             this.txtGD_Buscar.Enter += new System.EventHandler(this.txtGD_Buscar_Enter);
             // 
             // btnGD_Filtrar
@@ -109,7 +108,7 @@
             this.btnGD_Filtrar.IconSize = 81;
             this.btnGD_Filtrar.Location = new System.Drawing.Point(879, 54);
             this.btnGD_Filtrar.Name = "btnGD_Filtrar";
-            this.btnGD_Filtrar.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnGD_Filtrar.Padding = new System.Windows.Forms.Padding(5);
             this.btnGD_Filtrar.Size = new System.Drawing.Size(91, 81);
             this.btnGD_Filtrar.TabIndex = 41;
             this.btnGD_Filtrar.TabStop = false;
@@ -125,7 +124,7 @@
             this.btnGD_Excel.IconSize = 81;
             this.btnGD_Excel.Location = new System.Drawing.Point(999, 54);
             this.btnGD_Excel.Name = "btnGD_Excel";
-            this.btnGD_Excel.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnGD_Excel.Padding = new System.Windows.Forms.Padding(5);
             this.btnGD_Excel.Size = new System.Drawing.Size(91, 81);
             this.btnGD_Excel.TabIndex = 40;
             this.btnGD_Excel.TabStop = false;
@@ -141,7 +140,7 @@
             this.btnGD_Pdf.IconSize = 81;
             this.btnGD_Pdf.Location = new System.Drawing.Point(1108, 54);
             this.btnGD_Pdf.Name = "btnGD_Pdf";
-            this.btnGD_Pdf.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.btnGD_Pdf.Padding = new System.Windows.Forms.Padding(5);
             this.btnGD_Pdf.Size = new System.Drawing.Size(91, 81);
             this.btnGD_Pdf.TabIndex = 39;
             this.btnGD_Pdf.TabStop = false;
@@ -214,25 +213,25 @@
             this.dgv_Docentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_Docentes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgv_Docentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Docentes.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Docentes.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Docentes.Location = new System.Drawing.Point(58, 168);
             this.dgv_Docentes.Name = "dgv_Docentes";
             this.dgv_Docentes.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Docentes.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Docentes.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_Docentes.RowTemplate.Height = 24;
             this.dgv_Docentes.Size = new System.Drawing.Size(1141, 495);
             this.dgv_Docentes.TabIndex = 42;
@@ -274,6 +273,6 @@
         private FontAwesome.Sharp.IconButton btnGD_Editar;
         private FontAwesome.Sharp.IconButton btnGD_Agregar;
         private MetroFramework.Controls.MetroTextBox txtGD_Buscar;
-        private System.Windows.Forms.DataGridView dgv_Docentes;
+        public System.Windows.Forms.DataGridView dgv_Docentes;
     }
 }
