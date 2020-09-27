@@ -296,6 +296,53 @@ namespace GestionJardin
 
 
         }
-        
+
+        public DataTable TraerAlumnos()
+        //public entPersona BuscaAlumnos(string nombre, string apellido, string documento)
+        {
+            entPersona.entPersonaColeccion col = new entPersona.entPersonaColeccion();
+            DataTable dt = new DataTable();
+            try
+            {
+                con = generarConexion();
+                con.Open();
+
+
+                string consulta = "SELECT CONCAT(P.PER_APELLIDO, ', ', P.PER_NOMBRE) AS 'ALUMNO', " +
+                                        "P.PER_DOCUMENTO AS 'DOCUMENTO', " +
+                                        "P.PER_FECHA_NAC AS 'FECHA NACIMIENTO', " +
+                                        "DATEDIFF(YEAR, P.PER_FECHA_NAC, GETDATE()) AS 'EDAD', " +
+                                        "CONCAT(D.DOM_CALLE, ', Nº: ', D.DOM_NUMERO, '. BARRIO: ', D.DOM_BARRIO, ', CP: ', D.DOM_CP, ' ', D.DOM_PROVINCIA) AS 'DOMICILIO', " +
+                                        "P.PER_TELEFONO AS 'TELEFONO', " +
+                                        "P.PER_TELEFONO_2 AS 'TELEFONO 2', " +
+                                        "(CASE WHEN S.SAL_TURNO = 'MANANA' THEN 'MAÑANA' ELSE 'TARDE' END ) AS 'TURNO', " +
+                                        "S.SAL_NOMBRE AS 'SALA' " +
+                                    "FROM T_PERSONAS P, T_DOMICILIOS D, T_GRUPO_SALA GS, T_SALA S " +
+                                    "WHERE D.DOM_PER_ID = P.PER_ID " +
+                                        "AND P.PER_ID = GS.GRS_PER_ID " +
+                                        "AND S.SAL_ID = GS.GRS_SAL_ID " +
+                                        "AND P.PER_TPE_ID = 2 " +
+                                        "AND P.PER_ESTADO = 1 " +
+                                        ";";
+
+                cmd = new SqlCommand(consulta, con);
+                dta = new SqlDataAdapter(cmd);                
+                
+                dta.Fill(dt);
+                con.Close();
+
+            }
+            catch
+            {
+                //result = "ERROR";
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+
+            }
+
+            return dt;
+
+        }
+
     }
 }
