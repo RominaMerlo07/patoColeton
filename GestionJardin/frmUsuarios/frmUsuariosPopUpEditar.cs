@@ -26,6 +26,56 @@ namespace GestionJardin
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wnsg, int wparam, int lparam);
 
+        /*************LOAD **************/
+
+        private void frmUsuariosPopUpEditar_Load(object sender, EventArgs e)
+        {
+            frmUsuarios U = Owner as frmUsuarios;
+            if (U.dgv_UsuariosActivos.CurrentRow.Cells[5].Value.ToString() == "INACTIVO")
+            {
+                this.Close();
+                MessageBox.Show("NO SE PUEDE EDITAR USUARIO DADO DE BAJA!");
+            }
+
+        }
+        /************* PERMITE MOVER EL FORM **************/
+
+        private void frmUsuariosPopUpEditar_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+        /************* VALIDACIONES TEXTBOXCONTRASEÑA **************/
+
+        private void metroTextBoxContrasenaEdit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsLetter(e.KeyChar))
+            { e.Handled = false; }
+
+            else if (char.IsSeparator(e.KeyChar))//no dejaq escriba espacios
+            {
+                e.Handled = true;
+                MessageBox.Show("No puede ingresar espacios! ");
+            }
+            else if (char.IsControl(e.KeyChar))//permite q pueda borrar 
+            {
+                e.Handled = false;
+            }
+            else if (char.IsNumber(e.KeyChar)) //permite numeros
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+                MessageBox.Show("Solo se permiten letras y numeros!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+        }
+
+                    /***************************************/
+                    /*************** AGREGAR ***************/
+                    /***************************************/
         private void btn_GuardarUsuMod_Click(object sender, EventArgs e)
         {
             frmUsuarios U = Owner as frmUsuarios;//esto me indica q es el padre frmUsuarios y me deja usar sus metodos
@@ -47,7 +97,9 @@ namespace GestionJardin
 
             }
         }
-
+                    /***************************************/
+                    /*************** CANCELAR ***************/
+                    /***************************************/
         private void btn_CancelarUsuMod_Click(object sender, EventArgs e)
         {
             DialogResult resp = MessageBox.Show("¿Seguro desea salir?", "salir", MessageBoxButtons.YesNo,
@@ -61,50 +113,6 @@ namespace GestionJardin
             {
                 MessageBox.Show("Escriba una contraseña");
             }
-        }
-
-        private void frmUsuariosPopUpEditar_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void metroTextBoxContrasenaEdit_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (char.IsLetter(e.KeyChar))
-            { e.Handled = false; }
-
-            else if (char.IsSeparator(e.KeyChar))//no dejaq escriba espacios
-            {
-                e.Handled = true;
-                MessageBox.Show("No puede ingresar espacios! ");
-            }
-            else if (char.IsControl(e.KeyChar))//permite q pueda borrar 
-            {
-                e.Handled = false;
-            }
-            else if (char.IsNumber(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
-            {
-                e.Handled = true;
-                MessageBox.Show("Solo se permiten letras y numeros!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            }
-        }
-
-        private void frmUsuariosPopUpEditar_Load(object sender, EventArgs e)
-        {
-            frmUsuarios U = Owner as frmUsuarios;
-            if (U.dgv_UsuariosActivos.CurrentRow.Cells[5].Value.ToString() == "INACTIVO")
-            {
-                this.Close();
-                MessageBox.Show("NO SE PUEDE EDITAR USUARIO DADO DE BAJA!");
-
-            }
-
         }
     }
 }
