@@ -131,5 +131,48 @@ namespace GestionJardin
 
             return consulta;
         }
+
+        public string InsertarSala(entSala sala)
+        {
+            string result;
+                       
+
+            try
+            {
+                con = generarConexion();
+                con.Open();
+
+                string consulta = "INSERT INTO T_SALA " +
+                                                    "(SAL_NOMBRE, " +
+                                                    "SAL_TURNO, " +
+                                                    "SAL_EDAD_MIN, " +
+                                                    "SAL_EDAD_MAX, " +
+                                                    "SAL_CANT_ALUM, " +
+                                                    "SAL_ACTIVO) " +
+                                           "VALUES( '"+sala.SAL_NOMBRE+"','" +
+                                                    ""+sala.SALA_TURNO+"'," +
+                                                    ""+sala.SAL_EDAD_MIN+"," +
+                                                    ""+sala.EDAD_SALA_MAX+"," +
+                                                    ""+sala.SALA_CANT_ALUM+",'" +
+                                                    ""+sala.SALA_ACTIVO+"');";
+
+
+                cmd = new SqlCommand(consulta, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                result = "OK";
+
+            }
+            catch (Exception ex)
+            {
+                result = "ERROR";
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error-" + ex.ToString());
+
+            }
+
+            return result;
+        }
+
     }
 }
