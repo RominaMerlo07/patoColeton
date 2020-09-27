@@ -78,8 +78,8 @@ namespace GestionJardin
             set { p_perTpeId = value; }
         }
 
-        private String p_perLegajo;
-        public String PER_LEGAJO
+        private string p_perLegajo;
+        public string PER_LEGAJO
         {
             get { return p_perLegajo; }
             set { p_perLegajo = value; }

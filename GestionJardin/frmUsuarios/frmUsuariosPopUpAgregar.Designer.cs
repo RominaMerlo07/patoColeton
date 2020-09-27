@@ -28,170 +28,229 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuariosPopUpAgregar));
+            this.txt_nombre_usuario = new MetroFramework.Controls.MetroTextBox();
+            this.btn_GuardarUsuNuevo = new FontAwesome.Sharp.IconButton();
+            this.btn_CancelarUsuNuevo = new FontAwesome.Sharp.IconButton();
+            this.txt_contra_usu = new MetroFramework.Controls.MetroTextBox();
+            this.txtSeleccionarDocente = new MetroFramework.Controls.MetroTextBox();
+            this.lblNvoUsu = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // metroTextBox1
+            // txt_nombre_usuario
             // 
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(181, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(33, 33);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox1.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
-            this.metroTextBox1.IconRight = true;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(227, 129);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "USUARIO";
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(215, 40);
-            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTextBox1.TabIndex = 1;
-            this.metroTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.metroTextBox1.UseCustomBackColor = true;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.UseStyleColors = true;
-            this.metroTextBox1.WaterMark = "USUARIO";
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.Lime;
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nombre_usuario.CustomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nombre_usuario.CustomButton.Image = null;
+            this.txt_nombre_usuario.CustomButton.Location = new System.Drawing.Point(140, 1);
+            this.txt_nombre_usuario.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_nombre_usuario.CustomButton.Name = "";
+            this.txt_nombre_usuario.CustomButton.Size = new System.Drawing.Size(37, 37);
+            this.txt_nombre_usuario.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_nombre_usuario.CustomButton.TabIndex = 1;
+            this.txt_nombre_usuario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_nombre_usuario.CustomButton.UseSelectable = true;
+            this.txt_nombre_usuario.CustomButton.Visible = false;
+            this.txt_nombre_usuario.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txt_nombre_usuario.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
+            this.txt_nombre_usuario.ForeColor = System.Drawing.Color.White;
+            this.txt_nombre_usuario.IconRight = true;
+            this.txt_nombre_usuario.Lines = new string[0];
+            this.txt_nombre_usuario.Location = new System.Drawing.Point(307, 145);
+            this.txt_nombre_usuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_nombre_usuario.MaxLength = 32767;
+            this.txt_nombre_usuario.Name = "txt_nombre_usuario";
+            this.txt_nombre_usuario.PasswordChar = '\0';
+            this.txt_nombre_usuario.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_nombre_usuario.SelectedText = "";
+            this.txt_nombre_usuario.SelectionLength = 0;
+            this.txt_nombre_usuario.SelectionStart = 0;
+            this.txt_nombre_usuario.ShortcutsEnabled = true;
+            this.txt_nombre_usuario.Size = new System.Drawing.Size(178, 39);
+            this.txt_nombre_usuario.Style = MetroFramework.MetroColorStyle.Green;
+            this.txt_nombre_usuario.TabIndex = 2;
+            this.txt_nombre_usuario.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_nombre_usuario.UseCustomBackColor = true;
+            this.txt_nombre_usuario.UseCustomForeColor = true;
+            this.txt_nombre_usuario.UseSelectable = true;
+            this.txt_nombre_usuario.UseStyleColors = true;
+            this.txt_nombre_usuario.WaterMarkColor = System.Drawing.Color.Lime;
+            this.txt_nombre_usuario.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // iconButton1
+            // btn_GuardarUsuNuevo
             // 
-            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.iconButton1.IconSize = 50;
-            this.iconButton1.Location = new System.Drawing.Point(82, 331);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(216, 66);
-            this.iconButton1.TabIndex = 41;
-            this.iconButton1.Text = "GUARDAR";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.btn_GuardarUsuNuevo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_GuardarUsuNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_GuardarUsuNuevo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btn_GuardarUsuNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_GuardarUsuNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_GuardarUsuNuevo.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btn_GuardarUsuNuevo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_GuardarUsuNuevo.IconSize = 50;
+            this.btn_GuardarUsuNuevo.Location = new System.Drawing.Point(76, 333);
+            this.btn_GuardarUsuNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_GuardarUsuNuevo.Name = "btn_GuardarUsuNuevo";
+            this.btn_GuardarUsuNuevo.Rotation = 0D;
+            this.btn_GuardarUsuNuevo.Size = new System.Drawing.Size(216, 66);
+            this.btn_GuardarUsuNuevo.TabIndex = 41;
+            this.btn_GuardarUsuNuevo.Text = "GUARDAR";
+            this.btn_GuardarUsuNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_GuardarUsuNuevo.UseVisualStyleBackColor = true;
+            this.btn_GuardarUsuNuevo.Click += new System.EventHandler(this.btn_GuardarUsuNuevo_Click);
             // 
-            // iconButton2
+            // btn_CancelarUsuNuevo
             // 
-            this.iconButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.iconButton2.IconSize = 50;
-            this.iconButton2.Location = new System.Drawing.Point(382, 331);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Rotation = 0D;
-            this.iconButton2.Size = new System.Drawing.Size(216, 66);
-            this.iconButton2.TabIndex = 42;
-            this.iconButton2.Text = "CANCELAR";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.btn_CancelarUsuNuevo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_CancelarUsuNuevo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_CancelarUsuNuevo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btn_CancelarUsuNuevo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_CancelarUsuNuevo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_CancelarUsuNuevo.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btn_CancelarUsuNuevo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btn_CancelarUsuNuevo.IconSize = 50;
+            this.btn_CancelarUsuNuevo.Location = new System.Drawing.Point(375, 333);
+            this.btn_CancelarUsuNuevo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_CancelarUsuNuevo.Name = "btn_CancelarUsuNuevo";
+            this.btn_CancelarUsuNuevo.Rotation = 0D;
+            this.btn_CancelarUsuNuevo.Size = new System.Drawing.Size(216, 66);
+            this.btn_CancelarUsuNuevo.TabIndex = 42;
+            this.btn_CancelarUsuNuevo.Text = "CANCELAR";
+            this.btn_CancelarUsuNuevo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btn_CancelarUsuNuevo.UseVisualStyleBackColor = true;
+            this.btn_CancelarUsuNuevo.Click += new System.EventHandler(this.btn_CancelarUsuNuevo_Click);
             // 
-            // metroComboBox1
-            // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 24;
-            this.metroComboBox1.Location = new System.Drawing.Point(130, 36);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.PromptText = "SELECCIONE DOCENTE";
-            this.metroComboBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.metroComboBox1.Size = new System.Drawing.Size(420, 30);
-            this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroComboBox1.TabIndex = 43;
-            this.metroComboBox1.UseCustomBackColor = true;
-            this.metroComboBox1.UseCustomForeColor = true;
-            this.metroComboBox1.UseSelectable = true;
-            // 
-            // metroTextBox2
+            // txt_contra_usu
             // 
             // 
             // 
             // 
-            this.metroTextBox2.CustomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(181, 1);
-            this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(33, 33);
-            this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox2.CustomButton.TabIndex = 1;
-            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox2.CustomButton.UseSelectable = true;
-            this.metroTextBox2.CustomButton.Visible = false;
-            this.metroTextBox2.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox2.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
-            this.metroTextBox2.IconRight = true;
-            this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(227, 218);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.PromptText = "CONTRASEÑA";
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.SelectionLength = 0;
-            this.metroTextBox2.SelectionStart = 0;
-            this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(215, 40);
-            this.metroTextBox2.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTextBox2.TabIndex = 44;
-            this.metroTextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.metroTextBox2.UseCustomBackColor = true;
-            this.metroTextBox2.UseSelectable = true;
-            this.metroTextBox2.UseStyleColors = true;
-            this.metroTextBox2.WaterMark = "CONTRASEÑA";
-            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.Lime;
-            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_contra_usu.CustomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_contra_usu.CustomButton.Image = null;
+            this.txt_contra_usu.CustomButton.Location = new System.Drawing.Point(287, 1);
+            this.txt_contra_usu.CustomButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_contra_usu.CustomButton.Name = "";
+            this.txt_contra_usu.CustomButton.Size = new System.Drawing.Size(37, 37);
+            this.txt_contra_usu.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txt_contra_usu.CustomButton.TabIndex = 1;
+            this.txt_contra_usu.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txt_contra_usu.CustomButton.UseSelectable = true;
+            this.txt_contra_usu.CustomButton.Visible = false;
+            this.txt_contra_usu.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txt_contra_usu.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
+            this.txt_contra_usu.ForeColor = System.Drawing.Color.White;
+            this.txt_contra_usu.IconRight = true;
+            this.txt_contra_usu.Lines = new string[0];
+            this.txt_contra_usu.Location = new System.Drawing.Point(160, 232);
+            this.txt_contra_usu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txt_contra_usu.MaxLength = 32767;
+            this.txt_contra_usu.Name = "txt_contra_usu";
+            this.txt_contra_usu.PasswordChar = '\0';
+            this.txt_contra_usu.PromptText = "INGRESE UNA CONTRASEÑA";
+            this.txt_contra_usu.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txt_contra_usu.SelectedText = "";
+            this.txt_contra_usu.SelectionLength = 0;
+            this.txt_contra_usu.SelectionStart = 0;
+            this.txt_contra_usu.ShortcutsEnabled = true;
+            this.txt_contra_usu.Size = new System.Drawing.Size(325, 39);
+            this.txt_contra_usu.Style = MetroFramework.MetroColorStyle.Green;
+            this.txt_contra_usu.TabIndex = 3;
+            this.txt_contra_usu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_contra_usu.UseCustomBackColor = true;
+            this.txt_contra_usu.UseCustomForeColor = true;
+            this.txt_contra_usu.UseSelectable = true;
+            this.txt_contra_usu.UseStyleColors = true;
+            this.txt_contra_usu.WaterMark = "INGRESE UNA CONTRASEÑA";
+            this.txt_contra_usu.WaterMarkColor = System.Drawing.Color.Lime;
+            this.txt_contra_usu.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_contra_usu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_contra_usu_KeyPress);
+            // 
+            // txtSeleccionarDocente
+            // 
+            this.txtSeleccionarDocente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtSeleccionarDocente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.txtSeleccionarDocente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
+            this.txtSeleccionarDocente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            // 
+            // 
+            // 
+            this.txtSeleccionarDocente.CustomButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtSeleccionarDocente.CustomButton.Cursor = System.Windows.Forms.Cursors.WaitCursor;
+            this.txtSeleccionarDocente.CustomButton.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            this.txtSeleccionarDocente.CustomButton.Location = new System.Drawing.Point(359, 1);
+            this.txtSeleccionarDocente.CustomButton.Margin = new System.Windows.Forms.Padding(3, 1, 3, 1);
+            this.txtSeleccionarDocente.CustomButton.Name = "";
+            this.txtSeleccionarDocente.CustomButton.Size = new System.Drawing.Size(41, 41);
+            this.txtSeleccionarDocente.CustomButton.Style = MetroFramework.MetroColorStyle.Black;
+            this.txtSeleccionarDocente.CustomButton.TabIndex = 1;
+            this.txtSeleccionarDocente.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtSeleccionarDocente.CustomButton.UseSelectable = true;
+            this.txtSeleccionarDocente.CustomButton.UseWaitCursor = true;
+            this.txtSeleccionarDocente.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtSeleccionarDocente.Lines = new string[0];
+            this.txtSeleccionarDocente.Location = new System.Drawing.Point(124, 45);
+            this.txtSeleccionarDocente.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSeleccionarDocente.MaxLength = 32767;
+            this.txtSeleccionarDocente.Name = "txtSeleccionarDocente";
+            this.txtSeleccionarDocente.PasswordChar = '\0';
+            this.txtSeleccionarDocente.PromptText = "INGRESE DOCENTE";
+            this.txtSeleccionarDocente.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtSeleccionarDocente.SelectedText = "";
+            this.txtSeleccionarDocente.SelectionLength = 0;
+            this.txtSeleccionarDocente.SelectionStart = 0;
+            this.txtSeleccionarDocente.ShortcutsEnabled = true;
+            this.txtSeleccionarDocente.ShowButton = true;
+            this.txtSeleccionarDocente.ShowClearButton = true;
+            this.txtSeleccionarDocente.Size = new System.Drawing.Size(401, 43);
+            this.txtSeleccionarDocente.Style = MetroFramework.MetroColorStyle.Lime;
+            this.txtSeleccionarDocente.TabIndex = 1;
+            this.txtSeleccionarDocente.UseSelectable = true;
+            this.txtSeleccionarDocente.UseStyleColors = true;
+            this.txtSeleccionarDocente.WaterMark = "INGRESE DOCENTE";
+            this.txtSeleccionarDocente.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtSeleccionarDocente.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSeleccionarDocente.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.txtSeleccionarDocente_ButtonClick);
+            // 
+            // lblNvoUsu
+            // 
+            this.lblNvoUsu.AutoSize = true;
+            this.lblNvoUsu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNvoUsu.ForeColor = System.Drawing.Color.Lime;
+            this.lblNvoUsu.Location = new System.Drawing.Point(155, 145);
+            this.lblNvoUsu.Name = "lblNvoUsu";
+            this.lblNvoUsu.Size = new System.Drawing.Size(113, 25);
+            this.lblNvoUsu.TabIndex = 78;
+            this.lblNvoUsu.Text = "USUARIO: ";
             // 
             // frmUsuariosPopUpAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(666, 450);
-            this.Controls.Add(this.metroTextBox2);
-            this.Controls.Add(this.metroComboBox1);
-            this.Controls.Add(this.iconButton2);
-            this.Controls.Add(this.iconButton1);
-            this.Controls.Add(this.metroTextBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.ClientSize = new System.Drawing.Size(667, 450);
+            this.Controls.Add(this.lblNvoUsu);
+            this.Controls.Add(this.txtSeleccionarDocente);
+            this.Controls.Add(this.txt_contra_usu);
+            this.Controls.Add(this.btn_CancelarUsuNuevo);
+            this.Controls.Add(this.btn_GuardarUsuNuevo);
+            this.Controls.Add(this.txt_nombre_usuario);
             this.Location = new System.Drawing.Point(32, 177);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmUsuariosPopUpAgregar";
-            this.Text = "GENERAR USUARIO";
+            this.Text = "GESTIÓN USUARIO / GENERAR USUARIO NUEVO";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmUsuariosPopUpAgregar_MouseDown);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private FontAwesome.Sharp.IconButton iconButton1;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
+        private MetroFramework.Controls.MetroTextBox txt_nombre_usuario;
+        private FontAwesome.Sharp.IconButton btn_GuardarUsuNuevo;
+        private FontAwesome.Sharp.IconButton btn_CancelarUsuNuevo;
+        private MetroFramework.Controls.MetroTextBox txt_contra_usu;
+        public MetroFramework.Controls.MetroTextBox txtSeleccionarDocente;
+        public System.Windows.Forms.Label lblNvoUsu;
     }
 }

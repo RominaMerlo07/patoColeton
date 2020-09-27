@@ -18,6 +18,7 @@ namespace GestionJardin
         SqlDataAdapter dta;
         DataTable dt;
         SqlDataReader dr;
+        DataTable cardoc;
 
         public AutoCompleteStringCollection traerPersonasAutocompetar(string tipo_persona) //FILTRA POR TIPO DE PERSONA. "0" TRAE TODOS. 
         {
@@ -57,8 +58,53 @@ namespace GestionJardin
             return autoComplete;
 
         }
+        public DataTable Mostrardocente()//muestra docente en la grilla
+        {
+            con = generarConexion();
+            con.Open();
+            SqlCommand com = new SqlCommand();
+            com.Connection = con;
+            string CargarDocente = "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, " +
+                                           "PER_DOCUMENTO 'DOCUMENTO', " +
+                                           "PER_TELEFONO_2 'CELULAR', " +
+                                           "PER_TELEFONO 'TELEFONO', " +
+                                           "PER_EMAIL 'EMAIL', " +
+                                           "CASE SAL_TURNO WHEN 'MANANA' THEN 'MAÑANA' ELSE 'TARDE' END 'TURNO', " +
+                                           "SAL_NOMBRE 'SALA', " +
+                                           "PER_FECHA_ALTA FECHA_DE_ALTA, " +
+                                           "PER_FECHA_MOD FECHA_DE_MODIFICACION, " +
+                                           "PER_FECHA_BAJA FECHA_DE_BAJA " +
+                                     "FROM T_PERSONAS, T_GRUPO_SALA, T_SALA " +
+                                    "WHERE PER_ID = GRS_PER_ID " +
+                                      "AND GRS_SAL_ID = SAL_ID " +
+                                      "AND PER_TPE_ID = 1 " +
+                                      "AND PER_ESTADO = 'S' " +
+                                      "UNION " +
+                                   "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, " +
+                                           "PER_DOCUMENTO, " +
+                                           "PER_TELEFONO_2 'CELULAR', " +
+                                           "PER_TELEFONO, " +
+                                           "PER_EMAIL, " +
+                                           "'', " +
+                                           "'', " +
+                                           "PER_FECHA_ALTA, " +
+                                           "PER_FECHA_MOD, " +
+                                           "PER_FECHA_BAJA " +                                           
+                                     "FROM T_PERSONAS " +
+                                    "WHERE PER_TPE_ID = 1 " +
+                                      "AND PER_ID not in (SELECT GRS_PER_ID FROM T_GRUPO_SALA) " +
+                                      "AND PER_ESTADO = 'S' ";
 
-        public string Insertar(entPersona persona)
+
+            com = new SqlCommand(CargarDocente, con);
+            cardoc = new DataTable();
+            dta = new SqlDataAdapter(com);
+            dta.Fill(cardoc);
+            con.Close();
+            return cardoc;
+        }
+
+        public string EliminarDocente(entPersona eli_Docente)//metodo que elimina docente, le coloca fecha de baja no elimina de la base 
         {
             string result;
 
@@ -66,39 +112,10 @@ namespace GestionJardin
             {
                 con = generarConexion();
                 con.Open();
-
-                string consulta = "INSERT INTO T_PERSONAS " +
-                                                "(PER_NOMBRE" +
-                                                ", PER_APELLIDO" +
-                                                ", PER_DOCUMENTO" +
-                                                ", PER_GENERO" +
-                                                ", PER_FECHA_NAC" +
-                                                ", PER_TELEFONO" +
-                                                ", PER_TELEFONO_2" +
-                                                ", PER_EMAIL" +
-                                                ", PER_TPE_ID" +
-                                                ", PER_LEGAJO" +
-                                                ", PER_ESTADO" +
-                                                ", PER_FECHA_ALTA" +
-                                                ", PER_FECHA_MOD" +
-                                                ", PER_FECHA_BAJA) " +
-                                        "VALUES " +
-                                                "('" + persona.PER_NOMBRE + "'" +
-                                                ", '" + persona.PER_APELLIDO + "'" +
-                                                ", '" + persona.PER_DOCUMENTO + "'" +
-                                                ", '" + persona.PER_GENERO + "'" +
-                                                ", '" + persona.PER_FECHA_NAC + "'" +
-                                                ", '" + persona.PER_TELEFONO + "'" +
-                                                ", '" + persona.PER_TELEFONO_2 + "'" +
-                                                ", '" + persona.PER_EMAIL + "'" +
-                                                ", '" + persona.PER_TPE_ID + "'" +
-                                                ", '" + persona.PER_LEGAJO + "'" +
-                                                ", '" + persona.PER_ESTADO + "'" +
-                                                ", GETDATE()" +
-                                                ", NULL" +
-                                                ", NULL);";
-
-
+                string consulta = "set dateformat dmy UPDATE T_PERSONAS set per_fecha_baja = convert(varchar, GETDATE(), 103)," +
+                                                            "PER_FECHA_MOD = convert(varchar, GETDATE(), 103)," +
+                                                            "PER_ESTADO = 'N' " +
+                                                            "WHERE PER_ID = " + eli_Docente.PER_ID +  ";";
                 cmd = new SqlCommand(consulta, con);
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -112,13 +129,128 @@ namespace GestionJardin
                 MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
+            return result;
+
+        }
+
+        public string EliminarDocenteGrupoSala(entPersona eli_Docente)//metodo que elimina docente, le coloca fecha de baja no elimina de la base 
+        {
+            string result;
+
+            try
+            {
+                con = generarConexion();
+                con.Open();
+                string consulta = "set dateformat dmy DELETE FROM T_GRUPO_SALA WHERE GRS_PER_ID = " + eli_Docente.PER_ID + ";";
+                cmd = new SqlCommand(consulta, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                result = "OK";
+
+            }
+            catch
+            {
+                result = "ERROR";
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            return result;
+
+        }
+
+
+
+        public string  traerdocente(MetroFramework.Controls.MetroTextBox pbarrabuscar) //autocompleta el txtGu_Buscar
+        {
+            con = generarConexion();
+            con.Open();
+
+            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            
+
+            string consulta = "SELECT PER_NOMBRE+' '+ PER_APELLIDO 'DOCENTE' from t_personas where PER_TPE_ID =1 order by 1";
+
+
+            cmd = new SqlCommand(consulta, con);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                pbarrabuscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());
+            }
+            dr.Close();
+
+            con.Close();
+
+            return consulta;
+
+
+        }
+        public string Insertar(entPersona persona)//inserta persona (docente usa el mismo insert)
+        {
+            string result;
+
+            DateTime nacimiento = persona.PER_FECHA_NAC;
+            string nacimiento2 = nacimiento.ToString("yyyy-MM-dd");
+
+            try
+            {
+                con = generarConexion();
+                con.Open();
+
+                string consulta = "INSERT INTO T_PERSONAS " +
+                                                "(PER_NOMBRE, " +
+                                                "PER_APELLIDO, " +
+                                                "PER_DOCUMENTO, " +
+                                                "PER_GENERO, " +
+                                                " PER_FECHA_NAC," + 
+                                                "PER_TELEFONO, " +
+                                                "PER_TELEFONO_2, " +
+                                                "PER_EMAIL," +
+                                                "PER_TPE_ID," +
+                                                "PER_LEGAJO," +
+                                                "PER_ESTADO," +
+                                                "PER_FECHA_ALTA," +
+                                                "PER_FECHA_MOD," +
+                                                "PER_FECHA_BAJA) " +
+                                        "VALUES " +
+                                                "('" + persona.PER_NOMBRE + "'" +
+                                                ", '" + persona.PER_APELLIDO + "'" +
+                                                ", '" + persona.PER_DOCUMENTO + "'" +
+                                                ", '" + persona.PER_GENERO + "'" +
+                                                ",CAST('" + nacimiento2 + "' AS Date)" +
+                                                ", '" + persona.PER_TELEFONO + "'" +
+                                                ", '" + persona.PER_TELEFONO_2 + "'" +
+                                                ", '" + persona.PER_EMAIL + "'" +
+                                                ", " + persona.PER_TPE_ID +
+                                                ", '" + persona.PER_LEGAJO + "'" +
+                                                ", '" + persona.PER_ESTADO + "'" +
+                                                ", GETDATE()" +
+                                                ", NULL " +
+                                                ", NULL);";
+
+
+                cmd = new SqlCommand(consulta, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                result = "OK";
+
+            }
+            catch (Exception ex)
+            {
+                result = "ERROR";
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error-" + ex.ToString());
+
+            }
 
             return result;
         }
 
+
         public entPersona BuscaPersona(string nombre, string apellido, string documento)
         {
-            //string result = "";
+            
             entPersona ent = new entPersona();
 
             try
@@ -187,6 +319,78 @@ namespace GestionJardin
         }
 
 
+        public entPersona BuscaDocente(string documento)
+        {
+
+            entPersona ent = new entPersona();
+
+            try
+            {
+                con = generarConexion();
+                con.Open();
+
+
+                string consulta = "SELECT * FROM T_PERSONAS P WHERE P.PER_DOCUMENTO = '" + documento + "';";
+
+
+                cmd = new SqlCommand(consulta, con);
+                dta = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                dta.Fill(dt);
+
+                con.Close();
+
+
+                if (dt != null)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        //result = Convert.ToString(dr["PER_ID"]);
+
+
+                        if (dr["PER_ID"] != DBNull.Value)
+                            ent.PER_ID = Convert.ToInt32(dr["PER_ID"]);
+                        if (dr["PER_NOMBRE"] != DBNull.Value)
+                            ent.PER_NOMBRE = Convert.ToString(dr["PER_NOMBRE"]);
+                        if (dr["PER_APELLIDO"] != DBNull.Value)
+                            ent.PER_APELLIDO = Convert.ToString(dr["PER_APELLIDO"]);
+                        if (dr["PER_DOCUMENTO"] != DBNull.Value)
+                            ent.PER_DOCUMENTO = Convert.ToInt32(dr["PER_DOCUMENTO"]);
+                        if (dr["PER_GENERO"] != DBNull.Value)
+                            ent.PER_GENERO = Convert.ToString(dr["PER_GENERO"]);
+                        if (dr["PER_FECHA_NAC"] != DBNull.Value)
+                            ent.PER_FECHA_NAC = Convert.ToDateTime(dr["PER_FECHA_NAC"]);
+                        if (dr["PER_TELEFONO"] != DBNull.Value)
+                            ent.PER_TELEFONO = Convert.ToString(dr["PER_TELEFONO"]);
+                        if (dr["PER_TELEFONO_2"] != DBNull.Value)
+                            ent.PER_TELEFONO_2 = Convert.ToString(dr["PER_TELEFONO_2"]);
+                        if (dr["PER_EMAIL"] != DBNull.Value)
+                            ent.PER_EMAIL = Convert.ToString(dr["PER_EMAIL"]);
+                        if (dr["PER_TPE_ID"] != DBNull.Value)
+                            ent.PER_TPE_ID = Convert.ToString(dr["PER_TPE_ID"]);
+                        if (dr["PER_LEGAJO"] != DBNull.Value)
+                            ent.PER_LEGAJO = Convert.ToString(dr["PER_LEGAJO"]);
+
+                    }
+                }
+
+
+
+            }
+            catch(Exception ex)
+            {
+                //result = "ERROR";
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error :" + ex.ToString());
+
+
+            }
+
+            return ent;
+
+        }
+
+
+
         public string editarPersona(entPersona personaEditar)
         {
             string result;
@@ -225,6 +429,7 @@ namespace GestionJardin
 
             return result;
         }
+                              
 
 
         public string ValidarDni(string pDNI)
@@ -270,6 +475,64 @@ namespace GestionJardin
             return Edad_D;
 
         }
+        public DataTable llenarGrilla(string docente)// filtro grilla docente
+        {
+            con = generarConexion();
+            con.Open();
+            DataTable dt = new DataTable();
+            cmd = new SqlCommand();
+            cmd.Connection = this.con;
+            cmd.CommandText = "WITH t1 AS(SELECT PER_NOMBRE +' ' + PER_APELLIDO 'DOCENTE', " +
+                                                "PER_DOCUMENTO 'DOCUMENTO', " +
+                                                "PER_TELEFONO_2 'CELULAR', " +
+                                                "PER_TELEFONO 'TELEFONO', " +
+                                                "PER_EMAIL 'EMAIL', " +
+                                                "SAL_NOMBRE 'SALA', " +
+                                                "SAL_TURNO 'TURNO', " +
+                                                "PER_FECHA_ALTA 'FECHA_DE_ALTA', " +
+                                                "PER_FECHA_MOD 'FECHA_DE_MODIFICACION', " +
+                                                "PER_FECHA_BAJA 'FECHA_DE_BAJA' " +
+                                          "FROM T_PERSONAS, T_GRUPO_SALA, T_SALA " +
+                                         "WHERE PER_ID = GRS_PER_ID " +
+                                                "AND GRS_SAL_ID = SAL_ID " +
+                                                "AND PER_TPE_ID = 1 " +
+                                                "AND PER_ESTADO = 'S' " +
+                                   "UNION " +
+                                          "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, " +
+                                                  "PER_DOCUMENTO, " +
+                                                  "PER_TELEFONO_2 'CELULAR', " +
+                                                  "PER_TELEFONO, " +
+                                                  "PER_EMAIL, " +
+                                                  "'', " +
+                                                  "'', " +
+                                                  "PER_FECHA_ALTA, " +
+                                                  "PER_FECHA_MOD, " +
+                                                  "PER_FECHA_BAJA " +
+                                            "FROM T_PERSONAS " +
+                                           "WHERE PER_TPE_ID = 1 " +
+                                           "AND PER_ID not in (SELECT GRS_PER_ID FROM T_GRUPO_SALA ) " +
+                                           "AND PER_ESTADO = 'S') " +
+                                           "SELECT t1.DOCENTE, " +
+                                           "t1.DOCUMENTO, " +
+                                           "T1.CELULAR, " +
+                                           "t1.TELEFONO, " +
+                                           "t1.EMAIL, " +
+                                           "CASE t1.TURNO WHEN 'MANANA' THEN 'MAÑANA' " +
+                                                         "WHEN 'TARDE' THEN 'TARDE' " +
+                                                         "ELSE '' " +
+                                                    "END TURNO, " +
+                                           "t1.SALA, " +
+                                           "t1.FECHA_DE_ALTA, " +
+                                           "t1.FECHA_DE_BAJA, " +
+                                           "t1.FECHA_DE_MODIFICACION " +
+                                   "FROM t1 " +
+                                  "WHERE UPPER(t1.DOCENTE) LIKE UPPER('" + docente + "%'); ";
+
+
+            dr = cmd.ExecuteReader();
+            dt.Load(dr);
+            return dt;
+        }
 
         public bool ValidarEmail(String pEmail)
         {
@@ -294,6 +557,60 @@ namespace GestionJardin
                 return false;
             }
 
+        }
+
+        public string Llenar_Combo_Salas(MetroFramework.Controls.MetroComboBox pcomboboxturno, MetroFramework.Controls.MetroComboBox pcomboboxsalas)
+
+        {
+            con = generarConexion();
+            con.Open();
+
+            if (pcomboboxturno.SelectedIndex == 0)
+            {
+                string consulta = "SELECT SAL_NOMBRE, SAL_ID FROM T_SALA WHERE SAL_TURNO = 'MANANA';";
+
+                cmd = new SqlCommand(consulta, con);
+                dta = new SqlDataAdapter(cmd);
+                dt = new DataTable("SAL_NOMBRE");
+                dta.Fill(dt);
+
+
+                pcomboboxsalas.DataSource = dt;
+                pcomboboxsalas.DisplayMember = "SAL_NOMBRE";
+                pcomboboxsalas.ValueMember = "SAL_ID";
+               // pcomboboxsalas.SelectedItem = 0;
+
+
+            }
+            else
+            {
+                if (pcomboboxturno.SelectedIndex == 1)
+                {
+
+                    string consulta = "SELECT SAL_NOMBRE, SAL_ID FROM T_SALA WHERE SAL_TURNO = 'TARDE';";
+
+                    cmd = new SqlCommand(consulta, con);
+                    dta = new SqlDataAdapter(cmd);
+                    dt = new DataTable("SAL_NOMBRE");
+                    dta.Fill(dt);
+                    pcomboboxsalas.DataSource = dt;
+                    pcomboboxsalas.DisplayMember = "SAL_NOMBRE";
+                    pcomboboxsalas.ValueMember = "SAL_ID";
+               //     pcomboboxsalas.SelectedItem = 0;
+
+
+                }
+                else
+                {
+                    pcomboboxsalas.Enabled = false;
+                }
+            }
+
+
+
+            con.Close();
+
+            return "OK";
 
         }
 
@@ -326,8 +643,8 @@ namespace GestionJardin
                                         ";";
 
                 cmd = new SqlCommand(consulta, con);
-                dta = new SqlDataAdapter(cmd);                
-                
+                dta = new SqlDataAdapter(cmd);
+
                 dta.Fill(dt);
                 con.Close();
 

@@ -115,9 +115,9 @@ namespace GestionJardin
                     }
                 }
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error: " + ex.ToString());
             }
 
             return ent;
@@ -160,6 +160,8 @@ namespace GestionJardin
 
             return result;
         }
+
+
 
     }
 }
