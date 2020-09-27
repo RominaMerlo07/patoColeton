@@ -31,7 +31,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgvAlumnos = new MetroFramework.Controls.MetroGrid();
             this.label1 = new System.Windows.Forms.Label();
             this.txtGA_Buscar = new MetroFramework.Controls.MetroTextBox();
             this.btnGA_Filtrar = new FontAwesome.Sharp.IconPictureBox();
@@ -40,64 +39,12 @@
             this.btnGA_Eliminar = new FontAwesome.Sharp.IconButton();
             this.btnGA_Editar = new FontAwesome.Sharp.IconButton();
             this.btnGA_Agregar = new FontAwesome.Sharp.IconButton();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
+            this.dgvAlumnos = new MetroFramework.Controls.MetroGrid();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Filtrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Excel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Pdf)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvAlumnos
-            // 
-            this.dgvAlumnos.AllowUserToAddRows = false;
-            this.dgvAlumnos.AllowUserToDeleteRows = false;
-            this.dgvAlumnos.AllowUserToResizeRows = false;
-            this.dgvAlumnos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvAlumnos.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dgvAlumnos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgvAlumnos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 7.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAlumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAlumnos.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvAlumnos.EnableHeadersVisualStyles = false;
-            this.dgvAlumnos.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.dgvAlumnos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.dgvAlumnos.Location = new System.Drawing.Point(40, 383);
-            this.dgvAlumnos.MultiSelect = false;
-            this.dgvAlumnos.Name = "dgvAlumnos";
-            this.dgvAlumnos.ReadOnly = true;
-            this.dgvAlumnos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAlumnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvAlumnos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dgvAlumnos.RowTemplate.Height = 24;
-            this.dgvAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAlumnos.Size = new System.Drawing.Size(1221, 497);
-            this.dgvAlumnos.Style = MetroFramework.MetroColorStyle.Silver;
-            this.dgvAlumnos.TabIndex = 0;
-            this.dgvAlumnos.UseCustomBackColor = true;
-            this.dgvAlumnos.UseCustomForeColor = true;
-            this.dgvAlumnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid1_CellContentClick);
-            this.dgvAlumnos.SelectionChanged += new System.EventHandler(this.dgvAlumnos_SelectionChanged);
             // 
             // label1
             // 
@@ -106,7 +53,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(36, 901);
+            this.label1.Location = new System.Drawing.Point(34, 868);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(814, 20);
             this.label1.TabIndex = 9;
@@ -133,7 +80,7 @@
             this.txtGA_Buscar.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtGA_Buscar.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtGA_Buscar.Lines = new string[0];
-            this.txtGA_Buscar.Location = new System.Drawing.Point(40, 290);
+            this.txtGA_Buscar.Location = new System.Drawing.Point(38, 257);
             this.txtGA_Buscar.MaxLength = 32767;
             this.txtGA_Buscar.Name = "txtGA_Buscar";
             this.txtGA_Buscar.PasswordChar = '\0';
@@ -160,7 +107,7 @@
             this.btnGA_Filtrar.IconChar = FontAwesome.Sharp.IconChar.Filter;
             this.btnGA_Filtrar.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btnGA_Filtrar.IconSize = 83;
-            this.btnGA_Filtrar.Location = new System.Drawing.Point(669, 269);
+            this.btnGA_Filtrar.Location = new System.Drawing.Point(667, 236);
             this.btnGA_Filtrar.Name = "btnGA_Filtrar";
             this.btnGA_Filtrar.Padding = new System.Windows.Forms.Padding(5);
             this.btnGA_Filtrar.Size = new System.Drawing.Size(95, 83);
@@ -177,7 +124,7 @@
             this.btnGA_Excel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
             this.btnGA_Excel.IconColor = System.Drawing.Color.Chartreuse;
             this.btnGA_Excel.IconSize = 83;
-            this.btnGA_Excel.Location = new System.Drawing.Point(790, 269);
+            this.btnGA_Excel.Location = new System.Drawing.Point(788, 236);
             this.btnGA_Excel.Name = "btnGA_Excel";
             this.btnGA_Excel.Padding = new System.Windows.Forms.Padding(5);
             this.btnGA_Excel.Size = new System.Drawing.Size(95, 83);
@@ -194,7 +141,7 @@
             this.btnGA_Pdf.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
             this.btnGA_Pdf.IconColor = System.Drawing.Color.Salmon;
             this.btnGA_Pdf.IconSize = 83;
-            this.btnGA_Pdf.Location = new System.Drawing.Point(910, 269);
+            this.btnGA_Pdf.Location = new System.Drawing.Point(908, 236);
             this.btnGA_Pdf.Name = "btnGA_Pdf";
             this.btnGA_Pdf.Padding = new System.Windows.Forms.Padding(5);
             this.btnGA_Pdf.Size = new System.Drawing.Size(95, 83);
@@ -212,7 +159,7 @@
             this.btnGA_Eliminar.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
             this.btnGA_Eliminar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnGA_Eliminar.IconSize = 100;
-            this.btnGA_Eliminar.Location = new System.Drawing.Point(1315, 714);
+            this.btnGA_Eliminar.Location = new System.Drawing.Point(1313, 681);
             this.btnGA_Eliminar.Name = "btnGA_Eliminar";
             this.btnGA_Eliminar.Rotation = 0D;
             this.btnGA_Eliminar.Size = new System.Drawing.Size(293, 134);
@@ -232,7 +179,7 @@
             this.btnGA_Editar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.btnGA_Editar.IconColor = System.Drawing.Color.Cyan;
             this.btnGA_Editar.IconSize = 100;
-            this.btnGA_Editar.Location = new System.Drawing.Point(1315, 552);
+            this.btnGA_Editar.Location = new System.Drawing.Point(1313, 519);
             this.btnGA_Editar.Name = "btnGA_Editar";
             this.btnGA_Editar.Rotation = 0D;
             this.btnGA_Editar.Size = new System.Drawing.Size(293, 134);
@@ -252,7 +199,7 @@
             this.btnGA_Agregar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             this.btnGA_Agregar.IconColor = System.Drawing.Color.Lime;
             this.btnGA_Agregar.IconSize = 100;
-            this.btnGA_Agregar.Location = new System.Drawing.Point(1315, 400);
+            this.btnGA_Agregar.Location = new System.Drawing.Point(1313, 367);
             this.btnGA_Agregar.Name = "btnGA_Agregar";
             this.btnGA_Agregar.Rotation = 0D;
             this.btnGA_Agregar.Size = new System.Drawing.Size(293, 134);
@@ -261,6 +208,59 @@
             this.btnGA_Agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGA_Agregar.UseVisualStyleBackColor = true;
             this.btnGA_Agregar.Click += new System.EventHandler(this.btnGA_Agregar_Click);
+            // 
+            // dgvAlumnos
+            // 
+            this.dgvAlumnos.AllowUserToAddRows = false;
+            this.dgvAlumnos.AllowUserToDeleteRows = false;
+            this.dgvAlumnos.AllowUserToResizeRows = false;
+            this.dgvAlumnos.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvAlumnos.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgvAlumnos.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvAlumnos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 7.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(136)))), ((int)(((byte)(136)))), ((int)(((byte)(136)))));
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAlumnos.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvAlumnos.EnableHeadersVisualStyles = false;
+            this.dgvAlumnos.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.dgvAlumnos.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.dgvAlumnos.Location = new System.Drawing.Point(38, 350);
+            this.dgvAlumnos.MultiSelect = false;
+            this.dgvAlumnos.Name = "dgvAlumnos";
+            this.dgvAlumnos.ReadOnly = true;
+            this.dgvAlumnos.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(85)))), ((int)(((byte)(85)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(102)))), ((int)(((byte)(102)))), ((int)(((byte)(102)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(17)))), ((int)(((byte)(17)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlumnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvAlumnos.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dgvAlumnos.RowTemplate.Height = 24;
+            this.dgvAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvAlumnos.Size = new System.Drawing.Size(1221, 497);
+            this.dgvAlumnos.Style = MetroFramework.MetroColorStyle.Silver;
+            this.dgvAlumnos.TabIndex = 0;
+            this.dgvAlumnos.UseCustomBackColor = true;
+            this.dgvAlumnos.UseCustomForeColor = true;
+            this.dgvAlumnos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.metroGrid1_CellContentClick);
+            this.dgvAlumnos.SelectionChanged += new System.EventHandler(this.dgvAlumnos_SelectionChanged);
             // 
             // frmAlumnosGestionar
             // 
@@ -280,18 +280,16 @@
             this.Name = "frmAlumnosGestionar";
             this.Text = "GESTIONAR ALUMNOS";
             this.Load += new System.EventHandler(this.frmAlumnosGestionar_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Filtrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Excel)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Pdf)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private MetroFramework.Controls.MetroGrid dgvAlumnos;
         private FontAwesome.Sharp.IconButton btnGA_Agregar;
         private FontAwesome.Sharp.IconButton btnGA_Editar;
         private FontAwesome.Sharp.IconButton btnGA_Eliminar;
@@ -300,5 +298,6 @@
         private FontAwesome.Sharp.IconPictureBox btnGA_Filtrar;
         private FontAwesome.Sharp.IconPictureBox btnGA_Pdf;
         private MetroFramework.Controls.MetroTextBox txtGA_Buscar;
+        private MetroFramework.Controls.MetroGrid dgvAlumnos;
     }
 }

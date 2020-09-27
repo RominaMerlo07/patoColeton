@@ -85,7 +85,7 @@ namespace GestionJardin
                                         "AND P.PER_ID = GS.GRS_PER_ID " +
                                         "AND S.SAL_ID = GS.GRS_SAL_ID " +
                                         "AND P.PER_TPE_ID = 2 " +
-                                        "AND P.PER_ESTADO = 1 " +
+                                        "AND P.PER_ESTADO = 'S' " + //ver con GASTON como esta definido, por en mi base tengo 'S'  (Romi)
                                         ";";
 
                 cmd = new SqlCommand(consulta, con);
@@ -95,10 +95,10 @@ namespace GestionJardin
                 con.Close();
 
             }
-            catch
+            catch(Exception ex)
             {
                 //result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error: " + ex.ToString());
 
 
             }
