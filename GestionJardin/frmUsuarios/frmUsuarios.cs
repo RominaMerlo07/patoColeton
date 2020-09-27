@@ -17,7 +17,9 @@ namespace GestionJardin
         public frmUsuarios()
         {
             InitializeComponent();
-           
+            ObjetoUsu.AutocompletarenDocente(txtGU_Buscar);
+
+
         }
         /*************LOAD **************/
 

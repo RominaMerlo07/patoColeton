@@ -22,8 +22,8 @@ namespace GestionJardin
 
         private void frmSalas_Load(object sender, EventArgs e)
         {
-            dgv_Salas.DataSource = metSala.Grilla();
             dgv_Salas.ClearSelection();          
+            dgv_Salas.DataSource = metSala.Grilla();
         }
 
         private void btnGS_Editar_Click(object sender, EventArgs e)

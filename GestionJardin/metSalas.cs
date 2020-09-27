@@ -43,10 +43,11 @@ namespace GestionJardin
             }
 
             cmd.Parameters.Add(new SqlParameter("@turnoSala", turnoR));
-
-            dr = cmd.ExecuteReader();
-            Tabla.Load(dr);
-            dr.Close();
+            //cmd = new SqlCommand(consulta, con);
+            dta = new SqlDataAdapter(cmd);
+            //dta = cmd.ExecuteReader();
+            dta.Fill(Tabla);
+            //dr.Close();
 
             con.Close();
             return Tabla;
@@ -235,7 +236,7 @@ namespace GestionJardin
                 SqlCommand com = new SqlCommand();
                 com.Connection = con;
 
-                com.CommandText = "select s.SAL_NOMBRE SALA, s.SAL_TURNO TURNO, count(gs.GRS_SAL_ID) CANTIDAD, s.SAL_CANT_ALUM MAXIMO " +
+                com.CommandText = "select gs.GRS_SAL_ID, s.SAL_NOMBRE SALA, s.SAL_TURNO TURNO, count(gs.GRS_SAL_ID) CANTIDAD, s.SAL_CANT_ALUM MAXIMO " +
                                         "from T_GRUPO_SALA GS, T_SALA S, T_PERSONAS P " +
                                         "where p.PER_ID = gs.GRS_PER_ID " +
                                         "and gs.GRS_SAL_ID = s.SAL_ID " +
