@@ -116,7 +116,7 @@ namespace GestionJardin
         private void btnGS_Agregar_Click(object sender, EventArgs e)
         {
             frmSalasPopUpAgregar frmSalasPopUpAgregar = new frmSalasPopUpAgregar();
-            frmSalasPopUpAgregar.Text = "GESTION DOCENTES / CREAR NUEVA SALA";
+            frmSalasPopUpAgregar.Text = "GESTIÓN SALAS / CREAR NUEVA SALA";
             frmSalasPopUpAgregar.ShowDialog();
 
             dgv_Salas.DataSource = metSala.GrillaSalas();
