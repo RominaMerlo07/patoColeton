@@ -20,7 +20,15 @@ namespace GestionJardin
 
         private void frmAlumnosGestionar_Load(object sender, EventArgs e)
         {
-              
+
+            cargar_dgvAlumnos();
+            btnGA_Editar.Visible = false;
+            btnGA_Eliminar.Visible = false;
+            txtGA_Buscar.Visible = false; //MOMENTANEO. Hacer busqueda sobre datos de grilla.
+            //dgvAlumnos.ClearSelection();
+            btnGA_Filtrar.Visible = false;
+            btnGA_Excel.Visible = false;
+            btnGA_Pdf.Visible = false;
         }
 
         private void btnGA_Agregar_Click(object sender, EventArgs e)
@@ -73,6 +81,31 @@ namespace GestionJardin
         private void txtGA_Buscar_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cargar_dgvAlumnos()
+        {
+            DataTable col = new DataTable();
+            metPersonas metPersonas = new metPersonas();
+            col = metPersonas.TraerAlumnos();
+            dgvAlumnos.DataSource = col;
+
+        }
+
+        private void dgvAlumnos_SelectionChanged(object sender, EventArgs e)
+        {
+            var rowsCount = dgvAlumnos.SelectedRows.Count;
+
+            if (rowsCount > 0)
+            {
+                btnGA_Editar.Visible = true;
+                btnGA_Eliminar.Visible = true;
+
+            } else
+            {
+                btnGA_Editar.Visible = false;
+                btnGA_Eliminar.Visible = false;
+            }
         }
     }
 }
