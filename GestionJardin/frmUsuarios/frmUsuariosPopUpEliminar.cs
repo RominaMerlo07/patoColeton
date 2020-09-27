@@ -25,7 +25,7 @@ namespace GestionJardin
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wnsg, int wparam, int lparam);
 
-        /************* LOAD **************/
+                /************* LOAD **************/
 
         private void frmUsuariosPopUpEliminar_Load(object sender, EventArgs e)
         {
@@ -37,7 +37,7 @@ namespace GestionJardin
 
             }
         }
-        /************* permite mover el form  **************/
+            /************* permite mover el form  **************/
 
         private void frmUsuariosPopUpEliminar_MouseDown(object sender, MouseEventArgs e)
            {
@@ -45,9 +45,9 @@ namespace GestionJardin
               SendMessage(this.Handle, 0x112, 0xf012, 0);
                                }
 
-                        /***************************************/
-                        /*************** AGREGAR ***************/
-                        /***************************************/
+                      /***************************************/
+                      /*************** AGREGAR ***************/
+                      /***************************************/
 
         private void btn_GuardarUsuNuevo_Click(object sender, EventArgs e)
         {

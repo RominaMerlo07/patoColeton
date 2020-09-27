@@ -26,7 +26,7 @@ namespace GestionJardin
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
         private extern static void SendMessage(System.IntPtr hwnd, int wnsg, int wparam, int lparam);
 
-        /*************LOAD **************/
+                /*************LOAD **************/
 
         private void frmUsuariosPopUpEditar_Load(object sender, EventArgs e)
         {
@@ -38,14 +38,14 @@ namespace GestionJardin
             }
 
         }
-        /************* PERMITE MOVER EL FORM **************/
+            /************* PERMITE MOVER EL FORM **************/
 
         private void frmUsuariosPopUpEditar_MouseDown(object sender, MouseEventArgs e)
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-        /************* VALIDACIONES TEXTBOXCONTRASEÑA **************/
+            /************* VALIDACIONES TEXTBOXCONTRASEÑA **************/
 
         private void metroTextBoxContrasenaEdit_KeyPress(object sender, KeyPressEventArgs e)
         {

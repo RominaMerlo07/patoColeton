@@ -21,7 +21,7 @@ namespace GestionJardin
 
 
         }
-        /*************LOAD **************/
+                /*************LOAD **************/
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
@@ -32,7 +32,7 @@ namespace GestionJardin
         }
             
 
-        /******  buscar datos Grilla ******/
+                /******  buscar datos Grilla ******/
 
         private void txtGU_Buscar_ButtonClick(object sender, EventArgs e)
         {
@@ -46,7 +46,7 @@ namespace GestionJardin
             dgv_UsuariosActivos.DataSource = ObjetoUsu.llenarGrilla(docente);
         }
 
-        /******  Filtro Grilla ******/
+                     /******  Filtro Grilla ******/
 
         private void txtGU_Buscar_TextChanged(object sender, EventArgs e)
         {
