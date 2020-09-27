@@ -17,14 +17,16 @@ namespace GestionJardin
         public frmUsuarios()
         {
             InitializeComponent();
-            Settooltip();
-            ObjetoUsu.AutocompletarenDocente(txtGU_Buscar);
-            dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
+           
         }
+        /*************LOAD **************/
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-          dgv_UsuariosActivos.ClearSelection();                                  
+          dgv_UsuariosActivos.ClearSelection();
+          Settooltip();
+          ObjetoUsu.AutocompletarenDocente(txtGU_Buscar);
+          dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
         }
             
 
@@ -56,9 +58,13 @@ namespace GestionJardin
                 txtGU_Buscar.Clear();
                 dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
             }
-
         }
+        /************* COLOCA LAS LETRAS EN MAYUSCULAS **************/
 
+        private void txtGU_Buscar_Click(object sender, EventArgs e)
+               {
+                 txtGU_Buscar.CharacterCasing = CharacterCasing.Upper;//esto me pone las letras en mayusculas siempre 
+                     }
 
         /************* Mensaje evento hover boton  **************/
 
@@ -92,11 +98,9 @@ namespace GestionJardin
             }
         }
 
-
         /***************************************/
         /*************** AGREGAR ***************/
         /***************************************/
-
 
         private void btnGU_Agregar_Click(object sender, EventArgs e)
         {
@@ -105,9 +109,7 @@ namespace GestionJardin
             AddOwnedForm(frmUsuariosPopUpAgregar);
             ObjetoUsu.AutocompletarAgregarDocente(frmUsuariosPopUpAgregar.txtSeleccionarDocente);
             frmUsuariosPopUpAgregar.ShowDialog();
-
         }
-
 
         /***************************************/
         /*************** EDITAR ***************/
@@ -167,10 +169,7 @@ namespace GestionJardin
             }
         }
 
-        private void txtGU_Buscar_Click(object sender, EventArgs e)
-        {
-            txtGU_Buscar.CharacterCasing = CharacterCasing.Upper;//esto me pone las letras en mayusculas siempre 
-        }
+        
 
        
     }
