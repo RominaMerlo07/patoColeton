@@ -24,9 +24,9 @@ namespace GestionJardin
         
         private void frmUsuariosPopUpAgregar_Load_1(object sender, EventArgs e)
         {
-            /***Coloco el foco en textbox principal***/
-            txtSeleccionarDocente.Focus();
-            /***habilito solo para leer el textbox***/
+                /***Coloco el foco en textbox principal***/
+                txtSeleccionarDocente.Focus();
+                /***habilito solo para leer el textbox***/
             txt_nombre_usuario.ReadOnly = true;
             txt_contra_usu.ReadOnly = true;
             /***coloco en gris el textbox***/
