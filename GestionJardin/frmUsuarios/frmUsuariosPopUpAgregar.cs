@@ -16,42 +16,68 @@ namespace GestionJardin
         metUsuario ObjetoUsu = new metUsuario();
         entUsuario Usuario = new entUsuario();
 
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hwnd, int wnsg, int wparam, int lparam);
-
         public frmUsuariosPopUpAgregar()
         {
             InitializeComponent();
-            txtSeleccionarDocente.Focus();
+
         }
+        
+        private void frmUsuariosPopUpAgregar_Load_1(object sender, EventArgs e)
+        {
+                /***Coloco el foco en textbox principal***/
+                txtSeleccionarDocente.Focus();
+                /***habilito solo para leer el textbox***/
+            txt_nombre_usuario.ReadOnly = true;
+            txt_contra_usu.ReadOnly = true;
+            /***coloco en gris el textbox***/
+            txt_contra_usu.BackColor = Color.DarkGray;
+            txt_nombre_usuario.BackColor = Color.DarkGray;
+            txt_contra_usu.ForeColor = MetroFramework.MetroColors.Silver;
+            txt_contra_usu.WaterMarkColor = MetroFramework.MetroColors.Silver;
+            
+        }
+/************* seleccion de Docente y habilitacion de ingreso de contraseña  **************/
+
+        private void txtSeleccionarDocente_ButtonClick(object sender, EventArgs e)
+        {
+            ObjetoUsu.CrearUsuario(txtSeleccionarDocente, txt_nombre_usuario);
+            /***me habilita para poder escribir***/
+            txt_contra_usu.ReadOnly = false;
+            /***me devuelve  los colores originales del textbox***/
+            txt_contra_usu.BackColor= Color.FromArgb( 34, 33, 74);
+            txt_nombre_usuario.BackColor = Color.FromArgb(34, 33, 74);    
+            txt_contra_usu.WaterMarkColor = Color.Lime;
+            txt_contra_usu.ForeColor = Color.Lime;
+            txt_contra_usu.Focus();
+            
+        }
+        /***************************************/
+        /*************** AGREGAR ***************/
+        /***************************************/
 
         private void btn_GuardarUsuNuevo_Click(object sender, EventArgs e)
         {
             frmUsuarios U = Owner as frmUsuarios;//esto me indica q es el padre frmUsuarios y me deja usar sus metodos
 
-            ObjetoUsu.Ingresar_Usuario(txtSeleccionarDocente, txt_nombre_usuario, txt_contra_usu);
-            MessageBox.Show(" Registro de Usuario Exitoso ");
-            U.dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
-            this.Close();
+            if (txtSeleccionarDocente.Text== "")
+            {
+                MessageBox.Show("Seleccione un docente! ");
+            }
+            else
+            {
+                ObjetoUsu.Ingresar_Usuario(txtSeleccionarDocente, txt_nombre_usuario, txt_contra_usu);
+                MessageBox.Show(" Registro de Usuario Exitoso ");
+                U.dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
+                this.Close();
+            }
             
         }
-
+        /***************************************/
+        /*************** CANCELAR ***************/
+        /***************************************/
         private void btn_CancelarUsuNuevo_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void frmUsuariosPopUpAgregar_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        private void txtSeleccionarDocente_ButtonClick(object sender, EventArgs e)
-        {
-            ObjetoUsu.CrearUsuario(txtSeleccionarDocente, txt_nombre_usuario);
         }
 
         private void txt_contra_usu_KeyPress(object sender, KeyPressEventArgs e)
@@ -80,9 +106,6 @@ namespace GestionJardin
             }
         }
 
-        private void frmUsuariosPopUpAgregar_Load(object sender, EventArgs e)
-        {
-            txtSeleccionarDocente.Focus();
-        }
+       
     }
 }

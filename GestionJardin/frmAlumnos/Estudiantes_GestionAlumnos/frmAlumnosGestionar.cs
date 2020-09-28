@@ -18,6 +18,8 @@ namespace GestionJardin
             InitializeComponent();
         }
 
+
+
         private void frmAlumnosGestionar_Load(object sender, EventArgs e)
         {
 

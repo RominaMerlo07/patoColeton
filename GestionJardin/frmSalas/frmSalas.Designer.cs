@@ -165,6 +165,7 @@
             this.btnGS_Agregar.Text = "AGREGAR";
             this.btnGS_Agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGS_Agregar.UseVisualStyleBackColor = true;
+            this.btnGS_Agregar.Click += new System.EventHandler(this.btnGS_Agregar_Click);
             // 
             // txtGS_Buscar
             // 
@@ -201,6 +202,7 @@
             this.txtGS_Buscar.WaterMark = "BUSCAR SALA - TURNO";
             this.txtGS_Buscar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtGS_Buscar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGS_Buscar.TextChanged += new System.EventHandler(this.txtGS_Buscar_TextChanged);
             // 
             // dgv_Salas
             // 
