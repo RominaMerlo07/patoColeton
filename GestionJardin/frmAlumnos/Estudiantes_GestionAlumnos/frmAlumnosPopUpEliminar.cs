@@ -13,13 +13,13 @@ namespace GestionJardin
     public partial class frmAlumnosPopUpEliminar : Form
     {
         string idEliminar;
-        string alumno;
+        //string alumno;
 
         public frmAlumnosPopUpEliminar(string idEliminar, string alumno)
         {
             InitializeComponent();
-            idEliminar = idEliminar;
-            alumno = alumno;
+            //idEliminar = idEliminar;
+            //alumno = alumno;
 
             label2.Text = alumno + "?";
             lblidPersona.Text = idEliminar;

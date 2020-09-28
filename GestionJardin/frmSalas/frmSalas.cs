@@ -80,6 +80,12 @@ namespace GestionJardin
                 btnGS_Eliminar.IconColor = Color.FromArgb(255,128,0);
                 btnGS_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
 
+                string idSalaSelect = dgv_Salas.SelectedRows[0].Cells[0].Value.ToString();
+                string nombreSala= dgv_Salas.SelectedRows[0].Cells[1].Value.ToString();
+                frmSalasPopUpEliminar frmSalasPopUpEliminar = new frmSalasPopUpEliminar(idSalaSelect, nombreSala);
+                frmSalasPopUpEliminar.Text = "GESTIÓN SALAS / ELIMINAR SALA";
+                frmSalasPopUpEliminar.ShowDialog();
+
                 dgv_Salas.DataSource = metSala.GrillaSalas();
                 dgv_Salas.Columns["SAL_ID"].Visible = false;
             }

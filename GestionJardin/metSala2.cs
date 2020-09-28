@@ -50,6 +50,7 @@ namespace GestionJardin
                                       "((t1.SAL_CANT_ALUM - t1.ACTIVOS)) CUPOS_VACANTES " +
                                 "FROM t1, T_SALA S " +
                                 "WHERE T1.SAL_ID = S.SAL_ID " +
+                                "AND SAL_ACTIVO = 'S' " +
                                 "ORDER BY RANGO, t1.SAL_NOMBRE, t1.SAL_TURNO;";
             cmd = new SqlCommand(consulta, con);
             dta = new SqlDataAdapter(cmd);
@@ -99,6 +100,7 @@ namespace GestionJardin
                                      "WHERE t1.SAL_ID = S.SAL_ID " +
                                      "AND UPPER(t1.SAL_NOMBRE) LIKE UPPER('" + sala + "%') " +
                                      "AND UPPER(t1.SAL_TURNO) LIKE UPPER('" + turno + "%') " +
+                                     "AND SAL_ACTIVO = 'S' " +
                                      "ORDER BY RANGO, t1.SAL_NOMBRE, t1.SAL_TURNO; ";
 
 
@@ -264,6 +266,31 @@ namespace GestionJardin
             return result;
         }
 
+        public string EliminarSala(entSala sala)
+        {
+            string result;
+
+            try
+            {
+                con = generarConexion();
+                con.Open();
+                string consulta = "set dateformat dmy UPDATE T_SALA SET SAL_ACTIVO = 'N' WHERE SAL_ID = " + sala.SAL_ID + ";";
+                cmd = new SqlCommand(consulta, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                result = "OK";
+
+            }
+            catch
+            {
+                result = "ERROR";
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            return result;
+
+        }
 
     }
 }

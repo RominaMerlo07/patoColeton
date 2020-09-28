@@ -267,3 +267,4 @@ C:\Users\gaston\Dropbox\Cervantes\SistemaJardin\GestionJardin\obj\Debug\GestionJ
 C:\Users\gaston\Dropbox\Cervantes\SistemaJardin\GestionJardin\obj\Debug\GestionJardin.csprojAssemblyReference.cache
 C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmSalasPopUpAgregar.resources
 C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmSalasPopUpEditar.resources
+C:\Users\Laura\Desktop\ProyectoSistemas_bk_v3\GestionJardin\obj\Debug\GestionJardin.frmSalasPopUpEliminar.resources
