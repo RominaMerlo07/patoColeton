@@ -236,12 +236,12 @@ namespace GestionJardin
                 SqlCommand com = new SqlCommand();
                 com.Connection = con;
 
-                com.CommandText = "select gs.GRS_SAL_ID, s.SAL_NOMBRE SALA, s.SAL_TURNO TURNO, count(gs.GRS_SAL_ID) CANTIDAD, s.SAL_CANT_ALUM MAXIMO " +
-                                        "from T_GRUPO_SALA GS, T_SALA S, T_PERSONAS P " +
-                                        "where p.PER_ID = gs.GRS_PER_ID " +
-                                        "and gs.GRS_SAL_ID = s.SAL_ID " +
-                                        "group by gs.GRS_SAL_ID, s.SAL_NOMBRE, s.SAL_TURNO, s.SAL_CANT_ALUM;";
-
+                com.CommandText = "select s.SAL_ID, " +
+                                        "s.SAL_NOMBRE SALA, " +
+                                        "s.SAL_TURNO TURNO, " +
+                                        "ISNULL((select count(gs.GRS_SAL_ID) from T_GRUPO_SALA GS where gs.GRS_SAL_ID = s.SAL_ID GROUP BY gs.GRS_SAL_ID), 0) CANTIDAD, " +
+                                        "s.SAL_CANT_ALUM MAXIMO " +
+                                        "from T_SALA S;";
 
                 SqlDataAdapter da = new SqlDataAdapter(com);
                 DataSet ds = new DataSet();

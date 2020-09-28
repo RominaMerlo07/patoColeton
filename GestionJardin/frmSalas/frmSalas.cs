@@ -24,6 +24,7 @@ namespace GestionJardin
         {
             dgv_Salas.ClearSelection();          
             dgv_Salas.DataSource = metSala.GrillaSalas();
+            dgv_Salas.Columns["SAL_ID"].Visible = false;
             metSala.BuscarSala(txtGS_Buscar);
         }
 
@@ -33,11 +34,14 @@ namespace GestionJardin
             {
                 btnGS_Editar.IconColor = Color.Cyan;
                 btnGS_Editar.ForeColor = Color.Cyan;
-                frmSalasPopUpEditar frmSalasPopUpEditar = new frmSalasPopUpEditar();
+                string idSalaSelect = dgv_Salas.SelectedRows[0].Cells[0].Value.ToString();
+                frmSalasPopUpEditar frmSalasPopUpEditar = new frmSalasPopUpEditar(idSalaSelect);
                 frmSalasPopUpEditar.Text = "GESTIÓN SALAS / EDITAR Y/O VISUALIZAR DATOS DE UNA SALA";
                 frmSalasPopUpEditar.ShowDialog();
 
                 dgv_Salas.DataSource = metSala.GrillaSalas();
+                dgv_Salas.Columns["SAL_ID"].Visible = false;                
+                
 
             }
             else
@@ -75,6 +79,9 @@ namespace GestionJardin
             {
                 btnGS_Eliminar.IconColor = Color.FromArgb(255,128,0);
                 btnGS_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
+
+                dgv_Salas.DataSource = metSala.GrillaSalas();
+                dgv_Salas.Columns["SAL_ID"].Visible = false;
             }
             else
             {
@@ -112,11 +119,13 @@ namespace GestionJardin
             if (txtGS_Buscar.Text.Length > 0)
             {
                 dgv_Salas.DataSource = metSala.FiltrarSala(sala, turno);
+                dgv_Salas.Columns["SAL_ID"].Visible = false;
             }
             else
             {
-                txtGS_Buscar.Clear();            
+                txtGS_Buscar.Clear();                            
                 dgv_Salas.DataSource = metSala.GrillaSalas();
+                dgv_Salas.Columns["SAL_ID"].Visible = false;
             }
         }
 
@@ -127,6 +136,7 @@ namespace GestionJardin
             frmSalasPopUpAgregar.ShowDialog();
 
             dgv_Salas.DataSource = metSala.GrillaSalas();
+            dgv_Salas.Columns["SAL_ID"].Visible = false;
         }
     }
 }

@@ -31,6 +31,7 @@
             this.btncancelar = new FontAwesome.Sharp.IconButton();
             this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.panelDatos = new MetroFramework.Controls.MetroPanel();
+            this.btnBloqueo = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCantMax = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -47,7 +48,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblDatosSala = new MetroFramework.Controls.MetroLabel();
             this.txtSala = new MetroFramework.Controls.MetroTextBox();
-            this.btnBloqueo = new FontAwesome.Sharp.IconButton();
             this.panelDatos.SuspendLayout();
             this.metroPanel3.SuspendLayout();
             this.metroPanel2.SuspendLayout();
@@ -90,6 +90,7 @@
             this.btnguardar.Text = "GUARDAR";
             this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // panelDatos
             // 
@@ -120,6 +121,27 @@
             this.panelDatos.VerticalScrollbarBarColor = true;
             this.panelDatos.VerticalScrollbarHighlightOnWheel = false;
             this.panelDatos.VerticalScrollbarSize = 10;
+            // 
+            // btnBloqueo
+            // 
+            this.btnBloqueo.FlatAppearance.BorderSize = 0;
+            this.btnBloqueo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBloqueo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBloqueo.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            this.btnBloqueo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btnBloqueo.IconSize = 45;
+            this.btnBloqueo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBloqueo.Location = new System.Drawing.Point(547, 26);
+            this.btnBloqueo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBloqueo.Name = "btnBloqueo";
+            this.btnBloqueo.Rotation = 0D;
+            this.btnBloqueo.Size = new System.Drawing.Size(77, 66);
+            this.btnBloqueo.TabIndex = 54;
+            this.btnBloqueo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBloqueo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnBloqueo.UseVisualStyleBackColor = true;
+            this.btnBloqueo.Click += new System.EventHandler(this.btnBloqueo_Click_1);
             // 
             // label1
             // 
@@ -384,26 +406,6 @@
             this.txtSala.WaterMark = "NOMBRE SALA";
             this.txtSala.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSala.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // btnBloqueo
-            // 
-            this.btnBloqueo.FlatAppearance.BorderSize = 0;
-            this.btnBloqueo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBloqueo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnBloqueo.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            this.btnBloqueo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnBloqueo.IconSize = 45;
-            this.btnBloqueo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBloqueo.Location = new System.Drawing.Point(547, 26);
-            this.btnBloqueo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnBloqueo.Name = "btnBloqueo";
-            this.btnBloqueo.Rotation = 0D;
-            this.btnBloqueo.Size = new System.Drawing.Size(77, 66);
-            this.btnBloqueo.TabIndex = 54;
-            this.btnBloqueo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBloqueo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnBloqueo.UseVisualStyleBackColor = true;
             // 
             // frmSalasPopUpEditar
             // 
