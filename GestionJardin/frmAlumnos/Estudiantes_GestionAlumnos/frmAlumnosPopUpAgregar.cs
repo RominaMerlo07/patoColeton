@@ -15,9 +15,30 @@ namespace GestionJardin
 
         frmAlumnos alumnos = new frmAlumnos();
 
+        // Variables
+        int idHmno;
+
         public frmAlumnosPopUpAgregar()
         {
             InitializeComponent();
+        }
+
+        private void frmAlumnosPopUpAgregar_Load(object sender, EventArgs e)
+        {
+            cbHrmDomicilio.Enabled = false;
+            txtBuscaHmno.Enabled = false;
+
+
+            //Autocompletar BuscarHermanos
+
+            AutoCompleteStringCollection alumnos = new AutoCompleteStringCollection();
+            metPersonas metPersonas = new metPersonas();
+            alumnos = metPersonas.traerPersonasAutocompetar("2");
+
+            txtBuscaHmno.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtBuscaHmno.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtBuscaHmno.AutoCompleteCustomSource = alumnos;          
+
         }
 
         private string validaCampos()
@@ -25,7 +46,14 @@ namespace GestionJardin
             string resultadoValidacion = "";
 
 
-            if (string.IsNullOrWhiteSpace(txtNombre.Text.Trim()) == true)
+            if (string.IsNullOrWhiteSpace(txtDocumento.Text.Trim()) == true)
+            {
+                txtDocumento.Style = MetroFramework.MetroColorStyle.Red;
+                txtDocumento.Focus();
+                resultadoValidacion = "el Documento";
+
+            }
+            else if (string.IsNullOrWhiteSpace(txtNombre.Text.Trim()) == true)
             {
                 txtNombre.Style = MetroFramework.MetroColorStyle.Red;
                 txtNombre.Focus();
@@ -39,11 +67,11 @@ namespace GestionJardin
                 resultadoValidacion = "el Apellido";
 
             }
-            else if (string.IsNullOrWhiteSpace(txtDocumento.Text.Trim()) == true)
+            else if (string.IsNullOrWhiteSpace(txtCalle.Text.Trim()) == true)
             {
-                txtDocumento.Style = MetroFramework.MetroColorStyle.Red;
-                txtDocumento.Focus();
-                resultadoValidacion = "el Documento";
+                txtCalle.Style = MetroFramework.MetroColorStyle.Red;
+                txtCalle.Focus();
+                resultadoValidacion = "la Calle del domicilio";
 
             }
             else if (string.IsNullOrWhiteSpace(txtCalle.Text.Trim()) == true)
@@ -81,11 +109,19 @@ namespace GestionJardin
                 resultadoValidacion = "un Celular de contacto";
 
             }
-            else if (string.IsNullOrWhiteSpace(txtEmail.Text.Trim()) == true)
+            else if ((string.IsNullOrWhiteSpace(txtEmail.Text.Trim()) == true) || (validarEmail() == false))
             {
                 txtEmail.Style = MetroFramework.MetroColorStyle.Red;
                 txtEmail.Focus();
                 resultadoValidacion = "el E-mail";
+
+            }
+            else if ((string.IsNullOrWhiteSpace(txtVacantes.Text.Trim()) == true) || (Convert.ToInt32(txtVacantes.Text) <= 0 ))
+            {
+
+                txtVacantes.Style = MetroFramework.MetroColorStyle.Red;
+                txtVacantes.Focus();
+                resultadoValidacion = "la Sala";
 
             }
             else
@@ -130,8 +166,11 @@ namespace GestionJardin
             txtEmail.Style = MetroFramework.MetroColorStyle.Default;
 
 
-            cbSala.SelectedItem = null; ;
-            cbTurno.SelectedItem = null; ;
+            //cbSala.SelectedItem = null;
+            //cbTurno.SelectedItem = null;
+
+            cbHrmDomicilio.Enabled = false;
+            txtBuscaHmno.Enabled = false;
             //txtLegajo.Text = "--";
         }
 
@@ -152,7 +191,6 @@ namespace GestionJardin
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            // Función que valide todos los campos
 
             string validacion = validaCampos();
 
@@ -185,8 +223,6 @@ namespace GestionJardin
                 string celular = txtCelular.Text.Trim();
                 string email = txtEmail.Text.Trim();
 
-                //cbTurno.SelectedItem; no se agrega en ninguna tabla
-
                 string id_sala;
                 if (cbSala.SelectedItem == null)
                 {
@@ -197,6 +233,9 @@ namespace GestionJardin
                     id_sala = cbSala.SelectedValue.ToString();
                 }
 
+                //-- Termina de preparar todos los datos
+
+                //--- Secuenciador de Legajo
                 metParametricas metParametricas = new metParametricas();
                 string legajo = metParametricas.secuenciadorLegajoAlumnos(); // lo genera solo
                 //--------
@@ -211,41 +250,33 @@ namespace GestionJardin
                 personaInsert.PER_TELEFONO = telefono;
                 personaInsert.PER_TELEFONO_2 = celular;
                 personaInsert.PER_EMAIL = email;
-                //personaInsert.PER_TPE_ID = cbTipoPersona2.SelectedValue.ToString();
+                personaInsert.PER_TPE_ID = "2";
                 personaInsert.PER_LEGAJO = legajo;
                 personaInsert.PER_ESTADO = "1";
 
-
+                // INSERTA PERSONA
                 metPersonas metPersona = new metPersonas();
-                string resultado = metPersona.Insertar(personaInsert); // INSERTA PERSONA
-                //nombre = "RAMON";
-                //apellidos = "LOPEZ";
-                //documento = "25654987";
+                string resultado = metPersona.Insertar(personaInsert);
+                // -----
 
                 if (resultado == "OK")
-                { // entra a insertar el domicilio de la persona solo si inserto la persona correctamente
+                { // entra solo si inserto la persona correctamente
 
                     personaInsert = metPersona.BuscaPersona(nombre, apellidos, documento); // TRAE EL ID RECIEN INSERTADO
                     Int32 id_persona = personaInsert.PER_ID;
 
-                    // popUp del familiar
-                    //if ((cbTipoPersona2.SelectedValue.ToString() != "1") && (cbTipoPersona2.SelectedValue.ToString() != "2"))
-                    //{
-                    //    frmPopUpFlia frmFlia = new frmPopUpFlia();
-                    //    frmFlia.ShowDialog();
-
-                    //    string LegajoAsociado = frmFlia.Legajo; // familiar al que se asocia al ingresado
-
-                    //    metGrupoFlia objGrpFlia = new metGrupoFlia();
-
-                    //    string resulta3 = objGrpFlia.insertaEnGrupoFlia(Convert.ToInt32(id_persona), LegajoAsociado);
-                    //}
-                    //else if (cbTipoPersona2.SelectedValue.ToString() == "2")
-                    //{
-                    //    metGrupoFlia objGrpFlia = new metGrupoFlia();
-                    //    string resulta3 = objGrpFlia.insertaEnGrupoFlia(Convert.ToInt32(id_persona), legajo);
-
-                    //}
+                    // INSERTA GRUPO FAMILIAR
+                    string valor = cbHrmDomicilio.SelectedItem.ToString();
+                    if (valor.StartsWith("SI"))
+                    {
+                        metGrupoFlia objGrpFlia = new metGrupoFlia();
+                        string resulta3 = objGrpFlia.insertaEnGrupoFlia(Convert.ToInt32(id_persona), Convert.ToString(idHmno)); // antes se pasaba el legajo como segundo parametro, ahora pasamos el id_persona del hermano
+                    }
+                    else
+                    {
+                        metGrupoFlia objGrpFlia = new metGrupoFlia();
+                        string resulta3 = objGrpFlia.insertaEnGrupoFlia(Convert.ToInt32(id_persona), Convert.ToString(id_persona));
+                    }
                     // -----
 
                     //INSERTA DOMICILIO
@@ -263,34 +294,31 @@ namespace GestionJardin
                         domicilioInsertar.DOM_PISO = Convert.ToInt32(piso);
                     }
 
-
                     domicilioInsertar.DOM_DPTO = dpto;
                     domicilioInsertar.DOM_BARRIO = barrio;
                     domicilioInsertar.DOM_CP = Convert.ToInt32(cpostal);
 
-
                     metDomicilio metDomicilio = new metDomicilio();
                     resultado = metDomicilio.Insertar(domicilioInsertar);
+                    // -----
 
-                    //INSERTA GRUPO SALA SOLO SI ES DOCENTE O ALUMNO
-                    //if ((cbTipoPersona2.SelectedValue.ToString() == "2") || (cbTipoPersona2.SelectedValue.ToString() == "1"))
-                    //{
-                    //    entGrupoSala grupoSalaInsertar = new entGrupoSala();
+                    //INSERTA GRUPO SALA 
+                    
+                    entGrupoSala grupoSalaInsertar = new entGrupoSala();
 
-                    //    grupoSalaInsertar.GRS_PER_ID = Convert.ToInt32(id_persona);
-                    //    grupoSalaInsertar.GRS_SAL_ID = Convert.ToInt32(id_sala);
+                    grupoSalaInsertar.GRS_PER_ID = Convert.ToInt32(id_persona);
+                    grupoSalaInsertar.GRS_SAL_ID = Convert.ToInt32(id_sala);
 
-                    //    metSalas metSalas = new metSalas();
-                    //    resultado = metSalas.insertarGrupoSala(grupoSalaInsertar);
+                    metSalas metSalas = new metSalas();
+                    resultado = metSalas.insertarGrupoSala(grupoSalaInsertar);
+                    // -----
 
-
-                    //}
-
-                    //al terminar de insertar Borra todos los campos
                     if (resultado == "OK")
                     {
                         MessageBox.Show("Se ha ingresado el registro con éxito.", "Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        limpiarCampos();
+                        this.Close();
+                        //limpiarCampos();
+
                     }
 
                 }
@@ -301,6 +329,12 @@ namespace GestionJardin
             {
                 MessageBox.Show("No olvide ingresar " + validacion + ".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            limpiarCampos();
+            this.Close();
         }
 
         private void cbTurno_SelectedValueChanged(object sender, EventArgs e)
@@ -337,12 +371,150 @@ namespace GestionJardin
             metSalas objMetSalas = new metSalas();
             DataTable gruposSalas = new DataTable();
             gruposSalas = objMetSalas.traerSalasCupo();
-            DataRow[] rows = gruposSalas.Select("GRS_SAL_ID = " + id_sala);
+            DataRow[] rows = gruposSalas.Select("SAL_ID = " + id_sala);
             int CANTIDAD = Convert.ToInt16(rows[0]["CANTIDAD"].ToString());
             int MAXIMO = Convert.ToInt16(rows[0]["MAXIMO"].ToString());
             int VACANTES = MAXIMO - CANTIDAD;
 
             txtVacantes.Text = VACANTES.ToString();
+        }
+
+        private void cbHermanos_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string valor = cbHermanos.SelectedItem.ToString();
+            if (valor.StartsWith("SI"))
+            {
+                cbHrmDomicilio.Enabled = true;
+                cbHrmDomicilio.SelectedValueChanged += new EventHandler(cbHrmDomicilio_SelectedValueChanged);
+            }
+            else
+            {
+                cbHrmDomicilio.Enabled = false;
+                cbHrmDomicilio.SelectedValueChanged -= new EventHandler(cbHrmDomicilio_SelectedValueChanged);
+                cbHrmDomicilio.SelectedValue = null;
+                
+            }
+        }
+
+        private void cbHrmDomicilio_SelectedValueChanged(object sender, EventArgs e)
+        {
+            string valor = cbHrmDomicilio.SelectedItem.ToString();
+            if (valor.StartsWith("SI"))
+            {
+                txtBuscaHmno.Enabled = true;
+            }
+            else
+            {
+                txtBuscaHmno.Enabled = false;
+                txtBuscaHmno.Text = null;
+            }
+        }
+
+        private void txtBuscaHmno_ButtonClick(object sender, EventArgs e)
+        {
+            string nombreB = "";
+            string apellidoB = "";
+            string documentoB = "";
+            int contador = 0;
+
+            string busqueda = txtBuscaHmno.Text;
+
+            char[] separadores = { ',', '(', ')' };
+            string[] palabras = busqueda.Split(separadores);
+
+            foreach (var palabra in palabras)
+            {
+                contador += 1;
+                if (contador == 1)
+                {
+                    nombreB = palabra.Trim();
+                }
+                else if (contador == 2)
+                {
+                    apellidoB = palabra.Trim();
+                }
+                else if (contador == 3)
+                {
+                    documentoB = palabra.Trim();
+                }
+            }
+
+            entPersona personaBuscar = new entPersona();
+            metPersonas objMetPersonas = new metPersonas();
+            metDomicilio objmetDomicilio = new metDomicilio();
+            personaBuscar = objMetPersonas.BuscaPersona(nombreB, apellidoB, documentoB);
+            entDomicilio domicilioBuscar = new entDomicilio();
+            domicilioBuscar = objmetDomicilio.buscarDomicilioXPersona(personaBuscar.PER_ID);
+
+            if (personaBuscar.PER_NOMBRE != null)
+            {
+                idHmno = personaBuscar.PER_ID; // se usara en el agregarGrupoFlia
+
+
+                txtCalle.Text = domicilioBuscar.DOM_CALLE;
+                txtNumero.Text = Convert.ToString(domicilioBuscar.DOM_NUMERO);
+                txtCPostal.Text = Convert.ToString(domicilioBuscar.DOM_CP);
+                txtPiso.Text = Convert.ToString(domicilioBuscar.DOM_PISO);
+                txtDepto.Text = domicilioBuscar.DOM_DPTO;
+                txtBarrio.Text = domicilioBuscar.DOM_BARRIO;
+                txtTelefono.Text = personaBuscar.PER_TELEFONO;
+                txtCelular.Text = personaBuscar.PER_TELEFONO_2;
+                txtEmail.Text = personaBuscar.PER_EMAIL;
+
+            }
+        }
+
+        //-- EVENTOS QUE VALIDAN DATOS INGRESADOS
+
+        private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(sender, e);
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloLetras(sender, e);
+        }
+
+        private void txtApellidos_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloLetras(sender, e);
+        }
+
+        private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(sender, e);
+        }
+
+        private void txtCPostal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(sender, e);
+        }
+
+        private void txtCelular_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(sender, e);
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(sender, e);
+        }
+
+        private bool validarEmail()
+        {
+            metPersonas ObjMetPersonas = new metPersonas();
+            bool resultado = true;
+
+            if (String.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+
+            }
+            else
+            {
+                resultado = ObjMetPersonas.ValidarEmail(txtEmail.Text);
+            }
+            return resultado;
         }
     }
 }
