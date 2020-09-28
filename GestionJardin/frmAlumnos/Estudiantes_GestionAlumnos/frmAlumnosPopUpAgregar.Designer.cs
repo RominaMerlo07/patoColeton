@@ -36,9 +36,9 @@
             this.cbTurno = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.panelContacto = new MetroFramework.Controls.MetroPanel();
-            this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
-            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.txtBuscaHmno = new MetroFramework.Controls.MetroTextBox();
+            this.cbHrmDomicilio = new MetroFramework.Controls.MetroComboBox();
+            this.cbHermanos = new MetroFramework.Controls.MetroComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -68,7 +68,7 @@
             this.txtDocumento = new MetroFramework.Controls.MetroTextBox();
             this.txtApellidos = new MetroFramework.Controls.MetroTextBox();
             this.txtNombre = new MetroFramework.Controls.MetroTextBox();
-            this.iconButton2 = new FontAwesome.Sharp.IconButton();
+            this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.metroPanel3.SuspendLayout();
             this.panelContacto.SuspendLayout();
@@ -219,9 +219,9 @@
             // 
             this.panelContacto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.panelContacto.Controls.Add(this.metroTextBox2);
-            this.panelContacto.Controls.Add(this.metroComboBox2);
-            this.panelContacto.Controls.Add(this.metroComboBox1);
+            this.panelContacto.Controls.Add(this.txtBuscaHmno);
+            this.panelContacto.Controls.Add(this.cbHrmDomicilio);
+            this.panelContacto.Controls.Add(this.cbHermanos);
             this.panelContacto.Controls.Add(this.label10);
             this.panelContacto.Controls.Add(this.label9);
             this.panelContacto.Controls.Add(this.label8);
@@ -250,70 +250,75 @@
             this.panelContacto.VerticalScrollbarHighlightOnWheel = false;
             this.panelContacto.VerticalScrollbarSize = 10;
             // 
-            // metroTextBox2
+            // txtBuscaHmno
             // 
-            this.metroTextBox2.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBuscaHmno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 
-            this.metroTextBox2.CustomButton.Image = null;
-            this.metroTextBox2.CustomButton.Location = new System.Drawing.Point(272, 1);
-            this.metroTextBox2.CustomButton.Name = "";
-            this.metroTextBox2.CustomButton.Size = new System.Drawing.Size(43, 43);
-            this.metroTextBox2.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox2.CustomButton.TabIndex = 1;
-            this.metroTextBox2.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox2.CustomButton.UseSelectable = true;
-            this.metroTextBox2.CustomButton.Visible = false;
-            this.metroTextBox2.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(470, 142);
-            this.metroTextBox2.MaxLength = 32767;
-            this.metroTextBox2.Name = "metroTextBox2";
-            this.metroTextBox2.PasswordChar = '\0';
-            this.metroTextBox2.PromptText = "BUSCAR HERMANO";
-            this.metroTextBox2.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox2.SelectedText = "";
-            this.metroTextBox2.SelectionLength = 0;
-            this.metroTextBox2.SelectionStart = 0;
-            this.metroTextBox2.ShortcutsEnabled = true;
-            this.metroTextBox2.Size = new System.Drawing.Size(316, 45);
-            this.metroTextBox2.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTextBox2.TabIndex = 27;
-            this.metroTextBox2.UseSelectable = true;
-            this.metroTextBox2.WaterMark = "BUSCAR HERMANO";
-            this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscaHmno.CustomButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtBuscaHmno.CustomButton.Image = global::GestionJardin.Properties.Resources.iconfinder_search_172546;
+            this.txtBuscaHmno.CustomButton.Location = new System.Drawing.Point(272, 1);
+            this.txtBuscaHmno.CustomButton.Name = "";
+            this.txtBuscaHmno.CustomButton.Size = new System.Drawing.Size(43, 43);
+            this.txtBuscaHmno.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtBuscaHmno.CustomButton.TabIndex = 1;
+            this.txtBuscaHmno.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtBuscaHmno.CustomButton.UseSelectable = true;
+            this.txtBuscaHmno.FontSize = MetroFramework.MetroTextBoxSize.Medium;
+            this.txtBuscaHmno.Lines = new string[0];
+            this.txtBuscaHmno.Location = new System.Drawing.Point(470, 142);
+            this.txtBuscaHmno.MaxLength = 32767;
+            this.txtBuscaHmno.Name = "txtBuscaHmno";
+            this.txtBuscaHmno.PasswordChar = '\0';
+            this.txtBuscaHmno.PromptText = "BUSCAR HERMANO";
+            this.txtBuscaHmno.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtBuscaHmno.SelectedText = "";
+            this.txtBuscaHmno.SelectionLength = 0;
+            this.txtBuscaHmno.SelectionStart = 0;
+            this.txtBuscaHmno.ShortcutsEnabled = true;
+            this.txtBuscaHmno.ShowButton = true;
+            this.txtBuscaHmno.Size = new System.Drawing.Size(316, 45);
+            this.txtBuscaHmno.TabIndex = 27;
+            this.txtBuscaHmno.UseSelectable = true;
+            this.txtBuscaHmno.WaterMark = "BUSCAR HERMANO";
+            this.txtBuscaHmno.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtBuscaHmno.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscaHmno.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.txtBuscaHmno_ButtonClick);
             // 
-            // metroComboBox2
+            // cbHrmDomicilio
             // 
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 24;
-            this.metroComboBox2.Items.AddRange(new object[] {
+            this.cbHrmDomicilio.FontSize = MetroFramework.MetroComboBoxSize.Small;
+            this.cbHrmDomicilio.FormattingEnabled = true;
+            this.cbHrmDomicilio.ItemHeight = 21;
+            this.cbHrmDomicilio.Items.AddRange(new object[] {
             "SI vive en el mismo domicilio",
             "NO vive en el mismo domicilio"});
-            this.metroComboBox2.Location = new System.Drawing.Point(47, 142);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.PromptText = "¿POSEEN EL MISMO DOMICILIO?";
-            this.metroComboBox2.Size = new System.Drawing.Size(386, 30);
-            this.metroComboBox2.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroComboBox2.TabIndex = 34;
-            this.metroComboBox2.UseSelectable = true;
+            this.cbHrmDomicilio.Location = new System.Drawing.Point(47, 142);
+            this.cbHrmDomicilio.Name = "cbHrmDomicilio";
+            this.cbHrmDomicilio.PromptText = "¿POSEEN EL MISMO DOMICILIO?";
+            this.cbHrmDomicilio.Size = new System.Drawing.Size(386, 27);
+            this.cbHrmDomicilio.Style = MetroFramework.MetroColorStyle.Green;
+            this.cbHrmDomicilio.TabIndex = 34;
+            this.cbHrmDomicilio.UseSelectable = true;
+            this.cbHrmDomicilio.SelectedValueChanged += new System.EventHandler(this.cbHrmDomicilio_SelectedValueChanged);
             // 
-            // metroComboBox1
+            // cbHermanos
             // 
-            this.metroComboBox1.FormattingEnabled = true;
-            this.metroComboBox1.ItemHeight = 24;
-            this.metroComboBox1.Items.AddRange(new object[] {
+            this.cbHermanos.FontSize = MetroFramework.MetroComboBoxSize.Small;
+            this.cbHermanos.FormattingEnabled = true;
+            this.cbHermanos.ItemHeight = 21;
+            this.cbHermanos.Items.AddRange(new object[] {
             "SI tiene hermanos",
             "NO tiene hermanos"});
-            this.metroComboBox1.Location = new System.Drawing.Point(46, 84);
-            this.metroComboBox1.Name = "metroComboBox1";
-            this.metroComboBox1.PromptText = "¿TIENE HERMANOS EN EL INSTITUTO?";
-            this.metroComboBox1.Size = new System.Drawing.Size(387, 30);
-            this.metroComboBox1.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroComboBox1.TabIndex = 27;
-            this.metroComboBox1.UseSelectable = true;
+            this.cbHermanos.Location = new System.Drawing.Point(46, 84);
+            this.cbHermanos.Name = "cbHermanos";
+            this.cbHermanos.PromptText = "¿TIENE HERMANOS EN EL INSTITUTO?";
+            this.cbHermanos.Size = new System.Drawing.Size(387, 27);
+            this.cbHermanos.Style = MetroFramework.MetroColorStyle.Green;
+            this.cbHermanos.TabIndex = 27;
+            this.cbHermanos.UseSelectable = true;
+            this.cbHermanos.SelectedValueChanged += new System.EventHandler(this.cbHermanos_SelectedValueChanged);
             // 
             // label10
             // 
@@ -440,6 +445,7 @@
             this.txtCelular.WaterMark = "Celular Ej: 3512345678";
             this.txtCelular.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCelular.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             // 
             // txtTelefono
             // 
@@ -475,6 +481,7 @@
             this.txtTelefono.WaterMark = "Teléfono  Ej: 3512345678";
             this.txtTelefono.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTelefono.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtCPostal
             // 
@@ -510,6 +517,7 @@
             this.txtCPostal.WaterMark = "C. Postal";
             this.txtCPostal.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCPostal.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPostal_KeyPress);
             // 
             // txtDepto
             // 
@@ -580,6 +588,7 @@
             this.txtNumero.WaterMark = "Número";
             this.txtNumero.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNumero.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // lblDatosContacto
             // 
@@ -887,6 +896,7 @@
             this.txtDocumento.WaterMark = "Documento Ej: 30123456";
             this.txtDocumento.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDocumento.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
             // 
             // txtApellidos
             // 
@@ -922,6 +932,7 @@
             this.txtApellidos.WaterMark = "Apellidos";
             this.txtApellidos.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtApellidos.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
             // 
             // txtNombre
             // 
@@ -957,25 +968,27 @@
             this.txtNombre.WaterMark = "Nombres";
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNombre.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
-            // iconButton2
+            // btnCancelar
             // 
-            this.iconButton2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton2.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.iconButton2.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.iconButton2.IconSize = 60;
-            this.iconButton2.Location = new System.Drawing.Point(1170, 746);
-            this.iconButton2.Name = "iconButton2";
-            this.iconButton2.Rotation = 0D;
-            this.iconButton2.Size = new System.Drawing.Size(239, 76);
-            this.iconButton2.TabIndex = 41;
-            this.iconButton2.Text = "CANCELAR";
-            this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton2.UseVisualStyleBackColor = true;
+            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btnCancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnCancelar.IconSize = 60;
+            this.btnCancelar.Location = new System.Drawing.Point(1170, 746);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Rotation = 0D;
+            this.btnCancelar.Size = new System.Drawing.Size(239, 76);
+            this.btnCancelar.TabIndex = 41;
+            this.btnCancelar.Text = "CANCELAR";
+            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 
@@ -1003,13 +1016,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(1641, 863);
-            this.Controls.Add(this.iconButton2);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.panelContacto);
             this.Controls.Add(this.panelDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmAlumnosPopUpAgregar";
+            this.Load += new System.EventHandler(this.frmAlumnosPopUpAgregar_Load);
             this.metroPanel3.ResumeLayout(false);
             this.panelContacto.ResumeLayout(false);
             this.panelContacto.PerformLayout();
@@ -1060,9 +1074,9 @@
         private MetroFramework.Controls.MetroTextBox txtApellidos;
         private MetroFramework.Controls.MetroTextBox txtNombre;
         private FontAwesome.Sharp.IconButton btnGuardar;
-        private FontAwesome.Sharp.IconButton iconButton2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox2;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
-        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private FontAwesome.Sharp.IconButton btnCancelar;
+        private MetroFramework.Controls.MetroTextBox txtBuscaHmno;
+        private MetroFramework.Controls.MetroComboBox cbHrmDomicilio;
+        private MetroFramework.Controls.MetroComboBox cbHermanos;
     }
 }

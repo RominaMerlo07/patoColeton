@@ -36,23 +36,32 @@ namespace GestionJardin
         private void btnGA_Agregar_Click(object sender, EventArgs e)
         {
             frmAlumnosPopUpAgregar frmAlumnosPopUpAgregar = new frmAlumnosPopUpAgregar();
+            frmAlumnosPopUpAgregar.FormClosed += frmAlumnosPopUpAgregar_FormClosed;
             frmAlumnosPopUpAgregar.Text = "GESTION ALUMNOS / ESTUDIANTES / GESTIONAR ALUMNOS / INGRESAR ALUMNO NUEVO";
             frmAlumnosPopUpAgregar.ShowDialog();
         }
 
         private void btnGA_Editar_Click(object sender, EventArgs e)
         {
-            frmAlumnosPopUpEditar frmAlumnosPopUpEditar = new frmAlumnosPopUpEditar();
+            string idPersonaSelect = dgvAlumnos.SelectedRows[0].Cells[0].Value.ToString();
+            frmAlumnosPopUpEditar frmAlumnosPopUpEditar = new frmAlumnosPopUpEditar(idPersonaSelect);
+            frmAlumnosPopUpEditar.FormClosed += frmAlumnosPopUpEditar_FormClosed;
             frmAlumnosPopUpEditar.Text = "GESTION ALUMNOS / ESTUDIANTES / GESTIONAR ALUMNOS / MODIFICAR DATOS ALUMNO";
             frmAlumnosPopUpEditar.ShowDialog();
+
 
         }
 
         private void btnGA_Eliminar_Click(object sender, EventArgs e)
         {
-            frmAlumnosPopUpEliminar frmAlumnoPopUpEliminar = new frmAlumnosPopUpEliminar();
+            string idPersonaSelect = dgvAlumnos.SelectedRows[0].Cells[0].Value.ToString();
+            string nombreAlumno = dgvAlumnos.SelectedRows[0].Cells[1].Value.ToString();
+            frmAlumnosPopUpEliminar frmAlumnoPopUpEliminar = new frmAlumnosPopUpEliminar(idPersonaSelect, nombreAlumno);
+            frmAlumnoPopUpEliminar.FormClosed += frmAlumnoPopUpEliminar_FormClosed;
             frmAlumnoPopUpEliminar.Text = "GESTION ALUMNOS / ESTUDIANTES / GESTIONAR ALUMNOS / ELIMINAR ALUMNO";
             frmAlumnoPopUpEliminar.ShowDialog();
+
+
         }
 
         private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -91,6 +100,7 @@ namespace GestionJardin
             metPersonas metPersonas = new metPersonas();
             col = metPersonas.TraerAlumnos();
             dgvAlumnos.DataSource = col;
+            dgvAlumnos.Columns["PER_ID"].Visible = false;
 
         }
 
@@ -109,5 +119,21 @@ namespace GestionJardin
                 btnGA_Eliminar.Visible = false;
             }
         }
+
+        private void frmAlumnosPopUpEditar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cargar_dgvAlumnos();
+        }
+
+        private void frmAlumnoPopUpEliminar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cargar_dgvAlumnos();
+        }
+
+        private void frmAlumnosPopUpAgregar_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cargar_dgvAlumnos();
+        }
+  
     }
 }

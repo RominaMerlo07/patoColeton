@@ -29,16 +29,15 @@
         private void InitializeComponent()
         {
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnEditar = new FontAwesome.Sharp.IconButton();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
+            this.txtLegajo = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.cbSala = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.cbTurno = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.panelContacto = new MetroFramework.Controls.MetroPanel();
-            this.btnBloqueo = new FontAwesome.Sharp.IconButton();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,6 +53,7 @@
             this.txtBarrio = new MetroFramework.Controls.MetroTextBox();
             this.txtPiso = new MetroFramework.Controls.MetroTextBox();
             this.txtCalle = new MetroFramework.Controls.MetroTextBox();
+            this.btnBloqueo = new FontAwesome.Sharp.IconButton();
             this.panelDatos = new MetroFramework.Controls.MetroPanel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -96,32 +96,34 @@
             this.iconButton2.Text = "CANCELAR";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
-            // iconButton1
+            // btnEditar
             // 
-            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.iconButton1.IconSize = 60;
-            this.iconButton1.Location = new System.Drawing.Point(674, 742);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(239, 76);
-            this.iconButton1.TabIndex = 45;
-            this.iconButton1.Text = "GUARDAR";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.btnEditar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnEditar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnEditar.IconSize = 60;
+            this.btnEditar.Location = new System.Drawing.Point(674, 742);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Rotation = 0D;
+            this.btnEditar.Size = new System.Drawing.Size(239, 76);
+            this.btnEditar.TabIndex = 45;
+            this.btnEditar.Text = "GUARDAR";
+            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // metroPanel3
             // 
             this.metroPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.metroPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.metroPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroPanel3.Controls.Add(this.metroTextBox1);
+            this.metroPanel3.Controls.Add(this.txtLegajo);
             this.metroPanel3.Controls.Add(this.metroLabel4);
             this.metroPanel3.Controls.Add(this.cbSala);
             this.metroPanel3.Controls.Add(this.metroLabel2);
@@ -140,40 +142,43 @@
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
             // 
-            // metroTextBox1
+            // txtLegajo
+            // 
+            this.txtLegajo.BackColor = System.Drawing.SystemColors.Window;
             // 
             // 
             // 
-            // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(92, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(33, 33);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.ForeColor = System.Drawing.Color.Aqua;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(1335, 41);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(126, 35);
-            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.TabIndex = 27;
-            this.metroTextBox1.UseCustomBackColor = true;
-            this.metroTextBox1.UseCustomForeColor = true;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.UseStyleColors = true;
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.txtLegajo.CustomButton.Image = null;
+            this.txtLegajo.CustomButton.Location = new System.Drawing.Point(92, 1);
+            this.txtLegajo.CustomButton.Name = "";
+            this.txtLegajo.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.txtLegajo.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtLegajo.CustomButton.TabIndex = 1;
+            this.txtLegajo.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtLegajo.CustomButton.UseSelectable = true;
+            this.txtLegajo.CustomButton.Visible = false;
+            this.txtLegajo.Enabled = false;
+            this.txtLegajo.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtLegajo.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txtLegajo.Lines = new string[0];
+            this.txtLegajo.Location = new System.Drawing.Point(1335, 48);
+            this.txtLegajo.MaxLength = 32767;
+            this.txtLegajo.Name = "txtLegajo";
+            this.txtLegajo.PasswordChar = '\0';
+            this.txtLegajo.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtLegajo.SelectedText = "";
+            this.txtLegajo.SelectionLength = 0;
+            this.txtLegajo.SelectionStart = 0;
+            this.txtLegajo.ShortcutsEnabled = true;
+            this.txtLegajo.Size = new System.Drawing.Size(126, 35);
+            this.txtLegajo.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtLegajo.TabIndex = 27;
+            this.txtLegajo.UseCustomBackColor = true;
+            this.txtLegajo.UseCustomForeColor = true;
+            this.txtLegajo.UseSelectable = true;
+            this.txtLegajo.UseStyleColors = true;
+            this.txtLegajo.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtLegajo.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
             // 
             // metroLabel4
             // 
@@ -193,9 +198,6 @@
             this.cbSala.Enabled = false;
             this.cbSala.FormattingEnabled = true;
             this.cbSala.ItemHeight = 24;
-            this.cbSala.Items.AddRange(new object[] {
-            "MASCULINO",
-            "FEMENINO"});
             this.cbSala.Location = new System.Drawing.Point(858, 46);
             this.cbSala.Name = "cbSala";
             this.cbSala.Size = new System.Drawing.Size(185, 30);
@@ -204,6 +206,7 @@
             this.cbSala.UseCustomBackColor = true;
             this.cbSala.UseSelectable = true;
             this.cbSala.UseStyleColors = true;
+            this.cbSala.SelectedValueChanged += new System.EventHandler(this.cbSala_SelectedValueChanged);
             // 
             // metroLabel2
             // 
@@ -214,7 +217,7 @@
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(402, 44);
             this.metroLabel2.TabIndex = 24;
-            this.metroLabel2.Text = "SALAS DISPONIBLES:";
+            this.metroLabel2.Text = "SALAS:";
             this.metroLabel2.UseCustomBackColor = true;
             this.metroLabel2.UseCustomForeColor = true;
             // 
@@ -234,6 +237,7 @@
             this.cbTurno.UseCustomBackColor = true;
             this.cbTurno.UseSelectable = true;
             this.cbTurno.UseStyleColors = true;
+            this.cbTurno.SelectedValueChanged += new System.EventHandler(this.cbTurno_SelectedValueChanged_1);
             // 
             // metroLabel3
             // 
@@ -279,26 +283,6 @@
             this.panelContacto.VerticalScrollbarBarColor = true;
             this.panelContacto.VerticalScrollbarHighlightOnWheel = false;
             this.panelContacto.VerticalScrollbarSize = 10;
-            // 
-            // btnBloqueo
-            // 
-            this.btnBloqueo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnBloqueo.FlatAppearance.BorderSize = 0;
-            this.btnBloqueo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnBloqueo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnBloqueo.ForeColor = System.Drawing.Color.Transparent;
-            this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Lock;
-            this.btnBloqueo.IconColor = System.Drawing.Color.Aqua;
-            this.btnBloqueo.IconSize = 45;
-            this.btnBloqueo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBloqueo.Location = new System.Drawing.Point(1599, 428);
-            this.btnBloqueo.Name = "btnBloqueo";
-            this.btnBloqueo.Rotation = 0D;
-            this.btnBloqueo.Size = new System.Drawing.Size(77, 67);
-            this.btnBloqueo.TabIndex = 54;
-            this.btnBloqueo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBloqueo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.btnBloqueo.UseVisualStyleBackColor = false;
             // 
             // label10
             // 
@@ -425,6 +409,7 @@
             this.txtCelular.WaterMark = "Celular Ej: 3512345678";
             this.txtCelular.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCelular.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             // 
             // txtTelefono
             // 
@@ -460,6 +445,7 @@
             this.txtTelefono.WaterMark = "Teléfono  Ej: 3512345678";
             this.txtTelefono.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTelefono.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtCPostal
             // 
@@ -495,6 +481,7 @@
             this.txtCPostal.WaterMark = "C. Postal";
             this.txtCPostal.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCPostal.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPostal_KeyPress);
             // 
             // txtDepto
             // 
@@ -565,6 +552,7 @@
             this.txtNumero.WaterMark = "Número";
             this.txtNumero.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNumero.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // lblDatosContacto
             // 
@@ -682,6 +670,27 @@
             this.txtCalle.WaterMark = "Calle";
             this.txtCalle.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCalle.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
+            // btnBloqueo
+            // 
+            this.btnBloqueo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btnBloqueo.FlatAppearance.BorderSize = 0;
+            this.btnBloqueo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBloqueo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBloqueo.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            this.btnBloqueo.IconColor = System.Drawing.Color.Aqua;
+            this.btnBloqueo.IconSize = 45;
+            this.btnBloqueo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBloqueo.Location = new System.Drawing.Point(1599, 428);
+            this.btnBloqueo.Name = "btnBloqueo";
+            this.btnBloqueo.Rotation = 0D;
+            this.btnBloqueo.Size = new System.Drawing.Size(77, 67);
+            this.btnBloqueo.TabIndex = 54;
+            this.btnBloqueo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBloqueo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnBloqueo.UseVisualStyleBackColor = false;
+            this.btnBloqueo.Click += new System.EventHandler(this.btnBloqueo_Click);
             // 
             // panelDatos
             // 
@@ -872,6 +881,7 @@
             this.txtDocumento.WaterMark = "Documento Ej: 30123456";
             this.txtDocumento.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDocumento.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
             // 
             // txtApellidos
             // 
@@ -907,6 +917,7 @@
             this.txtApellidos.WaterMark = "Apellidos";
             this.txtApellidos.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtApellidos.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
             // 
             // txtNombre
             // 
@@ -942,6 +953,7 @@
             this.txtNombre.WaterMark = "Nombres";
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNombre.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // btnGA_Excel
             // 
@@ -958,6 +970,7 @@
             this.btnGA_Excel.Size = new System.Drawing.Size(77, 69);
             this.btnGA_Excel.TabIndex = 47;
             this.btnGA_Excel.TabStop = false;
+            this.btnGA_Excel.Visible = false;
             // 
             // btnGA_Pdf
             // 
@@ -974,6 +987,7 @@
             this.btnGA_Pdf.Size = new System.Drawing.Size(77, 69);
             this.btnGA_Pdf.TabIndex = 48;
             this.btnGA_Pdf.TabStop = false;
+            this.btnGA_Pdf.Visible = false;
             // 
             // frmAlumnosPopUpEditar
             // 
@@ -985,7 +999,7 @@
             this.Controls.Add(this.btnGA_Excel);
             this.Controls.Add(this.btnBloqueo);
             this.Controls.Add(this.iconButton2);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.panelContacto);
             this.Controls.Add(this.panelDatos);
@@ -1006,9 +1020,9 @@
         #endregion
 
         private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnEditar;
         private MetroFramework.Controls.MetroPanel metroPanel3;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
+        private MetroFramework.Controls.MetroTextBox txtLegajo;
         private MetroFramework.Controls.MetroLabel metroLabel4;
         private MetroFramework.Controls.MetroComboBox cbSala;
         private MetroFramework.Controls.MetroLabel metroLabel2;

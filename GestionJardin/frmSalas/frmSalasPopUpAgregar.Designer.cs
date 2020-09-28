@@ -124,6 +124,7 @@
             this.txtCantMax.UseSelectable = true;
             this.txtCantMax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCantMax.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantMax_KeyPress);
             // 
             // metroLabel1
             // 
@@ -344,6 +345,7 @@
             this.txtSala.WaterMark = "NOMBRE SALA";
             this.txtSala.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSala.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSala.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSala_KeyPress);
             // 
             // btncancelar
             // 
@@ -382,6 +384,7 @@
             this.btnguardar.Text = "GUARDAR";
             this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // frmSalasPopUpAgregar
             // 
