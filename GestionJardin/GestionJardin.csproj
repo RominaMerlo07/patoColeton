@@ -221,6 +221,12 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSalas\frmSalasPopUpEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalas\frmSalasPopUpEditar.Designer.cs">
+      <DependentUpon>frmSalasPopUpEditar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSalas\frmSalasPopUpAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -335,6 +341,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSalas\frmSalasPopUpAgregar.resx">
       <DependentUpon>frmSalasPopUpAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalas\frmSalasPopUpEditar.resx">
+      <DependentUpon>frmSalasPopUpEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>

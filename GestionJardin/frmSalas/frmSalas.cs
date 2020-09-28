@@ -33,6 +33,12 @@ namespace GestionJardin
             {
                 btnGS_Editar.IconColor = Color.Cyan;
                 btnGS_Editar.ForeColor = Color.Cyan;
+                frmSalasPopUpEditar frmSalasPopUpEditar = new frmSalasPopUpEditar();
+                frmSalasPopUpEditar.Text = "GESTIÓN SALAS / EDITAR Y/O VISUALIZAR DATOS DE UNA SALA";
+                frmSalasPopUpEditar.ShowDialog();
+
+                dgv_Salas.DataSource = metSala.GrillaSalas();
+
             }
             else
             {
@@ -51,6 +57,7 @@ namespace GestionJardin
                 btnGS_Editar.ForeColor = Color.Cyan;
                 btnGS_Eliminar.IconColor = Color.FromArgb(255, 128, 0);
                 btnGS_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
+
             }
             else
             {
