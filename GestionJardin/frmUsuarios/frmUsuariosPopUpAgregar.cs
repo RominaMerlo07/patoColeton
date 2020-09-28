@@ -24,9 +24,9 @@ namespace GestionJardin
         
         private void frmUsuariosPopUpAgregar_Load_1(object sender, EventArgs e)
         {
-                /***Coloco el foco en textbox principal***/
-                txtSeleccionarDocente.Focus();
-                /***habilito solo para leer el textbox***/
+            /***Coloco el foco en textbox principal***/
+            txtSeleccionarDocente.Focus();
+            /***habilito solo para leer el textbox***/
             txt_nombre_usuario.ReadOnly = true;
             txt_contra_usu.ReadOnly = true;
             /***coloco en gris el textbox***/
@@ -49,11 +49,11 @@ namespace GestionJardin
             txt_contra_usu.WaterMarkColor = Color.Lime;
             txt_contra_usu.ForeColor = Color.Lime;
             txt_contra_usu.Focus();
-            
-        }
-        /***************************************/
-        /*************** AGREGAR ***************/
-        /***************************************/
+                }
+        
+                /***************************************/
+                /*************** AGREGAR ***************/
+                /***************************************/
 
         private void btn_GuardarUsuNuevo_Click(object sender, EventArgs e)
         {
@@ -62,6 +62,12 @@ namespace GestionJardin
             if (txtSeleccionarDocente.Text== "")
             {
                 MessageBox.Show("Seleccione un docente! ");
+                txt_contra_usu.Focus();
+            }
+           if(txt_contra_usu.Text== "")
+            {
+                MessageBox.Show("Debe ingresar una contraseña! ");
+                txt_contra_usu.Focus();
             }
             else
             {
@@ -100,9 +106,7 @@ namespace GestionJardin
             }
             else
             {
-                e.Handled = true;
-                MessageBox.Show("Solo se permiten letras y numeros!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
+                e.Handled = false;
             }
         }
 

@@ -20,8 +20,9 @@ namespace GestionJardin
             ObjetoUsu.AutocompletarenDocente(txtGU_Buscar);
 
 
+
         }
-                /*************LOAD **************/
+        /*************LOAD **************/
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
