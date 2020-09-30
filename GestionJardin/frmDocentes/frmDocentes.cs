@@ -28,8 +28,13 @@ namespace GestionJardin
         
         private void frmDocentes_Load(object sender, EventArgs e)
         {
+            dgv_Docentes.ClearSelection();
+            btnGD_Editar.IconColor = Color.Gray;
+            btnGD_Editar.ForeColor = Color.Gray;
+            btnGD_Eliminar.IconColor = Color.Gray;
+            btnGD_Eliminar.ForeColor = Color.Gray;            
             dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
-            objMetPersonas.traerdocente(txtGD_Buscar);
+            objMetPersonas.traerdocente(txtGD_Buscar);           
         }
 
         /*  FUNCIONALIDAS BUSCAR, filtra la grilla */
@@ -80,6 +85,7 @@ namespace GestionJardin
                 btnGD_Editar.ForeColor = Color.Gray;
                 btnGD_Eliminar.IconColor = Color.Gray;
                 btnGD_Eliminar.ForeColor = Color.Gray;
+                dgv_Docentes.ClearSelection();
             }
         }        
         

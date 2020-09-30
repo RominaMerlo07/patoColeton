@@ -17,9 +17,7 @@ namespace GestionJardin
         {
             InitializeComponent();
         }
-
-
-
+               
         private void frmAlumnosGestionar_Load(object sender, EventArgs e)
         {
 
@@ -89,11 +87,7 @@ namespace GestionJardin
                 MessageBox.Show("Debe seleccionar un registro para poder dar de baja a un alumno");
             }
 
-        }
-
-       
-
-     
+        }         
 
         private void btnGA_Pdf_Click(object sender, EventArgs e)
         {
@@ -113,9 +107,7 @@ namespace GestionJardin
             dgvAlumnos.DataSource = col;
             dgvAlumnos.Columns["PER_ID"].Visible = false;
 
-        }
-
-     
+        }     
 
         private void frmAlumnosPopUpEditar_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -149,6 +141,7 @@ namespace GestionJardin
                 btnGA_Editar.ForeColor = Color.Gray;
                 btnGA_Eliminar.IconColor = Color.Gray;
                 btnGA_Eliminar.ForeColor = Color.Gray;
+                
             }
         }
     }

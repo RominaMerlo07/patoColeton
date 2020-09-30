@@ -25,7 +25,11 @@ namespace GestionJardin
             dgv_Salas.ClearSelection();          
             dgv_Salas.DataSource = metSala.GrillaSalas();
             dgv_Salas.Columns["SAL_ID"].Visible = false;
-            metSala.BuscarSala(txtGS_Buscar);
+            metSala.BuscarSala(txtGS_Buscar);           
+            btnGS_Editar.IconColor = Color.Gray;
+            btnGS_Editar.ForeColor = Color.Gray;
+            btnGS_Eliminar.IconColor = Color.Gray;
+            btnGS_Eliminar.ForeColor = Color.Gray;
         }
 
         private void btnGS_Editar_Click(object sender, EventArgs e)
