@@ -195,8 +195,7 @@ namespace GestionJardin
                 }
                 else
                 {
-                    control = 0;
-                    MessageBox.Show("1" + sala.SAL_NOMBRE);
+                    control = 0;                 
 
                     if (cboEdadMin.SelectedItem == null)
                     {
@@ -247,7 +246,7 @@ namespace GestionJardin
             else
             {
                 control = 0;
-                MessageBox.Show("2" + sala.SAL_NOMBRE);
+               
                 if (cboEdadMin.SelectedItem == null)
                 {
                     edadMin = "";

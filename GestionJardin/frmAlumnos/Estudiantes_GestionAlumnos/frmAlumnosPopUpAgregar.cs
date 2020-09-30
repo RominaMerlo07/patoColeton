@@ -320,10 +320,7 @@ namespace GestionJardin
                         //limpiarCampos();
 
                     }
-
                 }
-
-
             }
             else
             {
