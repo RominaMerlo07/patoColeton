@@ -1,6 +1,6 @@
 ﻿namespace GestionJardin
 {
-    partial class frmSalasPopUpAgregar
+    partial class frmSalasPopUpEditar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.btncancelar = new FontAwesome.Sharp.IconButton();
+            this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.panelDatos = new MetroFramework.Controls.MetroPanel();
+            this.btnBloqueo = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCantMax = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
@@ -45,17 +48,56 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblDatosSala = new MetroFramework.Controls.MetroLabel();
             this.txtSala = new MetroFramework.Controls.MetroTextBox();
-            this.btncancelar = new FontAwesome.Sharp.IconButton();
-            this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.panelDatos.SuspendLayout();
             this.metroPanel3.SuspendLayout();
             this.metroPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
+            // btncancelar
+            // 
+            this.btncancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btncancelar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btncancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btncancelar.IconSize = 60;
+            this.btncancelar.Location = new System.Drawing.Point(464, 585);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Rotation = 0D;
+            this.btncancelar.Size = new System.Drawing.Size(239, 76);
+            this.btncancelar.TabIndex = 52;
+            this.btncancelar.Text = "CANCELAR";
+            this.btncancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btncancelar.UseVisualStyleBackColor = true;
+            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
+            // 
+            // btnguardar
+            // 
+            this.btnguardar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnguardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnguardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnguardar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnguardar.IconSize = 60;
+            this.btnguardar.Location = new System.Drawing.Point(117, 585);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Rotation = 0D;
+            this.btnguardar.Size = new System.Drawing.Size(239, 76);
+            this.btnguardar.TabIndex = 51;
+            this.btnguardar.Text = "GUARDAR";
+            this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnguardar.UseVisualStyleBackColor = true;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
+            // 
             // panelDatos
             // 
             this.panelDatos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.panelDatos.Controls.Add(this.btnBloqueo);
             this.panelDatos.Controls.Add(this.label1);
             this.panelDatos.Controls.Add(this.txtCantMax);
             this.panelDatos.Controls.Add(this.metroLabel1);
@@ -72,14 +114,35 @@
             this.panelDatos.HorizontalScrollbarBarColor = true;
             this.panelDatos.HorizontalScrollbarHighlightOnWheel = false;
             this.panelDatos.HorizontalScrollbarSize = 10;
-            this.panelDatos.Location = new System.Drawing.Point(77, 51);
+            this.panelDatos.Location = new System.Drawing.Point(87, 43);
             this.panelDatos.Name = "panelDatos";
             this.panelDatos.Size = new System.Drawing.Size(644, 478);
-            this.panelDatos.TabIndex = 34;
+            this.panelDatos.TabIndex = 50;
             this.panelDatos.UseCustomBackColor = true;
             this.panelDatos.VerticalScrollbarBarColor = true;
             this.panelDatos.VerticalScrollbarHighlightOnWheel = false;
             this.panelDatos.VerticalScrollbarSize = 10;
+            // 
+            // btnBloqueo
+            // 
+            this.btnBloqueo.FlatAppearance.BorderSize = 0;
+            this.btnBloqueo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBloqueo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBloqueo.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Lock;
+            this.btnBloqueo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btnBloqueo.IconSize = 45;
+            this.btnBloqueo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBloqueo.Location = new System.Drawing.Point(547, 26);
+            this.btnBloqueo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBloqueo.Name = "btnBloqueo";
+            this.btnBloqueo.Rotation = 0D;
+            this.btnBloqueo.Size = new System.Drawing.Size(77, 66);
+            this.btnBloqueo.TabIndex = 54;
+            this.btnBloqueo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBloqueo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnBloqueo.UseVisualStyleBackColor = true;
+            this.btnBloqueo.Click += new System.EventHandler(this.btnBloqueo_Click_1);
             // 
             // label1
             // 
@@ -119,12 +182,11 @@
             this.txtCantMax.SelectionStart = 0;
             this.txtCantMax.ShortcutsEnabled = true;
             this.txtCantMax.Size = new System.Drawing.Size(134, 35);
-            this.txtCantMax.Style = MetroFramework.MetroColorStyle.Green;
+            this.txtCantMax.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtCantMax.TabIndex = 32;
             this.txtCantMax.UseSelectable = true;
             this.txtCantMax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCantMax.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantMax_KeyPress);
             // 
             // metroLabel1
             // 
@@ -152,7 +214,7 @@
             this.cboTurno.Name = "cboTurno";
             this.cboTurno.PromptText = "TURNO";
             this.cboTurno.Size = new System.Drawing.Size(432, 27);
-            this.cboTurno.Style = MetroFramework.MetroColorStyle.Green;
+            this.cboTurno.Style = MetroFramework.MetroColorStyle.Blue;
             this.cboTurno.TabIndex = 31;
             this.cboTurno.UseSelectable = true;
             // 
@@ -188,7 +250,7 @@
             this.cboEdadMax.Name = "cboEdadMax";
             this.cboEdadMax.PromptText = "SELECCIONE";
             this.cboEdadMax.Size = new System.Drawing.Size(182, 27);
-            this.cboEdadMax.Style = MetroFramework.MetroColorStyle.Green;
+            this.cboEdadMax.Style = MetroFramework.MetroColorStyle.Blue;
             this.cboEdadMax.TabIndex = 22;
             this.cboEdadMax.UseSelectable = true;
             // 
@@ -238,7 +300,7 @@
             this.cboEdadMin.Name = "cboEdadMin";
             this.cboEdadMin.PromptText = "SELECCIONE";
             this.cboEdadMin.Size = new System.Drawing.Size(182, 27);
-            this.cboEdadMin.Style = MetroFramework.MetroColorStyle.Green;
+            this.cboEdadMin.Style = MetroFramework.MetroColorStyle.Blue;
             this.cboEdadMin.TabIndex = 22;
             this.cboEdadMin.UseSelectable = true;
             // 
@@ -339,55 +401,14 @@
             this.txtSala.SelectionStart = 0;
             this.txtSala.ShortcutsEnabled = true;
             this.txtSala.Size = new System.Drawing.Size(432, 35);
-            this.txtSala.Style = MetroFramework.MetroColorStyle.Green;
+            this.txtSala.Style = MetroFramework.MetroColorStyle.Blue;
             this.txtSala.TabIndex = 2;
             this.txtSala.UseSelectable = true;
             this.txtSala.WaterMark = "NOMBRE SALA";
             this.txtSala.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSala.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSala.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSala_KeyPress);
             // 
-            // btncancelar
-            // 
-            this.btncancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btncancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btncancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btncancelar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
-            this.btncancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.btncancelar.IconSize = 60;
-            this.btncancelar.Location = new System.Drawing.Point(454, 593);
-            this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Rotation = 0D;
-            this.btncancelar.Size = new System.Drawing.Size(239, 76);
-            this.btncancelar.TabIndex = 49;
-            this.btncancelar.Text = "CANCELAR";
-            this.btncancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btncancelar.UseVisualStyleBackColor = true;
-            this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
-            // 
-            // btnguardar
-            // 
-            this.btnguardar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnguardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnguardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnguardar.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.btnguardar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnguardar.IconSize = 60;
-            this.btnguardar.Location = new System.Drawing.Point(107, 593);
-            this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Rotation = 0D;
-            this.btnguardar.Size = new System.Drawing.Size(239, 76);
-            this.btnguardar.TabIndex = 48;
-            this.btnguardar.Text = "GUARDAR";
-            this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnguardar.UseVisualStyleBackColor = true;
-            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
-            // 
-            // frmSalasPopUpAgregar
+            // frmSalasPopUpEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -396,7 +417,7 @@
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.panelDatos);
-            this.Name = "frmSalasPopUpAgregar";
+            this.Name = "frmSalasPopUpEditar";
             this.panelDatos.ResumeLayout(false);
             this.panelDatos.PerformLayout();
             this.metroPanel3.ResumeLayout(false);
@@ -407,13 +428,9 @@
 
         #endregion
 
+        private FontAwesome.Sharp.IconButton btncancelar;
+        private FontAwesome.Sharp.IconButton btnguardar;
         private MetroFramework.Controls.MetroPanel panelDatos;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label6;
-        private MetroFramework.Controls.MetroLabel lblDatosSala;
-        private MetroFramework.Controls.MetroTextBox txtSala;
         private System.Windows.Forms.Label label1;
         private MetroFramework.Controls.MetroTextBox txtCantMax;
         private MetroFramework.Controls.MetroLabel metroLabel1;
@@ -424,7 +441,12 @@
         private MetroFramework.Controls.MetroPanel metroPanel2;
         private MetroFramework.Controls.MetroComboBox cboEdadMin;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private FontAwesome.Sharp.IconButton btncancelar;
-        private FontAwesome.Sharp.IconButton btnguardar;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
+        private MetroFramework.Controls.MetroLabel lblDatosSala;
+        private MetroFramework.Controls.MetroTextBox txtSala;
+        private FontAwesome.Sharp.IconButton btnBloqueo;
     }
 }

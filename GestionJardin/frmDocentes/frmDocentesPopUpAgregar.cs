@@ -78,12 +78,7 @@ namespace GestionJardin
                 txtBarrio.Focus();
                 resultadoValidacion = "el Barrio";
             }
-            else if (string.IsNullOrWhiteSpace(txtTelefono.Text.Trim()) == true)
-            {
-                txtTelefono.Style = MetroFramework.MetroColorStyle.Red;
-                txtTelefono.Focus();
-                resultadoValidacion = "un telefono de emergencia";
-            }
+          
             else if (string.IsNullOrWhiteSpace(txtCelular.Text.Trim()) == true)
             {
                 txtCelular.Style = MetroFramework.MetroColorStyle.Red;
@@ -286,20 +281,21 @@ namespace GestionJardin
                     string id_sala;
                     if (cbSala.SelectedItem == null)
                     {
-                        id_sala = "";
+                        id_sala = "";                    
+                        
                     }
                     else
                     {
                         id_sala = cbSala.SelectedValue.ToString();
-                    }
+                        entGrupoSala grupoSalaInsertar = new entGrupoSala();
 
-                    entGrupoSala grupoSalaInsertar = new entGrupoSala();
+                        grupoSalaInsertar.GRS_PER_ID = Convert.ToInt32(id_persona);
+                        grupoSalaInsertar.GRS_SAL_ID = Convert.ToInt32(id_sala);
 
-                    grupoSalaInsertar.GRS_PER_ID = Convert.ToInt32(id_persona);
-                    grupoSalaInsertar.GRS_SAL_ID = Convert.ToInt32(id_sala);
+                        metSalas metSalas = new metSalas();
+                        resultado = metSalas.insertarGrupoSala(grupoSalaInsertar);
 
-                    metSalas metSalas = new metSalas();
-                    resultado = metSalas.insertarGrupoSala(grupoSalaInsertar);
+                    }                   
 
 
                     if (resultado == "OK")

@@ -18,10 +18,8 @@ namespace GestionJardin
         {
             InitializeComponent();
             ObjetoUsu.AutocompletarenDocente(txtGU_Buscar);
-
-
         }
-                /*************LOAD **************/
+        /*************LOAD **************/
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
@@ -29,6 +27,10 @@ namespace GestionJardin
           Settooltip();
           ObjetoUsu.AutocompletarenDocente(txtGU_Buscar);
           dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
+          btnGU_Editar.IconColor = Color.Gray;
+          btnGU_Editar.ForeColor = Color.Gray;
+          btnGU_Eliminar.IconColor = Color.Gray;
+          btnGU_Eliminar.ForeColor = Color.Gray;            
         }
             
 
@@ -96,7 +98,8 @@ namespace GestionJardin
                 btnGU_Editar.IconColor = Color.Gray;
                 btnGU_Editar.ForeColor = Color.Gray;
                 btnGU_Eliminar.IconColor = Color.Gray;
-                btnGU_Eliminar.ForeColor = Color.Gray;                
+                btnGU_Eliminar.ForeColor = Color.Gray;
+                dgv_UsuariosActivos.ClearSelection();
             }
         }
 

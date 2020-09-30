@@ -17,17 +17,19 @@ namespace GestionJardin
         {
             InitializeComponent();
         }
-
-
-
+               
         private void frmAlumnosGestionar_Load(object sender, EventArgs e)
         {
 
+            dgvAlumnos.ClearSelection();
+
             cargar_dgvAlumnos();
-            btnGA_Editar.Visible = false;
-            btnGA_Eliminar.Visible = false;
-            txtGA_Buscar.Visible = false; //MOMENTANEO. Hacer busqueda sobre datos de grilla.
-            //dgvAlumnos.ClearSelection();
+            btnGA_Eliminar.IconColor = Color.Gray;
+            btnGA_Eliminar.ForeColor = Color.Gray;
+            btnGA_Editar.IconColor = Color.Gray;
+            btnGA_Editar.ForeColor = Color.Gray;
+            
+            txtGA_Buscar.Visible = false; //MOMENTANEO. Hacer busqueda sobre datos de grilla.            
             btnGA_Filtrar.Visible = false;
             btnGA_Excel.Visible = false;
             btnGA_Pdf.Visible = false;
@@ -43,56 +45,59 @@ namespace GestionJardin
 
         private void btnGA_Editar_Click(object sender, EventArgs e)
         {
-            string idPersonaSelect = dgvAlumnos.SelectedRows[0].Cells[0].Value.ToString();
-            frmAlumnosPopUpEditar frmAlumnosPopUpEditar = new frmAlumnosPopUpEditar(idPersonaSelect);
-            frmAlumnosPopUpEditar.FormClosed += frmAlumnosPopUpEditar_FormClosed;
-            frmAlumnosPopUpEditar.Text = "GESTION ALUMNOS / ESTUDIANTES / GESTIONAR ALUMNOS / MODIFICAR DATOS ALUMNO";
-            frmAlumnosPopUpEditar.ShowDialog();
 
+            if (dgvAlumnos.SelectedRows.Count > 0)
+            {
+                btnGA_Editar.IconColor = Color.Cyan;
+                btnGA_Editar.ForeColor = Color.Cyan;
+                string idPersonaSelect = dgvAlumnos.SelectedRows[0].Cells[0].Value.ToString();
+                frmAlumnosPopUpEditar frmAlumnosPopUpEditar = new frmAlumnosPopUpEditar(idPersonaSelect);
+                frmAlumnosPopUpEditar.FormClosed += frmAlumnosPopUpEditar_FormClosed;
+                frmAlumnosPopUpEditar.Text = "GESTION ALUMNOS / ESTUDIANTES / GESTIONAR ALUMNOS / MODIFICAR DATOS ALUMNO";
+                frmAlumnosPopUpEditar.ShowDialog();
+            }
+            else
+            {
+                btnGA_Editar.IconColor = Color.Gray;
+                btnGA_Editar.ForeColor = Color.Gray;
+                MessageBox.Show("Debe seleccionar un registro para poder visualizar y/o editar los datos de un alumno");
+            }
 
         }
 
         private void btnGA_Eliminar_Click(object sender, EventArgs e)
         {
-            string idPersonaSelect = dgvAlumnos.SelectedRows[0].Cells[0].Value.ToString();
-            string nombreAlumno = dgvAlumnos.SelectedRows[0].Cells[1].Value.ToString();
-            frmAlumnosPopUpEliminar frmAlumnoPopUpEliminar = new frmAlumnosPopUpEliminar(idPersonaSelect, nombreAlumno);
-            frmAlumnoPopUpEliminar.FormClosed += frmAlumnoPopUpEliminar_FormClosed;
-            frmAlumnoPopUpEliminar.Text = "GESTION ALUMNOS / ESTUDIANTES / GESTIONAR ALUMNOS / ELIMINAR ALUMNO";
-            frmAlumnoPopUpEliminar.ShowDialog();
 
+            if (dgvAlumnos.SelectedRows.Count > 0)
+            {
+                btnGA_Eliminar.IconColor = Color.FromArgb(255, 128, 0);
+                btnGA_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
 
-        }
+                string idPersonaSelect = dgvAlumnos.SelectedRows[0].Cells[0].Value.ToString();
+                string nombreAlumno = dgvAlumnos.SelectedRows[0].Cells[1].Value.ToString();
+                frmAlumnosPopUpEliminar frmAlumnoPopUpEliminar = new frmAlumnosPopUpEliminar(idPersonaSelect, nombreAlumno);
+                frmAlumnoPopUpEliminar.FormClosed += frmAlumnoPopUpEliminar_FormClosed;
+                frmAlumnoPopUpEliminar.Text = "GESTION ALUMNOS / ESTUDIANTES / GESTIONAR ALUMNOS / ELIMINAR ALUMNO";
+                frmAlumnoPopUpEliminar.ShowDialog();
+            }
+            else
+            {
+                btnGA_Eliminar.IconColor = Color.Gray;
+                btnGA_Eliminar.ForeColor = Color.Gray;
+                MessageBox.Show("Debe seleccionar un registro para poder dar de baja a un alumno");
+            }
 
-        private void metroGrid1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGA_Filtrar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGA_Excel_Click(object sender, EventArgs e)
-        {
-
-        }
+        }         
 
         private void btnGA_Pdf_Click(object sender, EventArgs e)
         {
-
+            DataTable col = new DataTable();
+            metPersonas metPersonas = new metPersonas();
+            col = metPersonas.TraerAlumnos();
+            dgvAlumnos.DataSource = col;
+            dgvAlumnos.Columns["PER_ID"].Visible = false;
         }
-
-        private void txtGA_Buscar_Click(object sender, EventArgs e)
-        {
-
-        }
+               
 
         private void cargar_dgvAlumnos()
         {
@@ -102,23 +107,7 @@ namespace GestionJardin
             dgvAlumnos.DataSource = col;
             dgvAlumnos.Columns["PER_ID"].Visible = false;
 
-        }
-
-        private void dgvAlumnos_SelectionChanged(object sender, EventArgs e)
-        {
-            var rowsCount = dgvAlumnos.SelectedRows.Count;
-
-            if (rowsCount > 0)
-            {
-                btnGA_Editar.Visible = true;
-                btnGA_Eliminar.Visible = true;
-
-            } else
-            {
-                btnGA_Editar.Visible = false;
-                btnGA_Eliminar.Visible = false;
-            }
-        }
+        }     
 
         private void frmAlumnosPopUpEditar_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -134,6 +123,26 @@ namespace GestionJardin
         {
             cargar_dgvAlumnos();
         }
-  
+
+        private void dgvAlumnos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvAlumnos.SelectedRows.Count > 0)
+            {
+                btnGA_Editar.IconColor = Color.Cyan;
+                btnGA_Editar.ForeColor = Color.Cyan;
+                btnGA_Eliminar.IconColor = Color.FromArgb(255, 128, 0);
+                btnGA_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
+
+            }
+            else
+            {
+                dgvAlumnos.ClearSelection();
+                btnGA_Editar.IconColor = Color.Gray;
+                btnGA_Editar.ForeColor = Color.Gray;
+                btnGA_Eliminar.IconColor = Color.Gray;
+                btnGA_Eliminar.ForeColor = Color.Gray;
+                
+            }
+        }
     }
 }

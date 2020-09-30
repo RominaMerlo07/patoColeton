@@ -31,71 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmUsuarios));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnGU_Filtrar = new FontAwesome.Sharp.IconPictureBox();
-            this.btnGU_Excel = new FontAwesome.Sharp.IconPictureBox();
-            this.btnGU_Pdf = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGU_Eliminar = new FontAwesome.Sharp.IconButton();
             this.btnGU_Editar = new FontAwesome.Sharp.IconButton();
             this.btnGU_Agregar = new FontAwesome.Sharp.IconButton();
             this.txtGU_Buscar = new MetroFramework.Controls.MetroTextBox();
             this.dgv_UsuariosActivos = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGU_Filtrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGU_Excel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGU_Pdf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_UsuariosActivos)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnGU_Filtrar
-            // 
-            this.btnGU_Filtrar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGU_Filtrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnGU_Filtrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnGU_Filtrar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGU_Filtrar.IconChar = FontAwesome.Sharp.IconChar.Filter;
-            this.btnGU_Filtrar.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGU_Filtrar.IconSize = 81;
-            this.btnGU_Filtrar.Location = new System.Drawing.Point(865, 28);
-            this.btnGU_Filtrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGU_Filtrar.Name = "btnGU_Filtrar";
-            this.btnGU_Filtrar.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.btnGU_Filtrar.Size = new System.Drawing.Size(91, 81);
-            this.btnGU_Filtrar.TabIndex = 32;
-            this.btnGU_Filtrar.TabStop = false;
-            // 
-            // btnGU_Excel
-            // 
-            this.btnGU_Excel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGU_Excel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnGU_Excel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnGU_Excel.ForeColor = System.Drawing.Color.Chartreuse;
-            this.btnGU_Excel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
-            this.btnGU_Excel.IconColor = System.Drawing.Color.Chartreuse;
-            this.btnGU_Excel.IconSize = 81;
-            this.btnGU_Excel.Location = new System.Drawing.Point(985, 28);
-            this.btnGU_Excel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGU_Excel.Name = "btnGU_Excel";
-            this.btnGU_Excel.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.btnGU_Excel.Size = new System.Drawing.Size(91, 81);
-            this.btnGU_Excel.TabIndex = 31;
-            this.btnGU_Excel.TabStop = false;
-            // 
-            // btnGU_Pdf
-            // 
-            this.btnGU_Pdf.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGU_Pdf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnGU_Pdf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnGU_Pdf.ForeColor = System.Drawing.Color.Salmon;
-            this.btnGU_Pdf.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
-            this.btnGU_Pdf.IconColor = System.Drawing.Color.Salmon;
-            this.btnGU_Pdf.IconSize = 81;
-            this.btnGU_Pdf.Location = new System.Drawing.Point(1093, 28);
-            this.btnGU_Pdf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnGU_Pdf.Name = "btnGU_Pdf";
-            this.btnGU_Pdf.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
-            this.btnGU_Pdf.Size = new System.Drawing.Size(91, 81);
-            this.btnGU_Pdf.TabIndex = 30;
-            this.btnGU_Pdf.TabStop = false;
             // 
             // label1
             // 
@@ -195,7 +138,7 @@
             this.txtGU_Buscar.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtGU_Buscar.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtGU_Buscar.Lines = new string[0];
-            this.txtGU_Buscar.Location = new System.Drawing.Point(44, 40);
+            this.txtGU_Buscar.Location = new System.Drawing.Point(44, 52);
             this.txtGU_Buscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGU_Buscar.MaxLength = 32767;
             this.txtGU_Buscar.Name = "txtGU_Buscar";
@@ -261,9 +204,6 @@
             this.ClientSize = new System.Drawing.Size(1615, 750);
             this.Controls.Add(this.dgv_UsuariosActivos);
             this.Controls.Add(this.txtGU_Buscar);
-            this.Controls.Add(this.btnGU_Filtrar);
-            this.Controls.Add(this.btnGU_Excel);
-            this.Controls.Add(this.btnGU_Pdf);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGU_Eliminar);
             this.Controls.Add(this.btnGU_Editar);
@@ -272,9 +212,6 @@
             this.Name = "frmUsuarios";
             this.Text = "GESTIÓN USUARIOS";
             this.Load += new System.EventHandler(this.frmUsuarios_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.btnGU_Filtrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGU_Excel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGU_Pdf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_UsuariosActivos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -282,10 +219,6 @@
         }
 
         #endregion
-
-        private FontAwesome.Sharp.IconPictureBox btnGU_Filtrar;
-        private FontAwesome.Sharp.IconPictureBox btnGU_Excel;
-        private FontAwesome.Sharp.IconPictureBox btnGU_Pdf;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnGU_Eliminar;
         private FontAwesome.Sharp.IconButton btnGU_Editar;

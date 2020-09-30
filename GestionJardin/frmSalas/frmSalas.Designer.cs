@@ -30,68 +30,14 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnGD_Filtrar = new FontAwesome.Sharp.IconPictureBox();
-            this.btnGD_Excel = new FontAwesome.Sharp.IconPictureBox();
-            this.btnGD_Pdf = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGS_Eliminar = new FontAwesome.Sharp.IconButton();
             this.btnGS_Editar = new FontAwesome.Sharp.IconButton();
             this.btnGS_Agregar = new FontAwesome.Sharp.IconButton();
             this.txtGS_Buscar = new MetroFramework.Controls.MetroTextBox();
             this.dgv_Salas = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGD_Filtrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGD_Excel)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGD_Pdf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Salas)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnGD_Filtrar
-            // 
-            this.btnGD_Filtrar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGD_Filtrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnGD_Filtrar.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnGD_Filtrar.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGD_Filtrar.IconChar = FontAwesome.Sharp.IconChar.Filter;
-            this.btnGD_Filtrar.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGD_Filtrar.IconSize = 81;
-            this.btnGD_Filtrar.Location = new System.Drawing.Point(879, 54);
-            this.btnGD_Filtrar.Name = "btnGD_Filtrar";
-            this.btnGD_Filtrar.Padding = new System.Windows.Forms.Padding(5);
-            this.btnGD_Filtrar.Size = new System.Drawing.Size(91, 81);
-            this.btnGD_Filtrar.TabIndex = 50;
-            this.btnGD_Filtrar.TabStop = false;
-            // 
-            // btnGD_Excel
-            // 
-            this.btnGD_Excel.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGD_Excel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnGD_Excel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnGD_Excel.ForeColor = System.Drawing.Color.Chartreuse;
-            this.btnGD_Excel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
-            this.btnGD_Excel.IconColor = System.Drawing.Color.Chartreuse;
-            this.btnGD_Excel.IconSize = 81;
-            this.btnGD_Excel.Location = new System.Drawing.Point(999, 54);
-            this.btnGD_Excel.Name = "btnGD_Excel";
-            this.btnGD_Excel.Padding = new System.Windows.Forms.Padding(5);
-            this.btnGD_Excel.Size = new System.Drawing.Size(91, 81);
-            this.btnGD_Excel.TabIndex = 49;
-            this.btnGD_Excel.TabStop = false;
-            // 
-            // btnGD_Pdf
-            // 
-            this.btnGD_Pdf.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGD_Pdf.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnGD_Pdf.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnGD_Pdf.ForeColor = System.Drawing.Color.Salmon;
-            this.btnGD_Pdf.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
-            this.btnGD_Pdf.IconColor = System.Drawing.Color.Salmon;
-            this.btnGD_Pdf.IconSize = 81;
-            this.btnGD_Pdf.Location = new System.Drawing.Point(1108, 54);
-            this.btnGD_Pdf.Name = "btnGD_Pdf";
-            this.btnGD_Pdf.Padding = new System.Windows.Forms.Padding(5);
-            this.btnGD_Pdf.Size = new System.Drawing.Size(91, 81);
-            this.btnGD_Pdf.TabIndex = 48;
-            this.btnGD_Pdf.TabStop = false;
             // 
             // label1
             // 
@@ -170,6 +116,7 @@
             // txtGS_Buscar
             // 
             this.txtGS_Buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtGS_Buscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 
@@ -186,7 +133,7 @@
             this.txtGS_Buscar.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtGS_Buscar.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtGS_Buscar.Lines = new string[0];
-            this.txtGS_Buscar.Location = new System.Drawing.Point(57, 54);
+            this.txtGS_Buscar.Location = new System.Drawing.Point(58, 79);
             this.txtGS_Buscar.MaxLength = 32767;
             this.txtGS_Buscar.Name = "txtGS_Buscar";
             this.txtGS_Buscar.PasswordChar = '\0';
@@ -244,9 +191,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(1697, 774);
             this.Controls.Add(this.dgv_Salas);
-            this.Controls.Add(this.btnGD_Filtrar);
-            this.Controls.Add(this.btnGD_Excel);
-            this.Controls.Add(this.btnGD_Pdf);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnGS_Eliminar);
             this.Controls.Add(this.btnGS_Editar);
@@ -256,9 +200,6 @@
             this.ShowInTaskbar = false;
             this.Text = "GESTIÓN SALAS";
             this.Load += new System.EventHandler(this.frmSalas_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.btnGD_Filtrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGD_Excel)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.btnGD_Pdf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Salas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -266,10 +207,6 @@
         }
 
         #endregion
-
-        private FontAwesome.Sharp.IconPictureBox btnGD_Filtrar;
-        private FontAwesome.Sharp.IconPictureBox btnGD_Excel;
-        private FontAwesome.Sharp.IconPictureBox btnGD_Pdf;
         private System.Windows.Forms.Label label1;
         private FontAwesome.Sharp.IconButton btnGS_Eliminar;
         private FontAwesome.Sharp.IconButton btnGS_Editar;

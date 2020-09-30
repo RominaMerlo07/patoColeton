@@ -221,6 +221,18 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSalas\frmSalasPopUpEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalas\frmSalasPopUpEliminar.Designer.cs">
+      <DependentUpon>frmSalasPopUpEliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSalas\frmSalasPopUpEditar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSalas\frmSalasPopUpEditar.Designer.cs">
+      <DependentUpon>frmSalasPopUpEditar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSalas\frmSalasPopUpAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,11 +342,17 @@
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSalas\frmSalasPopUpEliminar.resx">
+      <DependentUpon>frmSalasPopUpEliminar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSalas\frmSalas.resx">
       <DependentUpon>frmSalas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSalas\frmSalasPopUpAgregar.resx">
       <DependentUpon>frmSalasPopUpAgregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSalas\frmSalasPopUpEditar.resx">
+      <DependentUpon>frmSalasPopUpEditar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUsuarios\frmUsuarios.resx">
       <DependentUpon>frmUsuarios.cs</DependentUpon>
