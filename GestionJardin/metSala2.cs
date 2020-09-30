@@ -292,5 +292,37 @@ namespace GestionJardin
 
         }
 
+        public string ValidarSala(string nombre, string turno)
+        {
+
+            string result;
+            con = generarConexion();
+            con.Open();
+
+
+            string consulta = "SELECT * " +
+                              "FROM T_SALA " +
+                              "WHERE SAL_NOMBRE = '"+nombre+"' " +
+                              "AND SAL_TURNO = '"+turno+"' " +
+                              "AND SAL_ACTIVO = 'S';";
+
+            cmd = new SqlCommand(consulta, con);
+
+            dr = cmd.ExecuteReader();
+
+
+            if (dr.Read())
+            {
+                result = "SI";
+            }
+            else
+            {
+                result = "NO";
+            }
+
+            return result;
+
+        }
+
     }
 }

@@ -116,6 +116,7 @@
             // txtGS_Buscar
             // 
             this.txtGS_Buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtGS_Buscar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 
