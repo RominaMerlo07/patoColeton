@@ -20,6 +20,7 @@ namespace GestionJardin
             InitializeComponent();
         }
 
+        /*Metodos*/
         private void soloLetras(object sender, KeyPressEventArgs e)
         {
             e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
@@ -35,6 +36,54 @@ namespace GestionJardin
 
         }
 
+
+        public string Validacion()
+        {
+            string result;
+
+            if (string.IsNullOrWhiteSpace(txtSala.Text.Trim()) == true)
+            {
+                txtSala.Style = MetroFramework.MetroColorStyle.Red;
+                txtSala.Focus();
+                result = " el nombre de la sala. Por ejemplo: 'AZUL'";
+
+            }
+            else if (string.IsNullOrWhiteSpace(cboTurno.Text.Trim()) == true)
+            {
+                cboTurno.Style = MetroFramework.MetroColorStyle.Red;
+                cboTurno.Focus();
+                result = " el turno";
+
+            }
+            else if (string.IsNullOrWhiteSpace(cboEdadMin.Text.Trim()) == true)
+            {
+                cboEdadMin.Style = MetroFramework.MetroColorStyle.Red;
+                cboEdadMin.Focus();
+                result = " la edad mínima";
+
+            }
+            else if (string.IsNullOrWhiteSpace(cboEdadMax.Text.Trim()) == true)
+            {
+                cboEdadMax.Style = MetroFramework.MetroColorStyle.Red;
+                cboEdadMax.Focus();
+                result = " la edad máxima";
+
+            }
+            else if (string.IsNullOrWhiteSpace(txtCantMax.Text.Trim()) == true)
+            {
+                txtCantMax.Style = MetroFramework.MetroColorStyle.Red;
+                txtCantMax.Focus();
+                result = " la cantidad máxima de alumnos";
+            }
+            else
+            {
+                result = "OK";
+            }
+
+            return result;
+        }
+
+
         private void txtSala_KeyPress(object sender, KeyPressEventArgs e)
         {
             soloLetras(sender, e);
@@ -44,6 +93,10 @@ namespace GestionJardin
         {
             soloNumeros(sender, e);
         }
+
+        /*******************/
+        /** BOTON GUARDAR **/
+        /*******************/
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
@@ -159,56 +212,16 @@ namespace GestionJardin
 
         }
 
+        /********************/
+        /** BOTON CANCELAR **/
+        /********************/
+
         private void btncancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
 
-        public string Validacion()
-        {
-            string result;
-
-            if (string.IsNullOrWhiteSpace(txtSala.Text.Trim()) == true)
-            {
-                txtSala.Style = MetroFramework.MetroColorStyle.Red;
-                txtSala.Focus();
-                result = " el nombre de la sala. Por ejemplo: 'AZUL'";
-
-            }
-            else if (string.IsNullOrWhiteSpace(cboTurno.Text.Trim()) == true)
-            {
-                cboTurno.Style = MetroFramework.MetroColorStyle.Red;
-                cboTurno.Focus();
-                result = " el turno";
-
-            }
-            else if (string.IsNullOrWhiteSpace(cboEdadMin.Text.Trim()) == true)
-            {
-                cboEdadMin.Style = MetroFramework.MetroColorStyle.Red;
-                cboEdadMin.Focus();
-                result = " la edad mínima";
-
-            }
-            else if (string.IsNullOrWhiteSpace(cboEdadMax.Text.Trim()) == true)
-            {
-                cboEdadMax.Style = MetroFramework.MetroColorStyle.Red;
-                cboEdadMax.Focus();
-                result = " la edad máxima";
-
-            }
-            else if (string.IsNullOrWhiteSpace(txtCantMax.Text.Trim()) == true)
-            {
-                txtCantMax.Style = MetroFramework.MetroColorStyle.Red;
-                txtCantMax.Focus();
-                result = " la cantidad máxima de alumnos";
-            }                           
-            else
-            {
-                result = "OK";
-            }
-
-            return result;
-        }
+      
     }
 }
