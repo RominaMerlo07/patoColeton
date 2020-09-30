@@ -47,15 +47,20 @@ namespace GestionJardin
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            entSala.SAL_NOMBRE = txtSala.Text;
+
+            string validacion = Validacion();
+            if (validacion == "OK")
+            {
+
+                entSala.SAL_NOMBRE = txtSala.Text;
                    
             string turno;
             int control;
             string edadMin;
             string edadMax;
-
             int cantMax = 0;
-            cantMax =Convert.ToInt32(txtCantMax.Text);
+
+            
 
             if (cboTurno.SelectedItem == null)
             {
@@ -146,12 +151,64 @@ namespace GestionJardin
             {
                 MessageBox.Show("NO SE PUDO REGISTRAR LA SALA: " + entSala.SAL_NOMBRE);                
             }
+        }
+        else
+        {
+          MessageBox.Show("No olvide ingresar " + validacion + ".", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+
+        public string Validacion()
+        {
+            string result;
+
+            if (string.IsNullOrWhiteSpace(txtSala.Text.Trim()) == true)
+            {
+                txtSala.Style = MetroFramework.MetroColorStyle.Red;
+                txtSala.Focus();
+                result = " el nombre de la sala. Por ejemplo: 'AZUL'";
+
+            }
+            else if (string.IsNullOrWhiteSpace(cboTurno.Text.Trim()) == true)
+            {
+                cboTurno.Style = MetroFramework.MetroColorStyle.Red;
+                cboTurno.Focus();
+                result = " el turno";
+
+            }
+            else if (string.IsNullOrWhiteSpace(cboEdadMin.Text.Trim()) == true)
+            {
+                cboEdadMin.Style = MetroFramework.MetroColorStyle.Red;
+                cboEdadMin.Focus();
+                result = " la edad mínima";
+
+            }
+            else if (string.IsNullOrWhiteSpace(cboEdadMax.Text.Trim()) == true)
+            {
+                cboEdadMax.Style = MetroFramework.MetroColorStyle.Red;
+                cboEdadMax.Focus();
+                result = " la edad máxima";
+
+            }
+            else if (string.IsNullOrWhiteSpace(txtCantMax.Text.Trim()) == true)
+            {
+                txtCantMax.Style = MetroFramework.MetroColorStyle.Red;
+                txtCantMax.Focus();
+                result = " la cantidad máxima de alumnos";
+            }                           
+            else
+            {
+                result = "OK";
+            }
+
+            return result;
         }
     }
 }
