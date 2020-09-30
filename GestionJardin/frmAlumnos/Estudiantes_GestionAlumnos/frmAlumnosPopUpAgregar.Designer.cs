@@ -1022,6 +1022,8 @@
             this.Controls.Add(this.panelContacto);
             this.Controls.Add(this.panelDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAlumnosPopUpAgregar";
             this.Load += new System.EventHandler(this.frmAlumnosPopUpAgregar_Load);
             this.metroPanel3.ResumeLayout(false);

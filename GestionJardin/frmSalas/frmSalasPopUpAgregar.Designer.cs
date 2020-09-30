@@ -120,7 +120,7 @@
             this.txtCantMax.ShortcutsEnabled = true;
             this.txtCantMax.Size = new System.Drawing.Size(134, 35);
             this.txtCantMax.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtCantMax.TabIndex = 32;
+            this.txtCantMax.TabIndex = 5;
             this.txtCantMax.UseSelectable = true;
             this.txtCantMax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCantMax.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -153,7 +153,7 @@
             this.cboTurno.PromptText = "TURNO";
             this.cboTurno.Size = new System.Drawing.Size(432, 27);
             this.cboTurno.Style = MetroFramework.MetroColorStyle.Green;
-            this.cboTurno.TabIndex = 31;
+            this.cboTurno.TabIndex = 2;
             this.cboTurno.UseSelectable = true;
             // 
             // metroPanel3
@@ -167,7 +167,7 @@
             this.metroPanel3.Location = new System.Drawing.Point(57, 300);
             this.metroPanel3.Name = "metroPanel3";
             this.metroPanel3.Size = new System.Drawing.Size(444, 51);
-            this.metroPanel3.TabIndex = 29;
+            this.metroPanel3.TabIndex = 4;
             this.metroPanel3.UseCustomBackColor = true;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
@@ -189,7 +189,7 @@
             this.cboEdadMax.PromptText = "SELECCIONE";
             this.cboEdadMax.Size = new System.Drawing.Size(182, 27);
             this.cboEdadMax.Style = MetroFramework.MetroColorStyle.Green;
-            this.cboEdadMax.TabIndex = 22;
+            this.cboEdadMax.TabIndex = 4;
             this.cboEdadMax.UseSelectable = true;
             // 
             // metroLabel3
@@ -217,7 +217,7 @@
             this.metroPanel2.Location = new System.Drawing.Point(57, 229);
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(444, 51);
-            this.metroPanel2.TabIndex = 28;
+            this.metroPanel2.TabIndex = 3;
             this.metroPanel2.UseCustomBackColor = true;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
@@ -239,7 +239,7 @@
             this.cboEdadMin.PromptText = "SELECCIONE";
             this.cboEdadMin.Size = new System.Drawing.Size(182, 27);
             this.cboEdadMin.Style = MetroFramework.MetroColorStyle.Green;
-            this.cboEdadMin.TabIndex = 22;
+            this.cboEdadMin.TabIndex = 3;
             this.cboEdadMin.UseSelectable = true;
             // 
             // metroLabel2
@@ -340,7 +340,7 @@
             this.txtSala.ShortcutsEnabled = true;
             this.txtSala.Size = new System.Drawing.Size(432, 35);
             this.txtSala.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtSala.TabIndex = 2;
+            this.txtSala.TabIndex = 0;
             this.txtSala.UseSelectable = true;
             this.txtSala.WaterMark = "NOMBRE SALA";
             this.txtSala.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -357,11 +357,11 @@
             this.btncancelar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
             this.btncancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btncancelar.IconSize = 60;
-            this.btncancelar.Location = new System.Drawing.Point(454, 593);
+            this.btncancelar.Location = new System.Drawing.Point(432, 593);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Rotation = 0D;
             this.btncancelar.Size = new System.Drawing.Size(239, 76);
-            this.btncancelar.TabIndex = 49;
+            this.btncancelar.TabIndex = 7;
             this.btncancelar.Text = "CANCELAR";
             this.btncancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btncancelar.UseVisualStyleBackColor = true;
@@ -381,7 +381,7 @@
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Rotation = 0D;
             this.btnguardar.Size = new System.Drawing.Size(239, 76);
-            this.btnguardar.TabIndex = 48;
+            this.btnguardar.TabIndex = 6;
             this.btnguardar.Text = "GUARDAR";
             this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnguardar.UseVisualStyleBackColor = true;
@@ -396,6 +396,9 @@
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.panelDatos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmSalasPopUpAgregar";
             this.panelDatos.ResumeLayout(false);
             this.panelDatos.PerformLayout();
@@ -413,7 +416,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label6;
         private MetroFramework.Controls.MetroLabel lblDatosSala;
-        private MetroFramework.Controls.MetroTextBox txtSala;
         private System.Windows.Forms.Label label1;
         private MetroFramework.Controls.MetroTextBox txtCantMax;
         private MetroFramework.Controls.MetroLabel metroLabel1;
@@ -426,5 +428,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private FontAwesome.Sharp.IconButton btncancelar;
         private FontAwesome.Sharp.IconButton btnguardar;
+        public MetroFramework.Controls.MetroTextBox txtSala;
     }
 }

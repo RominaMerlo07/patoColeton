@@ -137,7 +137,7 @@
             this.txtGS_Buscar.MaxLength = 32767;
             this.txtGS_Buscar.Name = "txtGS_Buscar";
             this.txtGS_Buscar.PasswordChar = '\0';
-            this.txtGS_Buscar.PromptText = "BUSCAR SALA - TURNO";
+            this.txtGS_Buscar.PromptText = "BUSCAR SALA";
             this.txtGS_Buscar.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtGS_Buscar.SelectedText = "";
             this.txtGS_Buscar.SelectionLength = 0;
@@ -146,7 +146,7 @@
             this.txtGS_Buscar.Size = new System.Drawing.Size(424, 50);
             this.txtGS_Buscar.TabIndex = 43;
             this.txtGS_Buscar.UseSelectable = true;
-            this.txtGS_Buscar.WaterMark = "BUSCAR SALA - TURNO";
+            this.txtGS_Buscar.WaterMark = "BUSCAR SALA";
             this.txtGS_Buscar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtGS_Buscar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGS_Buscar.TextChanged += new System.EventHandler(this.txtGS_Buscar_TextChanged);

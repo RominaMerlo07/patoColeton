@@ -17,7 +17,7 @@ namespace GestionJardin
 
         public frmSalas()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
 
         private void frmSalas_Load(object sender, EventArgs e)
@@ -143,10 +143,11 @@ namespace GestionJardin
         {
             frmSalasPopUpAgregar frmSalasPopUpAgregar = new frmSalasPopUpAgregar();
             frmSalasPopUpAgregar.Text = "GESTIÓN SALAS / CREAR NUEVA SALA";
-            frmSalasPopUpAgregar.ShowDialog();
+            frmSalasPopUpAgregar.ShowDialog();            
 
             dgv_Salas.DataSource = metSala.GrillaSalas();
             dgv_Salas.Columns["SAL_ID"].Visible = false;
+
         }
     }
 }

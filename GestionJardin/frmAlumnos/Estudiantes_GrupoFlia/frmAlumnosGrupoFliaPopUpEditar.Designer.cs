@@ -37,6 +37,8 @@
             this.cbTurno = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.panelContacto = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.checkAutorizacion = new MetroFramework.Controls.MetroCheckBox();
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
@@ -70,15 +72,13 @@
             this.btnGA_Pdf = new FontAwesome.Sharp.IconPictureBox();
             this.btnGA_Excel = new FontAwesome.Sharp.IconPictureBox();
             this.btnBloqueo = new FontAwesome.Sharp.IconButton();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.checkAutorizacion = new MetroFramework.Controls.MetroCheckBox();
             this.metroPanel3.SuspendLayout();
             this.panelContacto.SuspendLayout();
+            this.metroPanel2.SuspendLayout();
             this.panelDatos.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Pdf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Excel)).BeginInit();
-            this.metroPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // iconButton2
@@ -291,6 +291,37 @@
             this.panelContacto.VerticalScrollbarBarColor = true;
             this.panelContacto.VerticalScrollbarHighlightOnWheel = false;
             this.panelContacto.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel2
+            // 
+            this.metroPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.metroPanel2.Controls.Add(this.checkAutorizacion);
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(439, 364);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(319, 46);
+            this.metroPanel2.TabIndex = 37;
+            this.metroPanel2.UseCustomBackColor = true;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
+            // 
+            // checkAutorizacion
+            // 
+            this.checkAutorizacion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkAutorizacion.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.checkAutorizacion.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
+            this.checkAutorizacion.Location = new System.Drawing.Point(3, 12);
+            this.checkAutorizacion.Name = "checkAutorizacion";
+            this.checkAutorizacion.Size = new System.Drawing.Size(302, 24);
+            this.checkAutorizacion.Style = MetroFramework.MetroColorStyle.Black;
+            this.checkAutorizacion.TabIndex = 29;
+            this.checkAutorizacion.Text = "Autorizado a retirar: ";
+            this.checkAutorizacion.UseCustomBackColor = true;
+            this.checkAutorizacion.UseSelectable = true;
+            this.checkAutorizacion.UseStyleColors = true;
             // 
             // metroComboBox2
             // 
@@ -1003,37 +1034,6 @@
             this.btnBloqueo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnBloqueo.UseVisualStyleBackColor = false;
             // 
-            // metroPanel2
-            // 
-            this.metroPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.metroPanel2.Controls.Add(this.checkAutorizacion);
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(439, 364);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(319, 46);
-            this.metroPanel2.TabIndex = 37;
-            this.metroPanel2.UseCustomBackColor = true;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 10;
-            // 
-            // checkAutorizacion
-            // 
-            this.checkAutorizacion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkAutorizacion.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.checkAutorizacion.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
-            this.checkAutorizacion.Location = new System.Drawing.Point(3, 12);
-            this.checkAutorizacion.Name = "checkAutorizacion";
-            this.checkAutorizacion.Size = new System.Drawing.Size(302, 24);
-            this.checkAutorizacion.Style = MetroFramework.MetroColorStyle.Black;
-            this.checkAutorizacion.TabIndex = 29;
-            this.checkAutorizacion.Text = "Autorizado a retirar: ";
-            this.checkAutorizacion.UseCustomBackColor = true;
-            this.checkAutorizacion.UseSelectable = true;
-            this.checkAutorizacion.UseStyleColors = true;
-            // 
             // frmAlumnosGrupoFliaPopUpEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1048,16 +1048,19 @@
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.panelContacto);
             this.Controls.Add(this.panelDatos);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAlumnosGrupoFliaPopUpEditar";
             this.metroPanel3.ResumeLayout(false);
             this.panelContacto.ResumeLayout(false);
             this.panelContacto.PerformLayout();
+            this.metroPanel2.ResumeLayout(false);
             this.panelDatos.ResumeLayout(false);
             this.panelDatos.PerformLayout();
             this.metroPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Pdf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Excel)).EndInit();
-            this.metroPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

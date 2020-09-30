@@ -220,8 +220,6 @@ namespace GestionJardin
         {
             this.Close();
         }
-
-
-      
+       
     }
 }

@@ -137,7 +137,7 @@
             this.iconPictureBox1.Location = new System.Drawing.Point(12, 135);
             this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Padding = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.iconPictureBox1.Padding = new System.Windows.Forms.Padding(5);
             this.iconPictureBox1.Size = new System.Drawing.Size(189, 170);
             this.iconPictureBox1.TabIndex = 14;
             this.iconPictureBox1.TabStop = false;
@@ -155,7 +155,10 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblUSUARIOELIMINAR);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmUsuariosPopUpEliminar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ELIMINAR USUARIO";
