@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtGD_Buscar = new MetroFramework.Controls.MetroTextBox();
             this.btnGD_Filtrar = new FontAwesome.Sharp.IconPictureBox();
@@ -245,6 +246,8 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgv_Docentes.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Docentes.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_Docentes.RowTemplate.Height = 24;
             this.dgv_Docentes.Size = new System.Drawing.Size(1141, 495);
             this.dgv_Docentes.TabIndex = 42;

@@ -37,6 +37,33 @@ namespace GestionJardin
         }
 
 
+        private void soloLetras(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+
+        }
+
+        private void soloNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+
+        }
+
+        private void txtSala_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloLetras(sender, e);
+        }
+
+        private void txtCantMax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(sender, e);
+        }
+
+
+
         private void cargarCampos(entSala sala)
         {
             idSalaSelect = Convert.ToString(sala.SAL_ID); // se usara en el editar
@@ -111,10 +138,16 @@ namespace GestionJardin
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
+                       
             sala.SAL_NOMBRE = txtSala.Text;
             sala.SALA_ACTIVO = "S";
             string turno;
+            string edadMin;
+            string edadMax;
             int control = 0;
+            int cantMax = 0;
+            cantMax = Convert.ToInt32(txtCantMax.Text);
+
 
             if (cboTurno.SelectedItem == null)
             {
@@ -137,45 +170,63 @@ namespace GestionJardin
                 }
             }
 
-            string edadMin;
-            string edadMax;
+            string result = metSala.ValidarSala(sala.SAL_NOMBRE, sala.SALA_TURNO);
 
-            if (cboEdadMin.SelectedItem == null)
+            if (result == "SI")
             {
-                edadMin = "";
+                MessageBox.Show("El nombre de la sala ingresado: " + sala.SAL_NOMBRE + " ya se encuentra registrado en el turno " + turno);
                 control = 1;
             }
             else
             {
-                edadMin = cboEdadMin.SelectedItem.ToString();
-                sala.SAL_EDAD_MIN = Convert.ToInt32(edadMin);
                 control = 0;
-            }
+            
+                if (cboEdadMin.SelectedItem == null)
+                {
+                    edadMin = "";
+                    control = 1;
+                }
+                else
+                {
+                    edadMin = cboEdadMin.SelectedItem.ToString();
+                    sala.SAL_EDAD_MIN = Convert.ToInt32(edadMin);
+                    control = 0;
 
-            if (cboEdadMax.SelectedItem == null)
-            {
-                edadMax = "";
-                control = 1;
-            }
-            else
-            {
-                edadMax = cboEdadMax.SelectedItem.ToString();
-                sala.EDAD_SALA_MAX = Convert.ToInt32(edadMax);
-                control = 0;
-            }
+                    if (cboEdadMax.SelectedItem == null)
+                    {
+                        edadMax = "";
+                        control = 1;
+                    }
+                    else
+                    {
+                        edadMax = cboEdadMax.SelectedItem.ToString();
+                        sala.EDAD_SALA_MAX = Convert.ToInt32(edadMax);
+                        control = 0;
 
-            int cantMax = Convert.ToInt32(txtCantMax.Text);
+                        if (sala.EDAD_SALA_MAX >= sala.SAL_EDAD_MIN)
+                        {
+                            control = 0;
 
-            if (cantMax >= 0 && cantMax <= 30)
-            {
-                sala.SALA_CANT_ALUM = cantMax;
-                control = 0;
+                            if (cantMax >= 0 && cantMax <= 30)
+                            {
+                                sala.SALA_CANT_ALUM = cantMax;
+                                control = 0;
+                            }
+                            else
+                            {
+                                MessageBox.Show("La cantidad máxima de alumnos, debe estar comprendida entre 0 y 30 alumnos");
+                                control = 1;
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("La edad minima no puede superar a la edad maxima");
+                            control = 1;
+                        }
+                    }
+                }
             }
-            else
-            {
-                MessageBox.Show("La cantidad máxima de alumnos, debe estar comprendida entre 0 y 30 alumnos");
-                control = 1;
-            }
+                      
 
             if (control == 0)
             {

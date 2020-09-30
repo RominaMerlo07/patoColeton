@@ -18,6 +18,7 @@ namespace GestionJardin
             //Cadena Romi: "Data Source=DESKTOP-4EDP5RJ\\SQLEXPRESS; Initial Catalog = GESTION_JARDIN; Integrated Security = True";
             //Cadena Gaston: "Data Source=LAPTOP-AS4VOUTB\\SQLEXPRESS; Initial Catalog = GESTION_JARDIN; Integrated Security = True";
             //Nadia: DESKTOP-1IPVM4C-LAPTOP-LO0TLLQO
+            //Alvaro:"Data Source=LAPTOP-O8465LJG\SQLEXPRESS; Initial Catalog = GESTION_JARDIN; Integrated Security = True";
         }
 
         protected SqlConnection generarConexion() // metodo para conectar desde la clase de metodos de las entidades.
