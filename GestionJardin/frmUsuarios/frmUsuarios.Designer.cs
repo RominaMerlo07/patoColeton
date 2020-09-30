@@ -138,7 +138,7 @@
             this.txtGU_Buscar.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtGU_Buscar.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtGU_Buscar.Lines = new string[0];
-            this.txtGU_Buscar.Location = new System.Drawing.Point(44, 40);
+            this.txtGU_Buscar.Location = new System.Drawing.Point(44, 52);
             this.txtGU_Buscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGU_Buscar.MaxLength = 32767;
             this.txtGU_Buscar.Name = "txtGU_Buscar";
