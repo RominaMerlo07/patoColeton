@@ -22,47 +22,18 @@ namespace GestionJardin
             InitializeComponent();
         }
 
+        /*Se obtiene el id de la sala elegida en la grilla*/
 
         public frmSalasPopUpEditar(string idSalaSelect2)
         {
             InitializeComponent();
             idSalaSelect = idSalaSelect2;
-
-            sala = metSala.buscarSalaXid(Convert.ToInt32(idSalaSelect));
-
-
+            sala = metSala.buscarSalaXid(Convert.ToInt32(idSalaSelect));            
             cargarCampos(sala);
             onOffCampos(false);
-
         }
 
-
-        private void soloLetras(object sender, KeyPressEventArgs e)
-        {
-            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
-
-        }
-
-        private void soloNumeros(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-
-        }
-
-        private void txtSala_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            soloLetras(sender, e);
-        }
-
-        private void txtCantMax_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            soloNumeros(sender, e);
-        }
-
-
+        /*Se cargan los datos en el form editar sala segun sala elegida en la grilla*/
 
         private void cargarCampos(entSala sala)
         {
@@ -70,7 +41,7 @@ namespace GestionJardin
 
             txtSala.Text = sala.SAL_NOMBRE;
             txtCantMax.Text = Convert.ToString(sala.SALA_CANT_ALUM);
-            
+
             if (sala.SALA_TURNO.Trim() == "TARDE")
             {
                 cboTurno.SelectedIndex = cboTurno.FindStringExact("TARDE");
@@ -96,12 +67,11 @@ namespace GestionJardin
             {
                 cboEdadMin.SelectedIndex = cboEdadMin.FindStringExact("4");
             }
-            else 
+            else
             {
                 cboEdadMin.SelectedIndex = cboEdadMin.FindStringExact("5");
             }
             
-
             if (sala.EDAD_SALA_MAX == 1)
             {
                 cboEdadMax.SelectedIndex = cboEdadMax.FindStringExact("1");
@@ -118,13 +88,42 @@ namespace GestionJardin
             {
                 cboEdadMax.SelectedIndex = cboEdadMax.FindStringExact("4");
             }
-            else 
+            else
             {
                 cboEdadMax.SelectedIndex = cboEdadMax.FindStringExact("5");
-            }            
-
+            }
         }
 
+        /* Habilita la modificacion de los datos en el form */
+
+        private void btnBloqueo_Click_1(object sender, EventArgs e)
+        {
+            if (this.btnBloqueo.IconChar == FontAwesome.Sharp.IconChar.Lock)
+            {
+                this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Unlock;
+                onOffCampos(true);
+            }
+            else
+            {
+                this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Lock;
+                onOffCampos(false);
+            }
+        }
+
+        /*Metodos Validacion */
+
+        private void soloLetras(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !(char.IsLetter(e.KeyChar) || e.KeyChar == (char)Keys.Back || e.KeyChar == (char)Keys.Space);
+        }
+
+        private void soloNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
 
         private void onOffCampos(bool onOff)
         {
@@ -136,18 +135,32 @@ namespace GestionJardin
             txtCantMax.Enabled = onOff;            
         }              
 
+        private void txtSala_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloLetras(sender, e);
+        }
+
+        private void txtCantMax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            soloNumeros(sender, e);
+        }
+
+        /*******************/
+        /** BOTON GUARDAR **/
+        /*******************/
+
+
         private void btnguardar_Click(object sender, EventArgs e)
         {
-                       
-            sala.SAL_NOMBRE = txtSala.Text;
-            sala.SALA_ACTIVO = "S";
+
+            string salatxt = txtSala.Text;
             string turno;
             string edadMin;
             string edadMax;
             int control = 0;
             int cantMax = 0;
             cantMax = Convert.ToInt32(txtCantMax.Text);
-
+            sala.SALA_ACTIVO = "S";
 
             if (cboTurno.SelectedItem == null)
             {
@@ -170,17 +183,71 @@ namespace GestionJardin
                 }
             }
 
-            string result = metSala.ValidarSala(sala.SAL_NOMBRE, sala.SALA_TURNO);
-
-            if (result == "SI")
+            if (salatxt != sala.SAL_NOMBRE)
             {
-                MessageBox.Show("El nombre de la sala ingresado: " + sala.SAL_NOMBRE + " ya se encuentra registrado en el turno " + turno);
-                control = 1;
+                sala.SAL_NOMBRE = salatxt;
+                string result = metSala.ValidarSala(sala.SAL_NOMBRE, sala.SALA_TURNO);
+
+                if (result == "SI")
+                {
+                    MessageBox.Show("El nombre de la sala ingresado: " + sala.SAL_NOMBRE + " ya se encuentra registrado en el turno " + turno);
+                    control = 1;
+                }
+                else
+                {
+                    control = 0;
+                    MessageBox.Show("1" + sala.SAL_NOMBRE);
+
+                    if (cboEdadMin.SelectedItem == null)
+                    {
+                        edadMin = "";
+                        control = 1;
+                    }
+                    else
+                    {
+                        edadMin = cboEdadMin.SelectedItem.ToString();
+                        sala.SAL_EDAD_MIN = Convert.ToInt32(edadMin);
+                        control = 0;
+
+                        if (cboEdadMax.SelectedItem == null)
+                        {
+                            edadMax = "";
+                            control = 1;
+                        }
+                        else
+                        {
+                            edadMax = cboEdadMax.SelectedItem.ToString();
+                            sala.EDAD_SALA_MAX = Convert.ToInt32(edadMax);
+                            control = 0;
+
+                            if (sala.EDAD_SALA_MAX >= sala.SAL_EDAD_MIN)
+                            {
+                                control = 0;
+
+                                if (cantMax >= 0 && cantMax <= 30)
+                                {
+                                    sala.SALA_CANT_ALUM = cantMax;
+                                    control = 0;
+                                }
+                                else
+                                {
+                                    MessageBox.Show("La cantidad máxima de alumnos, debe estar comprendida entre 0 y 30 alumnos");
+                                    control = 1;
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("La edad minima no puede superar a la edad maxima");
+                                control = 1;
+                            }
+                        }
+                    }
+                }
             }
             else
             {
                 control = 0;
-            
+                MessageBox.Show("2" + sala.SAL_NOMBRE);
                 if (cboEdadMin.SelectedItem == null)
                 {
                     edadMin = "";
@@ -225,8 +292,7 @@ namespace GestionJardin
                         }
                     }
                 }
-            }
-                      
+            }            
 
             if (control == 0)
             {
@@ -241,19 +307,9 @@ namespace GestionJardin
 
         }
 
-        private void btnBloqueo_Click_1(object sender, EventArgs e)
-        {
-            if (this.btnBloqueo.IconChar == FontAwesome.Sharp.IconChar.Lock)
-            {
-                this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Unlock;
-                onOffCampos(true);
-            }
-            else
-            {
-                this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Lock;
-                onOffCampos(false);
-            }
-        }
+        /********************/
+        /** BOTON CANCELAR **/
+        /********************/
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
