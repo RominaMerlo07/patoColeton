@@ -170,12 +170,7 @@ namespace GestionJardin
                 txtBarrio.Focus();
                 resultadoValidacion = "el Barrio";
             }
-            else if (string.IsNullOrWhiteSpace(txtTelefono.Text.Trim()) == true)
-            {
-                txtTelefono.Style = MetroFramework.MetroColorStyle.Red;
-                txtTelefono.Focus();
-                resultadoValidacion = "un telefono de emergencia";
-            }
+          
             else if (string.IsNullOrWhiteSpace(txtCelular.Text.Trim()) == true)
             {
                 txtCelular.Style = MetroFramework.MetroColorStyle.Red;
