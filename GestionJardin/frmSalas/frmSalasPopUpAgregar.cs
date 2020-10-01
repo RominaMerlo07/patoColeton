@@ -18,6 +18,7 @@ namespace GestionJardin
         public frmSalasPopUpAgregar()
         {
             InitializeComponent();
+            txtSala.Focus();
         }
 
         /*Metodos*/
@@ -39,7 +40,7 @@ namespace GestionJardin
 
         public string Validacion()
         {
-            string result;
+            string result = "";
 
             if (string.IsNullOrWhiteSpace(txtSala.Text.Trim()) == true)
             {

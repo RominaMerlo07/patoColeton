@@ -233,7 +233,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAlumnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvAlumnos.RowTemplate.Height = 24;
-            this.dgvAlumnos.Size = new System.Drawing.Size(1215, 495);
+            this.dgvAlumnos.Size = new System.Drawing.Size(1252, 495);
             this.dgvAlumnos.TabIndex = 43;
             this.dgvAlumnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlumnos_CellClick);
             // 

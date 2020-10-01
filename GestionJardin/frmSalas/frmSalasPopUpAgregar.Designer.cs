@@ -340,7 +340,7 @@
             this.txtSala.ShortcutsEnabled = true;
             this.txtSala.Size = new System.Drawing.Size(432, 35);
             this.txtSala.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtSala.TabIndex = 0;
+            this.txtSala.TabIndex = 1;
             this.txtSala.UseSelectable = true;
             this.txtSala.WaterMark = "NOMBRE SALA";
             this.txtSala.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -428,6 +428,6 @@
         private MetroFramework.Controls.MetroLabel metroLabel2;
         private FontAwesome.Sharp.IconButton btncancelar;
         private FontAwesome.Sharp.IconButton btnguardar;
-        public MetroFramework.Controls.MetroTextBox txtSala;
+        private MetroFramework.Controls.MetroTextBox txtSala;
     }
 }
