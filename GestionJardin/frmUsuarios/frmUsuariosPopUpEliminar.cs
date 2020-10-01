@@ -65,7 +65,6 @@ namespace GestionJardin
                 usumetodo.EliminarUsuario(usu);
                 MessageBox.Show("SE DIO DE BAJA CORRECTAMENTE" + lblUSUARIOELIMINAR.Text);
                 U.dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
-                U.txtGU_Buscar.AutoCompleteSource = U.Update;
 
                 this.Hide();
             }
