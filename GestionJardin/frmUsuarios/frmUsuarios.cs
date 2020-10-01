@@ -17,7 +17,6 @@ namespace GestionJardin
         public frmUsuarios()
         {
             InitializeComponent();
-            ObjetoUsu.AutocompletarenDocente(txtGU_Buscar);
         }
         /*************LOAD **************/
 
@@ -32,7 +31,7 @@ namespace GestionJardin
           btnGU_Eliminar.IconColor = Color.Gray;
           btnGU_Eliminar.ForeColor = Color.Gray;            
         }
-            
+        
 
                 /******  buscar datos Grilla ******/
 
