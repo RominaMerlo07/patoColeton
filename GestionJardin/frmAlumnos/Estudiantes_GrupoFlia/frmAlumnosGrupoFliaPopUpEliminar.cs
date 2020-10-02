@@ -12,9 +12,32 @@ namespace GestionJardin
 {
     public partial class frmAlumnosGrupoFliaPopUpEliminar : Form
     {
-        public frmAlumnosGrupoFliaPopUpEliminar()
+        string idEliminar;
+
+        public frmAlumnosGrupoFliaPopUpEliminar(string idEliminar, string alumno)
         {
             InitializeComponent();
+
+            label2.Text = alumno + "?";
+            lblId.Text = idEliminar;
+        }
+
+        private void btn_CancelarUsuNuevo_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btn_GuardarUsuNuevo_Click(object sender, EventArgs e)
+        {
+            idEliminar = lblId.Text;
+            entPersona eliminaPersona = new entPersona();
+            metPersonas metPersona = new metPersonas();
+            eliminaPersona.PER_ID = Convert.ToInt32(idEliminar);
+            string resultado = metPersona.EliminarDocente(eliminaPersona);
+            if (resultado == "OK")
+            {
+                this.Close();
+            }
         }
     }
 }

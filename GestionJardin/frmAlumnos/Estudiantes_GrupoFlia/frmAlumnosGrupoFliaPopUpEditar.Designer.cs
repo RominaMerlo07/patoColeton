@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.iconButton1 = new FontAwesome.Sharp.IconButton();
+            this.btnGuardar = new FontAwesome.Sharp.IconButton();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel4 = new MetroFramework.Controls.MetroPanel();
+            this.checkTutor = new MetroFramework.Controls.MetroCheckBox();
+            this.metroPanel5 = new MetroFramework.Controls.MetroPanel();
+            this.checkAutorizado = new MetroFramework.Controls.MetroCheckBox();
             this.metroTextBox2 = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
-            this.metroTextBox1 = new MetroFramework.Controls.MetroTextBox();
-            this.cbTurno = new MetroFramework.Controls.MetroComboBox();
+            this.txtParentesco = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.panelContacto = new MetroFramework.Controls.MetroPanel();
             this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
@@ -70,15 +73,14 @@
             this.btnGA_Pdf = new FontAwesome.Sharp.IconPictureBox();
             this.btnGA_Excel = new FontAwesome.Sharp.IconPictureBox();
             this.btnBloqueo = new FontAwesome.Sharp.IconButton();
-            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
-            this.checkAutorizacion = new MetroFramework.Controls.MetroCheckBox();
             this.metroPanel3.SuspendLayout();
+            this.metroPanel4.SuspendLayout();
+            this.metroPanel5.SuspendLayout();
             this.panelContacto.SuspendLayout();
             this.panelDatos.SuspendLayout();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Pdf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Excel)).BeginInit();
-            this.metroPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // iconButton2
@@ -99,35 +101,38 @@
             this.iconButton2.Text = "CANCELAR";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
+            this.iconButton2.Click += new System.EventHandler(this.iconButton2_Click);
             // 
-            // iconButton1
+            // btnGuardar
             // 
-            this.iconButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.iconButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.iconButton1.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.iconButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iconButton1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.iconButton1.IconChar = FontAwesome.Sharp.IconChar.Save;
-            this.iconButton1.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.iconButton1.IconSize = 60;
-            this.iconButton1.Location = new System.Drawing.Point(599, 744);
-            this.iconButton1.Name = "iconButton1";
-            this.iconButton1.Rotation = 0D;
-            this.iconButton1.Size = new System.Drawing.Size(239, 76);
-            this.iconButton1.TabIndex = 53;
-            this.iconButton1.Text = "GUARDAR";
-            this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.iconButton1.UseVisualStyleBackColor = true;
+            this.btnGuardar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnGuardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnGuardar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnGuardar.IconSize = 60;
+            this.btnGuardar.Location = new System.Drawing.Point(599, 744);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Rotation = 0D;
+            this.btnGuardar.Size = new System.Drawing.Size(239, 76);
+            this.btnGuardar.TabIndex = 53;
+            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // metroPanel3
             // 
             this.metroPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.metroPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.metroPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel3.Controls.Add(this.metroPanel4);
+            this.metroPanel3.Controls.Add(this.metroPanel5);
             this.metroPanel3.Controls.Add(this.metroTextBox2);
             this.metroPanel3.Controls.Add(this.metroLabel2);
-            this.metroPanel3.Controls.Add(this.metroTextBox1);
-            this.metroPanel3.Controls.Add(this.cbTurno);
+            this.metroPanel3.Controls.Add(this.txtParentesco);
             this.metroPanel3.Controls.Add(this.metroLabel3);
             this.metroPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.metroPanel3.HorizontalScrollbarBarColor = true;
@@ -141,6 +146,72 @@
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
+            // 
+            // metroPanel4
+            // 
+            this.metroPanel4.BackColor = System.Drawing.Color.Transparent;
+            this.metroPanel4.Controls.Add(this.checkTutor);
+            this.metroPanel4.HorizontalScrollbarBarColor = true;
+            this.metroPanel4.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.HorizontalScrollbarSize = 10;
+            this.metroPanel4.Location = new System.Drawing.Point(886, 17);
+            this.metroPanel4.Name = "metroPanel4";
+            this.metroPanel4.Size = new System.Drawing.Size(319, 46);
+            this.metroPanel4.TabIndex = 41;
+            this.metroPanel4.UseCustomBackColor = true;
+            this.metroPanel4.VerticalScrollbarBarColor = true;
+            this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel4.VerticalScrollbarSize = 10;
+            // 
+            // checkTutor
+            // 
+            this.checkTutor.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkTutor.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.checkTutor.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
+            this.checkTutor.ForeColor = System.Drawing.Color.Lime;
+            this.checkTutor.Location = new System.Drawing.Point(3, 12);
+            this.checkTutor.Name = "checkTutor";
+            this.checkTutor.Size = new System.Drawing.Size(302, 24);
+            this.checkTutor.Style = MetroFramework.MetroColorStyle.Lime;
+            this.checkTutor.TabIndex = 29;
+            this.checkTutor.Text = "Es tutor: ";
+            this.checkTutor.UseCustomBackColor = true;
+            this.checkTutor.UseCustomForeColor = true;
+            this.checkTutor.UseSelectable = true;
+            this.checkTutor.UseStyleColors = true;
+            // 
+            // metroPanel5
+            // 
+            this.metroPanel5.BackColor = System.Drawing.Color.Transparent;
+            this.metroPanel5.Controls.Add(this.checkAutorizado);
+            this.metroPanel5.HorizontalScrollbarBarColor = true;
+            this.metroPanel5.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.HorizontalScrollbarSize = 10;
+            this.metroPanel5.Location = new System.Drawing.Point(886, 78);
+            this.metroPanel5.Name = "metroPanel5";
+            this.metroPanel5.Size = new System.Drawing.Size(319, 46);
+            this.metroPanel5.TabIndex = 40;
+            this.metroPanel5.UseCustomBackColor = true;
+            this.metroPanel5.VerticalScrollbarBarColor = true;
+            this.metroPanel5.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel5.VerticalScrollbarSize = 10;
+            // 
+            // checkAutorizado
+            // 
+            this.checkAutorizado.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.checkAutorizado.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
+            this.checkAutorizado.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
+            this.checkAutorizado.ForeColor = System.Drawing.Color.Lime;
+            this.checkAutorizado.Location = new System.Drawing.Point(3, 12);
+            this.checkAutorizado.Name = "checkAutorizado";
+            this.checkAutorizado.Size = new System.Drawing.Size(302, 24);
+            this.checkAutorizado.Style = MetroFramework.MetroColorStyle.Lime;
+            this.checkAutorizado.TabIndex = 29;
+            this.checkAutorizado.Text = "Autorizado a retirar: ";
+            this.checkAutorizado.UseCustomBackColor = true;
+            this.checkAutorizado.UseCustomForeColor = true;
+            this.checkAutorizado.UseSelectable = true;
+            this.checkAutorizado.UseStyleColors = true;
             // 
             // metroTextBox2
             // 
@@ -173,6 +244,7 @@
             this.metroTextBox2.Style = MetroFramework.MetroColorStyle.Green;
             this.metroTextBox2.TabIndex = 27;
             this.metroTextBox2.UseSelectable = true;
+            this.metroTextBox2.Visible = false;
             this.metroTextBox2.WaterMark = "BUSCAR ALUMNO";
             this.metroTextBox2.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox2.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -189,61 +261,43 @@
             this.metroLabel2.Text = "ASIGNAR ALUMNO:";
             this.metroLabel2.UseCustomBackColor = true;
             this.metroLabel2.UseCustomForeColor = true;
+            this.metroLabel2.Visible = false;
             // 
-            // metroTextBox1
+            // txtParentesco
             // 
-            this.metroTextBox1.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtParentesco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             // 
             // 
             // 
-            this.metroTextBox1.CustomButton.Image = null;
-            this.metroTextBox1.CustomButton.Location = new System.Drawing.Point(298, 1);
-            this.metroTextBox1.CustomButton.Name = "";
-            this.metroTextBox1.CustomButton.Size = new System.Drawing.Size(33, 33);
-            this.metroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.metroTextBox1.CustomButton.TabIndex = 1;
-            this.metroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.metroTextBox1.CustomButton.UseSelectable = true;
-            this.metroTextBox1.CustomButton.Visible = false;
-            this.metroTextBox1.FontSize = MetroFramework.MetroTextBoxSize.Tall;
-            this.metroTextBox1.Lines = new string[0];
-            this.metroTextBox1.Location = new System.Drawing.Point(793, 19);
-            this.metroTextBox1.MaxLength = 32767;
-            this.metroTextBox1.Name = "metroTextBox1";
-            this.metroTextBox1.PasswordChar = '\0';
-            this.metroTextBox1.PromptText = "INGRESE PARENTESCO";
-            this.metroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.metroTextBox1.SelectedText = "";
-            this.metroTextBox1.SelectionLength = 0;
-            this.metroTextBox1.SelectionStart = 0;
-            this.metroTextBox1.ShortcutsEnabled = true;
-            this.metroTextBox1.Size = new System.Drawing.Size(332, 35);
-            this.metroTextBox1.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroTextBox1.TabIndex = 25;
-            this.metroTextBox1.UseSelectable = true;
-            this.metroTextBox1.WaterMark = "INGRESE PARENTESCO";
-            this.metroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.metroTextBox1.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            // 
-            // cbTurno
-            // 
-            this.cbTurno.FontSize = MetroFramework.MetroComboBoxSize.Small;
-            this.cbTurno.FormattingEnabled = true;
-            this.cbTurno.ItemHeight = 21;
-            this.cbTurno.Items.AddRange(new object[] {
-            "MADRE",
-            "PADRE",
-            "TUTOR",
-            "OTROS"});
-            this.cbTurno.Location = new System.Drawing.Point(380, 19);
-            this.cbTurno.Name = "cbTurno";
-            this.cbTurno.PromptText = "PARENTESCO";
-            this.cbTurno.Size = new System.Drawing.Size(332, 27);
-            this.cbTurno.Style = MetroFramework.MetroColorStyle.Green;
-            this.cbTurno.TabIndex = 24;
-            this.cbTurno.UseCustomBackColor = true;
-            this.cbTurno.UseSelectable = true;
-            this.cbTurno.UseStyleColors = true;
+            this.txtParentesco.CustomButton.Image = null;
+            this.txtParentesco.CustomButton.Location = new System.Drawing.Point(298, 1);
+            this.txtParentesco.CustomButton.Name = "";
+            this.txtParentesco.CustomButton.Size = new System.Drawing.Size(33, 33);
+            this.txtParentesco.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
+            this.txtParentesco.CustomButton.TabIndex = 1;
+            this.txtParentesco.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.txtParentesco.CustomButton.UseSelectable = true;
+            this.txtParentesco.CustomButton.Visible = false;
+            this.txtParentesco.FontSize = MetroFramework.MetroTextBoxSize.Tall;
+            this.txtParentesco.Lines = new string[0];
+            this.txtParentesco.Location = new System.Drawing.Point(380, 19);
+            this.txtParentesco.MaxLength = 32767;
+            this.txtParentesco.Name = "txtParentesco";
+            this.txtParentesco.PasswordChar = '\0';
+            this.txtParentesco.PromptText = "INGRESE PARENTESCO";
+            this.txtParentesco.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtParentesco.SelectedText = "";
+            this.txtParentesco.SelectionLength = 0;
+            this.txtParentesco.SelectionStart = 0;
+            this.txtParentesco.ShortcutsEnabled = true;
+            this.txtParentesco.Size = new System.Drawing.Size(332, 35);
+            this.txtParentesco.Style = MetroFramework.MetroColorStyle.Green;
+            this.txtParentesco.TabIndex = 25;
+            this.txtParentesco.UseSelectable = true;
+            this.txtParentesco.WaterMark = "INGRESE PARENTESCO";
+            this.txtParentesco.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            this.txtParentesco.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtParentesco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParentesco_KeyPress);
             // 
             // metroLabel3
             // 
@@ -262,7 +316,6 @@
             // 
             this.panelContacto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.panelContacto.Controls.Add(this.metroPanel2);
             this.panelContacto.Controls.Add(this.metroComboBox2);
             this.panelContacto.Controls.Add(this.label10);
             this.panelContacto.Controls.Add(this.label9);
@@ -307,6 +360,7 @@
             this.metroComboBox2.Style = MetroFramework.MetroColorStyle.Green;
             this.metroComboBox2.TabIndex = 35;
             this.metroComboBox2.UseSelectable = true;
+            this.metroComboBox2.Visible = false;
             // 
             // label10
             // 
@@ -433,6 +487,7 @@
             this.txtCelular.WaterMark = "Celular Ej: 3512345678";
             this.txtCelular.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCelular.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
             // 
             // txtTelefono
             // 
@@ -468,6 +523,7 @@
             this.txtTelefono.WaterMark = "Teléfono  Ej: 3512345678";
             this.txtTelefono.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtTelefono.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtCPostal
             // 
@@ -503,6 +559,7 @@
             this.txtCPostal.WaterMark = "C. Postal";
             this.txtCPostal.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCPostal.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPostal_KeyPress);
             // 
             // txtDepto
             // 
@@ -573,6 +630,7 @@
             this.txtNumero.WaterMark = "Número";
             this.txtNumero.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNumero.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
             // 
             // lblDatosContacto
             // 
@@ -880,6 +938,7 @@
             this.txtDocumento.WaterMark = "Documento Ej: 30123456";
             this.txtDocumento.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDocumento.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
             // 
             // txtApellidos
             // 
@@ -915,6 +974,7 @@
             this.txtApellidos.WaterMark = "Apellidos";
             this.txtApellidos.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtApellidos.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
             // 
             // txtNombre
             // 
@@ -950,6 +1010,7 @@
             this.txtNombre.WaterMark = "Nombres";
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNombre.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // btnGA_Pdf
             // 
@@ -966,6 +1027,7 @@
             this.btnGA_Pdf.Size = new System.Drawing.Size(77, 69);
             this.btnGA_Pdf.TabIndex = 56;
             this.btnGA_Pdf.TabStop = false;
+            this.btnGA_Pdf.Visible = false;
             // 
             // btnGA_Excel
             // 
@@ -982,6 +1044,7 @@
             this.btnGA_Excel.Size = new System.Drawing.Size(77, 69);
             this.btnGA_Excel.TabIndex = 55;
             this.btnGA_Excel.TabStop = false;
+            this.btnGA_Excel.Visible = false;
             // 
             // btnBloqueo
             // 
@@ -1002,37 +1065,7 @@
             this.btnBloqueo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBloqueo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.btnBloqueo.UseVisualStyleBackColor = false;
-            // 
-            // metroPanel2
-            // 
-            this.metroPanel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.metroPanel2.Controls.Add(this.checkAutorizacion);
-            this.metroPanel2.HorizontalScrollbarBarColor = true;
-            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 10;
-            this.metroPanel2.Location = new System.Drawing.Point(439, 364);
-            this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(319, 46);
-            this.metroPanel2.TabIndex = 37;
-            this.metroPanel2.UseCustomBackColor = true;
-            this.metroPanel2.VerticalScrollbarBarColor = true;
-            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 10;
-            // 
-            // checkAutorizacion
-            // 
-            this.checkAutorizacion.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkAutorizacion.FontSize = MetroFramework.MetroCheckBoxSize.Medium;
-            this.checkAutorizacion.FontWeight = MetroFramework.MetroCheckBoxWeight.Bold;
-            this.checkAutorizacion.Location = new System.Drawing.Point(3, 12);
-            this.checkAutorizacion.Name = "checkAutorizacion";
-            this.checkAutorizacion.Size = new System.Drawing.Size(302, 24);
-            this.checkAutorizacion.Style = MetroFramework.MetroColorStyle.Black;
-            this.checkAutorizacion.TabIndex = 29;
-            this.checkAutorizacion.Text = "Autorizado a retirar: ";
-            this.checkAutorizacion.UseCustomBackColor = true;
-            this.checkAutorizacion.UseSelectable = true;
-            this.checkAutorizacion.UseStyleColors = true;
+            this.btnBloqueo.Click += new System.EventHandler(this.btnBloqueo_Click);
             // 
             // frmAlumnosGrupoFliaPopUpEditar
             // 
@@ -1044,12 +1077,14 @@
             this.Controls.Add(this.btnGA_Excel);
             this.Controls.Add(this.btnBloqueo);
             this.Controls.Add(this.iconButton2);
-            this.Controls.Add(this.iconButton1);
+            this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.metroPanel3);
             this.Controls.Add(this.panelContacto);
             this.Controls.Add(this.panelDatos);
             this.Name = "frmAlumnosGrupoFliaPopUpEditar";
             this.metroPanel3.ResumeLayout(false);
+            this.metroPanel4.ResumeLayout(false);
+            this.metroPanel5.ResumeLayout(false);
             this.panelContacto.ResumeLayout(false);
             this.panelContacto.PerformLayout();
             this.panelDatos.ResumeLayout(false);
@@ -1057,7 +1092,6 @@
             this.metroPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Pdf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Excel)).EndInit();
-            this.metroPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1065,12 +1099,11 @@
         #endregion
 
         private FontAwesome.Sharp.IconButton iconButton2;
-        private FontAwesome.Sharp.IconButton iconButton1;
+        private FontAwesome.Sharp.IconButton btnGuardar;
         private MetroFramework.Controls.MetroPanel metroPanel3;
         private MetroFramework.Controls.MetroTextBox metroTextBox2;
         private MetroFramework.Controls.MetroLabel metroLabel2;
-        private MetroFramework.Controls.MetroTextBox metroTextBox1;
-        private MetroFramework.Controls.MetroComboBox cbTurno;
+        private MetroFramework.Controls.MetroTextBox txtParentesco;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroPanel panelContacto;
         private MetroFramework.Controls.MetroComboBox metroComboBox2;
@@ -1106,7 +1139,9 @@
         private FontAwesome.Sharp.IconPictureBox btnGA_Pdf;
         private FontAwesome.Sharp.IconPictureBox btnGA_Excel;
         private FontAwesome.Sharp.IconButton btnBloqueo;
-        private MetroFramework.Controls.MetroPanel metroPanel2;
-        private MetroFramework.Controls.MetroCheckBox checkAutorizacion;
+        private MetroFramework.Controls.MetroPanel metroPanel4;
+        private MetroFramework.Controls.MetroCheckBox checkTutor;
+        private MetroFramework.Controls.MetroPanel metroPanel5;
+        private MetroFramework.Controls.MetroCheckBox checkAutorizado;
     }
 }

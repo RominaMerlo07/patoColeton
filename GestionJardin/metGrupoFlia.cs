@@ -97,5 +97,180 @@ namespace GestionJardin
             return dt;
         }
 
+        public DataTable traerPersonasXGrupoFliar2(string idPersona)
+        {
+
+            DataTable dt = new DataTable();
+            try
+            {
+                SqlConnection con = generarConexion();
+                con.Open();
+
+                SqlCommand com = new SqlCommand();
+                com.Connection = con;
+
+                com.CommandText = "select " +
+                                        "p.per_id, " +
+                                        "CONCAT(P.PER_APELLIDO, ', ', P.PER_NOMBRE) AS 'ALUMNO', " +
+                                        "gf.GRF_TUTOR as 'TUTOR', " +
+                                        "GF.GRF_AUTORIZADO AS 'RETIRAR', " +
+                                        "gf.grf_observacion AS 'PARENTESCO', " +
+                                        "P.PER_DOCUMENTO AS 'DOCUMENTO', " +
+                                        "P.PER_FECHA_NAC AS 'FECHA NACIMIENTO', " +
+                                        "DATEDIFF(YEAR, P.PER_FECHA_NAC, GETDATE()) AS 'EDAD', " +
+                                        "CONCAT(D.DOM_CALLE, ', Nº: ', D.DOM_NUMERO, '. BARRIO: ', D.DOM_BARRIO, ', CP: ', D.DOM_CP, ' ', D.DOM_PROVINCIA) AS 'DOMICILIO', " +
+                                        "P.PER_EMAIL AS 'EMAIL', " +
+                                        "P.PER_TELEFONO AS 'TELEFONO', " +
+                                        "P.PER_TELEFONO_2 AS 'TELEFONO 2' " +
+                                    "from T_GRUPO_FLIA gf, T_PERSONAS p, T_DOMICILIOS d " +
+                                        "where p.PER_ID = gf.GRF_PER_ID " +
+                                        "and p.per_id = d.DOM_PER_ID " +
+                                        "AND P.PER_FECHA_BAJA IS NULL " +
+                                        "and gf.GRF_GRUPO_LEGAJO = " +
+                                        "( select gf2.GRF_GRUPO_LEGAJO from T_GRUPO_FLIA gf2 where gf2.GRF_PER_ID = " + idPersona + ");";
+                                    
+
+    
+                SqlDataAdapter da = new SqlDataAdapter(com);
+                DataSet ds = new DataSet();
+
+                da.Fill(ds);
+                dt = ds.Tables[0];
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador." + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            return dt;
+        }
+
+        public string insertaEnGrupoFlia2(entGrupoFlia grpFlia)
+        {
+            string result;
+
+            try
+            {
+                con = generarConexion();
+                con.Open();
+
+                string consulta = "INSERT INTO T_GRUPO_FLIA " +
+                                                "(GRF_PER_ID" +
+                                                ", GRF_TUTOR" +
+                                                ", GRF_AUTORIZADO" +
+                                                ", GRF_GRUPO_LEGAJO" +
+                                                ", GRF_OBSERVACION) " +
+                                        "VALUES " +
+                                                "('" + grpFlia.GRF_PER_ID + "'" +
+                                                ", '" + grpFlia.GRF_TUTOR + "'" +
+                                                ", '" + grpFlia.GRF_AUTORIZADO + "'" +
+                                                ", '" + grpFlia.GRF_PER_LEGAJO + "'" +
+                                                ", '" + grpFlia.GRF_OBSERVACION + "');";
+
+
+
+                cmd = new SqlCommand(consulta, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                result = "OK";
+
+            }
+            catch (Exception ex)
+            {
+                result = "ERROR";
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador." + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            return result;
+        }
+
+        public entGrupoFlia traerGrpFlia(int idPersona)
+        {
+            entGrupoFlia ent = new entGrupoFlia();
+
+            try
+            {
+                con = generarConexion();
+                con.Open();
+
+
+                string consulta = "select * from T_GRUPO_FLIA gf where gf.GRF_PER_ID = '" + idPersona + "';";
+
+                cmd = new SqlCommand(consulta, con);
+                dta = new SqlDataAdapter(cmd);
+                dt = new DataTable();
+                dta.Fill(dt);
+
+                con.Close();
+
+
+                if (dt != null)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+                        if (dr["GRF_ID"] != DBNull.Value)
+                            ent.GRF_ID = Convert.ToInt32(dr["GRF_ID"]);
+                        if (dr["GRF_PER_ID"] != DBNull.Value)
+                            ent.GRF_PER_ID = Convert.ToInt32(dr["GRF_PER_ID"]);
+                        if (dr["GRF_AUTORIZADO"] != DBNull.Value)
+                            ent.GRF_AUTORIZADO = Convert.ToString(dr["GRF_AUTORIZADO"]);
+                        if (dr["GRF_OBSERVACION"] != DBNull.Value)
+                            ent.GRF_OBSERVACION = Convert.ToString(dr["GRF_OBSERVACION"]);
+                        if (dr["GRF_TUTOR"] != DBNull.Value)
+                            ent.GRF_TUTOR = Convert.ToString(dr["GRF_TUTOR"]);
+                        if (dr["GRF_GRUPO_LEGAJO"] != DBNull.Value)
+                            ent.GRF_PER_LEGAJO = Convert.ToString(dr["GRF_GRUPO_LEGAJO"]);
+                    }
+                }
+
+            }
+            catch
+            {
+                //result = "ERROR";
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+            return ent;
+        }
+
+        public string editaGrFlia(entGrupoFlia grupoFlia)
+        {
+            string result;
+
+            try
+            {
+                con = generarConexion();
+                con.Open();
+
+                string consulta = "update T_GRUPO_FLIA " +
+                    "set grf_tutor = '" + grupoFlia.GRF_TUTOR + "', " +
+                    "grf_autorizado = '" + grupoFlia.GRF_AUTORIZADO + "', " +
+                    "grf_observacion = '" + grupoFlia.GRF_OBSERVACION + "' " +
+                    "where grf_id = " + grupoFlia.GRF_ID + 
+                    ";";
+
+                cmd = new SqlCommand(consulta, con);
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+                result = "OK";
+
+            }
+
+            catch
+            {
+                result = "ERROR";
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return result;
+
+        }
     }
 }
