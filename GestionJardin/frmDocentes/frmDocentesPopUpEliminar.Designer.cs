@@ -184,7 +184,10 @@
             this.Controls.Add(this.lblnombredocente);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconPictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmDocentesPopUpEliminar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmDocentesPopUpEliminar_Load);

@@ -168,7 +168,10 @@
             this.Controls.Add(this.metroTextBoxContrasenaEdit);
             this.Controls.Add(this.lblEditarUsu);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmUsuariosPopUpEditar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GESTIÓN USUARIO / EDITAR CONTRASEÑA";

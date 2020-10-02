@@ -40,15 +40,23 @@ namespace GestionJardin
 
         private void txtSeleccionarDocente_ButtonClick(object sender, EventArgs e)
         {
-            ObjetoUsu.CrearUsuario(txtSeleccionarDocente, txt_nombre_usuario);
-            /***me habilita para poder escribir***/
-            txt_contra_usu.ReadOnly = false;
-            /***me devuelve  los colores originales del textbox***/
-            txt_contra_usu.BackColor= Color.FromArgb( 34, 33, 74);
-            txt_nombre_usuario.BackColor = Color.FromArgb(34, 33, 74);    
-            txt_contra_usu.WaterMarkColor = Color.Lime;
-            txt_contra_usu.ForeColor = Color.Lime;
-            txt_contra_usu.Focus();
+            if (txtSeleccionarDocente.Text == "")
+            {
+                MessageBox.Show("Debe seleccionar un docente primero! ");
+                txtSeleccionarDocente.Focus();
+            }
+            else
+            {
+                ObjetoUsu.CrearUsuario(txtSeleccionarDocente, txt_nombre_usuario);
+                /***me habilita para poder escribir***/
+                txt_contra_usu.ReadOnly = false;
+                /***me devuelve  los colores originales del textbox***/
+                txt_contra_usu.BackColor = Color.FromArgb(34, 33, 74);
+                txt_nombre_usuario.BackColor = Color.FromArgb(34, 33, 74);
+                txt_contra_usu.WaterMarkColor = Color.Lime;
+                txt_contra_usu.ForeColor = Color.Lime;
+                txt_contra_usu.Focus();
+            }
                 }
         
                 /***************************************/
@@ -98,7 +106,9 @@ namespace GestionJardin
             }
             else if (char.IsControl(e.KeyChar))//permite q pueda borrar 
             {
-                e.Handled = false;
+               // e.Handled = false;
+                txt_nombre_usuario.Clear();
+                
             }
             else if (char.IsNumber(e.KeyChar))
             {
@@ -110,6 +120,14 @@ namespace GestionJardin
             }
         }
 
-       
+        private void txtSeleccionarDocente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (char.IsControl(e.KeyChar))//permite q pueda borrar 
+            {
+                // e.Handled = false;
+                txt_nombre_usuario.Clear();
+
+            }
+        }
     }
 }

@@ -100,7 +100,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(393, 258);
+            this.label4.Location = new System.Drawing.Point(364, 260);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(247, 24);
             this.label4.TabIndex = 19;
@@ -112,7 +112,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(364, 207);
+            this.label3.Location = new System.Drawing.Point(335, 209);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(299, 24);
             this.label3.TabIndex = 18;
@@ -124,7 +124,7 @@
             this.lblSala.AutoSize = true;
             this.lblSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSala.ForeColor = System.Drawing.Color.Yellow;
-            this.lblSala.Location = new System.Drawing.Point(451, 92);
+            this.lblSala.Location = new System.Drawing.Point(429, 93);
             this.lblSala.Name = "lblSala";
             this.lblSala.Size = new System.Drawing.Size(111, 32);
             this.lblSala.TabIndex = 17;
@@ -171,6 +171,9 @@
             this.Controls.Add(this.lblSala);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.iconPictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmSalasPopUpEliminar";
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -241,7 +241,7 @@
             this.panelContacto.HorizontalScrollbarBarColor = true;
             this.panelContacto.HorizontalScrollbarHighlightOnWheel = false;
             this.panelContacto.HorizontalScrollbarSize = 10;
-            this.panelContacto.Location = new System.Drawing.Point(741, 217);
+            this.panelContacto.Location = new System.Drawing.Point(715, 216);
             this.panelContacto.Name = "panelContacto";
             this.panelContacto.Size = new System.Drawing.Size(824, 478);
             this.panelContacto.TabIndex = 32;
@@ -726,7 +726,7 @@
             this.panelDatos.HorizontalScrollbarBarColor = true;
             this.panelDatos.HorizontalScrollbarHighlightOnWheel = false;
             this.panelDatos.HorizontalScrollbarSize = 10;
-            this.panelDatos.Location = new System.Drawing.Point(112, 217);
+            this.panelDatos.Location = new System.Drawing.Point(86, 216);
             this.panelDatos.Name = "panelDatos";
             this.panelDatos.Size = new System.Drawing.Size(493, 478);
             this.panelDatos.TabIndex = 30;
@@ -980,7 +980,7 @@
             this.btnCancelar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
             this.btnCancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnCancelar.IconSize = 60;
-            this.btnCancelar.Location = new System.Drawing.Point(1170, 746);
+            this.btnCancelar.Location = new System.Drawing.Point(1074, 746);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Rotation = 0D;
             this.btnCancelar.Size = new System.Drawing.Size(239, 76);
@@ -1000,7 +1000,7 @@
             this.btnGuardar.IconChar = FontAwesome.Sharp.IconChar.Save;
             this.btnGuardar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnGuardar.IconSize = 60;
-            this.btnGuardar.Location = new System.Drawing.Point(802, 746);
+            this.btnGuardar.Location = new System.Drawing.Point(706, 746);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Rotation = 0D;
             this.btnGuardar.Size = new System.Drawing.Size(239, 76);
@@ -1022,6 +1022,8 @@
             this.Controls.Add(this.panelContacto);
             this.Controls.Add(this.panelDatos);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmAlumnosPopUpAgregar";
             this.Load += new System.EventHandler(this.frmAlumnosPopUpAgregar_Load);
             this.metroPanel3.ResumeLayout(false);

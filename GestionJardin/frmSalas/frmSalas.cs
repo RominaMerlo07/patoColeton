@@ -17,7 +17,7 @@ namespace GestionJardin
 
         public frmSalas()
         {
-            InitializeComponent();
+            InitializeComponent();           
         }
 
         private void frmSalas_Load(object sender, EventArgs e)
@@ -44,8 +44,13 @@ namespace GestionJardin
                 frmSalasPopUpEditar.ShowDialog();
 
                 dgv_Salas.DataSource = metSala.GrillaSalas();
-                dgv_Salas.Columns["SAL_ID"].Visible = false;                
-                
+                dgv_Salas.Columns["SAL_ID"].Visible = false;
+
+                btnGS_Editar.IconColor = Color.Gray;
+                btnGS_Editar.ForeColor = Color.Gray;
+                btnGS_Eliminar.IconColor = Color.Gray;
+                btnGS_Eliminar.ForeColor = Color.Gray;
+
 
             }
             else
@@ -92,9 +97,15 @@ namespace GestionJardin
 
                 dgv_Salas.DataSource = metSala.GrillaSalas();
                 dgv_Salas.Columns["SAL_ID"].Visible = false;
+
+                btnGS_Editar.IconColor = Color.Gray;
+                btnGS_Editar.ForeColor = Color.Gray;
+                btnGS_Eliminar.IconColor = Color.Gray;
+                btnGS_Eliminar.ForeColor = Color.Gray;
             }
             else
             {
+             
                 btnGS_Eliminar.IconColor = Color.Gray;
                 btnGS_Eliminar.ForeColor = Color.Gray;
                 MessageBox.Show("Debe seleccionar un registro para poder visualizar y/o editar los datos de la sala");
@@ -130,12 +141,22 @@ namespace GestionJardin
             {
                 dgv_Salas.DataSource = metSala.FiltrarSala(sala, turno);
                 dgv_Salas.Columns["SAL_ID"].Visible = false;
+
+                btnGS_Editar.IconColor = Color.Gray;
+                btnGS_Editar.ForeColor = Color.Gray;
+                btnGS_Eliminar.IconColor = Color.Gray;
+                btnGS_Eliminar.ForeColor = Color.Gray;
             }
             else
             {
                 txtGS_Buscar.Clear();                            
                 dgv_Salas.DataSource = metSala.GrillaSalas();
                 dgv_Salas.Columns["SAL_ID"].Visible = false;
+
+                btnGS_Editar.IconColor = Color.Gray;
+                btnGS_Editar.ForeColor = Color.Gray;
+                btnGS_Eliminar.IconColor = Color.Gray;
+                btnGS_Eliminar.ForeColor = Color.Gray;
             }
         }
 
@@ -143,10 +164,11 @@ namespace GestionJardin
         {
             frmSalasPopUpAgregar frmSalasPopUpAgregar = new frmSalasPopUpAgregar();
             frmSalasPopUpAgregar.Text = "GESTIÓN SALAS / CREAR NUEVA SALA";
-            frmSalasPopUpAgregar.ShowDialog();
+            frmSalasPopUpAgregar.ShowDialog();            
 
             dgv_Salas.DataSource = metSala.GrillaSalas();
-            dgv_Salas.Columns["SAL_ID"].Visible = false;
+            dgv_Salas.Columns["SAL_ID"].Visible = false;         
+
         }
     }
 }
