@@ -94,6 +94,7 @@ namespace GestionJardin
             }
         }
 
+
         /* Habilita la modificacion de los datos en el form */
 
         private void btnBloqueo_Click_1(object sender, EventArgs e)

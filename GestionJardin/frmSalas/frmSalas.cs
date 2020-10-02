@@ -51,7 +51,6 @@ namespace GestionJardin
                 btnGS_Eliminar.IconColor = Color.Gray;
                 btnGS_Eliminar.ForeColor = Color.Gray;
 
-
             }
             else
             {
@@ -104,8 +103,7 @@ namespace GestionJardin
                 btnGS_Eliminar.ForeColor = Color.Gray;
             }
             else
-            {
-             
+            {             
                 btnGS_Eliminar.IconColor = Color.Gray;
                 btnGS_Eliminar.ForeColor = Color.Gray;
                 MessageBox.Show("Debe seleccionar un registro para poder visualizar y/o editar los datos de la sala");
