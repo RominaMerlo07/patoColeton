@@ -55,19 +55,27 @@ namespace GestionJardin
             if (txtGU_Buscar.Text.Length > 0)
             {
                 dgv_UsuariosActivos.DataSource = ObjetoUsu.llenarGrilla(txtGU_Buscar.Text);
+                btnGU_Editar.IconColor = Color.Gray;
+                btnGU_Editar.ForeColor = Color.Gray;
+                btnGU_Eliminar.IconColor = Color.Gray;
+                btnGU_Eliminar.ForeColor = Color.Gray;
             }
             else
             {
                 txtGU_Buscar.Clear();
                 dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
+                btnGU_Editar.IconColor = Color.Gray;
+                btnGU_Editar.ForeColor = Color.Gray;
+                btnGU_Eliminar.IconColor = Color.Gray;
+                btnGU_Eliminar.ForeColor = Color.Gray;
             }
         }
         /************* COLOCA LAS LETRAS EN MAYUSCULAS **************/
 
         private void txtGU_Buscar_Click(object sender, EventArgs e)
-               {
-                 txtGU_Buscar.CharacterCasing = CharacterCasing.Upper;//esto me pone las letras en mayusculas siempre 
-                     }
+         {
+           txtGU_Buscar.CharacterCasing = CharacterCasing.Upper;//esto me pone las letras en mayusculas siempre 
+         }
 
         /************* Mensaje evento hover boton  **************/
 
@@ -113,6 +121,11 @@ namespace GestionJardin
             AddOwnedForm(frmUsuariosPopUpAgregar);
             ObjetoUsu.AutocompletarAgregarDocente(frmUsuariosPopUpAgregar.txtSeleccionarDocente);
             frmUsuariosPopUpAgregar.ShowDialog();
+
+            btnGU_Editar.IconColor = Color.Gray;
+            btnGU_Editar.ForeColor = Color.Gray;
+            btnGU_Eliminar.IconColor = Color.Gray;
+            btnGU_Eliminar.ForeColor = Color.Gray;
         }
 
         /***************************************/
@@ -132,6 +145,11 @@ namespace GestionJardin
                 btnGU_Editar.IconColor = Color.Cyan;
                 btnGU_Editar.ForeColor = Color.Cyan;
                 frmUsuariosPopUpEditar.ShowDialog();
+
+                btnGU_Editar.IconColor = Color.Gray;
+                btnGU_Editar.ForeColor = Color.Gray;
+                btnGU_Eliminar.IconColor = Color.Gray;
+                btnGU_Eliminar.ForeColor = Color.Gray;
             }
             else
             {
@@ -161,7 +179,12 @@ namespace GestionJardin
                 btnGU_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
                 frmUsuariosPopUpEliminar.lblUSUARIOELIMINAR.Text = "'" + dgv_UsuariosActivos.CurrentRow.Cells[1].Value.ToString() + "'";
                 frmUsuariosPopUpEliminar.ShowDialog();
-             
+
+                btnGU_Editar.IconColor = Color.Gray;
+                btnGU_Editar.ForeColor = Color.Gray;
+                btnGU_Eliminar.IconColor = Color.Gray;
+                btnGU_Eliminar.ForeColor = Color.Gray;
+
             }
             else
             {
