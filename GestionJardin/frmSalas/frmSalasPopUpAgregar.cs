@@ -18,7 +18,8 @@ namespace GestionJardin
 
         public frmSalasPopUpAgregar()
         {
-            InitializeComponent();          
+            InitializeComponent();
+            panelDatos.Focus();
         }
 
         /*Metodos*/

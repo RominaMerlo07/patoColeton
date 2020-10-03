@@ -172,7 +172,7 @@
             this.metroPanel1.Location = new System.Drawing.Point(16, 304);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(365, 50);
-            this.metroPanel1.TabIndex = 19;
+            this.metroPanel1.TabIndex = 8;
             this.metroPanel1.UseCustomBackColor = true;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -230,7 +230,7 @@
             this.cbGenero.PromptText = "Género";
             this.cbGenero.Size = new System.Drawing.Size(330, 27);
             this.cbGenero.Style = MetroFramework.MetroColorStyle.Green;
-            this.cbGenero.TabIndex = 20;
+            this.cbGenero.TabIndex = 9;
             this.cbGenero.UseSelectable = true;
             // 
             // txtDocumento
@@ -262,7 +262,7 @@
             this.txtDocumento.ShortcutsEnabled = true;
             this.txtDocumento.Size = new System.Drawing.Size(332, 35);
             this.txtDocumento.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtDocumento.TabIndex = 2;
+            this.txtDocumento.TabIndex = 5;
             this.txtDocumento.UseSelectable = true;
             this.txtDocumento.WaterMark = "Documento Ej: 30123456";
             this.txtDocumento.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -298,7 +298,7 @@
             this.txtApellidos.ShortcutsEnabled = true;
             this.txtApellidos.Size = new System.Drawing.Size(330, 35);
             this.txtApellidos.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtApellidos.TabIndex = 4;
+            this.txtApellidos.TabIndex = 7;
             this.txtApellidos.UseSelectable = true;
             this.txtApellidos.WaterMark = "Apellidos";
             this.txtApellidos.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -334,7 +334,7 @@
             this.txtNombre.ShortcutsEnabled = true;
             this.txtNombre.Size = new System.Drawing.Size(330, 35);
             this.txtNombre.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtNombre.TabIndex = 3;
+            this.txtNombre.TabIndex = 6;
             this.txtNombre.UseSelectable = true;
             this.txtNombre.WaterMark = "Nombres";
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -387,7 +387,7 @@
             this.metroComboBox2.PromptText = "¿CONVIVE CON EL ALUMNO?";
             this.metroComboBox2.Size = new System.Drawing.Size(363, 27);
             this.metroComboBox2.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroComboBox2.TabIndex = 35;
+            this.metroComboBox2.TabIndex = 10;
             this.metroComboBox2.UseSelectable = true;
             this.metroComboBox2.Visible = false;
             // 
@@ -476,7 +476,7 @@
             this.txtEmail.ShortcutsEnabled = true;
             this.txtEmail.Size = new System.Drawing.Size(321, 40);
             this.txtEmail.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtEmail.TabIndex = 10;
+            this.txtEmail.TabIndex = 19;
             this.txtEmail.UseSelectable = true;
             this.txtEmail.WaterMark = "E-mail";
             this.txtEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -511,7 +511,7 @@
             this.txtCelular.ShortcutsEnabled = true;
             this.txtCelular.Size = new System.Drawing.Size(319, 40);
             this.txtCelular.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCelular.TabIndex = 9;
+            this.txtCelular.TabIndex = 17;
             this.txtCelular.UseSelectable = true;
             this.txtCelular.WaterMark = "Celular Ej: 3512345678";
             this.txtCelular.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -547,7 +547,7 @@
             this.txtTelefono.ShortcutsEnabled = true;
             this.txtTelefono.Size = new System.Drawing.Size(319, 40);
             this.txtTelefono.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtTelefono.TabIndex = 8;
+            this.txtTelefono.TabIndex = 18;
             this.txtTelefono.UseSelectable = true;
             this.txtTelefono.WaterMark = "Teléfono  Ej: 3512345678";
             this.txtTelefono.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -583,7 +583,7 @@
             this.txtCPostal.ShortcutsEnabled = true;
             this.txtCPostal.Size = new System.Drawing.Size(150, 35);
             this.txtCPostal.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCPostal.TabIndex = 4;
+            this.txtCPostal.TabIndex = 13;
             this.txtCPostal.UseSelectable = true;
             this.txtCPostal.WaterMark = "C. Postal";
             this.txtCPostal.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -619,7 +619,7 @@
             this.txtDepto.ShortcutsEnabled = true;
             this.txtDepto.Size = new System.Drawing.Size(105, 40);
             this.txtDepto.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDepto.TabIndex = 6;
+            this.txtDepto.TabIndex = 15;
             this.txtDepto.UseSelectable = true;
             this.txtDepto.WaterMark = "Depto.";
             this.txtDepto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -654,7 +654,7 @@
             this.txtNumero.ShortcutsEnabled = true;
             this.txtNumero.Size = new System.Drawing.Size(128, 35);
             this.txtNumero.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtNumero.TabIndex = 3;
+            this.txtNumero.TabIndex = 12;
             this.txtNumero.UseSelectable = true;
             this.txtNumero.WaterMark = "Número";
             this.txtNumero.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -702,7 +702,7 @@
             this.txtBarrio.ShortcutsEnabled = true;
             this.txtBarrio.Size = new System.Drawing.Size(319, 40);
             this.txtBarrio.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtBarrio.TabIndex = 7;
+            this.txtBarrio.TabIndex = 16;
             this.txtBarrio.UseSelectable = true;
             this.txtBarrio.WaterMark = "Barrio";
             this.txtBarrio.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -737,7 +737,7 @@
             this.txtPiso.ShortcutsEnabled = true;
             this.txtPiso.Size = new System.Drawing.Size(105, 40);
             this.txtPiso.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPiso.TabIndex = 5;
+            this.txtPiso.TabIndex = 14;
             this.txtPiso.UseSelectable = true;
             this.txtPiso.WaterMark = "Piso";
             this.txtPiso.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -772,7 +772,7 @@
             this.txtCalle.ShortcutsEnabled = true;
             this.txtCalle.Size = new System.Drawing.Size(321, 35);
             this.txtCalle.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCalle.TabIndex = 2;
+            this.txtCalle.TabIndex = 11;
             this.txtCalle.UseSelectable = true;
             this.txtCalle.WaterMark = "Calle";
             this.txtCalle.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -788,7 +788,7 @@
             this.metroPanel2.Location = new System.Drawing.Point(869, 78);
             this.metroPanel2.Name = "metroPanel2";
             this.metroPanel2.Size = new System.Drawing.Size(319, 46);
-            this.metroPanel2.TabIndex = 38;
+            this.metroPanel2.TabIndex = 4;
             this.metroPanel2.UseCustomBackColor = true;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
@@ -829,7 +829,7 @@
             this.metroPanel3.Location = new System.Drawing.Point(36, 24);
             this.metroPanel3.Name = "metroPanel3";
             this.metroPanel3.Size = new System.Drawing.Size(1383, 142);
-            this.metroPanel3.TabIndex = 47;
+            this.metroPanel3.TabIndex = 0;
             this.metroPanel3.UseCustomBackColor = true;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
@@ -864,7 +864,7 @@
             this.txtBuscaAlumno.ShortcutsEnabled = true;
             this.txtBuscaAlumno.ShowButton = true;
             this.txtBuscaAlumno.Size = new System.Drawing.Size(332, 38);
-            this.txtBuscaAlumno.TabIndex = 47;
+            this.txtBuscaAlumno.TabIndex = 2;
             this.txtBuscaAlumno.UseSelectable = true;
             this.txtBuscaAlumno.WaterMark = "INGRESE ALUMNO";
             this.txtBuscaAlumno.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -882,7 +882,7 @@
             this.metroPanel4.Location = new System.Drawing.Point(869, 17);
             this.metroPanel4.Name = "metroPanel4";
             this.metroPanel4.Size = new System.Drawing.Size(319, 46);
-            this.metroPanel4.TabIndex = 39;
+            this.metroPanel4.TabIndex = 3;
             this.metroPanel4.UseCustomBackColor = true;
             this.metroPanel4.VerticalScrollbarBarColor = true;
             this.metroPanel4.VerticalScrollbarHighlightOnWheel = false;
@@ -898,7 +898,7 @@
             this.checkTutor.Name = "checkTutor";
             this.checkTutor.Size = new System.Drawing.Size(302, 24);
             this.checkTutor.Style = MetroFramework.MetroColorStyle.Lime;
-            this.checkTutor.TabIndex = 29;
+            this.checkTutor.TabIndex = 3;
             this.checkTutor.Text = "Es tutor: ";
             this.checkTutor.UseCustomBackColor = true;
             this.checkTutor.UseCustomForeColor = true;
@@ -947,7 +947,7 @@
             this.txtParentesco.ShortcutsEnabled = true;
             this.txtParentesco.Size = new System.Drawing.Size(332, 35);
             this.txtParentesco.Style = MetroFramework.MetroColorStyle.Green;
-            this.txtParentesco.TabIndex = 25;
+            this.txtParentesco.TabIndex = 1;
             this.txtParentesco.UseSelectable = true;
             this.txtParentesco.WaterMark = "INGRESE PARENTESCO";
             this.txtParentesco.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -981,7 +981,7 @@
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Rotation = 0D;
             this.iconButton2.Size = new System.Drawing.Size(239, 76);
-            this.iconButton2.TabIndex = 49;
+            this.iconButton2.TabIndex = 21;
             this.iconButton2.Text = "CANCELAR";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
@@ -1001,7 +1001,7 @@
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Rotation = 0D;
             this.btnGuardar.Size = new System.Drawing.Size(239, 76);
-            this.btnGuardar.TabIndex = 48;
+            this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Text = "GUARDAR";
             this.btnGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnGuardar.UseVisualStyleBackColor = true;

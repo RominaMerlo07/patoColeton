@@ -18,6 +18,7 @@ namespace GestionJardin
         public frmAlumnosGrupoFliaPopUpAgregar()
         {
             InitializeComponent();
+            metroPanel3.Focus();
         }
 
         private void frmAlumnosGrupoFliaPopUpAgregar_Load(object sender, EventArgs e)

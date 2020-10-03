@@ -75,7 +75,7 @@
             this.panelDatos.Location = new System.Drawing.Point(77, 51);
             this.panelDatos.Name = "panelDatos";
             this.panelDatos.Size = new System.Drawing.Size(644, 478);
-            this.panelDatos.TabIndex = 34;
+            this.panelDatos.TabIndex = 0;
             this.panelDatos.UseCustomBackColor = true;
             this.panelDatos.VerticalScrollbarBarColor = true;
             this.panelDatos.VerticalScrollbarHighlightOnWheel = false;
@@ -400,7 +400,6 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSalasPopUpAgregar";
-
             this.panelDatos.ResumeLayout(false);
             this.panelDatos.PerformLayout();
             this.metroPanel3.ResumeLayout(false);
