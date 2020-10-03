@@ -44,11 +44,19 @@ namespace GestionJardin
             if (txtGD_Buscar.Text.Length > 0)
             {
                 dgv_Docentes.DataSource = objMetPersonas.llenarGrilla(txtGD_Buscar.Text);
+                btnGD_Editar.IconColor = Color.Gray;
+                btnGD_Editar.ForeColor = Color.Gray;
+                btnGD_Eliminar.IconColor = Color.Gray;
+                btnGD_Eliminar.ForeColor = Color.Gray;
             }
             else
             {
                 txtGD_Buscar.Clear();
                 dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
+                btnGD_Editar.IconColor = Color.Gray;
+                btnGD_Editar.ForeColor = Color.Gray;
+                btnGD_Eliminar.IconColor = Color.Gray;
+                btnGD_Eliminar.ForeColor = Color.Gray;
             }
         }
 
@@ -101,6 +109,11 @@ namespace GestionJardin
             frmDocentesPopUpAgregar.ShowDialog();
 
             dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
+
+            btnGD_Editar.IconColor = Color.Gray;
+            btnGD_Editar.ForeColor = Color.Gray;
+            btnGD_Eliminar.IconColor = Color.Gray;
+            btnGD_Eliminar.ForeColor = Color.Gray;
         }
 
         /**************************************************/
@@ -188,6 +201,11 @@ namespace GestionJardin
                 AddOwnedForm(frmDocentesPopUpEditar);
                 frmDocentesPopUpEditar.ShowDialog();
 
+                btnGD_Editar.IconColor = Color.Gray;
+                btnGD_Editar.ForeColor = Color.Gray;
+                btnGD_Eliminar.IconColor = Color.Gray;
+                btnGD_Eliminar.ForeColor = Color.Gray;
+
             }
             
             else
@@ -226,8 +244,13 @@ namespace GestionJardin
                // frmDocentesPopUpEliminar.lbldnidoc.Text =  dgv_Docentes.CurrentRow.Cells[1].Value.ToString() ;
                 frmDocentesPopUpEliminar.Text = "GESTION DOCENTES / ELIMINAR DOCENTE";
                 frmDocentesPopUpEliminar.ShowDialog();
-                dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();                
-                
+                dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
+
+                btnGD_Editar.IconColor = Color.Gray;
+                btnGD_Editar.ForeColor = Color.Gray;
+                btnGD_Eliminar.IconColor = Color.Gray;
+                btnGD_Eliminar.ForeColor = Color.Gray;
+
             }
             else
             {
