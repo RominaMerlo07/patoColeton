@@ -14,11 +14,11 @@ namespace GestionJardin
     {
         metSala2 metSala = new metSala2();
         entSala entSala = new entSala();
+        
 
         public frmSalasPopUpAgregar()
         {
-            InitializeComponent();
-            txtSala.Focus();
+            InitializeComponent();          
         }
 
         /*Metodos*/
@@ -101,7 +101,7 @@ namespace GestionJardin
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-
+            
             string validacion = Validacion();
             if (validacion == "OK")
             {
@@ -221,6 +221,7 @@ namespace GestionJardin
         {
             this.Close();
         }
-       
+
+        
     }
 }

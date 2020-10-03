@@ -208,10 +208,10 @@
 
         #endregion
         private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton btnGS_Eliminar;
-        private FontAwesome.Sharp.IconButton btnGS_Editar;
-        private FontAwesome.Sharp.IconButton btnGS_Agregar;
         private MetroFramework.Controls.MetroTextBox txtGS_Buscar;
         private System.Windows.Forms.DataGridView dgv_Salas;
+        public FontAwesome.Sharp.IconButton btnGS_Eliminar;
+        public FontAwesome.Sharp.IconButton btnGS_Editar;
+        public FontAwesome.Sharp.IconButton btnGS_Agregar;
     }
 }

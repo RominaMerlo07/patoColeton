@@ -400,6 +400,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSalasPopUpAgregar";
+
             this.panelDatos.ResumeLayout(false);
             this.panelDatos.PerformLayout();
             this.metroPanel3.ResumeLayout(false);

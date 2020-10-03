@@ -165,7 +165,12 @@ namespace GestionJardin
             frmSalasPopUpAgregar.ShowDialog();            
 
             dgv_Salas.DataSource = metSala.GrillaSalas();
-            dgv_Salas.Columns["SAL_ID"].Visible = false;         
+            dgv_Salas.Columns["SAL_ID"].Visible = false;
+
+            btnGS_Editar.IconColor = Color.Gray;
+            btnGS_Editar.ForeColor = Color.Gray;
+            btnGS_Eliminar.IconColor = Color.Gray;
+            btnGS_Eliminar.ForeColor = Color.Gray;
 
         }
     }
