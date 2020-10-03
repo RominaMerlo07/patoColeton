@@ -94,7 +94,7 @@
             this.metroPanel3.Location = new System.Drawing.Point(52, 44);
             this.metroPanel3.Name = "metroPanel3";
             this.metroPanel3.Size = new System.Drawing.Size(1548, 126);
-            this.metroPanel3.TabIndex = 31;
+            this.metroPanel3.TabIndex = 0;
             this.metroPanel3.UseCustomBackColor = true;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
@@ -195,7 +195,7 @@
             this.cbTurno.PromptText = "Turno";
             this.cbTurno.Size = new System.Drawing.Size(185, 30);
             this.cbTurno.Style = MetroFramework.MetroColorStyle.Green;
-            this.cbTurno.TabIndex = 23;
+            this.cbTurno.TabIndex = 0;
             this.cbTurno.UseCustomBackColor = true;
             this.cbTurno.UseSelectable = true;
             this.cbTurno.UseStyleColors = true;

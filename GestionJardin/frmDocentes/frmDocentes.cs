@@ -34,6 +34,8 @@ namespace GestionJardin
             btnGD_Eliminar.IconColor = Color.Gray;
             btnGD_Eliminar.ForeColor = Color.Gray;            
             dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
+            dgv_Docentes.Columns["DOCENTE"].Frozen = true;
+            dgv_Docentes.Columns["DOCUMENTO"].Frozen = true;
             objMetPersonas.traerdocente(txtGD_Buscar);           
         }
 

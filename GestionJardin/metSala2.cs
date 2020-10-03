@@ -172,7 +172,6 @@ namespace GestionJardin
             {
                 result = "ERROR";
                 MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error-" + ex.ToString());
-
             }
 
             return result;
