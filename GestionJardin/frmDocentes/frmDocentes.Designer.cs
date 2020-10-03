@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtGD_Buscar = new MetroFramework.Controls.MetroTextBox();
             this.btnGD_Filtrar = new FontAwesome.Sharp.IconPictureBox();
@@ -48,12 +49,12 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(25, 700);
+            this.label1.Location = new System.Drawing.Point(43, 699);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(819, 20);
             this.label1.TabIndex = 38;
@@ -62,7 +63,7 @@
             // 
             // txtGD_Buscar
             // 
-            this.txtGD_Buscar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtGD_Buscar.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.txtGD_Buscar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.txtGD_Buscar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.CustomSource;
             // 
@@ -81,7 +82,7 @@
             this.txtGD_Buscar.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtGD_Buscar.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtGD_Buscar.Lines = new string[0];
-            this.txtGD_Buscar.Location = new System.Drawing.Point(29, 52);
+            this.txtGD_Buscar.Location = new System.Drawing.Point(47, 52);
             this.txtGD_Buscar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtGD_Buscar.MaxLength = 32767;
             this.txtGD_Buscar.Name = "txtGD_Buscar";
@@ -113,7 +114,7 @@
             this.btnGD_Filtrar.IconChar = FontAwesome.Sharp.IconChar.Filter;
             this.btnGD_Filtrar.IconColor = System.Drawing.Color.WhiteSmoke;
             this.btnGD_Filtrar.IconSize = 81;
-            this.btnGD_Filtrar.Location = new System.Drawing.Point(851, 52);
+            this.btnGD_Filtrar.Location = new System.Drawing.Point(834, 52);
             this.btnGD_Filtrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGD_Filtrar.Name = "btnGD_Filtrar";
             this.btnGD_Filtrar.Padding = new System.Windows.Forms.Padding(5);
@@ -130,7 +131,7 @@
             this.btnGD_Excel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
             this.btnGD_Excel.IconColor = System.Drawing.Color.Chartreuse;
             this.btnGD_Excel.IconSize = 81;
-            this.btnGD_Excel.Location = new System.Drawing.Point(971, 52);
+            this.btnGD_Excel.Location = new System.Drawing.Point(954, 52);
             this.btnGD_Excel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGD_Excel.Name = "btnGD_Excel";
             this.btnGD_Excel.Padding = new System.Windows.Forms.Padding(5);
@@ -147,7 +148,7 @@
             this.btnGD_Pdf.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
             this.btnGD_Pdf.IconColor = System.Drawing.Color.Salmon;
             this.btnGD_Pdf.IconSize = 81;
-            this.btnGD_Pdf.Location = new System.Drawing.Point(1080, 52);
+            this.btnGD_Pdf.Location = new System.Drawing.Point(1063, 52);
             this.btnGD_Pdf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGD_Pdf.Name = "btnGD_Pdf";
             this.btnGD_Pdf.Padding = new System.Windows.Forms.Padding(5);
@@ -165,7 +166,7 @@
             this.btnGD_Eliminar.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
             this.btnGD_Eliminar.IconColor = System.Drawing.Color.Gray;
             this.btnGD_Eliminar.IconSize = 100;
-            this.btnGD_Eliminar.Location = new System.Drawing.Point(1282, 497);
+            this.btnGD_Eliminar.Location = new System.Drawing.Point(1310, 496);
             this.btnGD_Eliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGD_Eliminar.Name = "btnGD_Eliminar";
             this.btnGD_Eliminar.Rotation = 0D;
@@ -186,7 +187,7 @@
             this.btnGD_Editar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.btnGD_Editar.IconColor = System.Drawing.Color.Gray;
             this.btnGD_Editar.IconSize = 100;
-            this.btnGD_Editar.Location = new System.Drawing.Point(1282, 339);
+            this.btnGD_Editar.Location = new System.Drawing.Point(1310, 338);
             this.btnGD_Editar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGD_Editar.Name = "btnGD_Editar";
             this.btnGD_Editar.Rotation = 0D;
@@ -207,7 +208,7 @@
             this.btnGD_Agregar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             this.btnGD_Agregar.IconColor = System.Drawing.Color.Lime;
             this.btnGD_Agregar.IconSize = 100;
-            this.btnGD_Agregar.Location = new System.Drawing.Point(1282, 183);
+            this.btnGD_Agregar.Location = new System.Drawing.Point(1310, 182);
             this.btnGD_Agregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnGD_Agregar.Name = "btnGD_Agregar";
             this.btnGD_Agregar.Rotation = 0D;
@@ -222,34 +223,42 @@
             // 
             this.dgv_Docentes.AllowUserToAddRows = false;
             this.dgv_Docentes.AllowUserToDeleteRows = false;
-            this.dgv_Docentes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dgv_Docentes.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dgv_Docentes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_Docentes.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgv_Docentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Docentes.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_Docentes.Location = new System.Drawing.Point(31, 165);
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Docentes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgv_Docentes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Docentes.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgv_Docentes.Location = new System.Drawing.Point(47, 165);
             this.dgv_Docentes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgv_Docentes.Name = "dgv_Docentes";
             this.dgv_Docentes.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Docentes.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgv_Docentes.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Docentes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Docentes.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_Docentes.RowTemplate.Height = 24;
-            this.dgv_Docentes.Size = new System.Drawing.Size(1141, 495);
+            this.dgv_Docentes.Size = new System.Drawing.Size(1240, 495);
             this.dgv_Docentes.TabIndex = 42;
             this.dgv_Docentes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Docentes_CellClick);
             // 
