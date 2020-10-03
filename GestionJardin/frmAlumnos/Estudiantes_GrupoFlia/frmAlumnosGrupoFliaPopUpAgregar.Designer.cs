@@ -100,7 +100,7 @@
             this.panelDatos.Location = new System.Drawing.Point(36, 200);
             this.panelDatos.Name = "panelDatos";
             this.panelDatos.Size = new System.Drawing.Size(493, 478);
-            this.panelDatos.TabIndex = 33;
+            this.panelDatos.TabIndex = 5;
             this.panelDatos.UseCustomBackColor = true;
             this.panelDatos.VerticalScrollbarBarColor = true;
             this.panelDatos.VerticalScrollbarHighlightOnWheel = false;
@@ -368,7 +368,7 @@
             this.panelContacto.Location = new System.Drawing.Point(595, 200);
             this.panelContacto.Name = "panelContacto";
             this.panelContacto.Size = new System.Drawing.Size(824, 478);
-            this.panelContacto.TabIndex = 46;
+            this.panelContacto.TabIndex = 10;
             this.panelContacto.UseCustomBackColor = true;
             this.panelContacto.VerticalScrollbarBarColor = true;
             this.panelContacto.VerticalScrollbarHighlightOnWheel = false;
