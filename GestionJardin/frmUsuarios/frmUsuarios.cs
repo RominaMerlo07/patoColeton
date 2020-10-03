@@ -102,11 +102,11 @@ namespace GestionJardin
             }
             else
             {
+                dgv_UsuariosActivos.ClearSelection();
                 btnGU_Editar.IconColor = Color.Gray;
                 btnGU_Editar.ForeColor = Color.Gray;
                 btnGU_Eliminar.IconColor = Color.Gray;
                 btnGU_Eliminar.ForeColor = Color.Gray;
-                dgv_UsuariosActivos.ClearSelection();
             }
         }
 
@@ -126,6 +126,7 @@ namespace GestionJardin
             btnGU_Editar.ForeColor = Color.Gray;
             btnGU_Eliminar.IconColor = Color.Gray;
             btnGU_Eliminar.ForeColor = Color.Gray;
+            dgv_UsuariosActivos.ClearSelection();
         }
 
         /***************************************/
@@ -150,6 +151,7 @@ namespace GestionJardin
                 btnGU_Editar.ForeColor = Color.Gray;
                 btnGU_Eliminar.IconColor = Color.Gray;
                 btnGU_Eliminar.ForeColor = Color.Gray;
+                dgv_UsuariosActivos.ClearSelection();
             }
             else
             {
@@ -184,6 +186,7 @@ namespace GestionJardin
                 btnGU_Editar.ForeColor = Color.Gray;
                 btnGU_Eliminar.IconColor = Color.Gray;
                 btnGU_Eliminar.ForeColor = Color.Gray;
+                dgv_UsuariosActivos.ClearSelection();
 
             }
             else
@@ -194,10 +197,7 @@ namespace GestionJardin
                 MessageBox.Show("Por favor seleccione un registro/fila para poder ELIMINARLO");
                 
             }
-        }
-
-        
-
-       
+        }               
+               
     }
 }
