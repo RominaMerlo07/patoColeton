@@ -27,6 +27,9 @@ namespace GestionJardin
         {
             cbHrmDomicilio.Enabled = false;
             txtBuscaHmno.Enabled = false;
+            string turno;
+            string sala;
+
 
             AutoCompleteStringCollection alumnos = new AutoCompleteStringCollection();
             metPersonas metPersonas = new metPersonas();
@@ -36,19 +39,33 @@ namespace GestionJardin
             txtBuscaHmno.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtBuscaHmno.AutoCompleteCustomSource = alumnos;
 
-            //panelDatos.Visible = false;
-            //panelContacto.Visible = false;
+            panelDatos.Visible = false;
+            panelContacto.Visible = false;
 
             //if (cbTurno.SelectedItem == null)
             //{
-            //    genero = "";
+            //    turno = "";               
             //}
             //else
             //{
-            //    genero = cbGenero.SelectedItem.ToString();
+            //    turno = cbTurno.SelectedItem.ToString();
+            //if (cbSala.SelectedItem == null)
+            //{
+            //    sala = "";
+             
             //}
+            //else
+            //{
+            //    sala = cbSala.SelectedItem.ToString();
 
-
+            //        if (sala != "" && turno != "")
+            //        {
+            //            panelDatos.Visible = true;
+            //            panelContacto.Visible = true;
+            //        }
+            //    }
+            //}                               
+            
         }
 
         private string validaCampos()
@@ -384,6 +401,18 @@ namespace GestionJardin
             int VACANTES = MAXIMO - CANTIDAD;
 
             txtVacantes.Text = VACANTES.ToString();
+
+            if (VACANTES > 0)
+            {
+                panelDatos.Visible = true;
+                panelContacto.Visible = true;
+            }
+            else
+            {
+                txtVacantes.Style = MetroFramework.MetroColorStyle.Red;
+                txtVacantes.Focus();
+                MessageBox.Show("No existen vacantes para la sala y turno elegidos");
+            }
         }
 
         private void cbHermanos_SelectedValueChanged(object sender, EventArgs e)
