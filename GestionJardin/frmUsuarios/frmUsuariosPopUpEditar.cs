@@ -84,6 +84,11 @@ namespace GestionJardin
             {
                 MessageBox.Show("ingrese contraseña!");
             }
+            if (metroTextBoxContrasenaEdit.Text == "")
+            {
+                MessageBox.Show("Debe ingresar una contraseña! ");
+                metroTextBoxContrasenaEdit.Focus();
+            }
             else
             {
                 usu.USU_USUARIO = lblEditarUsu.Text;
