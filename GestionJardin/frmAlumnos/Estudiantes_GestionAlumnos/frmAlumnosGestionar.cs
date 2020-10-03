@@ -21,9 +21,10 @@ namespace GestionJardin
         private void frmAlumnosGestionar_Load(object sender, EventArgs e)
         {
 
-            dgvAlumnos.ClearSelection();
+            dgvAlumnos.ClearSelection();           
+            cargar_dgvAlumnos();                    
+            
 
-            cargar_dgvAlumnos();
             btnGA_Eliminar.IconColor = Color.Gray;
             btnGA_Eliminar.ForeColor = Color.Gray;
             btnGA_Editar.IconColor = Color.Gray;
@@ -121,6 +122,9 @@ namespace GestionJardin
             col = metPersonas.TraerAlumnos();
             dgvAlumnos.DataSource = col;
             dgvAlumnos.Columns["PER_ID"].Visible = false;
+            dgvAlumnos.Columns["PER_ID"].Frozen = true;
+            dgvAlumnos.Columns["ALUMNO"].Frozen = true;
+            dgvAlumnos.Columns["DOCUMENTO"].Frozen = true;
 
         }     
 

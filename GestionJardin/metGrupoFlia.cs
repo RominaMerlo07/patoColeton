@@ -110,11 +110,11 @@ namespace GestionJardin
                 com.Connection = con;
 
                 com.CommandText = "SELECT p.per_id, " +
-                                  "CONCAT(P.PER_APELLIDO, ', ', P.PER_NOMBRE) AS 'ALUMNO', " +
+                                  "CONCAT(P.PER_APELLIDO, ', ', P.PER_NOMBRE) AS 'NOMBRE', " +
+                                  "P.PER_DOCUMENTO AS 'DOCUMENTO', " +
+                                  "(CASE WHEN GF.GRF_OBSERVACION IS NULL AND P.PER_TPE_ID = 2 THEN 'ALUMNO' ELSE GF.GRF_OBSERVACION END) 'PARENTESCO', " +
                                   "(CASE gf.GRF_TUTOR WHEN 'S' THEN 'SI' WHEN 'N' THEN 'NO' END) as 'TUTOR', " +
                                   "(CASE GF.GRF_AUTORIZADO WHEN 'S' THEN 'SI' WHEN 'N' THEN 'NO' END) AS 'RETIRAR', " +
-                                  "(CASE WHEN GF.GRF_OBSERVACION IS NULL AND P.PER_TPE_ID = 2 THEN 'ALUMNO' ELSE GF.GRF_OBSERVACION END) 'PARENTESCO', " +
-                                  "P.PER_DOCUMENTO AS 'DOCUMENTO', " +
                                   "P.PER_FECHA_NAC AS 'FECHA NACIMIENTO', " +
                                   "DATEDIFF(YEAR, P.PER_FECHA_NAC, GETDATE()) AS 'EDAD', " +
                                   "CONCAT(D.DOM_CALLE, ', Nº: ', D.DOM_NUMERO, '. BARRIO: ', D.DOM_BARRIO, ', CP: ', D.DOM_CP, ' ', D.DOM_PROVINCIA) AS 'DOMICILIO', " +

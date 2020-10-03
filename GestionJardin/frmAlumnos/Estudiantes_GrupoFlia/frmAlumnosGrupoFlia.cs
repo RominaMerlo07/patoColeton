@@ -177,6 +177,10 @@ namespace GestionJardin
                 dgvGrupoFlia.DataSource = grupoFlia;
                 dgvGrupoFlia.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dgvGrupoFlia.Columns["PER_ID"].Visible = false;
+                dgvGrupoFlia.Columns["PER_ID"].Frozen = true;
+                dgvGrupoFlia.Columns["NOMBRE"].Frozen = true;
+                dgvGrupoFlia.Columns["DOCUMENTO"].Frozen = true;
+                dgvGrupoFlia.Columns["PARENTESCO"].Frozen = true;
                 dgvGrupoFlia.ClearSelection();
 
                 //dgvGrupoFlia.Visible = true;
