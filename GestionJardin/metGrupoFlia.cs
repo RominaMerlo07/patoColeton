@@ -109,28 +109,29 @@ namespace GestionJardin
                 SqlCommand com = new SqlCommand();
                 com.Connection = con;
 
-                com.CommandText = "select " +
-                                        "p.per_id, " +
-                                        "CONCAT(P.PER_APELLIDO, ', ', P.PER_NOMBRE) AS 'ALUMNO', " +
-                                        "gf.GRF_TUTOR as 'TUTOR', " +
-                                        "GF.GRF_AUTORIZADO AS 'RETIRAR', " +
-                                        "gf.grf_observacion AS 'PARENTESCO', " +
-                                        "P.PER_DOCUMENTO AS 'DOCUMENTO', " +
-                                        "P.PER_FECHA_NAC AS 'FECHA NACIMIENTO', " +
-                                        "DATEDIFF(YEAR, P.PER_FECHA_NAC, GETDATE()) AS 'EDAD', " +
-                                        "CONCAT(D.DOM_CALLE, ', Nº: ', D.DOM_NUMERO, '. BARRIO: ', D.DOM_BARRIO, ', CP: ', D.DOM_CP, ' ', D.DOM_PROVINCIA) AS 'DOMICILIO', " +
-                                        "P.PER_EMAIL AS 'EMAIL', " +
-                                        "P.PER_TELEFONO AS 'TELEFONO', " +
-                                        "P.PER_TELEFONO_2 AS 'TELEFONO 2' " +
-                                    "from T_GRUPO_FLIA gf, T_PERSONAS p, T_DOMICILIOS d " +
-                                        "where p.PER_ID = gf.GRF_PER_ID " +
-                                        "and p.per_id = d.DOM_PER_ID " +
-                                        "AND P.PER_FECHA_BAJA IS NULL " +
-                                        "and gf.GRF_GRUPO_LEGAJO = " +
-                                        "( select gf2.GRF_GRUPO_LEGAJO from T_GRUPO_FLIA gf2 where gf2.GRF_PER_ID = " + idPersona + ");";
-                                    
+                com.CommandText = "SELECT p.per_id, " +
+                                  "CONCAT(P.PER_APELLIDO, ', ', P.PER_NOMBRE) AS 'ALUMNO', " +
+                                  "(CASE gf.GRF_TUTOR WHEN 'S' THEN 'SI' WHEN 'N' THEN 'NO' END) as 'TUTOR', " +
+                                  "(CASE GF.GRF_AUTORIZADO WHEN 'S' THEN 'SI' WHEN 'N' THEN 'NO' END) AS 'RETIRAR', " +
+                                  "(CASE WHEN GF.GRF_OBSERVACION IS NULL AND P.PER_TPE_ID = 2 THEN 'ALUMNO' ELSE GF.GRF_OBSERVACION END) 'PARENTESCO', " +
+                                  "P.PER_DOCUMENTO AS 'DOCUMENTO', " +
+                                  "P.PER_FECHA_NAC AS 'FECHA NACIMIENTO', " +
+                                  "DATEDIFF(YEAR, P.PER_FECHA_NAC, GETDATE()) AS 'EDAD', " +
+                                  "CONCAT(D.DOM_CALLE, ', Nº: ', D.DOM_NUMERO, '. BARRIO: ', D.DOM_BARRIO, ', CP: ', D.DOM_CP, ' ', D.DOM_PROVINCIA) AS 'DOMICILIO', " +
+                                  "P.PER_TELEFONO AS 'TELEFONO', " +
+                                  "P.PER_TELEFONO_2 AS 'TELEFONO 2' " +
+                                  "FROM T_GRUPO_FLIA gf, T_PERSONAS p, T_DOMICILIOS d " +
+                                  "WHERE p.PER_ID = gf.GRF_PER_ID " +
+                                  "AND p.per_id = d.DOM_PER_ID " +
+                                  "AND P.PER_FECHA_BAJA IS NULL " +
+                                  "AND gf.GRF_GRUPO_LEGAJO = (SELECT gf2.GRF_GRUPO_LEGAJO " +
+                                                               "FROM T_GRUPO_FLIA gf2 " +
+                                                               "WHERE gf2.GRF_PER_ID = " + idPersona + ") " +
+                                  "ORDER BY 1;";
 
-    
+
+
+
                 SqlDataAdapter da = new SqlDataAdapter(com);
                 DataSet ds = new DataSet();
 
