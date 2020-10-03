@@ -51,6 +51,11 @@ namespace GestionJardin
             frmAlumnosGrupoFliaPopUpAgregar.FormClosed += frmAlumnosGrupoFliaPopUpAgregar_FormClosed;
             frmAlumnosGrupoFliaPopUpAgregar.Text = "GESTION ALUMNOS / ESTUDIANTES / GRUPO FAMILIAR / INGRESAR FAMILIAR";
             frmAlumnosGrupoFliaPopUpAgregar.ShowDialog();
+
+            btnGF_Eliminar.IconColor = Color.Gray;
+            btnGF_Eliminar.ForeColor = Color.Gray;
+            btnGF_Editar.IconColor = Color.Gray;
+            btnGF_Editar.ForeColor = Color.Gray;
         }
 
         private void btnGF_Editar_Click(object sender, EventArgs e)
@@ -65,7 +70,14 @@ namespace GestionJardin
                 frmAlumnosGrupoFliaPopUpEditar.FormClosed += frmAlumnosGrupoFliaPopUpEditar_FormClosed;
                 frmAlumnosGrupoFliaPopUpEditar.Text = "GESTION ALUMNOS / ESTUDIANTES / GRUPO FAMILIAR / EDITAR O VISUALIZAR DATOS DEL FAMILIAR";
                 frmAlumnosGrupoFliaPopUpEditar.ShowDialog();
-            } else
+
+                btnGF_Eliminar.IconColor = Color.Gray;
+                btnGF_Eliminar.ForeColor = Color.Gray;
+                btnGF_Editar.IconColor = Color.Gray;
+                btnGF_Editar.ForeColor = Color.Gray;
+
+            }
+            else
             {
                 btnGF_Editar.IconColor = Color.Gray;
                 btnGF_Editar.ForeColor = Color.Gray;
@@ -86,7 +98,14 @@ namespace GestionJardin
                 frmAlumnosGrupoFliaPopUpEliminar.FormClosed += frmAlumnosGrupoFliaPopUpEliminar_FormClosed; 
                 frmAlumnosGrupoFliaPopUpEliminar.Text = "GESTION ALUMNOS / ESTUDIANTES / GRUPO FAMILIAR / ELIMINAR FAMILIAR";
                 frmAlumnosGrupoFliaPopUpEliminar.ShowDialog();
-            } else
+
+                btnGF_Eliminar.IconColor = Color.Gray;
+                btnGF_Eliminar.ForeColor = Color.Gray;
+                btnGF_Editar.IconColor = Color.Gray;
+                btnGF_Editar.ForeColor = Color.Gray;
+
+            }
+            else
             {
                 btnGF_Eliminar.IconColor = Color.Gray;
                 btnGF_Eliminar.ForeColor = Color.Gray;

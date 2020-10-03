@@ -41,6 +41,11 @@ namespace GestionJardin
             frmAlumnosPopUpAgregar.FormClosed += frmAlumnosPopUpAgregar_FormClosed;
             frmAlumnosPopUpAgregar.Text = "GESTION ALUMNOS / ESTUDIANTES / GESTIONAR ALUMNOS / INGRESAR ALUMNO NUEVO";
             frmAlumnosPopUpAgregar.ShowDialog();
+
+            btnGA_Eliminar.IconColor = Color.Gray;
+            btnGA_Eliminar.ForeColor = Color.Gray;
+            btnGA_Editar.IconColor = Color.Gray;
+            btnGA_Editar.ForeColor = Color.Gray;
         }
 
         private void btnGA_Editar_Click(object sender, EventArgs e)
@@ -55,6 +60,11 @@ namespace GestionJardin
                 frmAlumnosPopUpEditar.FormClosed += frmAlumnosPopUpEditar_FormClosed;
                 frmAlumnosPopUpEditar.Text = "GESTION ALUMNOS / ESTUDIANTES / GESTIONAR ALUMNOS / MODIFICAR DATOS ALUMNO";
                 frmAlumnosPopUpEditar.ShowDialog();
+
+                btnGA_Eliminar.IconColor = Color.Gray;
+                btnGA_Eliminar.ForeColor = Color.Gray;
+                btnGA_Editar.IconColor = Color.Gray;
+                btnGA_Editar.ForeColor = Color.Gray;
             }
             else
             {
@@ -79,6 +89,11 @@ namespace GestionJardin
                 frmAlumnoPopUpEliminar.FormClosed += frmAlumnoPopUpEliminar_FormClosed;
                 frmAlumnoPopUpEliminar.Text = "GESTION ALUMNOS / ESTUDIANTES / GESTIONAR ALUMNOS / ELIMINAR ALUMNO";
                 frmAlumnoPopUpEliminar.ShowDialog();
+
+                btnGA_Eliminar.IconColor = Color.Gray;
+                btnGA_Eliminar.ForeColor = Color.Gray;
+                btnGA_Editar.IconColor = Color.Gray;
+                btnGA_Editar.ForeColor = Color.Gray;
             }
             else
             {
