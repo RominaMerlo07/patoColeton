@@ -128,7 +128,7 @@ namespace GestionJardin
                 if (personaBuscar.PER_NOMBRE != null)
                 {
                     frmDocentesPopUpEditar.txt_id_Docente.Text = Convert.ToString(personaBuscar.PER_ID); // se usara en el editar
-                     
+
 
                     frmDocentesPopUpEditar.txtNombre.Text = personaBuscar.PER_NOMBRE;
                     frmDocentesPopUpEditar.txtApellidos.Text = personaBuscar.PER_APELLIDO;
@@ -157,26 +157,33 @@ namespace GestionJardin
                     frmDocentesPopUpEditar.txtEmail.Text = personaBuscar.PER_EMAIL;
 
 
-                    salaBuscar = objMetSalas.buscarSalaXPersona(personaBuscar.PER_ID);
-
-
-                    if (salaBuscar.SALA_TURNO.Trim() == "TARDE")
+                    if (salaBuscar.SALA_TURNO == null)
                     {
-                        frmDocentesPopUpEditar.cbTurno.SelectedIndex = frmDocentesPopUpEditar.cbTurno.FindStringExact("TARDE");
+                        frmDocentesPopUpEditar.cbTurno.SelectedIndex = frmDocentesPopUpEditar.cbTurno.FindStringExact("");
                     }
                     else
                     {
-                        frmDocentesPopUpEditar.cbTurno.SelectedIndex = frmDocentesPopUpEditar.cbTurno.FindStringExact("MAÑANA");
+
+                        salaBuscar = objMetSalas.buscarSalaXPersona(personaBuscar.PER_ID);
+
+
+                        if (salaBuscar.SALA_TURNO.Trim() == "TARDE")
+                        {
+                            frmDocentesPopUpEditar.cbTurno.SelectedIndex = frmDocentesPopUpEditar.cbTurno.FindStringExact("TARDE");
+                        }
+                        else
+                        {
+                            frmDocentesPopUpEditar.cbTurno.SelectedIndex = frmDocentesPopUpEditar.cbTurno.FindStringExact("MAÑANA");
+                        }
+
+                        string indexTurno = frmDocentesPopUpEditar.cbTurno.SelectedIndex.ToString();
+                        frmDocentesPopUpEditar.cbSala.DataSource = objMetSalas.ListarSalas(indexTurno);
+                        frmDocentesPopUpEditar.cbSala.DisplayMember = "SAL_NOMBRE";
+                        frmDocentesPopUpEditar.cbSala.ValueMember = "SAL_ID";
+
+                        frmDocentesPopUpEditar.cbSala.SelectedIndex = frmDocentesPopUpEditar.cbSala.FindStringExact(salaBuscar.SAL_NOMBRE);
                     }
-
-                    string indexTurno = frmDocentesPopUpEditar.cbTurno.SelectedIndex.ToString();
-                    frmDocentesPopUpEditar.cbSala.DataSource = objMetSalas.ListarSalas(indexTurno);
-                    frmDocentesPopUpEditar.cbSala.DisplayMember = "SAL_NOMBRE";
-                    frmDocentesPopUpEditar.cbSala.ValueMember = "SAL_ID";
-
-                    frmDocentesPopUpEditar.cbSala.SelectedIndex = frmDocentesPopUpEditar.cbSala.FindStringExact(salaBuscar.SAL_NOMBRE);
                 }
-
                 frmDocentesPopUpEditar.Text = "GESTION DOCENTES / MODIFICAR/VISUALIZAR DATOS DEL DOCENTE";
                 AddOwnedForm(frmDocentesPopUpEditar);
                 frmDocentesPopUpEditar.ShowDialog();
