@@ -174,7 +174,7 @@
             this.btnGA_Editar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.btnGA_Editar.IconColor = System.Drawing.Color.Cyan;
             this.btnGA_Editar.IconSize = 100;
-            this.btnGA_Editar.Location = new System.Drawing.Point(1313, 519);
+            this.btnGA_Editar.Location = new System.Drawing.Point(1313, 525);
             this.btnGA_Editar.Name = "btnGA_Editar";
             this.btnGA_Editar.Rotation = 0D;
             this.btnGA_Editar.Size = new System.Drawing.Size(293, 134);

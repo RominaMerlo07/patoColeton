@@ -32,7 +32,7 @@ namespace GestionJardin
             }
             else
             {
-                tipoPersona = "WHERE PER_TPE_ID = " + tipo_persona + "ORDER BY 1;";
+                tipoPersona = "WHERE PER_TPE_ID = " + tipo_persona + " AND PER_ESTADO = 'S' AND PER_FECHA_BAJA IS NULL ORDER BY 1 ;";
             }
 
             con = generarConexion();

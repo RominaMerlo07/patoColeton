@@ -62,6 +62,21 @@ namespace GestionJardin
         {
             if (dgvGrupoFlia.SelectedRows.Count > 0) {
 
+
+                if (dgvGrupoFlia.SelectedRows[0].Cells[3].Value.ToString() == "ALUMNO")
+                {
+                    btnGF_Editar.IconColor = Color.Gray;
+                    btnGF_Editar.ForeColor = Color.Gray;
+                    btnGF_Eliminar.IconColor = Color.Gray;
+                    btnGF_Eliminar.ForeColor = Color.Gray;
+
+                    MessageBox.Show("Aqui solamente se pueden editar los datos de familiares, para modificar los datos de un alumno debe dirigirse a GESTIÓN ALUMNOS / ESTUDIANTES / GESTIONAR ALUMNOS. ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                } 
+                else
+                { 
+
                 btnGF_Editar.IconColor = Color.Cyan;
                 btnGF_Editar.ForeColor = Color.Cyan;
 
@@ -71,6 +86,8 @@ namespace GestionJardin
                 frmAlumnosGrupoFliaPopUpEditar.Text = "GESTION ALUMNOS / ESTUDIANTES / GRUPO FAMILIAR / EDITAR O VISUALIZAR DATOS DEL FAMILIAR";
                 frmAlumnosGrupoFliaPopUpEditar.ShowDialog();
 
+                }
+
                 btnGF_Eliminar.IconColor = Color.Gray;
                 btnGF_Eliminar.ForeColor = Color.Gray;
                 btnGF_Editar.IconColor = Color.Gray;
@@ -81,7 +98,7 @@ namespace GestionJardin
             {
                 btnGF_Editar.IconColor = Color.Gray;
                 btnGF_Editar.ForeColor = Color.Gray;
-                MessageBox.Show("Debe seleccionar un registro para poder visualizar y/o editar los datos de un alumno");
+                MessageBox.Show("Para modificar/visualizar los datos de familiares debe seleccionar un registro. ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -89,27 +106,42 @@ namespace GestionJardin
         {
             if (dgvGrupoFlia.SelectedRows.Count > 0)
             {
-                btnGF_Eliminar.IconColor = Color.FromArgb(255, 128, 0);
-                btnGF_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
+                if (dgvGrupoFlia.SelectedRows[0].Cells[3].Value.ToString() == "ALUMNO")
+                {
+                    btnGF_Editar.IconColor = Color.Gray;
+                    btnGF_Editar.ForeColor = Color.Gray;
+                    btnGF_Eliminar.IconColor = Color.Gray;
+                    btnGF_Eliminar.ForeColor = Color.Gray;
 
-                string idPersonaSelect = dgvGrupoFlia.SelectedRows[0].Cells[0].Value.ToString();
-                string nombreAlumno = dgvGrupoFlia.SelectedRows[0].Cells[1].Value.ToString();
-                frmAlumnosGrupoFliaPopUpEliminar frmAlumnosGrupoFliaPopUpEliminar = new frmAlumnosGrupoFliaPopUpEliminar(idPersonaSelect, nombreAlumno);
-                frmAlumnosGrupoFliaPopUpEliminar.FormClosed += frmAlumnosGrupoFliaPopUpEliminar_FormClosed; 
-                frmAlumnosGrupoFliaPopUpEliminar.Text = "GESTION ALUMNOS / ESTUDIANTES / GRUPO FAMILIAR / ELIMINAR FAMILIAR";
-                frmAlumnosGrupoFliaPopUpEliminar.ShowDialog();
+                    MessageBox.Show("Aqui solamente se pueden eliminar los datos de familiares, para eliminar los datos de un alumno debe dirigirse a GESTIÓN ALUMNOS / ESTUDIANTES / GESTIONAR ALUMNOS. ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                btnGF_Eliminar.IconColor = Color.Gray;
-                btnGF_Eliminar.ForeColor = Color.Gray;
-                btnGF_Editar.IconColor = Color.Gray;
-                btnGF_Editar.ForeColor = Color.Gray;
+
+                }
+                else
+                {
+
+                    btnGF_Eliminar.IconColor = Color.FromArgb(255, 128, 0);
+                    btnGF_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
+
+                    string idPersonaSelect = dgvGrupoFlia.SelectedRows[0].Cells[0].Value.ToString();
+                    string nombreAlumno = dgvGrupoFlia.SelectedRows[0].Cells[1].Value.ToString();
+                    frmAlumnosGrupoFliaPopUpEliminar frmAlumnosGrupoFliaPopUpEliminar = new frmAlumnosGrupoFliaPopUpEliminar(idPersonaSelect, nombreAlumno);
+                    frmAlumnosGrupoFliaPopUpEliminar.FormClosed += frmAlumnosGrupoFliaPopUpEliminar_FormClosed;
+                    frmAlumnosGrupoFliaPopUpEliminar.Text = "GESTION ALUMNOS / ESTUDIANTES / GRUPO FAMILIAR / ELIMINAR FAMILIAR";
+                    frmAlumnosGrupoFliaPopUpEliminar.ShowDialog();
+
+                    btnGF_Eliminar.IconColor = Color.Gray;
+                    btnGF_Eliminar.ForeColor = Color.Gray;
+                    btnGF_Editar.IconColor = Color.Gray;
+                    btnGF_Editar.ForeColor = Color.Gray;
+                }
 
             }
             else
             {
                 btnGF_Eliminar.IconColor = Color.Gray;
                 btnGF_Eliminar.ForeColor = Color.Gray;
-                MessageBox.Show("Debe seleccionar un registro para poder dar de baja a un alumno");
+                MessageBox.Show("Para eliminar un familiar debe seleccionar un registro. ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
@@ -190,11 +222,21 @@ namespace GestionJardin
         private void dgvGrupoFlia_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvGrupoFlia.SelectedRows.Count > 0)
-            {
-                btnGF_Editar.IconColor = Color.Cyan;
-                btnGF_Editar.ForeColor = Color.Cyan;
-                btnGF_Eliminar.IconColor = Color.FromArgb(255, 128, 0);
-                btnGF_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
+            {                
+                if (dgvGrupoFlia.SelectedRows[0].Cells[3].Value.ToString() == "ALUMNO")
+                {
+                    btnGF_Editar.IconColor = Color.Gray;
+                    btnGF_Editar.ForeColor = Color.Gray;
+                    btnGF_Eliminar.IconColor = Color.Gray;
+                    btnGF_Eliminar.ForeColor = Color.Gray;                    
+                }
+                else
+                {
+                    btnGF_Editar.IconColor = Color.Cyan;
+                    btnGF_Editar.ForeColor = Color.Cyan;
+                    btnGF_Eliminar.IconColor = Color.FromArgb(255, 128, 0);
+                    btnGF_Eliminar.ForeColor = Color.FromArgb(255, 128, 0);
+                }
 
             }
             else
