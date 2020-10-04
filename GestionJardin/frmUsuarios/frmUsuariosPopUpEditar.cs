@@ -71,6 +71,19 @@ namespace GestionJardin
                 MessageBox.Show("Solo se permiten letras y numeros!", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
+            if ((!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)))
+            {
+                if ((e.KeyChar.ToString() == "ñ") || (e.KeyChar.ToString() == "Ñ"))
+                {
+                    e.Handled = true;
+                    MessageBox.Show("no puede ingresar la letra ñ ");
+
+                }
+                else if (!char.IsLetter(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
+            }
         }
 
                     /***************************************/

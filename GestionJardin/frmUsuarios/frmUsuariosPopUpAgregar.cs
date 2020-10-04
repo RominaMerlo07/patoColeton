@@ -84,6 +84,7 @@ namespace GestionJardin
                 U.dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
                 this.Close();
             }
+
             
         }
         /***************************************/
@@ -117,6 +118,19 @@ namespace GestionJardin
             else
             {
                 e.Handled = false;
+            }
+            if ((!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)))
+            {
+                if ((e.KeyChar.ToString() == "ñ") || (e.KeyChar.ToString() == "Ñ"))
+                {
+                    e.Handled = true;
+                    MessageBox.Show("no puede ingresar la letra ñ ");
+
+                }
+                else if (!char.IsLetter(e.KeyChar))
+                {
+                    e.Handled = true;
+                }
             }
         }
 
