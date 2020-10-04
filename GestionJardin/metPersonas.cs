@@ -569,7 +569,7 @@ namespace GestionJardin
 
             if (pcomboboxturno.SelectedIndex == 0)
             {
-                string consulta = "SELECT SAL_NOMBRE, SAL_ID FROM T_SALA WHERE SAL_TURNO = 'MANANA';";
+                string consulta = "SELECT SAL_NOMBRE, SAL_ID FROM T_SALA WHERE SAL_TURNO = 'MANANA' AND SAL_ACTIVO = 'S';";
 
                 cmd = new SqlCommand(consulta, con);
                 dta = new SqlDataAdapter(cmd);
@@ -589,7 +589,7 @@ namespace GestionJardin
                 if (pcomboboxturno.SelectedIndex == 1)
                 {
 
-                    string consulta = "SELECT SAL_NOMBRE, SAL_ID FROM T_SALA WHERE SAL_TURNO = 'TARDE';";
+                    string consulta = "SELECT SAL_NOMBRE, SAL_ID FROM T_SALA WHERE SAL_TURNO = 'TARDE' AND SAL_ACTIVO = 'S';";
 
                     cmd = new SqlCommand(consulta, con);
                     dta = new SqlDataAdapter(cmd);
@@ -611,7 +611,7 @@ namespace GestionJardin
             con.Close();
 
             return "OK"; // CONSULTAR CON BHETA PORQUE SOLO TENEMOS EL RETURN POR FUERA??? ********************************************
-            // ANALIZAR SI SE AGREGA EL TIPO DE DOCENTE EN PERSONAS O COMO TRABAJAR EL DOCENTE SIN SALA  ******************************
+            
 
         }
 

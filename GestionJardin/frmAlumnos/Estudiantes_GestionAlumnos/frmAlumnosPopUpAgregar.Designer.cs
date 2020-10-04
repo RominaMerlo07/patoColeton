@@ -70,6 +70,7 @@
             this.txtNombre = new MetroFramework.Controls.MetroTextBox();
             this.btnCancelar = new FontAwesome.Sharp.IconButton();
             this.btnGuardar = new FontAwesome.Sharp.IconButton();
+            this.lbl_panelSala = new System.Windows.Forms.Label();
             this.metroPanel3.SuspendLayout();
             this.panelContacto.SuspendLayout();
             this.panelDatos.SuspendLayout();
@@ -1010,12 +1011,25 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
+            // lbl_panelSala
+            // 
+            this.lbl_panelSala.AutoSize = true;
+            this.lbl_panelSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_panelSala.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.lbl_panelSala.Location = new System.Drawing.Point(57, 182);
+            this.lbl_panelSala.Name = "lbl_panelSala";
+            this.lbl_panelSala.Size = new System.Drawing.Size(761, 20);
+            this.lbl_panelSala.TabIndex = 42;
+            this.lbl_panelSala.Text = "* Por favor, seleccione turno y sala para validar vacantes disponibles e ingresar" +
+    " los datos del alumno";
+            // 
             // frmAlumnosPopUpAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(1641, 863);
+            this.Controls.Add(this.lbl_panelSala);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.metroPanel3);
@@ -1033,6 +1047,7 @@
             this.panelDatos.PerformLayout();
             this.metroPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1080,5 +1095,6 @@
         private MetroFramework.Controls.MetroTextBox txtBuscaHmno;
         private MetroFramework.Controls.MetroComboBox cbHrmDomicilio;
         private MetroFramework.Controls.MetroComboBox cbHermanos;
+        private System.Windows.Forms.Label lbl_panelSala;
     }
 }

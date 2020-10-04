@@ -37,6 +37,7 @@ namespace GestionJardin
             txtBuscaHmno.AutoCompleteSource = AutoCompleteSource.CustomSource;
             txtBuscaHmno.AutoCompleteCustomSource = alumnos;
 
+            lbl_panelSala.Visible = true;
             panelDatos.Visible = false;
             panelContacto.Visible = false;
             btnGuardar.Visible = false;
@@ -384,11 +385,12 @@ namespace GestionJardin
 
             if (VACANTES > 0)
             {
+                lbl_panelSala.Visible = false;
                 panelDatos.Visible = true;
                 panelContacto.Visible = true;
                 btnGuardar.Visible = true;
                 btnCancelar.Visible = true;
-                txtDocumento.Focus();
+                txtDocumento.Focus(); 
 
                 //panelDatos.Enabled = true;
                 //panelContacto.Enabled = true;
@@ -398,7 +400,7 @@ namespace GestionJardin
                 txtVacantes.Style = MetroFramework.MetroColorStyle.Red;
                 txtVacantes.Focus();
                
-                MessageBox.Show("No existen vacantes para el turno y sala elegida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No existen vacantes para el turno y sala elegida. Por favor elija otro turno.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                
             }
         }
