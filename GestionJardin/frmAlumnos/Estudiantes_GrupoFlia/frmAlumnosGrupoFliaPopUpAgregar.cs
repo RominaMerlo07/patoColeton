@@ -300,7 +300,7 @@ namespace GestionJardin
                 personaInsert.PER_EMAIL = email;
                 personaInsert.PER_TPE_ID = "2";
                 personaInsert.PER_LEGAJO = null;
-                personaInsert.PER_ESTADO = "1";
+                personaInsert.PER_ESTADO = "S";
 
                 // INSERTA PERSONA
                 metPersonas metPersona = new metPersonas();

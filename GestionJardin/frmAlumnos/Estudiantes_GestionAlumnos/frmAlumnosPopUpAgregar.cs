@@ -25,7 +25,7 @@ namespace GestionJardin
 
         private void frmAlumnosPopUpAgregar_Load(object sender, EventArgs e)
         {
-            Settooltip();
+            
             cbHrmDomicilio.Enabled = false;
             txtBuscaHmno.Enabled = false;         
             
@@ -39,19 +39,15 @@ namespace GestionJardin
 
             panelDatos.Visible = false;
             panelContacto.Visible = false;
+            btnGuardar.Visible = false;
+            btnCancelar.Visible = false;
 
             //panelDatos.Enabled = false;
             //panelContacto.Enabled = false;
 
         }
 
-        private void Settooltip()
-        {
-            ToolTip Tip = new ToolTip();
-            Tip.SetToolTip(this.panelDatos, "SELECCIONE EL TURNO Y SALA PARA PODER REGISTRAR EL ALUMNO");
-            Tip.SetToolTip(this.panelContacto, "SELECCIONE EL TURNO Y SALA PARA PODER REGISTRAR EL ALUMNO");
-        }
-
+    
         private string validaCampos()
         {
             string resultadoValidacion = "";
@@ -390,8 +386,8 @@ namespace GestionJardin
             {
                 panelDatos.Visible = true;
                 panelContacto.Visible = true;
-
-              //  panelDatos.Focus();
+                btnGuardar.Visible = true;
+                btnCancelar.Visible = true;
                 txtDocumento.Focus();
 
                 //panelDatos.Enabled = true;
