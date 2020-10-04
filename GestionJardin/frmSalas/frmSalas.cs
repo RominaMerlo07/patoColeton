@@ -56,7 +56,8 @@ namespace GestionJardin
             {
                 btnGS_Editar.IconColor = Color.Gray;
                 btnGS_Editar.ForeColor = Color.Gray;
-                MessageBox.Show("Debe seleccionar un registro para poder visualizar y/o editar los datos de la sala");
+                MessageBox.Show("Debe seleccionar un registro para poder visualizar y/o editar los datos de la sala", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
             }
         }
 
@@ -106,7 +107,7 @@ namespace GestionJardin
             {             
                 btnGS_Eliminar.IconColor = Color.Gray;
                 btnGS_Eliminar.ForeColor = Color.Gray;
-                MessageBox.Show("Debe seleccionar un registro para poder visualizar y/o editar los datos de la sala");
+                MessageBox.Show("Debe seleccionar un registro para poder visualizar y/o editar los datos de la sala", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
