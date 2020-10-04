@@ -25,12 +25,10 @@ namespace GestionJardin
 
         private void frmAlumnosPopUpAgregar_Load(object sender, EventArgs e)
         {
+            Settooltip();
             cbHrmDomicilio.Enabled = false;
-            txtBuscaHmno.Enabled = false;
-            string turno;
-            string sala;
-
-
+            txtBuscaHmno.Enabled = false;         
+            
             AutoCompleteStringCollection alumnos = new AutoCompleteStringCollection();
             metPersonas metPersonas = new metPersonas();
             alumnos = metPersonas.traerPersonasAutocompetar("2");
@@ -42,30 +40,16 @@ namespace GestionJardin
             panelDatos.Visible = false;
             panelContacto.Visible = false;
 
-            //if (cbTurno.SelectedItem == null)
-            //{
-            //    turno = "";               
-            //}
-            //else
-            //{
-            //    turno = cbTurno.SelectedItem.ToString();
-            //if (cbSala.SelectedItem == null)
-            //{
-            //    sala = "";
-             
-            //}
-            //else
-            //{
-            //    sala = cbSala.SelectedItem.ToString();
+            //panelDatos.Enabled = false;
+            //panelContacto.Enabled = false;
 
-            //        if (sala != "" && turno != "")
-            //        {
-            //            panelDatos.Visible = true;
-            //            panelContacto.Visible = true;
-            //        }
-            //    }
-            //}                               
-            
+        }
+
+        private void Settooltip()
+        {
+            ToolTip Tip = new ToolTip();
+            Tip.SetToolTip(this.panelDatos, "SELECCIONE EL TURNO Y SALA PARA PODER REGISTRAR EL ALUMNO");
+            Tip.SetToolTip(this.panelContacto, "SELECCIONE EL TURNO Y SALA PARA PODER REGISTRAR EL ALUMNO");
         }
 
         private string validaCampos()
@@ -406,12 +390,18 @@ namespace GestionJardin
             {
                 panelDatos.Visible = true;
                 panelContacto.Visible = true;
+
+              //  panelDatos.Focus();
+                txtDocumento.Focus();
+
+                //panelDatos.Enabled = true;
+                //panelContacto.Enabled = true;
             }
             else
             {
                 txtVacantes.Style = MetroFramework.MetroColorStyle.Red;
                 txtVacantes.Focus();
-                MessageBox.Show("No existen vacantes para la sala y turno elegidos");
+                MessageBox.Show("No existen vacantes para el turno y sala elegida");
             }
         }
 
