@@ -188,6 +188,7 @@
             this.txtCantMax.UseSelectable = true;
             this.txtCantMax.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCantMax.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCantMax.Leave += new System.EventHandler(this.txtCantMax_Leave);
             // 
             // metroLabel1
             // 
@@ -218,6 +219,7 @@
             this.cboTurno.Style = MetroFramework.MetroColorStyle.Blue;
             this.cboTurno.TabIndex = 2;
             this.cboTurno.UseSelectable = true;
+            this.cboTurno.Leave += new System.EventHandler(this.cboTurno_Leave);
             // 
             // metroPanel3
             // 
@@ -254,6 +256,7 @@
             this.cboEdadMax.Style = MetroFramework.MetroColorStyle.Blue;
             this.cboEdadMax.TabIndex = 4;
             this.cboEdadMax.UseSelectable = true;
+            this.cboEdadMax.Leave += new System.EventHandler(this.cboEdadMax_Leave);
             // 
             // metroLabel3
             // 
@@ -304,6 +307,7 @@
             this.cboEdadMin.Style = MetroFramework.MetroColorStyle.Blue;
             this.cboEdadMin.TabIndex = 3;
             this.cboEdadMin.UseSelectable = true;
+            this.cboEdadMin.Leave += new System.EventHandler(this.cboEdadMin_Leave);
             // 
             // metroLabel2
             // 
@@ -408,6 +412,7 @@
             this.txtSala.WaterMark = "NOMBRE SALA";
             this.txtSala.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtSala.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSala.Leave += new System.EventHandler(this.txtSala_Leave);
             // 
             // frmSalasPopUpEditar
             // 

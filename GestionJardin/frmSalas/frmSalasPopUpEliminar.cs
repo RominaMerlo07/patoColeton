@@ -32,10 +32,18 @@ namespace GestionJardin
 
             idEliminar = lblIdSala.Text;
             sala.SAL_ID = Convert.ToInt32(idEliminar);
+            
+            string nombreSala = lblSala.Text.TrimEnd('?');
+
             string resultado = metSala.EliminarSala(sala);
             if (resultado == "OK")
             {
-                this.Close();
+                MessageBox.Show("Se elimino correctamente la sala: " + nombreSala, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();                
+            }
+            else
+            {
+                MessageBox.Show("NO se pudo eliminar la sala: " + nombreSala, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

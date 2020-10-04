@@ -137,7 +137,7 @@ namespace GestionJardin
                         txtSala.Clear();
                         txtSala.Style = MetroFramework.MetroColorStyle.Red;
                         txtSala.Focus();
-                        MessageBox.Show("El nombre de la sala ingresado: " + txtSala.Text + " ya se encuentra registrado en el turno " + turno, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("El nombre de la sala ingresado ya se encuentra registrado en el turno " + turno, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }               
             }
         }
@@ -180,7 +180,7 @@ namespace GestionJardin
                 txtCantMax.Focus();
                 MessageBox.Show(" Por favor ingrese un valor para 'Cantidad máxima de alumnos'. El mismo debe tener un valor mayor a 0 y no superar los 30 alumnos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            else if (Convert.ToInt32(txtCantMax.Text) < 0 || Convert.ToInt32(txtCantMax.Text) > 30)
+            else if (Convert.ToInt32(txtCantMax.Text) == 0 || Convert.ToInt32(txtCantMax.Text) > 30)
             {
                 txtCantMax.Style = MetroFramework.MetroColorStyle.Red;
                 txtCantMax.Focus();

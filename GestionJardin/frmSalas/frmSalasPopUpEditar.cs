@@ -153,158 +153,34 @@ namespace GestionJardin
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-
-            string salatxt = txtSala.Text;
             string turno;
-            string edadMin;
-            string edadMax;
-            int control = 0;
-            int cantMax = 0;
-            cantMax = Convert.ToInt32(txtCantMax.Text);
             sala.SALA_ACTIVO = "S";
+            sala.SAL_NOMBRE = txtSala.Text;                               
+            turno = cboTurno.SelectedItem.ToString();
 
-            if (cboTurno.SelectedItem == null)
-            {
-                turno = "";
-                control = 1;
-            }
+            if (turno == "MAÑANA")
+              {
+                 sala.SALA_TURNO = "MANANA";                    
+              }
             else
-            {
-                turno = cboTurno.SelectedItem.ToString();
-
-                if (turno == "MAÑANA")
-                {
-                    sala.SALA_TURNO = "MANANA";
-                    control = 0;
-                }
-                else
-                {
-                    sala.SALA_TURNO = "TARDE";
-                    control = 0;
-                }
-            }
-
-            if (salatxt != sala.SAL_NOMBRE)
-            {
-                sala.SAL_NOMBRE = salatxt;
-                string result = metSala.ValidarSala(sala.SAL_NOMBRE, sala.SALA_TURNO);
-
-                if (result == "SI")
-                {
-                    MessageBox.Show("El nombre de la sala ingresado: " + sala.SAL_NOMBRE + " ya se encuentra registrado en el turno " + turno);
-                    control = 1;
-                }
-                else
-                {
-                    control = 0;                 
-
-                    if (cboEdadMin.SelectedItem == null)
-                    {
-                        edadMin = "";
-                        control = 1;
-                    }
-                    else
-                    {
-                        edadMin = cboEdadMin.SelectedItem.ToString();
-                        sala.SAL_EDAD_MIN = Convert.ToInt32(edadMin);
-                        control = 0;
-
-                        if (cboEdadMax.SelectedItem == null)
-                        {
-                            edadMax = "";
-                            control = 1;
-                        }
-                        else
-                        {
-                            edadMax = cboEdadMax.SelectedItem.ToString();
-                            sala.EDAD_SALA_MAX = Convert.ToInt32(edadMax);
-                            control = 0;
-
-                            if (sala.EDAD_SALA_MAX >= sala.SAL_EDAD_MIN)
-                            {
-                                control = 0;
-
-                                if (cantMax >= 0 && cantMax <= 30)
-                                {
-                                    sala.SALA_CANT_ALUM = cantMax;
-                                    control = 0;
-                                }
-                                else
-                                {
-                                    MessageBox.Show("La cantidad máxima de alumnos, debe estar comprendida entre 0 y 30 alumnos");
-                                    control = 1;
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("La edad minima no puede superar a la edad maxima");
-                                control = 1;
-                            }
-                        }
-                    }
-                }
-            }
-            else
-            {
-                control = 0;
-               
-                if (cboEdadMin.SelectedItem == null)
-                {
-                    edadMin = "";
-                    control = 1;
-                }
-                else
-                {
-                    edadMin = cboEdadMin.SelectedItem.ToString();
-                    sala.SAL_EDAD_MIN = Convert.ToInt32(edadMin);
-                    control = 0;
-
-                    if (cboEdadMax.SelectedItem == null)
-                    {
-                        edadMax = "";
-                        control = 1;
-                    }
-                    else
-                    {
-                        edadMax = cboEdadMax.SelectedItem.ToString();
-                        sala.EDAD_SALA_MAX = Convert.ToInt32(edadMax);
-                        control = 0;
-
-                        if (sala.EDAD_SALA_MAX >= sala.SAL_EDAD_MIN)
-                        {
-                            control = 0;
-
-                            if (cantMax >= 0 && cantMax <= 30)
-                            {
-                                sala.SALA_CANT_ALUM = cantMax;
-                                control = 0;
-                            }
-                            else
-                            {
-                                MessageBox.Show("La cantidad máxima de alumnos, debe estar comprendida entre 0 y 30 alumnos");
-                                control = 1;
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("La edad minima no puede superar a la edad maxima");
-                            control = 1;
-                        }
-                    }
-                }
-            }            
-
-            if (control == 0)
-            {
-                metSala.EditarSala(sala);
-                MessageBox.Show("Se actualizaron correctamente los datos de la sala: " + sala.SAL_NOMBRE);
+              { 
+                 sala.SALA_TURNO = "TARDE";                    
+              }
+            
+            sala.SAL_EDAD_MIN = Convert.ToInt32(cboEdadMin.SelectedItem);
+            sala.EDAD_SALA_MAX = Convert.ToInt32(cboEdadMax.SelectedItem);
+            sala.SALA_CANT_ALUM = Convert.ToInt32(txtCantMax.Text);
+                
+            string resultado = metSala.EditarSala(sala);
+            if(resultado == "OK")
+            { 
+                MessageBox.Show("Se modificaron correctamente los datos de la sala: " + sala.SAL_NOMBRE, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             else
             {
-                MessageBox.Show("NO SE PUDO REGISTRAR LA SALA: " + sala.SAL_NOMBRE);
+                MessageBox.Show("NO se pudo modificar la información de la sala: " + sala.SAL_NOMBRE, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
         }
 
         /********************/
@@ -314,6 +190,97 @@ namespace GestionJardin
         private void btncancelar_Click(object sender, EventArgs e)
         {
             this.Close(); 
+        }
+
+        private void txtSala_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtSala.Text.Trim()) == true)
+            {
+                txtSala.Style = MetroFramework.MetroColorStyle.Red;
+                txtSala.Focus();
+                MessageBox.Show(" Por favor ingrese el nombre de la sala. Por ejemplo: 'AZUL'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cboTurno_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cboTurno.Text.Trim()) == true)
+            {
+                cboTurno.Style = MetroFramework.MetroColorStyle.Red;
+                cboTurno.Focus();
+                MessageBox.Show(" Por favor seleccione un turno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                string turno;
+
+                turno = cboTurno.SelectedItem.ToString();
+
+                if (turno == "MAÑANA")
+                {
+                    turno = "MANANA";
+
+                }
+                else
+                {
+                    turno = "TARDE";
+
+                }
+
+                string result = metSala.ValidarSala(txtSala.Text, turno);
+
+                if (result == "SI")
+                {
+                    txtSala.Clear();
+                    txtSala.Style = MetroFramework.MetroColorStyle.Red;
+                    txtSala.Focus();
+                    MessageBox.Show("El nombre de la sala ingresad ya se encuentra registrado en el turno " + turno, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void cboEdadMin_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cboEdadMin.Text.Trim()) == true)
+            {
+                cboEdadMin.Style = MetroFramework.MetroColorStyle.Red;
+                cboEdadMin.Focus();
+                MessageBox.Show(" Por favor seleccione un valor para 'edad mínima'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cboEdadMax_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cboEdadMax.Text.Trim()) == true)
+            {
+                cboEdadMax.Style = MetroFramework.MetroColorStyle.Red;
+                cboEdadMax.Focus();
+                MessageBox.Show(" Por favor seleccione un valor para 'edad máxima'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (Convert.ToInt32(cboEdadMax.SelectedItem) < Convert.ToInt32(cboEdadMin.SelectedItem))
+            {
+                cboEdadMin.SelectedIndex = -1;
+                cboEdadMin.Style = MetroFramework.MetroColorStyle.Red;
+                cboEdadMin.Focus();
+                MessageBox.Show(" La edad máxima no puede ser menor a la edad minima", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                cboEdadMax.SelectedIndex = -1;
+            }
+        }
+
+        private void txtCantMax_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCantMax.Text.Trim()) == true)
+            {
+                txtCantMax.Style = MetroFramework.MetroColorStyle.Red;
+                txtCantMax.Focus();
+                MessageBox.Show(" Por favor ingrese un valor para 'Cantidad máxima de alumnos'. El mismo debe tener un valor mayor a 0 y no superar los 30 alumnos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else if (Convert.ToInt32(txtCantMax.Text) == 0 || Convert.ToInt32(txtCantMax.Text) > 30)
+            {
+                txtCantMax.Style = MetroFramework.MetroColorStyle.Red;
+                txtCantMax.Focus();
+                MessageBox.Show("La 'Cantidad de alumnos máxima' debe tener un valor mayor a 0 y no superar los 30 alumnos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
     
