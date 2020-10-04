@@ -245,6 +245,7 @@
             this.dgv_Docentes.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Docentes.Location = new System.Drawing.Point(47, 165);
             this.dgv_Docentes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgv_Docentes.MultiSelect = false;
             this.dgv_Docentes.Name = "dgv_Docentes";
             this.dgv_Docentes.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;

@@ -222,6 +222,7 @@
             this.dgvAlumnos.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvAlumnos.Location = new System.Drawing.Point(38, 353);
             this.dgvAlumnos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dgvAlumnos.MultiSelect = false;
             this.dgvAlumnos.Name = "dgvAlumnos";
             this.dgvAlumnos.ReadOnly = true;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
