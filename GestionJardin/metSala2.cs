@@ -118,7 +118,7 @@ namespace GestionJardin
             AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
 
 
-            string consulta = "SELECT (SAL_NOMBRE + '-' + (CASE SAL_TURNO WHEN 'MANANA' THEN 'MAÑANA ' ELSE 'TARDE ' END)) SALA " +
+            string consulta = "SELECT (SAL_NOMBRE + '-' + SAL_TURNO) SALA " +
                                 "FROM T_SALA " +
                                "WHERE SAL_ACTIVO = 'S';"; 
 
@@ -172,7 +172,6 @@ namespace GestionJardin
             {
                 result = "ERROR";
                 MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error-" + ex.ToString());
-
             }
 
             return result;
