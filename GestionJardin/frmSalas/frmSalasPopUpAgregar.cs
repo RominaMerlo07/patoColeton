@@ -54,106 +54,36 @@ namespace GestionJardin
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-                       
-              entSala.SAL_NOMBRE = txtSala.Text;
 
-                string turno;
-                int control;
-                string edadMin;
-                string edadMax;
-              //  int cantMax = 0;
-                        
-                if (cboTurno.SelectedItem == null)
-                {
-                    turno = "";
-                    control = 1;
-                }
-                else
-                {
-                    turno = cboTurno.SelectedItem.ToString();
+            string turno;        
 
-                    if (turno == "MAÑANA")
-                    {
-                        entSala.SALA_TURNO = "MANANA";
-                        control = 0;
-                    }
-                    else
-                    {
-                        entSala.SALA_TURNO = "TARDE";
-                        control = 0;
-                    }
-                }
+            entSala.SAL_NOMBRE = txtSala.Text;
+            turno = cboTurno.SelectedItem.ToString();
 
-                string result = metSala.ValidarSala(entSala.SAL_NOMBRE, entSala.SALA_TURNO);
+            if (turno == "MAÑANA")
+            {
+                entSala.SALA_TURNO = "MANANA";
+            }
+            else
+            {
+                entSala.SALA_TURNO = "TARDE";
+            }
 
-                if (result == "SI")
-                {
-                    MessageBox.Show("El nombre de la sala ingresado: " + entSala.SAL_NOMBRE + " ya se encuentra registrado en el turno " + turno);
-                    control = 1;
-                }
-                else
-                {
-                    control = 0;
-                    if (cboEdadMin.SelectedItem == null)
-                    {
-                        edadMin = "";
-                        control = 1;
-                    }
-                    else
-                    {
-                        edadMin = cboEdadMin.SelectedItem.ToString();
-                        entSala.SAL_EDAD_MIN = Convert.ToInt32(edadMin);
-                        control = 0;
+            entSala.SAL_EDAD_MIN = Convert.ToInt32(cboEdadMin.SelectedItem);
+            entSala.EDAD_SALA_MAX = Convert.ToInt32(cboEdadMax.SelectedItem);
+            entSala.SALA_CANT_ALUM = Convert.ToInt32(txtCantMax.Text);
+            entSala.SALA_ACTIVO = "S";
 
-                        if (cboEdadMax.SelectedItem == null)
-                        {
-                            edadMax = "";
-                            control = 1;
-                        }
-                        else
-                        {
-                            edadMax = cboEdadMax.SelectedItem.ToString();
-                            entSala.EDAD_SALA_MAX = Convert.ToInt32(edadMax);
-                            control = 0;
-
-                            if (entSala.EDAD_SALA_MAX >= entSala.SAL_EDAD_MIN)
-                            {
-                                control = 0;
-
-                                if (Convert.ToInt32(txtCantMax.Text) > 0 || Convert.ToInt32(txtCantMax.Text) <= 30)
-                                {
-                                entSala.SALA_CANT_ALUM = Convert.ToInt32(txtCantMax.Text);
-                                control = 0;
-                                }
-                                else
-                                {
-                                    MessageBox.Show("La cantidad máxima de alumnos, debe estar comprendida entre 1 y 30 alumnos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    //   MessageBox.Show("La cantidad máxima de alumnos, debe estar comprendida entre 0 y 30 alumnos");
-                                    control = 1;
-                                }
-                            }
-                            else
-                            {
-                                MessageBox.Show("La edad minima no puede superar a la edad maxima");
-                                control = 1;
-                            }
-                        }
-                    }
-                }
-
-                entSala.SALA_ACTIVO = "S";
-
-                if (control == 0)
-                {
-                    metSala.InsertarSala(entSala);
-                    MessageBox.Show("Se registro correctamente la sala: " + entSala.SAL_NOMBRE);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("NO SE PUDO REGISTRAR LA SALA: " + entSala.SAL_NOMBRE);
-                }           
-
+            string resultado = metSala.InsertarSala(entSala);
+            if (resultado == "OK")
+            { 
+                MessageBox.Show("Se registro correctamente la sala: " + entSala.SAL_NOMBRE, "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("NO se pudo registrar la sala: " + entSala.SAL_NOMBRE, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         /********************/

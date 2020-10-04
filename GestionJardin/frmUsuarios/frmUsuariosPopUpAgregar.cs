@@ -107,15 +107,11 @@ namespace GestionJardin
             }
             else if (char.IsControl(e.KeyChar))//permite q pueda borrar 
             {
-               // e.Handled = false;
+                // e.Handled = false;
                 txt_nombre_usuario.Clear();
-                
+
             }
             else if (char.IsNumber(e.KeyChar))
-            {
-                e.Handled = false;
-            }
-            else
             {
                 e.Handled = false;
             }
@@ -124,12 +120,11 @@ namespace GestionJardin
                 if ((e.KeyChar.ToString() == "ñ") || (e.KeyChar.ToString() == "Ñ"))
                 {
                     e.Handled = true;
-                    MessageBox.Show("no puede ingresar la letra ñ ");
-
+                    MessageBox.Show("Solo se permiten letras y numeros y caracteres especiales @, *, & !", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 }
                 else if (!char.IsLetter(e.KeyChar))
                 {
-                    e.Handled = true;
+                    e.Handled = false;
                 }
             }
         }
