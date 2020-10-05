@@ -536,11 +536,11 @@ namespace GestionJardin
             AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
 
 
-            string consulta = "SELECT PER_NOMBRE+' '+ PER_APELLIDO 'DOCENTE' " +
-                              "FROM t_personas " +
+            string consulta = "SELECT CONCAT(PER_NOMBRE, ' ', PER_APELLIDO, ' ', '(', PER_DOCUMENTO, ')') DOCENTE " +
+                              "FROM T_PERSONAS " +
                               "WHERE PER_TPE_ID =1 " +
-                              "AND PER_ESTADO = 'S' " +
-                              "ORDER BY 1"; //se suma per_estado como activo pero falta sumar DNI, ver con Alvaro !!! *************************
+                              "AND PER_ESTADO='S' " +
+                              "ORDER BY 'DOCENTE' ASC;";
 
 
             cmd = new SqlCommand(consulta, con);
@@ -766,6 +766,17 @@ namespace GestionJardin
             }
             return Edad_D;
 
+        }
+
+        //Extrae dni Docente
+
+        public string extraer_dni_docente(MetroFramework.Controls.MetroTextBox pbarrabuscar)
+        {
+            string docente = pbarrabuscar.Text;
+
+            string[] dni_docente = docente.Split('(', ')');
+
+            return dni_docente[0];
         }
 
         //public entPersona BuscaPersonaxID(string idPersona)

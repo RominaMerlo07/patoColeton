@@ -225,7 +225,6 @@ namespace GestionJardin
                         dgvGrupoFlia.Rows[i].DefaultCellStyle.BackColor = Color.Gray;
                         dgvGrupoFlia.Rows[i].DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
                         dgvGrupoFlia.Rows[i].DefaultCellStyle.SelectionBackColor = Color.Gray;
-
                     }
                 }
 

@@ -260,5 +260,41 @@ namespace GestionJardin
             return dt;
         }
 
+        public string cantdoc_sal(int sala, int per_id, string turno)
+        {
+            string result;
+            con = generarConexion();
+            con.Open();
+
+            string consulta = "SELECT PER_ID" +
+                               "SAL_ID" +
+                               "SAL_TURNO" +
+                               "FROM T_PERSONAS" +
+                               "WHERE PER_ID = GRS_PER_ID" +
+                               "AND GRS_SAL_ID= SAL_ID" +
+                               "AND PER_TPE_ID = 1 " +
+                               "AND PER_ESTADO= 'S'" +
+                               "AND SAL_ACTIVO= 'S'" +
+                               "AND PER_ID=  '" + per_id + "' " +
+                               "AND SAL_ID=  '" + sala + "' " +
+                               "AND SAL_TURNO= '" + turno + "' ";
+
+            cmd = new SqlCommand(consulta, con);
+            dr = cmd.ExecuteReader();
+
+
+            if (dr.Read())
+            {
+                result = "SI";
+            }
+            else
+            {
+                result = "NO";
+            }
+
+            return result;
+
+        }
+
     }
 }
