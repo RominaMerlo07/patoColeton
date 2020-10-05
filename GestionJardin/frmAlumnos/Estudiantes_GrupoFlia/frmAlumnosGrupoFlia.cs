@@ -20,8 +20,8 @@ namespace GestionJardin
         private void frmAlumnosGrupoFlia_Load(object sender, EventArgs e)
         {
             dgvGrupoFlia.ClearSelection();
-            cargar_BuscaAlumnos();
-
+            cargar_BuscaAlumnos();           
+            
             btnGF_Eliminar.IconColor = Color.Gray;
             btnGF_Eliminar.ForeColor = Color.Gray;
             btnGF_Editar.IconColor = Color.Gray;
@@ -64,7 +64,8 @@ namespace GestionJardin
 
 
                 if (dgvGrupoFlia.SelectedRows[0].Cells[3].Value.ToString() == "ALUMNO")
-                {
+                {                                    
+
                     btnGF_Editar.IconColor = Color.Gray;
                     btnGF_Editar.ForeColor = Color.Gray;
                     btnGF_Eliminar.IconColor = Color.Gray;
@@ -205,7 +206,7 @@ namespace GestionJardin
             grupoFlia = objGrupoFlia.traerPersonasXGrupoFliar2(id_persona);
 
             if (grupoFlia.Rows.Count > 0)
-            {
+            {              
                 dgvGrupoFlia.DataSource = grupoFlia;
                 dgvGrupoFlia.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
                 dgvGrupoFlia.Columns["PER_ID"].Visible = false;
@@ -214,6 +215,19 @@ namespace GestionJardin
                 dgvGrupoFlia.Columns["DOCUMENTO"].Frozen = true;
                 dgvGrupoFlia.Columns["PARENTESCO"].Frozen = true;
                 dgvGrupoFlia.ClearSelection();
+
+                int c = dgvGrupoFlia.Rows.Count;
+                for(int i = 0; i < c; i++)
+                {
+                    if(dgvGrupoFlia.Rows[i].Cells[3].Value.ToString() == "ALUMNO")
+                    {
+                        dgvGrupoFlia.Rows[i].DefaultCellStyle.ForeColor = Color.WhiteSmoke;
+                        dgvGrupoFlia.Rows[i].DefaultCellStyle.BackColor = Color.Gray;
+                        dgvGrupoFlia.Rows[i].DefaultCellStyle.SelectionForeColor = Color.WhiteSmoke;
+                        dgvGrupoFlia.Rows[i].DefaultCellStyle.SelectionBackColor = Color.Gray;
+
+                    }
+                }
 
                 //dgvGrupoFlia.Visible = true;
             }
