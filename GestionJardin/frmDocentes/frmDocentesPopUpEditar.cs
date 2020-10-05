@@ -71,6 +71,17 @@ namespace GestionJardin
                 string celularE = txtCelular.Text.Trim();
                 string emailE = txtEmail.Text.Trim();
 
+                string id_salaE;
+
+                if (cbSala.SelectedItem == null)
+                {
+                    id_salaE = "";
+                }
+                else
+                {
+                    id_salaE = cbSala.SelectedValue.ToString();
+                }
+            
                 entPersona personaEditar = new entPersona();
 
                 personaEditar.PER_ID = idPersonaBuscar;
@@ -102,6 +113,12 @@ namespace GestionJardin
                 domicilioEditar.DOM_CP = Convert.ToInt32(cpostalE);
 
                 resultadoE = objmetDomicilio.editarDomicilio(domicilioEditar);
+
+                entGrupoSala grupoSalaEditar = new entGrupoSala();
+                grupoSalaEditar.GRS_PER_ID = Convert.ToInt32(idPersonaBuscar);
+                grupoSalaEditar.GRS_SAL_ID = Convert.ToInt32(id_salaE);
+
+                resultadoE = objMetSalas.editarGrupoSala(grupoSalaEditar);
 
                 if (resultadoE == "OK")
                 {
