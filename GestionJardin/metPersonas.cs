@@ -426,8 +426,8 @@ namespace GestionJardin
             con = generarConexion();
             con.Open();
             SqlCommand com = new SqlCommand();
-            com.Connection = con;
-            string CargarDocente = "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, " +
+            com.Connection = con; 
+            string CargarDocente = "SELECT  CONCAT(PER_APELLIDO, ', ', PER_NOMBRE) AS 'DOCENTE', " +
                                            "PER_DOCUMENTO 'DOCUMENTO', " +
                                            "PER_TELEFONO_2 'CELULAR', " +
                                            "PER_TELEFONO 'TELEFONO', " +
@@ -443,7 +443,7 @@ namespace GestionJardin
                                       "AND PER_TPE_ID = 1 " +
                                       "AND PER_ESTADO = 'S' " +
                                       "UNION " +
-                                   "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, " +
+                                   "SELECT  CONCAT(PER_APELLIDO, ', ', PER_NOMBRE) AS 'DOCENTE', " +
                                            "PER_DOCUMENTO, " +
                                            "PER_TELEFONO_2 'CELULAR', " +
                                            "PER_TELEFONO, " +
@@ -536,7 +536,7 @@ namespace GestionJardin
             AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
 
 
-            string consulta = "SELECT CONCAT(PER_NOMBRE, ' ', PER_APELLIDO, ' ', '(', PER_DOCUMENTO, ')') DOCENTE FROM T_PERSONAS WHERE PER_TPE_ID =1 AND PER_ESTADO='S' ORDER BY 'DOCENTE' ASC;";
+            string consulta = "SELECT CONCAT(PER_APELLIDO, ' ', PER_NOMBRE, ' ', '(', PER_DOCUMENTO, ')') DOCENTE FROM T_PERSONAS WHERE PER_TPE_ID =1 AND PER_ESTADO='S' ORDER BY 'DOCENTE' ASC;";
 
 
             cmd = new SqlCommand(consulta, con);
@@ -621,7 +621,7 @@ namespace GestionJardin
             DataTable dt = new DataTable();
             cmd = new SqlCommand();
             cmd.Connection = this.con;
-            cmd.CommandText = "WITH t1 AS(SELECT PER_NOMBRE +' ' + PER_APELLIDO 'DOCENTE', " +
+            cmd.CommandText = "WITH t1 AS(SELECT CONCAT(PER_APELLIDO, ', ', PER_NOMBRE) AS 'DOCENTE', " +
                                                 "PER_DOCUMENTO 'DOCUMENTO', " +
                                                 "PER_TELEFONO_2 'CELULAR', " +
                                                 "PER_TELEFONO 'TELEFONO', " +
@@ -637,7 +637,7 @@ namespace GestionJardin
                                                 "AND PER_TPE_ID = 1 " +
                                                 "AND PER_ESTADO = 'S' " +
                                    "UNION " +
-                                          "SELECT  PER_NOMBRE + ' ' + PER_APELLIDO DOCENTE, " +
+                                          "SELECT  CONCAT(PER_APELLIDO, ', ', PER_NOMBRE) AS 'DOCENTE', " +
                                                   "PER_DOCUMENTO, " +
                                                   "PER_TELEFONO_2 'CELULAR', " +
                                                   "PER_TELEFONO, " +

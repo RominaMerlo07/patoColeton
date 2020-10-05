@@ -36,52 +36,77 @@ namespace GestionJardin
             dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
             dgv_Docentes.Columns["DOCENTE"].Frozen = true;
             dgv_Docentes.Columns["DOCUMENTO"].Frozen = true;
-            objMetPersonas.traerdocente(txtGD_Buscar);           
+         //   objMetPersonas.traerdocente(txtGD_Buscar);
         }
 
         /*  FUNCIONALIDAS BUSCAR, filtra la grilla */
 
         private void txtGD_Buscar_TextChanged_1(object sender, EventArgs e)
         {
+
             if (txtGD_Buscar.Text.Length > 0)
             {
-                dgv_Docentes.DataSource = objMetPersonas.llenarGrilla(txtGD_Buscar.Text);
-                btnGD_Editar.IconColor = Color.Gray;
-                btnGD_Editar.ForeColor = Color.Gray;
-                btnGD_Eliminar.IconColor = Color.Gray;
-                btnGD_Eliminar.ForeColor = Color.Gray;
+                carga_grilla_filtrada();
             }
             else
             {
                 txtGD_Buscar.Clear();
                 dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
+                dgv_Docentes.Columns["DOCENTE"].Frozen = true;
+                dgv_Docentes.Columns["DOCUMENTO"].Frozen = true;
                 btnGD_Editar.IconColor = Color.Gray;
                 btnGD_Editar.ForeColor = Color.Gray;
                 btnGD_Eliminar.IconColor = Color.Gray;
                 btnGD_Eliminar.ForeColor = Color.Gray;
-            }
+            }                                  
+
+
+            //if (txtGD_Buscar.Text.Length > 0)
+            //{
+            //    dgv_Docentes.DataSource = objMetPersonas.llenarGrilla(txtGD_Buscar.Text);
+            //    btnGD_Editar.IconColor = Color.Gray;
+            //    btnGD_Editar.ForeColor = Color.Gray;
+            //    btnGD_Eliminar.IconColor = Color.Gray;
+            //    btnGD_Eliminar.ForeColor = Color.Gray;
+            //}
+            //else
+            //{
+            //    txtGD_Buscar.Clear();
+            //    dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
+            //    btnGD_Editar.IconColor = Color.Gray;
+            //    btnGD_Editar.ForeColor = Color.Gray;
+            //    btnGD_Eliminar.IconColor = Color.Gray;
+            //    btnGD_Eliminar.ForeColor = Color.Gray;
+            //}
         }
 
         private void txtGD_Buscar_Click(object sender, EventArgs e)
         {            
             txtGD_Buscar.CharacterCasing = CharacterCasing.Upper;//esto me pone las letras en mayusculas siempre
+
+            if (txtGD_Buscar.Text.Length > 0)
+            {
+                carga_grilla_filtrada();
+            }
+            else
+            {
+                txtGD_Buscar.Clear();
+                dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
+                dgv_Docentes.Columns["DOCENTE"].Frozen = true;
+                dgv_Docentes.Columns["DOCUMENTO"].Frozen = true;
+                btnGD_Editar.IconColor = Color.Gray;
+                btnGD_Editar.ForeColor = Color.Gray;
+                btnGD_Eliminar.IconColor = Color.Gray;
+                btnGD_Eliminar.ForeColor = Color.Gray;
+            }
+                        
         }
 
-        private void txtGD_Buscar_Enter(object sender, EventArgs e)
-        {
-            string docente = txtGD_Buscar.Text;
-            dgv_Docentes.DataSource = objMetPersonas.llenarGrilla(docente);
-        }
-
-        private void txtGD_Buscar_ButtonClick(object sender, EventArgs e)
-        {
-            string docente = txtGD_Buscar.Text;
-            dgv_Docentes.DataSource = objMetPersonas.llenarGrilla(docente);
-
-        }
+    
         
         private void dgv_Docentes_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+                       
             if (dgv_Docentes.SelectedRows.Count > 0)
             {
                 btnGD_Editar.IconColor = Color.Cyan;
@@ -97,8 +122,8 @@ namespace GestionJardin
                 btnGD_Eliminar.ForeColor = Color.Gray;
                 dgv_Docentes.ClearSelection();
             }
-        }        
-        
+        }
+
 
         /***************************************************/
         /***************** AGREGAR DOCENTE *****************/
@@ -264,7 +289,19 @@ namespace GestionJardin
                 MessageBox.Show("Por favor seleccione un registro/fila para poder dar de baja al Docente");
             }
                 
-        }                    
+        }
+
+
+        private void carga_grilla_filtrada()
+        {
+            DataTable col = new DataTable();
+            metPersonas metPersonas = new metPersonas();
+            col = metPersonas.Mostrardocente();
+            dgv_Docentes.DataSource = col;
+            string apellido_nombre = metPersonas.extraerapellido_nombre_alumno(txtGD_Buscar);
+            col.DefaultView.RowFilter = String.Format($"DOCENTE LIKE '{apellido_nombre}%'");
+
+        }
 
     }
 }

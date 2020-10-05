@@ -30,7 +30,7 @@ namespace GestionJardin
             btnGA_Editar.IconColor = Color.Gray;
             btnGA_Editar.ForeColor = Color.Gray;
             
-            txtGA_Buscar.Visible = false; //MOMENTANEO. Hacer busqueda sobre datos de grilla.            
+                        
             btnGA_Filtrar.Visible = false;
             btnGA_Excel.Visible = false;
             btnGA_Pdf.Visible = false;
@@ -173,6 +173,41 @@ namespace GestionJardin
                 btnGA_Eliminar.IconColor = Color.Gray;
                 btnGA_Eliminar.ForeColor = Color.Gray;
                 
+            }
+        }
+
+        private void txtGA_Buscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtGA_Buscar.Text.Length > 0)
+            {
+                carga_grilla_filtrada();
+            }
+            else
+            {
+                txtGA_Buscar.Clear();
+                cargar_dgvAlumnos();
+                btnGA_Editar.IconColor = Color.Gray;
+                btnGA_Editar.ForeColor = Color.Gray;
+                btnGA_Eliminar.IconColor = Color.Gray;
+                btnGA_Eliminar.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtGA_Buscar_Click(object sender, EventArgs e)
+        {
+            if (txtGA_Buscar.Text.Length > 0)
+            {
+                carga_grilla_filtrada();
+
+            }
+            else
+            {
+                txtGA_Buscar.Clear();
+                cargar_dgvAlumnos();
+                btnGA_Editar.IconColor = Color.Gray;
+                btnGA_Editar.ForeColor = Color.Gray;
+                btnGA_Eliminar.IconColor = Color.Gray;
+                btnGA_Eliminar.ForeColor = Color.Gray;
             }
         }
     }
