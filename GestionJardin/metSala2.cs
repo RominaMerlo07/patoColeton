@@ -299,7 +299,7 @@ namespace GestionJardin
             con.Open();
 
 
-            string consulta = "SELECT * " +
+            string consulta = "SELECT 1 " +
                               "FROM T_SALA " +
                               "WHERE SAL_NOMBRE = '"+nombre+"' " +
                               "AND SAL_TURNO = '"+turno+"' " +

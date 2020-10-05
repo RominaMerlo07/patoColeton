@@ -43,9 +43,6 @@ namespace GestionJardin
             btnGuardar.Visible = false;
             btnCancelar.Visible = false;
 
-            //panelDatos.Enabled = false;
-            //panelContacto.Enabled = false;
-
         }
 
     
@@ -392,8 +389,6 @@ namespace GestionJardin
                 btnCancelar.Visible = true;
                 txtDocumento.Focus(); 
 
-                //panelDatos.Enabled = true;
-                //panelContacto.Enabled = true;
             }
             else
             {

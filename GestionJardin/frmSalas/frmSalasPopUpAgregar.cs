@@ -20,6 +20,11 @@ namespace GestionJardin
         {
             InitializeComponent();
             panelDatos.Focus();
+            lblSala.Visible = false;
+            lblTurno.Visible = false;
+            lblEMax.Visible = false;
+            lblEMin.Visible = false;          
+            lblCantA.Visible = false;
         }
 
         /*Metodos*/
@@ -101,7 +106,13 @@ namespace GestionJardin
             {
                 txtSala.Style = MetroFramework.MetroColorStyle.Red;
                 txtSala.Focus();
-                MessageBox.Show(" Por favor ingrese el nombre de la sala. Por ejemplo: 'AZUL'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblSala.Visible = true;
+                lblSala.Text = "Por favor ingrese el nombre de la sala. Por ejemplo: 'AZUL'";
+               
+            }
+            else
+            {
+                lblSala.Visible = false;
             }
         }
 
@@ -111,10 +122,14 @@ namespace GestionJardin
             {
                 cboTurno.Style = MetroFramework.MetroColorStyle.Red;
                 cboTurno.Focus();
-                MessageBox.Show(" Por favor seleccione un turno", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblTurno.Visible = true;
+                lblTurno.Text = "Por favor seleccione un turno";
+                
             }
             else
             {
+                lblTurno.Visible = false;
+
                 string turno;               
              
                     turno = cboTurno.SelectedItem.ToString();
@@ -138,7 +153,7 @@ namespace GestionJardin
                         txtSala.Style = MetroFramework.MetroColorStyle.Red;
                         txtSala.Focus();
                         MessageBox.Show("El nombre de la sala ingresado ya se encuentra registrado en el turno " + turno, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }               
+                    }                
             }
         }
 
@@ -148,7 +163,13 @@ namespace GestionJardin
             {
                 cboEdadMin.Style = MetroFramework.MetroColorStyle.Red;
                 cboEdadMin.Focus();
-                MessageBox.Show(" Por favor seleccione un valor para 'edad mínima'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblEMin.Visible = true;
+                lblEMin.Text = "Por favor seleccione un valor para edad mínima";
+                
+            }
+            else
+            {
+                lblEMin.Visible = false;
             }
         }
 
@@ -158,10 +179,13 @@ namespace GestionJardin
             {
                 cboEdadMax.Style = MetroFramework.MetroColorStyle.Red;
                 cboEdadMax.Focus();
-                MessageBox.Show(" Por favor seleccione un valor para 'edad máxima'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblEMax.Visible = true;
+                lblEMax.Text = " Por favor seleccione un valor para edad máxima";
+                
             }
             else if (Convert.ToInt32(cboEdadMax.SelectedItem) < Convert.ToInt32(cboEdadMin.SelectedItem))
             {
+                lblEMax.Visible = false;
                 cboEdadMin.SelectedIndex = -1;                
                 cboEdadMin.Style = MetroFramework.MetroColorStyle.Red;
                 cboEdadMin.Focus();
@@ -178,10 +202,13 @@ namespace GestionJardin
             {
                 txtCantMax.Style = MetroFramework.MetroColorStyle.Red;
                 txtCantMax.Focus();
-                MessageBox.Show(" Por favor ingrese un valor para 'Cantidad máxima de alumnos'. El mismo debe tener un valor mayor a 0 y no superar los 30 alumnos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblCantA.Visible = true;
+                lblCantA.Text = "Por favor ingrese un valor para Cantidad máxima de alumnos.\nEl mismo debe ser entre 1 y 30 alumnos";
+               
             }
             else if (Convert.ToInt32(txtCantMax.Text) == 0 || Convert.ToInt32(txtCantMax.Text) > 30)
             {
+                lblCantA.Visible = false;
                 txtCantMax.Style = MetroFramework.MetroColorStyle.Red;
                 txtCantMax.Focus();
                 MessageBox.Show("La 'Cantidad de alumnos máxima' debe tener un valor mayor a 0 y no superar los 30 alumnos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -189,6 +216,6 @@ namespace GestionJardin
 
         }
 
-        
+      
     }
 }

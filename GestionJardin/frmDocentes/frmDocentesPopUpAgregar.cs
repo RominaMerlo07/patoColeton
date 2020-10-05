@@ -293,6 +293,7 @@ namespace GestionJardin
                         grupoSalaInsertar.GRS_SAL_ID = Convert.ToInt32(id_sala);
 
                         metSalas metSalas = new metSalas();
+
                         resultado = metSalas.insertarGrupoSala(grupoSalaInsertar);
 
                     }                   
