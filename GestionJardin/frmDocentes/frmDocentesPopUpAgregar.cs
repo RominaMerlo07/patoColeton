@@ -331,7 +331,7 @@ namespace GestionJardin
                         {
                             MessageBox.Show("Se ha ingresado el registro con éxito.", "Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
-                        else {
+                        else { //cambiar!!!
                             if (MetSalas.ValidarDocSala(id_sala, turno) == 0)
                             {
                                 entGrupoSala grupoSalaInsertar = new entGrupoSala();

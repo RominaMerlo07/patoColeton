@@ -37,7 +37,7 @@ namespace GestionJardin
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-           
+
             frmDocentes Docentes = Owner as frmDocentes;
 
             objMetPersonas.EdadDocente(dtNacimiento.Value);
@@ -71,17 +71,17 @@ namespace GestionJardin
                 string celularE = txtCelular.Text.Trim();
                 string emailE = txtEmail.Text.Trim();
 
-                string id_salaE;
+                string id_sala;
 
-                if (cbSala.SelectedItem == null)
-                {
-                    id_salaE = "";
-                }
-                else
-                {
-                    id_salaE = cbSala.SelectedValue.ToString();
-                }
-            
+                //if (cbSala.SelectedItem == null)
+                //{
+                //    id_salaE = "";
+                //}
+                //else
+                //{
+                //    id_salaE = cbSala.SelectedValue.ToString();
+                //}
+
                 entPersona personaEditar = new entPersona();
 
                 personaEditar.PER_ID = idPersonaBuscar;
@@ -114,24 +114,69 @@ namespace GestionJardin
 
                 resultadoE = objmetDomicilio.editarDomicilio(domicilioEditar);
 
-                entGrupoSala grupoSalaEditar = new entGrupoSala();
-                grupoSalaEditar.GRS_PER_ID = Convert.ToInt32(idPersonaBuscar);
-                grupoSalaEditar.GRS_SAL_ID = Convert.ToInt32(id_salaE);
-
-                resultadoE = objMetSalas.editarGrupoSala(grupoSalaEditar);
-
                 if (resultadoE == "OK")
                 {
-                    MessageBox.Show("SE EDITARON CORRECTAMENTE LOS DATOS DEL DOCENTE '" + nombreE + " " + apellidosE + "'");
-                    this.Close();
+                    string turno;
 
+
+                    if (cbTurno.SelectedItem == null)
+                    {
+                        turno = "";
+                    }
+                    else
+                    {
+                        turno = cbTurno.SelectedItem.ToString();
+
+                        if (turno == "MAÑANA")
+                        {
+                            turno = "MANANA";
+                        }
+                        else
+                        {
+                            turno = "TARDE";
+                        }
+
+                    }
                     
-                    Docentes.dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
+                    if (cbSala.SelectedItem == null)
+                    {
+                        id_sala = "";
+                    }
+                    else
+                    {
+                        id_sala = cbSala.SelectedValue.ToString();
+                    }
+
+                    if (turno == "" && id_sala == "")
+                    {
+                        MessageBox.Show("Se ha ingresado el registro con éxito.", "Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (objMetSalas.ValidarDocSala(id_sala, turno) == 0)
+                    {
+                        entGrupoSala grupoSalaEditar = new entGrupoSala();
+                        grupoSalaEditar.GRS_PER_ID = Convert.ToInt32(idPersonaBuscar);
+                        grupoSalaEditar.GRS_SAL_ID = Convert.ToInt32(id_sala);
+
+                        resultadoE = objMetSalas.editarGrupoSala(grupoSalaEditar);
+
+                        if (resultadoE == "OK")
+                        {
+                            MessageBox.Show("Se actualizado ok el registro.", "Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                            this.Close();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ya existe un docente en la sala y turno seleccionados");
+                        cbTurno.SelectedIndex = -1;
+                        cbSala.SelectedIndex = -1;
+                    }
                 }
-            }
-            else
-            {
-                MessageBox.Show("NO OLVIDE INGRESAR " + validacionE + ".", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                else
+                {
+                    MessageBox.Show("NO OLVIDE INGRESAR " + validacionE + ".", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -361,6 +406,17 @@ namespace GestionJardin
                 txtDocumento.Focus();
                 MessageBox.Show("El docente ya se encuentra registrado. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        //private void cbTurno_SelectedValueChanged(object sender, EventArgs e)
+        //{
+            
+        //}
+
+        private void cbTurno_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            metPersonas Objmetpersonas = new metPersonas();
+            Objmetpersonas.Llenar_Combo_Salas(cbTurno, cbSala);
         }
     }
 }

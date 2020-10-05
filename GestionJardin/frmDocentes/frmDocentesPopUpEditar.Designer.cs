@@ -719,7 +719,7 @@
             // 
             this.cbGenero.FontSize = MetroFramework.MetroComboBoxSize.Small;
             this.cbGenero.FormattingEnabled = true;
-            this.cbGenero.ItemHeight = 19;
+            this.cbGenero.ItemHeight = 21;
             this.cbGenero.Items.AddRange(new object[] {
             "MASCULINO",
             "FEMENINO"});
@@ -727,7 +727,7 @@
             this.cbGenero.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbGenero.Name = "cbGenero";
             this.cbGenero.PromptText = "Género";
-            this.cbGenero.Size = new System.Drawing.Size(329, 25);
+            this.cbGenero.Size = new System.Drawing.Size(329, 27);
             this.cbGenero.Style = MetroFramework.MetroColorStyle.Green;
             this.cbGenero.TabIndex = 20;
             this.cbGenero.UseSelectable = true;
@@ -919,6 +919,8 @@
             this.cbTurno.UseCustomBackColor = true;
             this.cbTurno.UseSelectable = true;
             this.cbTurno.UseStyleColors = true;
+            this.cbTurno.SelectionChangeCommitted += new System.EventHandler(this.cbTurno_SelectionChangeCommitted);
+         //   this.cbTurno.SelectedValueChanged += new System.EventHandler(this.cbTurno_SelectedValueChanged);
             // 
             // metroLabel3
             // 

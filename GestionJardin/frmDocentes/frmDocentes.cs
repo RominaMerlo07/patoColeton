@@ -232,6 +232,7 @@ namespace GestionJardin
                 btnGD_Editar.ForeColor = Color.Gray;
                 btnGD_Eliminar.IconColor = Color.Gray;
                 btnGD_Eliminar.ForeColor = Color.Gray;
+                dgv_Docentes.DataSource = objMetPersonas.Mostrardocente();
                 dgv_Docentes.ClearSelection();
 
             }
