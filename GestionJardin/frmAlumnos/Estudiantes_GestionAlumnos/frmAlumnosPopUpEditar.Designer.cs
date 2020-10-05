@@ -374,6 +374,7 @@
             this.txtEmail.WaterMark = "E-mail";
             this.txtEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtEmail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtCelular
             // 
@@ -882,6 +883,7 @@
             this.txtDocumento.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDocumento.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
+            this.txtDocumento.Leave += new System.EventHandler(this.txtDocumento_Leave);
             // 
             // txtApellidos
             // 

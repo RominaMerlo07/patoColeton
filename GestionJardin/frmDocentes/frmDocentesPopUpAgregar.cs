@@ -105,6 +105,15 @@ namespace GestionJardin
         private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
             Solonumeros(sender, e);
+            string dni = txtDocumento.Text;
+            metPersonas ObjMetPersonas = new metPersonas();
+            string resultado = ObjMetPersonas.ValidarDni(dni);
+            if (resultado == "SI")
+            {
+                txtDocumento.Style = MetroFramework.MetroColorStyle.Red;
+                txtDocumento.Focus();
+                MessageBox.Show("El docente ya se encuentra registrado. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void txtNumero_KeyPress(object sender, KeyPressEventArgs e)
@@ -151,8 +160,13 @@ namespace GestionJardin
 
         private void txtEmail_Leave(object sender, EventArgs e)
         {
-            metPersonas ObjMetPersonas = new metPersonas();
-            bool resultado = true;
+            string email = txtEmail.Text;
+
+            metPersonas objMetPersonas = new metPersonas();
+            objMetPersonas.ValidarEmail(email);
+
+
+            bool resultado = true;//= ObjMetPersonas.ValidarEmail(txtEmail.Text);
 
             if (String.IsNullOrWhiteSpace(txtEmail.Text))
             {
@@ -160,7 +174,7 @@ namespace GestionJardin
             }
             else
             {
-                resultado = ObjMetPersonas.ValidarEmail(txtEmail.Text);
+                resultado = objMetPersonas.ValidarEmail(email);
             }
 
             if (resultado == false)
@@ -363,6 +377,18 @@ namespace GestionJardin
             this.Close();
         }
 
+        private void txtDocumento_Leave(object sender, EventArgs e)
+        {
+            string dni = txtDocumento.Text;
+            metPersonas ObjMetPersonas = new metPersonas();
+            string resultado = ObjMetPersonas.ValidarDni(dni);
+            if (resultado == "SI")
+            {
+                txtDocumento.Style = MetroFramework.MetroColorStyle.Red;
+                txtDocumento.Focus();
+                MessageBox.Show("El docente ya se encuentra registrado. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
 

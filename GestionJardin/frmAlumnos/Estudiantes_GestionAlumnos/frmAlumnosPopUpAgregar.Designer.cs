@@ -411,6 +411,7 @@
             this.txtEmail.WaterMark = "E-mail";
             this.txtEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtEmail.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Leave += new System.EventHandler(this.txtEmail_Leave);
             // 
             // txtCelular
             // 
@@ -829,7 +830,7 @@
             this.dtNacimiento.Location = new System.Drawing.Point(169, 10);
             this.dtNacimiento.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.dtNacimiento.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
-            this.dtNacimiento.MinimumSize = new System.Drawing.Size(4, 27);
+            this.dtNacimiento.MinimumSize = new System.Drawing.Size(0, 27);
             this.dtNacimiento.Name = "dtNacimiento";
             this.dtNacimiento.Size = new System.Drawing.Size(184, 27);
             this.dtNacimiento.Style = MetroFramework.MetroColorStyle.Green;
@@ -898,6 +899,7 @@
             this.txtDocumento.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDocumento.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
+            this.txtDocumento.Leave += new System.EventHandler(this.txtDocumento_Leave);
             // 
             // txtApellidos
             // 

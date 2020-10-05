@@ -367,10 +367,11 @@ namespace GestionJardin
             con = generarConexion();
             con.Open();
 
+            string result;
 
-            string consulta = "SELECT PER_DOCUMENTO FROM T_PERSONAS WHERE PER_DOCUMENTO = '" + pDNI + "'"; /*******************************
+            string consulta = "SELECT PER_DOCUMENTO FROM T_PERSONAS WHERE PER_ESTADO='S' AND PER_DOCUMENTO = '" + pDNI + "'"; /*******************************
                              VER SI SE FILTRA POR ACTIVO PARA QUE PERMITA INGRESA UN NUEVO DNI O COMO SE RESUELVE EL ELMINAR UNA PERSONA */
-                                         
+
             cmd = new SqlCommand(consulta, con);
 
             dr = cmd.ExecuteReader();
@@ -378,10 +379,14 @@ namespace GestionJardin
 
             if (dr.Read())
             {
-                MessageBox.Show("La persona ya se encuentra registrada").ToString();
+                result = "SI";
+            }
+            else
+            {
+                result = "NO";
             }
 
-            return pDNI;
+            return result;
 
 
         }
@@ -536,7 +541,7 @@ namespace GestionJardin
             AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
 
 
-            string consulta = "SELECT CONCAT(PER_APELLIDO, ' ', PER_NOMBRE, ' ', '(', PER_DOCUMENTO, ')') DOCENTE FROM T_PERSONAS WHERE PER_TPE_ID =1 AND PER_ESTADO='S' ORDER BY 'DOCENTE' ASC;";
+            string consulta = "SELECT CONCAT(PER_APELLIDO, ', ', PER_NOMBRE) AS 'DOCENTE', PER_DOCUMENTO DOCUMENTO FROM T_PERSONAS WHERE PER_TPE_ID =1 AND PER_ESTADO='S' ORDER BY 'DOCENTE' ASC;";
 
 
             cmd = new SqlCommand(consulta, con);

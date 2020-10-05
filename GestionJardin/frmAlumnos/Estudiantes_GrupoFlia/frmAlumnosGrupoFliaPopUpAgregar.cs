@@ -397,7 +397,7 @@ namespace GestionJardin
 
         private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
-            soloNumeros(sender, e);
+            soloNumeros(sender, e);            
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -428,6 +428,34 @@ namespace GestionJardin
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             soloNumeros(sender, e);
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            string email = txtEmail.Text;
+
+            metPersonas objMetPersonas = new metPersonas();
+            objMetPersonas.ValidarEmail(email);
+
+
+            bool resultado = true;//= ObjMetPersonas.ValidarEmail(txtEmail.Text);
+
+            if (String.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+
+            }
+            else
+            {
+                resultado = objMetPersonas.ValidarEmail(email);
+            }
+
+            if (resultado == false)
+            {
+                MessageBox.Show("Ingrese un Email Válido");
+                txtEmail.Clear();
+                txtEmail.Focus();
+
+            }
         }
     }
 }

@@ -12,7 +12,7 @@ namespace GestionJardin
 {
     public partial class frmAlumnosGestionar : Form
     {
-
+        metPersonas metPersonas = new metPersonas();
         public frmAlumnosGestionar()
         {
             InitializeComponent();
@@ -22,14 +22,13 @@ namespace GestionJardin
         {
 
             dgvAlumnos.ClearSelection();           
-            cargar_dgvAlumnos();                    
-            
+            cargar_dgvAlumnos();
+        //    metPersonas.traerPersonasAutocompetar("1");
 
             btnGA_Eliminar.IconColor = Color.Gray;
             btnGA_Eliminar.ForeColor = Color.Gray;
             btnGA_Editar.IconColor = Color.Gray;
-            btnGA_Editar.ForeColor = Color.Gray;
-            
+            btnGA_Editar.ForeColor = Color.Gray;                        
                         
             btnGA_Filtrar.Visible = false;
             btnGA_Excel.Visible = false;

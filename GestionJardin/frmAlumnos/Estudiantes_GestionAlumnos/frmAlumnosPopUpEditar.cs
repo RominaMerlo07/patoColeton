@@ -385,6 +385,15 @@ namespace GestionJardin
         private void txtDocumento_KeyPress(object sender, KeyPressEventArgs e)
         {
             soloNumeros(sender, e);
+            string dni = txtDocumento.Text;
+            metPersonas ObjMetPersonas = new metPersonas();
+            string resultado = ObjMetPersonas.ValidarDni(dni);
+            if (resultado == "SI")
+            {
+                txtDocumento.Style = MetroFramework.MetroColorStyle.Red;
+                txtDocumento.Focus();
+                MessageBox.Show("El alumno ya se encuentra registrado. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
@@ -415,6 +424,47 @@ namespace GestionJardin
         private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
         {
             soloNumeros(sender, e);
+        }
+
+        private void txtDocumento_Leave(object sender, EventArgs e)
+        {
+            string dni = txtDocumento.Text;
+            metPersonas ObjMetPersonas = new metPersonas();
+            string resultado = ObjMetPersonas.ValidarDni(dni);
+            if (resultado == "SI")
+            {
+                txtDocumento.Style = MetroFramework.MetroColorStyle.Red;
+                txtDocumento.Focus();
+                MessageBox.Show("El alumno ya se encuentra registrado. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtEmail_Leave(object sender, EventArgs e)
+        {
+            string email = txtEmail.Text;
+
+            metPersonas objMetPersonas = new metPersonas();
+            objMetPersonas.ValidarEmail(email);
+
+
+            bool resultado = true;//= ObjMetPersonas.ValidarEmail(txtEmail.Text);
+
+            if (String.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+
+            }
+            else
+            {
+                resultado = objMetPersonas.ValidarEmail(email);
+            }
+
+            if (resultado == false)
+            {
+                MessageBox.Show("Ingrese un Email Válido");
+                txtEmail.Clear();
+                txtEmail.Focus();
+
+            }
         }
     }
 }
