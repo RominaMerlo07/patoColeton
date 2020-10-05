@@ -36,6 +36,18 @@ namespace GestionJardin
             btnGA_Pdf.Visible = false;
         }
 
+        private void carga_grilla_filtrada()
+        {
+            DataTable col = new DataTable();
+            metPersonas metPersonas = new metPersonas();
+            col = metPersonas.TraerAlumnos();
+            dgvAlumnos.DataSource = col;
+            string apellido_nombre = metPersonas.extraerapellido_nombre_alumno(txtGA_Buscar);
+            col.DefaultView.RowFilter = String.Format($"ALUMNO LIKE '{apellido_nombre}%'");
+
+        }
+
+
         private void btnGA_Agregar_Click(object sender, EventArgs e)
         {
             frmAlumnosPopUpAgregar frmAlumnosPopUpAgregar = new frmAlumnosPopUpAgregar();

@@ -187,39 +187,6 @@ namespace GestionJardin
             dt.Load(dr);
             dr.Close();
 
-            //if (dt != null)
-            //{ 
-            //    foreach (DataRow dr in dt.Rows)
-            //    {
-            //        entPersona ent = new entPersona();
-            //        if (dr["PER_ID"] != DBNull.Value)
-            //            ent.PER_ID = Convert.ToInt32(dr["PER_ID"]);
-            //        if (dr["PER_NOMBRE"] != DBNull.Value)
-            //            ent.PER_NOMBRE = Convert.ToString(dr["PER_NOMBRE"]);
-            //        if (dr["PER_APELLIDO"] != DBNull.Value)
-            //            ent.PER_APELLIDO = Convert.ToString(dr["PER_APELLIDO"]);
-            //        if (dr["PER_DOCUMENTO"] != DBNull.Value)
-            //            ent.PER_DOCUMENTO = Convert.ToInt32(dr["PER_DOCUMENTO"]);
-            //        if (dr["PER_GENERO"] != DBNull.Value)
-            //            ent.PER_GENERO = Convert.ToString(dr["PER_GENERO"]);
-            //        if (dr["PER_FECHA_NAC"] != DBNull.Value)
-            //            ent.PER_FECHA_NAC = Convert.ToDateTime(dr["PER_FECHA_NAC"]);
-            //        if (dr["PER_TELEFONO"] != DBNull.Value)
-            //            ent.PER_TELEFONO = Convert.ToString(dr["PER_TELEFONO"]);
-            //        if (dr["PER_TELEFONO_2"] != DBNull.Value)
-            //            ent.PER_TELEFONO_2 = Convert.ToString(dr["PER_TELEFONO_2"]);
-            //        if (dr["PER_EMAIL"] != DBNull.Value)
-            //            ent.PER_EMAIL = Convert.ToString(dr["PER_EMAIL"]);
-            //        if (dr["PER_TPE_ID"] != DBNull.Value)
-            //            ent.PER_TPE_ID = Convert.ToString(dr["PER_TPE_ID"]);
-            //        if (dr["PER_LEGAJO"] != DBNull.Value)
-            //            ent.PER_LEGAJO = Convert.ToString(dr["PER_LEGAJO"]);
-
-
-            //        colPers.Add(ent);
-            //    }
-            //}
-
             con.Close();
             return dt; //colPers;
 
@@ -294,6 +261,58 @@ namespace GestionJardin
 
             return result;
 
+        }
+
+
+        public int ValidarDocSala(string id_sala, string turno)
+        {
+            con = generarConexion();
+            con.Open();
+
+            int result = 1;
+            try
+            {
+
+                cmd = new SqlCommand("SELECT COUNT(*) CANTIDAD " +
+                                     "FROM T_PERSONAS, T_GRUPO_SALA, T_SALA " +
+                                     "WHERE PER_ID = GRS_PER_ID " +
+                                     "AND GRS_SAL_ID = SAL_ID " +
+                                     "AND PER_TPE_ID = 1 " +
+                                     "AND PER_ESTADO = 'S' " +
+                                     "AND SAL_ACTIVO = 'S' " +
+                                     "AND SAL_ID = '"+ id_sala + "' " +
+                                     "AND SAL_TURNO = '"+ turno + "'; ", con);
+
+
+                dt = new DataTable();
+                dta = new SqlDataAdapter(cmd);
+                DataSet ds = new DataSet();
+
+                dta.Fill(ds);
+                dt = ds.Tables[0];
+                con.Close();
+
+                if (dt != null)
+                {
+                    foreach (DataRow dr in dt.Rows)
+                    {
+
+                        if (dr["CANTIDAD"] != DBNull.Value)
+                            result = Convert.ToInt32(dr["CANTIDAD"]);
+
+
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                result = 1;
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error " + ex.ToString());
+
+            }
+
+
+            return result;
         }
 
     }

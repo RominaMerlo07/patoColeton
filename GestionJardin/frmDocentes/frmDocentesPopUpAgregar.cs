@@ -18,6 +18,7 @@ namespace GestionJardin
         metPersonas objMetPersonas = new metPersonas();
         entPersona objPersona = new entPersona();
         metDomicilio objmetDomicilio = new metDomicilio();
+        metSalas MetSalas = new metSalas();
         string resultadoValidacion;
 
 
@@ -205,7 +206,8 @@ namespace GestionJardin
             metPersonas ObjMetOersonas = new metPersonas();
             objMetPersonas.EdadDocente(dtNacimiento.Value);
 
-
+            string resultado;
+               
             string validacion = validaCampos();
 
             if (validacion == "OK")
@@ -250,7 +252,7 @@ namespace GestionJardin
                 personaInsert.PER_ESTADO = estado;
 
                 metPersonas metPersona = new metPersonas();
-                string resultado = metPersona.Insertar(personaInsert);
+                resultado = metPersona.Insertar(personaInsert);
 
                 if (resultado == "OK")
                 {
@@ -277,35 +279,74 @@ namespace GestionJardin
                     metDomicilio metDomicilio = new metDomicilio();
                     resultado = metDomicilio.Insertar(domicilioInsertar);
 
-
-                    string id_sala;
-                    if (cbSala.SelectedItem == null)
-                    {
-                        id_sala = "";                    
-                        
-                    }
-                    else
-                    {
-                        id_sala = cbSala.SelectedValue.ToString();
-                        entGrupoSala grupoSalaInsertar = new entGrupoSala();
-
-                        grupoSalaInsertar.GRS_PER_ID = Convert.ToInt32(id_persona);
-                        grupoSalaInsertar.GRS_SAL_ID = Convert.ToInt32(id_sala);
-
-                        metSalas metSalas = new metSalas();
-
-                        resultado = metSalas.insertarGrupoSala(grupoSalaInsertar);
-
-                    }                   
-
-
                     if (resultado == "OK")
                     {
-                        MessageBox.Show("Se ha ingresado el registro con éxito.", "Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);                        
+                        string turno;
 
-                        this.Close();
+
+                        if (cbTurno.SelectedItem == null)
+                        {
+                            turno = "";
+                        }
+                        else
+                        {
+                            turno = cbTurno.SelectedItem.ToString();
+
+                            if (turno == "MAÑANA")
+                            {
+                                turno = "MANANA";
+                            }
+                            else
+                            {
+                                turno = "TARDE";
+                            }
+
+                        }
+
+                        string id_sala;
+                        if (cbSala.SelectedItem == null)
+                        {
+                            id_sala = "";
+                        }
+                        else
+                        {
+                            id_sala = cbSala.SelectedValue.ToString();
+                        }
+
+                        if (turno == "" && id_sala =="")
+                        {
+                            MessageBox.Show("Se ha ingresado el registro con éxito.", "Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else {
+                            if (MetSalas.ValidarDocSala(id_sala, turno) == 0)
+                            {
+                                entGrupoSala grupoSalaInsertar = new entGrupoSala();
+                                grupoSalaInsertar.GRS_PER_ID = Convert.ToInt32(id_persona);
+                                grupoSalaInsertar.GRS_SAL_ID = Convert.ToInt32(id_sala);
+
+                                resultado = MetSalas.insertarGrupoSala(grupoSalaInsertar);
+
+                                if (resultado == "OK")
+                                {
+                                    MessageBox.Show("Se ha ingresado el registro con éxito.", "Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                                    this.Close();
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ya existe un docente en la sala y turno seleccionados");
+
+                                objMetPersonas.EliminarDocenteDomicilio(personaInsert);
+                                objMetPersonas.EliminarDocentePersona(personaInsert);
+
+                                MessageBox.Show("NO Se ha ingresado el registro.");
+                            }
+                        }
+
                     }
-                }
+                }                
+              
             }
 
             else
