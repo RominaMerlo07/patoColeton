@@ -44,8 +44,7 @@ namespace GestionJardin
             btnCancelar.Visible = false;
 
         }
-
-    
+               
         private string validaCampos()
         {
             string resultadoValidacion = "";
@@ -341,7 +340,7 @@ namespace GestionJardin
 
         private void cbTurno_SelectedValueChanged(object sender, EventArgs e)
         {
-            cargar_cbSala();
+            cargar_cbSala();            
         }
 
         private void cargar_cbSala()
@@ -362,6 +361,7 @@ namespace GestionJardin
             cbSala.Enabled = true;
 
             cbSala.SelectedValueChanged += new EventHandler(cbSala_SelectedValueChanged);
+            
 
         }
 
@@ -587,5 +587,6 @@ namespace GestionJardin
 
             }
         }
+       
     }
 }

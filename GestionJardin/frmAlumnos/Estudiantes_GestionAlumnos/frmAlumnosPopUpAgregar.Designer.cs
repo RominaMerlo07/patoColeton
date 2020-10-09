@@ -836,6 +836,7 @@
             this.dtNacimiento.Style = MetroFramework.MetroColorStyle.Green;
             this.dtNacimiento.TabIndex = 20;
             this.dtNacimiento.Value = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
+         
             // 
             // lblDatosPersonales
             // 
