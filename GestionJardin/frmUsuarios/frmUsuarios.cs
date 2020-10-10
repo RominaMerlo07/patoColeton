@@ -197,7 +197,16 @@ namespace GestionJardin
                 MessageBox.Show("Por favor seleccione un registro/fila para poder ELIMINARLO");
                 
             }
-        }               
-               
+        }
+
+        private void dgv_UsuariosActivos_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.ColumnIndex == 2 && e.Value != null)
+            {
+                e.Value = new string('*', e.Value.ToString().Length);
+
+
+            }
+        }
     }
 }

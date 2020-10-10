@@ -25,6 +25,11 @@ namespace GestionJardin
             dgv_Alumnos.Visible = false;
             btnAsistencia.Visible = false;
             btnInasistencia.Visible = false;
+            labelFechError.Visible = false;
+            lblTurno.Visible = false;
+            lblSala.Visible = false;
+            lblFecha.Visible = false;
+            cbTurno.Focus();
         }
 
         private void cargar_cbSala()
@@ -50,6 +55,7 @@ namespace GestionJardin
 
         private void cbSala_SelectedValueChanged(object sender, EventArgs e)
         {
+            //ver de recuperar el id y guardarlo en variable !!!
 
         }
 
@@ -60,9 +66,87 @@ namespace GestionJardin
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
-            fechaCalendar = monthCalendar1.SelectionStart.Date;
-            fechaCalendar.ToShortDateString();                         
-            label1.Text = fechaCalendar.ToString();
+            string validacion = ValidaCampos();
+                       
+                fechaCalendar = monthCalendar1.SelectionStart.Date;
+                fechaCalendar.ToShortDateString();
+                lblFecha.Text = fechaCalendar.ToString();
+                lblFecha.Visible = true;
+
+                if (lblFecha.Text.Length > 0)
+                {
+                    if (validacion == "OK")
+                    {
+                        dgv_Alumnos.Visible = true;
+                        txtGAs_Buscar.Visible = true;
+                        btnAsistencia.Visible = true;
+                        btnInasistencia.Visible = true;
+                        labelFechError.Visible = false;
+                    }
+                }
+            
+            
+              //  MessageBox.Show("Por favor verifique los datos ingresados: ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            
+}
+
+        private void cbTurno_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cbTurno.Text.Trim()) == true)
+            {
+                cbTurno.Style = MetroFramework.MetroColorStyle.Red;
+                cbTurno.Focus();
+                lblTurno.Visible = true;
+                lblTurno.Text = "Por favor seleccione un turno";
+            }
+            else
+            {
+                lblTurno.Visible = false;
+            }
+        }
+
+        private void cbSala_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cbSala.Text.Trim()) == true)
+            {
+                cbSala.Style = MetroFramework.MetroColorStyle.Red;
+                cbSala.Focus();
+                lblSala.Visible = true;
+                lblSala.Text = "Por favor seleccione una sala";
+            }
+            else
+            {
+                lblSala.Visible = false;
+            }
+        }
+               
+
+        private string ValidaCampos()
+        {
+            string result = "";
+
+            if (string.IsNullOrWhiteSpace(cbTurno.Text.Trim()) == true)
+            {
+                cbTurno.Style = MetroFramework.MetroColorStyle.Red;
+                cbTurno.Focus();
+                lblTurno.Visible = true;
+                result = "Por favor seleccione un turno";
+                lblTurno.Text = result;
+            }
+            else if (string.IsNullOrWhiteSpace(cbSala.Text.Trim()) == true)
+            {
+                cbSala.Style = MetroFramework.MetroColorStyle.Red;
+                cbSala.Focus();
+                lblSala.Visible = true;
+                result = "Por favor seleccione una sala";
+                lblSala.Text = result;
+            }            
+            else
+            {
+                result = "OK";
+            }
+
+            return result;
         }
     }
 }
