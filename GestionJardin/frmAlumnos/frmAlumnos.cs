@@ -362,5 +362,15 @@ namespace GestionJardin
             lbl_Ruta.Visible = true;
         }
 
+        private void btnAsis_Agregar_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new GestionJardin.frmAsistencia());
+            btnAsistencia.Enabled = true;
+            btnInformeSemestral.Enabled = false;
+            btnEstudiantes.Enabled = false;
+            btn_VolverGA.Visible = true;
+            btn_VolverGA.BringToFront();
+            lbl_Ruta.Visible = true;
+        }
     }
 }

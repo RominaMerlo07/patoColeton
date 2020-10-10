@@ -1,0 +1,152 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace GestionJardin
+{
+    public partial class frmAsistencia : Form
+    {
+        DateTime fechaCalendar;
+
+        public frmAsistencia()
+        {
+            InitializeComponent();
+        }
+
+        private void frmAsistencia_Load(object sender, EventArgs e)
+        {
+            txtGAs_Buscar.Visible = false;
+            dgv_Alumnos.Visible = false;
+            btnAsistencia.Visible = false;
+            btnInasistencia.Visible = false;
+            labelFechError.Visible = false;
+            lblTurno.Visible = false;
+            lblSala.Visible = false;
+            lblFecha.Visible = false;
+            cbTurno.Focus();
+        }
+
+        private void cargar_cbSala()
+        {
+
+            cbSala.SelectedValueChanged -= new EventHandler(cbSala_SelectedValueChanged);
+
+
+            string indexTurno = cbTurno.SelectedIndex.ToString();
+            metSalas objMetSalas = new metSalas();
+            DataTable Tabla = new DataTable();
+            Tabla = objMetSalas.ListarSalas(indexTurno);
+
+            cbSala.DisplayMember = "SAL_NOMBRE";
+            cbSala.ValueMember = "SAL_ID";
+            cbSala.DataSource = Tabla;
+            cbSala.SelectedItem = null;
+            cbSala.Enabled = true;
+
+            cbSala.SelectedValueChanged += new EventHandler(cbSala_SelectedValueChanged);
+
+        }
+
+        private void cbSala_SelectedValueChanged(object sender, EventArgs e)
+        {
+            //ver de recuperar el id y guardarlo en variable !!!
+
+        }
+
+        private void cbTurno_SelectedValueChanged(object sender, EventArgs e)
+        {
+            cargar_cbSala();
+        }
+
+        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
+        {
+            string validacion = ValidaCampos();
+                       
+                fechaCalendar = monthCalendar1.SelectionStart.Date;
+                fechaCalendar.ToShortDateString();
+                lblFecha.Text = fechaCalendar.ToString();
+                lblFecha.Visible = true;
+
+                if (lblFecha.Text.Length > 0)
+                {
+                    if (validacion == "OK")
+                    {
+                        dgv_Alumnos.Visible = true;
+                        txtGAs_Buscar.Visible = true;
+                        btnAsistencia.Visible = true;
+                        btnInasistencia.Visible = true;
+                        labelFechError.Visible = false;
+                    }
+                }
+            
+            
+              //  MessageBox.Show("Por favor verifique los datos ingresados: ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            
+}
+
+        private void cbTurno_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cbTurno.Text.Trim()) == true)
+            {
+                cbTurno.Style = MetroFramework.MetroColorStyle.Red;
+                cbTurno.Focus();
+                lblTurno.Visible = true;
+                lblTurno.Text = "Por favor seleccione un turno";
+            }
+            else
+            {
+                lblTurno.Visible = false;
+            }
+        }
+
+        private void cbSala_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cbSala.Text.Trim()) == true)
+            {
+                cbSala.Style = MetroFramework.MetroColorStyle.Red;
+                cbSala.Focus();
+                lblSala.Visible = true;
+                lblSala.Text = "Por favor seleccione una sala";
+            }
+            else
+            {
+                lblSala.Visible = false;
+            }
+        }
+               
+
+        private string ValidaCampos()
+        {
+            string result = "";
+
+            if (string.IsNullOrWhiteSpace(cbTurno.Text.Trim()) == true)
+            {
+                cbTurno.Style = MetroFramework.MetroColorStyle.Red;
+                cbTurno.Focus();
+                lblTurno.Visible = true;
+                result = "Por favor seleccione un turno";
+                lblTurno.Text = result;
+            }
+            else if (string.IsNullOrWhiteSpace(cbSala.Text.Trim()) == true)
+            {
+                cbSala.Style = MetroFramework.MetroColorStyle.Red;
+                cbSala.Focus();
+                lblSala.Visible = true;
+                result = "Por favor seleccione una sala";
+                lblSala.Text = result;
+            }            
+            else
+            {
+                result = "OK";
+            }
+
+            return result;
+        }
+    }
+}

@@ -166,7 +166,7 @@
             this.btn_Asis_Consultar.Rotation = 0D;
             this.btn_Asis_Consultar.Size = new System.Drawing.Size(370, 112);
             this.btn_Asis_Consultar.TabIndex = 86;
-            this.btn_Asis_Consultar.Text = "CONSULTAR";
+            this.btn_Asis_Consultar.Text = "CONSULTAR                  ";
             this.btn_Asis_Consultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Asis_Consultar.UseVisualStyleBackColor = false;
             this.btn_Asis_Consultar.MouseLeave += new System.EventHandler(this.btn_Asis_Consultar_MouseLeave);
@@ -187,9 +187,10 @@
             this.btnAsis_Agregar.Rotation = 0D;
             this.btnAsis_Agregar.Size = new System.Drawing.Size(370, 112);
             this.btnAsis_Agregar.TabIndex = 85;
-            this.btnAsis_Agregar.Text = "GENERAR";
+            this.btnAsis_Agregar.Text = "GESTIONAR ASISTENCIAS";
             this.btnAsis_Agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAsis_Agregar.UseVisualStyleBackColor = false;
+            this.btnAsis_Agregar.Click += new System.EventHandler(this.btnAsis_Agregar_Click);
             this.btnAsis_Agregar.MouseLeave += new System.EventHandler(this.btnAsis_Agregar_MouseLeave);
             this.btnAsis_Agregar.MouseHover += new System.EventHandler(this.btnAsis_Agregar_MouseHover);
             // 
