@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
-using FontAwesome.Sharp;
 using System.ComponentModel;
 using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography.X509Certificates;
@@ -296,7 +295,6 @@ namespace GestionJardin
             con.Close();
 
             return MessageBox.Show("Se registro el cobro. La cuota se encuentra PAGADA").ToString();
-
         }
 
         public string AnularCobro(int idCobro)
@@ -322,7 +320,7 @@ namespace GestionJardin
             catch
             {
                 result = "ERROR";
-              //  MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -365,7 +363,7 @@ namespace GestionJardin
             catch
             {
                 result = "ERROR";
-            //    MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -445,7 +443,7 @@ namespace GestionJardin
             catch
             {
                 result = "ERROR";
-          //     MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             return result;

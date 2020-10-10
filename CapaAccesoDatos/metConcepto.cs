@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using MetroFramework.Controls;
 using System.Windows.Forms;
 using System.Drawing;
-using FontAwesome.Sharp;
+
 
 namespace GestionJardin
 {

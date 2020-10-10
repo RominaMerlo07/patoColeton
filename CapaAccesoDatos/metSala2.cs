@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace GestionJardin
 {
-    class metSala2 : Conexion
+    public class metSala2 : Conexion
     {
         SqlCommand cmd;
         SqlConnection con;

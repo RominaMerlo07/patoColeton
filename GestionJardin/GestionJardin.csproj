@@ -91,15 +91,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conexion.cs" />
-    <Compile Include="entConcepto.cs" />
-    <Compile Include="entDomicilio.cs" />
-    <Compile Include="entGrupoFlia.cs" />
-    <Compile Include="entGrupoSala.cs" />
-    <Compile Include="entRol.cs" />
-    <Compile Include="entSala.cs" />
-    <Compile Include="entTipoPersona.cs" />
-    <Compile Include="entUsuario.cs" />
     <Compile Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFlia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -202,19 +193,6 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="entPersona.cs" />
-    <Compile Include="frmPersonas2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPersonas2.Designer.cs">
-      <DependentUpon>frmPersonas2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmPopUpFlia.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmPopUpFlia.Designer.cs">
-      <DependentUpon>frmPopUpFlia.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -269,17 +247,6 @@
     <Compile Include="frmUsuarios\frmUsuariosPopUpEliminar.Designer.cs">
       <DependentUpon>frmUsuariosPopUpEliminar.cs</DependentUpon>
     </Compile>
-    <Compile Include="metCobros.cs" />
-    <Compile Include="metConcepto.cs" />
-    <Compile Include="metCuota.cs" />
-    <Compile Include="metDomicilio.cs" />
-    <Compile Include="metGrupoFlia.cs" />
-    <Compile Include="metParametricas.cs" />
-    <Compile Include="metPersonas.cs" />
-    <Compile Include="metSala2.cs" />
-    <Compile Include="metSalas.cs" />
-    <Compile Include="metTipoPersona.cs" />
-    <Compile Include="metUsuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFlia.resx">
@@ -332,12 +299,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPersonas2.resx">
-      <DependentUpon>frmPersonas2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmPopUpFlia.resx">
-      <DependentUpon>frmPopUpFlia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
@@ -422,6 +383,16 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaAccesoDatos\CaAD.csproj">
+      <Project>{15702638-2aaf-4946-a758-e482c30187c3}</Project>
+      <Name>CaAD</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaEntidades\CaEnt.csproj">
+      <Project>{80a3562c-d155-4a6e-b053-aeb100c85d3f}</Project>
+      <Name>CaEnt</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

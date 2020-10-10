@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace GestionJardin
 {
-    class metGrupoFlia : Conexion
+    public class metGrupoFlia : Conexion
     {
         SqlCommand cmd;
         SqlConnection con;
@@ -91,7 +91,7 @@ namespace GestionJardin
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador." + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 MessageBox.Show("Hubo un problema. Contáctese con su administrador." + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             return dt;

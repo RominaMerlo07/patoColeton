@@ -123,7 +123,7 @@ namespace GestionJardin
         private void icBtn_Personas_Click(object sender, EventArgs e)
         {
             ActivatedButton(sender, RGBColors.color1);
-            OpenChildForm(new GestionJardin.frmPersonas2());
+            //OpenChildForm(new GestionJardin.frmPersonas2());
         }
 
         private void icBtn_Conceptos_Click(object sender, EventArgs e)

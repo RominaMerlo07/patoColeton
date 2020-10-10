@@ -75,33 +75,33 @@ namespace GestionJardin
                     if (t_usuario.Rows[0][8].ToString() == "N")
                     {
                         valido = false;
-                        frmPrincipal frmP = new frmPrincipal();
-                        frmP.btnUsuarios.Visible = false;
-                        frmP.btnAlumnos.Visible = false;
-                        frmP.btnCobros.Visible = false;
-                        frmP.btnDocentes.Visible = false;
-                        frmP.btnInformes.Visible = false;
-                        frmP.btnSalas.Visible = false;
-                        MessageBox.Show("USUARIO DESHABILITADO!!");
-                        frmP.Close();
+                        //frmPrincipal frmP = new frmPrincipal();
+                        //frmP.btnUsuarios.Visible = false;
+                        //frmP.btnAlumnos.Visible = false;
+                        //frmP.btnCobros.Visible = false;
+                        //frmP.btnDocentes.Visible = false;
+                        //frmP.btnInformes.Visible = false;
+                        //frmP.btnSalas.Visible = false;
+                        //MessageBox.Show("USUARIO DESHABILITADO!!");
+                        //frmP.Close();
                     }
                 }
                 if (t_usuario.Rows[0][4].ToString() == "2")
                 {
-                    frmPrincipal frmP = new frmPrincipal();
-                    frmP.Show();
-                    frmP.btnUsuarios.Visible = false;
+                    //frmPrincipal frmP = new frmPrincipal();
+                    //frmP.Show();
+                    //frmP.btnUsuarios.Visible = false;
                     if (t_usuario.Rows[0][8].ToString() == "N")
                     {
                         valido = false;
-                        frmP.btnUsuarios.Visible = false;
-                        frmP.btnAlumnos.Visible = false;
-                        frmP.btnCobros.Visible = false;
-                        frmP.btnDocentes.Visible = false;
-                        frmP.btnInformes.Visible = false;
-                        frmP.btnSalas.Visible = false;
-                        MessageBox.Show("USUARIO DESHABILITADO!!");
-                        frmP.Close();
+                        //frmP.btnUsuarios.Visible = false;
+                        //frmP.btnAlumnos.Visible = false;
+                        //frmP.btnCobros.Visible = false;
+                        //frmP.btnDocentes.Visible = false;
+                        //frmP.btnInformes.Visible = false;
+                        //frmP.btnSalas.Visible = false;
+                        //MessageBox.Show("USUARIO DESHABILITADO!!");
+                        //frmP.Close();
                     }
                 }
             }
