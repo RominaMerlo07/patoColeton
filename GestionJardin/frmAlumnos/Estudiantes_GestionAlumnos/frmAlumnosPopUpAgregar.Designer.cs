@@ -830,13 +830,12 @@
             this.dtNacimiento.Location = new System.Drawing.Point(169, 10);
             this.dtNacimiento.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.dtNacimiento.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
-            this.dtNacimiento.MinimumSize = new System.Drawing.Size(0, 27);
+            this.dtNacimiento.MinimumSize = new System.Drawing.Size(4, 27);
             this.dtNacimiento.Name = "dtNacimiento";
             this.dtNacimiento.Size = new System.Drawing.Size(184, 27);
             this.dtNacimiento.Style = MetroFramework.MetroColorStyle.Green;
             this.dtNacimiento.TabIndex = 20;
             this.dtNacimiento.Value = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
-         
             // 
             // lblDatosPersonales
             // 
@@ -1016,6 +1015,7 @@
             // 
             // lbl_panelSala
             // 
+            this.lbl_panelSala.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_panelSala.AutoSize = true;
             this.lbl_panelSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_panelSala.ForeColor = System.Drawing.SystemColors.ControlLightLight;
