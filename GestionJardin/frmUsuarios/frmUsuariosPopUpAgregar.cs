@@ -24,6 +24,8 @@ namespace GestionJardin
         
         private void frmUsuariosPopUpAgregar_Load_1(object sender, EventArgs e)
         {
+            txt_contra_usu.UseSystemPasswordChar = true;
+            lblmostrarcontraseña.Visible = false;
             /***Coloco el foco en textbox principal***/
             txtSeleccionarDocente.Focus();
             /***habilito solo para leer el textbox***/
@@ -45,6 +47,7 @@ namespace GestionJardin
                 MessageBox.Show("Debe seleccionar un docente primero! ");
                 txtSeleccionarDocente.Focus();
             }
+
             else
             {
                 ObjetoUsu.CrearUsuario(txtSeleccionarDocente, txt_nombre_usuario);
@@ -135,7 +138,61 @@ namespace GestionJardin
             {
                 // e.Handled = false;
                 txt_nombre_usuario.Clear();
+            }
+           
+        }
 
+        private void mostrarpass_CheckedChanged(object sender, EventArgs e)
+        {
+            if (mostrarpass.Checked == true)
+            {
+                txt_contra_usu.UseSystemPasswordChar = false;
+                lblmostrarcontraseña.Visible = true;
+                lblmostrarcontraseña.Text = "OCULTAR CONTRASEÑA";
+
+            }
+            else
+            {
+                txt_contra_usu.UseSystemPasswordChar = true;
+                lblmostrarcontraseña.Text = "VER CONTRASEÑA";
+
+            }
+        }
+
+        private void mostrarpass_MouseLeave(object sender, EventArgs e)
+        {
+            lblmostrarcontraseña.Visible = false;
+
+        }
+
+        private void mostrarpass_MouseHover(object sender, EventArgs e)
+        {
+            lblmostrarcontraseña.Visible = true;
+            if (mostrarpass.Checked == true)
+            {
+                lblmostrarcontraseña.Text = "OCULTAR CONTRASEÑA";
+            }
+            else
+            {
+                lblmostrarcontraseña.Text = "VER CONTRASEÑA";
+            }
+        }
+
+
+        private void txtSeleccionarDocente_KeyUp(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyValue == (Char)Keys.Enter)
+            {
+                ObjetoUsu.CrearUsuario(txtSeleccionarDocente, txt_nombre_usuario);
+                /***me habilita para poder escribir***/
+                txt_contra_usu.ReadOnly = false;
+                /***me devuelve  los colores originales del textbox***/
+                txt_contra_usu.BackColor = Color.FromArgb(34, 33, 74);
+                txt_nombre_usuario.BackColor = Color.FromArgb(34, 33, 74);
+                txt_contra_usu.WaterMarkColor = Color.Lime;
+                txt_contra_usu.ForeColor = Color.Lime;
+                txt_contra_usu.Focus();
             }
         }
     }
