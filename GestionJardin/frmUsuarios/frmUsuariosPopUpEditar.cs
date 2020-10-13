@@ -31,7 +31,9 @@ namespace GestionJardin
         private void frmUsuariosPopUpEditar_Load(object sender, EventArgs e)
         {
             frmUsuarios U = Owner as frmUsuarios;
-            if (U.dgv_UsuariosActivos.CurrentRow.Cells[5].Value.ToString() == "INACTIVO")
+            metroTextBoxContrasenaEdit.UseSystemPasswordChar = true;
+            lblmostrarcontraseña.Visible = false;
+           if (U.dgv_UsuariosActivos.CurrentRow.Cells[5].Value.ToString() == "INACTIVO")
             {
                 this.Close();
                 MessageBox.Show("NO SE PUEDE EDITAR USUARIO DADO DE BAJA!");
@@ -45,7 +47,8 @@ namespace GestionJardin
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-            /************* VALIDACIONES TEXTBOXCONTRASEÑA **************/
+
+        /************* VALIDACIONES TEXTBOXCONTRASEÑA **************/
 
         private void metroTextBoxContrasenaEdit_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -126,6 +129,45 @@ namespace GestionJardin
             {
                 MessageBox.Show("Escriba una contraseña");
             }
+        }
+
+        private void mostrarpass_CheckedChanged(object sender, EventArgs e)
+        {
+           
+                if (mostrarpass.Checked == true)
+                {
+                    metroTextBoxContrasenaEdit.UseSystemPasswordChar = false;
+                    lblmostrarcontraseña.Visible = true;
+                    lblmostrarcontraseña.Text = "OCULTAR CONTRASEÑA";
+
+            }
+            else
+                {
+                    metroTextBoxContrasenaEdit.UseSystemPasswordChar = true;
+                
+                    lblmostrarcontraseña.Text = "VER CONTRASEÑA";
+            }
+            
+        }
+
+        private void mostrarpass_MouseHover(object sender, EventArgs e)
+        {
+            lblmostrarcontraseña.Visible = true;
+            if (mostrarpass.Checked == true)
+            {
+                lblmostrarcontraseña.Text = "OCULTAR CONTRASEÑA";
+            }
+            else
+            {
+                lblmostrarcontraseña.Text = "VER CONTRASEÑA";
+            }
+        }
+
+
+        private void mostrarpass_MouseLeave(object sender, EventArgs e)
+        {
+            lblmostrarcontraseña.Visible = false;
+           
         }
     }
 }

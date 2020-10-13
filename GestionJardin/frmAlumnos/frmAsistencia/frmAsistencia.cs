@@ -27,22 +27,19 @@ namespace GestionJardin
         {
             txtGAs_Buscar.Visible = false;
             dgv_Alumnos.Visible = false;
-            btnAsistencia.Visible = false;
-            btnInasistencia.Visible = false;
+            
             labelFechError.Visible = false;
             lblTurno.Visible = false;
             lblSala.Visible = false;
             lblFecha.Visible = false;
-            lblJustificado.Visible = false;
             lblAsistencia.Visible = false;
-            btn_Injustificado.Visible = false;
-            btn_Justificado.Visible = false;
-            metroComboBox1.Visible = false; /*****************************************/
-            metroComboBox2.Visible = false; /*****************************************/
-            btnguardar.Visible = false; /*****************************************/
-            btncancelar.Visible = false; /*****************************************/
+            cboAsistencia.Visible = false; 
+            lblJustificado.Visible = false;
+            cboJustificado.Visible = false; 
+            
+            btnguardar.Visible = false; 
+            btncancelar.Visible = false; 
             dgv_Alumnos.ClearSelection();
-
             cbTurno.Focus();
         }
 
@@ -77,92 +74,7 @@ namespace GestionJardin
             cargar_cbSala();
         }
 
-        private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
-        {
-            string validacion = ValidaCampos();
-                       
-                fechaCalendar = monthCalendar1.SelectionStart.Date;
-                fechaCalendar.ToShortDateString();
-                lblFecha.Text = fechaCalendar.ToString();
-                lblFecha.Visible = true;
-
-            if (lblFecha.Text.Length > 0)
-            {
-                if (validacion == "OK")
-                {
-                    dgv_Alumnos.Visible = true;
-                    txtGAs_Buscar.Visible = true;
-                    btnAsistencia.Visible = false; /*****************************************/
-                    btnInasistencia.Visible = false; /*****************************************/
-                    btn_Injustificado.Visible = false;
-                    btnguardar.Visible = true; /*****************************************/
-                    btncancelar.Visible = true; /*****************************************/
-                    lblJustificado.Visible = true; /*****************************************/
-                    btn_Justificado.Visible = false;
-                    labelFechError.Visible = false;
-                    lblAsistencia.Visible = true;
-                    metroComboBox1.Visible = true; /*****************************************/
-                    metroComboBox2.Visible = true; /*****************************************/
-                    dgv_Alumnos.ClearSelection();
-
-                    
-                        string turno = cbTurno.SelectedItem.ToString();
-
-                        if (turno == "MAÑANA")
-                        {
-                            turno = "MANANA";
-                        }
-                        else
-                        {
-                            turno = "TARDE";
-                        }
-
-                        dgv_Alumnos.DataSource = metAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
-
-                        dgv_Alumnos.Columns["PER_ID"].Visible = false;
-
-                    if (dgv_Alumnos.SelectedRows.Count > 0)
-                    {
-                        //btnAsistencia.IconColor = Color.Lime;
-                        //btnAsistencia.ForeColor = Color.Lime;
-                        //btnInasistencia.IconColor = Color.FromArgb(255, 128, 128);
-                        //btnInasistencia.ForeColor = Color.FromArgb(255, 128, 128);                                              
-                        btn_Justificado.IconColor = Color.Gray;
-                        btn_Justificado.ForeColor = Color.Gray;
-                        btn_Injustificado.IconColor = Color.Gray;
-                        btn_Injustificado.ForeColor = Color.Gray;
-
-
-
-                    }
-                    else
-                    {
-                        dgv_Alumnos.ClearSelection();
-                        //btnAsistencia.IconColor = Color.Gray;
-                        //btnAsistencia.ForeColor = Color.Gray;
-                        //btnInasistencia.IconColor = Color.Gray;
-                        //btnInasistencia.ForeColor = Color.Gray;                   
-                        btn_Justificado.IconColor = Color.Gray;
-                        btn_Justificado.ForeColor = Color.Gray;
-                        btn_Injustificado.IconColor = Color.Gray;
-                        btn_Injustificado.ForeColor = Color.Gray;
-
-
-                    }
-
-                    
-                    
-
-
-                }
-            }           
-
-            //  MessageBox.Show("Por favor verifique los datos ingresados: ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-        }
-
-
-       
+               
         private void cbTurno_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(cbTurno.Text.Trim()) == true)
@@ -222,39 +134,52 @@ namespace GestionJardin
             return result;
         }
 
-        private void btnInasistencia_Click(object sender, EventArgs e)
+        private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
-            //lblJustificado.Visible = false; /*****************************************/
-            //metroComboBox1.Visible = true; /*****************************************/
-            //btn_Justificado.IconColor = Color.FromArgb(128, 255, 128);
-            //btn_Justificado.ForeColor = Color.FromArgb(128, 255, 128);
-            //btn_Injustificado.IconColor = Color.Silver;
-            //btn_Injustificado.ForeColor = Color.Silver;
+            string validacion = ValidaCampos();
 
-        }
+            fechaCalendar = monthCalendar1.SelectionStart.Date;
+            fechaCalendar.ToShortDateString();
+            lblFecha.Text = fechaCalendar.ToString();
+            lblFecha.Visible = true;
 
-        private void dgv_Alumnos_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dgv_Alumnos.SelectedRows.Count > 0)
+            if (lblFecha.Text.Length > 0)
             {
-                btnAsistencia.IconColor = Color.Lime;
-                btnAsistencia.ForeColor = Color.Lime;
-                btnInasistencia.IconColor = Color.FromArgb(255, 128, 128);
-                btnInasistencia.ForeColor = Color.FromArgb(255, 128, 128);
+                if (validacion == "OK")
+                {
+                    dgv_Alumnos.Visible = true;
+                    txtGAs_Buscar.Visible = true;
+                    lblAsistencia.Visible = true;
+                    cboAsistencia.Visible = true;
+                    lblJustificado.Visible = true;
+                    cboJustificado.Visible = true;
+                    btnguardar.Visible = true;
+                    btncancelar.Visible = true;
+                    dgv_Alumnos.ClearSelection();
 
+                    labelFechError.Visible = false;
+
+
+                    string turno = cbTurno.SelectedItem.ToString();
+
+                    if (turno == "MAÑANA")
+                    {
+                        turno = "MANANA";
+                    }
+                    else
+                    {
+                        turno = "TARDE";
+                    }
+
+                    dgv_Alumnos.DataSource = metAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
+
+                    dgv_Alumnos.Columns["PER_ID"].Visible = false;
+
+                }
             }
-            else
-            {
-                dgv_Alumnos.ClearSelection();
-                //btnAsistencia.IconColor = Color.Gray;
-                //btnAsistencia.ForeColor = Color.Gray;
-                //btnInasistencia.IconColor = Color.Gray;
-                //btnInasistencia.ForeColor = Color.Gray;
-                btn_Justificado.IconColor = Color.Gray;/*Color.FromArgb(128, 255, 128);*/
-                btn_Justificado.ForeColor = Color.Gray;/*Color.FromArgb(128, 255, 128);*/
-                btn_Injustificado.IconColor = Color.Gray;/*Color.Silver;*/
-                btn_Injustificado.ForeColor = Color.Gray;/*Color.Silver;*/
-            }
+
+            //  MessageBox.Show("Por favor verifique los datos ingresados: ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
         }
     }
 }

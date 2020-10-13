@@ -35,6 +35,8 @@
             this.txt_contra_usu = new MetroFramework.Controls.MetroTextBox();
             this.txtSeleccionarDocente = new MetroFramework.Controls.MetroTextBox();
             this.lblNvoUsu = new System.Windows.Forms.Label();
+            this.mostrarpass = new System.Windows.Forms.CheckBox();
+            this.lblmostrarcontraseña = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txt_nombre_usuario
@@ -44,10 +46,10 @@
             // 
             this.txt_nombre_usuario.CustomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_nombre_usuario.CustomButton.Image = null;
-            this.txt_nombre_usuario.CustomButton.Location = new System.Drawing.Point(78, 2);
-            this.txt_nombre_usuario.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_nombre_usuario.CustomButton.Location = new System.Drawing.Point(104, 2);
+            this.txt_nombre_usuario.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txt_nombre_usuario.CustomButton.Name = "";
-            this.txt_nombre_usuario.CustomButton.Size = new System.Drawing.Size(20, 22);
+            this.txt_nombre_usuario.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txt_nombre_usuario.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txt_nombre_usuario.CustomButton.TabIndex = 1;
             this.txt_nombre_usuario.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -59,7 +61,7 @@
             this.txt_nombre_usuario.IconRight = true;
             this.txt_nombre_usuario.Lines = new string[0];
             this.txt_nombre_usuario.Location = new System.Drawing.Point(230, 118);
-            this.txt_nombre_usuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_nombre_usuario.Margin = new System.Windows.Forms.Padding(2);
             this.txt_nombre_usuario.MaxLength = 32767;
             this.txt_nombre_usuario.Name = "txt_nombre_usuario";
             this.txt_nombre_usuario.PasswordChar = '\0';
@@ -91,7 +93,7 @@
             this.btn_GuardarUsuNuevo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btn_GuardarUsuNuevo.IconSize = 50;
             this.btn_GuardarUsuNuevo.Location = new System.Drawing.Point(57, 271);
-            this.btn_GuardarUsuNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_GuardarUsuNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btn_GuardarUsuNuevo.Name = "btn_GuardarUsuNuevo";
             this.btn_GuardarUsuNuevo.Rotation = 0D;
             this.btn_GuardarUsuNuevo.Size = new System.Drawing.Size(162, 54);
@@ -112,7 +114,7 @@
             this.btn_CancelarUsuNuevo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btn_CancelarUsuNuevo.IconSize = 50;
             this.btn_CancelarUsuNuevo.Location = new System.Drawing.Point(281, 271);
-            this.btn_CancelarUsuNuevo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btn_CancelarUsuNuevo.Margin = new System.Windows.Forms.Padding(2);
             this.btn_CancelarUsuNuevo.Name = "btn_CancelarUsuNuevo";
             this.btn_CancelarUsuNuevo.Rotation = 0D;
             this.btn_CancelarUsuNuevo.Size = new System.Drawing.Size(162, 54);
@@ -129,10 +131,10 @@
             // 
             this.txt_contra_usu.CustomButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_contra_usu.CustomButton.Image = null;
-            this.txt_contra_usu.CustomButton.Location = new System.Drawing.Point(160, 2);
-            this.txt_contra_usu.CustomButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_contra_usu.CustomButton.Location = new System.Drawing.Point(214, 2);
+            this.txt_contra_usu.CustomButton.Margin = new System.Windows.Forms.Padding(2);
             this.txt_contra_usu.CustomButton.Name = "";
-            this.txt_contra_usu.CustomButton.Size = new System.Drawing.Size(20, 22);
+            this.txt_contra_usu.CustomButton.Size = new System.Drawing.Size(27, 27);
             this.txt_contra_usu.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
             this.txt_contra_usu.CustomButton.TabIndex = 1;
             this.txt_contra_usu.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
@@ -144,7 +146,7 @@
             this.txt_contra_usu.IconRight = true;
             this.txt_contra_usu.Lines = new string[0];
             this.txt_contra_usu.Location = new System.Drawing.Point(120, 188);
-            this.txt_contra_usu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txt_contra_usu.Margin = new System.Windows.Forms.Padding(2);
             this.txt_contra_usu.MaxLength = 32767;
             this.txt_contra_usu.Name = "txt_contra_usu";
             this.txt_contra_usu.PasswordChar = '\0';
@@ -191,7 +193,7 @@
             this.txtSeleccionarDocente.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtSeleccionarDocente.Lines = new string[0];
             this.txtSeleccionarDocente.Location = new System.Drawing.Point(93, 37);
-            this.txtSeleccionarDocente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSeleccionarDocente.Margin = new System.Windows.Forms.Padding(2);
             this.txtSeleccionarDocente.MaxLength = 32767;
             this.txtSeleccionarDocente.Name = "txtSeleccionarDocente";
             this.txtSeleccionarDocente.PasswordChar = '\0';
@@ -202,7 +204,6 @@
             this.txtSeleccionarDocente.SelectionStart = 0;
             this.txtSeleccionarDocente.ShortcutsEnabled = true;
             this.txtSeleccionarDocente.ShowButton = true;
-            this.txtSeleccionarDocente.ShowClearButton = true;
             this.txtSeleccionarDocente.Size = new System.Drawing.Size(301, 35);
             this.txtSeleccionarDocente.Style = MetroFramework.MetroColorStyle.Lime;
             this.txtSeleccionarDocente.TabIndex = 1;
@@ -213,6 +214,7 @@
             this.txtSeleccionarDocente.WaterMarkFont = new System.Drawing.Font("Segoe UI", 13F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSeleccionarDocente.ButtonClick += new MetroFramework.Controls.MetroTextBox.ButClick(this.txtSeleccionarDocente_ButtonClick);
             this.txtSeleccionarDocente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSeleccionarDocente_KeyPress);
+            this.txtSeleccionarDocente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSeleccionarDocente_KeyUp);
             // 
             // lblNvoUsu
             // 
@@ -226,12 +228,44 @@
             this.lblNvoUsu.TabIndex = 78;
             this.lblNvoUsu.Text = "USUARIO: ";
             // 
+            // mostrarpass
+            // 
+            this.mostrarpass.Appearance = System.Windows.Forms.Appearance.Button;
+            this.mostrarpass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.mostrarpass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.mostrarpass.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.mostrarpass.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
+            this.mostrarpass.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
+            this.mostrarpass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.mostrarpass.ForeColor = System.Drawing.Color.Cornsilk;
+            this.mostrarpass.Location = new System.Drawing.Point(344, 188);
+            this.mostrarpass.Name = "mostrarpass";
+            this.mostrarpass.Size = new System.Drawing.Size(20, 32);
+            this.mostrarpass.TabIndex = 79;
+            this.mostrarpass.UseVisualStyleBackColor = false;
+            this.mostrarpass.CheckedChanged += new System.EventHandler(this.mostrarpass_CheckedChanged);
+            this.mostrarpass.MouseLeave += new System.EventHandler(this.mostrarpass_MouseLeave);
+            this.mostrarpass.MouseHover += new System.EventHandler(this.mostrarpass_MouseHover);
+            // 
+            // lblmostrarcontraseña
+            // 
+            this.lblmostrarcontraseña.AutoSize = true;
+            this.lblmostrarcontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblmostrarcontraseña.ForeColor = System.Drawing.Color.Yellow;
+            this.lblmostrarcontraseña.Location = new System.Drawing.Point(368, 198);
+            this.lblmostrarcontraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblmostrarcontraseña.Name = "lblmostrarcontraseña";
+            this.lblmostrarcontraseña.Size = new System.Drawing.Size(0, 13);
+            this.lblmostrarcontraseña.TabIndex = 80;
+            // 
             // frmUsuariosPopUpAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(500, 366);
+            this.Controls.Add(this.lblmostrarcontraseña);
+            this.Controls.Add(this.mostrarpass);
             this.Controls.Add(this.lblNvoUsu);
             this.Controls.Add(this.txtSeleccionarDocente);
             this.Controls.Add(this.txt_contra_usu);
@@ -240,7 +274,7 @@
             this.Controls.Add(this.txt_nombre_usuario);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Location = new System.Drawing.Point(32, 177);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmUsuariosPopUpAgregar";
@@ -259,5 +293,7 @@
         public MetroFramework.Controls.MetroTextBox txtSeleccionarDocente;
         public System.Windows.Forms.Label lblNvoUsu;
         public MetroFramework.Controls.MetroTextBox txt_contra_usu;
+        private System.Windows.Forms.CheckBox mostrarpass;
+        public System.Windows.Forms.Label lblmostrarcontraseña;
     }
 }
