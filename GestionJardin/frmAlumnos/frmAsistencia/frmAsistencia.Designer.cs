@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
             this.labelFechError = new System.Windows.Forms.Label();
             this.lblSala = new System.Windows.Forms.Label();
@@ -52,6 +52,8 @@
             this.cboAsistencia = new MetroFramework.Controls.MetroComboBox();
             this.btncancelar = new FontAwesome.Sharp.IconButton();
             this.btnguardar = new FontAwesome.Sharp.IconButton();
+            this.lbl_ErrorAsistencia = new System.Windows.Forms.Label();
+            this.lblErrorJustificado = new System.Windows.Forms.Label();
             this.metroPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Alumnos)).BeginInit();
             this.SuspendLayout();
@@ -141,7 +143,7 @@
             this.cbTurno.Location = new System.Drawing.Point(232, 82);
             this.cbTurno.Name = "cbTurno";
             this.cbTurno.Size = new System.Drawing.Size(185, 30);
-            this.cbTurno.Style = MetroFramework.MetroColorStyle.Green;
+            this.cbTurno.Style = MetroFramework.MetroColorStyle.Blue;
             this.cbTurno.TabIndex = 1;
             this.cbTurno.UseCustomBackColor = true;
             this.cbTurno.UseSelectable = true;
@@ -193,7 +195,7 @@
             this.cbSala.Location = new System.Drawing.Point(232, 168);
             this.cbSala.Name = "cbSala";
             this.cbSala.Size = new System.Drawing.Size(185, 30);
-            this.cbSala.Style = MetroFramework.MetroColorStyle.Orange;
+            this.cbSala.Style = MetroFramework.MetroColorStyle.Blue;
             this.cbSala.TabIndex = 2;
             this.cbSala.UseCustomBackColor = true;
             this.cbSala.UseSelectable = true;
@@ -233,39 +235,39 @@
             // 
             this.dgv_Alumnos.AllowUserToAddRows = false;
             this.dgv_Alumnos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgv_Alumnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Alumnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgv_Alumnos.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dgv_Alumnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_Alumnos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Alumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle18.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Alumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgv_Alumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Alumnos.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Alumnos.DefaultCellStyle = dataGridViewCellStyle19;
             this.dgv_Alumnos.Location = new System.Drawing.Point(593, 377);
             this.dgv_Alumnos.Name = "dgv_Alumnos";
             this.dgv_Alumnos.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Alumnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Alumnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle20;
             this.dgv_Alumnos.RowTemplate.Height = 24;
             this.dgv_Alumnos.Size = new System.Drawing.Size(1181, 460);
             this.dgv_Alumnos.TabIndex = 2;
@@ -314,7 +316,7 @@
             this.lblJustificado.AutoSize = true;
             this.lblJustificado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblJustificado.ForeColor = System.Drawing.Color.Aqua;
-            this.lblJustificado.Location = new System.Drawing.Point(1580, 229);
+            this.lblJustificado.Location = new System.Drawing.Point(1580, 228);
             this.lblJustificado.Name = "lblJustificado";
             this.lblJustificado.Size = new System.Drawing.Size(129, 20);
             this.lblJustificado.TabIndex = 31;
@@ -325,7 +327,7 @@
             this.lblAsistencia.AutoSize = true;
             this.lblAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblAsistencia.ForeColor = System.Drawing.Color.Aqua;
-            this.lblAsistencia.Location = new System.Drawing.Point(1323, 229);
+            this.lblAsistencia.Location = new System.Drawing.Point(1323, 228);
             this.lblAsistencia.Name = "lblAsistencia";
             this.lblAsistencia.Size = new System.Drawing.Size(116, 20);
             this.lblAsistencia.TabIndex = 32;
@@ -338,12 +340,14 @@
             this.cboJustificado.Items.AddRange(new object[] {
             "JUSTIFICADO",
             "INJUSTIFICADO"});
-            this.cboJustificado.Location = new System.Drawing.Point(1560, 269);
+            this.cboJustificado.Location = new System.Drawing.Point(1560, 261);
             this.cboJustificado.Name = "cboJustificado";
             this.cboJustificado.PromptText = "SELECCIONE";
             this.cboJustificado.Size = new System.Drawing.Size(209, 30);
-            this.cboJustificado.TabIndex = 35;
+            this.cboJustificado.Style = MetroFramework.MetroColorStyle.Blue;
+            this.cboJustificado.TabIndex = 36;
             this.cboJustificado.UseSelectable = true;
+            this.cboJustificado.Leave += new System.EventHandler(this.cboJustificado_Leave);
             // 
             // cboAsistencia
             // 
@@ -352,12 +356,15 @@
             this.cboAsistencia.Items.AddRange(new object[] {
             "PRESENTE",
             "AUSENTE"});
-            this.cboAsistencia.Location = new System.Drawing.Point(1299, 269);
+            this.cboAsistencia.Location = new System.Drawing.Point(1299, 261);
             this.cboAsistencia.Name = "cboAsistencia";
             this.cboAsistencia.PromptText = "SELECCIONE";
             this.cboAsistencia.Size = new System.Drawing.Size(209, 30);
-            this.cboAsistencia.TabIndex = 36;
+            this.cboAsistencia.Style = MetroFramework.MetroColorStyle.Blue;
+            this.cboAsistencia.TabIndex = 35;
             this.cboAsistencia.UseSelectable = true;
+            this.cboAsistencia.SelectedValueChanged += new System.EventHandler(this.cboAsistencia_SelectedValueChanged);
+            this.cboAsistencia.Leave += new System.EventHandler(this.cboAsistencia_Leave);
             // 
             // btncancelar
             // 
@@ -397,12 +404,36 @@
             this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnguardar.UseVisualStyleBackColor = true;
             // 
+            // lbl_ErrorAsistencia
+            // 
+            this.lbl_ErrorAsistencia.AutoSize = true;
+            this.lbl_ErrorAsistencia.ForeColor = System.Drawing.Color.Red;
+            this.lbl_ErrorAsistencia.Location = new System.Drawing.Point(1296, 311);
+            this.lbl_ErrorAsistencia.Name = "lbl_ErrorAsistencia";
+            this.lbl_ErrorAsistencia.Size = new System.Drawing.Size(46, 17);
+            this.lbl_ErrorAsistencia.TabIndex = 39;
+            this.lbl_ErrorAsistencia.Text = "label1";
+            this.lbl_ErrorAsistencia.Visible = false;
+            // 
+            // lblErrorJustificado
+            // 
+            this.lblErrorJustificado.AutoSize = true;
+            this.lblErrorJustificado.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorJustificado.Location = new System.Drawing.Point(1557, 311);
+            this.lblErrorJustificado.Name = "lblErrorJustificado";
+            this.lblErrorJustificado.Size = new System.Drawing.Size(46, 17);
+            this.lblErrorJustificado.TabIndex = 40;
+            this.lblErrorJustificado.Text = "label1";
+            this.lblErrorJustificado.Visible = false;
+            // 
             // frmAsistencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(1781, 1042);
+            this.Controls.Add(this.lblErrorJustificado);
+            this.Controls.Add(this.lbl_ErrorAsistencia);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.cboAsistencia);
@@ -445,5 +476,7 @@
         private MetroFramework.Controls.MetroComboBox cboAsistencia;
         private FontAwesome.Sharp.IconButton btncancelar;
         private FontAwesome.Sharp.IconButton btnguardar;
+        private System.Windows.Forms.Label lbl_ErrorAsistencia;
+        private System.Windows.Forms.Label lblErrorJustificado;
     }
 }

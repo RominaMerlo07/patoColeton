@@ -1,4 +1,4 @@
-﻿using CapaAccesoDatos;
+﻿//using CapaAccesoDatos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,18 +27,18 @@ namespace GestionJardin
         {
             txtGAs_Buscar.Visible = false;
             dgv_Alumnos.Visible = false;
-            
+
             labelFechError.Visible = false;
             lblTurno.Visible = false;
             lblSala.Visible = false;
             lblFecha.Visible = false;
             lblAsistencia.Visible = false;
-            cboAsistencia.Visible = false; 
+            cboAsistencia.Visible = false;
             lblJustificado.Visible = false;
-            cboJustificado.Visible = false; 
-            
-            btnguardar.Visible = false; 
-            btncancelar.Visible = false; 
+            cboJustificado.Visible = false;
+
+            btnguardar.Visible = false;
+            btncancelar.Visible = false;
             dgv_Alumnos.ClearSelection();
             cbTurno.Focus();
         }
@@ -65,7 +65,7 @@ namespace GestionJardin
         }
 
         private void cbSala_SelectedValueChanged(object sender, EventArgs e)
-        {            
+        {
             id_sala = cbSala.SelectedValue.ToString(); //.ToString();            
         }
 
@@ -74,7 +74,7 @@ namespace GestionJardin
             cargar_cbSala();
         }
 
-               
+
         private void cbTurno_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(cbTurno.Text.Trim()) == true)
@@ -104,7 +104,7 @@ namespace GestionJardin
                 lblSala.Visible = false;
             }
         }
-               
+
 
         private string ValidaCampos()
         {
@@ -125,7 +125,7 @@ namespace GestionJardin
                 lblSala.Visible = true;
                 result = "Por favor seleccione una sala";
                 lblSala.Text = result;
-            }            
+            }
             else
             {
                 result = "OK";
@@ -180,6 +180,108 @@ namespace GestionJardin
 
             //  MessageBox.Show("Por favor verifique los datos ingresados: ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
+        }
+
+        private void cboAsistencia_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cboAsistencia.Text.Trim()) == true)
+            {
+                cboAsistencia.Style = MetroFramework.MetroColorStyle.Red;
+                cboAsistencia.Focus();
+                lbl_ErrorAsistencia.Visible = true;
+                lbl_ErrorAsistencia.Text = "Seleccione un valor para asistencia";
+
+            }
+            else
+            {
+                lbl_ErrorAsistencia.Visible = false;
+                if(cboAsistencia.SelectedItem.ToString() == "PRESENTE")
+                {
+                    cboJustificado.Enabled = false;
+                    lblJustificado.ForeColor = Color.Gray;
+                }
+                else
+                {
+                    cboJustificado.Enabled = true;
+                    lblJustificado.ForeColor = Color.Aqua;
+                }
+
+            }
+        }
+
+        private void cboJustificado_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cboJustificado.Text.Trim()) == true)
+            {
+                cboJustificado.Style = MetroFramework.MetroColorStyle.Red;
+                cboJustificado.Focus();
+                lblErrorJustificado.Visible = true;
+                lblErrorJustificado.Text = "Seleccione un valor para justificado";
+
+            }
+            else
+            {
+                lblErrorJustificado.Visible = false;
+            }
+        }
+
+        private string validaCamposGuardar()
+        { 
+            string resultado = "OK";
+
+            if (string.IsNullOrWhiteSpace(cboAsistencia.Text.Trim()) == true)
+            {
+                cboAsistencia.Style = MetroFramework.MetroColorStyle.Red;
+                cboAsistencia.Focus();
+                lbl_ErrorAsistencia.Visible = true;
+                resultado = "Seleccione un valor para asistencia";
+                lbl_ErrorAsistencia.Text = resultado;
+
+            }
+            else if (string.IsNullOrWhiteSpace(cboAsistencia.Text.Trim()) == false)
+            {
+                if (cboAsistencia.SelectedItem.ToString() == "PRESENTE")
+                {
+                    lbl_ErrorAsistencia.Visible = false;
+                    cboJustificado.Enabled = false;
+                    lblJustificado.ForeColor = Color.Gray;
+                }
+                else
+                {
+                    cboJustificado.Enabled = true;
+                    lblJustificado.ForeColor = Color.Aqua;
+                }
+            }
+            else if (string.IsNullOrWhiteSpace(cboJustificado.Text.Trim()) == true)
+            {
+                cboJustificado.Style = MetroFramework.MetroColorStyle.Red;
+                cboJustificado.Focus();
+                lblErrorJustificado.Visible = true;
+                resultado = "Seleccione un valor para justificado";
+                lblErrorJustificado.Text = resultado;
+            }
+            else
+            {
+                resultado = "OK";
+            }
+
+            return resultado;
+
+        }
+
+        private void cboAsistencia_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (cboAsistencia.SelectedItem.ToString() == "PRESENTE")
+            {
+                lbl_ErrorAsistencia.Visible = false;
+                cboJustificado.Enabled = false;
+                lblJustificado.ForeColor = Color.Gray;
+            }
+            else
+            {
+                cboJustificado.Enabled = true;
+                lblJustificado.ForeColor = Color.Aqua;
+            }
         }
     }
 }
