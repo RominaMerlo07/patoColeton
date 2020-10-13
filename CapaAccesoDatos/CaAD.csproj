@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="metAsistencia.cs" />
     <Compile Include="metCobros.cs" />
     <Compile Include="metConcepto.cs" />
     <Compile Include="metCuota.cs" />

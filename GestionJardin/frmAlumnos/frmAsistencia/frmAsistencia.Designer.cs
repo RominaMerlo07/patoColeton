@@ -28,7 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.labelFechError = new System.Windows.Forms.Label();
+            this.lblSala = new System.Windows.Forms.Label();
+            this.lblTurno = new System.Windows.Forms.Label();
+            this.lblFecha = new MetroFramework.Controls.MetroLabel();
             this.cbTurno = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel4 = new MetroFramework.Controls.MetroLabel();
             this.monthCalendar1 = new System.Windows.Forms.MonthCalendar();
@@ -40,14 +48,20 @@
             this.txtGAs_Buscar = new MetroFramework.Controls.MetroTextBox();
             this.btnAsistencia = new FontAwesome.Sharp.IconPictureBox();
             this.btnInasistencia = new FontAwesome.Sharp.IconPictureBox();
-            this.lblTurno = new System.Windows.Forms.Label();
-            this.lblSala = new System.Windows.Forms.Label();
-            this.labelFechError = new System.Windows.Forms.Label();
-            this.lblFecha = new MetroFramework.Controls.MetroLabel();
+            this.lblJustificado = new System.Windows.Forms.Label();
+            this.lblAsistencia = new System.Windows.Forms.Label();
+            this.btn_Justificado = new FontAwesome.Sharp.IconPictureBox();
+            this.btn_Injustificado = new FontAwesome.Sharp.IconPictureBox();
+            this.metroComboBox1 = new MetroFramework.Controls.MetroComboBox();
+            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
+            this.btncancelar = new FontAwesome.Sharp.IconButton();
+            this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.metroPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Alumnos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAsistencia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnInasistencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Justificado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Injustificado)).BeginInit();
             this.SuspendLayout();
             // 
             // metroPanel3
@@ -79,6 +93,51 @@
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
             // 
+            // labelFechError
+            // 
+            this.labelFechError.AutoSize = true;
+            this.labelFechError.ForeColor = System.Drawing.Color.Red;
+            this.labelFechError.Location = new System.Drawing.Point(49, 568);
+            this.labelFechError.Name = "labelFechError";
+            this.labelFechError.Size = new System.Drawing.Size(53, 20);
+            this.labelFechError.TabIndex = 35;
+            this.labelFechError.Text = "label1";
+            // 
+            // lblSala
+            // 
+            this.lblSala.AutoSize = true;
+            this.lblSala.ForeColor = System.Drawing.Color.Red;
+            this.lblSala.Location = new System.Drawing.Point(49, 212);
+            this.lblSala.Name = "lblSala";
+            this.lblSala.Size = new System.Drawing.Size(53, 20);
+            this.lblSala.TabIndex = 34;
+            this.lblSala.Text = "label1";
+            // 
+            // lblTurno
+            // 
+            this.lblTurno.AutoSize = true;
+            this.lblTurno.ForeColor = System.Drawing.Color.Red;
+            this.lblTurno.Location = new System.Drawing.Point(49, 127);
+            this.lblTurno.Name = "lblTurno";
+            this.lblTurno.Size = new System.Drawing.Size(53, 20);
+            this.lblTurno.TabIndex = 33;
+            this.lblTurno.Text = "label1";
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblFecha.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.lblFecha.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.lblFecha.ForeColor = System.Drawing.Color.Aqua;
+            this.lblFecha.Location = new System.Drawing.Point(49, 606);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(341, 32);
+            this.lblFecha.TabIndex = 32;
+            this.lblFecha.Text = "FECHA A REGISTRAR";
+            this.lblFecha.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblFecha.UseCustomBackColor = true;
+            this.lblFecha.UseCustomForeColor = true;
+            // 
             // cbTurno
             // 
             this.cbTurno.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -102,8 +161,8 @@
             // 
             this.metroLabel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel4.ForeColor = System.Drawing.Color.Aqua;
             this.metroLabel4.Location = new System.Drawing.Point(49, 73);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(163, 44);
@@ -118,14 +177,13 @@
             this.monthCalendar1.Name = "monthCalendar1";
             this.monthCalendar1.TabIndex = 3;
             this.monthCalendar1.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCalendar1_DateChanged);
-
             // 
             // metroLabel1
             // 
             this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.ForeColor = System.Drawing.Color.Aqua;
             this.metroLabel1.Location = new System.Drawing.Point(148, 253);
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.Size = new System.Drawing.Size(144, 44);
@@ -155,8 +213,8 @@
             // 
             this.metroLabel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel2.ForeColor = System.Drawing.Color.Aqua;
             this.metroLabel2.Location = new System.Drawing.Point(49, 159);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(212, 44);
@@ -169,8 +227,8 @@
             // 
             this.metroLabel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel3.ForeColor = System.Drawing.Color.Aqua;
             this.metroLabel3.Location = new System.Drawing.Point(123, 19);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(294, 44);
@@ -183,14 +241,43 @@
             // 
             this.dgv_Alumnos.AllowUserToAddRows = false;
             this.dgv_Alumnos.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Alumnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_Alumnos.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.dgv_Alumnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgv_Alumnos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Alumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_Alumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Alumnos.Location = new System.Drawing.Point(611, 377);
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Alumnos.DefaultCellStyle = dataGridViewCellStyle7;
+            this.dgv_Alumnos.Location = new System.Drawing.Point(593, 377);
             this.dgv_Alumnos.Name = "dgv_Alumnos";
             this.dgv_Alumnos.ReadOnly = true;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Alumnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_Alumnos.RowTemplate.Height = 24;
-            this.dgv_Alumnos.Size = new System.Drawing.Size(1163, 578);
+            this.dgv_Alumnos.Size = new System.Drawing.Size(1181, 460);
             this.dgv_Alumnos.TabIndex = 2;
+            this.dgv_Alumnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_Alumnos_CellClick);
             // 
             // txtGAs_Buscar
             // 
@@ -214,7 +301,7 @@
             this.txtGAs_Buscar.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtGAs_Buscar.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtGAs_Buscar.Lines = new string[0];
-            this.txtGAs_Buscar.Location = new System.Drawing.Point(611, 294);
+            this.txtGAs_Buscar.Location = new System.Drawing.Point(593, 294);
             this.txtGAs_Buscar.MaxLength = 32767;
             this.txtGAs_Buscar.Name = "txtGAs_Buscar";
             this.txtGAs_Buscar.PasswordChar = '\0';
@@ -240,7 +327,7 @@
             this.btnAsistencia.IconChar = FontAwesome.Sharp.IconChar.UserCheck;
             this.btnAsistencia.IconColor = System.Drawing.Color.Lime;
             this.btnAsistencia.IconSize = 83;
-            this.btnAsistencia.Location = new System.Drawing.Point(1548, 280);
+            this.btnAsistencia.Location = new System.Drawing.Point(1303, 280);
             this.btnAsistencia.Name = "btnAsistencia";
             this.btnAsistencia.Padding = new System.Windows.Forms.Padding(5);
             this.btnAsistencia.Size = new System.Drawing.Size(95, 83);
@@ -252,61 +339,137 @@
             this.btnInasistencia.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.btnInasistencia.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.btnInasistencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.btnInasistencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnInasistencia.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnInasistencia.IconChar = FontAwesome.Sharp.IconChar.UserTimes;
-            this.btnInasistencia.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.btnInasistencia.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btnInasistencia.IconSize = 83;
-            this.btnInasistencia.Location = new System.Drawing.Point(1679, 280);
+            this.btnInasistencia.Location = new System.Drawing.Point(1413, 280);
             this.btnInasistencia.Name = "btnInasistencia";
             this.btnInasistencia.Padding = new System.Windows.Forms.Padding(5);
             this.btnInasistencia.Size = new System.Drawing.Size(95, 83);
             this.btnInasistencia.TabIndex = 29;
             this.btnInasistencia.TabStop = false;
+            this.btnInasistencia.Click += new System.EventHandler(this.btnInasistencia_Click);
             // 
-            // lblTurno
+            // lblJustificado
             // 
-            this.lblTurno.AutoSize = true;
-            this.lblTurno.ForeColor = System.Drawing.Color.Red;
-            this.lblTurno.Location = new System.Drawing.Point(49, 127);
-            this.lblTurno.Name = "lblTurno";
-            this.lblTurno.Size = new System.Drawing.Size(53, 20);
-            this.lblTurno.TabIndex = 33;
-            this.lblTurno.Text = "label1";
+            this.lblJustificado.AutoSize = true;
+            this.lblJustificado.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblJustificado.ForeColor = System.Drawing.Color.Aqua;
+            this.lblJustificado.Location = new System.Drawing.Point(1580, 229);
+            this.lblJustificado.Name = "lblJustificado";
+            this.lblJustificado.Size = new System.Drawing.Size(129, 20);
+            this.lblJustificado.TabIndex = 31;
+            this.lblJustificado.Text = "JUSTIFICADO";
             // 
-            // lblSala
+            // lblAsistencia
             // 
-            this.lblSala.AutoSize = true;
-            this.lblSala.ForeColor = System.Drawing.Color.Red;
-            this.lblSala.Location = new System.Drawing.Point(49, 212);
-            this.lblSala.Name = "lblSala";
-            this.lblSala.Size = new System.Drawing.Size(53, 20);
-            this.lblSala.TabIndex = 34;
-            this.lblSala.Text = "label1";
+            this.lblAsistencia.AutoSize = true;
+            this.lblAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAsistencia.ForeColor = System.Drawing.Color.Aqua;
+            this.lblAsistencia.Location = new System.Drawing.Point(1323, 229);
+            this.lblAsistencia.Name = "lblAsistencia";
+            this.lblAsistencia.Size = new System.Drawing.Size(116, 20);
+            this.lblAsistencia.TabIndex = 32;
+            this.lblAsistencia.Text = "ASISTENCIA";
             // 
-            // labelFechError
+            // btn_Justificado
             // 
-            this.labelFechError.AutoSize = true;
-            this.labelFechError.ForeColor = System.Drawing.Color.Red;
-            this.labelFechError.Location = new System.Drawing.Point(49, 568);
-            this.labelFechError.Name = "labelFechError";
-            this.labelFechError.Size = new System.Drawing.Size(53, 20);
-            this.labelFechError.TabIndex = 35;
-            this.labelFechError.Text = "label1";
+            this.btn_Justificado.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_Justificado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btn_Justificado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btn_Justificado.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_Justificado.IconChar = FontAwesome.Sharp.IconChar.Check;
+            this.btn_Justificado.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btn_Justificado.IconSize = 83;
+            this.btn_Justificado.Location = new System.Drawing.Point(1560, 280);
+            this.btn_Justificado.Name = "btn_Justificado";
+            this.btn_Justificado.Padding = new System.Windows.Forms.Padding(5);
+            this.btn_Justificado.Size = new System.Drawing.Size(95, 83);
+            this.btn_Justificado.TabIndex = 33;
+            this.btn_Justificado.TabStop = false;
             // 
-            // lblFecha
+            // btn_Injustificado
             // 
-            this.lblFecha.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblFecha.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.lblFecha.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.lblFecha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.lblFecha.Location = new System.Drawing.Point(49, 606);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(341, 32);
-            this.lblFecha.TabIndex = 32;
-            this.lblFecha.Text = "FECHA A REGISTRAR";
-            this.lblFecha.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.lblFecha.UseCustomBackColor = true;
-            this.lblFecha.UseCustomForeColor = true;
+            this.btn_Injustificado.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btn_Injustificado.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
+            this.btn_Injustificado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.btn_Injustificado.ForeColor = System.Drawing.Color.Silver;
+            this.btn_Injustificado.IconChar = FontAwesome.Sharp.IconChar.Times;
+            this.btn_Injustificado.IconColor = System.Drawing.Color.Silver;
+            this.btn_Injustificado.IconSize = 83;
+            this.btn_Injustificado.Location = new System.Drawing.Point(1674, 280);
+            this.btn_Injustificado.Name = "btn_Injustificado";
+            this.btn_Injustificado.Padding = new System.Windows.Forms.Padding(5);
+            this.btn_Injustificado.Size = new System.Drawing.Size(95, 83);
+            this.btn_Injustificado.TabIndex = 34;
+            this.btn_Injustificado.TabStop = false;
+            // 
+            // metroComboBox1
+            // 
+            this.metroComboBox1.FormattingEnabled = true;
+            this.metroComboBox1.ItemHeight = 24;
+            this.metroComboBox1.Items.AddRange(new object[] {
+            "JUSTIFICADO",
+            "INJUSTIFICADO"});
+            this.metroComboBox1.Location = new System.Drawing.Point(1560, 269);
+            this.metroComboBox1.Name = "metroComboBox1";
+            this.metroComboBox1.PromptText = "SELECCIONE";
+            this.metroComboBox1.Size = new System.Drawing.Size(209, 30);
+            this.metroComboBox1.TabIndex = 35;
+            this.metroComboBox1.UseSelectable = true;
+            // 
+            // metroComboBox2
+            // 
+            this.metroComboBox2.FormattingEnabled = true;
+            this.metroComboBox2.ItemHeight = 24;
+            this.metroComboBox2.Items.AddRange(new object[] {
+            "PRESENTE",
+            "AUSENTE"});
+            this.metroComboBox2.Location = new System.Drawing.Point(1299, 269);
+            this.metroComboBox2.Name = "metroComboBox2";
+            this.metroComboBox2.PromptText = "SELECCIONE";
+            this.metroComboBox2.Size = new System.Drawing.Size(209, 30);
+            this.metroComboBox2.TabIndex = 36;
+            this.metroComboBox2.UseSelectable = true;
+            // 
+            // btncancelar
+            // 
+            this.btncancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btncancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btncancelar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btncancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btncancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btncancelar.IconChar = FontAwesome.Sharp.IconChar.Eraser;
+            this.btncancelar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btncancelar.IconSize = 60;
+            this.btncancelar.Location = new System.Drawing.Point(1470, 879);
+            this.btncancelar.Name = "btncancelar";
+            this.btncancelar.Rotation = 0D;
+            this.btncancelar.Size = new System.Drawing.Size(239, 76);
+            this.btncancelar.TabIndex = 38;
+            this.btncancelar.Text = "CANCELAR";
+            this.btncancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btncancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnguardar
+            // 
+            this.btnguardar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnguardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnguardar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnguardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnguardar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnguardar.IconChar = FontAwesome.Sharp.IconChar.Save;
+            this.btnguardar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.btnguardar.IconSize = 60;
+            this.btnguardar.Location = new System.Drawing.Point(1169, 879);
+            this.btnguardar.Name = "btnguardar";
+            this.btnguardar.Rotation = 0D;
+            this.btnguardar.Size = new System.Drawing.Size(239, 76);
+            this.btnguardar.TabIndex = 37;
+            this.btnguardar.Text = "GUARDAR";
+            this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnguardar.UseVisualStyleBackColor = true;
             // 
             // frmAsistencia
             // 
@@ -314,6 +477,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(1781, 1042);
+            this.Controls.Add(this.btncancelar);
+            this.Controls.Add(this.btnguardar);
+            this.Controls.Add(this.metroComboBox2);
+            this.Controls.Add(this.metroComboBox1);
+            this.Controls.Add(this.btn_Injustificado);
+            this.Controls.Add(this.btn_Justificado);
+            this.Controls.Add(this.lblAsistencia);
+            this.Controls.Add(this.lblJustificado);
             this.Controls.Add(this.btnInasistencia);
             this.Controls.Add(this.btnAsistencia);
             this.Controls.Add(this.txtGAs_Buscar);
@@ -327,7 +498,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Alumnos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAsistencia)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnInasistencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Justificado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btn_Injustificado)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -349,5 +523,13 @@
         private System.Windows.Forms.Label lblTurno;
         private System.Windows.Forms.Label labelFechError;
         private MetroFramework.Controls.MetroLabel lblFecha;
+        private System.Windows.Forms.Label lblJustificado;
+        private System.Windows.Forms.Label lblAsistencia;
+        private FontAwesome.Sharp.IconPictureBox btn_Justificado;
+        private FontAwesome.Sharp.IconPictureBox btn_Injustificado;
+        private MetroFramework.Controls.MetroComboBox metroComboBox1;
+        private MetroFramework.Controls.MetroComboBox metroComboBox2;
+        private FontAwesome.Sharp.IconButton btncancelar;
+        private FontAwesome.Sharp.IconButton btnguardar;
     }
 }
