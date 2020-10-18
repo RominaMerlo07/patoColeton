@@ -80,5 +80,41 @@ namespace GestionJardin
 
         }
 
+        public void AgregarAsistencia(entAsistencia asistencia)
+        {
+            con = generarConexion();
+            try
+            {
+
+                con.Open();
+                //el SqlCommand se usa para realizar consultas a la base
+                cmd = new SqlCommand("INSERT INTO T_ASISTENCIA " +
+                                                            "(AS_ID_PERSONA ," +
+                                                            " AS_FECHA, " +
+                                                            " AS_SAL_ID, " +
+                                                            " AS_ANO, " +
+                                                            " AS_ASISTENCIA, " +
+                                                            " AS_JUSTIFICADO, " +
+                                                            " AS_SEMESTRE ) " +
+                                                "VALUES " +
+                                                        "(" + asistencia.AS_PER_ID + ", " +
+                                                        " '" + asistencia.AS_FECHA + "'," +
+                                                        " " + asistencia.AS_SAL_ID + ", " +
+                                                        " " + asistencia.AS_ANO + ", " +
+                                                        "'" + asistencia.AS_ASISTENCIA + "', " +
+                                                        "'" + asistencia.AS_JUSTIFICADO + "', " +
+                                                        " " + asistencia.AS_SEMESTRE + ")", con);
+                
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
+
     }
 }

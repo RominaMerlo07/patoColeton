@@ -15,6 +15,7 @@ namespace GestionJardin
     {
         DateTime fechaCalendar;
         string id_sala;
+        string turno;
 
         metAsistencia metAsistencia = new metAsistencia();
 
@@ -138,7 +139,7 @@ namespace GestionJardin
         {
             string validacion = ValidaCampos();
 
-            fechaCalendar = monthCalendar1.SelectionStart.Date;
+            fechaCalendar = calFecha.SelectionStart.Date;
             fechaCalendar.ToShortDateString();
             lblFecha.Text = fechaCalendar.ToString();
             lblFecha.Visible = true;
@@ -160,7 +161,7 @@ namespace GestionJardin
                     labelFechError.Visible = false;
 
 
-                    string turno = cbTurno.SelectedItem.ToString();
+                    turno = cbTurno.SelectedItem.ToString();
 
                     if (turno == "MAÑANA")
                     {
@@ -282,6 +283,62 @@ namespace GestionJardin
                 cboJustificado.Enabled = true;
                 lblJustificado.ForeColor = Color.Aqua;
             }
+        }
+
+        private void carga_grilla_filtrada()
+        {
+            DataTable col = new DataTable();
+            metPersonas metPersonas = new metPersonas();
+            col = metAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
+            dgv_Alumnos.DataSource = col;
+            string apellido_nombre = metPersonas.extraerapellido_nombre_alumno(txtGAs_Buscar);
+            col.DefaultView.RowFilter = String.Format($"ALUMNO LIKE '{apellido_nombre}%'");
+
+        }
+
+
+        private void txtGAs_Buscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtGAs_Buscar.Text.Length > 0)
+            {
+                carga_grilla_filtrada();
+            }
+            else
+            {
+
+                txtGAs_Buscar.Clear();
+                dgv_Alumnos.DataSource = metAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
+
+            }
+        }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            for (int i = 0; i < dgv_Alumnos.SelectedRows.Count; i++) { 
+
+                string idPersonaSelect = dgv_Alumnos.SelectedRows[i].Cells[0].Value.ToString();
+
+                entAsistencia asist = new entAsistencia();
+
+                asist.AS_PER_ID = Convert.ToInt32(idPersonaSelect);
+                asist.AS_SAL_ID = Convert.ToInt32(id_sala);
+                asist.AS_ASISTENCIA = cboAsistencia.SelectedIndex.ToString(); // 0 presente - 1 ausente
+                string asist_justificado = cboJustificado.SelectedIndex.ToString();
+                asist.AS_JUSTIFICADO = asist_justificado == "1" ? "1" : "0"; // 0 justificado - 1 injustificado
+                DateTime asist_fecha = Convert.ToDateTime(calFecha.SelectionRange.Start.ToString());
+                asist.AS_FECHA = Convert.ToDateTime(calFecha.SelectionRange.Start.ToString());
+                Int32 asist_ano = Convert.ToInt32(asist_fecha.Year.ToString());
+                asist.AS_ANO = asist_ano;
+                Int32 asist_mes = Convert.ToInt32(asist_fecha.Month.ToString());
+                asist.AS_SEMESTRE = asist_mes > 6 ? 2 : 1; //condicional ternario
+
+                metAsistencia.AgregarAsistencia(asist);
+
+            }
+
+            txtGAs_Buscar.Clear();
+            dgv_Alumnos.DataSource = metAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
+
         }
     }
 }
