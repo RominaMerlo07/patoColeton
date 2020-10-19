@@ -15,6 +15,7 @@ namespace GestionJardin
     {
         DateTime fechaCalendar;
         string id_sala;
+        string idPersona;
 
         metAsistencia metAsistencia = new metAsistencia();
 
@@ -37,8 +38,7 @@ namespace GestionJardin
             lblJustificado.Visible = false;
             cboJustificado.Visible = false;
 
-            btnguardar.Visible = false;
-            btncancelar.Visible = false;
+            btnguardar.Visible = false;          
             dgv_Alumnos.ClearSelection();
             cbTurno.Focus();
         }
@@ -154,7 +154,7 @@ namespace GestionJardin
                     lblJustificado.Visible = true;
                     cboJustificado.Visible = true;
                     btnguardar.Visible = true;
-                    btncancelar.Visible = true;
+                  
                     dgv_Alumnos.ClearSelection();
 
                     labelFechError.Visible = false;
@@ -174,6 +174,10 @@ namespace GestionJardin
                     dgv_Alumnos.DataSource = metAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
 
                     dgv_Alumnos.Columns["PER_ID"].Visible = false;
+
+                    idPersona = dgv_Alumnos.SelectedCells[0].Value.ToString();
+
+                    MessageBox.Show(idPersona);
 
                 }
             }
@@ -237,21 +241,7 @@ namespace GestionJardin
                 resultado = "Seleccione un valor para asistencia";
                 lbl_ErrorAsistencia.Text = resultado;
 
-            }
-            else if (string.IsNullOrWhiteSpace(cboAsistencia.Text.Trim()) == false)
-            {
-                if (cboAsistencia.SelectedItem.ToString() == "PRESENTE")
-                {
-                    lbl_ErrorAsistencia.Visible = false;
-                    cboJustificado.Enabled = false;
-                    lblJustificado.ForeColor = Color.Gray;
-                }
-                else
-                {
-                    cboJustificado.Enabled = true;
-                    lblJustificado.ForeColor = Color.Aqua;
-                }
-            }
+            }         
             else if (string.IsNullOrWhiteSpace(cboJustificado.Text.Trim()) == true)
             {
                 cboJustificado.Style = MetroFramework.MetroColorStyle.Red;
@@ -283,5 +273,16 @@ namespace GestionJardin
                 lblJustificado.ForeColor = Color.Aqua;
             }
         }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            string validacion = validaCamposGuardar();
+            if (validacion == "OK")
+            {
+                
+            }
+        }
+
+       
     }
 }

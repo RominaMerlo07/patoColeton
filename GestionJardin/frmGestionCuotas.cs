@@ -118,7 +118,6 @@ namespace GestionJardin
 
                     dgvMatriculados.Visible = true; // muestra el DGV oculto
 
-
                 }
             }
 
