@@ -175,6 +175,7 @@ namespace GestionJardin
                     dgv_Alumnos.DataSource = metAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
 
                     dgv_Alumnos.Columns["PER_ID"].Visible = false;
+                    dgv_Alumnos.Columns["AS_ID"].Visible = false;
 
                 }
             }
@@ -317,9 +318,10 @@ namespace GestionJardin
             for (int i = 0; i < dgv_Alumnos.SelectedRows.Count; i++) { 
 
                 string idPersonaSelect = dgv_Alumnos.SelectedRows[i].Cells[0].Value.ToString();
-
+                Int32 id_asistencia = Convert.ToInt32(dgv_Alumnos.SelectedRows[i].Cells[1].Value.ToString());
                 entAsistencia asist = new entAsistencia();
 
+                
                 asist.AS_PER_ID = Convert.ToInt32(idPersonaSelect);
                 asist.AS_SAL_ID = Convert.ToInt32(id_sala);
                 asist.AS_ASISTENCIA = cboAsistencia.SelectedIndex.ToString(); // 0 presente - 1 ausente
@@ -332,7 +334,15 @@ namespace GestionJardin
                 Int32 asist_mes = Convert.ToInt32(asist_fecha.Month.ToString());
                 asist.AS_SEMESTRE = asist_mes > 6 ? 2 : 1; //condicional ternario
 
-                metAsistencia.AgregarAsistencia(asist);
+                //
+                if (id_asistencia != 0)
+                {
+                    asist.AS_ID = id_asistencia;
+                    metAsistencia.EditarAsistencia(asist);
+
+                } else { 
+                    metAsistencia.AgregarAsistencia(asist);
+                }
 
             }
 
