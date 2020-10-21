@@ -162,5 +162,73 @@ namespace GestionJardin
             }
         }
 
+        public string infoAusencias(string sala, string fecha)
+        {
+            string resultado = "";
+            con = generarConexion();        
+            con.Open();
+
+            string consulta = "WITH T1 AS " +
+                                        "(SELECT COUNT(*) TOTAL_ALUMNOS, " +
+                                                "0 PRESENTES," +
+                                                "0 AUSENTES_JUSTIFICADOS," +
+                                                "0 AUSENTES_INJUSTIFICADOS " +
+                                          "FROM T_GRUPO_SALA, T_PERSONAS " +
+                                         "WHERE PER_ID = GRS_PER_ID " +
+                                           "AND PER_TPE_ID = 2 " +
+                                           "AND GRS_SAL_ID = '" + sala + "' " +
+                                         "UNION " +
+                                         "SELECT 0, " +
+                                                "COUNT(AS_ASISTENCIA), " +
+                                                "0, " +
+                                                "0 " +
+                                          "FROM T_ASISTENCIA " +
+                                         "WHERE AS_FECHA = CONVERT(VARCHAR(10), '" + fecha + "', 103) " +
+                                           "AND AS_ASISTENCIA = 0 " +
+                                           "AND AS_SAL_ID = '" + sala + "' " +
+                                        "UNION " +
+                                        "SELECT 0," +
+                                               "0," +
+                                               "COUNT(AS_ASISTENCIA), " +
+                                               "0 " +
+                                         "FROM T_ASISTENCIA " +
+                                        "WHERE AS_FECHA = CONVERT(VARCHAR(10), '" + fecha + "', 103) " +
+                                          "AND AS_ASISTENCIA = 1 " +
+                                          "AND AS_JUSTIFICADO = 0 " +
+                                          "AND AS_SAL_ID = '" + sala + "'" +
+                                       "UNION " +
+                                       "SELECT 0," +
+                                              "0," +
+                                              "0, " +
+                                              "COUNT(AS_ASISTENCIA) " +
+                                       "FROM T_ASISTENCIA " +
+                                       "WHERE AS_FECHA = CONVERT(VARCHAR(10), '" + fecha + "', 103) " +
+                                       "AND AS_ASISTENCIA = 1 " +
+                                       "AND AS_JUSTIFICADO = 1 " +
+                                       "AND AS_SAL_ID = '" + sala + "')" +
+                               "SELECT SUM(TOTAL_ALUMNOS) TOTAL_ALUMNOS, " +
+                                      "SUM(PRESENTES) PRESENTES, " +
+                                      "SUM(AUSENTES_JUSTIFICADOS) AUSENTES_JUSTIFICADOS," +
+                                      "SUM(AUSENTES_INJUSTIFICADOS) AUSENTES_INJUSTIFICADOS " +
+                                      "FROM T1;";
+            
+            cmd = new SqlCommand(consulta, con);
+
+            
+                dr = cmd.ExecuteReader();
+
+                if (dr.Read() == true)
+                {
+
+                    resultado = "TOTAL DE ALUMNOS: " + dr["TOTAL_ALUMNOS"].ToString() + " - TOTAL PRESENTES: " + dr["PRESENTES"].ToString() + " - TOTAL AUSENCIAS JUSTIFICADAS: " + dr["AUSENTES_JUSTIFICADOS"].ToString() + " - TOTAL AUSENCIAS INJUSTIFICADAS: " + dr["AUSENTES_INJUSTIFICADOS"].ToString();
+                }
+                else
+                {
+                resultado = "No se visualizan registros de asistencias";
+                }                           
+
+            return resultado;
+        }
+
     }
 }

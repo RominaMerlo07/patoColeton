@@ -162,6 +162,9 @@ namespace GestionJardin
                     dgv_Alumnos.Columns["PER_ID"].Visible = false;
                     dgv_Alumnos.Columns["AS_ID"].Visible = false;
 
+                    lblAusencias.Visible = true;
+                    lblAusencias.Text = metAsistencia.infoAusencias(id_sala, lblFecha.Text);
+
                 }
             }
 
@@ -342,14 +345,17 @@ namespace GestionJardin
                 if (id_asistencia != 0)
                 {
                     asist.AS_ID = id_asistencia;                                        
-                    metAsistencia.EditarAsistencia(asist);                  
-
+                    metAsistencia.EditarAsistencia(asist);              
+       
                     MessageBox.Show("Se actualizaron las asistencias", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    lblAusencias.Text = metAsistencia.infoAusencias(id_sala, lblFecha.Text);
 
                 } else
                 { 
                     metAsistencia.AgregarAsistencia(asist);
                     MessageBox.Show("Se registraron las asistencias", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    lblAusencias.Text = metAsistencia.infoAusencias(id_sala, lblFecha.Text);
                 }
 
             }
@@ -372,13 +378,14 @@ namespace GestionJardin
             cboAsistencia.Visible = false;
             lblJustificado.Visible = false;
             cboJustificado.Visible = false;
+            lblAusencias.Visible = false;
 
             btnguardar.Visible = false;
             btncancelar.Visible = false;
             dgv_Alumnos.ClearSelection();
             cbTurno.Focus();
-            cbTurno.Refresh();
-            cbSala.Refresh();
+            cbTurno.SelectedIndex = -1;
+            cbSala.SelectedIndex = -1;
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
