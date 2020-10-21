@@ -134,7 +134,7 @@ namespace GestionJardin
 
             if(asistencia.AS_ASISTENCIA == "0")
             {
-                justificado = "";
+                justificado = null;
             }
             else
             {

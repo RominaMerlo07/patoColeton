@@ -316,7 +316,7 @@ namespace GestionJardin
                 string asist_justificado;
                 if (asist.AS_ASISTENCIA == "0" && cboJustificado.SelectedItem == null)
                 {
-                    asist.AS_JUSTIFICADO = "";
+                    asist.AS_JUSTIFICADO = null;
                 }
                 else
                 {
