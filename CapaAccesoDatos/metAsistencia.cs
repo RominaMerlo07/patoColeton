@@ -129,18 +129,26 @@ namespace GestionJardin
         public void EditarAsistencia(entAsistencia asistencia)
         {
             con = generarConexion();
+
+            string justificado;
+
+            if(asistencia.AS_ASISTENCIA == "0")
+            {
+                justificado = "";
+            }
+            else
+            {
+                justificado = asistencia.AS_JUSTIFICADO;
+            }
+
             try
             {
 
                 con.Open();
                 
                 cmd = new SqlCommand("UPDATE T_ASISTENCIA SET " +
-                                                            //"(AS_ID_PERSONA ," +
-                                                            //" AS_FECHA, " +
-                                                            //" AS_SAL_ID, " +
-                                                            //" AS_ANO, " +
                                                             "AS_ASISTENCIA = " + "'" + asistencia.AS_ASISTENCIA + "', " +
-                                                            " AS_JUSTIFICADO = " + "'" + asistencia.AS_JUSTIFICADO + "' " +
+                                                            " AS_JUSTIFICADO = " + "'" + justificado + "' " +
                                                 "WHERE AS_ID = "+ asistencia.AS_ID + ";", con);
 
                 cmd.ExecuteNonQuery();
@@ -150,7 +158,7 @@ namespace GestionJardin
             }
             catch (Exception ex)
             {
-
+                
             }
         }
 

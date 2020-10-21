@@ -25,23 +25,8 @@ namespace GestionJardin
         }
 
         private void frmAsistencia_Load(object sender, EventArgs e)
-        {
-            txtGAs_Buscar.Visible = false;
-            dgv_Alumnos.Visible = false;
-
-            labelFechError.Visible = false;
-            lblTurno.Visible = false;
-            lblSala.Visible = false;
-            lblFecha.Visible = false;
-            lblAsistencia.Visible = false;
-            cboAsistencia.Visible = false;
-            lblJustificado.Visible = false;
-            cboJustificado.Visible = false;
-
-            btnguardar.Visible = false;
-            btncancelar.Visible = false;
-            dgv_Alumnos.ClearSelection();
-            cbTurno.Focus();
+        {           
+            Inicializar();
         }
 
         private void cargar_cbSala()
@@ -325,8 +310,27 @@ namespace GestionJardin
                 asist.AS_PER_ID = Convert.ToInt32(idPersonaSelect);
                 asist.AS_SAL_ID = Convert.ToInt32(id_sala);
                 asist.AS_ASISTENCIA = cboAsistencia.SelectedIndex.ToString(); // 0 presente - 1 ausente
-                string asist_justificado = cboJustificado.SelectedIndex.ToString();
-                asist.AS_JUSTIFICADO = asist_justificado == "1" ? "1" : "0"; // 0 justificado - 1 injustificado
+
+                /*Se modifica codigo para que si ingresa un presente no envie nada a justificado*/
+
+                string asist_justificado;
+                if (asist.AS_ASISTENCIA == "0" && cboJustificado.SelectedItem == null)
+                {
+                    asist.AS_JUSTIFICADO = "";
+                }
+                else
+                {
+                    asist_justificado = cboJustificado.SelectedIndex.ToString();
+                    if (asist_justificado == "0")
+                    {
+                        asist.AS_JUSTIFICADO = "0";
+                    }
+                    else if (asist_justificado == "1")
+                    {
+                        asist.AS_JUSTIFICADO = "1";
+                    }
+                }                               
+
                 DateTime asist_fecha = Convert.ToDateTime(calFecha.SelectionRange.Start.ToString());
                 asist.AS_FECHA = Convert.ToDateTime(calFecha.SelectionRange.Start.ToString());
                 Int32 asist_ano = Convert.ToInt32(asist_fecha.Year.ToString());
@@ -337,12 +341,15 @@ namespace GestionJardin
                 //
                 if (id_asistencia != 0)
                 {
-                    asist.AS_ID = id_asistencia;
-                    metAsistencia.EditarAsistencia(asist);
+                    asist.AS_ID = id_asistencia;                                        
+                    metAsistencia.EditarAsistencia(asist);                  
+
+                    MessageBox.Show("Se actualizaron las asistencias", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 } else
                 { 
                     metAsistencia.AgregarAsistencia(asist);
+                    MessageBox.Show("Se registraron las asistencias", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
 
             }
@@ -350,6 +357,33 @@ namespace GestionJardin
             txtGAs_Buscar.Clear();
             dgv_Alumnos.DataSource = metAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
 
+        }
+
+        private void Inicializar()
+        {
+            txtGAs_Buscar.Visible = false;
+            dgv_Alumnos.Visible = false;
+
+            labelFechError.Visible = false;
+            lblTurno.Visible = false;
+            lblSala.Visible = false;
+            lblFecha.Visible = false;
+            lblAsistencia.Visible = false;
+            cboAsistencia.Visible = false;
+            lblJustificado.Visible = false;
+            cboJustificado.Visible = false;
+
+            btnguardar.Visible = false;
+            btncancelar.Visible = false;
+            dgv_Alumnos.ClearSelection();
+            cbTurno.Focus();
+            cbTurno.Refresh();
+            cbSala.Refresh();
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            Inicializar();
         }
     }
 }
