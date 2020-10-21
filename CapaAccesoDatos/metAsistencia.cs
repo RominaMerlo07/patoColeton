@@ -27,47 +27,57 @@ namespace GestionJardin
             con.Open();
 
 
-            string consulta = " SELECT PER_ID, " +
-                                      "(PER_NOMBRE + ' ' + PER_APELLIDO) ALUMNO, " +
-                                      "PER_DOCUMENTO DOCUMENTO, " +
-                                      "SAL_NOMBRE SALA, " +
-                                      "CASE SAL_TURNO " +
+            string consulta = "SELECT PER_ID, " +
+                                     "'' AS_ID, " +
+                                    "(PER_NOMBRE + ' ' + PER_APELLIDO) ALUMNO, " +
+                                    "PER_DOCUMENTO DOCUMENTO, " +
+                                    "SAL_NOMBRE SALA, " +
+                                    "CASE SAL_TURNO " +
                                         "WHEN 'MANANA' THEN 'MAÑANA' " +
                                         "ELSE 'TARDE' " +
-                                      "END TURNO, " +
-                                      "CONVERT(VARCHAR(10), '" + fecha + "', 103) FECHA, " +
-                                      "'' ASISTENCIA, " +
-                                      "'' JUSTIFICADO " +
-                                      "FROM T_PERSONAS , T_SALA , T_GRUPO_SALA " +
-                                      "WHERE PER_ID = GRS_PER_ID " +
-                                      "AND SAL_ID = GRS_SAL_ID " +
-                                      "AND PER_TPE_ID = 2 " +
-                                      "AND PER_ESTADO = 'S' " +
-                                      "AND SAL_ID = '" + sala + "' " +
-                                      "AND SAL_TURNO = '" + turno + "' " +
-                                      "AND PER_ID NOT IN(SELECT AS_ID_PERSONA FROM T_ASISTENCIA " +
-                                                         "WHERE AS_ID_PERSONA = PER_ID " +
-                                                           "AND AS_FECHA = CONVERT(VARCHAR(10), '"+fecha+"', 103))" +
-                                "UNION " +
-                               "SELECT PER_ID, " +
-                                      "(PER_NOMBRE + ' ' + PER_APELLIDO) ALUMNO, " +
-                                      "PER_DOCUMENTO DOCUMENTO, " +
-                                      "SAL_NOMBRE SALA, " +
-                                      "CASE SAL_TURNO " +
-                                         "WHEN 'MANANA' THEN 'MAÑANA' " +
-                                         "ELSE 'TARDE' " +
-                                      "END TURNO, " +
-                                      "AS_FECHA, " +
-                                      "AS_ASISTENCIA ASISTENCIA, " +
-                                      "AS_JUSTIFICADO JUSTIFICADO " +
-                                      "FROM T_PERSONAS , T_SALA , T_ASISTENCIA " +
-                                      "WHERE AS_ID_PERSONA = PER_ID " +
-                                      "AND AS_SAL_ID = SAL_ID " +
-                                      "AND PER_TPE_ID = 2 " +
-                                      "AND PER_ESTADO = 'S' " +
-                                      "AND SAL_ID = '" + sala + "' " +
-                                      "AND SAL_TURNO = '" +turno+"' " +
-                                      "AND AS_FECHA = CONVERT(VARCHAR(10), '" + fecha + "', 103);";
+                                    "END TURNO, " +
+                                    "CONVERT(VARCHAR(10), '" + fecha + "', 103) FECHA, " +
+                                    "'' ASISTENCIA, " +
+                                    "'' JUSTIFICADO " +
+                              "FROM T_PERSONAS , T_SALA , T_GRUPO_SALA " +
+                              "WHERE PER_ID = GRS_PER_ID " +
+                                "AND SAL_ID = GRS_SAL_ID " +
+                                "AND PER_TPE_ID = 2 " +
+                                "AND PER_ESTADO = 'S' " +
+                                "AND SAL_ID = '" + sala + "' " +
+                                "AND SAL_TURNO = '" + turno + "' " +
+                                "AND PER_ID NOT IN (SELECT AS_ID_PERSONA " +
+                                                     "FROM T_ASISTENCIA " +
+                                                    "WHERE AS_ID_PERSONA = PER_ID " +
+                                                      "AND AS_FECHA = CONVERT(VARCHAR(10), '" + fecha + "', 103)) " +
+                            "UNION " +
+                            "SELECT PER_ID, " +
+                                   "AS_ID AS_ID, " +
+                                  "(PER_NOMBRE + ' ' + PER_APELLIDO) ALUMNO, " +
+                                  "PER_DOCUMENTO DOCUMENTO, " +
+                                  "SAL_NOMBRE SALA, " +
+                                  "CASE SAL_TURNO " +
+                                    "WHEN 'MANANA' THEN 'MAÑANA' " +
+                                    "ELSE 'TARDE' " +
+                                  "END TURNO, " +
+                                  "AS_FECHA, " +
+                                  "CASE AS_ASISTENCIA " +
+                                    "WHEN '0' THEN 'P' " +
+                                    "WHEN '1' THEN 'A' " +
+                                  "END ASISTENCIA, " +
+                                  "CASE  AS_JUSTIFICADO " +
+                                    "WHEN '0' THEN 'SI' " +
+                                    "WHEN '1' THEN 'NO' " +
+                                    "ELSE '' " +
+                                  "END JUSTIFICADO " +
+                            "FROM T_PERSONAS, T_SALA, T_ASISTENCIA " +
+                           "WHERE AS_ID_PERSONA = PER_ID " +
+                             "AND AS_SAL_ID = SAL_ID " +
+                             "AND PER_TPE_ID = 2 " +
+                             "AND PER_ESTADO = 'S' " +
+                             "AND SAL_ID = '" + sala + "' " +
+                             "AND SAL_TURNO = '" + turno + "' " +
+                             "AND AS_FECHA = CONVERT(VARCHAR(10), '" + fecha + "', 103)";
 
             cmd = new SqlCommand(consulta, con);
             dta = new SqlDataAdapter(cmd);
@@ -78,6 +88,70 @@ namespace GestionJardin
 
             return dt;
 
+        }
+
+        public void AgregarAsistencia(entAsistencia asistencia)
+        {
+            con = generarConexion();
+            try
+            {
+
+                con.Open();
+                //el SqlCommand se usa para realizar consultas a la base
+                cmd = new SqlCommand("INSERT INTO T_ASISTENCIA " +
+                                                            "(AS_ID_PERSONA ," +
+                                                            " AS_FECHA, " +
+                                                            " AS_SAL_ID, " +
+                                                            " AS_ANO, " +
+                                                            " AS_ASISTENCIA, " +
+                                                            " AS_JUSTIFICADO, " +
+                                                            " AS_SEMESTRE ) " +
+                                                "VALUES " +
+                                                        "(" + asistencia.AS_PER_ID + ", " +
+                                                        " '" + asistencia.AS_FECHA + "'," +
+                                                        " " + asistencia.AS_SAL_ID + ", " +
+                                                        " " + asistencia.AS_ANO + ", " +
+                                                        "'" + asistencia.AS_ASISTENCIA + "', " +
+                                                        "'" + asistencia.AS_JUSTIFICADO + "', " +
+                                                        " " + asistencia.AS_SEMESTRE + ")", con);
+                
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+                
+            }
+        }
+
+        public void EditarAsistencia(entAsistencia asistencia)
+        {
+            con = generarConexion();
+            try
+            {
+
+                con.Open();
+                
+                cmd = new SqlCommand("UPDATE T_ASISTENCIA SET " +
+                                                            //"(AS_ID_PERSONA ," +
+                                                            //" AS_FECHA, " +
+                                                            //" AS_SAL_ID, " +
+                                                            //" AS_ANO, " +
+                                                            "AS_ASISTENCIA = " + "'" + asistencia.AS_ASISTENCIA + "', " +
+                                                            " AS_JUSTIFICADO = " + "'" + asistencia.AS_JUSTIFICADO + "' " +
+                                                "WHERE AS_ID = "+ asistencia.AS_ID + ";", con);
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+
+
+            }
+            catch (Exception ex)
+            {
+
+            }
         }
 
     }
