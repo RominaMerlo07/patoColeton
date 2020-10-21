@@ -17,11 +17,12 @@ namespace GestionJardin
         string id_sala;
         string turno;
 
-        metAsistencia metAsistencia = new metAsistencia();
+        metAsistencia metAsistencia = new metAsistencia();       
+        
 
         public frmAsistencia()
         {
-            InitializeComponent();
+            InitializeComponent();       
         }
 
         private void frmAsistencia_Load(object sender, EventArgs e)
@@ -386,6 +387,10 @@ namespace GestionJardin
             cbTurno.Focus();
             cbTurno.SelectedIndex = -1;
             cbSala.SelectedIndex = -1;
+
+            calFecha.MaxSelectionCount = 1;
+            calFecha.MaxDate = DateTime.Today;
+
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
