@@ -42,7 +42,7 @@ namespace GestionJardin
             ChildForm.Show();
             btn_VolverGA.Visible = true;
             btn_VolverGA.BringToFront();
-            lbl_Ruta.Text = "Usted se encuentra en GESTION ALUMNOS / ESTUDIANTES / " + ChildForm.Text;
+            lbl_Ruta.Text = "Usted se encuentra en GESTION ALUMNOS / " + ChildForm.Text;
 
         }
 

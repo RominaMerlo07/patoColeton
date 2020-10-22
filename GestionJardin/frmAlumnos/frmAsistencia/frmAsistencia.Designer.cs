@@ -460,7 +460,7 @@
             this.Controls.Add(this.dgv_Alumnos);
             this.Controls.Add(this.metroPanel3);
             this.Name = "frmAsistencia";
-            this.Text = "GESTIONAR ASISTENCIAS";
+            this.Text = "ASISTENCIAS / GESTIONAR ASISTENCIAS";
             this.Load += new System.EventHandler(this.frmAsistencia_Load);
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();

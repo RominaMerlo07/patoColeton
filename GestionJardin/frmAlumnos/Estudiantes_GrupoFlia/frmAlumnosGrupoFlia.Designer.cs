@@ -266,7 +266,7 @@
             this.Controls.Add(this.btnGF_Editar);
             this.Controls.Add(this.btnGF_Agregar);
             this.Name = "frmAlumnosGrupoFlia";
-            this.Text = "GRUPO FAMILIAR";
+            this.Text = "ESTUDIANTES / GRUPO FAMILIAR";
             this.Load += new System.EventHandler(this.frmAlumnosGrupoFlia_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Filtrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Excel)).EndInit();

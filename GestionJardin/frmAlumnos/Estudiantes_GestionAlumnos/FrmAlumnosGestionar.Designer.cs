@@ -259,7 +259,7 @@
             this.Controls.Add(this.btnGA_Editar);
             this.Controls.Add(this.btnGA_Agregar);
             this.Name = "frmAlumnosGestionar";
-            this.Text = "GESTIONAR ALUMNOS";
+            this.Text = "ESTUDIANTES / GESTIONAR ALUMNOS";
             this.Load += new System.EventHandler(this.frmAlumnosGestionar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Filtrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnGA_Excel)).EndInit();

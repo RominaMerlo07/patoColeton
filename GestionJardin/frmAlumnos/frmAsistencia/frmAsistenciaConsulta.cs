@@ -20,22 +20,8 @@ namespace GestionJardin
 
         public frmAsistenciaConsulta()
         {                       
-            InitializeComponent();
-
-            var weekends = GetDaysBetween(DateTime.Today.AddMonths(-12), DateTime.Today.AddMonths(12))
-            .Where(d => d.DayOfWeek == DayOfWeek.Saturday || d.DayOfWeek == DayOfWeek.Sunday).ToArray();
-
-            calFecha.RemoveAllBoldedDates();
-            calFecha.BoldedDates = weekends;
-        }
-
-        IEnumerable<DateTime> GetDaysBetween(DateTime start, DateTime end)
-        {
-            for (DateTime i = start; i <= end; i = i.AddDays(1))
-            {
-                yield return i;
-            }
-        }
+            InitializeComponent();            
+        }        
 
         private void frmAsistenciaConsulta_Load(object sender, EventArgs e)
         {
@@ -114,7 +100,7 @@ namespace GestionJardin
                 lblTurno.Visible = true;
                 result = "Por favor seleccione un turno";
                 lblTurno.Text = result;
-                lblFecha.Visible = true;
+               
             }
             else if (string.IsNullOrWhiteSpace(cbSala.Text.Trim()) == true)
             {
@@ -123,7 +109,7 @@ namespace GestionJardin
                 lblSala.Visible = true;
                 result = "Por favor seleccione una sala";
                 lblSala.Text = result;
-                lblFecha.Visible = true;
+              
             }
             else
             {
@@ -139,27 +125,18 @@ namespace GestionJardin
             txtGAs_Buscar.Visible = false;
             dgv_Alumnos.Visible = false;
 
-            labelFechError.Visible = false;
+          
             lblTurno.Visible = false;
             lblSala.Visible = false;
-            lblFecha.Visible = false;
+           
             
             dgv_Alumnos.ClearSelection();
             cbTurno.Focus();
             cbTurno.SelectedIndex = -1;
-            cbSala.SelectedIndex = -1;
-
-            calFecha.MaxSelectionCount = 1;
-            calFecha.MaxDate = DateTime.Today;
-            calFecha.SetDate(DateTime.Today);
-            calFecha.FirstDayOfWeek = Day.Sunday;
+            cbSala.SelectedIndex = -1;           
 
         }
 
-        private void calFecha_DateSelected(object sender, DateRangeEventArgs e)
-        {
-
-        }
-
+      
     }
 }
