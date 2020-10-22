@@ -230,5 +230,78 @@ namespace GestionJardin
             return resultado;
         }
 
+
+        public DataTable GrillaAsistenciaConsultar(string sala, string fechaDesde, string fechaHasta)
+        {
+            con = generarConexion();
+            con.Open();
+
+
+            string consulta = "WITH T1 AS " +
+                                          "(SELECT COUNT(AS_ASISTENCIA) PRESENTES, " +
+                                                  "0 AUSENTES_JUSTIFICADOS, " +
+                                                  "0 AUSENTES_INJUSTIFICADOS, " +
+                                                  "PER_NOMBRE + ' ' + PER_APELLIDO ALUMNO, " +
+                                                  "PER_DOCUMENTO DOCUMENTO, " +
+                                                  "PER_ID " +
+                                            "FROM T_ASISTENCIA, T_PERSONAS " +
+                                           "WHERE AS_ID_PERSONA = PER_ID " +
+                                             "AND AS_FECHA >= CONVERT(VARCHAR(10), '"+ fechaDesde + "', 103) " +
+                                             "AND AS_FECHA <= CONVERT(VARCHAR(10), '" + fechaHasta + "', 103) " +
+                                             "AND AS_ASISTENCIA = 0 " +
+                                             "AND AS_SAL_ID = '" + sala + "'" +
+                                           "GROUP BY PER_NOMBRE + ' ' + PER_APELLIDO, PER_DOCUMENTO, PER_ID " +
+                                          "UNION " +
+                                          "SELECT 0, " +
+                                                 "COUNT(AS_ASISTENCIA), " +
+                                                 "0, " +
+                                                 "PER_NOMBRE + ' ' + PER_APELLIDO ALUMNO, " +
+                                                 "PER_DOCUMENTO DOCUMENTO, " +
+                                                 "PER_ID " +
+                                           "FROM T_ASISTENCIA, T_PERSONAS " +
+                                          "WHERE AS_ID_PERSONA = PER_ID " +
+                                            "AND AS_FECHA >= CONVERT(VARCHAR(10), '" + fechaDesde + "', 103) " +
+                                            "AND AS_FECHA <= CONVERT(VARCHAR(10), '" + fechaHasta + "', 103) " +
+                                            "AND AS_ASISTENCIA = 1 " +
+                                            "AND AS_JUSTIFICADO = 0 " +
+                                            "AND AS_SAL_ID = '" + sala + "' " +
+                                       "GROUP BY PER_NOMBRE + ' ' + PER_APELLIDO, PER_DOCUMENTO, PER_ID " +
+                                        "UNION " +
+                                        "SELECT  0, " +
+                                                "0, " +
+                                                "COUNT(AS_ASISTENCIA), " +
+                                                "PER_NOMBRE + ' ' + PER_APELLIDO ALUMNO, " +
+                                                "PER_DOCUMENTO DOCUMENTO, " +
+                                                "PER_ID " +
+                                          "FROM T_ASISTENCIA, T_PERSONAS " +
+                                         "WHERE AS_ID_PERSONA = PER_ID " +
+                                           "AND AS_FECHA >= CONVERT(VARCHAR(10), '" + fechaDesde + "', 103) " +
+                                           "AND AS_FECHA <= CONVERT(VARCHAR(10), '" + fechaHasta + "', 103) " +
+                                           "AND AS_ASISTENCIA = 1 " +
+                                           "AND AS_JUSTIFICADO = 1 " +
+                                           "AND AS_SAL_ID = '" + sala + "' " +
+                                         "GROUP BY PER_NOMBRE + ' ' + PER_APELLIDO, PER_DOCUMENTO, PER_ID) " +
+                                 "SELECT PER_ID, " +
+                                        "ALUMNO, " +
+                                        "DOCUMENTO, " +
+                                        "SUM(PRESENTES) 'TOTAL ASISTENCIAS', " +
+                                        "SUM(AUSENTES_JUSTIFICADOS + AUSENTES_INJUSTIFICADOS) 'TOTAL INASISTENCIAS', " +
+                                        "SUM(AUSENTES_JUSTIFICADOS) JUSTIFICADAS, " +
+                                        "SUM(AUSENTES_INJUSTIFICADOS) INJUSTIFICADAS " +
+                                   "FROM T1 " +
+                                  "GROUP BY ALUMNO, DOCUMENTO, PER_ID;";
+
+            cmd = new SqlCommand(consulta, con);
+            dta = new SqlDataAdapter(cmd);
+            dt = new DataTable();
+            dta.Fill(dt);
+
+            con.Close();
+
+            return dt;
+
+        }
+
+
     }
 }

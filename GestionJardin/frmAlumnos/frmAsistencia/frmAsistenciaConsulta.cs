@@ -12,16 +12,17 @@ namespace GestionJardin
 {
     public partial class frmAsistenciaConsulta : Form
     {
-        DateTime fechaCalendar;
+        DateTime fechaDesde;
+        DateTime fechaHasta;
         string id_sala;
-        string turno;
+        string id_persona;
 
         metAsistencia metAsistencia = new metAsistencia();
 
         public frmAsistenciaConsulta()
-        {                       
-            InitializeComponent();            
-        }        
+        {
+            InitializeComponent();
+        }
 
         private void frmAsistenciaConsulta_Load(object sender, EventArgs e)
         {
@@ -51,7 +52,7 @@ namespace GestionJardin
 
         private void cbSala_SelectedValueChanged(object sender, EventArgs e)
         {
-            id_sala = cbSala.SelectedValue.ToString();             
+            id_sala = cbSala.SelectedValue.ToString();
         }
 
         private void cbTurno_SelectedValueChanged(object sender, EventArgs e)
@@ -74,6 +75,7 @@ namespace GestionJardin
             }
         }
 
+
         private void cbSala_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(cbSala.Text.Trim()) == true)
@@ -89,9 +91,24 @@ namespace GestionJardin
             }
         }
 
+        private void dtp_FechaHasta_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(dtp_FechaHasta.Text.Trim()) == false)
+            {
+                if (dtp_FechaDesde.Value > dtp_FechaHasta.Value)
+                {
+                    dtp_FechaHasta.Value = DateTime.Today;
+                    dtp_FechaDesde.Value = DateTime.Today;
+                    dtp_FechaDesde.Focus();
+                    MessageBox.Show("La fecha 'DESDE' no puede ser mayor a la fecha 'HASTA'", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }           
+        }
+
+
         private string ValidaCampos()
         {
-            string result = "";
+            string result = "OK";
 
             if (string.IsNullOrWhiteSpace(cbTurno.Text.Trim()) == true)
             {
@@ -100,7 +117,7 @@ namespace GestionJardin
                 lblTurno.Visible = true;
                 result = "Por favor seleccione un turno";
                 lblTurno.Text = result;
-               
+
             }
             else if (string.IsNullOrWhiteSpace(cbSala.Text.Trim()) == true)
             {
@@ -109,7 +126,19 @@ namespace GestionJardin
                 lblSala.Visible = true;
                 result = "Por favor seleccione una sala";
                 lblSala.Text = result;
-              
+
+            }
+            else if (string.IsNullOrWhiteSpace(dtp_FechaHasta.Text.Trim()) == false)
+            {
+                if (dtp_FechaDesde.Value > dtp_FechaHasta.Value)
+                {
+                    result = "La fecha desde no puede ser mayor a la fecha hasta";
+                    MessageBox.Show(result, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    dtp_FechaDesde.Focus();
+                    dtp_FechaDesde.Value = DateTime.Today;
+                    dtp_FechaHasta.Value = DateTime.Today;
+                }
+
             }
             else
             {
@@ -125,18 +154,69 @@ namespace GestionJardin
             txtGAs_Buscar.Visible = false;
             dgv_Alumnos.Visible = false;
 
-          
             lblTurno.Visible = false;
             lblSala.Visible = false;
-           
-            
+
             dgv_Alumnos.ClearSelection();
             cbTurno.Focus();
             cbTurno.SelectedIndex = -1;
-            cbSala.SelectedIndex = -1;           
+            cbSala.SelectedIndex = -1;
+
+            dtp_FechaDesde.Value = DateTime.Today;
+            dtp_FechaDesde.MaxDate = DateTime.Today;
+            dtp_FechaHasta.Value = DateTime.Today;
+            dtp_FechaHasta.MaxDate = DateTime.Today;
 
         }
 
-      
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string validacion = ValidaCampos();
+            if(validacion == "OK")
+            {
+                fechaDesde = dtp_FechaDesde.Value;
+                fechaHasta = dtp_FechaHasta.Value;
+                txtGAs_Buscar.Visible = true;
+                dgv_Alumnos.Visible = true;
+                dgv_Alumnos.ClearSelection();
+
+                dgv_Alumnos.DataSource = metAsistencia.GrillaAsistenciaConsultar(id_sala, fechaDesde.ToShortDateString(), fechaHasta.ToShortDateString());
+                dgv_Alumnos.Columns["PER_ID"].Visible = false;
+                dgv_Alumnos.Columns["ALUMNO"].Frozen = true;
+                dgv_Alumnos.Columns["DOCUMENTO"].Frozen = true;
+            }
+            else
+            {
+                MessageBox.Show("Por favor verifique los datos ingresados", "Informacion", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void carga_grilla_filtrada()
+        {
+            DataTable col = new DataTable();
+            metPersonas metPersonas = new metPersonas();
+            col = metAsistencia.GrillaAsistenciaConsultar(id_sala, fechaDesde.ToShortDateString(), fechaHasta.ToShortDateString());
+            dgv_Alumnos.DataSource = col;
+            string apellido_nombre = metPersonas.extraerapellido_nombre_alumno(txtGAs_Buscar);
+            col.DefaultView.RowFilter = String.Format($"ALUMNO LIKE '{apellido_nombre}%'");
+        }
+
+        private void txtGAs_Buscar_TextChanged(object sender, EventArgs e)
+        {
+            if (txtGAs_Buscar.Text.Length > 0)
+            {
+                carga_grilla_filtrada();
+                dgv_Alumnos.Columns["ALUMNO"].Frozen = true;
+                dgv_Alumnos.Columns["DOCUMENTO"].Frozen = true;
+            }
+            else
+            {
+
+                txtGAs_Buscar.Clear();
+                dgv_Alumnos.DataSource = metAsistencia.GrillaAsistenciaConsultar(id_sala, fechaDesde.ToShortDateString(), fechaHasta.ToShortDateString());
+                dgv_Alumnos.Columns["ALUMNO"].Frozen = true;
+                dgv_Alumnos.Columns["DOCUMENTO"].Frozen = true;
+            }
+        }
     }
 }

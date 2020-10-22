@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.dtp_FechaHasta = new MetroFramework.Controls.MetroDateTime();
+            this.dtp_FechaDesde = new MetroFramework.Controls.MetroDateTime();
             this.btnBuscar = new FontAwesome.Sharp.IconButton();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lblSala = new System.Windows.Forms.Label();
             this.lblTurno = new System.Windows.Forms.Label();
             this.cbTurno = new MetroFramework.Controls.MetroComboBox();
@@ -56,10 +56,10 @@
             this.metroPanel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.metroPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel3.Controls.Add(this.dtp_FechaHasta);
+            this.metroPanel3.Controls.Add(this.dtp_FechaDesde);
             this.metroPanel3.Controls.Add(this.btnBuscar);
-            this.metroPanel3.Controls.Add(this.dateTimePicker2);
             this.metroPanel3.Controls.Add(this.metroLabel5);
-            this.metroPanel3.Controls.Add(this.dateTimePicker1);
             this.metroPanel3.Controls.Add(this.lblSala);
             this.metroPanel3.Controls.Add(this.lblTurno);
             this.metroPanel3.Controls.Add(this.cbTurno);
@@ -81,6 +81,25 @@
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
             // 
+            // dtp_FechaHasta
+            // 
+            this.dtp_FechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_FechaHasta.Location = new System.Drawing.Point(237, 424);
+            this.dtp_FechaHasta.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dtp_FechaHasta.Name = "dtp_FechaHasta";
+            this.dtp_FechaHasta.Size = new System.Drawing.Size(185, 30);
+            this.dtp_FechaHasta.TabIndex = 4;
+            this.dtp_FechaHasta.Leave += new System.EventHandler(this.dtp_FechaHasta_Leave);
+            // 
+            // dtp_FechaDesde
+            // 
+            this.dtp_FechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_FechaDesde.Location = new System.Drawing.Point(237, 323);
+            this.dtp_FechaDesde.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dtp_FechaDesde.Name = "dtp_FechaDesde";
+            this.dtp_FechaDesde.Size = new System.Drawing.Size(185, 30);
+            this.dtp_FechaDesde.TabIndex = 3;
+            // 
             // btnBuscar
             // 
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -94,19 +113,12 @@
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Rotation = 0D;
             this.btnBuscar.Size = new System.Drawing.Size(249, 85);
-            this.btnBuscar.TabIndex = 38;
+            this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "BUSCAR";
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(237, 424);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(185, 27);
-            this.dateTimePicker2.TabIndex = 37;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // metroLabel5
             // 
@@ -120,14 +132,6 @@
             this.metroLabel5.Text = "FECHA HASTA:";
             this.metroLabel5.UseCustomBackColor = true;
             this.metroLabel5.UseCustomForeColor = true;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(237, 332);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(185, 27);
-            this.dateTimePicker1.TabIndex = 35;
             // 
             // lblSala
             // 
@@ -262,7 +266,7 @@
             this.txtGAs_Buscar.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtGAs_Buscar.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtGAs_Buscar.Lines = new string[0];
-            this.txtGAs_Buscar.Location = new System.Drawing.Point(660, 285);
+            this.txtGAs_Buscar.Location = new System.Drawing.Point(545, 285);
             this.txtGAs_Buscar.MaxLength = 32767;
             this.txtGAs_Buscar.Name = "txtGAs_Buscar";
             this.txtGAs_Buscar.PasswordChar = '\0';
@@ -278,46 +282,47 @@
             this.txtGAs_Buscar.WaterMark = "BUSCAR ALUMNO";
             this.txtGAs_Buscar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtGAs_Buscar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGAs_Buscar.TextChanged += new System.EventHandler(this.txtGAs_Buscar_TextChanged);
             // 
             // dgv_Alumnos
             // 
             this.dgv_Alumnos.AllowUserToAddRows = false;
             this.dgv_Alumnos.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgv_Alumnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgv_Alumnos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Alumnos.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.dgv_Alumnos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_Alumnos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Alumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Alumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Alumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Alumnos.DefaultCellStyle = dataGridViewCellStyle23;
-            this.dgv_Alumnos.Location = new System.Drawing.Point(660, 382);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Alumnos.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgv_Alumnos.Location = new System.Drawing.Point(545, 382);
             this.dgv_Alumnos.Name = "dgv_Alumnos";
             this.dgv_Alumnos.ReadOnly = true;
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle24.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle24.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Alumnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Alumnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_Alumnos.RowTemplate.Height = 24;
-            this.dgv_Alumnos.Size = new System.Drawing.Size(1116, 578);
+            this.dgv_Alumnos.Size = new System.Drawing.Size(1231, 578);
             this.dgv_Alumnos.TabIndex = 28;
             // 
             // frmAsistenciaConsulta
@@ -352,9 +357,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroTextBox txtGAs_Buscar;
         private System.Windows.Forms.DataGridView dgv_Alumnos;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private MetroFramework.Controls.MetroLabel metroLabel5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private FontAwesome.Sharp.IconButton btnBuscar;
+        private MetroFramework.Controls.MetroDateTime dtp_FechaHasta;
+        private MetroFramework.Controls.MetroDateTime dtp_FechaDesde;
     }
 }
