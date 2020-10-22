@@ -43,6 +43,7 @@ namespace GestionJardin
             col = metPersonas.TraerAlumnos();
             dgvAlumnos.DataSource = col;
             string apellido_nombre = metPersonas.extraerapellido_nombre_alumno(txtGA_Buscar);
+
             col.DefaultView.RowFilter = String.Format($"ALUMNO LIKE '{apellido_nombre}%'");
 
         }

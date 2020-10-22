@@ -150,6 +150,7 @@ namespace GestionJardin
                     if (turno == "" && id_sala == "")
                     {
                         MessageBox.Show("Se ha ingresado el registro con éxito.", "Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        this.Close();
                     }
                     else if (objMetSalas.ValidarDocSala(id_sala, turno) == 0)
                     {

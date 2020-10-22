@@ -245,13 +245,40 @@ namespace GestionJardin
             Nombre = Nombre.ToLower();
 
             string Apellido = ExtraerApellido(pbarrabuscar);
+
             Apellido = Apellido.ToLower(); //lo convierto en minúscula
             string letra_nombre = Nombre.Substring(0, 1); //saco la letra del nomnbre
             string nombre_usuario = string.Concat(letra_nombre, Apellido);//concateno, pero me queda un espacio
             nombre_usuario = nombre_usuario.Replace(" ", string.Empty);//saco el espacio de la concatenación Y LISTO!! =)
 
-            newuser.Text = nombre_usuario;
+            con = generarConexion();
+            con.Open();
 
+            string consulta = "Select count (USU_USUARIO) as 'CANTIDAD' from T_USUARIOS where USU_USUARIO LIKE '%" + nombre_usuario + "%';";
+            SqlCommand com = new SqlCommand(consulta, con);
+            dr = com.ExecuteReader();
+
+            while (dr.Read())
+            {
+                int contador = Convert.ToInt32(dr["CANTIDAD"]);
+
+                int acumulador = contador;
+                if (contador == 0)
+
+                {
+
+                    newuser.Text = nombre_usuario;
+
+                }
+                else
+                {
+                    newuser.Text = nombre_usuario + acumulador;
+                }
+            }
+
+            dr.Close();
+            con.Close();
+            
             return nombre_usuario;
 
         }

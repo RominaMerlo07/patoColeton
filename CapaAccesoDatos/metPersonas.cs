@@ -60,6 +60,35 @@ namespace GestionJardin
 
         }
 
+
+        public string Autocompletar_Alumno(MetroFramework.Controls.MetroTextBox pbarrabuscar)
+        {
+            con = generarConexion();
+            con.Open();
+
+            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            pbarrabuscar.CharacterCasing = CharacterCasing.Upper;
+
+            pbarrabuscar.Text = pbarrabuscar.Text.ToUpper();
+            string consulta = "SELECT CONCAT(PER_APELLIDO,', ', PER_NOMBRE,' ', '(',PER_DOCUMENTO, ')') ALUMNO FROM T_PERSONAS WHERE PER_TPE_ID = 2 AND PER_ESTADO='S' ORDER BY 1;";
+            //se suma per_estado como activo pero falta sumar DNI, ver con Alvaro !!! *************************
+
+
+            cmd = new SqlCommand(consulta, con);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                pbarrabuscar.AutoCompleteCustomSource.Add(dr["ALUMNO"].ToString());
+            }
+            dr.Close();
+
+            con.Close();
+
+            return consulta;
+
+
+        }
+
         public DataTable TraerAlumnos()
         //public entPersona BuscaAlumnos(string nombre, string apellido, string documento)
         {
@@ -87,7 +116,7 @@ namespace GestionJardin
                                         "AND S.SAL_ID = GS.GRS_SAL_ID " +
                                         "AND P.PER_TPE_ID = 2 " +
                                         "AND P.PER_ESTADO = 'S' " + //ver con GASTON como esta definido, por en mi base tengo 'S'  (Romi)
-                                        ";";
+                                        "ORDER BY 'ALUMNO' ASC;";
 
                 cmd = new SqlCommand(consulta, con);
                 dta = new SqlDataAdapter(cmd);
@@ -96,17 +125,16 @@ namespace GestionJardin
                 con.Close();
 
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 //result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error: " + ex.ToString());
-
-
+                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error: " + ex.ToString());                
             }
 
             return dt;
 
         }
+
 
         public entPersona BuscaPersonaxID(string idPersona)
         {
@@ -415,6 +443,27 @@ namespace GestionJardin
             {
                 return false;
             }
+
+        }
+
+
+        public string extraerapellido_nombre_alumno(MetroFramework.Controls.MetroTextBox pbarrabuscar)
+        {
+            {
+                string alumno = pbarrabuscar.Text;
+                char delimitador = (',');
+                string[] apellido_nombre = alumno.Split(delimitador);
+                return apellido_nombre[0];
+            }
+        }
+
+        public string extraer_dni_alumno(MetroFramework.Controls.MetroTextBox pbarrabuscar)
+        {
+            string alumno = pbarrabuscar.Text;
+
+            string[] dni_alumno = alumno.Split('(', ')');
+
+            return dni_alumno[0];
 
         }
 
@@ -778,17 +827,7 @@ namespace GestionJardin
             string[] dni_docente = docente.Split('(', ')');
 
             return dni_docente[0];
-        }
-
-        public string extraerapellido_nombre_alumno(MetroFramework.Controls.MetroTextBox pbarrabuscar)
-        {
-            {
-                string alumno = pbarrabuscar.Text;
-                char delimitador = (',');
-                string[] apellido_nombre = alumno.Split(delimitador);
-                return apellido_nombre[0];
-            }            
-        }
+        }               
 
         public string EliminarDocenteDomicilio(entPersona eli_Docente)//metodo que elimina docente en domicilio cuando ya existe un docente con sala y turno en la t_grupo_sala
         {
