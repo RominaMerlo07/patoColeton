@@ -22,7 +22,22 @@ namespace GestionJardin
 
         public frmAsistencia()
         {
-            InitializeComponent();       
+            InitializeComponent();
+
+            var weekends = GetDaysBetween(DateTime.Today.AddMonths(-12), DateTime.Today.AddMonths(12))
+            .Where(d => d.DayOfWeek == DayOfWeek.Saturday || d.DayOfWeek == DayOfWeek.Sunday).ToArray();
+
+            calFecha.RemoveAllBoldedDates();
+            calFecha.BoldedDates = weekends;
+
+        }
+
+        IEnumerable<DateTime> GetDaysBetween(DateTime start, DateTime end)
+        {
+            for (DateTime i = start; i <= end; i = i.AddDays(1))
+            {
+                yield return i;
+            }
         }
 
         private void frmAsistencia_Load(object sender, EventArgs e)
@@ -104,6 +119,7 @@ namespace GestionJardin
                 lblTurno.Visible = true;
                 result = "Por favor seleccione un turno";
                 lblTurno.Text = result;
+                lblFecha.Visible = true;
             }
             else if (string.IsNullOrWhiteSpace(cbSala.Text.Trim()) == true)
             {
@@ -112,6 +128,7 @@ namespace GestionJardin
                 lblSala.Visible = true;
                 result = "Por favor seleccione una sala";
                 lblSala.Text = result;
+                lblFecha.Visible = true;
             }
             else
             {
@@ -123,50 +140,71 @@ namespace GestionJardin
 
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
-            string validacion = ValidaCampos();
+            string validacion = ValidaCampos();         
 
             fechaCalendar = calFecha.SelectionStart.Date;
-            fechaCalendar.ToShortDateString();
-            lblFecha.Text = fechaCalendar.ToString();
-            lblFecha.Visible = true;
 
-            if (lblFecha.Text.Length > 0)
+            if (fechaCalendar.DayOfWeek == DayOfWeek.Saturday || fechaCalendar.DayOfWeek == DayOfWeek.Sunday)
             {
-                if (validacion == "OK")
+               MessageBox.Show("Por favor seleccione un dia habil. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               lblFecha.Visible = false;
+            }
+            else
+            {
+
+                if (cbTurno.SelectedItem != null && cbSala.SelectedItem != null)
                 {
-                    dgv_Alumnos.Visible = true;
-                    txtGAs_Buscar.Visible = true;
-                    lblAsistencia.Visible = true;
-                    cboAsistencia.Visible = true;
-                    lblJustificado.Visible = true;
-                    cboJustificado.Visible = true;
-                    btnguardar.Visible = true;
-                    btncancelar.Visible = true;
-                    dgv_Alumnos.ClearSelection();
 
-                    labelFechError.Visible = false;
+                    fechaCalendar.ToShortDateString();
+                    lblFecha.Text = fechaCalendar.ToString();
 
-
-                    turno = cbTurno.SelectedItem.ToString();
-
-                    if (turno == "MAÑANA")
+                    if (lblFecha.Text.Length > 0)
                     {
-                        turno = "MANANA";
+                        if (validacion == "OK")
+                        {
+                            dgv_Alumnos.Visible = true;
+                            txtGAs_Buscar.Visible = true;
+                            lblAsistencia.Visible = true;
+                            cboAsistencia.Visible = true;
+                            lblJustificado.Visible = true;
+                            cboJustificado.Visible = true;
+                            btnguardar.Visible = true;
+                            btncancelar.Visible = true;
+                            dgv_Alumnos.ClearSelection();
+
+                            labelFechError.Visible = false;
+                            lblFecha.Visible = true;
+
+
+                            turno = cbTurno.SelectedItem.ToString();
+
+                            if (turno == "MAÑANA")
+                            {
+                                turno = "MANANA";
+                            }
+                            else
+                            {
+                                turno = "TARDE";
+                            }
+
+                            dgv_Alumnos.DataSource = metAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
+
+                            dgv_Alumnos.Columns["PER_ID"].Visible = false;
+                            dgv_Alumnos.Columns["AS_ID"].Visible = false;
+
+                            lblAusencias.Visible = true;
+                            lblAusencias.Text = metAsistencia.infoAusencias(id_sala, lblFecha.Text);
+
+                        }
+
                     }
-                    else
-                    {
-                        turno = "TARDE";
-                    }
-
-                    dgv_Alumnos.DataSource = metAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
-
-                    dgv_Alumnos.Columns["PER_ID"].Visible = false;
-                    dgv_Alumnos.Columns["AS_ID"].Visible = false;
-
-                    lblAusencias.Visible = true;
-                    lblAusencias.Text = metAsistencia.infoAusencias(id_sala, lblFecha.Text);
-
                 }
+                else
+                {
+                    lblFecha.Visible = false;
+                    MessageBox.Show("Por favor verifique los datos ingresados: ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                
             }
 
             //  MessageBox.Show("Por favor verifique los datos ingresados: ", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -390,6 +428,8 @@ namespace GestionJardin
 
             calFecha.MaxSelectionCount = 1;
             calFecha.MaxDate = DateTime.Today;
+            calFecha.SetDate(DateTime.Today);
+            calFecha.FirstDayOfWeek = Day.Sunday;         
 
         }
 
@@ -397,5 +437,7 @@ namespace GestionJardin
         {
             Inicializar();
         }
+
+      
     }
 }
