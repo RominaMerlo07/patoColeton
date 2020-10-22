@@ -151,6 +151,12 @@
     <Compile Include="frmAlumnos\frmAsistencia\frmAsistencia.Designer.cs">
       <DependentUpon>frmAsistencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAlumnos\frmAsistencia\frmAsistenciaConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\frmAsistencia\frmAsistenciaConsulta.Designer.cs">
+      <DependentUpon>frmAsistenciaConsulta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCobros.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -284,6 +290,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAlumnos\frmAsistencia\frmAsistencia.resx">
       <DependentUpon>frmAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\frmAsistencia\frmAsistenciaConsulta.resx">
+      <DependentUpon>frmAsistenciaConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCobros.resx">
       <DependentUpon>frmCobros.cs</DependentUpon>

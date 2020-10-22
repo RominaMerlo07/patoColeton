@@ -169,6 +169,7 @@
             this.btn_Asis_Consultar.Text = "CONSULTAR                  ";
             this.btn_Asis_Consultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Asis_Consultar.UseVisualStyleBackColor = false;
+            this.btn_Asis_Consultar.Click += new System.EventHandler(this.btn_Asis_Consultar_Click);
             this.btn_Asis_Consultar.MouseLeave += new System.EventHandler(this.btn_Asis_Consultar_MouseLeave);
             this.btn_Asis_Consultar.MouseHover += new System.EventHandler(this.btn_Asis_Consultar_MouseHover);
             // 
