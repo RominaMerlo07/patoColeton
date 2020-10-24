@@ -60,18 +60,24 @@ namespace GestionJardin
             panelBusqueda.Visible = true;
             txtBuscarConcepto.Visible = true;
             lblControlOtros.Visible = true;
+            //--
+            DataTable dt = objMet_Conceptos.autocompletarBuscar();
 
-
-            SqlDataReader dr2 = objMet_Conceptos.autocompletarBuscar();
-            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-            while (dr2.Read())
+            foreach (DataRow row in dt.Rows)
             {
-                autoComplete.Add(dr2.GetString(0));
+                txtBuscarConcepto.AutoCompleteCustomSource.Add(row[0].ToString());
             }
-            dr2.Close();
+            //--
+            //SqlDataReader dr2 = objMet_Conceptos.autocompletarBuscar();
+            //AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            //while (dr2.Read())
+            //{
+            //    autoComplete.Add(dr2.GetString(0));
+            //}
+            //dr2.Close();
 
-            txtBuscarConcepto.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtBuscarConcepto.AutoCompleteCustomSource = autoComplete;
+            //txtBuscarConcepto.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //txtBuscarConcepto.AutoCompleteCustomSource = autoComplete;
 
             cbo_Conceptos.Visible = false;
             txt_Otros.Visible = false;
@@ -728,16 +734,25 @@ namespace GestionJardin
                 limpiarCampos();
             }
 
-            SqlDataReader dr2 = objMet_Conceptos.autocompletarBuscar();
-            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-            while (dr2.Read())
-            {
-                autoComplete.Add(dr2.GetString(0));
-            }
-            dr2.Close();
+            //--
+            DataTable dt = objMet_Conceptos.autocompletarBuscar();
 
-            txtBuscarConcepto.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtBuscarConcepto.AutoCompleteCustomSource = autoComplete;
+            foreach (DataRow row in dt.Rows)
+            {
+                txtBuscarConcepto.AutoCompleteCustomSource.Add(row[0].ToString());
+            }
+            
+            //--
+            //DataTable dt = ObjetoUsu.AutocompletarAgregarDocente(/*frmUsuariosPopUpAgregar.txtSeleccionarDocente*/);
+
+
+            //foreach (DataRow row in dt.Rows)
+            //{
+            //    frmUsuariosPopUpAgregar.txtSeleccionarDocente.AutoCompleteCustomSource.Add(row[0].ToString()); //assuming required data is in first column
+            //}
+
+            //txtBuscarConcepto.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //txtBuscarConcepto.AutoCompleteCustomSource = autoComplete;
 
         }
 

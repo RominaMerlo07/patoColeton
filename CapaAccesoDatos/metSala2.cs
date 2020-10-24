@@ -111,8 +111,9 @@ namespace CaAD//GestionJardin
         }
 
 
-        public SqlDataReader BuscarSala()
+        public DataTable BuscarSala()
         {
+            DataTable dt = new DataTable();
             con = generarConexion();
             con.Open();
 
@@ -126,6 +127,7 @@ namespace CaAD//GestionJardin
 
             cmd = new SqlCommand(consulta, con);
             dr = cmd.ExecuteReader();
+            dt.Load(dr);
             //while (dr.Read())
             //{
             //    pbarrabuscar.AutoCompleteCustomSource.Add(dr["SALA"].ToString());
@@ -134,7 +136,7 @@ namespace CaAD//GestionJardin
 
             con.Close();
 
-            return dr;
+            return dt;
         }
 
         public string InsertarSala(entSala sala)

@@ -53,16 +53,23 @@ namespace GestionJardin
 
             AutoCompleteStringCollection alumnos = new AutoCompleteStringCollection();
             logPersonas logPersonas = new logPersonas();
-            SqlDataReader dr = logPersonas.traerPersonasAutocompetar("2");
-            while (dr.Read())
+            //--
+            DataTable dt = logPersonas.traerPersonasAutocompetar("2");
+
+            foreach (DataRow row in dt.Rows)
             {
-                alumnos.Add(dr.GetString(0));
-            };
+                txtMatriculados.AutoCompleteCustomSource.Add(row[0].ToString());
+            }
+            //SqlDataReader dr = logPersonas.traerPersonasAutocompetar("2");
+            //while (dr.Read())
+            //{
+            //    alumnos.Add(dr.GetString(0));
+            //};
 
-            txtMatriculados.AutoCompleteMode = AutoCompleteMode.Suggest;
-            txtMatriculados.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtMatriculados.AutoCompleteCustomSource = alumnos;
-
+            //txtMatriculados.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //txtMatriculados.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //txtMatriculados.AutoCompleteCustomSource = alumnos;
+            //--
 
             dgvMatriculados.Visible = false;
             btnBajaCuota.Visible = false;

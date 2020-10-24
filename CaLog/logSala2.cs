@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using CaAD;
 using CaEnt;
-using System.Data.SqlClient;
+
 
 namespace CaLog
 {
@@ -28,7 +28,7 @@ namespace CaLog
         }
 
 
-        public SqlDataReader BuscarSala()
+        public DataTable BuscarSala()
         {            
 
             return objMetSala2.BuscarSala();

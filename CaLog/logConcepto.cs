@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
 using System.Data;
 using CaAD;
 using CaEnt;
@@ -36,7 +36,7 @@ namespace CaLog
         /*
         PARA BUSCAR LOS CONCEPTOS POR NOMBRE
         */
-        public SqlDataReader autocompletarBuscar()
+        public DataTable autocompletarBuscar()
         {
 
             return objMetConcepto.autocompletarBuscar();

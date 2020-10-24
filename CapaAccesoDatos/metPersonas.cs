@@ -22,8 +22,9 @@ namespace CaAD//GestionJardin
         DataTable cardoc;
 
 
-        public SqlDataReader traerPersonasAutocompetar(string tipo_persona) //FILTRA POR TIPO DE PERSONA. "0" TRAE TODOS. 
+        public DataTable traerPersonasAutocompetar(string tipo_persona) //FILTRA POR TIPO DE PERSONA. "0" TRAE TODOS. 
         {
+            DataTable dt = new DataTable();
             string tipoPersona;
 
             if (tipo_persona == "0")
@@ -48,7 +49,7 @@ namespace CaAD//GestionJardin
             cmd = new SqlCommand(consulta, con);
 
             dr = cmd.ExecuteReader();
-
+            dt.Load(dr);
 
             //while (dr.Read())
             //{
@@ -57,7 +58,7 @@ namespace CaAD//GestionJardin
             //dr.Close();
 
             con.Close();
-            return dr;
+            return dt;
 
         }
 
@@ -573,7 +574,7 @@ namespace CaAD//GestionJardin
 
         //Llena el buscar de docentes
 
-        public SqlDataReader traerdocente()
+        public DataTable traerdocente()
         {
             con = generarConexion();
             con.Open();
@@ -586,15 +587,16 @@ namespace CaAD//GestionJardin
 
             cmd = new SqlCommand(consulta, con);
             dr = cmd.ExecuteReader();
+            dt.Load(dr);
             //while (dr.Read())
             //{
             //    pbarrabuscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());
             //}
-            dr.Close();
+            //dr.Close();
 
             con.Close();
 
-            return dr;
+            return dt;
 
 
         }

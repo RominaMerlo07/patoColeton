@@ -26,7 +26,7 @@ namespace GestionJardin
 
             dgvAlumnos.ClearSelection();           
             cargar_dgvAlumnos();
-        //    logPersonas.traerPersonasAutocompetar("1");
+
 
             btnGA_Eliminar.IconColor = Color.Gray;
             btnGA_Eliminar.ForeColor = Color.Gray;

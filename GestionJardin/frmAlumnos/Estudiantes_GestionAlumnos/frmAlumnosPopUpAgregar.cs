@@ -34,15 +34,26 @@ namespace GestionJardin
             
             AutoCompleteStringCollection alumnos = new AutoCompleteStringCollection();
             logPersonas logPersonas = new logPersonas();
-            SqlDataReader dr = logPersonas.traerPersonasAutocompetar("2");
-            while (dr.Read())
-            {
-                alumnos.Add(dr.GetString(0));
-            };
 
-            txtBuscaHmno.AutoCompleteMode = AutoCompleteMode.Suggest;
-            txtBuscaHmno.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtBuscaHmno.AutoCompleteCustomSource = alumnos;
+            //--
+            DataTable dt = logPersonas.traerPersonasAutocompetar("2");
+
+            foreach (DataRow row in dt.Rows)
+            {
+                txtBuscaHmno.AutoCompleteCustomSource.Add(row[0].ToString());
+            }
+
+            //SqlDataReader dr = logPersonas.traerPersonasAutocompetar("2");
+            //while (dr.Read())
+            //{
+            //    alumnos.Add(dr.GetString(0));
+            //};
+
+            //txtBuscaHmno.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //txtBuscaHmno.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //txtBuscaHmno.AutoCompleteCustomSource = alumnos;
+
+            //--
 
             lbl_panelSala.Visible = true;
             panelDatos.Visible = false;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using CaAD;
 using CaEnt;
-using System.Data.SqlClient;
+
 
 namespace CaLog
 {
@@ -15,7 +15,7 @@ namespace CaLog
 
         metPersonas objMetPersonas = new metPersonas();
 
-        public SqlDataReader traerPersonasAutocompetar(string tipo_persona) //FILTRA POR TIPO DE PERSONA. "0" TRAE TODOS. 
+        public DataTable traerPersonasAutocompetar(string tipo_persona) //FILTRA POR TIPO DE PERSONA. "0" TRAE TODOS. 
         {
             
             return objMetPersonas.traerPersonasAutocompetar(tipo_persona);
@@ -152,7 +152,7 @@ namespace CaLog
 
         //Llena el buscar de docentes
 
-        public SqlDataReader traerdocente()
+        public DataTable traerdocente()
         {
 
             return objMetPersonas.traerdocente();

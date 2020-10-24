@@ -30,16 +30,26 @@ namespace GestionJardin
 
             AutoCompleteStringCollection alumnos = new AutoCompleteStringCollection();
             logPersonas logPersonas = new logPersonas();
-            SqlDataReader dr = logPersonas.traerPersonasAutocompetar("2");
-            while (dr.Read())
+            //--
+            DataTable dt = logPersonas.traerPersonasAutocompetar("2");
+
+
+            foreach (DataRow row in dt.Rows)
             {
-                alumnos.Add(dr.GetString(0));
-            };
+                txtBuscaAlumno.AutoCompleteCustomSource.Add(row[0].ToString()); 
+            }
+            //SqlDataReader dr = logPersonas.traerPersonasAutocompetar("2");
+            //while (dr.Read())
+            //{
+            //    alumnos.Add(dr.GetString(0));
+            //};
 
 
-            txtBuscaAlumno.AutoCompleteMode = AutoCompleteMode.Suggest;
-            txtBuscaAlumno.AutoCompleteSource = AutoCompleteSource.CustomSource;
-            txtBuscaAlumno.AutoCompleteCustomSource = alumnos;
+            //txtBuscaAlumno.AutoCompleteMode = AutoCompleteMode.Suggest;
+            //txtBuscaAlumno.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //txtBuscaAlumno.AutoCompleteCustomSource = alumnos;
+
+            //--
         }
 
         private string validaCampos()

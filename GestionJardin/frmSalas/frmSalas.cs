@@ -29,13 +29,15 @@ namespace GestionJardin
             dgv_Salas.DataSource = metSala.GrillaSalas();
             dgv_Salas.Columns["SAL_ID"].Visible = false;
 
-            SqlDataReader dr = metSala.BuscarSala();
-            //AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-            while (dr.Read())
+            //--
+            DataTable dt = metSala.BuscarSala();
+            
+            foreach (DataRow row in dt.Rows)
             {
-                txtGS_Buscar.AutoCompleteCustomSource.Add(dr["SALA"].ToString());
+                txtGS_Buscar.AutoCompleteCustomSource.Add(row[0].ToString());
             }
-            dr.Close();
+            //-
+            
 
             btnGS_Editar.IconColor = Color.Gray;
             btnGS_Editar.ForeColor = Color.Gray;

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using CaAD;
 using CaEnt;
-using System.Data.SqlClient;
+//using System.Data.SqlClient;
 
 namespace CaLog
 {
@@ -41,7 +41,7 @@ namespace CaLog
         {
             objMetUsuario.EliminarUsuario(Usuario);
         }
-        public SqlDataReader AutocompletarAgregarDocente()
+        public DataTable AutocompletarAgregarDocente()
         {
             
             return objMetUsuario.AutocompletarAgregarDocente();
@@ -77,7 +77,7 @@ namespace CaLog
             return objMetUsuario.CrearUsuario(pbarrabuscar/*, newuser*/);
         }
 
-        public SqlDataReader AutocompletarenDocente(/*MetroFramework.Controls.MetroTextBox pbarrabuscar*/)
+        public DataTable AutocompletarenDocente(/*MetroFramework.Controls.MetroTextBox pbarrabuscar*/)
         {
             
             return objMetUsuario.AutocompletarenDocente(/*pbarrabuscar*/);

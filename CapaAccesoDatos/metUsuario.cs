@@ -178,8 +178,9 @@ namespace CaAD//GestionJardin
 
             }
         }
-        public SqlDataReader AutocompletarAgregarDocente()
+        public DataTable AutocompletarAgregarDocente()
         {
+            DataTable dt = new DataTable();
             con = generarConexion();
             con.Open();
             string consultadocente = "SELECT CONCAT  (PER_NOMBRE, ' ', PER_APELLIDO,  ' ' , '(' , PER_DOCUMENTO, ')' ) DOCENTE , PER_ID FROM T_PERSONAS " +
@@ -189,6 +190,7 @@ namespace CaAD//GestionJardin
 
             comando = new SqlCommand(consultadocente, con);
             dr = comando.ExecuteReader();
+            dt.Load(dr);
             //while (dr.Read())
             //{
             //    pbarrabuscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());
@@ -197,7 +199,7 @@ namespace CaAD//GestionJardin
             //}
             //dr.Close();
             con.Close();
-            return dr;
+            return dt;
         }
 
         public string ExtraerNombre(string pbarrabuscar)
@@ -286,8 +288,9 @@ namespace CaAD//GestionJardin
 
         }
 
-        public SqlDataReader AutocompletarenDocente(/*MetroFramework.Controls.MetroTextBox pbarrabuscar*/)
+        public DataTable AutocompletarenDocente(/*MetroFramework.Controls.MetroTextBox pbarrabuscar*/)
         {
+            DataTable dt = new DataTable();
             con = generarConexion();
             con.Open();
             //AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
@@ -302,6 +305,7 @@ namespace CaAD//GestionJardin
                               "AND p.PER_TPE_ID = 1 ";
             comando = new SqlCommand(consulta, con);
             dr = comando.ExecuteReader();
+            dt.Load(dr);
             //while (dr.Read())
             //{
             //    pbarrabuscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());
@@ -310,7 +314,7 @@ namespace CaAD//GestionJardin
 
             con.Close();
 
-            return dr;
+            return dt;
         }
 
         public DataTable llenarGrilla(string docente)

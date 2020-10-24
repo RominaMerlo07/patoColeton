@@ -123,9 +123,10 @@ namespace CaAD//GestionJardin
         /*
         PARA BUSCAR LOS CONCEPTOS POR NOMBRE
             */
-        public SqlDataReader autocompletarBuscar()
+        public DataTable autocompletarBuscar()
         {
             SqlDataReader dr2;
+            DataTable dt = new DataTable();
             //AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
 
             con = generarConexion();
@@ -144,7 +145,7 @@ namespace CaAD//GestionJardin
             cmd = new SqlCommand(consulta, con);
 
             dr2 = cmd.ExecuteReader();
-
+            dt.Load(dr);
 
             //while (dr2.Read())
             //{
@@ -154,7 +155,7 @@ namespace CaAD//GestionJardin
 
             //p_buscarCon.AutoCompleteSource = AutoCompleteSource.CustomSource;
             //p_buscarCon.AutoCompleteCustomSource = autoComplete;
-            return dr2;
+            return dt;
     
 
         }

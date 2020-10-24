@@ -28,12 +28,13 @@ namespace GestionJardin
             dgv_UsuariosActivos.ClearSelection();
             Settooltip();
             //--
-            SqlDataReader dr = ObjetoUsu.AutocompletarenDocente(/*txtGU_Buscar*/);
-            while (dr.Read())
+            DataTable dt = ObjetoUsu.AutocompletarenDocente(/*txtGU_Buscar*/);
+
+            foreach (DataRow row in dt.Rows)
             {
-                txtGU_Buscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());
+                txtGU_Buscar.AutoCompleteCustomSource.Add(row[0].ToString()); //assuming required data is in first column
             }
-            dr.Close();
+
             //--
             dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
             btnGU_Editar.IconColor = Color.Gray;
@@ -131,14 +132,14 @@ namespace GestionJardin
             AddOwnedForm(frmUsuariosPopUpAgregar);
 
             //--
-            SqlDataReader dr = ObjetoUsu.AutocompletarAgregarDocente(/*frmUsuariosPopUpAgregar.txtSeleccionarDocente*/);
-            while (dr.Read())
-            {
-                frmUsuariosPopUpAgregar.txtSeleccionarDocente.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());
+            DataTable dt = ObjetoUsu.AutocompletarAgregarDocente(/*frmUsuariosPopUpAgregar.txtSeleccionarDocente*/);
 
-                /*barrabuscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());*/
+
+            foreach (DataRow row in dt.Rows)
+            {
+                frmUsuariosPopUpAgregar.txtSeleccionarDocente.AutoCompleteCustomSource.Add(row[0].ToString()); 
             }
-            dr.Close();
+            
             //--
             frmUsuariosPopUpAgregar.ShowDialog();
 
