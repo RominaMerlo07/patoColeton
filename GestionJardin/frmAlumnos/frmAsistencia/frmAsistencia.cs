@@ -131,7 +131,7 @@ namespace GestionJardin
                 result = "Por favor seleccione una sala";
                 lblSala.Text = result;
                 lblFecha.Visible = true;
-            }
+            }          
             else
             {
                 result = "OK";
@@ -142,6 +142,11 @@ namespace GestionJardin
 
         private void monthCalendar1_DateSelected(object sender, DateRangeEventArgs e)
         {
+            lblAsistencia.ForeColor = Color.Gray;
+            lblJustificado.ForeColor = Color.Gray;
+
+            cboJustificado.Enabled = false;
+
             string validacion = ValidaCampos();         
 
             fechaCalendar = calFecha.SelectionStart.Date;
@@ -172,6 +177,7 @@ namespace GestionJardin
                             cboJustificado.Visible = true;
                             btnguardar.Visible = true;
                             btncancelar.Visible = true;
+                            lblInfo.Visible = true;
                             dgv_Alumnos.ClearSelection();
 
                             labelFechError.Visible = false;
@@ -419,6 +425,10 @@ namespace GestionJardin
             lblJustificado.Visible = false;
             cboJustificado.Visible = false;
             lblAusencias.Visible = false;
+            lblErrorJustificado.Visible = false;
+            lblInfo.Visible = false;
+
+            
 
             btnguardar.Visible = false;
             btncancelar.Visible = false;
@@ -430,7 +440,8 @@ namespace GestionJardin
             calFecha.MaxSelectionCount = 1;
             calFecha.MaxDate = DateTime.Today;
             calFecha.SetDate(DateTime.Today);
-            calFecha.FirstDayOfWeek = Day.Sunday;         
+            calFecha.FirstDayOfWeek = Day.Sunday;
+            cboAsistencia.Enabled = false;
 
         }
 
@@ -439,6 +450,32 @@ namespace GestionJardin
             Inicializar();
         }
 
-      
+        private void calFecha_Leave(object sender, EventArgs e)
+        {
+            if (lblFecha.Text.Length > 0)
+            { 
+                labelFechError.Visible = false;                
+            }
+            else
+            {
+                labelFechError.Visible = true;
+                labelFechError.Text = "Por favor selecciones una fecha";
+            }
+        }
+
+        private void dgv_Alumnos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgv_Alumnos.SelectedRows.Count > 0)
+            {
+                cboAsistencia.Enabled = true;
+                lblAsistencia.ForeColor = Color.Aqua;
+            }
+            else
+            {
+                cboAsistencia.Enabled = false;
+                lblAsistencia.ForeColor = Color.Gray;
+                dgv_Alumnos.ClearSelection();
+            }
+        }
     }
 }

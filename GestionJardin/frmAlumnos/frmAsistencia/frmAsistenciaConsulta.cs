@@ -184,6 +184,7 @@ namespace GestionJardin
 
                 dgv_Alumnos.DataSource = logAsistencia.GrillaAsistenciaConsultar(id_sala, fechaDesde.ToShortDateString(), fechaHasta.ToShortDateString());
                 dgv_Alumnos.Columns["PER_ID"].Visible = false;
+                dgv_Alumnos.Columns["PER_ID"].Frozen = true;
                 dgv_Alumnos.Columns["ALUMNO"].Frozen = true;
                 dgv_Alumnos.Columns["DOCUMENTO"].Frozen = true;
             }
@@ -208,6 +209,7 @@ namespace GestionJardin
             if (txtGAs_Buscar.Text.Length > 0)
             {
                 carga_grilla_filtrada();
+                dgv_Alumnos.Columns["PER_ID"].Frozen = true;
                 dgv_Alumnos.Columns["ALUMNO"].Frozen = true;
                 dgv_Alumnos.Columns["DOCUMENTO"].Frozen = true;
             }
