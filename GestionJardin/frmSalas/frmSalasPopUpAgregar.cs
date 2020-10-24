@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
 
 namespace GestionJardin
 {
     public partial class frmSalasPopUpAgregar : Form
     {
-        metSala2 metSala = new metSala2();
+        logSala2 metSala = new logSala2();
         entSala entSala = new entSala();
 
 

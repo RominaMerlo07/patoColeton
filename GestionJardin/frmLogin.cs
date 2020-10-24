@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
 
 namespace GestionJardin
 {
@@ -20,7 +22,7 @@ namespace GestionJardin
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            metUsuario ingresaUsuario = new metUsuario();
+            logUsuario ingresaUsuario = new logUsuario();
 
             bool ingreso = ingresaUsuario.ingresar(txtUsuario.Text, txtContrasena.Text);
 

@@ -7,12 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
 
 namespace GestionJardin
 {
     public partial class frmCobros : Form
     {
-        metCobros ObjMetCobro = new metCobros();
+        logCobros ObjMetCobro = new logCobros();
         public frmCobros()
         {
             InitializeComponent();
@@ -25,10 +27,10 @@ namespace GestionJardin
 
                 if (cboCuotas.SelectedIndex == 0)
                 {
-                    metCobros ObjMetCobros = new metCobros();
-                    ObjMetCobros.ExtraerImporte(cboCuotas);
+                    logCobros ObjlogCobros = new logCobros();
+                    ObjlogCobros.ExtraerImporte(cboCuotas.Text);
 
-                    string importecuotaextraida = ObjMetCobros.ExtraerImporte(cboCuotas);
+                    string importecuotaextraida = ObjlogCobros.ExtraerImporte(cboCuotas.Text);
 
                     txtImporte.Text = importecuotaextraida;
                     dtCobro.Value = DateTime.Today;
@@ -45,10 +47,10 @@ namespace GestionJardin
                 }
             } else
             {
-                metCobros ObjMetCobros = new metCobros();
-                ObjMetCobros.ExtraerImporte(cboCuotas);
+                logCobros ObjlogCobros = new logCobros();
+                ObjlogCobros.ExtraerImporte(cboCuotas.Text);
 
-                string importecuotaextraida = ObjMetCobros.ExtraerImporte(cboCuotas);
+                string importecuotaextraida = ObjlogCobros.ExtraerImporte(cboCuotas.Text);
 
                 txtImporte.Text = importecuotaextraida;
                 dtCobro.Value = DateTime.Today;
@@ -85,7 +87,14 @@ namespace GestionJardin
             txtBuscarDatos.Visible = true;
 
             btnEditar.Visible = false;
-            ObjMetCobro.AutocompletarenCobros(txtBuscarDatos);
+            //---
+            //ObjMetCobro.AutocompletarenCobros(txtBuscarDatos);
+            DataTable dt = ObjMetCobro.AutocompletarenCobros(/*txtBuscarDatos*/);
+            foreach (DataRow row in dt.Rows)
+            {
+                txtBuscarDatos.AutoCompleteCustomSource.Add(row["NOMBRE"].ToString());
+            }
+            //----
 
         }
 
@@ -104,16 +113,33 @@ namespace GestionJardin
             panlBtnAnular.Visible = false;
             txtBuscarCobroIngresar.Visible = true;
             txtBuscarDatos.Visible = false;
-
-            ObjMetCobro.AutocompletarenCobros(txtBuscarCobroIngresar);
-
+            //---
+            DataTable dt = ObjMetCobro.AutocompletarenCobros(/*txtBuscarCobroIngresar*/);
+            foreach (DataRow row in dt.Rows)
+            {
+                txtBuscarCobroIngresar.AutoCompleteCustomSource.Add(row["NOMBRE"].ToString());
+            }
+            //----
         }
    
         private void btnGuardar_Click_1(object sender, EventArgs e)
         {
-            metCobros ObjMetCobros = new metCobros();
-            ObjMetCobros.ModificarEstadoCuota(cboCuotas, txtLegajo, txtBuscarCobroIngresar);
-            string resultado = ObjMetCobros.InsertarenTCobros(cboCuotas, txtLegajo);
+            //--
+            logCobros ObjlogCobros = new logCobros();
+
+            string fechaEncontrada = ObjlogCobros.ExtraerFechaVenc(cboCuotas.Text);
+            string DniEncontrado = ObjlogCobros.ExtraerDni(txtBuscarCobroIngresar.Text);
+
+            DataTable dt = ObjlogCobros.ModificarEstadoCuota(fechaEncontrada, txtLegajo.Text, DniEncontrado);
+
+            cboCuotas.DataSource = dt;
+            cboCuotas.DisplayMember = "INFO_CUOTA";
+            cboCuotas.SelectedItem = null;
+            //--
+
+            string fechaEncontrada2 = ObjlogCobros.ExtraerFechaVenc(cboCuotas.Text);
+            string cuoID = ObjlogCobros.ExtraercoutaId(fechaEncontrada2, txtLegajo.Text);
+            string resultado = ObjlogCobros.InsertarenTCobros(cuoID);
 
         }
 
@@ -139,39 +165,83 @@ namespace GestionJardin
         {
             int idCobro = Convert.ToInt32(cboCuotas.SelectedValue.ToString());
 
-            metCobros ObjMetCobros = new metCobros();
-            string resultado = ObjMetCobros.AnularCobro(idCobro);
+            logCobros ObjlogCobros = new logCobros();
+            string resultado = ObjlogCobros.AnularCobro(idCobro);
 
             if (resultado == "OK") { 
 
                 MessageBox.Show("La Cuota ha sido anulada con éxito.", "Cuota anulada", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                ObjMetCobros.ExtraerDni(txtBuscarDatos);
+                ObjlogCobros.ExtraerDni(txtBuscarDatos.Text);
+                //----
+                DataTable dt = ObjlogCobros.InsetarDatosCobrosenformBuscar(txtBuscarDatos.Text/*, txtNombreyApellido, txtDocumento, txtLegajo, cboCuotas, txtImporte, cboMediodepago*/);
 
-                ObjMetCobros.InsetarDatosCobrosenformBuscar(txtBuscarDatos, txtNombreyApellido, txtDocumento, txtLegajo, cboCuotas, txtImporte, cboMediodepago);
-                ObjMetCobros.ExtraerImporte(cboCuotas);
+                cboCuotas.DataSource = dt;
+                cboCuotas.DisplayMember = "INFO_CUOTA";
+                cboCuotas.ValueMember = "COB_ID";
+                cboCuotas.SelectedItem = null;
+
+                foreach (DataRow row in dt.Rows)
+                {
+                    txtBuscarCobroIngresar.AutoCompleteCustomSource.Add(row["NOMBRE"].ToString());
+                    txtNombreyApellido.Text = row["NOMBRE_APELLIDO"].ToString();
+                    txtDocumento.Text = row["PER_DOCUMENTO"].ToString();
+                    txtLegajo.Text = row["PER_LEGAJO"].ToString();
+                }
+                //---
+                ObjlogCobros.ExtraerImporte(cboCuotas.Text);
 
             }
         }
 
         private void txtBuscarCobroIngresar_ButtonClick(object sender, EventArgs e)
         {
-            metCobros ObjMetCobros = new metCobros();
-            ObjMetCobros.ExtraerDni(txtBuscarCobroIngresar);
+            logCobros ObjlogCobros = new logCobros();
+            ObjlogCobros.ExtraerDni(txtBuscarCobroIngresar.Text);
 
+            //---
+            DataTable dt = ObjlogCobros.InsertarDatosCobrosenformAgregar(txtBuscarCobroIngresar.Text/*, txtNombreyApellido, txtDocumento, txtLegajo, cboCuotas,*/ /*txtImporte, cboMediodepago*/);
 
-            ObjMetCobros.InsertarDatosCobrosenformAgregar(txtBuscarCobroIngresar, txtNombreyApellido, txtDocumento, txtLegajo, cboCuotas, txtImporte, cboMediodepago);
-            ObjMetCobros.ExtraerImporte(cboCuotas);
+            cboCuotas.DataSource = dt;
+            cboCuotas.DisplayMember = "INFO_CUOTA";
+            cboCuotas.SelectedItem = null;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                txtNombreyApellido.Text = row["NOMBRE_APELLIDO"].ToString();
+                txtDocumento.Text = row["PER_DOCUMENTO"].ToString();
+                txtLegajo.Text = row["PER_LEGAJO"].ToString();
+            }
+            //---
+            ObjlogCobros.ExtraerImporte(cboCuotas.Text);
         }
 
         private void txtBuscarDatos_ButtonClick(object sender, EventArgs e)
         {
-            metCobros ObjMetCobros = new metCobros();
+            logCobros ObjlogCobros = new logCobros();
             //if txtBuscarCobro is null no entra
-            ObjMetCobros.ExtraerDni(txtBuscarDatos);
+            ObjlogCobros.ExtraerDni(txtBuscarDatos.Text);
 
-            ObjMetCobros.InsetarDatosCobrosenformBuscar(txtBuscarDatos, txtNombreyApellido, txtDocumento, txtLegajo, cboCuotas, txtImporte, cboMediodepago);
-            ObjMetCobros.ExtraerImporte(cboCuotas);
+            //ObjlogCobros.InsetarDatosCobrosenformBuscar(txtBuscarDatos, txtNombreyApellido, txtDocumento, txtLegajo, cboCuotas, txtImporte, cboMediodepago);
+            //----
+            DataTable dt = ObjlogCobros.InsetarDatosCobrosenformBuscar(txtBuscarDatos.Text/*, txtNombreyApellido, txtDocumento, txtLegajo, cboCuotas, txtImporte, cboMediodepago*/);
+
+            cboCuotas.DataSource = dt;
+            cboCuotas.DisplayMember = "INFO_CUOTA";
+            cboCuotas.ValueMember = "COB_ID";
+            cboCuotas.SelectedItem = null;
+
+            foreach (DataRow row in dt.Rows)
+            {
+                txtBuscarCobroIngresar.AutoCompleteCustomSource.Add(row["NOMBRE"].ToString());
+                txtNombreyApellido.Text = row["NOMBRE_APELLIDO"].ToString();
+                txtDocumento.Text = row["PER_DOCUMENTO"].ToString();
+                txtLegajo.Text = row["PER_LEGAJO"].ToString();
+            }
+            //---
+
+
+            ObjlogCobros.ExtraerImporte(cboCuotas.Text);
             btnEditar.Visible = true;
         }
     }

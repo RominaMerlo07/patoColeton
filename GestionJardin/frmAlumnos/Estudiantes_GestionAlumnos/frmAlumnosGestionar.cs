@@ -7,13 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
 
 
 namespace GestionJardin
 {
     public partial class frmAlumnosGestionar : Form
     {
-        metPersonas metPersonas = new metPersonas();
+        logPersonas logPersonas = new logPersonas();
         public frmAlumnosGestionar()
         {
             InitializeComponent();
@@ -24,7 +26,7 @@ namespace GestionJardin
 
             dgvAlumnos.ClearSelection();           
             cargar_dgvAlumnos();
-        //    metPersonas.traerPersonasAutocompetar("1");
+        //    logPersonas.traerPersonasAutocompetar("1");
 
             btnGA_Eliminar.IconColor = Color.Gray;
             btnGA_Eliminar.ForeColor = Color.Gray;
@@ -39,10 +41,10 @@ namespace GestionJardin
         private void carga_grilla_filtrada()
         {
             DataTable col = new DataTable();
-            metPersonas metPersonas = new metPersonas();
-            col = metPersonas.TraerAlumnos();
+            logPersonas logPersonas = new logPersonas();
+            col = logPersonas.TraerAlumnos();
             dgvAlumnos.DataSource = col;
-            string apellido_nombre = metPersonas.extraerapellido_nombre_alumno(txtGA_Buscar);
+            string apellido_nombre = logPersonas.extraerapellido_nombre_alumno(txtGA_Buscar.Text);
 
             col.DefaultView.RowFilter = String.Format($"ALUMNO LIKE '{apellido_nombre}%'");
 
@@ -121,8 +123,8 @@ namespace GestionJardin
         private void btnGA_Pdf_Click(object sender, EventArgs e)
         {
             DataTable col = new DataTable();
-            metPersonas metPersonas = new metPersonas();
-            col = metPersonas.TraerAlumnos();
+            logPersonas logPersonas = new logPersonas();
+            col = logPersonas.TraerAlumnos();
             dgvAlumnos.DataSource = col;
             dgvAlumnos.Columns["PER_ID"].Visible = false;
         }
@@ -131,8 +133,8 @@ namespace GestionJardin
         private void cargar_dgvAlumnos()
         {
             DataTable col = new DataTable();
-            metPersonas metPersonas = new metPersonas();
-            col = metPersonas.TraerAlumnos();
+            logPersonas logPersonas = new logPersonas();
+            col = logPersonas.TraerAlumnos();
             dgvAlumnos.DataSource = col;
             dgvAlumnos.Columns["PER_ID"].Visible = false;
             dgvAlumnos.Columns["PER_ID"].Frozen = true;

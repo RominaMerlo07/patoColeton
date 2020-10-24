@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
+using System.Data.SqlClient;
 
 namespace GestionJardin
 {
@@ -30,8 +33,12 @@ namespace GestionJardin
             txtBuscaHmno.Enabled = false;         
             
             AutoCompleteStringCollection alumnos = new AutoCompleteStringCollection();
-            metPersonas metPersonas = new metPersonas();
-            alumnos = metPersonas.traerPersonasAutocompetar("2");
+            logPersonas logPersonas = new logPersonas();
+            SqlDataReader dr = logPersonas.traerPersonasAutocompetar("2");
+            while (dr.Read())
+            {
+                alumnos.Add(dr.GetString(0));
+            };
 
             txtBuscaHmno.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtBuscaHmno.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -240,8 +247,8 @@ namespace GestionJardin
                 //-- Termina de preparar todos los datos
 
                 //--- Secuenciador de Legajo
-                metParametricas metParametricas = new metParametricas();
-                string legajo = metParametricas.secuenciadorLegajoAlumnos(); // lo genera solo
+                logParametricas logParametricas = new logParametricas();
+                string legajo = logParametricas.secuenciadorLegajoAlumnos(); // lo genera solo
                 //--------
 
                 entPersona personaInsert = new entPersona();
@@ -259,7 +266,7 @@ namespace GestionJardin
                 personaInsert.PER_ESTADO = "S";
 
                 // INSERTA PERSONA
-                metPersonas metPersona = new metPersonas();
+                logPersonas metPersona = new logPersonas();
                 string resultado = metPersona.Insertar(personaInsert);
                 // -----
 
@@ -273,12 +280,12 @@ namespace GestionJardin
                     string valor = cbHrmDomicilio.SelectedItem.ToString();
                     if (valor.StartsWith("SI"))
                     {
-                        metGrupoFlia objGrpFlia = new metGrupoFlia();
+                        logGrupoFlia objGrpFlia = new logGrupoFlia();
                         string resulta3 = objGrpFlia.insertaEnGrupoFlia(Convert.ToInt32(id_persona), Convert.ToString(idHmno)); // antes se pasaba el legajo como segundo parametro, ahora pasamos el id_persona del hermano
                     }
                     else
                     {
-                        metGrupoFlia objGrpFlia = new metGrupoFlia();
+                        logGrupoFlia objGrpFlia = new logGrupoFlia();
                         string resulta3 = objGrpFlia.insertaEnGrupoFlia(Convert.ToInt32(id_persona), Convert.ToString(id_persona));
                     }
                     // -----
@@ -302,8 +309,8 @@ namespace GestionJardin
                     domicilioInsertar.DOM_BARRIO = barrio;
                     domicilioInsertar.DOM_CP = Convert.ToInt32(cpostal);
 
-                    metDomicilio metDomicilio = new metDomicilio();
-                    resultado = metDomicilio.Insertar(domicilioInsertar);
+                    logDomicilio logDomicilio = new logDomicilio();
+                    resultado = logDomicilio.Insertar(domicilioInsertar);
                     // -----
 
                     //INSERTA GRUPO SALA 
@@ -313,8 +320,8 @@ namespace GestionJardin
                     grupoSalaInsertar.GRS_PER_ID = Convert.ToInt32(id_persona);
                     grupoSalaInsertar.GRS_SAL_ID = Convert.ToInt32(id_sala);
 
-                    metSalas metSalas = new metSalas();
-                    resultado = metSalas.insertarGrupoSala(grupoSalaInsertar);
+                    logSalas logSalas = new logSalas();
+                    resultado = logSalas.insertarGrupoSala(grupoSalaInsertar);
                     // -----
 
                     if (resultado == "OK")
@@ -350,9 +357,9 @@ namespace GestionJardin
 
 
             string indexTurno = cbTurno.SelectedIndex.ToString();
-            metSalas objMetSalas = new metSalas();
+            logSalas objlogSalas = new logSalas();
             DataTable Tabla = new DataTable();
-            Tabla = objMetSalas.ListarSalas(indexTurno);
+            Tabla = objlogSalas.ListarSalas(indexTurno);
             
             cbSala.DisplayMember = "SAL_NOMBRE";
             cbSala.ValueMember = "SAL_ID";
@@ -370,9 +377,9 @@ namespace GestionJardin
             string id_sala;
 
             id_sala = cbSala.SelectedValue.ToString(); //.ToString();
-            metSalas objMetSalas = new metSalas();
+            logSalas objlogSalas = new logSalas();
             DataTable gruposSalas = new DataTable();
-            gruposSalas = objMetSalas.traerSalasCupo();
+            gruposSalas = objlogSalas.traerSalasCupo();
             DataRow[] rows = gruposSalas.Select("SAL_ID = " + id_sala);
             int CANTIDAD = Convert.ToInt16(rows[0]["CANTIDAD"].ToString());
             int MAXIMO = Convert.ToInt16(rows[0]["MAXIMO"].ToString());
@@ -461,11 +468,11 @@ namespace GestionJardin
             }
 
             entPersona personaBuscar = new entPersona();
-            metPersonas objMetPersonas = new metPersonas();
-            metDomicilio objmetDomicilio = new metDomicilio();
-            personaBuscar = objMetPersonas.BuscaPersona(nombreB, apellidoB, documentoB);
+            logPersonas objlogPersonas = new logPersonas();
+            logDomicilio objlogDomicilio = new logDomicilio();
+            personaBuscar = objlogPersonas.BuscaPersona(nombreB, apellidoB, documentoB);
             entDomicilio domicilioBuscar = new entDomicilio();
-            domicilioBuscar = objmetDomicilio.buscarDomicilioXPersona(personaBuscar.PER_ID);
+            domicilioBuscar = objlogDomicilio.buscarDomicilioXPersona(personaBuscar.PER_ID);
 
             if (personaBuscar.PER_NOMBRE != null)
             {
@@ -491,8 +498,8 @@ namespace GestionJardin
         {
             soloNumeros(sender, e);
             string dni = txtDocumento.Text;
-            metPersonas ObjMetPersonas = new metPersonas();      
-            string resultado = ObjMetPersonas.ValidarDni(dni);
+            logPersonas ObjlogPersonas = new logPersonas();      
+            string resultado = ObjlogPersonas.ValidarDni(dni);
             if (resultado == "SI")
             {
                 txtDocumento.Style = MetroFramework.MetroColorStyle.Red;
@@ -533,7 +540,7 @@ namespace GestionJardin
 
         private bool validarEmail()
         {
-            metPersonas ObjMetPersonas = new metPersonas();
+            logPersonas ObjlogPersonas = new logPersonas();
             bool resultado = true;
 
             if (String.IsNullOrWhiteSpace(txtEmail.Text))
@@ -542,7 +549,7 @@ namespace GestionJardin
             }
             else
             {
-                resultado = ObjMetPersonas.ValidarEmail(txtEmail.Text);
+                resultado = ObjlogPersonas.ValidarEmail(txtEmail.Text);
             }
             return resultado;
         }
@@ -550,8 +557,8 @@ namespace GestionJardin
         private void txtDocumento_Leave(object sender, EventArgs e)
         {
             string dni = txtDocumento.Text;
-            metPersonas ObjMetPersonas = new metPersonas();
-            string resultado = ObjMetPersonas.ValidarDni(dni);
+            logPersonas ObjlogPersonas = new logPersonas();
+            string resultado = ObjlogPersonas.ValidarDni(dni);
             if(resultado == "SI")
             {
                 txtDocumento.Style = MetroFramework.MetroColorStyle.Red;
@@ -564,11 +571,11 @@ namespace GestionJardin
         {
             string email = txtEmail.Text;
 
-            metPersonas objMetPersonas = new metPersonas();
-            objMetPersonas.ValidarEmail(email);
+            logPersonas objlogPersonas = new logPersonas();
+            objlogPersonas.ValidarEmail(email);
 
 
-            bool resultado = true;//= ObjMetPersonas.ValidarEmail(txtEmail.Text);
+            bool resultado = true;//= ObjlogPersonas.ValidarEmail(txtEmail.Text);
 
             if (String.IsNullOrWhiteSpace(txtEmail.Text))
             {
@@ -576,7 +583,7 @@ namespace GestionJardin
             }
             else
             {
-                resultado = objMetPersonas.ValidarEmail(email);
+                resultado = objlogPersonas.ValidarEmail(email);
             }
 
             if (resultado == false)

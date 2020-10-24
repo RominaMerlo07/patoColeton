@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
+using System.Data.SqlClient;
 
 namespace GestionJardin
 {
@@ -34,8 +37,12 @@ namespace GestionJardin
             //Autocompletar
 
             AutoCompleteStringCollection alumnos = new AutoCompleteStringCollection();
-            metPersonas metPersonas = new metPersonas();
-            alumnos = metPersonas.traerPersonasAutocompetar("2");
+            logPersonas logPersonas = new logPersonas();
+            SqlDataReader dr = logPersonas.traerPersonasAutocompetar("2");
+            while (dr.Read())
+            {
+                alumnos.Add(dr.GetString(0));
+            };
 
             txtGF_Buscar.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtGF_Buscar.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -194,15 +201,15 @@ namespace GestionJardin
             }
 
             entPersona personaBuscar = new entPersona();
-            metPersonas objMetPersonas = new metPersonas();
-            personaBuscar = objMetPersonas.BuscaPersona(nombreB, apellidoB, documentoB);
+            logPersonas objlogPersonas = new logPersonas();
+            personaBuscar = objlogPersonas.BuscaPersona(nombreB, apellidoB, documentoB);
 
             String id_persona = Convert.ToString(personaBuscar.PER_ID);
 
             //rellenar dgv
             dgvGrupoFlia.Refresh();
             DataTable grupoFlia = new DataTable();
-            metGrupoFlia objGrupoFlia = new metGrupoFlia();
+            logGrupoFlia objGrupoFlia = new logGrupoFlia();
             grupoFlia = objGrupoFlia.traerPersonasXGrupoFliar2(id_persona);
 
             if (grupoFlia.Rows.Count > 0)

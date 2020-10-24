@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using CaLog;
+using CaEnt;
 
 
 namespace GestionJardin
 {
     public partial class frmUsuariosPopUpEditar : Form
     {
-        metUsuario ObjetoUsu = new metUsuario();
+        logUsuario ObjetoUsu = new logUsuario();
         entUsuario Usuario = new entUsuario();
         public frmUsuariosPopUpEditar()
         {
@@ -104,7 +106,7 @@ namespace GestionJardin
             {
                 usu.USU_USUARIO = lblEditarUsu.Text;
                 usu.USU_CLAVE = metroTextBoxContrasenaEdit.Text;
-                var usumetodo = new metUsuario();
+                var usumetodo = new logUsuario();
                 usumetodo.EditarUsuario(usu);
                 MessageBox.Show("SE MODIFICO LA CONTRASEÑA DEL USUARIO :  " + lblEditarUsu.Text);
                 U.dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();

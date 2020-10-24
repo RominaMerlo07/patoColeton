@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GestionJardin
+namespace CaEnt//GestionJardin
 {
     public class entUsuario
     {

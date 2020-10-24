@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
+using System.Data.SqlClient;
 
 namespace GestionJardin
 {
@@ -26,8 +29,13 @@ namespace GestionJardin
             //Autocompletar BuscarHermanos
 
             AutoCompleteStringCollection alumnos = new AutoCompleteStringCollection();
-            metPersonas metPersonas = new metPersonas();
-            alumnos = metPersonas.traerPersonasAutocompetar("2");
+            logPersonas logPersonas = new logPersonas();
+            SqlDataReader dr = logPersonas.traerPersonasAutocompetar("2");
+            while (dr.Read())
+            {
+                alumnos.Add(dr.GetString(0));
+            };
+
 
             txtBuscaAlumno.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtBuscaAlumno.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -178,7 +186,7 @@ namespace GestionJardin
 
         private bool validarEmail()
         {
-            metPersonas ObjMetPersonas = new metPersonas();
+            logPersonas ObjlogPersonas = new logPersonas();
             bool resultado = true;
 
             if (String.IsNullOrWhiteSpace(txtEmail.Text))
@@ -187,7 +195,7 @@ namespace GestionJardin
             }
             else
             {
-                resultado = ObjMetPersonas.ValidarEmail(txtEmail.Text);
+                resultado = ObjlogPersonas.ValidarEmail(txtEmail.Text);
             }
             return resultado;
         }
@@ -222,11 +230,11 @@ namespace GestionJardin
             }
 
             entPersona personaBuscar = new entPersona();
-            metPersonas objMetPersonas = new metPersonas();
-            metDomicilio objmetDomicilio = new metDomicilio();
-            personaBuscar = objMetPersonas.BuscaPersona(nombreB, apellidoB, documentoB);
+            logPersonas objlogPersonas = new logPersonas();
+            logDomicilio objlogDomicilio = new logDomicilio();
+            personaBuscar = objlogPersonas.BuscaPersona(nombreB, apellidoB, documentoB);
             entDomicilio domicilioBuscar = new entDomicilio();
-            domicilioBuscar = objmetDomicilio.buscarDomicilioXPersona(personaBuscar.PER_ID);
+            domicilioBuscar = objlogDomicilio.buscarDomicilioXPersona(personaBuscar.PER_ID);
 
             if (personaBuscar.PER_NOMBRE != null)
             {
@@ -303,7 +311,7 @@ namespace GestionJardin
                 personaInsert.PER_ESTADO = "S";
 
                 // INSERTA PERSONA
-                metPersonas metPersona = new metPersonas();
+                logPersonas metPersona = new logPersonas();
                 string resultado = metPersona.Insertar(personaInsert);
                 // -----
 
@@ -315,7 +323,7 @@ namespace GestionJardin
 
                     // INSERTA GRUPO FAMILIAR
                     
-                    metGrupoFlia objGrpFlia = new metGrupoFlia();
+                    logGrupoFlia objGrpFlia = new logGrupoFlia();
                     entGrupoFlia grpFlia = new entGrupoFlia();
                 
                     grpFlia.GRF_PER_ID = id_persona;
@@ -366,8 +374,8 @@ namespace GestionJardin
                     domicilioInsertar.DOM_BARRIO = barrio;
                     domicilioInsertar.DOM_CP = Convert.ToInt32(cpostal);
 
-                    metDomicilio metDomicilio = new metDomicilio();
-                    resultado = metDomicilio.Insertar(domicilioInsertar);
+                    logDomicilio logDomicilio = new logDomicilio();
+                    resultado = logDomicilio.Insertar(domicilioInsertar);
                     // -----
 
                     if (resultado == "OK")
@@ -434,11 +442,11 @@ namespace GestionJardin
         {
             string email = txtEmail.Text;
 
-            metPersonas objMetPersonas = new metPersonas();
-            objMetPersonas.ValidarEmail(email);
+            logPersonas objlogPersonas = new logPersonas();
+            objlogPersonas.ValidarEmail(email);
 
 
-            bool resultado = true;//= ObjMetPersonas.ValidarEmail(txtEmail.Text);
+            bool resultado = true;//= ObjlogPersonas.ValidarEmail(txtEmail.Text);
 
             if (String.IsNullOrWhiteSpace(txtEmail.Text))
             {
@@ -446,7 +454,7 @@ namespace GestionJardin
             }
             else
             {
-                resultado = objMetPersonas.ValidarEmail(email);
+                resultado = objlogPersonas.ValidarEmail(email);
             }
 
             if (resultado == false)

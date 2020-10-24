@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using CaLog;
+using CaEnt;
 
 namespace GestionJardin
 {

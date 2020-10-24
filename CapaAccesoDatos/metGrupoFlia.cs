@@ -5,9 +5,10 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+/*using System.Windows.Forms;*/ // comentar y corregir
+using CaEnt;
 
-namespace GestionJardin
+namespace CaAD//GestionJardin
 {
     public class metGrupoFlia : Conexion
     {
@@ -52,7 +53,7 @@ namespace GestionJardin
             catch (Exception ex)
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador." +  ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador." +  ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -91,7 +92,7 @@ namespace GestionJardin
             }
             catch (Exception ex)
             {
-                 MessageBox.Show("Hubo un problema. Contáctese con su administrador." + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 //MessageBox.Show("Hubo un problema. Contáctese con su administrador." + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             return dt;
@@ -143,7 +144,7 @@ namespace GestionJardin
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador." + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador." + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             return dt;
@@ -183,7 +184,7 @@ namespace GestionJardin
             catch (Exception ex)
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador." + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador." + ex.ToString(), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -233,7 +234,7 @@ namespace GestionJardin
             catch
             {
                 //result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -267,7 +268,7 @@ namespace GestionJardin
             catch
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             return result;

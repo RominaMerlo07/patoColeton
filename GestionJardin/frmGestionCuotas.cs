@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
+using System.Data.SqlClient;
 
 namespace GestionJardin
 {
@@ -30,9 +33,9 @@ namespace GestionJardin
         private void frmGestionCuotas_Load(object sender, EventArgs e)
         {
 
-            
+
             //cargar combo Salas
-            metCuota metCobro = new metCuota();
+            logCuota metCobro = new logCuota();
             entSala.entSalaColeccion salas = metCobro.buscarSalas();
 
             cbSalas.DataSource = new BindingSource(salas, null);
@@ -49,8 +52,12 @@ namespace GestionJardin
             //Autocompletar
 
             AutoCompleteStringCollection alumnos = new AutoCompleteStringCollection();
-            metPersonas metPersonas = new metPersonas();
-            alumnos = metPersonas.traerPersonasAutocompetar("2");
+            logPersonas logPersonas = new logPersonas();
+            SqlDataReader dr = logPersonas.traerPersonasAutocompetar("2");
+            while (dr.Read())
+            {
+                alumnos.Add(dr.GetString(0));
+            };
 
             txtMatriculados.AutoCompleteMode = AutoCompleteMode.Suggest;
             txtMatriculados.AutoCompleteSource = AutoCompleteSource.CustomSource;
@@ -105,7 +112,7 @@ namespace GestionJardin
                 {
                     idSala = Convert.ToInt32(cbSalas.SelectedValue);
 
-                    metSalas objMetSala = new metSalas();
+                    logSalas objMetSala = new logSalas();
 
                     //entPersona.entPersonaColeccion colPersona = new entPersona.entPersonaColeccion();
                     
@@ -126,7 +133,7 @@ namespace GestionJardin
         private void cbAnoEjercicio_SelectedValueChanged(object sender, EventArgs e)
         {
             int anioEjercicio = Convert.ToInt32(cbAnoEjercicio.SelectedItem);
-            metCuota metCuota = new metCuota();
+            logCuota metCuota = new logCuota();
             conceptos = metCuota.traeConceptos(anioEjercicio);
 
             listConceptos.Clear();
@@ -178,7 +185,7 @@ namespace GestionJardin
                         int anoCuotaM = Convert.ToInt32(cbAnoEjercicio.SelectedItem.ToString()); ;
                         string estadoCuotaM = "ADEUDADA";
 
-                        metCuota objMetCuota = new metCuota();
+                        logCuota objMetCuota = new logCuota();
 
                         int cuentaValida = objMetCuota.CuentaCuotasValidacion(legajoM, periodoCuotaM, anoCuotaM);
 
@@ -256,7 +263,7 @@ namespace GestionJardin
                         int anoCuota = Convert.ToInt32(cbAnoEjercicio.SelectedItem.ToString()); ;
                     string estadoCuota = "ADEUDADA";
 
-                    metCuota objMetCuota = new metCuota();
+                    logCuota objMetCuota = new logCuota();
 
                     int cuentaValida = objMetCuota.CuentaCuotasValidacion(legajo, periodoCuota, anoCuota);
 
@@ -344,11 +351,11 @@ namespace GestionJardin
             }
 
             DataTable cuotas = new DataTable();
-            metCuota objMetCuota = new metCuota();
+            logCuota objMetCuota = new logCuota();
 
             legajo = objMetCuota.traeLegajo(nombreB, apellidoB, documentoB);
 
-            metCuota objMetCuota2 = new metCuota();
+            logCuota objMetCuota2 = new logCuota();
             cuotas = objMetCuota2.traeCuotasXPersona(legajo);
 
             if ((cuotas != null) && (cuotas.Rows.Count != 0)) {
@@ -394,7 +401,7 @@ namespace GestionJardin
                 {
                     idCuotaFinal = Convert.ToInt32(cuota.Cells[0].Value.ToString());
 
-                    metCuota objMetCuota = new metCuota();
+                    logCuota objMetCuota = new logCuota();
                     string resultado = objMetCuota.bajaCuotaFinal(idCuotaFinal);
 
                     txtMatriculados_ButtonClick(sender, e);

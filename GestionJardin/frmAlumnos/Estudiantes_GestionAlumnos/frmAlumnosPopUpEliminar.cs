@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
 
 namespace GestionJardin
 {
@@ -34,7 +36,7 @@ namespace GestionJardin
         {
             idEliminar = lblidPersona.Text;
             entPersona eliminaPersona = new entPersona();
-            metPersonas metPersona = new metPersonas();
+            logPersonas metPersona = new logPersonas();
             eliminaPersona.PER_ID = Convert.ToInt32(idEliminar);
             string resultado = metPersona.EliminarDocente(eliminaPersona);
             if (resultado == "OK")

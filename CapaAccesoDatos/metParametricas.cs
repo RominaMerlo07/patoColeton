@@ -5,9 +5,9 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using CaEnt;
 
-namespace GestionJardin
+namespace CaAD//GestionJardin
 {
     public class metParametricas : Conexion
     {
@@ -56,9 +56,7 @@ namespace GestionJardin
             catch
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-
+                
             }
             //ADELANTA UN NUMERO EL SECUENCIADOR
             try
@@ -79,8 +77,6 @@ namespace GestionJardin
             catch
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
 
             }
 

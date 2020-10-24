@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using CaLog;
+using CaEnt;
 
 namespace GestionJardin
 {
@@ -15,7 +17,7 @@ namespace GestionJardin
     public partial class frmDocentesPopUpEliminar : Form
     {
 
-        metPersonas objetopersona = new metPersonas();
+        logPersonas objetopersona = new logPersonas();
         entPersona Docentes = new entPersona();
       //  int documento;
         int idPersonaBuscar;
@@ -49,7 +51,7 @@ namespace GestionJardin
                 entPersona personaEditar = new entPersona();
                 personaEditar.PER_ID = idPersonaBuscar;
                 
-                var usumetodo = new metUsuario();
+                var usumetodo = new logUsuario();
                 objetopersona.EliminarDocente(personaEditar);
                 objetopersona.EliminarDocenteGrupoSala(personaEditar);
 

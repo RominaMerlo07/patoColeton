@@ -5,9 +5,10 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+/*using System.Windows.Forms;*/ // comentar y corregir
+using CaEnt;
 
-namespace GestionJardin
+namespace CaAD//GestionJardin
 {
     public class metUsuario : Conexion
     {
@@ -46,7 +47,7 @@ namespace GestionJardin
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex + "Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show(ex + "Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -151,7 +152,7 @@ namespace GestionJardin
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+                //MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
 
             }
         }
@@ -173,11 +174,11 @@ namespace GestionJardin
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
+                //MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK);
 
             }
         }
-        public string AutocompletarAgregarDocente(MetroFramework.Controls.MetroTextBox pbarrabuscar)
+        public SqlDataReader AutocompletarAgregarDocente()
         {
             con = generarConexion();
             con.Open();
@@ -188,38 +189,38 @@ namespace GestionJardin
 
             comando = new SqlCommand(consultadocente, con);
             dr = comando.ExecuteReader();
-            while (dr.Read())
-            {
-                pbarrabuscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());
+            //while (dr.Read())
+            //{
+            //    pbarrabuscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());
 
-                /*barrabuscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());*/
-            }
-            dr.Close();
+            //    /*barrabuscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());*/
+            //}
+            //dr.Close();
             con.Close();
-            return consultadocente;
+            return dr;
         }
 
-        public string ExtraerNombre(MetroFramework.Controls.MetroTextBox pbarrabuscar)
+        public string ExtraerNombre(string pbarrabuscar)
         {
-            string info = pbarrabuscar.Text;
+            string info = pbarrabuscar;
             string[] extraccion = info.Split(' ');
             return extraccion[0];
         }
 
-        public string ExtraerDni(MetroFramework.Controls.MetroTextBox pbarrabuscar)
+        public string ExtraerDni(string pbarrabuscar)
         {
-            string info = pbarrabuscar.Text;
+            string info = pbarrabuscar;
             string[] extraccion = info.Split('(', ')');
             return extraccion[1];
         }
 
 
-        public string ExtraerApellido(MetroFramework.Controls.MetroTextBox pbarrabuscar)
+        public string ExtraerApellido(string dni)
         {
 
             con = generarConexion();
             con.Open();
-            string Dni = ExtraerDni(pbarrabuscar);
+            string Dni = ExtraerDni(dni);
             string consulta = "SELECT PER_APELLIDO FROM T_PERSONAS WHERE PER_DOCUMENTO = '" + Dni + "' ";
             comando = new SqlCommand(consulta, con);
             dr = comando.ExecuteReader();
@@ -238,13 +239,13 @@ namespace GestionJardin
         //string[] extraccion = consulta.Split(' ');
         //return extraccion[0];
 
-        public string CrearUsuario(MetroFramework.Controls.MetroTextBox pbarrabuscar, MetroFramework.Controls.MetroTextBox newuser)
+        public string CrearUsuario(string nombreApe/*pbarrabuscar*//*, MetroFramework.Controls.MetroTextBox newuser*/)
         {
 
-            string Nombre = ExtraerNombre(pbarrabuscar);
+            string Nombre = ExtraerNombre(nombreApe);
             Nombre = Nombre.ToLower();
 
-            string Apellido = ExtraerApellido(pbarrabuscar);
+            string Apellido = ExtraerApellido(nombreApe);
 
             Apellido = Apellido.ToLower(); //lo convierto en minúscula
             string letra_nombre = Nombre.Substring(0, 1); //saco la letra del nomnbre
@@ -267,12 +268,14 @@ namespace GestionJardin
 
                 {
 
-                    newuser.Text = nombre_usuario;
+                    //newuser.Text = nombre_usuario;
+                    //nombre_usuario = nombre_usuario;
 
                 }
                 else
                 {
-                    newuser.Text = nombre_usuario + acumulador;
+                    //newuser.Text = nombre_usuario + acumulador;
+                    nombre_usuario = nombre_usuario + acumulador;
                 }
             }
 
@@ -283,11 +286,11 @@ namespace GestionJardin
 
         }
 
-        public string AutocompletarenDocente(MetroFramework.Controls.MetroTextBox pbarrabuscar)
+        public SqlDataReader AutocompletarenDocente(/*MetroFramework.Controls.MetroTextBox pbarrabuscar*/)
         {
             con = generarConexion();
             con.Open();
-            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            //AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
 
             //string consulta = "SELECT CONCAT  (PER_NOMBRE, ' ', PER_APELLIDO,  ' ' , '(' , PER_DOCUMENTO, ')' ) DOCENTE , PER_ID FROM T_PERSONAS " +
             //                        "WHERE PER_TPE_ID = 1 AND PER_ID NOT IN (SELECT DISTINCT PER_ID FROM T_PERSONAS , T_USUARIOS  where PER_ID = USU_PER_ID )";
@@ -299,13 +302,15 @@ namespace GestionJardin
                               "AND p.PER_TPE_ID = 1 ";
             comando = new SqlCommand(consulta, con);
             dr = comando.ExecuteReader();
-            while (dr.Read())
-            {
-                pbarrabuscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());
-            }
-            dr.Close();
+            //while (dr.Read())
+            //{
+            //    pbarrabuscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());
+            //}
+            //dr.Close();
+
             con.Close();
-            return consulta;
+
+            return dr;
         }
 
         public DataTable llenarGrilla(string docente)
@@ -330,15 +335,15 @@ namespace GestionJardin
         }
 
 
-        public string Ingresar_Usuario(MetroFramework.Controls.MetroTextBox pbarrabuscar, MetroFramework.Controls.MetroTextBox ptextbox, MetroFramework.Controls.MetroTextBox ptextbox2)
+        public string Ingresar_Usuario(string pbarrabuscar, string ptextbox, string ptextbox2)
         {
 
             con = generarConexion();
             con.Open();
 
-            string Dni = ExtraerDni(pbarrabuscar);
-            string nombre_usuario = ptextbox.Text;
-            string clave_usuario = ptextbox2.Text;
+            string Dni = pbarrabuscar; // ExtraerDni(pbarrabuscar);
+            string nombre_usuario = ptextbox;
+            string clave_usuario = ptextbox2;
 
             string consulta = "INSERT INTO T_USUARIOS (USU_PER_ID, USU_USUARIO, USU_CLAVE, USU_ROL_ID, USU_FECHA_ALTA," +
                                  " USU_ESTADO) VALUES ((SELECT PER_ID FROM T_PERSONAS WHERE PER_DOCUMENTO = " + Dni + "), ' " + nombre_usuario + "', '" + clave_usuario + "' , 2 , GETDATE(), 'ACTIVO');";

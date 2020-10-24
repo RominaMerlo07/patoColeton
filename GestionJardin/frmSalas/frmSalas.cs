@@ -7,13 +7,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
+using System.Data.SqlClient;
 
 namespace GestionJardin
 {
     public partial class frmSalas : Form
     {
 
-        metSala2 metSala = new metSala2();
+        logSala2 metSala = new logSala2();
 
         public frmSalas()
         {
@@ -25,7 +28,15 @@ namespace GestionJardin
             dgv_Salas.ClearSelection();          
             dgv_Salas.DataSource = metSala.GrillaSalas();
             dgv_Salas.Columns["SAL_ID"].Visible = false;
-            metSala.BuscarSala(txtGS_Buscar);           
+
+            SqlDataReader dr = metSala.BuscarSala();
+            //AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            while (dr.Read())
+            {
+                txtGS_Buscar.AutoCompleteCustomSource.Add(dr["SALA"].ToString());
+            }
+            dr.Close();
+
             btnGS_Editar.IconColor = Color.Gray;
             btnGS_Editar.ForeColor = Color.Gray;
             btnGS_Eliminar.IconColor = Color.Gray;

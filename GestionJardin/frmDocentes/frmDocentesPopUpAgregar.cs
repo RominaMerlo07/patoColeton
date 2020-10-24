@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using CaLog;
+using CaEnt;
 
 
 namespace GestionJardin
@@ -15,10 +17,10 @@ namespace GestionJardin
     public partial class frmDocentesPopUpAgregar : Form
     {
 
-        metPersonas objMetPersonas = new metPersonas();
+        logPersonas objlogPersonas = new logPersonas();
         entPersona objPersona = new entPersona();
-        metDomicilio objmetDomicilio = new metDomicilio();
-        metSalas MetSalas = new metSalas();
+        logDomicilio objlogDomicilio = new logDomicilio();
+        logSalas logSalas = new logSalas();
         string resultadoValidacion;
 
 
@@ -31,8 +33,8 @@ namespace GestionJardin
 
         private string validaCampos()
         {
-            metPersonas ObjMetOersonas = new metPersonas();
-            objMetPersonas.EdadDocente(dtNacimiento.Value);
+            logPersonas ObjMetOersonas = new logPersonas();
+            objlogPersonas.EdadDocente(dtNacimiento.Value);
 
             resultadoValidacion = "";
 
@@ -106,8 +108,8 @@ namespace GestionJardin
         {
             Solonumeros(sender, e);
             string dni = txtDocumento.Text;
-            metPersonas ObjMetPersonas = new metPersonas();
-            string resultado = ObjMetPersonas.ValidarDni(dni);
+            logPersonas ObjlogPersonas = new logPersonas();
+            string resultado = ObjlogPersonas.ValidarDni(dni);
             if (resultado == "SI")
             {
                 txtDocumento.Style = MetroFramework.MetroColorStyle.Red;
@@ -154,19 +156,19 @@ namespace GestionJardin
 
         private void dtNacimiento_Leave(object sender, EventArgs e)
         {
-            metPersonas ObjMetOersonas = new metPersonas();
-            objMetPersonas.EdadDocente(dtNacimiento.Value);
+            logPersonas ObjMetOersonas = new logPersonas();
+            objlogPersonas.EdadDocente(dtNacimiento.Value);
         }
 
         private void txtEmail_Leave(object sender, EventArgs e)
         {
             string email = txtEmail.Text;
 
-            metPersonas objMetPersonas = new metPersonas();
-            objMetPersonas.ValidarEmail(email);
+            logPersonas objlogPersonas = new logPersonas();
+            objlogPersonas.ValidarEmail(email);
 
 
-            bool resultado = true;//= ObjMetPersonas.ValidarEmail(txtEmail.Text);
+            bool resultado = true;//= ObjlogPersonas.ValidarEmail(txtEmail.Text);
 
             if (String.IsNullOrWhiteSpace(txtEmail.Text))
             {
@@ -174,7 +176,7 @@ namespace GestionJardin
             }
             else
             {
-                resultado = objMetPersonas.ValidarEmail(email);
+                resultado = objlogPersonas.ValidarEmail(email);
             }
 
             if (resultado == false)
@@ -206,8 +208,13 @@ namespace GestionJardin
 
         private void cbTurno_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            metPersonas Objmetpersonas = new metPersonas();
-            Objmetpersonas.Llenar_Combo_Salas(cbTurno, cbSala);
+            logPersonas ObjlogPersonas = new logPersonas();
+
+            DataTable dt = ObjlogPersonas.Llenar_Combo_Salas(cbTurno.SelectedIndex/*, cbSala*/);
+
+            cbSala.DataSource = dt;
+            cbSala.DisplayMember = "SAL_NOMBRE";
+            cbSala.ValueMember = "SAL_ID";
         }
 
 
@@ -217,8 +224,8 @@ namespace GestionJardin
 
         private void btnguardar_Click(object sender, EventArgs e)
         {
-            metPersonas ObjMetOersonas = new metPersonas();
-            objMetPersonas.EdadDocente(dtNacimiento.Value);
+            logPersonas ObjMetOersonas = new logPersonas();
+            objlogPersonas.EdadDocente(dtNacimiento.Value);
 
             string resultado;
                
@@ -265,7 +272,7 @@ namespace GestionJardin
                 personaInsert.PER_TPE_ID = "1";
                 personaInsert.PER_ESTADO = estado;
 
-                metPersonas metPersona = new metPersonas();
+                logPersonas metPersona = new logPersonas();
                 resultado = metPersona.Insertar(personaInsert);
 
                 if (resultado == "OK")
@@ -290,8 +297,8 @@ namespace GestionJardin
                     domicilioInsertar.DOM_BARRIO = barrio;
                     domicilioInsertar.DOM_CP = Convert.ToInt32(cpostal);
 
-                    metDomicilio metDomicilio = new metDomicilio();
-                    resultado = metDomicilio.Insertar(domicilioInsertar);
+                    logDomicilio logDomicilio = new logDomicilio();
+                    resultado = logDomicilio.Insertar(domicilioInsertar);
 
                     if (resultado == "OK")
                     {
@@ -333,13 +340,13 @@ namespace GestionJardin
                             this.Close();
                         }
                         else { //cambiar!!!
-                            if (MetSalas.ValidarDocSala(id_sala, turno) == 0)
+                            if (logSalas.ValidarDocSala(id_sala, turno) == 0)
                             {
                                 entGrupoSala grupoSalaInsertar = new entGrupoSala();
                                 grupoSalaInsertar.GRS_PER_ID = Convert.ToInt32(id_persona);
                                 grupoSalaInsertar.GRS_SAL_ID = Convert.ToInt32(id_sala);
 
-                                resultado = MetSalas.insertarGrupoSala(grupoSalaInsertar);
+                                resultado = logSalas.insertarGrupoSala(grupoSalaInsertar);
 
                                 if (resultado == "OK")
                                 {
@@ -352,8 +359,8 @@ namespace GestionJardin
                             {
                                 MessageBox.Show("Ya existe un docente en la sala y turno seleccionados");
 
-                                objMetPersonas.EliminarDocenteDomicilio(personaInsert);
-                                objMetPersonas.EliminarDocentePersona(personaInsert);
+                                objlogPersonas.EliminarDocenteDomicilio(personaInsert);
+                                objlogPersonas.EliminarDocentePersona(personaInsert);
 
                                 MessageBox.Show("NO Se ha ingresado el registro.");
                             }
@@ -381,8 +388,8 @@ namespace GestionJardin
         private void txtDocumento_Leave(object sender, EventArgs e)
         {
             string dni = txtDocumento.Text;
-            metPersonas ObjMetPersonas = new metPersonas();
-            string resultado = ObjMetPersonas.ValidarDni(dni);
+            logPersonas ObjlogPersonas = new logPersonas();
+            string resultado = ObjlogPersonas.ValidarDni(dni);
             if (resultado == "SI")
             {
                 txtDocumento.Style = MetroFramework.MetroColorStyle.Red;

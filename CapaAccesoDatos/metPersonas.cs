@@ -5,11 +5,12 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+/*using System.Windows.Forms;*/  // comentar y corregir
 using System.Text.RegularExpressions;
 using System.Net.Mail;
+using CaEnt;
 
-namespace GestionJardin
+namespace CaAD//GestionJardin
 {
     public class metPersonas : Conexion
     {
@@ -21,7 +22,7 @@ namespace GestionJardin
         DataTable cardoc;
 
 
-        public AutoCompleteStringCollection traerPersonasAutocompetar(string tipo_persona) //FILTRA POR TIPO DE PERSONA. "0" TRAE TODOS. 
+        public SqlDataReader traerPersonasAutocompetar(string tipo_persona) //FILTRA POR TIPO DE PERSONA. "0" TRAE TODOS. 
         {
             string tipoPersona;
 
@@ -37,7 +38,7 @@ namespace GestionJardin
 
             con = generarConexion();
 
-            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            //AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
             con.Open();
 
 
@@ -49,45 +50,45 @@ namespace GestionJardin
             dr = cmd.ExecuteReader();
 
 
-            while (dr.Read())
-            {
-                autoComplete.Add(dr.GetString(0));
-            }
-            dr.Close();
+            //while (dr.Read())
+            //{
+            //    autoComplete.Add(dr.GetString(0));
+            //}
+            //dr.Close();
 
             con.Close();
-            return autoComplete;
+            return dr;
 
         }
 
 
-        public string Autocompletar_Alumno(MetroFramework.Controls.MetroTextBox pbarrabuscar)
-        {
-            con = generarConexion();
-            con.Open();
+        //public string Autocompletar_Alumno(MetroFramework.Controls.MetroTextBox pbarrabuscar)
+        //{
+        //    con = generarConexion();
+        //    con.Open();
 
-            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-            pbarrabuscar.CharacterCasing = CharacterCasing.Upper;
+        //    AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+        //    pbarrabuscar.CharacterCasing = CharacterCasing.Upper;
 
-            pbarrabuscar.Text = pbarrabuscar.Text.ToUpper();
-            string consulta = "SELECT CONCAT(PER_APELLIDO,', ', PER_NOMBRE,' ', '(',PER_DOCUMENTO, ')') ALUMNO FROM T_PERSONAS WHERE PER_TPE_ID = 2 AND PER_ESTADO='S' ORDER BY 1;";
-            //se suma per_estado como activo pero falta sumar DNI, ver con Alvaro !!! *************************
-
-
-            cmd = new SqlCommand(consulta, con);
-            dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                pbarrabuscar.AutoCompleteCustomSource.Add(dr["ALUMNO"].ToString());
-            }
-            dr.Close();
-
-            con.Close();
-
-            return consulta;
+        //    pbarrabuscar.Text = pbarrabuscar.Text.ToUpper();
+        //    string consulta = "SELECT CONCAT(PER_APELLIDO,', ', PER_NOMBRE,' ', '(',PER_DOCUMENTO, ')') ALUMNO FROM T_PERSONAS WHERE PER_TPE_ID = 2 AND PER_ESTADO='S' ORDER BY 1;";
+        //    //se suma per_estado como activo pero falta sumar DNI, ver con Alvaro !!! *************************
 
 
-        }
+        //    cmd = new SqlCommand(consulta, con);
+        //    dr = cmd.ExecuteReader();
+        //    while (dr.Read())
+        //    {
+        //        pbarrabuscar.AutoCompleteCustomSource.Add(dr["ALUMNO"].ToString());
+        //    }
+        //    dr.Close();
+
+        //    con.Close();
+
+        //    return consulta;
+
+
+        //}
 
         public DataTable TraerAlumnos()
         //public entPersona BuscaAlumnos(string nombre, string apellido, string documento)
@@ -128,7 +129,7 @@ namespace GestionJardin
             catch (Exception ex)
             {
                 //result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error: " + ex.ToString());                
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error: " + ex.ToString());                
             }
 
             return dt;
@@ -197,7 +198,7 @@ namespace GestionJardin
             catch
             {
                 //result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
             }
@@ -267,7 +268,7 @@ namespace GestionJardin
             catch (Exception ex)
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error-" + ex.ToString());
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error-" + ex.ToString());
 
             }
 
@@ -309,7 +310,7 @@ namespace GestionJardin
             catch
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -379,7 +380,7 @@ namespace GestionJardin
             catch
             {
                 //result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
             }
@@ -447,25 +448,15 @@ namespace GestionJardin
         }
 
 
-        public string extraerapellido_nombre_alumno(MetroFramework.Controls.MetroTextBox pbarrabuscar)
-        {
-            {
-                string alumno = pbarrabuscar.Text;
-                char delimitador = (',');
-                string[] apellido_nombre = alumno.Split(delimitador);
-                return apellido_nombre[0];
-            }
-        }
+        //public string extraer_dni_alumno(MetroFramework.Controls.MetroTextBox pbarrabuscar)
+        //{
+        //    string alumno = pbarrabuscar.Text;
 
-        public string extraer_dni_alumno(MetroFramework.Controls.MetroTextBox pbarrabuscar)
-        {
-            string alumno = pbarrabuscar.Text;
+        //    string[] dni_alumno = alumno.Split('(', ')');
 
-            string[] dni_alumno = alumno.Split('(', ')');
+        //    return dni_alumno[0];
 
-            return dni_alumno[0];
-
-        }
+        //}
 
 
 
@@ -545,7 +536,7 @@ namespace GestionJardin
             catch
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             return result;
@@ -573,7 +564,7 @@ namespace GestionJardin
             catch
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             return result;
@@ -582,12 +573,12 @@ namespace GestionJardin
 
         //Llena el buscar de docentes
 
-        public string traerdocente(MetroFramework.Controls.MetroTextBox pbarrabuscar)
+        public SqlDataReader traerdocente()
         {
             con = generarConexion();
             con.Open();
 
-            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            //AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
 
 
             string consulta = "SELECT CONCAT(PER_APELLIDO, ', ', PER_NOMBRE) AS 'DOCENTE', PER_DOCUMENTO DOCUMENTO FROM T_PERSONAS WHERE PER_TPE_ID =1 AND PER_ESTADO='S' ORDER BY 'DOCENTE' ASC;";
@@ -595,15 +586,15 @@ namespace GestionJardin
 
             cmd = new SqlCommand(consulta, con);
             dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                pbarrabuscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());
-            }
+            //while (dr.Read())
+            //{
+            //    pbarrabuscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());
+            //}
             dr.Close();
 
             con.Close();
 
-            return consulta;
+            return dr;
 
 
         }
@@ -611,13 +602,13 @@ namespace GestionJardin
 
         //Llena el cbo_salas en el form Docentes
 
-        public string Llenar_Combo_Salas(MetroFramework.Controls.MetroComboBox pcomboboxturno, MetroFramework.Controls.MetroComboBox pcomboboxsalas)
+        public DataTable Llenar_Combo_Salas(Int32 pcomboboxturno/*, MetroFramework.Controls.MetroComboBox pcomboboxsalas*/)
 
         {
             con = generarConexion();
             con.Open();
 
-            if (pcomboboxturno.SelectedIndex == 0)
+            if (pcomboboxturno == 0)
             {
                 string consulta = "SELECT SAL_NOMBRE, SAL_ID FROM T_SALA WHERE SAL_TURNO = 'MANANA' AND SAL_ACTIVO = 'S';";
 
@@ -627,16 +618,16 @@ namespace GestionJardin
                 dta.Fill(dt);
 
 
-                pcomboboxsalas.DataSource = dt;
-                pcomboboxsalas.DisplayMember = "SAL_NOMBRE";
-                pcomboboxsalas.ValueMember = "SAL_ID";
+                //pcomboboxsalas.DataSource = dt;
+                //pcomboboxsalas.DisplayMember = "SAL_NOMBRE";
+                //pcomboboxsalas.ValueMember = "SAL_ID";
                 // pcomboboxsalas.SelectedItem = 0;
 
 
             }
             else
             {
-                if (pcomboboxturno.SelectedIndex == 1)
+                if (pcomboboxturno == 1)
                 {
 
                     string consulta = "SELECT SAL_NOMBRE, SAL_ID FROM T_SALA WHERE SAL_TURNO = 'TARDE' AND SAL_ACTIVO = 'S';";
@@ -645,22 +636,22 @@ namespace GestionJardin
                     dta = new SqlDataAdapter(cmd);
                     dt = new DataTable("SAL_NOMBRE");
                     dta.Fill(dt);
-                    pcomboboxsalas.DataSource = dt;
-                    pcomboboxsalas.DisplayMember = "SAL_NOMBRE";
-                    pcomboboxsalas.ValueMember = "SAL_ID";
+                    //pcomboboxsalas.DataSource = dt;
+                    //pcomboboxsalas.DisplayMember = "SAL_NOMBRE";
+                    //pcomboboxsalas.ValueMember = "SAL_ID";
                     //     pcomboboxsalas.SelectedItem = 0;
 
 
                 }
                 else
                 {
-                    pcomboboxsalas.Enabled = false;
+                    //pcomboboxsalas.Enabled = false;
                 }
             }
 
             con.Close();
 
-            return "OK"; // CONSULTAR CON BHETA PORQUE SOLO TENEMOS EL RETURN POR FUERA??? ********************************************
+            return dt; // CONSULTAR CON BHETA PORQUE SOLO TENEMOS EL RETURN POR FUERA??? ********************************************
             
 
         }
@@ -790,7 +781,7 @@ namespace GestionJardin
             }
             catch (Exception ex)
             {                
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error :" + ex.ToString());                
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error :" + ex.ToString());                
             }
 
             return ent;
@@ -811,23 +802,12 @@ namespace GestionJardin
 
             if (Edad_D < 18)
             {
-                MessageBox.Show("Este docente tiene menos de 18 años. No puede ser registrado.");
+                //MessageBox.Show("Este docente tiene menos de 18 años. No puede ser registrado.");
 
             }
             return Edad_D;
 
-        }
-
-        //Extrae dni Docente
-
-        public string extraer_dni_docente(MetroFramework.Controls.MetroTextBox pbarrabuscar)
-        {
-            string docente = pbarrabuscar.Text;
-
-            string[] dni_docente = docente.Split('(', ')');
-
-            return dni_docente[0];
-        }               
+        }    
 
         public string EliminarDocenteDomicilio(entPersona eli_Docente)//metodo que elimina docente en domicilio cuando ya existe un docente con sala y turno en la t_grupo_sala
         {
@@ -848,7 +828,7 @@ namespace GestionJardin
             catch (Exception ex)
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error " + ex.ToString());
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error " + ex.ToString());
 
             }
             return result;
@@ -874,7 +854,7 @@ namespace GestionJardin
             catch(Exception ex)
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error " + ex.ToString());
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error " + ex.ToString());
 
             }
             return result;

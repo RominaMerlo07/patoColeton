@@ -7,15 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
 
 namespace GestionJardin
 {
     public partial class frmDocentesPopUpEditar : Form
     {
-        metPersonas objMetPersonas = new metPersonas();
+        logPersonas objlogPersonas = new logPersonas();
         entPersona objPersona = new entPersona();
-        metDomicilio objmetDomicilio = new metDomicilio();
-        metSalas objMetSalas = new metSalas();
+        logDomicilio objlogDomicilio = new logDomicilio();
+        logSalas objlogSalas = new logSalas();
         string resultadoValidacion;
         int idPersonaBuscar;
        
@@ -40,7 +42,7 @@ namespace GestionJardin
 
             frmDocentes Docentes = Owner as frmDocentes;
 
-            objMetPersonas.EdadDocente(dtNacimiento.Value);
+            objlogPersonas.EdadDocente(dtNacimiento.Value);
 
             string validacionE = validaCampos();
             if (validacionE == "OK")
@@ -93,7 +95,7 @@ namespace GestionJardin
                 personaEditar.PER_TELEFONO_2 = celularE;
                 personaEditar.PER_EMAIL = emailE;
 
-                string resultadoE = objMetPersonas.editarPersona(personaEditar);
+                string resultadoE = objlogPersonas.editarPersona(personaEditar);
 
                 entDomicilio domicilioEditar = new entDomicilio();
 
@@ -112,7 +114,7 @@ namespace GestionJardin
                 domicilioEditar.DOM_BARRIO = barrioE;
                 domicilioEditar.DOM_CP = Convert.ToInt32(cpostalE);
 
-                resultadoE = objmetDomicilio.editarDomicilio(domicilioEditar);
+                resultadoE = objlogDomicilio.editarDomicilio(domicilioEditar);
 
                 if (resultadoE == "OK")
                 {
@@ -152,13 +154,13 @@ namespace GestionJardin
                         MessageBox.Show("Se ha ingresado el registro con éxito.", "Ingresado", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         this.Close();
                     }
-                    else if (objMetSalas.ValidarDocSala(id_sala, turno) == 0)
+                    else if (objlogSalas.ValidarDocSala(id_sala, turno) == 0)
                     {
                         entGrupoSala grupoSalaEditar = new entGrupoSala();
                         grupoSalaEditar.GRS_PER_ID = Convert.ToInt32(idPersonaBuscar);
                         grupoSalaEditar.GRS_SAL_ID = Convert.ToInt32(id_sala);
 
-                        resultadoE = objMetSalas.editarGrupoSala(grupoSalaEditar);
+                        resultadoE = objlogSalas.editarGrupoSala(grupoSalaEditar);
 
                         if (resultadoE == "OK")
                         {
@@ -185,8 +187,8 @@ namespace GestionJardin
         
         private string validaCampos()
         {
-            metPersonas ObjMetOersonas = new metPersonas();
-            objMetPersonas.EdadDocente(dtNacimiento.Value);
+            logPersonas ObjMetOersonas = new logPersonas();
+            objlogPersonas.EdadDocente(dtNacimiento.Value);
 
             resultadoValidacion = "";
 
@@ -260,8 +262,8 @@ namespace GestionJardin
         {
             Solonumeros(sender, e);
             string dni = txtDocumento.Text;
-            metPersonas ObjMetPersonas = new metPersonas();
-            string resultado = ObjMetPersonas.ValidarDni(dni);
+            logPersonas ObjlogPersonas = new logPersonas();
+            string resultado = ObjlogPersonas.ValidarDni(dni);
             if (resultado == "SI")
             {
                 txtDocumento.Style = MetroFramework.MetroColorStyle.Red;
@@ -301,19 +303,19 @@ namespace GestionJardin
 
         private void dtNacimiento_Leave(object sender, EventArgs e)
         {
-            metPersonas ObjMetOersonas = new metPersonas();
-            objMetPersonas.EdadDocente(dtNacimiento.Value);
+            logPersonas ObjMetOersonas = new logPersonas();
+            objlogPersonas.EdadDocente(dtNacimiento.Value);
         }
 
         private void txtEmail_Leave(object sender, EventArgs e)
         {
             string email = txtEmail.Text;
 
-            metPersonas objMetPersonas = new metPersonas();
-            objMetPersonas.ValidarEmail(email);
+            logPersonas objlogPersonas = new logPersonas();
+            objlogPersonas.ValidarEmail(email);
 
 
-            bool resultado = true;//= ObjMetPersonas.ValidarEmail(txtEmail.Text);
+            bool resultado = true;//= ObjlogPersonas.ValidarEmail(txtEmail.Text);
 
             if (String.IsNullOrWhiteSpace(txtEmail.Text))
             {
@@ -321,7 +323,7 @@ namespace GestionJardin
             }
             else
             {
-                resultado = objMetPersonas.ValidarEmail(email);
+                resultado = objlogPersonas.ValidarEmail(email);
             }
 
             if (resultado == false)
@@ -399,8 +401,8 @@ namespace GestionJardin
         private void txtDocumento_Leave(object sender, EventArgs e)
         {
             string dni = txtDocumento.Text;
-            metPersonas ObjMetPersonas = new metPersonas();
-            string resultado = ObjMetPersonas.ValidarDni(dni);
+            logPersonas ObjlogPersonas = new logPersonas();
+            string resultado = ObjlogPersonas.ValidarDni(dni);
             if (resultado == "SI")
             {
                 txtDocumento.Style = MetroFramework.MetroColorStyle.Red;
@@ -416,8 +418,12 @@ namespace GestionJardin
 
         private void cbTurno_SelectionChangeCommitted(object sender, EventArgs e)
         {
-            metPersonas Objmetpersonas = new metPersonas();
-            Objmetpersonas.Llenar_Combo_Salas(cbTurno, cbSala);
+            logPersonas ObjlogPersonas = new logPersonas();
+            DataTable dt = ObjlogPersonas.Llenar_Combo_Salas(cbTurno.SelectedIndex/*, cbSala*/);
+
+            cbSala.DataSource = dt;
+            cbSala.DisplayMember = "SAL_NOMBRE";
+            cbSala.ValueMember = "SAL_ID";
         }
     }
 }

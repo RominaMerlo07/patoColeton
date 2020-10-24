@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
 
 namespace GestionJardin
 {
@@ -17,7 +19,7 @@ namespace GestionJardin
         string id_sala;
         string turno;
 
-        metAsistencia metAsistencia = new metAsistencia();       
+        logAsistencia logAsistencia = new logAsistencia();       
         
 
         public frmAsistencia()
@@ -52,9 +54,9 @@ namespace GestionJardin
 
 
             string indexTurno = cbTurno.SelectedIndex.ToString();
-            metSalas objMetSalas = new metSalas();
+            logSalas objlogSalas = new logSalas();
             DataTable Tabla = new DataTable();
-            Tabla = objMetSalas.ListarSalas(indexTurno);
+            Tabla = objlogSalas.ListarSalas(indexTurno);
 
             cbSala.DisplayMember = "SAL_NOMBRE";
             cbSala.ValueMember = "SAL_ID";
@@ -187,13 +189,13 @@ namespace GestionJardin
                                 turno = "TARDE";
                             }
 
-                            dgv_Alumnos.DataSource = metAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
+                            dgv_Alumnos.DataSource = logAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
 
                             dgv_Alumnos.Columns["PER_ID"].Visible = false;
                             dgv_Alumnos.Columns["AS_ID"].Visible = false;
 
                             lblAusencias.Visible = true;
-                            lblAusencias.Text = metAsistencia.infoAusencias(id_sala, lblFecha.Text);
+                            lblAusencias.Text = logAsistencia.infoAusencias(id_sala, lblFecha.Text);
 
                         }
 
@@ -316,10 +318,10 @@ namespace GestionJardin
         private void carga_grilla_filtrada()
         {
             DataTable col = new DataTable();
-            metPersonas metPersonas = new metPersonas();
-            col = metAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
+            logPersonas logPersonas = new logPersonas();
+            col = logAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
             dgv_Alumnos.DataSource = col;
-            string apellido_nombre = metPersonas.extraerapellido_nombre_alumno(txtGAs_Buscar);
+            string apellido_nombre = logPersonas.extraerapellido_nombre_alumno(txtGAs_Buscar.Text);
             col.DefaultView.RowFilter = String.Format($"ALUMNO LIKE '{apellido_nombre}%'");
         }
 
@@ -334,7 +336,7 @@ namespace GestionJardin
             {
 
                 txtGAs_Buscar.Clear();
-                dgv_Alumnos.DataSource = metAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
+                dgv_Alumnos.DataSource = logAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
 
             }
         }
@@ -383,23 +385,23 @@ namespace GestionJardin
                 if (id_asistencia != 0)
                 {
                     asist.AS_ID = id_asistencia;                                        
-                    metAsistencia.EditarAsistencia(asist);              
+                    logAsistencia.EditarAsistencia(asist);              
        
                     MessageBox.Show("Se actualizaron las asistencias", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    lblAusencias.Text = metAsistencia.infoAusencias(id_sala, lblFecha.Text);
+                    lblAusencias.Text = logAsistencia.infoAusencias(id_sala, lblFecha.Text);
 
                 } else
                 { 
-                    metAsistencia.AgregarAsistencia(asist);
+                    logAsistencia.AgregarAsistencia(asist);
                     MessageBox.Show("Se registraron las asistencias", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    lblAusencias.Text = metAsistencia.infoAusencias(id_sala, lblFecha.Text);
+                    lblAusencias.Text = logAsistencia.infoAusencias(id_sala, lblFecha.Text);
                 }
 
             }
 
             txtGAs_Buscar.Clear();
-            dgv_Alumnos.DataSource = metAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
+            dgv_Alumnos.DataSource = logAsistencia.GrillaAsistencia(turno, id_sala, lblFecha.Text);
 
         }
 

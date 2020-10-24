@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
 
 namespace GestionJardin
 {
@@ -17,9 +19,9 @@ namespace GestionJardin
         entPersona persona = new entPersona();
         entDomicilio domicilio = new entDomicilio();
         entGrupoFlia grFlia = new entGrupoFlia();
-        metPersonas metPers = new metPersonas();
-        metDomicilio metDomic = new metDomicilio();
-        metGrupoFlia metGrf = new metGrupoFlia();
+        logPersonas metPers = new logPersonas();
+        logDomicilio metDomic = new logDomicilio();
+        logGrupoFlia metGrf = new logGrupoFlia();
 
         public frmAlumnosGrupoFliaPopUpEditar(string idPersonaSelect2)
         {
@@ -189,7 +191,7 @@ namespace GestionJardin
 
         private bool validarEmail()
         {
-            metPersonas ObjMetPersonas = new metPersonas();
+            logPersonas ObjlogPersonas = new logPersonas();
             bool resultado = true;
 
             if (String.IsNullOrWhiteSpace(txtEmail.Text))
@@ -198,7 +200,7 @@ namespace GestionJardin
             }
             else
             {
-                resultado = ObjMetPersonas.ValidarEmail(txtEmail.Text);
+                resultado = ObjlogPersonas.ValidarEmail(txtEmail.Text);
             }
             return resultado;
         }

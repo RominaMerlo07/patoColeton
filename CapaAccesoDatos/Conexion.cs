@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace GestionJardin
+namespace CaAD//GestionJardin
 {
     public abstract class Conexion
     {

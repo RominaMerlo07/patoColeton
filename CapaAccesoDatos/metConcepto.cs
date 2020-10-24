@@ -6,11 +6,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MetroFramework.Controls;
-using System.Windows.Forms;
+/*using System.Windows.Forms;*/ // comentar y corregir
 using System.Drawing;
+using CaEnt;
 
 
-namespace GestionJardin
+namespace CaAD//GestionJardin
 {
     public class metConcepto : Conexion
     {
@@ -109,7 +110,7 @@ namespace GestionJardin
             catch (Exception ex)
             {
                 result = 1;
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -122,45 +123,39 @@ namespace GestionJardin
         /*
         PARA BUSCAR LOS CONCEPTOS POR NOMBRE
             */
-        public void autocompletarBuscar(MetroTextBox p_buscarCon)
+        public SqlDataReader autocompletarBuscar()
         {
             SqlDataReader dr2;
-            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            //AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
 
             con = generarConexion();
             con.Open();     
 
-            try
-            {
+
                 
-                string consulta = "SELECT CONCAT(CON_CONCEPTO, '_', " +
-                                                "CON_PERIODO, ' (', " +
-                                                "CASE CON_ACTIVO " +
-                                                     "WHEN 'S' THEN 'ACTIVO' " +
-                                                     "WHEN 'N' THEN 'INACTIVO' " +
-                                                "END, ')') " +
-                                   "FROM T_CONCEPTOS; ";
+            string consulta = "SELECT CONCAT(CON_CONCEPTO, '_', " +
+                                            "CON_PERIODO, ' (', " +
+                                            "CASE CON_ACTIVO " +
+                                                    "WHEN 'S' THEN 'ACTIVO' " +
+                                                    "WHEN 'N' THEN 'INACTIVO' " +
+                                            "END, ')') " +
+                                "FROM T_CONCEPTOS; ";
 
-                cmd = new SqlCommand(consulta, con);
+            cmd = new SqlCommand(consulta, con);
 
-                dr2 = cmd.ExecuteReader();
+            dr2 = cmd.ExecuteReader();
 
 
-                while (dr2.Read())
-                {
-                    autoComplete.Add(dr2.GetString(0));
-                }
-                dr2.Close();
+            //while (dr2.Read())
+            //{
+            //    autoComplete.Add(dr2.GetString(0));
+            //}
+            //dr2.Close();
 
-                p_buscarCon.AutoCompleteSource = AutoCompleteSource.CustomSource;
-                p_buscarCon.AutoCompleteCustomSource = autoComplete;
-
-            }
-            catch (Exception ex)
-            {
-                con.Close();
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador. Error: "+ ex.ToString());
-            }
+            //p_buscarCon.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            //p_buscarCon.AutoCompleteCustomSource = autoComplete;
+            return dr2;
+    
 
         }
 
@@ -225,7 +220,7 @@ namespace GestionJardin
             catch
             {
                 //result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
 
             }

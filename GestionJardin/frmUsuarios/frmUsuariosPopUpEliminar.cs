@@ -8,13 +8,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using CaLog;
+using CaEnt;
 
 
 namespace GestionJardin
 {
     public partial class frmUsuariosPopUpEliminar : Form
     {
-        metUsuario ObjetoUsu = new metUsuario();
+        logUsuario ObjetoUsu = new logUsuario();
         entUsuario Usuario = new entUsuario();
         public frmUsuariosPopUpEliminar()
         {
@@ -61,7 +63,7 @@ namespace GestionJardin
             else
             {
                 usu.USU_USUARIO = lblUSUARIOELIMINAR.Text;
-                var usumetodo = new metUsuario();
+                var usumetodo = new logUsuario();
                 usumetodo.EliminarUsuario(usu);
                 MessageBox.Show("SE DIO DE BAJA CORRECTAMENTE" + lblUSUARIOELIMINAR.Text);
                 U.dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();

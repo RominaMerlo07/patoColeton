@@ -8,12 +8,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using CaLog;
+using CaEnt;
 
 namespace GestionJardin
 {
     public partial class frmUsuariosPopUpAgregar : Form
     {
-        metUsuario ObjetoUsu = new metUsuario();
+        logUsuario ObjetoUsu = new logUsuario();
         entUsuario Usuario = new entUsuario();
 
         public frmUsuariosPopUpAgregar()
@@ -50,7 +52,10 @@ namespace GestionJardin
 
             else
             {
-                ObjetoUsu.CrearUsuario(txtSeleccionarDocente, txt_nombre_usuario);
+                //ObjetoUsu.CrearUsuario(txtSeleccionarDocente, txt_nombre_usuario);
+                string nomUsuario = ObjetoUsu.CrearUsuario(txtSeleccionarDocente.Text/*, txt_nombre_usuario.Text*/);
+                txt_nombre_usuario.Text = nomUsuario;
+
                 /***me habilita para poder escribir***/
                 txt_contra_usu.ReadOnly = false;
                 /***me devuelve  los colores originales del textbox***/
@@ -82,7 +87,7 @@ namespace GestionJardin
             }
             else
             {
-                ObjetoUsu.Ingresar_Usuario(txtSeleccionarDocente, txt_nombre_usuario, txt_contra_usu);
+                ObjetoUsu.Ingresar_Usuario(txtSeleccionarDocente.Text, txt_nombre_usuario.Text, txt_contra_usu.Text);
                 MessageBox.Show(" Registro de Usuario Exitoso ");
                 U.dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
                 this.Close();
@@ -184,7 +189,8 @@ namespace GestionJardin
 
             if (e.KeyValue == (Char)Keys.Enter)
             {
-                ObjetoUsu.CrearUsuario(txtSeleccionarDocente, txt_nombre_usuario);
+                string nomUsuario = ObjetoUsu.CrearUsuario(txtSeleccionarDocente.Text/*, txt_nombre_usuario.Text*/);
+                txt_nombre_usuario.Text = nomUsuario;
                 /***me habilita para poder escribir***/
                 txt_contra_usu.ReadOnly = false;
                 /***me devuelve  los colores originales del textbox***/

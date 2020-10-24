@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using MetroFramework.Forms;
+using CaLog;
+using CaEnt;
 
 namespace GestionJardin
 {

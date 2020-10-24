@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
 
 namespace GestionJardin
 {
@@ -16,9 +18,9 @@ namespace GestionJardin
         entPersona persona = new entPersona();
         entDomicilio domicilio = new entDomicilio();
         entSala sala = new entSala();
-        metPersonas metPers = new metPersonas();
-        metDomicilio metDomic = new metDomicilio();
-        metSalas metSala = new metSalas();
+        logPersonas metPers = new logPersonas();
+        logDomicilio metDomic = new logDomicilio();
+        logSalas metSala = new logSalas();
 
         public frmAlumnosPopUpEditar(string idPersonaSelect2)
         {
@@ -213,7 +215,7 @@ namespace GestionJardin
 
         private bool validarEmail()
         {
-            metPersonas ObjMetPersonas = new metPersonas();
+            logPersonas ObjlogPersonas = new logPersonas();
             bool resultado = true;
 
             if (String.IsNullOrWhiteSpace(txtEmail.Text))
@@ -222,7 +224,7 @@ namespace GestionJardin
             }
             else
             {
-                resultado = ObjMetPersonas.ValidarEmail(txtEmail.Text);
+                resultado = ObjlogPersonas.ValidarEmail(txtEmail.Text);
             }
             return resultado;
         }
@@ -338,9 +340,9 @@ namespace GestionJardin
             cbSala.SelectedValueChanged -= new EventHandler(cbSala_SelectedValueChanged);
 
             string indexTurno = cbTurno.SelectedIndex.ToString();
-            metSalas objMetSalas = new metSalas();
+            logSalas objlogSalas = new logSalas();
             DataTable Tabla = new DataTable();
-            Tabla = objMetSalas.ListarSalas(indexTurno);
+            Tabla = objlogSalas.ListarSalas(indexTurno);
 
             cbSala.DisplayMember = "SAL_NOMBRE";
             cbSala.ValueMember = "SAL_ID";
@@ -356,9 +358,9 @@ namespace GestionJardin
             string id_sala;
 
             id_sala = cbSala.SelectedValue.ToString(); //.ToString();
-            metSalas objMetSalas = new metSalas();
+            logSalas objlogSalas = new logSalas();
             DataTable gruposSalas = new DataTable();
-            gruposSalas = objMetSalas.traerSalasCupo();
+            gruposSalas = objlogSalas.traerSalasCupo();
             DataRow[] rows = gruposSalas.Select("SAL_ID = " + id_sala);
             int CANTIDAD = Convert.ToInt16(rows[0]["CANTIDAD"].ToString());
             int MAXIMO = Convert.ToInt16(rows[0]["MAXIMO"].ToString());
@@ -386,8 +388,8 @@ namespace GestionJardin
         {
             soloNumeros(sender, e);
             string dni = txtDocumento.Text;
-            metPersonas ObjMetPersonas = new metPersonas();
-            string resultado = ObjMetPersonas.ValidarDni(dni);
+            logPersonas ObjlogPersonas = new logPersonas();
+            string resultado = ObjlogPersonas.ValidarDni(dni);
             if (resultado == "SI")
             {
                 txtDocumento.Style = MetroFramework.MetroColorStyle.Red;
@@ -429,8 +431,8 @@ namespace GestionJardin
         private void txtDocumento_Leave(object sender, EventArgs e)
         {
             string dni = txtDocumento.Text;
-            metPersonas ObjMetPersonas = new metPersonas();
-            string resultado = ObjMetPersonas.ValidarDni(dni);
+            logPersonas ObjlogPersonas = new logPersonas();
+            string resultado = ObjlogPersonas.ValidarDni(dni);
             if (resultado == "SI")
             {
                 txtDocumento.Style = MetroFramework.MetroColorStyle.Red;
@@ -443,11 +445,11 @@ namespace GestionJardin
         {
             string email = txtEmail.Text;
 
-            metPersonas objMetPersonas = new metPersonas();
-            objMetPersonas.ValidarEmail(email);
+            logPersonas objlogPersonas = new logPersonas();
+            objlogPersonas.ValidarEmail(email);
 
 
-            bool resultado = true;//= ObjMetPersonas.ValidarEmail(txtEmail.Text);
+            bool resultado = true;//= ObjlogPersonas.ValidarEmail(txtEmail.Text);
 
             if (String.IsNullOrWhiteSpace(txtEmail.Text))
             {
@@ -455,7 +457,7 @@ namespace GestionJardin
             }
             else
             {
-                resultado = objMetPersonas.ValidarEmail(email);
+                resultado = objlogPersonas.ValidarEmail(email);
             }
 
             if (resultado == false)

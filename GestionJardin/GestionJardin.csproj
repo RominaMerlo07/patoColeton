@@ -404,9 +404,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaAccesoDatos\CaAD.csproj">
-      <Project>{15702638-2aaf-4946-a758-e482c30187c3}</Project>
-      <Name>CaAD</Name>
+    <ProjectReference Include="..\CaLog\CaLog.csproj">
+      <Project>{145b82d2-225f-470a-804e-31403906b6eb}</Project>
+      <Name>CaLog</Name>
     </ProjectReference>
     <ProjectReference Include="..\CapaEntidades\CaEnt.csproj">
       <Project>{80a3562c-d155-4a6e-b053-aeb100c85d3f}</Project>

@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+//using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Data;
 using System.ComponentModel;
 using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography.X509Certificates;
+using CaEnt;
 
-namespace GestionJardin
+namespace CaAD//GestionJardin
 {
     public class metAsistencia : Conexion 
     {

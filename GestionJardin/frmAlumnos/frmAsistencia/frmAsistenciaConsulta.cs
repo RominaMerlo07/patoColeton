@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
 
 namespace GestionJardin
 {
@@ -17,7 +19,7 @@ namespace GestionJardin
         string id_sala;
         string id_persona;
 
-        metAsistencia metAsistencia = new metAsistencia();
+        logAsistencia logAsistencia = new logAsistencia();
 
         public frmAsistenciaConsulta()
         {
@@ -36,9 +38,9 @@ namespace GestionJardin
 
 
             string indexTurno = cbTurno.SelectedIndex.ToString();
-            metSalas objMetSalas = new metSalas();
+            logSalas objlogSalas = new logSalas();
             DataTable Tabla = new DataTable();
-            Tabla = objMetSalas.ListarSalas(indexTurno);
+            Tabla = objlogSalas.ListarSalas(indexTurno);
 
             cbSala.DisplayMember = "SAL_NOMBRE";
             cbSala.ValueMember = "SAL_ID";
@@ -180,7 +182,7 @@ namespace GestionJardin
                 dgv_Alumnos.Visible = true;
                 dgv_Alumnos.ClearSelection();
 
-                dgv_Alumnos.DataSource = metAsistencia.GrillaAsistenciaConsultar(id_sala, fechaDesde.ToShortDateString(), fechaHasta.ToShortDateString());
+                dgv_Alumnos.DataSource = logAsistencia.GrillaAsistenciaConsultar(id_sala, fechaDesde.ToShortDateString(), fechaHasta.ToShortDateString());
                 dgv_Alumnos.Columns["PER_ID"].Visible = false;
                 dgv_Alumnos.Columns["ALUMNO"].Frozen = true;
                 dgv_Alumnos.Columns["DOCUMENTO"].Frozen = true;
@@ -194,10 +196,10 @@ namespace GestionJardin
         private void carga_grilla_filtrada()
         {
             DataTable col = new DataTable();
-            metPersonas metPersonas = new metPersonas();
-            col = metAsistencia.GrillaAsistenciaConsultar(id_sala, fechaDesde.ToShortDateString(), fechaHasta.ToShortDateString());
+            logPersonas logPersonas = new logPersonas();
+            col = logAsistencia.GrillaAsistenciaConsultar(id_sala, fechaDesde.ToShortDateString(), fechaHasta.ToShortDateString());
             dgv_Alumnos.DataSource = col;
-            string apellido_nombre = metPersonas.extraerapellido_nombre_alumno(txtGAs_Buscar);
+            string apellido_nombre = logPersonas.extraerapellido_nombre_alumno(txtGAs_Buscar.Text);
             col.DefaultView.RowFilter = String.Format($"ALUMNO LIKE '{apellido_nombre}%'");
         }
 
@@ -213,7 +215,7 @@ namespace GestionJardin
             {
 
                 txtGAs_Buscar.Clear();
-                dgv_Alumnos.DataSource = metAsistencia.GrillaAsistenciaConsultar(id_sala, fechaDesde.ToShortDateString(), fechaHasta.ToShortDateString());
+                dgv_Alumnos.DataSource = logAsistencia.GrillaAsistenciaConsultar(id_sala, fechaDesde.ToShortDateString(), fechaHasta.ToShortDateString());
                 dgv_Alumnos.Columns["ALUMNO"].Frozen = true;
                 dgv_Alumnos.Columns["DOCUMENTO"].Frozen = true;
             }

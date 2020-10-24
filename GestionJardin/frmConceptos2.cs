@@ -8,13 +8,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
+using System.Data.SqlClient;
 
 namespace GestionJardin
 {
     public partial class frmConceptos2 : Form
     {
 
-        metConcepto objMet_Conceptos = new metConcepto();
+        logConcepto objMet_Conceptos = new logConcepto();
         entConcepto objConceptos = new entConcepto();
         DateTime fechaActual = DateTime.Today;
         DateTime fechaAlta;
@@ -58,8 +61,17 @@ namespace GestionJardin
             txtBuscarConcepto.Visible = true;
             lblControlOtros.Visible = true;
 
-            
-            objMet_Conceptos.autocompletarBuscar(txtBuscarConcepto);
+
+            SqlDataReader dr2 = objMet_Conceptos.autocompletarBuscar();
+            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            while (dr2.Read())
+            {
+                autoComplete.Add(dr2.GetString(0));
+            }
+            dr2.Close();
+
+            txtBuscarConcepto.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtBuscarConcepto.AutoCompleteCustomSource = autoComplete;
 
             cbo_Conceptos.Visible = false;
             txt_Otros.Visible = false;
@@ -716,7 +728,16 @@ namespace GestionJardin
                 limpiarCampos();
             }
 
-            objMet_Conceptos.autocompletarBuscar(txtBuscarConcepto);
+            SqlDataReader dr2 = objMet_Conceptos.autocompletarBuscar();
+            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            while (dr2.Read())
+            {
+                autoComplete.Add(dr2.GetString(0));
+            }
+            dr2.Close();
+
+            txtBuscarConcepto.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtBuscarConcepto.AutoCompleteCustomSource = autoComplete;
 
         }
 

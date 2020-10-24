@@ -7,12 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
+using System.Data.SqlClient;
 
 namespace GestionJardin
 {
     public partial class frmUsuarios : Form
     {
-        metUsuario ObjetoUsu = new metUsuario();
+        logUsuario ObjetoUsu = new logUsuario();
 
         public frmUsuarios()
         {
@@ -22,14 +25,21 @@ namespace GestionJardin
 
         private void frmUsuarios_Load(object sender, EventArgs e)
         {
-          dgv_UsuariosActivos.ClearSelection();
-          Settooltip();
-          ObjetoUsu.AutocompletarenDocente(txtGU_Buscar);
-          dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
-          btnGU_Editar.IconColor = Color.Gray;
-          btnGU_Editar.ForeColor = Color.Gray;
-          btnGU_Eliminar.IconColor = Color.Gray;
-          btnGU_Eliminar.ForeColor = Color.Gray;            
+            dgv_UsuariosActivos.ClearSelection();
+            Settooltip();
+            //--
+            SqlDataReader dr = ObjetoUsu.AutocompletarenDocente(/*txtGU_Buscar*/);
+            while (dr.Read())
+            {
+                txtGU_Buscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());
+            }
+            dr.Close();
+            //--
+            dgv_UsuariosActivos.DataSource = ObjetoUsu.MostrarUsu();
+            btnGU_Editar.IconColor = Color.Gray;
+            btnGU_Editar.ForeColor = Color.Gray;
+            btnGU_Eliminar.IconColor = Color.Gray;
+            btnGU_Eliminar.ForeColor = Color.Gray;            
         }
         
 
@@ -119,7 +129,17 @@ namespace GestionJardin
             frmUsuariosPopUpAgregar frmUsuariosPopUpAgregar = new frmUsuariosPopUpAgregar();
             frmUsuariosPopUpAgregar.Text = "GESTION USUARIOS / GENERAR NUEVO USUARIO";
             AddOwnedForm(frmUsuariosPopUpAgregar);
-            ObjetoUsu.AutocompletarAgregarDocente(frmUsuariosPopUpAgregar.txtSeleccionarDocente);
+
+            //--
+            SqlDataReader dr = ObjetoUsu.AutocompletarAgregarDocente(/*frmUsuariosPopUpAgregar.txtSeleccionarDocente*/);
+            while (dr.Read())
+            {
+                frmUsuariosPopUpAgregar.txtSeleccionarDocente.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());
+
+                /*barrabuscar.AutoCompleteCustomSource.Add(dr["DOCENTE"].ToString());*/
+            }
+            dr.Close();
+            //--
             frmUsuariosPopUpAgregar.ShowDialog();
 
             btnGU_Editar.IconColor = Color.Gray;

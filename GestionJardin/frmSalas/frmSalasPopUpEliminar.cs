@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CaLog;
+using CaEnt;
 
 namespace GestionJardin
 {
@@ -28,7 +30,7 @@ namespace GestionJardin
         {
 
             entSala sala = new entSala();
-            metSala2 metSala = new metSala2();
+            logSala2 metSala = new logSala2();
 
             idEliminar = lblIdSala.Text;
             sala.SAL_ID = Convert.ToInt32(idEliminar);

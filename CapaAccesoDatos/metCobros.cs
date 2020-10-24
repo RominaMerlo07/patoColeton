@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+/*using System.Windows.Forms;*/ // comentar y corregir
 using System.Data.SqlClient;
 using System.Data;
 using System.ComponentModel;
 using System.Runtime.InteropServices.ComTypes;
 using System.Security.Cryptography.X509Certificates;
+using CaEnt;
 
-namespace GestionJardin
+namespace CaAD//GestionJardin
 {
     public class metCobros : Conexion
 
@@ -22,7 +23,7 @@ namespace GestionJardin
         SqlDataReader dr;
 
 
-        public string AutocompletarenCobros(MetroFramework.Controls.MetroTextBox pbarrabuscar)
+        public DataTable AutocompletarenCobros()
         {
 
             con = generarConexion();
@@ -37,37 +38,37 @@ namespace GestionJardin
             cmd = new SqlCommand(consulta, con);
 
             dr = cmd.ExecuteReader();
+            dt.Load(dr);
 
+            //while (dr.Read())
+            //{
+            //    pbarrabuscar.AutoCompleteCustomSource.Add(dr["NOMBRE"].ToString());
 
-            while (dr.Read())
-            {
-                pbarrabuscar.AutoCompleteCustomSource.Add(dr["NOMBRE"].ToString());
-
-            }
-            dr.Close();
+            //}
+            //dr.Close();
 
             con.Close();
-            return consulta;
+            return dt;
 
 
 
         }
 
-        public string ExtraerDni(MetroFramework.Controls.MetroTextBox pbarrabuscao)
+        //public string ExtraerDni(MetroFramework.Controls.MetroTextBox pbarrabuscao)
 
-        {
-
-
-            string info = pbarrabuscao.Text;
-            string[] extraccion = info.Split('(', ')');
-
-            return extraccion[1];
-
-        }
+        //{
 
 
+        //    string info = pbarrabuscao.Text;
+        //    string[] extraccion = info.Split('(', ')');
 
-        public String InsetarDatosCobrosenformBuscar(MetroFramework.Controls.MetroTextBox pbarrabuscao, MetroFramework.Controls.MetroTextBox pnomyapell, MetroFramework.Controls.MetroTextBox pdni, MetroFramework.Controls.MetroTextBox plegajo, MetroFramework.Controls.MetroComboBox pcuotas, MetroFramework.Controls.MetroTextBox pimporte, /*MetroFramework.Controls.MetroDateTime pfechacobro,*/ MetroFramework.Controls.MetroComboBox pformapago)
+        //    return extraccion[1];
+
+        //}
+
+
+
+        public DataTable InsetarDatosCobrosenformBuscar(string pbarrabuscao/*, MetroFramework.Controls.MetroTextBox pnomyapell, MetroFramework.Controls.MetroTextBox pdni, MetroFramework.Controls.MetroTextBox plegajo, MetroFramework.Controls.MetroComboBox pcuotas,*/ /*MetroFramework.Controls.MetroTextBox pimporte,*/ /*MetroFramework.Controls.MetroDateTime pfechacobro,*/ /*MetroFramework.Controls.MetroComboBox pformapago*/)
 
 
         {
@@ -76,9 +77,9 @@ namespace GestionJardin
             con.Open();
 
             metCobros ObjmetCobro = new metCobros();
-            ObjmetCobro.ExtraerDni(pbarrabuscao);
+            //ObjmetCobro.ExtraerDni(pbarrabuscao);
 
-            string dniencontrado = ExtraerDni(pbarrabuscao);
+            string dniencontrado = pbarrabuscao;
 
             string consulta = "SELECT co.COB_ID, " +
                                     "p.PER_NOMBRE + ',' + p.PER_APELLIDO NOMBRE_APELLIDO, " +
@@ -96,61 +97,60 @@ namespace GestionJardin
 
 
             dr = cmd.ExecuteReader();
+            dt.Load(dr);
+
+            //if (dr.Read() == true)
+            //{
+                
+
+                //pnomyapell.Text = dr["NOMBRE_APELLIDO"].ToString();
+                //pdni.Text = dr["PER_DOCUMENTO"].ToString();
+                //plegajo.Text = dr["PER_LEGAJO"].ToString();
 
 
-            if (dr.Read() == true)
-            {
 
+            //}
+            //else
 
-                pnomyapell.Text = dr["NOMBRE_APELLIDO"].ToString();
-                pdni.Text = dr["PER_DOCUMENTO"].ToString();
-                plegajo.Text = dr["PER_LEGAJO"].ToString();
-
-
-
-            }
-
-            else
-
-            {
-                MessageBox.Show("El alumno ingresado no tiene registros de cuotas abonadas");
-            }
-
-
-            con.Close();
-
-            con = generarConexion();
-            con.Open();
-            cmd = new SqlCommand(consulta, con);
-            dta = new SqlDataAdapter(cmd);
-            dt = new DataTable("INFO_CUOTA");
-            dta.Fill(dt);
-
-
-            pcuotas.DataSource = dt;
-            pcuotas.DisplayMember = "INFO_CUOTA";
-            pcuotas.ValueMember = "COB_ID";
-            pcuotas.SelectedItem = null;
-
+            //{
+            //    MessageBox.Show("El alumno ingresado no tiene registros de cuotas abonadas");
+            //}
 
 
             con.Close();
 
-            return dniencontrado;
+            //con = generarConexion();
+            //con.Open();
+            //cmd = new SqlCommand(consulta, con);
+            //dta = new SqlDataAdapter(cmd);
+            //dt = new DataTable("INFO_CUOTA");
+            //dta.Fill(dt);
+
+
+            //pcuotas.DataSource = dt;
+            //pcuotas.DisplayMember = "INFO_CUOTA";
+            //pcuotas.ValueMember = "COB_ID";
+            //pcuotas.SelectedItem = null;
+
+
+
+            //con.Close();
+
+            return dt;
 
 
         }
 
-        public string ExtraerImporte(MetroFramework.Controls.MetroComboBox pcuotas)
+        //public string ExtraerImporte(MetroFramework.Controls.MetroComboBox pcuotas)
 
-        {
-            string infocuota = pcuotas.Text;
-            string[] extraer = infocuota.Split(' ');
-            return extraer[0];
+        //{
+        //    string infocuota = pcuotas.Text;
+        //    string[] extraer = infocuota.Split(' ');
+        //    return extraer[0];
 
-        }
+        //}
 
-        public String InsertarDatosCobrosenformAgregar(MetroFramework.Controls.MetroTextBox pbarrabuscao, MetroFramework.Controls.MetroTextBox pnomyapell, MetroFramework.Controls.MetroTextBox pdni, MetroFramework.Controls.MetroTextBox plegajo, MetroFramework.Controls.MetroComboBox pcuotas, MetroFramework.Controls.MetroTextBox pimporte, /*MetroFramework.Controls.MetroDateTime pfechacobro,*/ MetroFramework.Controls.MetroComboBox pformapago)
+        public DataTable InsertarDatosCobrosenformAgregar(String pbarrabuscao/*, MetroFramework.Controls.MetroTextBox pnomyapell, MetroFramework.Controls.MetroTextBox pdni, MetroFramework.Controls.MetroTextBox plegajo, MetroFramework.Controls.MetroComboBox pcuotas*//*, MetroFramework.Controls.MetroTextBox pimporte,*/ /*MetroFramework.Controls.MetroDateTime pfechacobro,*/ /*MetroFramework.Controls.MetroComboBox pformapago*/)
 
 
         {
@@ -159,9 +159,9 @@ namespace GestionJardin
             con.Open();
 
             metCobros ObjmetCobro = new metCobros();
-            ObjmetCobro.ExtraerDni(pbarrabuscao);
+            //ObjmetCobro.ExtraerDni(pbarrabuscao);
 
-            string dniencontrado = ExtraerDni(pbarrabuscao);
+            string dniencontrado = pbarrabuscao;
 
 
 
@@ -180,72 +180,72 @@ namespace GestionJardin
 
 
             dr = cmd.ExecuteReader();
+            dt.Load(dr);
+
+            //if (dr.Read() == true)
+            //{
 
 
-            if (dr.Read() == true)
-            {
-
-
-                pnomyapell.Text = dr["NOMBRE_APELLIDO"].ToString();
-                pdni.Text = dr["PER_DOCUMENTO"].ToString();
-                plegajo.Text = dr["PER_LEGAJO"].ToString();
+            //    pnomyapell.Text = dr["NOMBRE_APELLIDO"].ToString();
+            //    pdni.Text = dr["PER_DOCUMENTO"].ToString();
+            //    plegajo.Text = dr["PER_LEGAJO"].ToString();
 
 
 
-            }
+            //}
 
-            else
+            //else
 
-            {
-                MessageBox.Show("El alumno ingresado no tiene registros de cuotas pendientes de cobro");
-            }
-
-
-            con.Close();
-
-            con = generarConexion();
-            con.Open();
-            cmd = new SqlCommand(consulta, con);
-            dta = new SqlDataAdapter(cmd);
-            dt = new DataTable("INFO_CUOTA");
-            dta.Fill(dt);
-
-
-            pcuotas.DataSource = dt;
-            pcuotas.DisplayMember = "INFO_CUOTA";
-            pcuotas.SelectedItem = null;
-            //pcuotas.SelectedIndex = 0;
-
+            //{
+            //    MessageBox.Show("El alumno ingresado no tiene registros de cuotas pendientes de cobro");
+            //}
 
 
             con.Close();
 
-            return dniencontrado;
+            //con = generarConexion();
+            //con.Open();
+            //cmd = new SqlCommand(consulta, con);
+            //dta = new SqlDataAdapter(cmd);
+            //dt = new DataTable("INFO_CUOTA");
+            //dta.Fill(dt);
+
+
+            //pcuotas.DataSource = dt;
+            //pcuotas.DisplayMember = "INFO_CUOTA";
+            //pcuotas.SelectedItem = null;
+            ////pcuotas.SelectedIndex = 0;
+
+
+
+            //con.Close();
+
+            return dt;
 
 
         }
 
-        public string ExtraerFechaVenc(MetroFramework.Controls.MetroComboBox pcuotas)
+        //public string ExtraerFechaVenc(MetroFramework.Controls.MetroComboBox pcuotas)
 
-        {
-            string infocuota = pcuotas.Text;
-            string[] extraer = infocuota.Split(' ');
-            return extraer[2];
+        //{
+        //    string infocuota = pcuotas.Text;
+        //    string[] extraer = infocuota.Split(' ');
+        //    return extraer[2];
 
-        }
+        //}
 
-        public string ModificarEstadoCuota(MetroFramework.Controls.MetroComboBox pcuotas, MetroFramework.Controls.MetroTextBox plegajo, MetroFramework.Controls.MetroTextBox pbarrabuscao)
+        public DataTable ModificarEstadoCuota(string pcuotas, string plegajo, string pbarrabuscao)
 
         {
             con = generarConexion();
             con.Open();
             metCobros ObjMetCobros = new metCobros();
-            ObjMetCobros.ExtraerFechaVenc(pcuotas);
+            //ObjMetCobros.ExtraerFechaVenc(pcuotas);
 
-            string FechaVencEncontrada = ExtraerFechaVenc(pcuotas);
+            string FechaVencEncontrada = pcuotas;
             Convert.ToDateTime(FechaVencEncontrada).ToString("yyyy-MM-dd");
 
-            string nlegajo = plegajo.Text;
+            string nlegajo = plegajo;
             string consulta = "UPDATE T_CUOTA_FINAL " +
                               "SET CUO_ESTADO = 'PAGADA' " +
                               "WHERE CUO_FECHA_VENC =  '" + FechaVencEncontrada + "' " +
@@ -260,9 +260,9 @@ namespace GestionJardin
             con = generarConexion();
             con.Open();
             metCobros ObjMetCobro = new metCobros();
-            ObjMetCobro.ExtraerDni(pbarrabuscao);
+            //ObjMetCobro.ExtraerDni(pbarrabuscao);
 
-            string dniencontrado = ExtraerDni(pbarrabuscao);
+            string dniencontrado = pbarrabuscao;
 
             string consulta1 = "SELECT DISTINCT (p.PER_NOMBRE + ',' + p.PER_APELLIDO)NOMBRE_APELLIDO, " +
                                                 "p.PER_DOCUMENTO, " +
@@ -279,22 +279,15 @@ namespace GestionJardin
             dta.Fill(dt);
 
 
-            pcuotas.DataSource = dt;
-            pcuotas.DisplayMember = "INFO_CUOTA";
+            //pcuotas.DataSource = dt;
+            //pcuotas.DisplayMember = "INFO_CUOTA";
 
-            pcuotas.SelectedItem = null;
-            //pcuotas.SelectedIndex = 0;
+            //pcuotas.SelectedItem = null;
 
-            //if (pcuotas.SelectedIndex == -1)
-            //{
-            //    MessageBox.Show("El alumno ingresado no tiene registros de cuotas pendientes de cobro");
-            //}
-
-            //pcuotas.SelectedIndex = -1;
 
             con.Close();
 
-            return MessageBox.Show("Se registro el cobro. La cuota se encuentra PAGADA").ToString();
+            return dt;
         }
 
         public string AnularCobro(int idCobro)
@@ -320,7 +313,7 @@ namespace GestionJardin
             catch
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -363,7 +356,7 @@ namespace GestionJardin
             catch
             {
                 result = "ERROR";
-                MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -371,18 +364,18 @@ namespace GestionJardin
 
         }
 
-        public string ExtraercoutaId(MetroFramework.Controls.MetroComboBox pcuotas, MetroFramework.Controls.MetroTextBox plegajo)
+        public string ExtraercoutaId(string pcuotas, string plegajo)
         {
             con = generarConexion();
 
             con.Open();
 
             metCobros ObjMetCobros = new metCobros();
-            ObjMetCobros.ExtraerFechaVenc(pcuotas);
+            //ObjMetCobros.ExtraerFechaVenc(pcuotas);
 
-            string nlegajo = plegajo.Text;
+            string nlegajo = plegajo;
 
-            string FechaVencEncontrada = ExtraerFechaVenc(pcuotas);
+            string FechaVencEncontrada = pcuotas;
             DateTime fecha = Convert.ToDateTime(FechaVencEncontrada);
 
             string consulta = "SELECT  c.CUO_ID CUOTA_ID " +
@@ -416,7 +409,7 @@ namespace GestionJardin
 
         }
 
-        public string InsertarenTCobros(MetroFramework.Controls.MetroComboBox pcuotas, MetroFramework.Controls.MetroTextBox plegajo)
+        public string InsertarenTCobros(string cuoId)
 
         {
             string result;
@@ -428,7 +421,7 @@ namespace GestionJardin
                 con1.Open();
 
 
-                string cuoId = ExtraercoutaId(pcuotas, plegajo);
+                //string cuoId = ExtraercoutaId(pcuotas, plegajo);
 
                 string consulta = "INSERT INTO T_COBRO ( COB_CUO_ID, COB_ESTADO, COB_IMPORTE, COB_FECHA, COB_FORMA_PAGO ) " +
                                               "VALUES ( " + cuoId + ", 'TOTAL', (SELECT cf.CUO_IMPORTE FROM T_CUOTA_FINAL cf WHERE cf.CUO_ID = " + cuoId + "), GETDATE(), 'EFECTIVO');";
@@ -442,8 +435,8 @@ namespace GestionJardin
             }
             catch
             {
-                result = "ERROR";
-               MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               result = "ERROR";
+               //MessageBox.Show("Hubo un problema. Contáctese con su administrador.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
             return result;

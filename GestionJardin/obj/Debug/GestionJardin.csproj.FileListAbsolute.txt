@@ -550,3 +550,7 @@ C:\Users\Laura\Desktop\patoColeton\GestionJardin\obj\Debug\GestionJardin.exe.man
 C:\Users\Laura\Desktop\patoColeton\GestionJardin\obj\Debug\GestionJardin.application
 C:\Users\Laura\Desktop\patoColeton\GestionJardin\obj\Debug\GestionJardin.csproj.CopyComplete
 C:\Users\Laura\Desktop\patoColeton\GestionJardin\obj\Debug\GestionJardin.frmAsistenciaConsulta.resources
+C:\Users\gaston\Dropbox\Cervantes\SistemaJardin_v20\GestionJardin\bin\Debug\CaLog.dll
+C:\Users\gaston\Dropbox\Cervantes\SistemaJardin_v20\GestionJardin\bin\Debug\CaLog.pdb
+C:\Users\gaston\Dropbox\Cervantes\SistemaJardin_v20\GestionJardin\obj\Debug\GestionJardin.frmAsistencia.resources
+C:\Users\gaston\Dropbox\Cervantes\SistemaJardin_v20\GestionJardin\obj\Debug\GestionJardin.frmAsistenciaConsulta.resources
