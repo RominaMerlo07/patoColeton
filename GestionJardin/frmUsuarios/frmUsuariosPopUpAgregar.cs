@@ -27,7 +27,7 @@ namespace GestionJardin
         private void frmUsuariosPopUpAgregar_Load_1(object sender, EventArgs e)
         {
             txt_contra_usu.UseSystemPasswordChar = true;
-            lblmostrarcontraseña.Visible = false;
+           
             /***Coloco el foco en textbox principal***/
             txtSeleccionarDocente.Focus();
             /***habilito solo para leer el textbox***/
