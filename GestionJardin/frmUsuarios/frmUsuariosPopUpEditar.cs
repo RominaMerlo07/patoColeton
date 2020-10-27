@@ -47,6 +47,7 @@ namespace GestionJardin
         {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+
         }
 
         /************* VALIDACIONES TEXTBOXCONTRASEÑA **************/
