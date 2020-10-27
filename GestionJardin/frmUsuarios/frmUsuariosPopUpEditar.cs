@@ -33,8 +33,7 @@ namespace GestionJardin
         private void frmUsuariosPopUpEditar_Load(object sender, EventArgs e)
         {
             frmUsuarios U = Owner as frmUsuarios;
-            metroTextBoxContrasenaEdit.UseSystemPasswordChar = true;
-            lblmostrarcontraseña.Visible = false;
+            metroTextBoxContrasenaEdit.UseSystemPasswordChar = true;         
            if (U.dgv_UsuariosActivos.CurrentRow.Cells[5].Value.ToString() == "INACTIVO")
             {
                 this.Close();

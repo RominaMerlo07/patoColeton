@@ -35,7 +35,6 @@
             this.txt_contra_usu = new MetroFramework.Controls.MetroTextBox();
             this.txtSeleccionarDocente = new MetroFramework.Controls.MetroTextBox();
             this.lblNvoUsu = new System.Windows.Forms.Label();
-            this.lblmostrarcontraseña = new System.Windows.Forms.Label();
             this.btnBloqueo = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
@@ -145,7 +144,7 @@
             this.txt_contra_usu.ForeColor = System.Drawing.Color.White;
             this.txt_contra_usu.IconRight = true;
             this.txt_contra_usu.Lines = new string[0];
-            this.txt_contra_usu.Location = new System.Drawing.Point(120, 188);
+            this.txt_contra_usu.Location = new System.Drawing.Point(120, 191);
             this.txt_contra_usu.Margin = new System.Windows.Forms.Padding(2);
             this.txt_contra_usu.MaxLength = 32767;
             this.txt_contra_usu.Name = "txt_contra_usu";
@@ -228,17 +227,6 @@
             this.lblNvoUsu.TabIndex = 78;
             this.lblNvoUsu.Text = "USUARIO: ";
             // 
-            // lblmostrarcontraseña
-            // 
-            this.lblmostrarcontraseña.AutoSize = true;
-            this.lblmostrarcontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmostrarcontraseña.ForeColor = System.Drawing.Color.Yellow;
-            this.lblmostrarcontraseña.Location = new System.Drawing.Point(368, 198);
-            this.lblmostrarcontraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblmostrarcontraseña.Name = "lblmostrarcontraseña";
-            this.lblmostrarcontraseña.Size = new System.Drawing.Size(0, 13);
-            this.lblmostrarcontraseña.TabIndex = 80;
-            // 
             // btnBloqueo
             // 
             this.btnBloqueo.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
@@ -247,14 +235,14 @@
             this.btnBloqueo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnBloqueo.ForeColor = System.Drawing.Color.Transparent;
             this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            this.btnBloqueo.IconColor = System.Drawing.Color.Lime;
+            this.btnBloqueo.IconColor = System.Drawing.Color.Gray;
             this.btnBloqueo.IconSize = 50;
             this.btnBloqueo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnBloqueo.Location = new System.Drawing.Point(368, 188);
+            this.btnBloqueo.Location = new System.Drawing.Point(368, 180);
             this.btnBloqueo.Margin = new System.Windows.Forms.Padding(2);
             this.btnBloqueo.Name = "btnBloqueo";
             this.btnBloqueo.Rotation = 0D;
-            this.btnBloqueo.Size = new System.Drawing.Size(75, 47);
+            this.btnBloqueo.Size = new System.Drawing.Size(43, 61);
             this.btnBloqueo.TabIndex = 81;
             this.btnBloqueo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBloqueo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -268,7 +256,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(500, 366);
             this.Controls.Add(this.btnBloqueo);
-            this.Controls.Add(this.lblmostrarcontraseña);
             this.Controls.Add(this.lblNvoUsu);
             this.Controls.Add(this.txtSeleccionarDocente);
             this.Controls.Add(this.txt_contra_usu);
@@ -296,7 +283,6 @@
         public MetroFramework.Controls.MetroTextBox txtSeleccionarDocente;
         public System.Windows.Forms.Label lblNvoUsu;
         public MetroFramework.Controls.MetroTextBox txt_contra_usu;
-        public System.Windows.Forms.Label lblmostrarcontraseña;
         private FontAwesome.Sharp.IconButton btnBloqueo;
     }
 }

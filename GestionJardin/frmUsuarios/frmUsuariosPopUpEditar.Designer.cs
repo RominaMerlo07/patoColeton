@@ -34,7 +34,6 @@
             this.btn_CancelarUsuMod = new FontAwesome.Sharp.IconButton();
             this.btn_GuardarUsuMod = new FontAwesome.Sharp.IconButton();
             this.lblnombreusuario = new System.Windows.Forms.Label();
-            this.lblmostrarcontraseña = new System.Windows.Forms.Label();
             this.btnBloqueo = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
@@ -54,7 +53,7 @@
             // 
             this.lblEditarUsu.AutoSize = true;
             this.lblEditarUsu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditarUsu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblEditarUsu.ForeColor = System.Drawing.Color.Cyan;
             this.lblEditarUsu.Location = new System.Drawing.Point(284, 102);
             this.lblEditarUsu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEditarUsu.Name = "lblEditarUsu";
@@ -162,17 +161,6 @@
             this.lblnombreusuario.TabIndex = 52;
             this.lblnombreusuario.Text = "USUARIO:";
             // 
-            // lblmostrarcontraseña
-            // 
-            this.lblmostrarcontraseña.AutoSize = true;
-            this.lblmostrarcontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmostrarcontraseña.ForeColor = System.Drawing.Color.Yellow;
-            this.lblmostrarcontraseña.Location = new System.Drawing.Point(392, 183);
-            this.lblmostrarcontraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblmostrarcontraseña.Name = "lblmostrarcontraseña";
-            this.lblmostrarcontraseña.Size = new System.Drawing.Size(0, 13);
-            this.lblmostrarcontraseña.TabIndex = 55;
-            // 
             // btnBloqueo
             // 
             this.btnBloqueo.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
@@ -181,14 +169,14 @@
             this.btnBloqueo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnBloqueo.ForeColor = System.Drawing.Color.Transparent;
             this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Eye;
-            this.btnBloqueo.IconColor = System.Drawing.Color.Cyan;
-            this.btnBloqueo.IconSize = 50;
+            this.btnBloqueo.IconColor = System.Drawing.Color.Gray;
+            this.btnBloqueo.IconSize = 45;
             this.btnBloqueo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBloqueo.Location = new System.Drawing.Point(381, 173);
             this.btnBloqueo.Margin = new System.Windows.Forms.Padding(2);
             this.btnBloqueo.Name = "btnBloqueo";
             this.btnBloqueo.Rotation = 0D;
-            this.btnBloqueo.Size = new System.Drawing.Size(52, 51);
+            this.btnBloqueo.Size = new System.Drawing.Size(43, 46);
             this.btnBloqueo.TabIndex = 82;
             this.btnBloqueo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBloqueo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -202,7 +190,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(523, 395);
             this.Controls.Add(this.btnBloqueo);
-            this.Controls.Add(this.lblmostrarcontraseña);
             this.Controls.Add(this.lblnombreusuario);
             this.Controls.Add(this.btn_CancelarUsuMod);
             this.Controls.Add(this.btn_GuardarUsuMod);
@@ -231,7 +218,6 @@
         private FontAwesome.Sharp.IconButton btn_GuardarUsuMod;
         public System.Windows.Forms.Label lblEditarUsu;
         public System.Windows.Forms.Label lblnombreusuario;
-        public System.Windows.Forms.Label lblmostrarcontraseña;
         private FontAwesome.Sharp.IconButton btnBloqueo;
     }
 }
