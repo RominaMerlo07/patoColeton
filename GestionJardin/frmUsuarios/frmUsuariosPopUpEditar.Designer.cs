@@ -34,8 +34,7 @@
             this.btn_CancelarUsuMod = new FontAwesome.Sharp.IconButton();
             this.btn_GuardarUsuMod = new FontAwesome.Sharp.IconButton();
             this.lblnombreusuario = new System.Windows.Forms.Label();
-            this.mostrarpass = new System.Windows.Forms.CheckBox();
-            this.lblmostrarcontraseña = new System.Windows.Forms.Label();
+            this.btnBloqueo = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // label1
@@ -54,7 +53,7 @@
             // 
             this.lblEditarUsu.AutoSize = true;
             this.lblEditarUsu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEditarUsu.ForeColor = System.Drawing.Color.Yellow;
+            this.lblEditarUsu.ForeColor = System.Drawing.Color.Cyan;
             this.lblEditarUsu.Location = new System.Drawing.Point(284, 102);
             this.lblEditarUsu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEditarUsu.Name = "lblEditarUsu";
@@ -162,35 +161,27 @@
             this.lblnombreusuario.TabIndex = 52;
             this.lblnombreusuario.Text = "USUARIO:";
             // 
-            // mostrarpass
+            // btnBloqueo
             // 
-            this.mostrarpass.Appearance = System.Windows.Forms.Appearance.Button;
-            this.mostrarpass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.mostrarpass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.mostrarpass.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.mostrarpass.FlatAppearance.BorderColor = System.Drawing.Color.Cyan;
-            this.mostrarpass.FlatAppearance.CheckedBackColor = System.Drawing.Color.Cyan;
-            this.mostrarpass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mostrarpass.ForeColor = System.Drawing.Color.Cornsilk;
-            this.mostrarpass.Location = new System.Drawing.Point(357, 173);
-            this.mostrarpass.Name = "mostrarpass";
-            this.mostrarpass.Size = new System.Drawing.Size(20, 32);
-            this.mostrarpass.TabIndex = 54;
-            this.mostrarpass.UseVisualStyleBackColor = false;
-            this.mostrarpass.CheckedChanged += new System.EventHandler(this.mostrarpass_CheckedChanged);
-            this.mostrarpass.MouseLeave += new System.EventHandler(this.mostrarpass_MouseLeave);
-            this.mostrarpass.MouseHover += new System.EventHandler(this.mostrarpass_MouseHover);
-            // 
-            // lblmostrarcontraseña
-            // 
-            this.lblmostrarcontraseña.AutoSize = true;
-            this.lblmostrarcontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmostrarcontraseña.ForeColor = System.Drawing.Color.Yellow;
-            this.lblmostrarcontraseña.Location = new System.Drawing.Point(392, 183);
-            this.lblmostrarcontraseña.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblmostrarcontraseña.Name = "lblmostrarcontraseña";
-            this.lblmostrarcontraseña.Size = new System.Drawing.Size(0, 13);
-            this.lblmostrarcontraseña.TabIndex = 55;
+            this.btnBloqueo.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnBloqueo.FlatAppearance.BorderSize = 0;
+            this.btnBloqueo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBloqueo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBloqueo.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.btnBloqueo.IconColor = System.Drawing.Color.Gray;
+            this.btnBloqueo.IconSize = 45;
+            this.btnBloqueo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBloqueo.Location = new System.Drawing.Point(381, 173);
+            this.btnBloqueo.Margin = new System.Windows.Forms.Padding(2);
+            this.btnBloqueo.Name = "btnBloqueo";
+            this.btnBloqueo.Rotation = 0D;
+            this.btnBloqueo.Size = new System.Drawing.Size(43, 46);
+            this.btnBloqueo.TabIndex = 82;
+            this.btnBloqueo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBloqueo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnBloqueo.UseVisualStyleBackColor = true;
+            this.btnBloqueo.Click += new System.EventHandler(this.btnBloqueo_Click);
             // 
             // frmUsuariosPopUpEditar
             // 
@@ -198,8 +189,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(523, 395);
-            this.Controls.Add(this.lblmostrarcontraseña);
-            this.Controls.Add(this.mostrarpass);
+            this.Controls.Add(this.btnBloqueo);
             this.Controls.Add(this.lblnombreusuario);
             this.Controls.Add(this.btn_CancelarUsuMod);
             this.Controls.Add(this.btn_GuardarUsuMod);
@@ -228,7 +218,6 @@
         private FontAwesome.Sharp.IconButton btn_GuardarUsuMod;
         public System.Windows.Forms.Label lblEditarUsu;
         public System.Windows.Forms.Label lblnombreusuario;
-        private System.Windows.Forms.CheckBox mostrarpass;
-        public System.Windows.Forms.Label lblmostrarcontraseña;
+        private FontAwesome.Sharp.IconButton btnBloqueo;
     }
 }

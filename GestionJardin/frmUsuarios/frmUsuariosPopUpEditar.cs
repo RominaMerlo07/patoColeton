@@ -33,8 +33,7 @@ namespace GestionJardin
         private void frmUsuariosPopUpEditar_Load(object sender, EventArgs e)
         {
             frmUsuarios U = Owner as frmUsuarios;
-            metroTextBoxContrasenaEdit.UseSystemPasswordChar = true;
-            lblmostrarcontraseña.Visible = false;
+            metroTextBoxContrasenaEdit.UseSystemPasswordChar = true;         
            if (U.dgv_UsuariosActivos.CurrentRow.Cells[5].Value.ToString() == "INACTIVO")
             {
                 this.Close();
@@ -133,43 +132,21 @@ namespace GestionJardin
             }
         }
 
-        private void mostrarpass_CheckedChanged(object sender, EventArgs e)
+                private void btnBloqueo_Click(object sender, EventArgs e)
         {
-           
-                if (mostrarpass.Checked == true)
-                {
-                    metroTextBoxContrasenaEdit.UseSystemPasswordChar = false;
-                    lblmostrarcontraseña.Visible = true;
-                    lblmostrarcontraseña.Text = "OCULTAR CONTRASEÑA";
+            if (this.btnBloqueo.IconChar == FontAwesome.Sharp.IconChar.Eye)
+            {
+                this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
+                metroTextBoxContrasenaEdit.UseSystemPasswordChar = false;
 
             }
             else
-                {
-                    metroTextBoxContrasenaEdit.UseSystemPasswordChar = true;
-                
-                    lblmostrarcontraseña.Text = "VER CONTRASEÑA";
-            }
-            
-        }
-
-        private void mostrarpass_MouseHover(object sender, EventArgs e)
-        {
-            lblmostrarcontraseña.Visible = true;
-            if (mostrarpass.Checked == true)
             {
-                lblmostrarcontraseña.Text = "OCULTAR CONTRASEÑA";
-            }
-            else
-            {
-                lblmostrarcontraseña.Text = "VER CONTRASEÑA";
-            }
-        }
 
+                this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Eye;
+                metroTextBoxContrasenaEdit.UseSystemPasswordChar = true;
 
-        private void mostrarpass_MouseLeave(object sender, EventArgs e)
-        {
-            lblmostrarcontraseña.Visible = false;
-           
+            }
         }
     }
 }

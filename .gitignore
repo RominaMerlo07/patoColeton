@@ -210,3 +210,6 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+/CapaEntidades/SqlServerTypes
+/GestionJardin/SqlServerTypes
+/CapaAccesoDatos/SqlServerTypes
