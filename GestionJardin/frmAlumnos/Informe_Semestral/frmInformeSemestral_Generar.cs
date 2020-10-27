@@ -74,6 +74,8 @@ namespace GestionJardin
             lblTurno.Visible = false;
             lblSala.Visible = false;
             lblEtapa.Visible = false;
+            btnGInf_Editar.IconColor = Color.Gray;
+            btnGInf_Editar.ForeColor = Color.Gray;
         }
 
         private void cbTurno_Leave(object sender, EventArgs e)
