@@ -145,16 +145,16 @@
     <Compile Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosPopUpAgregar.Designer.cs">
       <DependentUpon>frmAlumnosPopUpAgregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnos\frmAsistencia\frmAsistencia.cs">
+    <Compile Include="frmAlumnos\Asistencias\frmAsistencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnos\frmAsistencia\frmAsistencia.Designer.cs">
+    <Compile Include="frmAlumnos\Asistencias\frmAsistencia.Designer.cs">
       <DependentUpon>frmAsistencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnos\frmAsistencia\frmAsistenciaConsulta.cs">
+    <Compile Include="frmAlumnos\Asistencias\frmAsistenciaConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnos\frmAsistencia\frmAsistenciaConsulta.Designer.cs">
+    <Compile Include="frmAlumnos\Asistencias\frmAsistenciaConsulta.Designer.cs">
       <DependentUpon>frmAsistenciaConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCobros.cs">
@@ -198,6 +198,12 @@
     </Compile>
     <Compile Include="frmGestionCuotas.Designer.cs">
       <DependentUpon>frmGestionCuotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Semestral\frmInformeSemestral_Generar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Semestral\frmInformeSemestral_Generar.Designer.cs">
+      <DependentUpon>frmInformeSemestral_Generar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -288,11 +294,14 @@
     <EmbeddedResource Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosPopUpAgregar.resx">
       <DependentUpon>frmAlumnosPopUpAgregar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnos\frmAsistencia\frmAsistencia.resx">
+    <EmbeddedResource Include="frmAlumnos\Asistencias\frmAsistencia.resx">
       <DependentUpon>frmAsistencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnos\frmAsistencia\frmAsistenciaConsulta.resx">
+    <EmbeddedResource Include="frmAlumnos\Asistencias\frmAsistenciaConsulta.resx">
       <DependentUpon>frmAsistenciaConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Semestral\frmInformeSemestral_Generar.resx">
+      <DependentUpon>frmInformeSemestral_Generar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCobros.resx">
       <DependentUpon>frmCobros.cs</DependentUpon>

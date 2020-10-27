@@ -43,7 +43,7 @@ namespace GestionJardin
             ChildForm.BringToFront(); // se trae al frente cada form para mostrar
             ChildForm.Show();
             btn_VolverGA.Visible = true;
-            btn_VolverGA.BringToFront();
+         //   btn_VolverGA.BringToFront();
             lbl_Ruta.Text = "Usted se encuentra en GESTION ALUMNOS / " + ChildForm.Text;
 
         }
@@ -71,6 +71,7 @@ namespace GestionJardin
         private void btnEstudiantes_Click(object sender, EventArgs e)
         {
             panelEstudiantes.Visible = true;
+            panelEstudiantes.BringToFront();
             moverIndiceNavbar(btnEstudiantes);
             panelAsistencia.Visible = false;
             panelInformeSemestral.Visible = false;
@@ -79,6 +80,7 @@ namespace GestionJardin
         private void btnEstudiantes_MouseHover(object sender, EventArgs e)
         {
             panelEstudiantes.Visible = true;
+            panelEstudiantes.BringToFront();
             moverIndiceNavbar(btnEstudiantes);
             panelAsistencia.Visible = false;
             panelInformeSemestral.Visible = false;
@@ -128,27 +130,9 @@ namespace GestionJardin
             Ind_PnlInfSemestral.Visible = false;
             Ind_PnlAsistencia.Visible = false;
             Ind_PnlEstudiante.Visible = false;
-        }
+        }        
 
-        private void btnEst_CambioCiclo_MouseHover(object sender, EventArgs e)
-        {
-            btnEst_CambioCiclo.FlatStyle = FlatStyle.Flat;
-            btnEst_CambioCiclo.BringToFront();
-            btnEst_CambioCiclo.TextImageRelation = TextImageRelation.TextBeforeImage;
-            Ind_PnlInfSemestral.Visible = false;
-            Ind_PnlAsistencia.Visible = false;
-            Ind_PnlEstudiante.Visible = true;
-            moverIndicePnl_Estudiantes(btnEst_CambioCiclo);
-        }
-
-        private void btnEst_CambioCiclo_MouseLeave(object sender, EventArgs e)
-        {
-            btnEst_CambioCiclo.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnEst_CambioCiclo.FlatStyle = FlatStyle.Popup;
-            Ind_PnlInfSemestral.Visible = false;
-            Ind_PnlAsistencia.Visible = false;
-            Ind_PnlEstudiante.Visible = false;
-        }
+        
 
         private void panelEstudiantes_MouseLeave(object sender, EventArgs e)
         {
@@ -167,6 +151,7 @@ namespace GestionJardin
         private void btnAsistencia_Click(object sender, EventArgs e)
         {
             panelAsistencia.Visible = true;
+            panelAsistencia.BringToFront();
             moverIndiceNavbar(btnAsistencia);
             panelEstudiantes.Visible = false;
             panelInformeSemestral.Visible = false;
@@ -175,6 +160,7 @@ namespace GestionJardin
         private void btnAsistencia_MouseHover(object sender, EventArgs e)
         {
             panelAsistencia.Visible = true;
+            panelAsistencia.BringToFront();
             moverIndiceNavbar(btnAsistencia);
             panelEstudiantes.Visible = false;
             panelInformeSemestral.Visible = false;
@@ -243,6 +229,7 @@ namespace GestionJardin
         private void btnInformeSemestral_Click(object sender, EventArgs e)
         {
             panelInformeSemestral.Visible = true;
+            panelInformeSemestral.BringToFront();
             moverIndiceNavbar(btnInformeSemestral);
             panelEstudiantes.Visible = false;
             panelAsistencia.Visible = false;
@@ -251,6 +238,7 @@ namespace GestionJardin
         private void btnInformeSemestral_MouseHover(object sender, EventArgs e)
         {
             panelInformeSemestral.Visible = true;
+            panelInformeSemestral.BringToFront();
             moverIndiceNavbar(btnInformeSemestral);
             panelEstudiantes.Visible = false;
             panelAsistencia.Visible = false;
@@ -290,11 +278,11 @@ namespace GestionJardin
         private void btnIS_Consultar_MouseHover(object sender, EventArgs e)
         {
             btnIS_Consultar.TextImageRelation = TextImageRelation.TextBeforeImage;
-            btnIS_Consultar.BringToFront();
-            btnIS_Consultar.FlatStyle = FlatStyle.Flat;
             Ind_PnlInfSemestral.Visible = true;
             Ind_PnlAsistencia.Visible = false;
             Ind_PnlEstudiante.Visible = false;
+            btnIS_Consultar.FlatStyle = FlatStyle.Flat;
+            btnIS_Consultar.BringToFront();
             moverIndicePnl_InformeSemestral(btnIS_Consultar);
         }
 
@@ -346,10 +334,10 @@ namespace GestionJardin
         private void btnEst_Consultar_Click(object sender, EventArgs e)
         {
             OpenChildForm(new GestionJardin.frmAlumnosGestionar());
+            btnEstudiantes.Enabled = true;
             btnAsistencia.Enabled = false;
             btnInformeSemestral.Enabled = false;
             btn_VolverGA.Visible = true;
-            btn_VolverGA.BringToFront();
             lbl_Ruta.Visible = true;           
             
         }
@@ -357,10 +345,10 @@ namespace GestionJardin
         private void btnEst_GrupoFlia_Click(object sender, EventArgs e)
         {
             OpenChildForm(new GestionJardin.frmAlumnosGrupoFlia());
+            btnEstudiantes.Enabled = true;
             btnAsistencia.Enabled = false;
             btnInformeSemestral.Enabled = false;
             btn_VolverGA.Visible = true;
-            btn_VolverGA.BringToFront();
             lbl_Ruta.Visible = true;
         }
 
@@ -371,7 +359,6 @@ namespace GestionJardin
             btnInformeSemestral.Enabled = false;
             btnEstudiantes.Enabled = false;
             btn_VolverGA.Visible = true;
-            btn_VolverGA.BringToFront();
             lbl_Ruta.Visible = true;
         }
 
@@ -382,7 +369,16 @@ namespace GestionJardin
             btnInformeSemestral.Enabled = false;
             btnEstudiantes.Enabled = false;
             btn_VolverGA.Visible = true;
-            btn_VolverGA.BringToFront();
+            lbl_Ruta.Visible = true;
+        }
+
+        private void btnIS_Generar_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new GestionJardin.frmInformeSemestral_Generar());
+            btnInformeSemestral.Enabled = true;
+            btnAsistencia.Enabled = false;
+            btnEstudiantes.Enabled = false;
+            btn_VolverGA.Visible = true;
             lbl_Ruta.Visible = true;
         }
     }

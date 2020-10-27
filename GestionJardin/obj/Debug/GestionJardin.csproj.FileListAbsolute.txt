@@ -606,3 +606,4 @@ C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJard
 C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.csproj.CopyComplete
 C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.exe
 C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.pdb
+C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.frmInformeSemestral_Generar.resources
