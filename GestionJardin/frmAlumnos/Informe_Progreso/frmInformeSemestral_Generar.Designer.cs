@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
+            this.lblEtapa = new System.Windows.Forms.Label();
+            this.lblTurno = new System.Windows.Forms.Label();
+            this.lblSala = new System.Windows.Forms.Label();
             this.cbEtapa = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel5 = new MetroFramework.Controls.MetroLabel();
             this.cbTurno = new MetroFramework.Controls.MetroComboBox();
@@ -37,13 +40,9 @@
             this.metroLabel2 = new MetroFramework.Controls.MetroLabel();
             this.dgv_Informe = new System.Windows.Forms.DataGridView();
             this.txtGInf_Buscar = new MetroFramework.Controls.MetroTextBox();
-            this.btnGInf_Editar = new FontAwesome.Sharp.IconButton();
-            this.btnGInf_Agregar = new FontAwesome.Sharp.IconButton();
             this.lbl_panelInforme = new System.Windows.Forms.Label();
             this.lblInformeEdit = new System.Windows.Forms.Label();
-            this.lblEtapa = new System.Windows.Forms.Label();
-            this.lblSala = new System.Windows.Forms.Label();
-            this.lblTurno = new System.Windows.Forms.Label();
+            this.btnGInf_Editar = new FontAwesome.Sharp.IconButton();
             this.metroPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Informe)).BeginInit();
             this.SuspendLayout();
@@ -74,6 +73,39 @@
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
+            // 
+            // lblEtapa
+            // 
+            this.lblEtapa.AutoSize = true;
+            this.lblEtapa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEtapa.ForeColor = System.Drawing.Color.Red;
+            this.lblEtapa.Location = new System.Drawing.Point(962, 63);
+            this.lblEtapa.Name = "lblEtapa";
+            this.lblEtapa.Size = new System.Drawing.Size(46, 17);
+            this.lblEtapa.TabIndex = 47;
+            this.lblEtapa.Text = "label3";
+            // 
+            // lblTurno
+            // 
+            this.lblTurno.AutoSize = true;
+            this.lblTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTurno.ForeColor = System.Drawing.Color.Red;
+            this.lblTurno.Location = new System.Drawing.Point(60, 63);
+            this.lblTurno.Name = "lblTurno";
+            this.lblTurno.Size = new System.Drawing.Size(46, 17);
+            this.lblTurno.TabIndex = 45;
+            this.lblTurno.Text = "label1";
+            // 
+            // lblSala
+            // 
+            this.lblSala.AutoSize = true;
+            this.lblSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSala.ForeColor = System.Drawing.Color.Red;
+            this.lblSala.Location = new System.Drawing.Point(510, 63);
+            this.lblSala.Name = "lblSala";
+            this.lblSala.Size = new System.Drawing.Size(46, 17);
+            this.lblSala.TabIndex = 46;
+            this.lblSala.Text = "label2";
             // 
             // cbEtapa
             // 
@@ -175,10 +207,10 @@
             // dgv_Informe
             // 
             this.dgv_Informe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_Informe.Location = new System.Drawing.Point(55, 475);
+            this.dgv_Informe.Location = new System.Drawing.Point(38, 475);
             this.dgv_Informe.Name = "dgv_Informe";
             this.dgv_Informe.RowTemplate.Height = 24;
-            this.dgv_Informe.Size = new System.Drawing.Size(1277, 416);
+            this.dgv_Informe.Size = new System.Drawing.Size(1300, 416);
             this.dgv_Informe.TabIndex = 3;
             // 
             // txtGInf_Buscar
@@ -220,44 +252,6 @@
             this.txtGInf_Buscar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtGInf_Buscar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
-            // btnGInf_Editar
-            // 
-            this.btnGInf_Editar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGInf_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGInf_Editar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnGInf_Editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGInf_Editar.ForeColor = System.Drawing.Color.Cyan;
-            this.btnGInf_Editar.IconChar = FontAwesome.Sharp.IconChar.FileSignature;
-            this.btnGInf_Editar.IconColor = System.Drawing.Color.Cyan;
-            this.btnGInf_Editar.IconSize = 100;
-            this.btnGInf_Editar.Location = new System.Drawing.Point(1355, 715);
-            this.btnGInf_Editar.Name = "btnGInf_Editar";
-            this.btnGInf_Editar.Rotation = 0D;
-            this.btnGInf_Editar.Size = new System.Drawing.Size(293, 134);
-            this.btnGInf_Editar.TabIndex = 30;
-            this.btnGInf_Editar.Text = "EDITAR";
-            this.btnGInf_Editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGInf_Editar.UseVisualStyleBackColor = true;
-            // 
-            // btnGInf_Agregar
-            // 
-            this.btnGInf_Agregar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnGInf_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGInf_Agregar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnGInf_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGInf_Agregar.ForeColor = System.Drawing.Color.Lime;
-            this.btnGInf_Agregar.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.btnGInf_Agregar.IconColor = System.Drawing.Color.Lime;
-            this.btnGInf_Agregar.IconSize = 80;
-            this.btnGInf_Agregar.Location = new System.Drawing.Point(1355, 511);
-            this.btnGInf_Agregar.Name = "btnGInf_Agregar";
-            this.btnGInf_Agregar.Rotation = 0D;
-            this.btnGInf_Agregar.Size = new System.Drawing.Size(293, 134);
-            this.btnGInf_Agregar.TabIndex = 29;
-            this.btnGInf_Agregar.Text = "AGREGAR";
-            this.btnGInf_Agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGInf_Agregar.UseVisualStyleBackColor = true;
-            // 
             // lbl_panelInforme
             // 
             this.lbl_panelInforme.Anchor = System.Windows.Forms.AnchorStyles.Left;
@@ -279,43 +273,30 @@
             this.lblInformeEdit.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblInformeEdit.Location = new System.Drawing.Point(51, 894);
             this.lblInformeEdit.Name = "lblInformeEdit";
-            this.lblInformeEdit.Size = new System.Drawing.Size(635, 20);
+            this.lblInformeEdit.Size = new System.Drawing.Size(716, 20);
             this.lblInformeEdit.TabIndex = 44;
-            this.lblInformeEdit.Text = "* Para poder editar un informe de progreso debe seleccionar el registro previamen" +
-    "te";
+            this.lblInformeEdit.Text = "* Para poder redactar o editar un informe de progreso debe seleccionar el registr" +
+    "o previamente";
             // 
-            // lblEtapa
+            // btnGInf_Editar
             // 
-            this.lblEtapa.AutoSize = true;
-            this.lblEtapa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEtapa.ForeColor = System.Drawing.Color.Red;
-            this.lblEtapa.Location = new System.Drawing.Point(962, 63);
-            this.lblEtapa.Name = "lblEtapa";
-            this.lblEtapa.Size = new System.Drawing.Size(46, 17);
-            this.lblEtapa.TabIndex = 47;
-            this.lblEtapa.Text = "label3";
-            // 
-            // lblSala
-            // 
-            this.lblSala.AutoSize = true;
-            this.lblSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSala.ForeColor = System.Drawing.Color.Red;
-            this.lblSala.Location = new System.Drawing.Point(510, 63);
-            this.lblSala.Name = "lblSala";
-            this.lblSala.Size = new System.Drawing.Size(46, 17);
-            this.lblSala.TabIndex = 46;
-            this.lblSala.Text = "label2";
-            // 
-            // lblTurno
-            // 
-            this.lblTurno.AutoSize = true;
-            this.lblTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTurno.ForeColor = System.Drawing.Color.Red;
-            this.lblTurno.Location = new System.Drawing.Point(60, 63);
-            this.lblTurno.Name = "lblTurno";
-            this.lblTurno.Size = new System.Drawing.Size(46, 17);
-            this.lblTurno.TabIndex = 45;
-            this.lblTurno.Text = "label1";
+            this.btnGInf_Editar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnGInf_Editar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGInf_Editar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnGInf_Editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGInf_Editar.ForeColor = System.Drawing.Color.SpringGreen;
+            this.btnGInf_Editar.IconChar = FontAwesome.Sharp.IconChar.FileSignature;
+            this.btnGInf_Editar.IconColor = System.Drawing.Color.SpringGreen;
+            this.btnGInf_Editar.IconSize = 100;
+            this.btnGInf_Editar.Location = new System.Drawing.Point(1344, 608);
+            this.btnGInf_Editar.Name = "btnGInf_Editar";
+            this.btnGInf_Editar.Rotation = 0D;
+            this.btnGInf_Editar.Size = new System.Drawing.Size(293, 134);
+            this.btnGInf_Editar.TabIndex = 30;
+            this.btnGInf_Editar.Text = "REDACTAR INFORME";
+            this.btnGInf_Editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGInf_Editar.UseVisualStyleBackColor = true;
+            this.btnGInf_Editar.Click += new System.EventHandler(this.btnGInf_Editar_Click);
             // 
             // frmInformeSemestral_Generar
             // 
@@ -326,12 +307,11 @@
             this.Controls.Add(this.lblInformeEdit);
             this.Controls.Add(this.lbl_panelInforme);
             this.Controls.Add(this.btnGInf_Editar);
-            this.Controls.Add(this.btnGInf_Agregar);
             this.Controls.Add(this.txtGInf_Buscar);
             this.Controls.Add(this.dgv_Informe);
             this.Controls.Add(this.metroPanel3);
             this.Name = "frmInformeSemestral_Generar";
-            this.Text = "GENERAR INFORME SEMESTAL";
+            this.Text = "GESTIONAR INFORME DE PROGESO";
             this.Load += new System.EventHandler(this.frmInformeSemestral_Generar_Load);
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();
@@ -352,7 +332,6 @@
         private System.Windows.Forms.DataGridView dgv_Informe;
         private MetroFramework.Controls.MetroTextBox txtGInf_Buscar;
         private FontAwesome.Sharp.IconButton btnGInf_Editar;
-        private FontAwesome.Sharp.IconButton btnGInf_Agregar;
         private MetroFramework.Controls.MetroComboBox cbEtapa;
         private System.Windows.Forms.Label lbl_panelInforme;
         private System.Windows.Forms.Label lblInformeEdit;

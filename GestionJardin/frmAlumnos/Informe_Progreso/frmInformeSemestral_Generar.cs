@@ -69,13 +69,10 @@ namespace GestionJardin
             txtGInf_Buscar.Visible = false;
             dgv_Informe.Visible = false;
             lblInformeEdit.Visible = false;
-            btnGInf_Agregar.Visible = false;
             btnGInf_Editar.Visible = false;
             lblTurno.Visible = false;
             lblSala.Visible = false;
-            lblEtapa.Visible = false;
-            btnGInf_Editar.IconColor = Color.Gray;
-            btnGInf_Editar.ForeColor = Color.Gray;
+            lblEtapa.Visible = false;          
         }
 
         private void cbTurno_Leave(object sender, EventArgs e)
@@ -131,11 +128,15 @@ namespace GestionJardin
                 txtGInf_Buscar.Visible = true;
                 dgv_Informe.Visible = true;
                 lblInformeEdit.Visible = true;
-                btnGInf_Agregar.Visible = true;
                 btnGInf_Editar.Visible = true;
             }
         }
-        
 
+        private void btnGInf_Editar_Click(object sender, EventArgs e)
+        {
+            frmInformeProgreso_Nuevo frmInformeProgreso_Nuevo = new frmInformeProgreso_Nuevo();
+            frmInformeProgreso_Nuevo.Text = "GESTIÓN ALUMNOS / INFORME DE PROGRESO / REDACTAR INFORME ";
+            frmInformeProgreso_Nuevo.ShowDialog();
+        }
     }
 }
