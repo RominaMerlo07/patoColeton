@@ -202,7 +202,6 @@
             this.Controls.Add(this.metroLabel4);
             this.Name = "frmInformeProgreso_GestAsig_Agregar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "CREAR NUEVA ASIGNATURA";
             this.ResumeLayout(false);
 
         }

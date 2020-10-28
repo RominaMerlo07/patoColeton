@@ -610,3 +610,5 @@ C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJard
 C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.frmInformeProgreso_Nuevo.resources
 C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.frmInformeProgreso_AgregarMateria.resources
 C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.frmInformeProgreso_GestAsig_Agregar.resources
+C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.frmInformeProgreso_GestAsig_Editar.resources
+C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.frmInformeProgreso_GestAsig_Eliminar.resources

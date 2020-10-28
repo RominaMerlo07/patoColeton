@@ -83,5 +83,19 @@ namespace GestionJardin
             frmInformeProgreso_GestAsig_Agregar.Text = "GESTIÓN ALUMNOS / INFORME DE PROGRESO / GESTIONAR CRITERIO DE APRENDIZAJE / AGREGAR ";
             frmInformeProgreso_GestAsig_Agregar.ShowDialog();
         }
+
+        private void btn_Editar_Click(object sender, EventArgs e)
+        {
+            frmInformeProgreso_GestAsig_Editar frmInformeProgreso_GestAsig_Editar = new frmInformeProgreso_GestAsig_Editar();
+            frmInformeProgreso_GestAsig_Editar.Text = "GESTIÓN ALUMNOS / INFORME DE PROGRESO / GESTIONAR CRITERIO DE APRENDIZAJE / MODIFICAR ";
+            frmInformeProgreso_GestAsig_Editar.ShowDialog();
+        }
+
+        private void btn_Eliminar_Click(object sender, EventArgs e)
+        {
+            frmInformeProgreso_GestAsig_Eliminar frmInformeProgreso_GestAsig_Eliminar = new frmInformeProgreso_GestAsig_Eliminar();
+            frmInformeProgreso_GestAsig_Eliminar.Text = "GESTIÓN ALUMNOS / INFORME DE PROGRESO / GESTIONAR CRITERIO DE APRENDIZAJE / ELIMINAR ";
+            frmInformeProgreso_GestAsig_Eliminar.ShowDialog();
+        }
     }
 }

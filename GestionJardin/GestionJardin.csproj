@@ -223,6 +223,18 @@
     <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Agregar.Designer.cs">
       <DependentUpon>frmInformeProgreso_GestAsig_Agregar.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Editar.Designer.cs">
+      <DependentUpon>frmInformeProgreso_GestAsig_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Eliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Eliminar.Designer.cs">
+      <DependentUpon>frmInformeProgreso_GestAsig_Eliminar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -320,6 +332,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Agregar.resx">
       <DependentUpon>frmInformeProgreso_GestAsig_Agregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Editar.resx">
+      <DependentUpon>frmInformeProgreso_GestAsig_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Eliminar.resx">
+      <DependentUpon>frmInformeProgreso_GestAsig_Eliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Gestionar.resx">
       <DependentUpon>frmInformeProgreso_Gestionar.cs</DependentUpon>
