@@ -199,17 +199,29 @@
     <Compile Include="frmGestionCuotas.Designer.cs">
       <DependentUpon>frmGestionCuotas.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnos\Informe_Progreso\frmInformeSemestral_Generar.cs">
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Gestionar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnos\Informe_Progreso\frmInformeSemestral_Generar.Designer.cs">
-      <DependentUpon>frmInformeSemestral_Generar.cs</DependentUpon>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Gestionar.Designer.cs">
+      <DependentUpon>frmInformeProgreso_Gestionar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnos\Informe_Progreso\frmInformeProgreso_Nuevo.cs">
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Nuevo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnos\Informe_Progreso\frmInformeProgreso_Nuevo.Designer.cs">
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Nuevo.Designer.cs">
       <DependentUpon>frmInformeProgreso_Nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestionarAsignaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestionarAsignaturas.Designer.cs">
+      <DependentUpon>frmInformeProgreso_GestionarAsignaturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Agregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Agregar.Designer.cs">
+      <DependentUpon>frmInformeProgreso_GestAsig_Agregar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -306,8 +318,11 @@
     <EmbeddedResource Include="frmAlumnos\Asistencias\frmAsistenciaConsulta.resx">
       <DependentUpon>frmAsistenciaConsulta.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\frmInformeSemestral_Generar.resx">
-      <DependentUpon>frmInformeSemestral_Generar.cs</DependentUpon>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Agregar.resx">
+      <DependentUpon>frmInformeProgreso_GestAsig_Agregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Gestionar.resx">
+      <DependentUpon>frmInformeProgreso_Gestionar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCobros.resx">
       <DependentUpon>frmCobros.cs</DependentUpon>
@@ -330,8 +345,11 @@
     <EmbeddedResource Include="frmGestionCuotas.resx">
       <DependentUpon>frmGestionCuotas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\frmInformeProgreso_Nuevo.resx">
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Nuevo.resx">
       <DependentUpon>frmInformeProgreso_Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestionarAsignaturas.resx">
+      <DependentUpon>frmInformeProgreso_GestionarAsignaturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

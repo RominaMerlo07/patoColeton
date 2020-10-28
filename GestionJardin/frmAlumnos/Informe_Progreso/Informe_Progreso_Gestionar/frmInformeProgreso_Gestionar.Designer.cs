@@ -311,7 +311,7 @@
             this.Controls.Add(this.dgv_Informe);
             this.Controls.Add(this.metroPanel3);
             this.Name = "frmInformeSemestral_Generar";
-            this.Text = "GESTIONAR INFORME DE PROGESO";
+            this.Text = "INFORME DE PROGESO / GESTIONAR INFORME";
             this.Load += new System.EventHandler(this.frmInformeSemestral_Generar_Load);
             this.metroPanel3.ResumeLayout(false);
             this.metroPanel3.PerformLayout();

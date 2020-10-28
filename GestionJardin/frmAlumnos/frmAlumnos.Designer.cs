@@ -243,9 +243,10 @@
             this.btnIS_Materia.Rotation = 0D;
             this.btnIS_Materia.Size = new System.Drawing.Size(366, 112);
             this.btnIS_Materia.TabIndex = 88;
-            this.btnIS_Materia.Text = "AGREGAR ASPECTO / ASIGNATURA";
+            this.btnIS_Materia.Text = "GESTIONAR ASIGNATURAS";
             this.btnIS_Materia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIS_Materia.UseVisualStyleBackColor = false;
+            this.btnIS_Materia.Click += new System.EventHandler(this.btnIS_Materia_Click);
             this.btnIS_Materia.MouseLeave += new System.EventHandler(this.btnIS_Materia_MouseLeave);
             this.btnIS_Materia.MouseHover += new System.EventHandler(this.btnIS_Materia_MouseHover);
             // 
@@ -264,7 +265,7 @@
             this.btnIS_Consultar.Rotation = 0D;
             this.btnIS_Consultar.Size = new System.Drawing.Size(366, 112);
             this.btnIS_Consultar.TabIndex = 87;
-            this.btnIS_Consultar.Text = "CONSULTAR  INF. DE PROGRESO";
+            this.btnIS_Consultar.Text = "CONSULTAR  INFORME          ";
             this.btnIS_Consultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIS_Consultar.UseVisualStyleBackColor = false;
             this.btnIS_Consultar.MouseLeave += new System.EventHandler(this.btnIS_Consultar_MouseLeave);
@@ -285,7 +286,7 @@
             this.btnIS_Generar.Rotation = 0D;
             this.btnIS_Generar.Size = new System.Drawing.Size(366, 112);
             this.btnIS_Generar.TabIndex = 86;
-            this.btnIS_Generar.Text = "GESTIONAR INF. DE PROGRESO";
+            this.btnIS_Generar.Text = "GESTIONAR INFORME              ";
             this.btnIS_Generar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIS_Generar.UseVisualStyleBackColor = false;
             this.btnIS_Generar.Click += new System.EventHandler(this.btnIS_Generar_Click);
@@ -373,11 +374,12 @@
             this.lbl_Ruta.AutoSize = true;
             this.lbl_Ruta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbl_Ruta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.lbl_Ruta.Location = new System.Drawing.Point(37, 196);
+            this.lbl_Ruta.Location = new System.Drawing.Point(31, 193);
             this.lbl_Ruta.Name = "lbl_Ruta";
             this.lbl_Ruta.Size = new System.Drawing.Size(15, 20);
             this.lbl_Ruta.TabIndex = 89;
             this.lbl_Ruta.Text = "*";
+            this.lbl_Ruta.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.lbl_Ruta.Visible = false;
             // 
             // btn_VolverGA
@@ -395,7 +397,7 @@
             this.btn_VolverGA.IconChar = FontAwesome.Sharp.IconChar.ChevronCircleLeft;
             this.btn_VolverGA.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_VolverGA.IconSize = 50;
-            this.btn_VolverGA.Location = new System.Drawing.Point(870, 126);
+            this.btn_VolverGA.Location = new System.Drawing.Point(1024, 124);
             this.btn_VolverGA.Name = "btn_VolverGA";
             this.btn_VolverGA.Rotation = 0D;
             this.btn_VolverGA.Size = new System.Drawing.Size(60, 57);
