@@ -243,7 +243,7 @@
             this.btnIS_Materia.Rotation = 0D;
             this.btnIS_Materia.Size = new System.Drawing.Size(366, 112);
             this.btnIS_Materia.TabIndex = 88;
-            this.btnIS_Materia.Text = "GESTIONAR ASIGNATURAS";
+            this.btnIS_Materia.Text = "GESTIONAR CRITERIO DE APRENDIZAJE";
             this.btnIS_Materia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIS_Materia.UseVisualStyleBackColor = false;
             this.btnIS_Materia.Click += new System.EventHandler(this.btnIS_Materia_Click);
@@ -397,7 +397,7 @@
             this.btn_VolverGA.IconChar = FontAwesome.Sharp.IconChar.ChevronCircleLeft;
             this.btn_VolverGA.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_VolverGA.IconSize = 50;
-            this.btn_VolverGA.Location = new System.Drawing.Point(1024, 124);
+            this.btn_VolverGA.Location = new System.Drawing.Point(1037, 124);
             this.btn_VolverGA.Name = "btn_VolverGA";
             this.btn_VolverGA.Rotation = 0D;
             this.btn_VolverGA.Size = new System.Drawing.Size(60, 57);

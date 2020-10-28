@@ -65,6 +65,7 @@ namespace GestionJardin
             cbTurno.SelectedIndex = -1;
             cbSala.SelectedIndex = -1;
             cbEtapa.SelectedIndex = -1;
+            cbEdad.SelectedIndex = -1;
             lbl_panelInforme.Visible = true;
             txtGInf_Buscar.Visible = false;
             dgv_Informe.Visible = false;
@@ -72,7 +73,8 @@ namespace GestionJardin
             btnGInf_Editar.Visible = false;
             lblTurno.Visible = false;
             lblSala.Visible = false;
-            lblEtapa.Visible = false;          
+            lblEtapa.Visible = false;
+            lblEdad.Visible = false;
         }
 
         private void cbTurno_Leave(object sender, EventArgs e)
@@ -105,6 +107,21 @@ namespace GestionJardin
             }
         }
 
+        private void cbEdad_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(cbEdad.Text.Trim()) == true)
+            {
+                cbEdad.Style = MetroFramework.MetroColorStyle.Red;
+                cbEdad.Focus();
+                lblEdad.Visible = true;
+                lblEdad.Text = "Por favor seleccione una edad";
+            }
+            else
+            {
+                lblEdad.Visible = false;
+            }
+        }
+
         private void cbEtapa_Leave(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(cbEtapa.Text.Trim()) == true)
@@ -122,7 +139,7 @@ namespace GestionJardin
 
         private void cbEtapa_SelectedValueChanged(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(cbTurno.Text.Trim()) == false && string.IsNullOrWhiteSpace(cbSala.Text.Trim()) == false && string.IsNullOrWhiteSpace(cbEtapa.Text.Trim()) == false)
+            if (string.IsNullOrWhiteSpace(cbTurno.Text.Trim()) == false && string.IsNullOrWhiteSpace(cbSala.Text.Trim()) == false && string.IsNullOrWhiteSpace(cbEdad.Text.Trim()) == false  && string.IsNullOrWhiteSpace(cbEtapa.Text.Trim()) == false)
             {
                 lbl_panelInforme.Visible = false;
                 txtGInf_Buscar.Visible = true;
@@ -138,5 +155,6 @@ namespace GestionJardin
             frmInformeProgreso_Nuevo.Text = "GESTIÓN ALUMNOS / INFORME DE PROGRESO / REDACTAR INFORME ";
             frmInformeProgreso_Nuevo.ShowDialog();
         }
+
     }
 }

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvAsignatura = new System.Windows.Forms.DataGridView();
             this.txtGA_Buscar = new MetroFramework.Controls.MetroTextBox();
             this.lblInfoAsignatura = new System.Windows.Forms.Label();
@@ -37,10 +37,7 @@
             this.btn_Editar = new FontAwesome.Sharp.IconButton();
             this.btn_Agregar = new FontAwesome.Sharp.IconButton();
             this.metroPanel3 = new MetroFramework.Controls.MetroPanel();
-            this.lblTurno = new System.Windows.Forms.Label();
             this.lblSala = new System.Windows.Forms.Label();
-            this.cbTurno = new MetroFramework.Controls.MetroComboBox();
-            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
             this.cbSala = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.lbl_panelInforme = new System.Windows.Forms.Label();
@@ -56,27 +53,27 @@
             this.dgvAsignatura.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvAsignatura.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvAsignatura.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvAsignatura.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvAsignatura.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgvAsignatura.Location = new System.Drawing.Point(36, 379);
             this.dgvAsignatura.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dgvAsignatura.MultiSelect = false;
             this.dgvAsignatura.Name = "dgvAsignatura";
             this.dgvAsignatura.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAsignatura.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAsignatura.RowHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvAsignatura.RowTemplate.Height = 24;
             this.dgvAsignatura.Size = new System.Drawing.Size(1252, 495);
             this.dgvAsignatura.TabIndex = 49;
@@ -103,20 +100,20 @@
             this.txtGA_Buscar.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtGA_Buscar.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
             this.txtGA_Buscar.Lines = new string[0];
-            this.txtGA_Buscar.Location = new System.Drawing.Point(876, 276);
+            this.txtGA_Buscar.Location = new System.Drawing.Point(728, 276);
             this.txtGA_Buscar.MaxLength = 32767;
             this.txtGA_Buscar.Name = "txtGA_Buscar";
             this.txtGA_Buscar.PasswordChar = '\0';
-            this.txtGA_Buscar.PromptText = "BUSCAR ASIGNATURA";
+            this.txtGA_Buscar.PromptText = "BUSCAR CRITERIO DE APRENDIZAJE";
             this.txtGA_Buscar.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.txtGA_Buscar.SelectedText = "";
             this.txtGA_Buscar.SelectionLength = 0;
             this.txtGA_Buscar.SelectionStart = 0;
             this.txtGA_Buscar.ShortcutsEnabled = true;
-            this.txtGA_Buscar.Size = new System.Drawing.Size(392, 50);
+            this.txtGA_Buscar.Size = new System.Drawing.Size(540, 50);
             this.txtGA_Buscar.TabIndex = 48;
             this.txtGA_Buscar.UseSelectable = true;
-            this.txtGA_Buscar.WaterMark = "BUSCAR ASIGNATURA";
+            this.txtGA_Buscar.WaterMark = "BUSCAR CRITERIO DE APRENDIZAJE";
             this.txtGA_Buscar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtGA_Buscar.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             // 
@@ -129,10 +126,10 @@
             this.lblInfoAsignatura.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.lblInfoAsignatura.Location = new System.Drawing.Point(32, 894);
             this.lblInfoAsignatura.Name = "lblInfoAsignatura";
-            this.lblInfoAsignatura.Size = new System.Drawing.Size(847, 20);
+            this.lblInfoAsignatura.Size = new System.Drawing.Size(926, 20);
             this.lblInfoAsignatura.TabIndex = 47;
-            this.lblInfoAsignatura.Text = "* Para poder editar los datos de una asignatura o dar de baja la misma, debe sele" +
-    "ccionar el registro previamente";
+            this.lblInfoAsignatura.Text = "* Para poder editar los datos de un criterio de aprendizaje o dar de baja el mism" +
+    "o, debe seleccionar el registro previamente";
             // 
             // btn_Eliminar
             // 
@@ -190,17 +187,13 @@
             this.btn_Agregar.Text = "AGREGAR";
             this.btn_Agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Agregar.UseVisualStyleBackColor = true;
-
             // 
             // metroPanel3
             // 
             this.metroPanel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.metroPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.metroPanel3.Controls.Add(this.lblTurno);
             this.metroPanel3.Controls.Add(this.lblSala);
-            this.metroPanel3.Controls.Add(this.cbTurno);
-            this.metroPanel3.Controls.Add(this.metroLabel1);
             this.metroPanel3.Controls.Add(this.cbSala);
             this.metroPanel3.Controls.Add(this.metroLabel3);
             this.metroPanel3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -209,75 +202,35 @@
             this.metroPanel3.HorizontalScrollbarSize = 10;
             this.metroPanel3.Location = new System.Drawing.Point(36, 259);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(733, 98);
+            this.metroPanel3.Size = new System.Drawing.Size(331, 98);
             this.metroPanel3.TabIndex = 0;
             this.metroPanel3.UseCustomBackColor = true;
             this.metroPanel3.VerticalScrollbarBarColor = true;
             this.metroPanel3.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel3.VerticalScrollbarSize = 10;
             // 
-            // lblTurno
-            // 
-            this.lblTurno.AutoSize = true;
-            this.lblTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTurno.ForeColor = System.Drawing.Color.Red;
-            this.lblTurno.Location = new System.Drawing.Point(16, 60);
-            this.lblTurno.Name = "lblTurno";
-            this.lblTurno.Size = new System.Drawing.Size(46, 17);
-            this.lblTurno.TabIndex = 45;
-            this.lblTurno.Text = "label1";
-            // 
             // lblSala
             // 
             this.lblSala.AutoSize = true;
             this.lblSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSala.ForeColor = System.Drawing.Color.Red;
-            this.lblSala.Location = new System.Drawing.Point(413, 60);
+            this.lblSala.Location = new System.Drawing.Point(7, 60);
             this.lblSala.Name = "lblSala";
             this.lblSala.Size = new System.Drawing.Size(46, 17);
             this.lblSala.TabIndex = 46;
             this.lblSala.Text = "label2";
             // 
-            // cbTurno
-            // 
-            this.cbTurno.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbTurno.FormattingEnabled = true;
-            this.cbTurno.ItemHeight = 24;
-            this.cbTurno.Items.AddRange(new object[] {
-            "MAÑANA",
-            "TARDE"});
-            this.cbTurno.Location = new System.Drawing.Point(161, 16);
-            this.cbTurno.Name = "cbTurno";
-            this.cbTurno.Size = new System.Drawing.Size(185, 30);
-            this.cbTurno.Style = MetroFramework.MetroColorStyle.Magenta;
-            this.cbTurno.TabIndex = 1;
-            this.cbTurno.UseCustomBackColor = true;
-            this.cbTurno.UseSelectable = true;
-            this.cbTurno.UseStyleColors = true;
-            this.cbTurno.SelectedValueChanged += new System.EventHandler(this.cbTurno_SelectedValueChanged);
-            this.cbTurno.Leave += new System.EventHandler(this.cbTurno_Leave);
-            // 
-            // metroLabel1
-            // 
-            this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
-            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
-            this.metroLabel1.ForeColor = System.Drawing.Color.Fuchsia;
-            this.metroLabel1.Location = new System.Drawing.Point(10, 16);
-            this.metroLabel1.Name = "metroLabel1";
-            this.metroLabel1.Size = new System.Drawing.Size(163, 44);
-            this.metroLabel1.TabIndex = 30;
-            this.metroLabel1.Text = "TURNO:";
-            this.metroLabel1.UseCustomBackColor = true;
-            this.metroLabel1.UseCustomForeColor = true;
-            // 
             // cbSala
             // 
             this.cbSala.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbSala.Enabled = false;
             this.cbSala.FormattingEnabled = true;
             this.cbSala.ItemHeight = 24;
-            this.cbSala.Location = new System.Drawing.Point(524, 16);
+            this.cbSala.Items.AddRange(new object[] {
+            "1 y 2 AÑOS",
+            "3 AÑOS",
+            "4 AÑOS",
+            "5 AÑOS"});
+            this.cbSala.Location = new System.Drawing.Point(125, 16);
             this.cbSala.Name = "cbSala";
             this.cbSala.Size = new System.Drawing.Size(185, 30);
             this.cbSala.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -294,11 +247,11 @@
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.ForeColor = System.Drawing.Color.Fuchsia;
-            this.metroLabel3.Location = new System.Drawing.Point(416, 16);
+            this.metroLabel3.Location = new System.Drawing.Point(3, 16);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(162, 44);
             this.metroLabel3.TabIndex = 28;
-            this.metroLabel3.Text = "SALA:";
+            this.metroLabel3.Text = "EDAD:";
             this.metroLabel3.UseCustomBackColor = true;
             this.metroLabel3.UseCustomForeColor = true;
             // 
@@ -310,9 +263,10 @@
             this.lbl_panelInforme.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.lbl_panelInforme.Location = new System.Drawing.Point(43, 379);
             this.lbl_panelInforme.Name = "lbl_panelInforme";
-            this.lbl_panelInforme.Size = new System.Drawing.Size(381, 20);
+            this.lbl_panelInforme.Size = new System.Drawing.Size(772, 20);
             this.lbl_panelInforme.TabIndex = 55;
-            this.lbl_panelInforme.Text = "* Por favor, seleccione turno y sala para continuar";
+            this.lbl_panelInforme.Text = "* Por favor, seleccione una edad del nivel inicial para agregar y/o modificar los" +
+    " criterios de aprendizaje";
             // 
             // frmInformeProgreso_AgregarMateria
             // 
@@ -329,7 +283,7 @@
             this.Controls.Add(this.btn_Editar);
             this.Controls.Add(this.btn_Agregar);
             this.Name = "frmInformeProgreso_AgregarMateria";
-            this.Text = "INFORME DE PROGRESO / GESTIONAR ASIGNATURAS";
+            this.Text = "INFORME DE PROGRESO / GEST. CRITERIO APRENDIZAJE";
             this.Load += new System.EventHandler(this.frmInformeProgreso_AgregarMateria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAsignatura)).EndInit();
             this.metroPanel3.ResumeLayout(false);
@@ -348,10 +302,7 @@
         private FontAwesome.Sharp.IconButton btn_Editar;
         private FontAwesome.Sharp.IconButton btn_Agregar;
         private MetroFramework.Controls.MetroPanel metroPanel3;
-        private System.Windows.Forms.Label lblTurno;
         private System.Windows.Forms.Label lblSala;
-        private MetroFramework.Controls.MetroComboBox cbTurno;
-        private MetroFramework.Controls.MetroLabel metroLabel1;
         private MetroFramework.Controls.MetroComboBox cbSala;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private System.Windows.Forms.Label lbl_panelInforme;

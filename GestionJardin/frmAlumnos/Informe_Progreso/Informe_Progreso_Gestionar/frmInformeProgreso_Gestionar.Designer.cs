@@ -43,6 +43,9 @@
             this.lbl_panelInforme = new System.Windows.Forms.Label();
             this.lblInformeEdit = new System.Windows.Forms.Label();
             this.btnGInf_Editar = new FontAwesome.Sharp.IconButton();
+            this.cbEdad = new MetroFramework.Controls.MetroComboBox();
+            this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
+            this.lblEdad = new System.Windows.Forms.Label();
             this.metroPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_Informe)).BeginInit();
             this.SuspendLayout();
@@ -52,6 +55,9 @@
             this.metroPanel3.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.metroPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.metroPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel3.Controls.Add(this.lblEdad);
+            this.metroPanel3.Controls.Add(this.cbEdad);
+            this.metroPanel3.Controls.Add(this.metroLabel1);
             this.metroPanel3.Controls.Add(this.lblEtapa);
             this.metroPanel3.Controls.Add(this.lblTurno);
             this.metroPanel3.Controls.Add(this.lblSala);
@@ -67,7 +73,7 @@
             this.metroPanel3.HorizontalScrollbarSize = 10;
             this.metroPanel3.Location = new System.Drawing.Point(25, 240);
             this.metroPanel3.Name = "metroPanel3";
-            this.metroPanel3.Size = new System.Drawing.Size(1332, 98);
+            this.metroPanel3.Size = new System.Drawing.Size(1641, 98);
             this.metroPanel3.TabIndex = 2;
             this.metroPanel3.UseCustomBackColor = true;
             this.metroPanel3.VerticalScrollbarBarColor = true;
@@ -79,7 +85,7 @@
             this.lblEtapa.AutoSize = true;
             this.lblEtapa.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEtapa.ForeColor = System.Drawing.Color.Red;
-            this.lblEtapa.Location = new System.Drawing.Point(962, 63);
+            this.lblEtapa.Location = new System.Drawing.Point(1302, 64);
             this.lblEtapa.Name = "lblEtapa";
             this.lblEtapa.Size = new System.Drawing.Size(46, 17);
             this.lblEtapa.TabIndex = 47;
@@ -90,7 +96,7 @@
             this.lblTurno.AutoSize = true;
             this.lblTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTurno.ForeColor = System.Drawing.Color.Red;
-            this.lblTurno.Location = new System.Drawing.Point(60, 63);
+            this.lblTurno.Location = new System.Drawing.Point(35, 64);
             this.lblTurno.Name = "lblTurno";
             this.lblTurno.Size = new System.Drawing.Size(46, 17);
             this.lblTurno.TabIndex = 45;
@@ -101,7 +107,7 @@
             this.lblSala.AutoSize = true;
             this.lblSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSala.ForeColor = System.Drawing.Color.Red;
-            this.lblSala.Location = new System.Drawing.Point(510, 63);
+            this.lblSala.Location = new System.Drawing.Point(475, 64);
             this.lblSala.Name = "lblSala";
             this.lblSala.Size = new System.Drawing.Size(46, 17);
             this.lblSala.TabIndex = 46;
@@ -115,11 +121,11 @@
             this.cbEtapa.Items.AddRange(new object[] {
             "PRIMERA",
             "SEGUNDA"});
-            this.cbEtapa.Location = new System.Drawing.Point(1081, 19);
+            this.cbEtapa.Location = new System.Drawing.Point(1418, 18);
             this.cbEtapa.Name = "cbEtapa";
             this.cbEtapa.Size = new System.Drawing.Size(176, 30);
             this.cbEtapa.Style = MetroFramework.MetroColorStyle.Magenta;
-            this.cbEtapa.TabIndex = 31;
+            this.cbEtapa.TabIndex = 4;
             this.cbEtapa.UseCustomBackColor = true;
             this.cbEtapa.UseSelectable = true;
             this.cbEtapa.UseStyleColors = true;
@@ -132,7 +138,7 @@
             this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel5.ForeColor = System.Drawing.Color.Fuchsia;
-            this.metroLabel5.Location = new System.Drawing.Point(956, 19);
+            this.metroLabel5.Location = new System.Drawing.Point(1293, 18);
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.Size = new System.Drawing.Size(212, 44);
             this.metroLabel5.TabIndex = 32;
@@ -148,7 +154,7 @@
             this.cbTurno.Items.AddRange(new object[] {
             "MAÑANA",
             "TARDE"});
-            this.cbTurno.Location = new System.Drawing.Point(202, 19);
+            this.cbTurno.Location = new System.Drawing.Point(175, 18);
             this.cbTurno.Name = "cbTurno";
             this.cbTurno.Size = new System.Drawing.Size(185, 30);
             this.cbTurno.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -165,7 +171,7 @@
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel4.ForeColor = System.Drawing.Color.Fuchsia;
-            this.metroLabel4.Location = new System.Drawing.Point(54, 19);
+            this.metroLabel4.Location = new System.Drawing.Point(27, 18);
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(163, 44);
             this.metroLabel4.TabIndex = 30;
@@ -179,7 +185,7 @@
             this.cbSala.Enabled = false;
             this.cbSala.FormattingEnabled = true;
             this.cbSala.ItemHeight = 24;
-            this.cbSala.Location = new System.Drawing.Point(642, 19);
+            this.cbSala.Location = new System.Drawing.Point(597, 18);
             this.cbSala.Name = "cbSala";
             this.cbSala.Size = new System.Drawing.Size(185, 30);
             this.cbSala.Style = MetroFramework.MetroColorStyle.Magenta;
@@ -196,7 +202,7 @@
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel2.ForeColor = System.Drawing.Color.Fuchsia;
-            this.metroLabel2.Location = new System.Drawing.Point(514, 19);
+            this.metroLabel2.Location = new System.Drawing.Point(469, 18);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(162, 44);
             this.metroLabel2.TabIndex = 28;
@@ -298,6 +304,51 @@
             this.btnGInf_Editar.UseVisualStyleBackColor = true;
             this.btnGInf_Editar.Click += new System.EventHandler(this.btnGInf_Editar_Click);
             // 
+            // cbEdad
+            // 
+            this.cbEdad.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbEdad.FormattingEnabled = true;
+            this.cbEdad.ItemHeight = 24;
+            this.cbEdad.Items.AddRange(new object[] {
+            "1 y 2 AÑOS",
+            "3 AÑOS",
+            "4 AÑOS",
+            "5 AÑOS"});
+            this.cbEdad.Location = new System.Drawing.Point(1016, 18);
+            this.cbEdad.Name = "cbEdad";
+            this.cbEdad.Size = new System.Drawing.Size(185, 30);
+            this.cbEdad.Style = MetroFramework.MetroColorStyle.Magenta;
+            this.cbEdad.TabIndex = 3;
+            this.cbEdad.UseCustomBackColor = true;
+            this.cbEdad.UseSelectable = true;
+            this.cbEdad.UseStyleColors = true;
+            this.cbEdad.Leave += new System.EventHandler(this.cbEdad_Leave);
+            // 
+            // metroLabel1
+            // 
+            this.metroLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall;
+            this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            this.metroLabel1.ForeColor = System.Drawing.Color.Fuchsia;
+            this.metroLabel1.Location = new System.Drawing.Point(888, 18);
+            this.metroLabel1.Name = "metroLabel1";
+            this.metroLabel1.Size = new System.Drawing.Size(162, 44);
+            this.metroLabel1.TabIndex = 49;
+            this.metroLabel1.Text = "EDAD:";
+            this.metroLabel1.UseCustomBackColor = true;
+            this.metroLabel1.UseCustomForeColor = true;
+            // 
+            // lblEdad
+            // 
+            this.lblEdad.AutoSize = true;
+            this.lblEdad.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEdad.ForeColor = System.Drawing.Color.Red;
+            this.lblEdad.Location = new System.Drawing.Point(895, 62);
+            this.lblEdad.Name = "lblEdad";
+            this.lblEdad.Size = new System.Drawing.Size(46, 17);
+            this.lblEdad.TabIndex = 50;
+            this.lblEdad.Text = "label4";
+            // 
             // frmInformeSemestral_Generar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -338,5 +389,8 @@
         private System.Windows.Forms.Label lblEtapa;
         private System.Windows.Forms.Label lblSala;
         private System.Windows.Forms.Label lblTurno;
+        private System.Windows.Forms.Label lblEdad;
+        private MetroFramework.Controls.MetroComboBox cbEdad;
+        private MetroFramework.Controls.MetroLabel metroLabel1;
     }
 }

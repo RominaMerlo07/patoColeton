@@ -121,7 +121,7 @@
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(1236, 44);
             this.metroLabel4.TabIndex = 31;
-            this.metroLabel4.Text = "Informe de progreso del ALUMNO: \"\"  - DNI: \"\" ";
+            this.metroLabel4.Text = "Informe de progreso del ALUMNO: \"\"  - DNI: \"\" - EDAD: \"\"";
             this.metroLabel4.UseCustomBackColor = true;
             this.metroLabel4.UseCustomForeColor = true;
             // 
