@@ -262,6 +262,7 @@
             this.Controls.Add(this.cbAsignatura);
             this.MaximizeBox = false;
             this.Name = "frmInformeProgreso_Nuevo";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GENERAR NUEVO INFORME DE PROGRESO";
             this.Load += new System.EventHandler(this.frmInformeProgreso_Nuevo_Load);
             this.panelDescripcion.ResumeLayout(false);

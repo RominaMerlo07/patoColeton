@@ -38,9 +38,7 @@ namespace GestionJardin
             btn_Agregar.Visible = false;
             btn_Editar.Visible = false;
             btn_Eliminar.Visible = false;            
-        }
-
-        
+        }               
         
 
         private void cbSala_SelectedValueChanged(object sender, EventArgs e)
@@ -79,6 +77,11 @@ namespace GestionJardin
             }
         }
 
-       
+        private void btn_Agregar_Click(object sender, EventArgs e)
+        {
+            frmInformeProgreso_GestAsig_Agregar frmInformeProgreso_GestAsig_Agregar = new frmInformeProgreso_GestAsig_Agregar();
+            frmInformeProgreso_GestAsig_Agregar.Text = "GESTIÓN ALUMNOS / INFORME DE PROGRESO / GESTIONAR CRITERIO DE APRENDIZAJE / AGREGAR ";
+            frmInformeProgreso_GestAsig_Agregar.ShowDialog();
+        }
     }
 }

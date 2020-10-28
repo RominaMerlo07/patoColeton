@@ -160,7 +160,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmUsuariosPopUpEliminar";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ELIMINAR USUARIO";
             this.Load += new System.EventHandler(this.frmUsuariosPopUpEliminar_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmUsuariosPopUpEliminar_MouseDown);

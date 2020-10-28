@@ -277,7 +277,7 @@
             this.dtNacimiento.Location = new System.Drawing.Point(169, 10);
             this.dtNacimiento.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.dtNacimiento.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
-            this.dtNacimiento.MinimumSize = new System.Drawing.Size(0, 27);
+            this.dtNacimiento.MinimumSize = new System.Drawing.Size(4, 27);
             this.dtNacimiento.Name = "dtNacimiento";
             this.dtNacimiento.Size = new System.Drawing.Size(184, 27);
             this.dtNacimiento.Style = MetroFramework.MetroColorStyle.Green;
@@ -909,6 +909,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDocentesPopUpAgregar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GESTIÓN DOCENTES / AGREGAR NUEVO DOCENTE";
             this.metroPanel3.ResumeLayout(false);
             this.panelDatos.ResumeLayout(false);
