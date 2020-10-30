@@ -319,5 +319,9 @@ namespace GestionJardin
             ((Button)sender).ImageAlign = ContentAlignment.MiddleCenter;
         }
 
+        private void btnCobros_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new GestionJardin.frmCobro());
+        }
     }
 }
