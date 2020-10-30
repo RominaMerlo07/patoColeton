@@ -145,16 +145,16 @@
     <Compile Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosPopUpAgregar.Designer.cs">
       <DependentUpon>frmAlumnosPopUpAgregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnos\frmAsistencia\frmAsistencia.cs">
+    <Compile Include="frmAlumnos\Asistencias\frmAsistencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnos\frmAsistencia\frmAsistencia.Designer.cs">
+    <Compile Include="frmAlumnos\Asistencias\frmAsistencia.Designer.cs">
       <DependentUpon>frmAsistencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnos\frmAsistencia\frmAsistenciaConsulta.cs">
+    <Compile Include="frmAlumnos\Asistencias\frmAsistenciaConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnos\frmAsistencia\frmAsistenciaConsulta.Designer.cs">
+    <Compile Include="frmAlumnos\Asistencias\frmAsistenciaConsulta.Designer.cs">
       <DependentUpon>frmAsistenciaConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCobros.cs">
@@ -198,6 +198,42 @@
     </Compile>
     <Compile Include="frmGestionCuotas.Designer.cs">
       <DependentUpon>frmGestionCuotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Gestionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Gestionar.Designer.cs">
+      <DependentUpon>frmInformeProgreso_Gestionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Nuevo.Designer.cs">
+      <DependentUpon>frmInformeProgreso_Nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestionarAsignaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestionarAsignaturas.Designer.cs">
+      <DependentUpon>frmInformeProgreso_GestionarAsignaturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Agregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Agregar.Designer.cs">
+      <DependentUpon>frmInformeProgreso_GestAsig_Agregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Editar.Designer.cs">
+      <DependentUpon>frmInformeProgreso_GestAsig_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Eliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Eliminar.Designer.cs">
+      <DependentUpon>frmInformeProgreso_GestAsig_Eliminar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -288,11 +324,23 @@
     <EmbeddedResource Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosPopUpAgregar.resx">
       <DependentUpon>frmAlumnosPopUpAgregar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnos\frmAsistencia\frmAsistencia.resx">
+    <EmbeddedResource Include="frmAlumnos\Asistencias\frmAsistencia.resx">
       <DependentUpon>frmAsistencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnos\frmAsistencia\frmAsistenciaConsulta.resx">
+    <EmbeddedResource Include="frmAlumnos\Asistencias\frmAsistenciaConsulta.resx">
       <DependentUpon>frmAsistenciaConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Agregar.resx">
+      <DependentUpon>frmInformeProgreso_GestAsig_Agregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Editar.resx">
+      <DependentUpon>frmInformeProgreso_GestAsig_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Eliminar.resx">
+      <DependentUpon>frmInformeProgreso_GestAsig_Eliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Gestionar.resx">
+      <DependentUpon>frmInformeProgreso_Gestionar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCobros.resx">
       <DependentUpon>frmCobros.cs</DependentUpon>
@@ -314,6 +362,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmGestionCuotas.resx">
       <DependentUpon>frmGestionCuotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Nuevo.resx">
+      <DependentUpon>frmInformeProgreso_Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestionarAsignaturas.resx">
+      <DependentUpon>frmInformeProgreso_GestionarAsignaturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

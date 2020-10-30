@@ -27,7 +27,7 @@ namespace GestionJardin
         private void frmUsuariosPopUpAgregar_Load_1(object sender, EventArgs e)
         {
             txt_contra_usu.UseSystemPasswordChar = true;
-            lblmostrarcontraseña.Visible = false;
+           
             /***Coloco el foco en textbox principal***/
             txtSeleccionarDocente.Focus();
             /***habilito solo para leer el textbox***/
@@ -116,7 +116,7 @@ namespace GestionJardin
             else if (char.IsControl(e.KeyChar))//permite q pueda borrar 
             {
                 // e.Handled = false;
-                txt_nombre_usuario.Clear();
+                
 
             }
             else if (char.IsNumber(e.KeyChar))
@@ -147,41 +147,7 @@ namespace GestionJardin
            
         }
 
-        private void mostrarpass_CheckedChanged(object sender, EventArgs e)
-        {
-            if (mostrarpass.Checked == true)
-            {
-                txt_contra_usu.UseSystemPasswordChar = false;
-                lblmostrarcontraseña.Visible = true;
-                lblmostrarcontraseña.Text = "OCULTAR CONTRASEÑA";
-
-            }
-            else
-            {
-                txt_contra_usu.UseSystemPasswordChar = true;
-                lblmostrarcontraseña.Text = "VER CONTRASEÑA";
-
-            }
-        }
-
-        private void mostrarpass_MouseLeave(object sender, EventArgs e)
-        {
-            lblmostrarcontraseña.Visible = false;
-
-        }
-
-        private void mostrarpass_MouseHover(object sender, EventArgs e)
-        {
-            lblmostrarcontraseña.Visible = true;
-            if (mostrarpass.Checked == true)
-            {
-                lblmostrarcontraseña.Text = "OCULTAR CONTRASEÑA";
-            }
-            else
-            {
-                lblmostrarcontraseña.Text = "VER CONTRASEÑA";
-            }
-        }
+        
 
 
         private void txtSeleccionarDocente_KeyUp(object sender, KeyEventArgs e)
@@ -199,6 +165,23 @@ namespace GestionJardin
                 txt_contra_usu.WaterMarkColor = Color.Lime;
                 txt_contra_usu.ForeColor = Color.Lime;
                 txt_contra_usu.Focus();
+            }
+        }
+
+        private void btnBloqueo_Click(object sender, EventArgs e)
+        {
+            if (this.btnBloqueo.IconChar == FontAwesome.Sharp.IconChar.Eye)
+            {
+                this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;               
+                txt_contra_usu.UseSystemPasswordChar = false;
+
+            }
+            else
+            {
+
+                this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Eye;
+                txt_contra_usu.UseSystemPasswordChar = true;
+
             }
         }
     }

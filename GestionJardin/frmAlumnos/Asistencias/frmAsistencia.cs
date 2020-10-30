@@ -452,7 +452,7 @@ namespace GestionJardin
 
         private void calFecha_Leave(object sender, EventArgs e)
         {
-            if (lblFecha.Text.Length > 0)
+            if (lblFecha.Text.Length != 0)
             { 
                 labelFechError.Visible = false;                
             }

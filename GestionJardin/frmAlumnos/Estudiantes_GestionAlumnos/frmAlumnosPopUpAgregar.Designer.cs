@@ -1042,6 +1042,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAlumnosPopUpAgregar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Load += new System.EventHandler(this.frmAlumnosPopUpAgregar_Load);
             this.metroPanel3.ResumeLayout(false);
             this.panelContacto.ResumeLayout(false);

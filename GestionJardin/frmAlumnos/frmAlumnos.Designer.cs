@@ -44,12 +44,11 @@
             this.btnIS_Generar = new FontAwesome.Sharp.IconButton();
             this.panelEstudiantes = new System.Windows.Forms.Panel();
             this.btnEst_Consultar = new FontAwesome.Sharp.IconButton();
-            this.btnEst_CambioCiclo = new FontAwesome.Sharp.IconButton();
             this.btnEst_GrupoFlia = new FontAwesome.Sharp.IconButton();
             this.Ind_PnlEstudiante = new System.Windows.Forms.Panel();
             this.panelContenedor_GA = new System.Windows.Forms.Panel();
-            this.btn_VolverGA = new FontAwesome.Sharp.IconButton();
             this.lbl_Ruta = new System.Windows.Forms.Label();
+            this.btn_VolverGA = new FontAwesome.Sharp.IconButton();
             this.panel1.SuspendLayout();
             this.panelAsistencia.SuspendLayout();
             this.panelInformeSemestral.SuspendLayout();
@@ -91,7 +90,7 @@
             // 
             this.btnInformeSemestral.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnInformeSemestral.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnInformeSemestral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInformeSemestral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInformeSemestral.ForeColor = System.Drawing.Color.Magenta;
             this.btnInformeSemestral.IconChar = FontAwesome.Sharp.IconChar.ClipboardList;
             this.btnInformeSemestral.IconColor = System.Drawing.Color.Magenta;
@@ -101,7 +100,7 @@
             this.btnInformeSemestral.Rotation = 0D;
             this.btnInformeSemestral.Size = new System.Drawing.Size(394, 143);
             this.btnInformeSemestral.TabIndex = 76;
-            this.btnInformeSemestral.Text = "INFORME SEMESTRAL";
+            this.btnInformeSemestral.Text = "INFORME DE PROGRESO";
             this.btnInformeSemestral.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnInformeSemestral.UseVisualStyleBackColor = true;
             this.btnInformeSemestral.Click += new System.EventHandler(this.btnInformeSemestral_Click);
@@ -145,7 +144,7 @@
             this.panelAsistencia.Controls.Add(this.Ind_PnlAsistencia);
             this.panelAsistencia.Location = new System.Drawing.Point(423, 125);
             this.panelAsistencia.Name = "panelAsistencia";
-            this.panelAsistencia.Size = new System.Drawing.Size(392, 250);
+            this.panelAsistencia.Size = new System.Drawing.Size(392, 234);
             this.panelAsistencia.TabIndex = 2;
             this.panelAsistencia.Visible = false;
             this.panelAsistencia.MouseEnter += new System.EventHandler(this.panelAsistencia_MouseEnter);
@@ -166,7 +165,7 @@
             this.btn_Asis_Consultar.Rotation = 0D;
             this.btn_Asis_Consultar.Size = new System.Drawing.Size(370, 112);
             this.btn_Asis_Consultar.TabIndex = 86;
-            this.btn_Asis_Consultar.Text = "CONSULTAR                  ";
+            this.btn_Asis_Consultar.Text = "CONSULTAR  ASISTENCIAS        ";
             this.btn_Asis_Consultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Asis_Consultar.UseVisualStyleBackColor = false;
             this.btn_Asis_Consultar.Click += new System.EventHandler(this.btn_Asis_Consultar_Click);
@@ -188,7 +187,7 @@
             this.btnAsis_Agregar.Rotation = 0D;
             this.btnAsis_Agregar.Size = new System.Drawing.Size(370, 112);
             this.btnAsis_Agregar.TabIndex = 85;
-            this.btnAsis_Agregar.Text = "GESTIONAR ASISTENCIAS";
+            this.btnAsis_Agregar.Text = "GESTIONAR ASISTENCIAS         ";
             this.btnAsis_Agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAsis_Agregar.UseVisualStyleBackColor = false;
             this.btnAsis_Agregar.Click += new System.EventHandler(this.btnAsis_Agregar_Click);
@@ -213,7 +212,7 @@
             this.panelInformeSemestral.Controls.Add(this.btnIS_Generar);
             this.panelInformeSemestral.Location = new System.Drawing.Point(829, 124);
             this.panelInformeSemestral.Name = "panelInformeSemestral";
-            this.panelInformeSemestral.Size = new System.Drawing.Size(386, 350);
+            this.panelInformeSemestral.Size = new System.Drawing.Size(386, 339);
             this.panelInformeSemestral.TabIndex = 87;
             this.panelInformeSemestral.Visible = false;
             this.panelInformeSemestral.MouseEnter += new System.EventHandler(this.panelInformeSemestral_MouseEnter);
@@ -223,7 +222,7 @@
             // 
             this.Ind_PnlInfSemestral.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.Ind_PnlInfSemestral.BackColor = System.Drawing.Color.Fuchsia;
-            this.Ind_PnlInfSemestral.Location = new System.Drawing.Point(3, 3);
+            this.Ind_PnlInfSemestral.Location = new System.Drawing.Point(3, 2);
             this.Ind_PnlInfSemestral.Name = "Ind_PnlInfSemestral";
             this.Ind_PnlInfSemestral.Size = new System.Drawing.Size(26, 112);
             this.Ind_PnlInfSemestral.TabIndex = 85;
@@ -239,14 +238,15 @@
             this.btnIS_Materia.IconChar = FontAwesome.Sharp.IconChar.Cubes;
             this.btnIS_Materia.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnIS_Materia.IconSize = 80;
-            this.btnIS_Materia.Location = new System.Drawing.Point(17, 222);
+            this.btnIS_Materia.Location = new System.Drawing.Point(17, 224);
             this.btnIS_Materia.Name = "btnIS_Materia";
             this.btnIS_Materia.Rotation = 0D;
             this.btnIS_Materia.Size = new System.Drawing.Size(366, 112);
             this.btnIS_Materia.TabIndex = 88;
-            this.btnIS_Materia.Text = "AGREGAR ASPECTO / ASIGNATURA";
+            this.btnIS_Materia.Text = "GESTIONAR CRITERIO DE APRENDIZAJE";
             this.btnIS_Materia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIS_Materia.UseVisualStyleBackColor = false;
+            this.btnIS_Materia.Click += new System.EventHandler(this.btnIS_Materia_Click);
             this.btnIS_Materia.MouseLeave += new System.EventHandler(this.btnIS_Materia_MouseLeave);
             this.btnIS_Materia.MouseHover += new System.EventHandler(this.btnIS_Materia_MouseHover);
             // 
@@ -260,12 +260,12 @@
             this.btnIS_Consultar.IconChar = FontAwesome.Sharp.IconChar.BookReader;
             this.btnIS_Consultar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnIS_Consultar.IconSize = 80;
-            this.btnIS_Consultar.Location = new System.Drawing.Point(17, 110);
+            this.btnIS_Consultar.Location = new System.Drawing.Point(17, 112);
             this.btnIS_Consultar.Name = "btnIS_Consultar";
             this.btnIS_Consultar.Rotation = 0D;
             this.btnIS_Consultar.Size = new System.Drawing.Size(366, 112);
             this.btnIS_Consultar.TabIndex = 87;
-            this.btnIS_Consultar.Text = "CONSULTAR";
+            this.btnIS_Consultar.Text = "CONSULTAR  INFORME          ";
             this.btnIS_Consultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIS_Consultar.UseVisualStyleBackColor = false;
             this.btnIS_Consultar.MouseLeave += new System.EventHandler(this.btnIS_Consultar_MouseLeave);
@@ -281,14 +281,15 @@
             this.btnIS_Generar.IconChar = FontAwesome.Sharp.IconChar.BookOpen;
             this.btnIS_Generar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.btnIS_Generar.IconSize = 80;
-            this.btnIS_Generar.Location = new System.Drawing.Point(17, 0);
+            this.btnIS_Generar.Location = new System.Drawing.Point(17, 2);
             this.btnIS_Generar.Name = "btnIS_Generar";
             this.btnIS_Generar.Rotation = 0D;
             this.btnIS_Generar.Size = new System.Drawing.Size(366, 112);
             this.btnIS_Generar.TabIndex = 86;
-            this.btnIS_Generar.Text = "GENERAR";
+            this.btnIS_Generar.Text = "GESTIONAR INFORME              ";
             this.btnIS_Generar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIS_Generar.UseVisualStyleBackColor = false;
+            this.btnIS_Generar.Click += new System.EventHandler(this.btnIS_Generar_Click);
             this.btnIS_Generar.MouseLeave += new System.EventHandler(this.btnIS_Generar_MouseLeave);
             this.btnIS_Generar.MouseHover += new System.EventHandler(this.btnIS_Generar_MouseHover);
             // 
@@ -296,12 +297,11 @@
             // 
             this.panelEstudiantes.BackColor = System.Drawing.Color.Transparent;
             this.panelEstudiantes.Controls.Add(this.btnEst_Consultar);
-            this.panelEstudiantes.Controls.Add(this.btnEst_CambioCiclo);
             this.panelEstudiantes.Controls.Add(this.btnEst_GrupoFlia);
             this.panelEstudiantes.Controls.Add(this.Ind_PnlEstudiante);
             this.panelEstudiantes.Location = new System.Drawing.Point(23, 124);
             this.panelEstudiantes.Name = "panelEstudiantes";
-            this.panelEstudiantes.Size = new System.Drawing.Size(392, 350);
+            this.panelEstudiantes.Size = new System.Drawing.Size(392, 235);
             this.panelEstudiantes.TabIndex = 2;
             this.panelEstudiantes.Visible = false;
             this.panelEstudiantes.MouseEnter += new System.EventHandler(this.panelEstudiantes_MouseEnter);
@@ -317,7 +317,7 @@
             this.btnEst_Consultar.IconChar = FontAwesome.Sharp.IconChar.AddressCard;
             this.btnEst_Consultar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnEst_Consultar.IconSize = 80;
-            this.btnEst_Consultar.Location = new System.Drawing.Point(18, 3);
+            this.btnEst_Consultar.Location = new System.Drawing.Point(18, 4);
             this.btnEst_Consultar.Name = "btnEst_Consultar";
             this.btnEst_Consultar.Rotation = 0D;
             this.btnEst_Consultar.Size = new System.Drawing.Size(371, 112);
@@ -329,27 +329,6 @@
             this.btnEst_Consultar.MouseLeave += new System.EventHandler(this.btnEst_Consultar_MouseLeave);
             this.btnEst_Consultar.MouseHover += new System.EventHandler(this.btnEst_Consultar_MouseHover);
             // 
-            // btnEst_CambioCiclo
-            // 
-            this.btnEst_CambioCiclo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEst_CambioCiclo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.btnEst_CambioCiclo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnEst_CambioCiclo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnEst_CambioCiclo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnEst_CambioCiclo.IconChar = FontAwesome.Sharp.IconChar.File;
-            this.btnEst_CambioCiclo.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.btnEst_CambioCiclo.IconSize = 80;
-            this.btnEst_CambioCiclo.Location = new System.Drawing.Point(18, 222);
-            this.btnEst_CambioCiclo.Name = "btnEst_CambioCiclo";
-            this.btnEst_CambioCiclo.Rotation = 0D;
-            this.btnEst_CambioCiclo.Size = new System.Drawing.Size(371, 112);
-            this.btnEst_CambioCiclo.TabIndex = 81;
-            this.btnEst_CambioCiclo.Text = "CAMBIO DE CICLO";
-            this.btnEst_CambioCiclo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEst_CambioCiclo.UseVisualStyleBackColor = false;
-            this.btnEst_CambioCiclo.MouseLeave += new System.EventHandler(this.btnEst_CambioCiclo_MouseLeave);
-            this.btnEst_CambioCiclo.MouseHover += new System.EventHandler(this.btnEst_CambioCiclo_MouseHover);
-            // 
             // btnEst_GrupoFlia
             // 
             this.btnEst_GrupoFlia.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -360,12 +339,12 @@
             this.btnEst_GrupoFlia.IconChar = FontAwesome.Sharp.IconChar.Users;
             this.btnEst_GrupoFlia.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.btnEst_GrupoFlia.IconSize = 80;
-            this.btnEst_GrupoFlia.Location = new System.Drawing.Point(18, 114);
+            this.btnEst_GrupoFlia.Location = new System.Drawing.Point(18, 115);
             this.btnEst_GrupoFlia.Name = "btnEst_GrupoFlia";
             this.btnEst_GrupoFlia.Rotation = 0D;
             this.btnEst_GrupoFlia.Size = new System.Drawing.Size(371, 112);
             this.btnEst_GrupoFlia.TabIndex = 80;
-            this.btnEst_GrupoFlia.Text = "GRUPO FAMILIAR";
+            this.btnEst_GrupoFlia.Text = "GRUPO FAMILIAR          ";
             this.btnEst_GrupoFlia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEst_GrupoFlia.UseVisualStyleBackColor = false;
             this.btnEst_GrupoFlia.Click += new System.EventHandler(this.btnEst_GrupoFlia_Click);
@@ -375,7 +354,7 @@
             // Ind_PnlEstudiante
             // 
             this.Ind_PnlEstudiante.BackColor = System.Drawing.Color.Yellow;
-            this.Ind_PnlEstudiante.Location = new System.Drawing.Point(3, 3);
+            this.Ind_PnlEstudiante.Location = new System.Drawing.Point(3, 2);
             this.Ind_PnlEstudiante.Name = "Ind_PnlEstudiante";
             this.Ind_PnlEstudiante.Size = new System.Drawing.Size(24, 105);
             this.Ind_PnlEstudiante.TabIndex = 84;
@@ -389,6 +368,19 @@
             this.panelContenedor_GA.Name = "panelContenedor_GA";
             this.panelContenedor_GA.Size = new System.Drawing.Size(1654, 853);
             this.panelContenedor_GA.TabIndex = 88;
+            // 
+            // lbl_Ruta
+            // 
+            this.lbl_Ruta.AutoSize = true;
+            this.lbl_Ruta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Ruta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lbl_Ruta.Location = new System.Drawing.Point(31, 193);
+            this.lbl_Ruta.Name = "lbl_Ruta";
+            this.lbl_Ruta.Size = new System.Drawing.Size(15, 20);
+            this.lbl_Ruta.TabIndex = 89;
+            this.lbl_Ruta.Text = "*";
+            this.lbl_Ruta.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl_Ruta.Visible = false;
             // 
             // btn_VolverGA
             // 
@@ -405,7 +397,7 @@
             this.btn_VolverGA.IconChar = FontAwesome.Sharp.IconChar.ChevronCircleLeft;
             this.btn_VolverGA.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.btn_VolverGA.IconSize = 50;
-            this.btn_VolverGA.Location = new System.Drawing.Point(870, 126);
+            this.btn_VolverGA.Location = new System.Drawing.Point(1037, 124);
             this.btn_VolverGA.Name = "btn_VolverGA";
             this.btn_VolverGA.Rotation = 0D;
             this.btn_VolverGA.Size = new System.Drawing.Size(60, 57);
@@ -414,18 +406,6 @@
             this.btn_VolverGA.UseVisualStyleBackColor = false;
             this.btn_VolverGA.Visible = false;
             this.btn_VolverGA.Click += new System.EventHandler(this.btn_VolverGA_Click);
-            // 
-            // lbl_Ruta
-            // 
-            this.lbl_Ruta.AutoSize = true;
-            this.lbl_Ruta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_Ruta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.lbl_Ruta.Location = new System.Drawing.Point(37, 196);
-            this.lbl_Ruta.Name = "lbl_Ruta";
-            this.lbl_Ruta.Size = new System.Drawing.Size(15, 20);
-            this.lbl_Ruta.TabIndex = 89;
-            this.lbl_Ruta.Text = "*";
-            this.lbl_Ruta.Visible = false;
             // 
             // frmAlumnos
             // 
@@ -471,7 +451,6 @@
         private System.Windows.Forms.Panel Ind_PnlInfSemestral;
         private System.Windows.Forms.Panel panelEstudiantes;
         private FontAwesome.Sharp.IconButton btnEst_Consultar;
-        private FontAwesome.Sharp.IconButton btnEst_CambioCiclo;
         private FontAwesome.Sharp.IconButton btnEst_GrupoFlia;
         private System.Windows.Forms.Panel Ind_PnlEstudiante;
         private System.Windows.Forms.Panel panelContenedor_GA;
