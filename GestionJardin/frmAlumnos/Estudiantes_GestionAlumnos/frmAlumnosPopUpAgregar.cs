@@ -49,8 +49,8 @@ namespace GestionJardin
             //    alumnos.Add(dr.GetString(0));
             //};
 
-            //txtBuscaHmno.AutoCompleteMode = AutoCompleteMode.Suggest;
-            //txtBuscaHmno.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtBuscaHmno.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtBuscaHmno.AutoCompleteSource = AutoCompleteSource.CustomSource;
             //txtBuscaHmno.AutoCompleteCustomSource = alumnos;
 
             //--

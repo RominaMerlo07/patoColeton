@@ -45,8 +45,8 @@ namespace GestionJardin
             //};
 
 
-            //txtBuscaAlumno.AutoCompleteMode = AutoCompleteMode.Suggest;
-            //txtBuscaAlumno.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtBuscaAlumno.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtBuscaAlumno.AutoCompleteSource = AutoCompleteSource.CustomSource;
             //txtBuscaAlumno.AutoCompleteCustomSource = alumnos;
 
             //--
