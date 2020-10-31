@@ -181,11 +181,23 @@
     <Compile Include="frmConceptos2.Designer.cs">
       <DependentUpon>frmConceptos2.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmConcepto_Agregar.cs">
+    <Compile Include="frmCobro\frmConceptos\frmConcepto_Agregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmConcepto_Agregar.Designer.cs">
+    <Compile Include="frmCobro\frmConceptos\frmConcepto_Agregar.Designer.cs">
       <DependentUpon>frmConcepto_Agregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCobro\frmConceptos\frmConcepto_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro\frmConceptos\frmConcepto_Editar.Designer.cs">
+      <DependentUpon>frmConcepto_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCobro\frmConceptos\frmConcepto_Eliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro\frmConceptos\frmConcepto_Eliminar.Designer.cs">
+      <DependentUpon>frmConcepto_Eliminar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDocentes\frmDocentes.cs">
       <SubType>Form</SubType>
@@ -372,8 +384,14 @@
     <EmbeddedResource Include="frmConceptos2.resx">
       <DependentUpon>frmConceptos2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmConcepto_Agregar.resx">
+    <EmbeddedResource Include="frmCobro\frmConceptos\frmConcepto_Agregar.resx">
       <DependentUpon>frmConcepto_Agregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro\frmConceptos\frmConcepto_Editar.resx">
+      <DependentUpon>frmConcepto_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro\frmConceptos\frmConcepto_Eliminar.resx">
+      <DependentUpon>frmConcepto_Eliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDocentes\frmDocentes.resx">
       <DependentUpon>frmDocentes.cs</DependentUpon>

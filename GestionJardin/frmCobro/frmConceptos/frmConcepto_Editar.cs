@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GestionJardin
 {
-    public partial class frmConcepto_Agregar : Form
+    public partial class frmConcepto_Editar : Form
     {
-        public frmConcepto_Agregar()
+        public frmConcepto_Editar()
         {
             InitializeComponent();
         }

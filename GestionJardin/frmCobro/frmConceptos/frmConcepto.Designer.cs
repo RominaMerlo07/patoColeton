@@ -143,6 +143,7 @@
             this.btnCon_Eliminar.Text = "ELIMINAR";
             this.btnCon_Eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCon_Eliminar.UseVisualStyleBackColor = true;
+            this.btnCon_Eliminar.Click += new System.EventHandler(this.btnCon_Eliminar_Click);
             // 
             // btnCon_Editar
             // 
@@ -162,6 +163,7 @@
             this.btnCon_Editar.Text = "EDITAR";
             this.btnCon_Editar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCon_Editar.UseVisualStyleBackColor = true;
+            this.btnCon_Editar.Click += new System.EventHandler(this.btnCon_Editar_Click);
             // 
             // btnCon_Agregar
             // 

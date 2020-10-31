@@ -23,5 +23,19 @@ namespace GestionJardin
             frmConcepto_Agregar.Text = "GESTIÓN COBROS / CONCEPTOS / GESTIONAR / AGREGAR";
             frmConcepto_Agregar.ShowDialog();
         }
+
+        private void btnCon_Editar_Click(object sender, EventArgs e)
+        {
+            frmConcepto_Editar frmConcepto_Editar = new frmConcepto_Editar();
+            frmConcepto_Editar.Text = "GESTIÓN COBROS / CONCEPTOS / GESTIONAR / EDITAR";
+            frmConcepto_Editar.ShowDialog();
+        }
+
+        private void btnCon_Eliminar_Click(object sender, EventArgs e)
+        {
+            frmConcepto_Eliminar frmConcepto_Eliminar = new frmConcepto_Eliminar();
+            frmConcepto_Eliminar.Text = "GESTIÓN COBROS / CONCEPTOS / GESTIONAR / ELIMINAR";
+            frmConcepto_Eliminar.ShowDialog();
+        }
     }
 }
