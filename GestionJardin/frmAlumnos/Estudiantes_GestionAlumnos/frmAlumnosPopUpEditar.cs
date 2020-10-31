@@ -430,14 +430,26 @@ namespace GestionJardin
 
         private void txtDocumento_Leave(object sender, EventArgs e)
         {
-            string dni = txtDocumento.Text;
-            logPersonas ObjlogPersonas = new logPersonas();
-            string resultado = ObjlogPersonas.ValidarDni(dni);
-            if (resultado == "SI")
+            if (string.IsNullOrWhiteSpace(txtDocumento.Text.Trim()) == true)
             {
                 txtDocumento.Style = MetroFramework.MetroColorStyle.Red;
                 txtDocumento.Focus();
-                MessageBox.Show("El alumno ya se encuentra registrado. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                lblDni.Visible = true;
+                lblDni.Text = "Por favor ingrese el Documento";
+
+            }
+            else
+            {
+                lblDni.Visible = false;
+                string dni = txtDocumento.Text;
+                logPersonas ObjlogPersonas = new logPersonas();
+                string resultado = ObjlogPersonas.ValidarDni(dni);
+                if (resultado == "SI")
+                {
+                    txtDocumento.Style = MetroFramework.MetroColorStyle.Red;
+                    txtDocumento.Focus();
+                    MessageBox.Show("El alumno ya se encuentra registrado. ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
@@ -466,6 +478,112 @@ namespace GestionJardin
                 txtEmail.Clear();
                 txtEmail.Focus();
 
+            }
+        }                  
+            
+
+        private void txtCalle_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCalle.Text.Trim()) == true)
+            {
+                txtCalle.Style = MetroFramework.MetroColorStyle.Red;
+                txtCalle.Focus();
+                lblCalle.Visible = true;
+                lblCalle.Text = "Por favor ingrese calle";
+            }
+            else
+            {
+                lblCalle.Visible = false;
+            }
+        }
+
+        private void txtNumero_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNumero.Text.Trim()) == true)
+            {
+                txtNumero.Style = MetroFramework.MetroColorStyle.Red;
+                txtNumero.Focus();
+                lblNumero.Visible = true;
+                lblNumero.Text = "Por favor ingrese numero";
+            }
+            else
+            {
+                lblNumero.Visible = false;
+            }
+        }
+
+        private void txtCPostal_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCPostal.Text.Trim()) == true)
+            {
+                txtCPostal.Style = MetroFramework.MetroColorStyle.Red;
+                txtCPostal.Focus();
+                lblCp.Visible = true;
+                lblCp.Text = "Por favor ingrese codigo postal";
+            }
+            else
+            {
+                lblCp.Visible = false;
+            }
+        }
+
+        private void txtBarrio_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBarrio.Text.Trim()) == true)
+            {
+                txtBarrio.Style = MetroFramework.MetroColorStyle.Red;
+                txtBarrio.Focus();
+                lblBarrio.Visible = true;
+                lblBarrio.Text = "Por favor ingrese barrio";
+            }
+            else
+            {
+                lblBarrio.Visible = false;
+            }
+        }
+
+        private void txtCelular_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtCelular.Text.Trim()) == true)
+            {
+                txtCelular.Style = MetroFramework.MetroColorStyle.Red;
+                txtCelular.Focus();
+                lblCelular.Visible = true;
+                lblCelular.Text = "Por favor ingrese celular";
+            }
+            else
+            {
+                lblCelular.Visible = false;
+            }
+        }
+
+        private void txtNombre_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtNombre.Text.Trim()) == true)
+            {
+                txtNombre.Style = MetroFramework.MetroColorStyle.Red;
+                txtNombre.Focus();
+                lblNombre.Visible = true;
+                lblNombre.Text = "Por favor ingrese nombre";
+            }
+            else
+            {
+                lblNombre.Visible = false;
+            }
+        }
+
+        private void txtApellidos_Leave(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtApellidos.Text.Trim()) == true)
+            {
+                txtApellidos.Style = MetroFramework.MetroColorStyle.Red;
+                txtApellidos.Focus();
+                lblApellido.Visible = true;
+                lblApellido.Text = "Por favor ingrese apellido";
+            }
+            else
+            {
+                lblApellido.Visible = false;
             }
         }
     }
