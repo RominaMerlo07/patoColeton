@@ -187,5 +187,6 @@ namespace GestionJardin
             btnGS_Eliminar.ForeColor = Color.Gray;
 
         }
+
     }
 }
