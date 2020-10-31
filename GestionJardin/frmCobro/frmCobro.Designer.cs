@@ -250,6 +250,7 @@
             this.btnCob_Gestionar.Text = "GESTIONAR";
             this.btnCob_Gestionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCob_Gestionar.UseVisualStyleBackColor = false;
+            this.btnCob_Gestionar.Click += new System.EventHandler(this.btnCob_Gestionar_Click);
             this.btnCob_Gestionar.MouseLeave += new System.EventHandler(this.btnCob_Gestionar_MouseLeave);
             this.btnCob_Gestionar.MouseHover += new System.EventHandler(this.btnCob_Gestionar_MouseHover);
             // 

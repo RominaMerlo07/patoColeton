@@ -157,6 +157,24 @@
     <Compile Include="frmAlumnos\Asistencias\frmAsistenciaConsulta.Designer.cs">
       <DependentUpon>frmAsistenciaConsulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCobro\frmCobros\frmCobros_Anular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro\frmCobros\frmCobros_Anular.Designer.cs">
+      <DependentUpon>frmCobros_Anular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCobro\frmCobros\frmCobros_Cobrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro\frmCobros\frmCobros_Cobrar.Designer.cs">
+      <DependentUpon>frmCobros_Cobrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCobro\frmCobros\frmCobros_Gestionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro\frmCobros\frmCobros_Gestionar.Designer.cs">
+      <DependentUpon>frmCobros_Gestionar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCobro\frmCobro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,11 +390,20 @@
     <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Gestionar.resx">
       <DependentUpon>frmInformeProgreso_Gestionar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro\frmCobros\frmCobros_Anular.resx">
+      <DependentUpon>frmCobros_Anular.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCobro\frmCobro.resx">
       <DependentUpon>frmCobro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCobros.resx">
       <DependentUpon>frmCobros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro\frmCobros\frmCobros_Cobrar.resx">
+      <DependentUpon>frmCobros_Cobrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro\frmCobros\frmCobros_Gestionar.resx">
+      <DependentUpon>frmCobros_Gestionar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCobro\frmConceptos\frmConcepto.resx">
       <DependentUpon>frmConcepto.cs</DependentUpon>
@@ -472,6 +499,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LEEME.txt" />
+    <None Include="Resources\Group_333-removebg-preview.png" />
+    <None Include="Resources\patochusma-removebg-preview.png" />
+    <None Include="Resources\patofrente.png" />
     <None Include="Resources\png-transparent-computer-icons-user-symbol-symbol-miscellaneous-black-computer-icons.png" />
     <None Include="Resources\iconfinder_search_172546.png" />
     <None Include="Resources\El Patito Coletón.png" />
@@ -512,8 +542,6 @@
       <Name>CaEnt</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="frmCobro\frmCobros\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

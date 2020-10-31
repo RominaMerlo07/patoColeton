@@ -303,6 +303,17 @@ namespace GestionJardin
             VolverGA();
         }
 
-       
+        private void btnCob_Gestionar_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new GestionJardin.frmCobros_Gestionar());
+            panel1.BringToFront();
+            btnCobros.Enabled = true;
+            btnConceptos.Enabled = false;
+            btnCuotas.Enabled = false;
+            btn_VolverGA.BringToFront();
+            btn_VolverGA.Visible = true;
+            lbl_Ruta.BringToFront();
+            lbl_Ruta.Visible = true;
+        }
     }
 }

@@ -617,3 +617,6 @@ C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJard
 C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.frmConcepto_Agregar.resources
 C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.frmConcepto_Editar.resources
 C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.frmConcepto_Eliminar.resources
+C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.frmCobros_Gestionar.resources
+C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.frmCobros_Cobrar.resources
+C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.frmCobros_Anular.resources
