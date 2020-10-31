@@ -12,10 +12,38 @@ namespace GestionJardin
 {
     public partial class frmCobro : Form
     {
+        private Form currentFormChild; //para almacenar el form hijo actual
+
         public frmCobro()
         {
             InitializeComponent();
         }
+
+        private void OpenChildForm(Form ChildForm)
+        {
+
+            frmCobro frmCobro = new frmCobro();
+
+            if (currentFormChild != null)
+            {
+                currentFormChild.Close(); // se cierra el form actual -- permite solo un form actual
+            }
+
+            currentFormChild = ChildForm;
+            ChildForm.TopLevel = false; // para indicar que no es de nivel superior --VER CON GASTON
+            ChildForm.FormBorderStyle = FormBorderStyle.None;
+            ChildForm.Dock = DockStyle.Fill;
+            panelContenedor_GC.Controls.Add(ChildForm); //para que controle los demas forms
+            panelContenedor_GC.Tag = ChildForm; // Asociar los datos de los forms al panel
+            ChildForm.BringToFront(); // se trae al frente cada form para mostrar
+            ChildForm.Show();
+            btn_VolverGA.Visible = true;
+            //   btn_VolverGA.BringToFront();
+            lbl_Ruta.Text = "Usted se encuentra en GESTION COBROS / " + ChildForm.Text;
+
+        }
+
+
 
         private void moverIndiceNavbar(Control btn)
         {
@@ -244,6 +272,35 @@ namespace GestionJardin
         private void panelConceptos_MouseEnter(object sender, EventArgs e)
         {
             panelConceptos.Visible = false;
+        }
+
+        private void btnCon_Gestionar_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new GestionJardin.frmConcepto());
+            panel1.BringToFront();
+            btnConceptos.Enabled = true;
+            btnCuotas.Enabled = false;
+            btnCobros.Enabled = false;
+            btn_VolverGA.BringToFront();
+            btn_VolverGA.Visible = true;
+            lbl_Ruta.BringToFront();
+            lbl_Ruta.Visible = true;
+        }
+
+        private void VolverGA()
+        {
+            btnCobros.Enabled = true;
+            btnCuotas.Enabled = true;
+            btnConceptos.Enabled = true;
+            btn_VolverGA.Visible = false;
+            lbl_Ruta.Visible = false;
+
+        }
+
+        private void btn_VolverGA_Click(object sender, EventArgs e)
+        {
+            currentFormChild.Close();
+            VolverGA();
         }
     }
 }

@@ -391,5 +391,7 @@ namespace GestionJardin
             btn_VolverGA.Visible = true;
             lbl_Ruta.Visible = true;
         }
+
+        
     }
 }

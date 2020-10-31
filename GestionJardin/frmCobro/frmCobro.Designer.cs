@@ -45,6 +45,8 @@
             this.btnConceptos = new FontAwesome.Sharp.IconButton();
             this.panelIndiceNavbar = new System.Windows.Forms.Panel();
             this.btnCuotas = new FontAwesome.Sharp.IconButton();
+            this.btn_VolverGA = new FontAwesome.Sharp.IconButton();
+            this.lbl_Ruta = new System.Windows.Forms.Label();
             this.panelContenedor_GC.SuspendLayout();
             this.panelConceptos.SuspendLayout();
             this.panelCuotas.SuspendLayout();
@@ -55,6 +57,8 @@
             // panelContenedor_GC
             // 
             this.panelContenedor_GC.BackColor = System.Drawing.Color.Transparent;
+            this.panelContenedor_GC.Controls.Add(this.lbl_Ruta);
+            this.panelContenedor_GC.Controls.Add(this.btn_VolverGA);
             this.panelContenedor_GC.Controls.Add(this.panelConceptos);
             this.panelContenedor_GC.Controls.Add(this.panelCuotas);
             this.panelContenedor_GC.Controls.Add(this.panelCobros);
@@ -107,6 +111,7 @@
             this.btnCon_Gestionar.Text = "GESTIONAR            ";
             this.btnCon_Gestionar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCon_Gestionar.UseVisualStyleBackColor = false;
+            this.btnCon_Gestionar.Click += new System.EventHandler(this.btnCon_Gestionar_Click);
             this.btnCon_Gestionar.MouseLeave += new System.EventHandler(this.btnCon_Gestionar_MouseLeave);
             this.btnCon_Gestionar.MouseHover += new System.EventHandler(this.btnCon_Gestionar_MouseHover);
             // 
@@ -321,6 +326,44 @@
             this.btnCuotas.Click += new System.EventHandler(this.btnCuotas_Click);
             this.btnCuotas.MouseHover += new System.EventHandler(this.btnCuotas_MouseHover);
             // 
+            // btn_VolverGA
+            // 
+            this.btn_VolverGA.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btn_VolverGA.BackColor = System.Drawing.Color.Transparent;
+            this.btn_VolverGA.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_VolverGA.FlatAppearance.BorderSize = 0;
+            this.btn_VolverGA.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_VolverGA.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.btn_VolverGA.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_VolverGA.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btn_VolverGA.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_VolverGA.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.btn_VolverGA.IconChar = FontAwesome.Sharp.IconChar.ChevronCircleLeft;
+            this.btn_VolverGA.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.btn_VolverGA.IconSize = 50;
+            this.btn_VolverGA.Location = new System.Drawing.Point(1037, 124);
+            this.btn_VolverGA.Name = "btn_VolverGA";
+            this.btn_VolverGA.Rotation = 0D;
+            this.btn_VolverGA.Size = new System.Drawing.Size(60, 57);
+            this.btn_VolverGA.TabIndex = 89;
+            this.btn_VolverGA.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.btn_VolverGA.UseVisualStyleBackColor = false;
+            this.btn_VolverGA.Visible = false;
+            this.btn_VolverGA.Click += new System.EventHandler(this.btn_VolverGA_Click);
+            // 
+            // lbl_Ruta
+            // 
+            this.lbl_Ruta.AutoSize = true;
+            this.lbl_Ruta.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_Ruta.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.lbl_Ruta.Location = new System.Drawing.Point(31, 193);
+            this.lbl_Ruta.Name = "lbl_Ruta";
+            this.lbl_Ruta.Size = new System.Drawing.Size(15, 20);
+            this.lbl_Ruta.TabIndex = 90;
+            this.lbl_Ruta.Text = "*";
+            this.lbl_Ruta.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lbl_Ruta.Visible = false;
+            // 
             // frmCobro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -331,6 +374,7 @@
             this.Name = "frmCobro";
             this.Text = "GESTION COBROS";
             this.panelContenedor_GC.ResumeLayout(false);
+            this.panelContenedor_GC.PerformLayout();
             this.panelConceptos.ResumeLayout(false);
             this.panelCuotas.ResumeLayout(false);
             this.panelCobros.ResumeLayout(false);
@@ -358,5 +402,7 @@
         private System.Windows.Forms.Panel panelConceptos;
         private System.Windows.Forms.Panel Ind_PnlConcepto;
         private FontAwesome.Sharp.IconButton btnCon_Gestionar;
+        private FontAwesome.Sharp.IconButton btn_VolverGA;
+        private System.Windows.Forms.Label lbl_Ruta;
     }
 }

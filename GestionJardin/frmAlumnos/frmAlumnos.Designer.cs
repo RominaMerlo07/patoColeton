@@ -268,6 +268,7 @@
             this.btnIS_Consultar.Text = "CONSULTAR  INFORME          ";
             this.btnIS_Consultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIS_Consultar.UseVisualStyleBackColor = false;
+
             this.btnIS_Consultar.MouseLeave += new System.EventHandler(this.btnIS_Consultar_MouseLeave);
             this.btnIS_Consultar.MouseHover += new System.EventHandler(this.btnIS_Consultar_MouseHover);
             // 

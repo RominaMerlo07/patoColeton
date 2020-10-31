@@ -169,11 +169,23 @@
     <Compile Include="frmCobros.Designer.cs">
       <DependentUpon>frmCobros.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCobro\frmConceptos\frmConcepto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro\frmConceptos\frmConcepto.Designer.cs">
+      <DependentUpon>frmConcepto.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConceptos2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmConceptos2.Designer.cs">
       <DependentUpon>frmConceptos2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmConcepto_Agregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmConcepto_Agregar.Designer.cs">
+      <DependentUpon>frmConcepto_Agregar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDocentes\frmDocentes.cs">
       <SubType>Form</SubType>
@@ -354,8 +366,14 @@
     <EmbeddedResource Include="frmCobros.resx">
       <DependentUpon>frmCobros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro\frmConceptos\frmConcepto.resx">
+      <DependentUpon>frmConcepto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConceptos2.resx">
       <DependentUpon>frmConceptos2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmConcepto_Agregar.resx">
+      <DependentUpon>frmConcepto_Agregar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDocentes\frmDocentes.resx">
       <DependentUpon>frmDocentes.cs</DependentUpon>
@@ -476,6 +494,8 @@
       <Name>CaEnt</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="frmCobro\frmCobros\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
