@@ -37,5 +37,7 @@ namespace GestionJardin
             frmConcepto_Eliminar.Text = "GESTIÓN COBROS / CONCEPTOS / GESTIONAR / ELIMINAR";
             frmConcepto_Eliminar.ShowDialog();
         }
+
+      
     }
 }
