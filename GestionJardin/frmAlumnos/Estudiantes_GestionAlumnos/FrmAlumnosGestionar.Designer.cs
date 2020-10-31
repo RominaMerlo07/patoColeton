@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.txtGA_Buscar = new MetroFramework.Controls.MetroTextBox();
             this.btnGA_Filtrar = new FontAwesome.Sharp.IconPictureBox();
@@ -238,6 +239,9 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvAlumnos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.WhiteSmoke;
+            this.dgvAlumnos.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAlumnos.RowTemplate.Height = 24;
             this.dgvAlumnos.Size = new System.Drawing.Size(1252, 495);
             this.dgvAlumnos.TabIndex = 43;

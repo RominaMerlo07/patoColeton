@@ -75,10 +75,12 @@ namespace GestionJardin
                 leftBorderBtn.Location = new Point(0, currentBtn.Location.Y); //cambia la locacion del borde del boton
                 leftBorderBtn.Visible = true; //para mostrar
                 leftBorderBtn.BringToFront(); //trae al frente
+                lblInicio.Visible = true;
+                
 
                 //Icono Form actual
-               // iconChildFormCurrent.IconChar = currentBtn.IconChar; // el icono del titulo sea igual al icono que esta activo
-               // iconChildFormCurrent.IconColor = color;
+                // iconChildFormCurrent.IconChar = currentBtn.IconChar; // el icono del titulo sea igual al icono que esta activo
+                // iconChildFormCurrent.IconColor = color;
 
             }
 
@@ -117,7 +119,18 @@ namespace GestionJardin
             ChildForm.BringToFront(); // se trae al frente cada form para mostrar
             ChildForm.Show();
             lbl_Titulo.Text = ChildForm.Text;
+            switch (lbl_Titulo.Text)
+            {
+                case "GESTIÓN ALUMNOS": lbl_Titulo.ForeColor = Color.Violet; break;
+                case "GESTIÓN COBROS": lbl_Titulo.ForeColor = Color.IndianRed; break;
+                case "GESTIÓN SALAS": lbl_Titulo.ForeColor = Color.FromArgb(255, 192, 128); break;
+                case "GESTIÓN DOCENTES": lbl_Titulo.ForeColor = Color.FromArgb(255, 255, 128); break;
+                case "GESTIÓN USUARIOS": lbl_Titulo.ForeColor = Color.FromArgb(128, 255, 128); break;
+            }
+
             
+            lblInicio.Visible = true;
+
         }
 
 
@@ -157,7 +170,9 @@ namespace GestionJardin
             DisableButton();
             leftBorderBtn.Visible = false;
             lbl_Titulo.Text = "INICIO";
+            lbl_Titulo.ForeColor = Color.Gainsboro;
             btn_inicio.Visible = true;
+            lblInicio.Visible = false;
         }
 
 

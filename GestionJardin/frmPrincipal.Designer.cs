@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel_Titulo = new System.Windows.Forms.Panel();
+            this.lblInicio = new System.Windows.Forms.Label();
             this.btn_inicio = new System.Windows.Forms.PictureBox();
             this.btnMinimizar = new FontAwesome.Sharp.IconPictureBox();
             this.btnMaximizar = new FontAwesome.Sharp.IconPictureBox();
@@ -53,6 +54,7 @@
             // panel_Titulo
             // 
             this.panel_Titulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
+            this.panel_Titulo.Controls.Add(this.lblInicio);
             this.panel_Titulo.Controls.Add(this.btn_inicio);
             this.panel_Titulo.Controls.Add(this.btnMinimizar);
             this.panel_Titulo.Controls.Add(this.btnMaximizar);
@@ -66,11 +68,23 @@
             this.panel_Titulo.TabIndex = 4;
             this.panel_Titulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel_Titulo_MouseDown);
             // 
+            // lblInicio
+            // 
+            this.lblInicio.AutoSize = true;
+            this.lblInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInicio.ForeColor = System.Drawing.Color.Gainsboro;
+            this.lblInicio.Location = new System.Drawing.Point(29, 116);
+            this.lblInicio.Name = "lblInicio";
+            this.lblInicio.Size = new System.Drawing.Size(58, 20);
+            this.lblInicio.TabIndex = 9;
+            this.lblInicio.Text = "INICIO";
+            this.lblInicio.Visible = false;
+            // 
             // btn_inicio
             // 
             this.btn_inicio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(25)))), ((int)(((byte)(62)))));
             this.btn_inicio.Image = global::GestionJardin.Properties.Resources.Group_3;
-            this.btn_inicio.Location = new System.Drawing.Point(12, 12);
+            this.btn_inicio.Location = new System.Drawing.Point(12, 11);
             this.btn_inicio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btn_inicio.Name = "btn_inicio";
             this.btn_inicio.Size = new System.Drawing.Size(104, 103);
@@ -195,7 +209,7 @@
             this.btnCobros.Rotation = 0D;
             this.btnCobros.Size = new System.Drawing.Size(353, 379);
             this.btnCobros.TabIndex = 10;
-            this.btnCobros.Text = "GESTION COBROS";
+            this.btnCobros.Text = "GESTIÓN COBROS";
             this.btnCobros.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnCobros.UseVisualStyleBackColor = false;
             this.btnCobros.Click += new System.EventHandler(this.btnCobros_Click);
@@ -219,7 +233,7 @@
             this.btnSalas.Rotation = 0D;
             this.btnSalas.Size = new System.Drawing.Size(353, 379);
             this.btnSalas.TabIndex = 9;
-            this.btnSalas.Text = "GESTION SALAS";
+            this.btnSalas.Text = "GESTIÓN SALAS";
             this.btnSalas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnSalas.UseVisualStyleBackColor = false;
             this.btnSalas.Click += new System.EventHandler(this.btnSalas_Click);
@@ -243,7 +257,7 @@
             this.btnDocentes.Rotation = 0D;
             this.btnDocentes.Size = new System.Drawing.Size(353, 379);
             this.btnDocentes.TabIndex = 8;
-            this.btnDocentes.Text = "GESTION DOCENTES";
+            this.btnDocentes.Text = "GESTIÓN DOCENTES";
             this.btnDocentes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnDocentes.UseVisualStyleBackColor = false;
             this.btnDocentes.Click += new System.EventHandler(this.btnDocentes_Click);
@@ -267,7 +281,7 @@
             this.btnAlumnos.Rotation = 0D;
             this.btnAlumnos.Size = new System.Drawing.Size(353, 379);
             this.btnAlumnos.TabIndex = 7;
-            this.btnAlumnos.Text = "GESTION ALUMNOS";
+            this.btnAlumnos.Text = "GESTIÓN ALUMNOS";
             this.btnAlumnos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnAlumnos.UseVisualStyleBackColor = false;
             this.btnAlumnos.Click += new System.EventHandler(this.btnAlumnos_Click);
@@ -291,7 +305,7 @@
             this.btnUsuarios.Rotation = 0D;
             this.btnUsuarios.Size = new System.Drawing.Size(353, 379);
             this.btnUsuarios.TabIndex = 6;
-            this.btnUsuarios.Text = "GESTION USUARIOS";
+            this.btnUsuarios.Text = "GESTIÓN USUARIOS";
             this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.btnUsuarios.UseVisualStyleBackColor = false;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
@@ -351,5 +365,6 @@
         public FontAwesome.Sharp.IconButton btnSalas;
         public FontAwesome.Sharp.IconButton btnCobros;
         public FontAwesome.Sharp.IconButton btnInformes;
+        private System.Windows.Forms.Label lblInicio;
     }
 }

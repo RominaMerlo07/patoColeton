@@ -371,8 +371,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(1654, 853);
             this.Controls.Add(this.panelContenedor_GC);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "frmCobro";
-            this.Text = "GESTION COBROS";
+            this.Text = "GESTIÓN COBROS";
             this.panelContenedor_GC.ResumeLayout(false);
             this.panelContenedor_GC.PerformLayout();
             this.panelConceptos.ResumeLayout(false);

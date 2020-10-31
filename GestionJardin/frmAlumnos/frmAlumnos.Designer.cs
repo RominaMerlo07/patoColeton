@@ -268,7 +268,6 @@
             this.btnIS_Consultar.Text = "CONSULTAR  INFORME          ";
             this.btnIS_Consultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnIS_Consultar.UseVisualStyleBackColor = false;
-
             this.btnIS_Consultar.MouseLeave += new System.EventHandler(this.btnIS_Consultar_MouseLeave);
             this.btnIS_Consultar.MouseHover += new System.EventHandler(this.btnIS_Consultar_MouseHover);
             // 
@@ -421,6 +420,7 @@
             this.Controls.Add(this.panelEstudiantes);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelContenedor_GA);
+            this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "frmAlumnos";
             this.Text = "GESTIÓN ALUMNOS";
