@@ -18,6 +18,7 @@ namespace GestionJardin
         string idSalaSelect;
         entSala sala = new entSala();
         logSala2 metSala = new logSala2();
+        string salaActual;
 
         public frmSalasPopUpEditar()
         {
@@ -47,6 +48,7 @@ namespace GestionJardin
             idSalaSelect = Convert.ToString(sala.SAL_ID); // se usara en el editar
 
             txtSala.Text = sala.SAL_NOMBRE;
+            salaActual = sala.SAL_NOMBRE;
             txtCantMax.Text = Convert.ToString(sala.SALA_CANT_ALUM);
 
             if (sala.SALA_TURNO.Trim() == "TARDE")
@@ -252,15 +254,20 @@ namespace GestionJardin
 
                 }
 
-                string result = metSala.ValidarSala(txtSala.Text, turno);
 
-                if (result == "SI")
+                if (salaActual != txtSala.Text)
                 {
-                    txtSala.Clear();
-                    txtSala.Style = MetroFramework.MetroColorStyle.Red;
-                    txtSala.Focus();
-                    MessageBox.Show("El nombre de la sala ingresad ya se encuentra registrado en el turno " + turno, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    string result = metSala.ValidarSala(txtSala.Text, turno);
+
+                    if (result == "SI")
+                    {
+                        txtSala.Clear();
+                        txtSala.Style = MetroFramework.MetroColorStyle.Red;
+                        txtSala.Focus();
+                        MessageBox.Show("El nombre de la sala ingresado ya se encuentra registrado en el turno " + turno, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
+               
             }
         }
 
@@ -341,22 +348,14 @@ namespace GestionJardin
                 resultado = "Por favor seleccione un turno";
                 lblTurno.Text = resultado;
             }
-            else if (string.IsNullOrWhiteSpace(cboEdadMin.Text.Trim()) == true)
-            {
-                cboEdadMin.Style = MetroFramework.MetroColorStyle.Red;
-                cboEdadMin.Focus();
-                lblEMin.Visible = true;
-                resultado = "Por favor seleccione un valor para edad mínima";
-                lblEMin.Text = resultado;
-            }
             else if (string.IsNullOrWhiteSpace(cboEdadMax.Text.Trim()) == true)
             {
                 cboEdadMax.Style = MetroFramework.MetroColorStyle.Red;
                 cboEdadMax.Focus();
                 lblEMax.Visible = true;
-                resultado = " Por favor seleccione un valor para edad máxima";
+                resultado = "Por favor seleccione un valor para edad mínima";
                 lblEMax.Text = resultado;
-            }
+            }           
             else if (string.IsNullOrWhiteSpace(txtCantMax.Text.Trim()) == true)
             {
                 txtCantMax.Style = MetroFramework.MetroColorStyle.Red;
@@ -364,6 +363,31 @@ namespace GestionJardin
                 lblCantA.Visible = true;
                 resultado = "Por favor ingrese un valor para Cantidad máxima de alumnos.\nEl mismo debe ser entre 1 y 30 alumnos";
                 lblCantA.Text = resultado;
+            }
+            
+            else if (string.IsNullOrWhiteSpace(cboEdadMin.Text.Trim()) == false && string.IsNullOrWhiteSpace(cboEdadMax.Text.Trim()) == false)
+            {
+                if (Convert.ToInt32(cboEdadMin.SelectedItem) > Convert.ToInt32(cboEdadMax.SelectedItem))
+                {
+                    lblEMin.Visible = false;
+                    cboEdadMin.SelectedIndex = -1;
+                    cboEdadMax.SelectedIndex = -1;
+                    cboEdadMin.Style = MetroFramework.MetroColorStyle.Red;
+                    cboEdadMin.Focus();
+                    resultado = " La edad máxima no puede ser menor a la edad minima";
+                    MessageBox.Show(resultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else if (string.IsNullOrWhiteSpace(txtCantMax.Text.Trim()) == false)
+            {
+                if (Convert.ToInt32(txtCantMax.Text) == 0 || Convert.ToInt32(txtCantMax.Text) > 30)
+                {
+                    lblCantA.Visible = false;
+                    txtCantMax.Style = MetroFramework.MetroColorStyle.Red;
+                    txtCantMax.Focus();
+                    resultado = "La 'Cantidad de alumnos máxima' debe tener un valor mayor a 0 y no superar los 30 alumnos";
+                    MessageBox.Show(resultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else if (string.IsNullOrWhiteSpace(cboEdadMin.Text.Trim()) == false && string.IsNullOrWhiteSpace(cboTurno.Text.Trim()) == false)
             {
@@ -384,40 +408,20 @@ namespace GestionJardin
 
                 }
 
-                string result = metSala.ValidarSala(txtSala.Text, turno);
+                if (salaActual != txtSala.Text)
+                {
+                    string result = metSala.ValidarSala(txtSala.Text, turno);
 
-                if (result == "SI")
-                {
-                    txtSala.Clear();
-                    txtSala.Style = MetroFramework.MetroColorStyle.Red;
-                    txtSala.Focus();
-                    resultado = "El nombre de la sala ingresado ya se encuentra registrado en el turno " + turno;
-                    MessageBox.Show(resultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    if (result == "SI")
+                    {
+                        txtSala.Clear();
+                        txtSala.Style = MetroFramework.MetroColorStyle.Red;
+                        txtSala.Focus();
+                        resultado = "El nombre de la sala ingresado ya se encuentra registrado en el turno " + turno;
+                        MessageBox.Show(resultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-            }
-            else if (string.IsNullOrWhiteSpace(cboEdadMin.Text.Trim()) == false && string.IsNullOrWhiteSpace(cboEdadMax.Text.Trim()) == false)
-            {
-                if (Convert.ToInt32(cboEdadMax.SelectedItem) < Convert.ToInt32(cboEdadMin.SelectedItem))
-                {
-                    lblEMax.Visible = false;
-                    cboEdadMin.SelectedIndex = -1;
-                    cboEdadMin.Style = MetroFramework.MetroColorStyle.Red;
-                    cboEdadMin.Focus();
-                    resultado = " La edad máxima no puede ser menor a la edad minima";
-                    MessageBox.Show(resultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    cboEdadMax.SelectedIndex = -1;
-                }
-            }
-            else if (string.IsNullOrWhiteSpace(txtCantMax.Text.Trim()) == false)
-            {
-                if (Convert.ToInt32(txtCantMax.Text) == 0 || Convert.ToInt32(txtCantMax.Text) > 30)
-                {
-                    lblCantA.Visible = false;
-                    txtCantMax.Style = MetroFramework.MetroColorStyle.Red;
-                    txtCantMax.Focus();
-                    resultado = "La 'Cantidad de alumnos máxima' debe tener un valor mayor a 0 y no superar los 30 alumnos";
-                    MessageBox.Show(resultado, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+
             }
             else
             {
@@ -426,6 +430,26 @@ namespace GestionJardin
 
             return resultado;
         }
+
+        private void cboEdadMin_SelectedValueChanged(object sender, EventArgs e)
+        {
+            if (Convert.ToInt32(cboEdadMin.SelectedItem) > Convert.ToInt32(cboEdadMax.SelectedItem))
+            {
+
+                lblEMin.Visible = true;
+                cboEdadMin.Style = MetroFramework.MetroColorStyle.Red;
+                cboEdadMin.Focus();
+                lblEMin.Text = " La edad minima no puede ser mayor a la edad máxima";
+                //MessageBox.Show(lblEMax.Text, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                lblEMin.Visible = false;
+            }
+
+        }
+
+
     }
     
 }

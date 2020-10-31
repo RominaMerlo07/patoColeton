@@ -321,6 +321,7 @@
             this.cboEdadMax.Style = MetroFramework.MetroColorStyle.Blue;
             this.cboEdadMax.TabIndex = 4;
             this.cboEdadMax.UseSelectable = true;
+
             this.cboEdadMax.Leave += new System.EventHandler(this.cboEdadMax_Leave);
             // 
             // metroLabel3
@@ -372,6 +373,7 @@
             this.cboEdadMin.Style = MetroFramework.MetroColorStyle.Blue;
             this.cboEdadMin.TabIndex = 3;
             this.cboEdadMin.UseSelectable = true;
+            this.cboEdadMin.SelectedValueChanged += new System.EventHandler(this.cboEdadMin_SelectedValueChanged);
             this.cboEdadMin.Leave += new System.EventHandler(this.cboEdadMin_Leave);
             // 
             // metroLabel2

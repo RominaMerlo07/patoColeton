@@ -413,7 +413,7 @@ namespace GestionJardin
                 txtVacantes.Style = MetroFramework.MetroColorStyle.Red;
                 txtVacantes.Focus();
                
-                MessageBox.Show("No existen vacantes para el turno y sala elegida. Por favor elija otro turno.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("No existen vacantes para el turno y sala elegida. Por favor elija otro turno.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                
             }
         }
