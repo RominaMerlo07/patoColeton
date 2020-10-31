@@ -31,6 +31,11 @@
             this.btncancelar = new FontAwesome.Sharp.IconButton();
             this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.panelDatos = new MetroFramework.Controls.MetroPanel();
+            this.lblCantA = new System.Windows.Forms.Label();
+            this.lblEMax = new System.Windows.Forms.Label();
+            this.lblEMin = new System.Windows.Forms.Label();
+            this.lblTurno = new System.Windows.Forms.Label();
+            this.lblSala = new System.Windows.Forms.Label();
             this.btnBloqueo = new FontAwesome.Sharp.IconButton();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCantMax = new MetroFramework.Controls.MetroTextBox();
@@ -48,11 +53,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.lblDatosSala = new MetroFramework.Controls.MetroLabel();
             this.txtSala = new MetroFramework.Controls.MetroTextBox();
-            this.lblSala = new System.Windows.Forms.Label();
-            this.lblTurno = new System.Windows.Forms.Label();
-            this.lblEMin = new System.Windows.Forms.Label();
-            this.lblEMax = new System.Windows.Forms.Label();
-            this.lblCantA = new System.Windows.Forms.Label();
             this.panelDatos.SuspendLayout();
             this.metroPanel3.SuspendLayout();
             this.metroPanel2.SuspendLayout();
@@ -132,6 +132,61 @@
             this.panelDatos.VerticalScrollbarBarColor = true;
             this.panelDatos.VerticalScrollbarHighlightOnWheel = false;
             this.panelDatos.VerticalScrollbarSize = 10;
+            // 
+            // lblCantA
+            // 
+            this.lblCantA.AutoSize = true;
+            this.lblCantA.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantA.ForeColor = System.Drawing.Color.Red;
+            this.lblCantA.Location = new System.Drawing.Point(57, 431);
+            this.lblCantA.Name = "lblCantA";
+            this.lblCantA.Size = new System.Drawing.Size(60, 17);
+            this.lblCantA.TabIndex = 59;
+            this.lblCantA.Text = "lblCantA";
+            // 
+            // lblEMax
+            // 
+            this.lblEMax.AutoSize = true;
+            this.lblEMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEMax.ForeColor = System.Drawing.Color.Red;
+            this.lblEMax.Location = new System.Drawing.Point(57, 358);
+            this.lblEMax.Name = "lblEMax";
+            this.lblEMax.Size = new System.Drawing.Size(56, 17);
+            this.lblEMax.TabIndex = 58;
+            this.lblEMax.Text = "lblEMax";
+            // 
+            // lblEMin
+            // 
+            this.lblEMin.AutoSize = true;
+            this.lblEMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEMin.ForeColor = System.Drawing.Color.Red;
+            this.lblEMin.Location = new System.Drawing.Point(57, 274);
+            this.lblEMin.Name = "lblEMin";
+            this.lblEMin.Size = new System.Drawing.Size(53, 17);
+            this.lblEMin.TabIndex = 57;
+            this.lblEMin.Text = "lblEMin";
+            // 
+            // lblTurno
+            // 
+            this.lblTurno.AutoSize = true;
+            this.lblTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTurno.ForeColor = System.Drawing.Color.Red;
+            this.lblTurno.Location = new System.Drawing.Point(57, 200);
+            this.lblTurno.Name = "lblTurno";
+            this.lblTurno.Size = new System.Drawing.Size(60, 17);
+            this.lblTurno.TabIndex = 56;
+            this.lblTurno.Text = "lblTurno";
+            // 
+            // lblSala
+            // 
+            this.lblSala.AutoSize = true;
+            this.lblSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSala.ForeColor = System.Drawing.Color.Red;
+            this.lblSala.Location = new System.Drawing.Point(57, 127);
+            this.lblSala.Name = "lblSala";
+            this.lblSala.Size = new System.Drawing.Size(50, 17);
+            this.lblSala.TabIndex = 55;
+            this.lblSala.Text = "lblSala";
             // 
             // btnBloqueo
             // 
@@ -266,6 +321,7 @@
             this.cboEdadMax.Style = MetroFramework.MetroColorStyle.Blue;
             this.cboEdadMax.TabIndex = 4;
             this.cboEdadMax.UseSelectable = true;
+
             this.cboEdadMax.Leave += new System.EventHandler(this.cboEdadMax_Leave);
             // 
             // metroLabel3
@@ -317,6 +373,7 @@
             this.cboEdadMin.Style = MetroFramework.MetroColorStyle.Blue;
             this.cboEdadMin.TabIndex = 3;
             this.cboEdadMin.UseSelectable = true;
+            this.cboEdadMin.SelectedValueChanged += new System.EventHandler(this.cboEdadMin_SelectedValueChanged);
             this.cboEdadMin.Leave += new System.EventHandler(this.cboEdadMin_Leave);
             // 
             // metroLabel2
@@ -424,61 +481,6 @@
             this.txtSala.WaterMarkFont = new System.Drawing.Font("Segoe UI Light", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSala.Leave += new System.EventHandler(this.txtSala_Leave);
             // 
-            // lblSala
-            // 
-            this.lblSala.AutoSize = true;
-            this.lblSala.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSala.ForeColor = System.Drawing.Color.Red;
-            this.lblSala.Location = new System.Drawing.Point(57, 127);
-            this.lblSala.Name = "lblSala";
-            this.lblSala.Size = new System.Drawing.Size(50, 17);
-            this.lblSala.TabIndex = 55;
-            this.lblSala.Text = "lblSala";
-            // 
-            // lblTurno
-            // 
-            this.lblTurno.AutoSize = true;
-            this.lblTurno.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTurno.ForeColor = System.Drawing.Color.Red;
-            this.lblTurno.Location = new System.Drawing.Point(57, 200);
-            this.lblTurno.Name = "lblTurno";
-            this.lblTurno.Size = new System.Drawing.Size(60, 17);
-            this.lblTurno.TabIndex = 56;
-            this.lblTurno.Text = "lblTurno";
-            // 
-            // lblEMin
-            // 
-            this.lblEMin.AutoSize = true;
-            this.lblEMin.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEMin.ForeColor = System.Drawing.Color.Red;
-            this.lblEMin.Location = new System.Drawing.Point(57, 274);
-            this.lblEMin.Name = "lblEMin";
-            this.lblEMin.Size = new System.Drawing.Size(53, 17);
-            this.lblEMin.TabIndex = 57;
-            this.lblEMin.Text = "lblEMin";
-            // 
-            // lblEMax
-            // 
-            this.lblEMax.AutoSize = true;
-            this.lblEMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEMax.ForeColor = System.Drawing.Color.Red;
-            this.lblEMax.Location = new System.Drawing.Point(57, 358);
-            this.lblEMax.Name = "lblEMax";
-            this.lblEMax.Size = new System.Drawing.Size(56, 17);
-            this.lblEMax.TabIndex = 58;
-            this.lblEMax.Text = "lblEMax";
-            // 
-            // lblCantA
-            // 
-            this.lblCantA.AutoSize = true;
-            this.lblCantA.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantA.ForeColor = System.Drawing.Color.Red;
-            this.lblCantA.Location = new System.Drawing.Point(57, 431);
-            this.lblCantA.Name = "lblCantA";
-            this.lblCantA.Size = new System.Drawing.Size(60, 17);
-            this.lblCantA.TabIndex = 59;
-            this.lblCantA.Text = "lblCantA";
-            // 
             // frmSalasPopUpEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -492,6 +494,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSalasPopUpEditar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.panelDatos.ResumeLayout(false);
             this.panelDatos.PerformLayout();
             this.metroPanel3.ResumeLayout(false);

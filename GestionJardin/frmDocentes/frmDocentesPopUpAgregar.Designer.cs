@@ -982,6 +982,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmDocentesPopUpAgregar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GESTIÓN DOCENTES / AGREGAR NUEVO DOCENTE";
             this.metroPanel3.ResumeLayout(false);
             this.panelDatos.ResumeLayout(false);

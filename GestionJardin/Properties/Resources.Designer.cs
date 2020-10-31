@@ -153,6 +153,16 @@ namespace GestionJardin.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Group_333_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Group_333-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap grupo1 {
             get {
                 object obj = ResourceManager.GetObject("grupo1", resourceCulture);
@@ -186,6 +196,26 @@ namespace GestionJardin.Properties {
         internal static System.Drawing.Bitmap minimizar {
             get {
                 object obj = ResourceManager.GetObject("minimizar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap patochusma_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("patochusma-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap patofrente {
+            get {
+                object obj = ResourceManager.GetObject("patofrente", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

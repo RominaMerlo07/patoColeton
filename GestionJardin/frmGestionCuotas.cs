@@ -66,8 +66,8 @@ namespace GestionJardin
             //    alumnos.Add(dr.GetString(0));
             //};
 
-            //txtMatriculados.AutoCompleteMode = AutoCompleteMode.Suggest;
-            //txtMatriculados.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            txtMatriculados.AutoCompleteMode = AutoCompleteMode.Suggest;
+            txtMatriculados.AutoCompleteSource = AutoCompleteSource.CustomSource;
             //txtMatriculados.AutoCompleteCustomSource = alumnos;
             //--
 

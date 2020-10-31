@@ -65,8 +65,8 @@
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>..\..\..\..\..\source\repos\fluentDesign\fluentDesign\bin\Debug\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
-    <Reference Include="FontAwesome.Sharp, Version=5.15.1.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\FontAwesome.Sharp.5.15.1\lib\net45\FontAwesome.Sharp.dll</HintPath>
+    <Reference Include="FontAwesome.Sharp, Version=5.12.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\FontAwesome.Sharp.5.12.1\lib\net45\FontAwesome.Sharp.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -76,30 +76,6 @@
     </Reference>
     <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Common.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.DataVisualization.DLL</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.Design, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.Design.DLL</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.ProcessingObjectModel.DLL</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebDesign, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebDesign.DLL</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WebForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WebForms.DLL</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.ReportViewer.11.0.3366.16\lib\Microsoft.ReportViewer.WinForms.DLL</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -115,11 +91,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSetdoc.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetdoc.xsd</DependentUpon>
-    </Compile>
     <Compile Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFlia.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,17 +145,41 @@
     <Compile Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosPopUpAgregar.Designer.cs">
       <DependentUpon>frmAlumnosPopUpAgregar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnos\frmAsistencia\frmAsistencia.cs">
+    <Compile Include="frmAlumnos\Asistencias\frmAsistencia.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnos\frmAsistencia\frmAsistencia.Designer.cs">
+    <Compile Include="frmAlumnos\Asistencias\frmAsistencia.Designer.cs">
       <DependentUpon>frmAsistencia.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmAlumnos\frmAsistencia\frmAsistenciaConsulta.cs">
+    <Compile Include="frmAlumnos\Asistencias\frmAsistenciaConsulta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAlumnos\frmAsistencia\frmAsistenciaConsulta.Designer.cs">
+    <Compile Include="frmAlumnos\Asistencias\frmAsistenciaConsulta.Designer.cs">
       <DependentUpon>frmAsistenciaConsulta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCobro\frmCobros\frmCobros_Anular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro\frmCobros\frmCobros_Anular.Designer.cs">
+      <DependentUpon>frmCobros_Anular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCobro\frmCobros\frmCobros_Cobrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro\frmCobros\frmCobros_Cobrar.Designer.cs">
+      <DependentUpon>frmCobros_Cobrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCobro\frmCobros\frmCobros_Gestionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro\frmCobros\frmCobros_Gestionar.Designer.cs">
+      <DependentUpon>frmCobros_Gestionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCobro\frmCobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro\frmCobro.Designer.cs">
+      <DependentUpon>frmCobro.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCobros.cs">
       <SubType>Form</SubType>
@@ -192,11 +187,35 @@
     <Compile Include="frmCobros.Designer.cs">
       <DependentUpon>frmCobros.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCobro\frmConceptos\frmConcepto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro\frmConceptos\frmConcepto.Designer.cs">
+      <DependentUpon>frmConcepto.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmConceptos2.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmConceptos2.Designer.cs">
       <DependentUpon>frmConceptos2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCobro\frmConceptos\frmConcepto_Agregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro\frmConceptos\frmConcepto_Agregar.Designer.cs">
+      <DependentUpon>frmConcepto_Agregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCobro\frmConceptos\frmConcepto_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro\frmConceptos\frmConcepto_Editar.Designer.cs">
+      <DependentUpon>frmConcepto_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCobro\frmConceptos\frmConcepto_Eliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro\frmConceptos\frmConcepto_Eliminar.Designer.cs">
+      <DependentUpon>frmConcepto_Eliminar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmDocentes\frmDocentes.cs">
       <SubType>Form</SubType>
@@ -222,17 +241,47 @@
     <Compile Include="frmDocentes\frmDocentesPopUpEliminar.Designer.cs">
       <DependentUpon>frmDocentesPopUpEliminar.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmDocentes_report.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmDocentes_report.Designer.cs">
-      <DependentUpon>frmDocentes_report.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmGestionCuotas.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmGestionCuotas.Designer.cs">
       <DependentUpon>frmGestionCuotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Gestionar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Gestionar.Designer.cs">
+      <DependentUpon>frmInformeProgreso_Gestionar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Nuevo.Designer.cs">
+      <DependentUpon>frmInformeProgreso_Nuevo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestionarAsignaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestionarAsignaturas.Designer.cs">
+      <DependentUpon>frmInformeProgreso_GestionarAsignaturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Agregar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Agregar.Designer.cs">
+      <DependentUpon>frmInformeProgreso_GestAsig_Agregar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Editar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Editar.Designer.cs">
+      <DependentUpon>frmInformeProgreso_GestAsig_Editar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Eliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Eliminar.Designer.cs">
+      <DependentUpon>frmInformeProgreso_GestAsig_Eliminar.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -296,7 +345,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="frmAlumnos\Estudiantes_GrupoFlia\frmAlumnosGrupoFlia.resx">
       <DependentUpon>frmAlumnosGrupoFlia.cs</DependentUpon>
     </EmbeddedResource>
@@ -324,17 +372,53 @@
     <EmbeddedResource Include="frmAlumnos\Estudiantes_GestionAlumnos\frmAlumnosPopUpAgregar.resx">
       <DependentUpon>frmAlumnosPopUpAgregar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnos\frmAsistencia\frmAsistencia.resx">
+    <EmbeddedResource Include="frmAlumnos\Asistencias\frmAsistencia.resx">
       <DependentUpon>frmAsistencia.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAlumnos\frmAsistencia\frmAsistenciaConsulta.resx">
+    <EmbeddedResource Include="frmAlumnos\Asistencias\frmAsistenciaConsulta.resx">
       <DependentUpon>frmAsistenciaConsulta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Agregar.resx">
+      <DependentUpon>frmInformeProgreso_GestAsig_Agregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Editar.resx">
+      <DependentUpon>frmInformeProgreso_GestAsig_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestAsig_Eliminar.resx">
+      <DependentUpon>frmInformeProgreso_GestAsig_Eliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Gestionar.resx">
+      <DependentUpon>frmInformeProgreso_Gestionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro\frmCobros\frmCobros_Anular.resx">
+      <DependentUpon>frmCobros_Anular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro\frmCobro.resx">
+      <DependentUpon>frmCobro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCobros.resx">
       <DependentUpon>frmCobros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro\frmCobros\frmCobros_Cobrar.resx">
+      <DependentUpon>frmCobros_Cobrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro\frmCobros\frmCobros_Gestionar.resx">
+      <DependentUpon>frmCobros_Gestionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro\frmConceptos\frmConcepto.resx">
+      <DependentUpon>frmConcepto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmConceptos2.resx">
       <DependentUpon>frmConceptos2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro\frmConceptos\frmConcepto_Agregar.resx">
+      <DependentUpon>frmConcepto_Agregar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro\frmConceptos\frmConcepto_Editar.resx">
+      <DependentUpon>frmConcepto_Editar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro\frmConceptos\frmConcepto_Eliminar.resx">
+      <DependentUpon>frmConcepto_Eliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmDocentes\frmDocentes.resx">
       <DependentUpon>frmDocentes.cs</DependentUpon>
@@ -348,11 +432,14 @@
     <EmbeddedResource Include="frmDocentes\frmDocentesPopUpEliminar.resx">
       <DependentUpon>frmDocentesPopUpEliminar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmDocentes_report.resx">
-      <DependentUpon>frmDocentes_report.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmGestionCuotas.resx">
       <DependentUpon>frmGestionCuotas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Nuevo.resx">
+      <DependentUpon>frmInformeProgreso_Nuevo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_GestionarAsignatura\frmInformeProgreso_GestionarAsignaturas.resx">
+      <DependentUpon>frmInformeProgreso_GestionarAsignaturas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -394,20 +481,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="report.rdlc" />
-    <EmbeddedResource Include="Report1.rdlc" />
     <None Include="ClassDiagram1.cd" />
-    <None Include="DataSetdoc.xsc">
-      <DependentUpon>DataSetdoc.xsd</DependentUpon>
-    </None>
-    <None Include="DataSetdoc.xsd">
-      <SubType>Designer</SubType>
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetdoc.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="DataSetdoc.xss">
-      <DependentUpon>DataSetdoc.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\CapaAccesoDatos.metAsistencia.datasource" />
     <None Include="Properties\Settings.settings">
@@ -425,19 +499,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LEEME.txt" />
-    <Content Include="SqlServerTypes\readme.htm" />
-    <Content Include="SqlServerTypes\x64\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\msvcr120.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <None Include="Resources\Group_333-removebg-preview.png" />
+    <None Include="Resources\patochusma-removebg-preview.png" />
+    <None Include="Resources\patofrente.png" />
     <None Include="Resources\png-transparent-computer-icons-user-symbol-symbol-miscellaneous-black-computer-icons.png" />
     <None Include="Resources\iconfinder_search_172546.png" />
     <None Include="Resources\El Patito Coletón.png" />
@@ -478,5 +542,6 @@
       <Name>CaEnt</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

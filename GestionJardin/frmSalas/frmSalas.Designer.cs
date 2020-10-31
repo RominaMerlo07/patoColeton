@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.btnGS_Eliminar = new FontAwesome.Sharp.IconButton();
             this.btnGS_Editar = new FontAwesome.Sharp.IconButton();
@@ -60,9 +60,9 @@
             this.btnGS_Eliminar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnGS_Eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGS_Eliminar.ForeColor = System.Drawing.Color.Gray;
-            this.btnGS_Eliminar.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
+            this.btnGS_Eliminar.IconChar = FontAwesome.Sharp.IconChar.Times;
             this.btnGS_Eliminar.IconColor = System.Drawing.Color.Gray;
-            this.btnGS_Eliminar.IconSize = 100;
+            this.btnGS_Eliminar.IconSize = 75;
             this.btnGS_Eliminar.Location = new System.Drawing.Point(1343, 525);
             this.btnGS_Eliminar.Name = "btnGS_Eliminar";
             this.btnGS_Eliminar.Rotation = 0D;
@@ -80,9 +80,9 @@
             this.btnGS_Editar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnGS_Editar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGS_Editar.ForeColor = System.Drawing.Color.Gray;
-            this.btnGS_Editar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
+            this.btnGS_Editar.IconChar = FontAwesome.Sharp.IconChar.Pen;
             this.btnGS_Editar.IconColor = System.Drawing.Color.Gray;
-            this.btnGS_Editar.IconSize = 100;
+            this.btnGS_Editar.IconSize = 75;
             this.btnGS_Editar.Location = new System.Drawing.Point(1343, 367);
             this.btnGS_Editar.Name = "btnGS_Editar";
             this.btnGS_Editar.Rotation = 0D;
@@ -100,9 +100,9 @@
             this.btnGS_Agregar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
             this.btnGS_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGS_Agregar.ForeColor = System.Drawing.Color.Lime;
-            this.btnGS_Agregar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnGS_Agregar.IconChar = FontAwesome.Sharp.IconChar.Plus;
             this.btnGS_Agregar.IconColor = System.Drawing.Color.Lime;
-            this.btnGS_Agregar.IconSize = 100;
+            this.btnGS_Agregar.IconSize = 75;
             this.btnGS_Agregar.Location = new System.Drawing.Point(1343, 211);
             this.btnGS_Agregar.Name = "btnGS_Agregar";
             this.btnGS_Agregar.Rotation = 0D;
@@ -160,23 +160,23 @@
             this.dgv_Salas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgv_Salas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv_Salas.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_Salas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_Salas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_Salas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv_Salas.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv_Salas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_Salas.Location = new System.Drawing.Point(58, 187);
             this.dgv_Salas.MultiSelect = false;
             this.dgv_Salas.Name = "dgv_Salas";
@@ -198,6 +198,7 @@
             this.Controls.Add(this.btnGS_Editar);
             this.Controls.Add(this.btnGS_Agregar);
             this.Controls.Add(this.txtGS_Buscar);
+            this.ForeColor = System.Drawing.Color.Black;
             this.Name = "frmSalas";
             this.ShowInTaskbar = false;
             this.Text = "GESTIÓN SALAS";

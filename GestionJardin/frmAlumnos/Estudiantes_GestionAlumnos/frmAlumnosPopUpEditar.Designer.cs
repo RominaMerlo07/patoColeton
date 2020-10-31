@@ -38,6 +38,11 @@
             this.cbTurno = new MetroFramework.Controls.MetroComboBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.panelContacto = new MetroFramework.Controls.MetroPanel();
+            this.lblCelular = new System.Windows.Forms.Label();
+            this.lblBarrio = new System.Windows.Forms.Label();
+            this.lblCp = new System.Windows.Forms.Label();
+            this.lblNumero = new System.Windows.Forms.Label();
+            this.lblCalle = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -55,6 +60,9 @@
             this.txtCalle = new MetroFramework.Controls.MetroTextBox();
             this.btnBloqueo = new FontAwesome.Sharp.IconButton();
             this.panelDatos = new MetroFramework.Controls.MetroPanel();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblDni = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -92,7 +100,7 @@
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Rotation = 0D;
             this.iconButton2.Size = new System.Drawing.Size(239, 76);
-            this.iconButton2.TabIndex = 46;
+            this.iconButton2.TabIndex = 18;
             this.iconButton2.Text = "CANCELAR";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = true;
@@ -112,7 +120,7 @@
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Rotation = 0D;
             this.btnEditar.Size = new System.Drawing.Size(239, 76);
-            this.btnEditar.TabIndex = 45;
+            this.btnEditar.TabIndex = 17;
             this.btnEditar.Text = "GUARDAR";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = true;
@@ -172,7 +180,7 @@
             this.txtLegajo.ShortcutsEnabled = true;
             this.txtLegajo.Size = new System.Drawing.Size(126, 35);
             this.txtLegajo.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtLegajo.TabIndex = 27;
+            this.txtLegajo.TabIndex = 2;
             this.txtLegajo.UseCustomBackColor = true;
             this.txtLegajo.UseCustomForeColor = true;
             this.txtLegajo.UseSelectable = true;
@@ -202,7 +210,7 @@
             this.cbSala.Name = "cbSala";
             this.cbSala.Size = new System.Drawing.Size(185, 30);
             this.cbSala.Style = MetroFramework.MetroColorStyle.Orange;
-            this.cbSala.TabIndex = 25;
+            this.cbSala.TabIndex = 1;
             this.cbSala.UseCustomBackColor = true;
             this.cbSala.UseSelectable = true;
             this.cbSala.UseStyleColors = true;
@@ -233,7 +241,7 @@
             this.cbTurno.PromptText = "Turno";
             this.cbTurno.Size = new System.Drawing.Size(185, 30);
             this.cbTurno.Style = MetroFramework.MetroColorStyle.Green;
-            this.cbTurno.TabIndex = 23;
+            this.cbTurno.TabIndex = 0;
             this.cbTurno.UseCustomBackColor = true;
             this.cbTurno.UseSelectable = true;
             this.cbTurno.UseStyleColors = true;
@@ -256,6 +264,11 @@
             // 
             this.panelContacto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.panelContacto.Controls.Add(this.lblCelular);
+            this.panelContacto.Controls.Add(this.lblBarrio);
+            this.panelContacto.Controls.Add(this.lblCp);
+            this.panelContacto.Controls.Add(this.lblNumero);
+            this.panelContacto.Controls.Add(this.lblCalle);
             this.panelContacto.Controls.Add(this.label10);
             this.panelContacto.Controls.Add(this.label9);
             this.panelContacto.Controls.Add(this.label8);
@@ -283,6 +296,66 @@
             this.panelContacto.VerticalScrollbarBarColor = true;
             this.panelContacto.VerticalScrollbarHighlightOnWheel = false;
             this.panelContacto.VerticalScrollbarSize = 10;
+            // 
+            // lblCelular
+            // 
+            this.lblCelular.AutoSize = true;
+            this.lblCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCelular.ForeColor = System.Drawing.Color.Red;
+            this.lblCelular.Location = new System.Drawing.Point(46, 322);
+            this.lblCelular.Name = "lblCelular";
+            this.lblCelular.Size = new System.Drawing.Size(46, 17);
+            this.lblCelular.TabIndex = 42;
+            this.lblCelular.Text = "label1";
+            this.lblCelular.Visible = false;
+            // 
+            // lblBarrio
+            // 
+            this.lblBarrio.AutoSize = true;
+            this.lblBarrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBarrio.ForeColor = System.Drawing.Color.Red;
+            this.lblBarrio.Location = new System.Drawing.Point(475, 249);
+            this.lblBarrio.Name = "lblBarrio";
+            this.lblBarrio.Size = new System.Drawing.Size(46, 17);
+            this.lblBarrio.TabIndex = 41;
+            this.lblBarrio.Text = "label1";
+            this.lblBarrio.Visible = false;
+            // 
+            // lblCp
+            // 
+            this.lblCp.AutoSize = true;
+            this.lblCp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCp.ForeColor = System.Drawing.Color.Red;
+            this.lblCp.Location = new System.Drawing.Point(545, 176);
+            this.lblCp.Name = "lblCp";
+            this.lblCp.Size = new System.Drawing.Size(46, 17);
+            this.lblCp.TabIndex = 40;
+            this.lblCp.Text = "label1";
+            this.lblCp.Visible = false;
+            // 
+            // lblNumero
+            // 
+            this.lblNumero.AutoSize = true;
+            this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumero.ForeColor = System.Drawing.Color.Red;
+            this.lblNumero.Location = new System.Drawing.Point(475, 176);
+            this.lblNumero.Name = "lblNumero";
+            this.lblNumero.Size = new System.Drawing.Size(46, 17);
+            this.lblNumero.TabIndex = 39;
+            this.lblNumero.Text = "label1";
+            this.lblNumero.Visible = false;
+            // 
+            // lblCalle
+            // 
+            this.lblCalle.AutoSize = true;
+            this.lblCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalle.ForeColor = System.Drawing.Color.Red;
+            this.lblCalle.Location = new System.Drawing.Point(46, 176);
+            this.lblCalle.Name = "lblCalle";
+            this.lblCalle.Size = new System.Drawing.Size(46, 17);
+            this.lblCalle.TabIndex = 38;
+            this.lblCalle.Text = "label1";
+            this.lblCalle.Visible = false;
             // 
             // label10
             // 
@@ -334,7 +407,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(426, 280);
+            this.label11.Location = new System.Drawing.Point(426, 288);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(21, 25);
             this.label11.TabIndex = 28;
@@ -357,7 +430,7 @@
             this.txtEmail.CustomButton.Visible = false;
             this.txtEmail.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtEmail.Lines = new string[0];
-            this.txtEmail.Location = new System.Drawing.Point(47, 333);
+            this.txtEmail.Location = new System.Drawing.Point(47, 345);
             this.txtEmail.MaxLength = 32767;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -369,7 +442,7 @@
             this.txtEmail.ShortcutsEnabled = true;
             this.txtEmail.Size = new System.Drawing.Size(373, 40);
             this.txtEmail.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtEmail.TabIndex = 10;
+            this.txtEmail.TabIndex = 16;
             this.txtEmail.UseSelectable = true;
             this.txtEmail.WaterMark = "E-mail";
             this.txtEmail.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -393,7 +466,7 @@
             this.txtCelular.CustomButton.Visible = false;
             this.txtCelular.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCelular.Lines = new string[0];
-            this.txtCelular.Location = new System.Drawing.Point(49, 270);
+            this.txtCelular.Location = new System.Drawing.Point(49, 278);
             this.txtCelular.MaxLength = 32767;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.PasswordChar = '\0';
@@ -405,12 +478,13 @@
             this.txtCelular.ShortcutsEnabled = true;
             this.txtCelular.Size = new System.Drawing.Size(371, 40);
             this.txtCelular.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCelular.TabIndex = 9;
+            this.txtCelular.TabIndex = 14;
             this.txtCelular.UseSelectable = true;
             this.txtCelular.WaterMark = "Celular Ej: 3512345678";
             this.txtCelular.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCelular.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
+            this.txtCelular.Leave += new System.EventHandler(this.txtCelular_Leave);
             // 
             // txtTelefono
             // 
@@ -429,7 +503,7 @@
             this.txtTelefono.CustomButton.Visible = false;
             this.txtTelefono.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtTelefono.Lines = new string[0];
-            this.txtTelefono.Location = new System.Drawing.Point(472, 270);
+            this.txtTelefono.Location = new System.Drawing.Point(472, 278);
             this.txtTelefono.MaxLength = 32767;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PasswordChar = '\0';
@@ -441,7 +515,7 @@
             this.txtTelefono.ShortcutsEnabled = true;
             this.txtTelefono.Size = new System.Drawing.Size(314, 40);
             this.txtTelefono.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtTelefono.TabIndex = 8;
+            this.txtTelefono.TabIndex = 15;
             this.txtTelefono.UseSelectable = true;
             this.txtTelefono.WaterMark = "Teléfono  Ej: 3512345678";
             this.txtTelefono.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -477,12 +551,13 @@
             this.txtCPostal.ShortcutsEnabled = true;
             this.txtCPostal.Size = new System.Drawing.Size(150, 35);
             this.txtCPostal.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCPostal.TabIndex = 4;
+            this.txtCPostal.TabIndex = 10;
             this.txtCPostal.UseSelectable = true;
             this.txtCPostal.WaterMark = "C. Postal";
             this.txtCPostal.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCPostal.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPostal_KeyPress);
+            this.txtCPostal.Leave += new System.EventHandler(this.txtCPostal_Leave);
             // 
             // txtDepto
             // 
@@ -513,7 +588,7 @@
             this.txtDepto.ShortcutsEnabled = true;
             this.txtDepto.Size = new System.Drawing.Size(105, 40);
             this.txtDepto.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDepto.TabIndex = 6;
+            this.txtDepto.TabIndex = 12;
             this.txtDepto.UseSelectable = true;
             this.txtDepto.WaterMark = "Depto.";
             this.txtDepto.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -548,12 +623,13 @@
             this.txtNumero.ShortcutsEnabled = true;
             this.txtNumero.Size = new System.Drawing.Size(128, 35);
             this.txtNumero.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtNumero.TabIndex = 3;
+            this.txtNumero.TabIndex = 9;
             this.txtNumero.UseSelectable = true;
             this.txtNumero.WaterMark = "Número";
             this.txtNumero.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNumero.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
+            this.txtNumero.Leave += new System.EventHandler(this.txtNumero_Leave);
             // 
             // lblDatosContacto
             // 
@@ -596,11 +672,12 @@
             this.txtBarrio.ShortcutsEnabled = true;
             this.txtBarrio.Size = new System.Drawing.Size(314, 40);
             this.txtBarrio.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtBarrio.TabIndex = 7;
+            this.txtBarrio.TabIndex = 13;
             this.txtBarrio.UseSelectable = true;
             this.txtBarrio.WaterMark = "Barrio";
             this.txtBarrio.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtBarrio.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBarrio.Leave += new System.EventHandler(this.txtBarrio_Leave);
             // 
             // txtPiso
             // 
@@ -631,7 +708,7 @@
             this.txtPiso.ShortcutsEnabled = true;
             this.txtPiso.Size = new System.Drawing.Size(105, 40);
             this.txtPiso.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtPiso.TabIndex = 5;
+            this.txtPiso.TabIndex = 11;
             this.txtPiso.UseSelectable = true;
             this.txtPiso.WaterMark = "Piso";
             this.txtPiso.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -666,11 +743,12 @@
             this.txtCalle.ShortcutsEnabled = true;
             this.txtCalle.Size = new System.Drawing.Size(373, 35);
             this.txtCalle.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCalle.TabIndex = 2;
+            this.txtCalle.TabIndex = 8;
             this.txtCalle.UseSelectable = true;
             this.txtCalle.WaterMark = "Calle";
             this.txtCalle.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCalle.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCalle.Leave += new System.EventHandler(this.txtCalle_Leave);
             // 
             // btnBloqueo
             // 
@@ -697,6 +775,9 @@
             // 
             this.panelDatos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.panelDatos.Controls.Add(this.lblApellido);
+            this.panelDatos.Controls.Add(this.lblNombre);
+            this.panelDatos.Controls.Add(this.lblDni);
             this.panelDatos.Controls.Add(this.label5);
             this.panelDatos.Controls.Add(this.label4);
             this.panelDatos.Controls.Add(this.label3);
@@ -720,6 +801,42 @@
             this.panelDatos.VerticalScrollbarBarColor = true;
             this.panelDatos.VerticalScrollbarHighlightOnWheel = false;
             this.panelDatos.VerticalScrollbarSize = 10;
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellido.ForeColor = System.Drawing.Color.Red;
+            this.lblApellido.Location = new System.Drawing.Point(53, 270);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(46, 17);
+            this.lblApellido.TabIndex = 30;
+            this.lblApellido.Text = "label1";
+            this.lblApellido.Visible = false;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.Red;
+            this.lblNombre.Location = new System.Drawing.Point(53, 203);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(46, 17);
+            this.lblNombre.TabIndex = 29;
+            this.lblNombre.Text = "label1";
+            this.lblNombre.Visible = false;
+            // 
+            // lblDni
+            // 
+            this.lblDni.AutoSize = true;
+            this.lblDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDni.ForeColor = System.Drawing.Color.Red;
+            this.lblDni.Location = new System.Drawing.Point(53, 140);
+            this.lblDni.Name = "lblDni";
+            this.lblDni.Size = new System.Drawing.Size(46, 17);
+            this.lblDni.TabIndex = 28;
+            this.lblDni.Text = "label1";
+            this.lblDni.Visible = false;
             // 
             // label5
             // 
@@ -787,7 +904,7 @@
             this.metroPanel1.Location = new System.Drawing.Point(16, 304);
             this.metroPanel1.Name = "metroPanel1";
             this.metroPanel1.Size = new System.Drawing.Size(365, 50);
-            this.metroPanel1.TabIndex = 19;
+            this.metroPanel1.TabIndex = 6;
             this.metroPanel1.UseCustomBackColor = true;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
@@ -818,7 +935,7 @@
             this.dtNacimiento.Name = "dtNacimiento";
             this.dtNacimiento.Size = new System.Drawing.Size(184, 27);
             this.dtNacimiento.Style = MetroFramework.MetroColorStyle.Blue;
-            this.dtNacimiento.TabIndex = 20;
+            this.dtNacimiento.TabIndex = 5;
             this.dtNacimiento.Value = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             // 
             // lblDatosPersonales
@@ -845,8 +962,9 @@
             this.cbGenero.PromptText = "Género";
             this.cbGenero.Size = new System.Drawing.Size(330, 27);
             this.cbGenero.Style = MetroFramework.MetroColorStyle.Blue;
-            this.cbGenero.TabIndex = 20;
+            this.cbGenero.TabIndex = 7;
             this.cbGenero.UseSelectable = true;
+        
             // 
             // txtDocumento
             // 
@@ -877,7 +995,7 @@
             this.txtDocumento.ShortcutsEnabled = true;
             this.txtDocumento.Size = new System.Drawing.Size(332, 35);
             this.txtDocumento.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtDocumento.TabIndex = 2;
+            this.txtDocumento.TabIndex = 3;
             this.txtDocumento.UseSelectable = true;
             this.txtDocumento.WaterMark = "Documento Ej: 30123456";
             this.txtDocumento.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -914,12 +1032,13 @@
             this.txtApellidos.ShortcutsEnabled = true;
             this.txtApellidos.Size = new System.Drawing.Size(330, 35);
             this.txtApellidos.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtApellidos.TabIndex = 4;
+            this.txtApellidos.TabIndex = 5;
             this.txtApellidos.UseSelectable = true;
             this.txtApellidos.WaterMark = "Apellidos";
             this.txtApellidos.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtApellidos.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
+            this.txtApellidos.Leave += new System.EventHandler(this.txtApellidos_Leave);
             // 
             // txtNombre
             // 
@@ -950,12 +1069,13 @@
             this.txtNombre.ShortcutsEnabled = true;
             this.txtNombre.Size = new System.Drawing.Size(330, 35);
             this.txtNombre.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtNombre.TabIndex = 3;
+            this.txtNombre.TabIndex = 4;
             this.txtNombre.UseSelectable = true;
             this.txtNombre.WaterMark = "Nombres";
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNombre.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
             // 
             // btnGA_Excel
             // 
@@ -1009,6 +1129,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAlumnosPopUpEditar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.metroPanel3.ResumeLayout(false);
             this.panelContacto.ResumeLayout(false);
             this.panelContacto.PerformLayout();
@@ -1065,5 +1186,13 @@
         private FontAwesome.Sharp.IconPictureBox btnGA_Excel;
         private FontAwesome.Sharp.IconPictureBox btnGA_Pdf;
         private FontAwesome.Sharp.IconButton btnBloqueo;
+        private System.Windows.Forms.Label lblDni;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.Label lblCalle;
+        private System.Windows.Forms.Label lblNumero;
+        private System.Windows.Forms.Label lblCp;
+        private System.Windows.Forms.Label lblBarrio;
+        private System.Windows.Forms.Label lblCelular;
     }
 }

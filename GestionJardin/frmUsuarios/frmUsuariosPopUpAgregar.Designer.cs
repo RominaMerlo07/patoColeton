@@ -35,8 +35,7 @@
             this.txt_contra_usu = new MetroFramework.Controls.MetroTextBox();
             this.txtSeleccionarDocente = new MetroFramework.Controls.MetroTextBox();
             this.lblNvoUsu = new System.Windows.Forms.Label();
-            this.mostrarpass = new System.Windows.Forms.CheckBox();
-            this.lblmostrarcontraseña = new System.Windows.Forms.Label();
+            this.btnBloqueo = new FontAwesome.Sharp.IconButton();
             this.SuspendLayout();
             // 
             // txt_nombre_usuario
@@ -145,7 +144,7 @@
             this.txt_contra_usu.ForeColor = System.Drawing.Color.White;
             this.txt_contra_usu.IconRight = true;
             this.txt_contra_usu.Lines = new string[0];
-            this.txt_contra_usu.Location = new System.Drawing.Point(160, 231);
+            this.txt_contra_usu.Location = new System.Drawing.Point(160, 235);
             this.txt_contra_usu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txt_contra_usu.MaxLength = 32767;
             this.txt_contra_usu.Name = "txt_contra_usu";
@@ -227,35 +226,27 @@
             this.lblNvoUsu.TabIndex = 78;
             this.lblNvoUsu.Text = "USUARIO: ";
             // 
-            // mostrarpass
+            // btnBloqueo
             // 
-            this.mostrarpass.Appearance = System.Windows.Forms.Appearance.Button;
-            this.mostrarpass.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.mostrarpass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.mostrarpass.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.mostrarpass.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.mostrarpass.FlatAppearance.CheckedBackColor = System.Drawing.Color.Lime;
-            this.mostrarpass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.mostrarpass.ForeColor = System.Drawing.Color.BurlyWood;
-            this.mostrarpass.Location = new System.Drawing.Point(459, 231);
-            this.mostrarpass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.mostrarpass.Name = "mostrarpass";
-            this.mostrarpass.Size = new System.Drawing.Size(27, 39);
-            this.mostrarpass.TabIndex = 79;
-            this.mostrarpass.UseVisualStyleBackColor = false;
-            this.mostrarpass.CheckedChanged += new System.EventHandler(this.mostrarpass_CheckedChanged);
-            this.mostrarpass.MouseLeave += new System.EventHandler(this.mostrarpass_MouseLeave);
-            this.mostrarpass.MouseHover += new System.EventHandler(this.mostrarpass_MouseHover);
-            // 
-            // lblmostrarcontraseña
-            // 
-            this.lblmostrarcontraseña.AutoSize = true;
-            this.lblmostrarcontraseña.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblmostrarcontraseña.ForeColor = System.Drawing.Color.Yellow;
-            this.lblmostrarcontraseña.Location = new System.Drawing.Point(491, 244);
-            this.lblmostrarcontraseña.Name = "lblmostrarcontraseña";
-            this.lblmostrarcontraseña.Size = new System.Drawing.Size(0, 17);
-            this.lblmostrarcontraseña.TabIndex = 80;
+            this.btnBloqueo.FlatAppearance.BorderColor = System.Drawing.Color.Navy;
+            this.btnBloqueo.FlatAppearance.BorderSize = 0;
+            this.btnBloqueo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBloqueo.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
+            this.btnBloqueo.ForeColor = System.Drawing.Color.Transparent;
+            this.btnBloqueo.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.btnBloqueo.IconColor = System.Drawing.Color.Gray;
+            this.btnBloqueo.IconSize = 50;
+            this.btnBloqueo.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBloqueo.Location = new System.Drawing.Point(491, 222);
+            this.btnBloqueo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBloqueo.Name = "btnBloqueo";
+            this.btnBloqueo.Rotation = 0D;
+            this.btnBloqueo.Size = new System.Drawing.Size(57, 75);
+            this.btnBloqueo.TabIndex = 81;
+            this.btnBloqueo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBloqueo.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.btnBloqueo.UseVisualStyleBackColor = true;
+            this.btnBloqueo.Click += new System.EventHandler(this.btnBloqueo_Click);
             // 
             // frmUsuariosPopUpAgregar
             // 
@@ -263,8 +254,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.ClientSize = new System.Drawing.Size(667, 450);
-            this.Controls.Add(this.lblmostrarcontraseña);
-            this.Controls.Add(this.mostrarpass);
+            this.Controls.Add(this.btnBloqueo);
             this.Controls.Add(this.lblNvoUsu);
             this.Controls.Add(this.txtSeleccionarDocente);
             this.Controls.Add(this.txt_contra_usu);
@@ -277,7 +267,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmUsuariosPopUpAgregar";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "GESTIÓN USUARIO / GENERAR USUARIO NUEVO";
             this.Load += new System.EventHandler(this.frmUsuariosPopUpAgregar_Load_1);
             this.ResumeLayout(false);
@@ -292,7 +282,6 @@
         public MetroFramework.Controls.MetroTextBox txtSeleccionarDocente;
         public System.Windows.Forms.Label lblNvoUsu;
         public MetroFramework.Controls.MetroTextBox txt_contra_usu;
-        private System.Windows.Forms.CheckBox mostrarpass;
-        public System.Windows.Forms.Label lblmostrarcontraseña;
+        private FontAwesome.Sharp.IconButton btnBloqueo;
     }
 }

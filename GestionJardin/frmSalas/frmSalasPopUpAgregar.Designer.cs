@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panelDatos = new MetroFramework.Controls.MetroPanel();
+            this.lblCantA = new System.Windows.Forms.Label();
+            this.lblEMax = new System.Windows.Forms.Label();
             this.lblEMin = new System.Windows.Forms.Label();
             this.lblTurno = new System.Windows.Forms.Label();
             this.lblSala = new System.Windows.Forms.Label();
@@ -50,8 +52,6 @@
             this.txtSala = new MetroFramework.Controls.MetroTextBox();
             this.btncancelar = new FontAwesome.Sharp.IconButton();
             this.btnguardar = new FontAwesome.Sharp.IconButton();
-            this.lblEMax = new System.Windows.Forms.Label();
-            this.lblCantA = new System.Windows.Forms.Label();
             this.panelDatos.SuspendLayout();
             this.metroPanel3.SuspendLayout();
             this.metroPanel2.SuspendLayout();
@@ -90,6 +90,28 @@
             this.panelDatos.VerticalScrollbarBarColor = true;
             this.panelDatos.VerticalScrollbarHighlightOnWheel = false;
             this.panelDatos.VerticalScrollbarSize = 10;
+            // 
+            // lblCantA
+            // 
+            this.lblCantA.AutoSize = true;
+            this.lblCantA.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCantA.ForeColor = System.Drawing.Color.Red;
+            this.lblCantA.Location = new System.Drawing.Point(57, 431);
+            this.lblCantA.Name = "lblCantA";
+            this.lblCantA.Size = new System.Drawing.Size(60, 17);
+            this.lblCantA.TabIndex = 38;
+            this.lblCantA.Text = "lblCantA";
+            // 
+            // lblEMax
+            // 
+            this.lblEMax.AutoSize = true;
+            this.lblEMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEMax.ForeColor = System.Drawing.Color.Red;
+            this.lblEMax.Location = new System.Drawing.Point(57, 358);
+            this.lblEMax.Name = "lblEMax";
+            this.lblEMax.Size = new System.Drawing.Size(56, 17);
+            this.lblEMax.TabIndex = 37;
+            this.lblEMax.Text = "lblEMax";
             // 
             // lblEMin
             // 
@@ -435,28 +457,6 @@
             this.btnguardar.UseVisualStyleBackColor = true;
             this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
-            // lblEMax
-            // 
-            this.lblEMax.AutoSize = true;
-            this.lblEMax.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEMax.ForeColor = System.Drawing.Color.Red;
-            this.lblEMax.Location = new System.Drawing.Point(57, 358);
-            this.lblEMax.Name = "lblEMax";
-            this.lblEMax.Size = new System.Drawing.Size(56, 17);
-            this.lblEMax.TabIndex = 37;
-            this.lblEMax.Text = "lblEMax";
-            // 
-            // lblCantA
-            // 
-            this.lblCantA.AutoSize = true;
-            this.lblCantA.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantA.ForeColor = System.Drawing.Color.Red;
-            this.lblCantA.Location = new System.Drawing.Point(57, 431);
-            this.lblCantA.Name = "lblCantA";
-            this.lblCantA.Size = new System.Drawing.Size(60, 17);
-            this.lblCantA.TabIndex = 38;
-            this.lblCantA.Text = "lblCantA";
-            // 
             // frmSalasPopUpAgregar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -470,6 +470,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmSalasPopUpAgregar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.panelDatos.ResumeLayout(false);
             this.panelDatos.PerformLayout();
             this.metroPanel3.ResumeLayout(false);
