@@ -305,5 +305,10 @@ namespace GestionJardin
 
         }
 
+        private void btnGD_Filtrar_Click(object sender, EventArgs e)
+        {
+            frmDocentes_report nuevo_reporte = new frmDocentes_report();
+            nuevo_reporte.ShowDialog();
+        }
     }
 }

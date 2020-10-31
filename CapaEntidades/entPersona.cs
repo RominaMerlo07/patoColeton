@@ -113,6 +113,13 @@ namespace CaEnt//GestionJardin
             set { p_perFechaBaja = value; }
         }
 
+        private string p_observaciones;
+        public string PER_OBSERVACIONES
+        {
+            get { return p_observaciones; }
+            set { p_observaciones = value; }
+        }
+
 
         public entPersona()
         {

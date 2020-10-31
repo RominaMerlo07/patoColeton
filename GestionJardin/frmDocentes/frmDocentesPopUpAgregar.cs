@@ -302,6 +302,27 @@ namespace GestionJardin
 
                     if (resultado == "OK")
                     {
+                        string CARGO;
+
+                        if (Cbocargo.SelectedItem == null)
+                        {
+                            CARGO = "";
+                        }
+                        else
+                        {
+                            CARGO = Cbocargo.SelectedItem.ToString();
+                            if (CARGO == "TITULAR")
+                            {
+                                CARGO = "TITULAR";
+                            }
+                            else
+                            {
+                                CARGO = "SUPLENTE";
+                            }
+
+                        }
+
+
                         string turno;
 
 
@@ -345,7 +366,7 @@ namespace GestionJardin
                                 entGrupoSala grupoSalaInsertar = new entGrupoSala();
                                 grupoSalaInsertar.GRS_PER_ID = Convert.ToInt32(id_persona);
                                 grupoSalaInsertar.GRS_SAL_ID = Convert.ToInt32(id_sala);
-
+                                grupoSalaInsertar.GRS_CARGO = CARGO.ToString();
                                 resultado = logSalas.insertarGrupoSala(grupoSalaInsertar);
 
                                 if (resultado == "OK")

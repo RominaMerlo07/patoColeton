@@ -29,6 +29,14 @@ namespace CaEnt//GestionJardin
             set { p_grs_PerID = value; }
         }
 
+        private string p_grs_cargo;
+        public string GRS_CARGO
+        {
+            get { return p_grs_cargo; }
+            set { p_grs_cargo = value; }
+        }
+
+
         public entGrupoSala()
         { }
     }

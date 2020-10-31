@@ -23,7 +23,7 @@ namespace CaAD//GestionJardin
 
 
         public DataTable GrillaAsistencia(string turno, string sala, string fecha)
-        {
+             {
             con = generarConexion();
             con.Open();
 
@@ -276,7 +276,7 @@ namespace CaAD//GestionJardin
                                                 "PER_ID " +
                                           "FROM T_ASISTENCIA, T_PERSONAS " +
                                          "WHERE AS_ID_PERSONA = PER_ID " +
-                                           "AND AS_FECHA >= CONVERT(VARCHAR(10), '" + fechaDesde + "', 103) " +
+                                           "AND AS_FECHA >= CONVERT(VARCHAR(10), '" + fechaDesde + "', 103) " +//ver si con el cast no tira error 
                                            "AND AS_FECHA <= CONVERT(VARCHAR(10), '" + fechaHasta + "', 103) " +
                                            "AND AS_ASISTENCIA = 1 " +
                                            "AND AS_JUSTIFICADO = 1 " +
