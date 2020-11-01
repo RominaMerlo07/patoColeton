@@ -1,6 +1,6 @@
 ﻿namespace GestionJardin
 {
-    partial class frmCobros_Gestionar
+    partial class frmCobros_Consultar
     {
         /// <summary>
         /// Required designer variable.
@@ -28,14 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCobros_Gestionar));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCobros_Consultar));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtCob_Buscar = new MetroFramework.Controls.MetroTextBox();
             this.dgvCobros = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnCob_Eliminar = new FontAwesome.Sharp.IconButton();
-            this.btnCob_Agregar = new FontAwesome.Sharp.IconButton();
+            this.dt_FechaDesde = new MetroFramework.Controls.MetroDateTime();
+            this.dt_FechaHasta = new MetroFramework.Controls.MetroDateTime();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCobros)).BeginInit();
             this.SuspendLayout();
             // 
@@ -77,7 +76,7 @@
             this.txtCob_Buscar.ShowButton = true;
             this.txtCob_Buscar.Size = new System.Drawing.Size(424, 50);
             this.txtCob_Buscar.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtCob_Buscar.TabIndex = 51;
+            this.txtCob_Buscar.TabIndex = 53;
             this.txtCob_Buscar.UseSelectable = true;
             this.txtCob_Buscar.WaterMark = "BUSCAR ALUMNO";
             this.txtCob_Buscar.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
@@ -113,80 +112,43 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvCobros.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvCobros.RowTemplate.Height = 24;
-            this.dgvCobros.Size = new System.Drawing.Size(1236, 495);
-            this.dgvCobros.TabIndex = 50;
+            this.dgvCobros.Size = new System.Drawing.Size(1411, 495);
+            this.dgvCobros.TabIndex = 52;
             // 
-            // label1
+            // dt_FechaDesde
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(41, 909);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(691, 20);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "* Para realizar un cobro debe seleccionar la cuota con mayor vencimiento al día d" +
-    "e la fecha";
+            this.dt_FechaDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt_FechaDesde.Location = new System.Drawing.Point(847, 320);
+            this.dt_FechaDesde.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dt_FechaDesde.Name = "dt_FechaDesde";
+            this.dt_FechaDesde.Size = new System.Drawing.Size(171, 30);
+            this.dt_FechaDesde.TabIndex = 54;
             // 
-            // btnCob_Eliminar
+            // dt_FechaHasta
             // 
-            this.btnCob_Eliminar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCob_Eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCob_Eliminar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnCob_Eliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCob_Eliminar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCob_Eliminar.IconChar = FontAwesome.Sharp.IconChar.Times;
-            this.btnCob_Eliminar.IconColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.btnCob_Eliminar.IconSize = 90;
-            this.btnCob_Eliminar.Location = new System.Drawing.Point(1330, 668);
-            this.btnCob_Eliminar.Name = "btnCob_Eliminar";
-            this.btnCob_Eliminar.Rotation = 0D;
-            this.btnCob_Eliminar.Size = new System.Drawing.Size(293, 131);
-            this.btnCob_Eliminar.TabIndex = 48;
-            this.btnCob_Eliminar.Text = "ANULAR";
-            this.btnCob_Eliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCob_Eliminar.UseVisualStyleBackColor = true;
-            this.btnCob_Eliminar.Click += new System.EventHandler(this.btnCob_Eliminar_Click);
+            this.dt_FechaHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dt_FechaHasta.Location = new System.Drawing.Point(1186, 320);
+            this.dt_FechaHasta.MinimumSize = new System.Drawing.Size(0, 30);
+            this.dt_FechaHasta.Name = "dt_FechaHasta";
+            this.dt_FechaHasta.Size = new System.Drawing.Size(171, 30);
+            this.dt_FechaHasta.TabIndex = 55;
             // 
-            // btnCob_Agregar
-            // 
-            this.btnCob_Agregar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCob_Agregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCob_Agregar.Flip = FontAwesome.Sharp.FlipOrientation.Normal;
-            this.btnCob_Agregar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCob_Agregar.ForeColor = System.Drawing.Color.Lime;
-            this.btnCob_Agregar.IconChar = FontAwesome.Sharp.IconChar.CashRegister;
-            this.btnCob_Agregar.IconColor = System.Drawing.Color.Lime;
-            this.btnCob_Agregar.IconSize = 90;
-            this.btnCob_Agregar.Location = new System.Drawing.Point(1330, 463);
-            this.btnCob_Agregar.Name = "btnCob_Agregar";
-            this.btnCob_Agregar.Rotation = 0D;
-            this.btnCob_Agregar.Size = new System.Drawing.Size(293, 134);
-            this.btnCob_Agregar.TabIndex = 46;
-            this.btnCob_Agregar.Text = "COBRAR";
-            this.btnCob_Agregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCob_Agregar.UseVisualStyleBackColor = true;
-            this.btnCob_Agregar.Click += new System.EventHandler(this.btnCob_Agregar_Click);
-            // 
-            // frmCobros_Gestionar
+            // frmCobros_Consultar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
-            this.ClientSize = new System.Drawing.Size(1660, 947);
+            this.ClientSize = new System.Drawing.Size(1558, 947);
+            this.Controls.Add(this.dt_FechaHasta);
+            this.Controls.Add(this.dt_FechaDesde);
             this.Controls.Add(this.txtCob_Buscar);
             this.Controls.Add(this.dgvCobros);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnCob_Eliminar);
-            this.Controls.Add(this.btnCob_Agregar);
-            this.Location = new System.Drawing.Point(45, 293);
-            this.Name = "frmCobros_Gestionar";
-            this.Text = "COBROS / GESTIONAR";
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
+            this.Name = "frmCobros_Consultar";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "COBROS / CONSULTAR";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCobros)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -194,8 +156,7 @@
 
         private MetroFramework.Controls.MetroTextBox txtCob_Buscar;
         public System.Windows.Forms.DataGridView dgvCobros;
-        private System.Windows.Forms.Label label1;
-        private FontAwesome.Sharp.IconButton btnCob_Eliminar;
-        private FontAwesome.Sharp.IconButton btnCob_Agregar;
+        private MetroFramework.Controls.MetroDateTime dt_FechaDesde;
+        private MetroFramework.Controls.MetroDateTime dt_FechaHasta;
     }
 }

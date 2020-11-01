@@ -157,6 +157,12 @@
     <Compile Include="frmAlumnos\Asistencias\frmAsistenciaConsulta.Designer.cs">
       <DependentUpon>frmAsistenciaConsulta.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCobro\frmCobros\frmCobros_Consultar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro\frmCobros\frmCobros_Consultar.Designer.cs">
+      <DependentUpon>frmCobros_Consultar.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmCobro\frmCobros\frmCobros_Anular.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -389,6 +395,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAlumnos\Informe_Progreso\Informe_Progreso_Gestionar\frmInformeProgreso_Gestionar.resx">
       <DependentUpon>frmInformeProgreso_Gestionar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro\frmCobros\frmCobros_Consultar.resx">
+      <DependentUpon>frmCobros_Consultar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCobro\frmCobros\frmCobros_Anular.resx">
       <DependentUpon>frmCobros_Anular.cs</DependentUpon>

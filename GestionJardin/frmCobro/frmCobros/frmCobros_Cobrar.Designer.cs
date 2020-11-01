@@ -66,7 +66,7 @@
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.Size = new System.Drawing.Size(1133, 44);
             this.metroLabel4.TabIndex = 37;
-            this.metroLabel4.Text = "REGISTRAR COBRO PARA ALUMNO \"\", DOCUMENTO: \"\" ";
+            this.metroLabel4.Text = "REGISTRAR COBRO PARA ALUMNO \"\", DNI: \"\" ";
             this.metroLabel4.UseCustomBackColor = true;
             this.metroLabel4.UseCustomForeColor = true;
             // 
