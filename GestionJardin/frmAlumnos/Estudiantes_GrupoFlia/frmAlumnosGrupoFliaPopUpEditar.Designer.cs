@@ -40,7 +40,6 @@
             this.txtParentesco = new MetroFramework.Controls.MetroTextBox();
             this.metroLabel3 = new MetroFramework.Controls.MetroLabel();
             this.panelContacto = new MetroFramework.Controls.MetroPanel();
-            this.metroComboBox2 = new MetroFramework.Controls.MetroComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -73,6 +72,15 @@
             this.btnGA_Pdf = new FontAwesome.Sharp.IconPictureBox();
             this.btnGA_Excel = new FontAwesome.Sharp.IconPictureBox();
             this.btnBloqueo = new FontAwesome.Sharp.IconButton();
+            this.lblParentesco = new System.Windows.Forms.Label();
+            this.lblDni = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblCalle = new System.Windows.Forms.Label();
+            this.lblCp = new System.Windows.Forms.Label();
+            this.lblNumero = new System.Windows.Forms.Label();
+            this.lblBarrio = new System.Windows.Forms.Label();
+            this.lblCelular = new System.Windows.Forms.Label();
             this.metroPanel3.SuspendLayout();
             this.metroPanel4.SuspendLayout();
             this.metroPanel5.SuspendLayout();
@@ -128,6 +136,7 @@
             this.metroPanel3.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.metroPanel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(33)))), ((int)(((byte)(74)))));
             this.metroPanel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.metroPanel3.Controls.Add(this.lblParentesco);
             this.metroPanel3.Controls.Add(this.metroPanel4);
             this.metroPanel3.Controls.Add(this.metroPanel5);
             this.metroPanel3.Controls.Add(this.metroTextBox2);
@@ -230,7 +239,7 @@
             this.metroTextBox2.CustomButton.Visible = false;
             this.metroTextBox2.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.metroTextBox2.Lines = new string[0];
-            this.metroTextBox2.Location = new System.Drawing.Point(380, 89);
+            this.metroTextBox2.Location = new System.Drawing.Point(380, 78);
             this.metroTextBox2.MaxLength = 32767;
             this.metroTextBox2.Name = "metroTextBox2";
             this.metroTextBox2.PasswordChar = '\0';
@@ -254,7 +263,7 @@
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel2.ForeColor = System.Drawing.Color.Cyan;
-            this.metroLabel2.Location = new System.Drawing.Point(25, 80);
+            this.metroLabel2.Location = new System.Drawing.Point(25, 77);
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.Size = new System.Drawing.Size(370, 44);
             this.metroLabel2.TabIndex = 26;
@@ -280,7 +289,7 @@
             this.txtParentesco.CustomButton.Visible = false;
             this.txtParentesco.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtParentesco.Lines = new string[0];
-            this.txtParentesco.Location = new System.Drawing.Point(380, 19);
+            this.txtParentesco.Location = new System.Drawing.Point(380, 10);
             this.txtParentesco.MaxLength = 32767;
             this.txtParentesco.Name = "txtParentesco";
             this.txtParentesco.PasswordChar = '\0';
@@ -298,13 +307,14 @@
             this.txtParentesco.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtParentesco.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtParentesco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtParentesco_KeyPress);
+            this.txtParentesco.Leave += new System.EventHandler(this.txtParentesco_Leave);
             // 
             // metroLabel3
             // 
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Tall;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel3.ForeColor = System.Drawing.Color.Cyan;
-            this.metroLabel3.Location = new System.Drawing.Point(25, 19);
+            this.metroLabel3.Location = new System.Drawing.Point(25, 11);
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.Size = new System.Drawing.Size(387, 44);
             this.metroLabel3.TabIndex = 21;
@@ -316,7 +326,11 @@
             // 
             this.panelContacto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelContacto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
-            this.panelContacto.Controls.Add(this.metroComboBox2);
+            this.panelContacto.Controls.Add(this.lblCelular);
+            this.panelContacto.Controls.Add(this.lblBarrio);
+            this.panelContacto.Controls.Add(this.lblCp);
+            this.panelContacto.Controls.Add(this.lblNumero);
+            this.panelContacto.Controls.Add(this.lblCalle);
             this.panelContacto.Controls.Add(this.label10);
             this.panelContacto.Controls.Add(this.label9);
             this.panelContacto.Controls.Add(this.label8);
@@ -345,29 +359,12 @@
             this.panelContacto.VerticalScrollbarHighlightOnWheel = false;
             this.panelContacto.VerticalScrollbarSize = 10;
             // 
-            // metroComboBox2
-            // 
-            this.metroComboBox2.FontSize = MetroFramework.MetroComboBoxSize.Small;
-            this.metroComboBox2.FormattingEnabled = true;
-            this.metroComboBox2.ItemHeight = 21;
-            this.metroComboBox2.Items.AddRange(new object[] {
-            "SI vive en el mismo domicilio",
-            "NO vive en el mismo domicilio"});
-            this.metroComboBox2.Location = new System.Drawing.Point(47, 100);
-            this.metroComboBox2.Name = "metroComboBox2";
-            this.metroComboBox2.PromptText = "¿CONVIVE CON EL ALUMNO?";
-            this.metroComboBox2.Size = new System.Drawing.Size(363, 27);
-            this.metroComboBox2.Style = MetroFramework.MetroColorStyle.Green;
-            this.metroComboBox2.TabIndex = 35;
-            this.metroComboBox2.UseSelectable = true;
-            this.metroComboBox2.Visible = false;
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(764, 249);
+            this.label10.Location = new System.Drawing.Point(764, 224);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(21, 25);
             this.label10.TabIndex = 33;
@@ -378,7 +375,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(764, 171);
+            this.label9.Location = new System.Drawing.Point(764, 146);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(21, 25);
             this.label9.TabIndex = 32;
@@ -390,7 +387,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(573, 171);
+            this.label8.Location = new System.Drawing.Point(573, 146);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(21, 25);
             this.label8.TabIndex = 31;
@@ -401,7 +398,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(384, 171);
+            this.label7.Location = new System.Drawing.Point(384, 146);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(21, 25);
             this.label7.TabIndex = 30;
@@ -412,7 +409,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(384, 316);
+            this.label11.Location = new System.Drawing.Point(384, 291);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(21, 25);
             this.label11.TabIndex = 28;
@@ -435,7 +432,7 @@
             this.txtEmail.CustomButton.Visible = false;
             this.txtEmail.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtEmail.Lines = new string[0];
-            this.txtEmail.Location = new System.Drawing.Point(47, 364);
+            this.txtEmail.Location = new System.Drawing.Point(47, 345);
             this.txtEmail.MaxLength = 32767;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -470,7 +467,7 @@
             this.txtCelular.CustomButton.Visible = false;
             this.txtCelular.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCelular.Lines = new string[0];
-            this.txtCelular.Location = new System.Drawing.Point(49, 301);
+            this.txtCelular.Location = new System.Drawing.Point(49, 276);
             this.txtCelular.MaxLength = 32767;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.PasswordChar = '\0';
@@ -488,6 +485,7 @@
             this.txtCelular.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCelular.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelular.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCelular_KeyPress);
+            this.txtCelular.Leave += new System.EventHandler(this.txtCelular_Leave);
             // 
             // txtTelefono
             // 
@@ -506,7 +504,7 @@
             this.txtTelefono.CustomButton.Visible = false;
             this.txtTelefono.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtTelefono.Lines = new string[0];
-            this.txtTelefono.Location = new System.Drawing.Point(439, 301);
+            this.txtTelefono.Location = new System.Drawing.Point(439, 276);
             this.txtTelefono.MaxLength = 32767;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PasswordChar = '\0';
@@ -542,7 +540,7 @@
             this.txtCPostal.CustomButton.Visible = false;
             this.txtCPostal.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCPostal.Lines = new string[0];
-            this.txtCPostal.Location = new System.Drawing.Point(608, 165);
+            this.txtCPostal.Location = new System.Drawing.Point(608, 140);
             this.txtCPostal.MaxLength = 32767;
             this.txtCPostal.Name = "txtCPostal";
             this.txtCPostal.PasswordChar = '\0';
@@ -560,6 +558,7 @@
             this.txtCPostal.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCPostal.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCPostal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCPostal_KeyPress);
+            this.txtCPostal.Leave += new System.EventHandler(this.txtCPostal_Leave);
             // 
             // txtDepto
             // 
@@ -578,7 +577,7 @@
             this.txtDepto.CustomButton.Visible = false;
             this.txtDepto.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtDepto.Lines = new string[0];
-            this.txtDepto.Location = new System.Drawing.Point(207, 234);
+            this.txtDepto.Location = new System.Drawing.Point(207, 209);
             this.txtDepto.MaxLength = 32767;
             this.txtDepto.Name = "txtDepto";
             this.txtDepto.PasswordChar = '\0';
@@ -613,7 +612,7 @@
             this.txtNumero.CustomButton.Visible = false;
             this.txtNumero.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtNumero.Lines = new string[0];
-            this.txtNumero.Location = new System.Drawing.Point(439, 165);
+            this.txtNumero.Location = new System.Drawing.Point(439, 140);
             this.txtNumero.MaxLength = 32767;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.PasswordChar = '\0';
@@ -631,6 +630,7 @@
             this.txtNumero.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNumero.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumero.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumero_KeyPress);
+            this.txtNumero.Leave += new System.EventHandler(this.txtNumero_Leave);
             // 
             // lblDatosContacto
             // 
@@ -661,7 +661,7 @@
             this.txtBarrio.CustomButton.Visible = false;
             this.txtBarrio.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtBarrio.Lines = new string[0];
-            this.txtBarrio.Location = new System.Drawing.Point(439, 234);
+            this.txtBarrio.Location = new System.Drawing.Point(439, 209);
             this.txtBarrio.MaxLength = 32767;
             this.txtBarrio.Name = "txtBarrio";
             this.txtBarrio.PasswordChar = '\0';
@@ -678,6 +678,7 @@
             this.txtBarrio.WaterMark = "Barrio";
             this.txtBarrio.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtBarrio.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBarrio.Leave += new System.EventHandler(this.txtBarrio_Leave);
             // 
             // txtPiso
             // 
@@ -696,7 +697,7 @@
             this.txtPiso.CustomButton.Visible = false;
             this.txtPiso.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtPiso.Lines = new string[0];
-            this.txtPiso.Location = new System.Drawing.Point(49, 234);
+            this.txtPiso.Location = new System.Drawing.Point(49, 209);
             this.txtPiso.MaxLength = 32767;
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.PasswordChar = '\0';
@@ -731,7 +732,7 @@
             this.txtCalle.CustomButton.Visible = false;
             this.txtCalle.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCalle.Lines = new string[0];
-            this.txtCalle.Location = new System.Drawing.Point(47, 165);
+            this.txtCalle.Location = new System.Drawing.Point(47, 140);
             this.txtCalle.MaxLength = 32767;
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.PasswordChar = '\0';
@@ -748,11 +749,15 @@
             this.txtCalle.WaterMark = "Calle";
             this.txtCalle.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtCalle.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCalle.Leave += new System.EventHandler(this.txtCalle_Leave);
             // 
             // panelDatos
             // 
             this.panelDatos.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panelDatos.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
+            this.panelDatos.Controls.Add(this.lblApellido);
+            this.panelDatos.Controls.Add(this.lblNombre);
+            this.panelDatos.Controls.Add(this.lblDni);
             this.panelDatos.Controls.Add(this.label5);
             this.panelDatos.Controls.Add(this.label4);
             this.panelDatos.Controls.Add(this.label3);
@@ -870,7 +875,7 @@
             this.dtNacimiento.Location = new System.Drawing.Point(169, 10);
             this.dtNacimiento.MaxDate = new System.DateTime(2019, 12, 31, 0, 0, 0, 0);
             this.dtNacimiento.MinDate = new System.DateTime(1940, 1, 1, 0, 0, 0, 0);
-            this.dtNacimiento.MinimumSize = new System.Drawing.Size(4, 27);
+            this.dtNacimiento.MinimumSize = new System.Drawing.Size(0, 27);
             this.dtNacimiento.Name = "dtNacimiento";
             this.dtNacimiento.Size = new System.Drawing.Size(184, 27);
             this.dtNacimiento.Style = MetroFramework.MetroColorStyle.Green;
@@ -939,6 +944,7 @@
             this.txtDocumento.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtDocumento.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocumento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDocumento_KeyPress);
+            this.txtDocumento.Leave += new System.EventHandler(this.txtDocumento_Leave);
             // 
             // txtApellidos
             // 
@@ -975,6 +981,7 @@
             this.txtApellidos.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtApellidos.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtApellidos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellidos_KeyPress);
+            this.txtApellidos.Leave += new System.EventHandler(this.txtApellidos_Leave);
             // 
             // txtNombre
             // 
@@ -1011,6 +1018,7 @@
             this.txtNombre.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.txtNombre.WaterMarkFont = new System.Drawing.Font("Segoe UI", 10.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            this.txtNombre.Leave += new System.EventHandler(this.txtNombre_Leave);
             // 
             // btnGA_Pdf
             // 
@@ -1067,6 +1075,114 @@
             this.btnBloqueo.UseVisualStyleBackColor = false;
             this.btnBloqueo.Click += new System.EventHandler(this.btnBloqueo_Click);
             // 
+            // lblParentesco
+            // 
+            this.lblParentesco.AutoSize = true;
+            this.lblParentesco.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblParentesco.ForeColor = System.Drawing.Color.Red;
+            this.lblParentesco.Location = new System.Drawing.Point(377, 52);
+            this.lblParentesco.Name = "lblParentesco";
+            this.lblParentesco.Size = new System.Drawing.Size(46, 17);
+            this.lblParentesco.TabIndex = 42;
+            this.lblParentesco.Text = "label1";
+            this.lblParentesco.Visible = false;
+            // 
+            // lblDni
+            // 
+            this.lblDni.AutoSize = true;
+            this.lblDni.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDni.ForeColor = System.Drawing.Color.Red;
+            this.lblDni.Location = new System.Drawing.Point(48, 139);
+            this.lblDni.Name = "lblDni";
+            this.lblDni.Size = new System.Drawing.Size(46, 17);
+            this.lblDni.TabIndex = 58;
+            this.lblDni.Text = "label1";
+            this.lblDni.Visible = false;
+            // 
+            // lblNombre
+            // 
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.ForeColor = System.Drawing.Color.Red;
+            this.lblNombre.Location = new System.Drawing.Point(48, 204);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(46, 17);
+            this.lblNombre.TabIndex = 59;
+            this.lblNombre.Text = "label1";
+            this.lblNombre.Visible = false;
+            // 
+            // lblApellido
+            // 
+            this.lblApellido.AutoSize = true;
+            this.lblApellido.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblApellido.ForeColor = System.Drawing.Color.Red;
+            this.lblApellido.Location = new System.Drawing.Point(48, 269);
+            this.lblApellido.Name = "lblApellido";
+            this.lblApellido.Size = new System.Drawing.Size(46, 17);
+            this.lblApellido.TabIndex = 60;
+            this.lblApellido.Text = "label1";
+            this.lblApellido.Visible = false;
+            // 
+            // lblCalle
+            // 
+            this.lblCalle.AutoSize = true;
+            this.lblCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCalle.ForeColor = System.Drawing.Color.Red;
+            this.lblCalle.Location = new System.Drawing.Point(46, 179);
+            this.lblCalle.Name = "lblCalle";
+            this.lblCalle.Size = new System.Drawing.Size(46, 17);
+            this.lblCalle.TabIndex = 61;
+            this.lblCalle.Text = "label1";
+            this.lblCalle.Visible = false;
+            // 
+            // lblCp
+            // 
+            this.lblCp.AutoSize = true;
+            this.lblCp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCp.ForeColor = System.Drawing.Color.Red;
+            this.lblCp.Location = new System.Drawing.Point(512, 180);
+            this.lblCp.Name = "lblCp";
+            this.lblCp.Size = new System.Drawing.Size(46, 17);
+            this.lblCp.TabIndex = 59;
+            this.lblCp.Text = "label1";
+            this.lblCp.Visible = false;
+            // 
+            // lblNumero
+            // 
+            this.lblNumero.AutoSize = true;
+            this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNumero.ForeColor = System.Drawing.Color.Red;
+            this.lblNumero.Location = new System.Drawing.Point(439, 179);
+            this.lblNumero.Name = "lblNumero";
+            this.lblNumero.Size = new System.Drawing.Size(46, 17);
+            this.lblNumero.TabIndex = 58;
+            this.lblNumero.Text = "label1";
+            this.lblNumero.Visible = false;
+            // 
+            // lblBarrio
+            // 
+            this.lblBarrio.AutoSize = true;
+            this.lblBarrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBarrio.ForeColor = System.Drawing.Color.Red;
+            this.lblBarrio.Location = new System.Drawing.Point(439, 252);
+            this.lblBarrio.Name = "lblBarrio";
+            this.lblBarrio.Size = new System.Drawing.Size(46, 17);
+            this.lblBarrio.TabIndex = 62;
+            this.lblBarrio.Text = "label1";
+            this.lblBarrio.Visible = false;
+            // 
+            // lblCelular
+            // 
+            this.lblCelular.AutoSize = true;
+            this.lblCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCelular.ForeColor = System.Drawing.Color.Red;
+            this.lblCelular.Location = new System.Drawing.Point(49, 320);
+            this.lblCelular.Name = "lblCelular";
+            this.lblCelular.Size = new System.Drawing.Size(46, 17);
+            this.lblCelular.TabIndex = 63;
+            this.lblCelular.Text = "label1";
+            this.lblCelular.Visible = false;
+            // 
             // frmAlumnosGrupoFliaPopUpEditar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1084,6 +1200,7 @@
             this.Name = "frmAlumnosGrupoFliaPopUpEditar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.metroPanel3.ResumeLayout(false);
+            this.metroPanel3.PerformLayout();
             this.metroPanel4.ResumeLayout(false);
             this.metroPanel5.ResumeLayout(false);
             this.panelContacto.ResumeLayout(false);
@@ -1107,7 +1224,6 @@
         private MetroFramework.Controls.MetroTextBox txtParentesco;
         private MetroFramework.Controls.MetroLabel metroLabel3;
         private MetroFramework.Controls.MetroPanel panelContacto;
-        private MetroFramework.Controls.MetroComboBox metroComboBox2;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
@@ -1144,5 +1260,14 @@
         private MetroFramework.Controls.MetroCheckBox checkTutor;
         private MetroFramework.Controls.MetroPanel metroPanel5;
         private MetroFramework.Controls.MetroCheckBox checkAutorizado;
+        private System.Windows.Forms.Label lblParentesco;
+        private System.Windows.Forms.Label lblDni;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.Label lblApellido;
+        private System.Windows.Forms.Label lblCalle;
+        private System.Windows.Forms.Label lblCp;
+        private System.Windows.Forms.Label lblNumero;
+        private System.Windows.Forms.Label lblBarrio;
+        private System.Windows.Forms.Label lblCelular;
     }
 }

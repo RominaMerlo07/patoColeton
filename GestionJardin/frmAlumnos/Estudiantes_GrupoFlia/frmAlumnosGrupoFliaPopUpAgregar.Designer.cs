@@ -125,7 +125,7 @@
             this.lblGenero.AutoSize = true;
             this.lblGenero.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGenero.ForeColor = System.Drawing.Color.Red;
-            this.lblGenero.Location = new System.Drawing.Point(48, 430);
+            this.lblGenero.Location = new System.Drawing.Point(48, 433);
             this.lblGenero.Name = "lblGenero";
             this.lblGenero.Size = new System.Drawing.Size(46, 17);
             this.lblGenero.TabIndex = 33;
@@ -449,7 +449,7 @@
             this.lblCelular.AutoSize = true;
             this.lblCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCelular.ForeColor = System.Drawing.Color.Red;
-            this.lblCelular.Location = new System.Drawing.Point(46, 344);
+            this.lblCelular.Location = new System.Drawing.Point(46, 319);
             this.lblCelular.Name = "lblCelular";
             this.lblCelular.Size = new System.Drawing.Size(46, 17);
             this.lblCelular.TabIndex = 39;
@@ -461,7 +461,7 @@
             this.lblBarrio.AutoSize = true;
             this.lblBarrio.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBarrio.ForeColor = System.Drawing.Color.Red;
-            this.lblBarrio.Location = new System.Drawing.Point(436, 277);
+            this.lblBarrio.Location = new System.Drawing.Point(436, 252);
             this.lblBarrio.Name = "lblBarrio";
             this.lblBarrio.Size = new System.Drawing.Size(46, 17);
             this.lblBarrio.TabIndex = 38;
@@ -473,7 +473,7 @@
             this.lblCp.AutoSize = true;
             this.lblCp.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCp.ForeColor = System.Drawing.Color.Red;
-            this.lblCp.Location = new System.Drawing.Point(509, 204);
+            this.lblCp.Location = new System.Drawing.Point(509, 179);
             this.lblCp.Name = "lblCp";
             this.lblCp.Size = new System.Drawing.Size(46, 17);
             this.lblCp.TabIndex = 37;
@@ -485,7 +485,7 @@
             this.lblNumero.AutoSize = true;
             this.lblNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNumero.ForeColor = System.Drawing.Color.Red;
-            this.lblNumero.Location = new System.Drawing.Point(436, 204);
+            this.lblNumero.Location = new System.Drawing.Point(436, 179);
             this.lblNumero.Name = "lblNumero";
             this.lblNumero.Size = new System.Drawing.Size(46, 17);
             this.lblNumero.TabIndex = 35;
@@ -497,7 +497,7 @@
             this.lblCalle.AutoSize = true;
             this.lblCalle.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCalle.ForeColor = System.Drawing.Color.Red;
-            this.lblCalle.Location = new System.Drawing.Point(46, 203);
+            this.lblCalle.Location = new System.Drawing.Point(46, 178);
             this.lblCalle.Name = "lblCalle";
             this.lblCalle.Size = new System.Drawing.Size(46, 17);
             this.lblCalle.TabIndex = 34;
@@ -509,7 +509,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Red;
-            this.label10.Location = new System.Drawing.Point(764, 249);
+            this.label10.Location = new System.Drawing.Point(764, 224);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(21, 25);
             this.label10.TabIndex = 33;
@@ -520,7 +520,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Red;
-            this.label9.Location = new System.Drawing.Point(764, 171);
+            this.label9.Location = new System.Drawing.Point(764, 146);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(21, 25);
             this.label9.TabIndex = 32;
@@ -532,7 +532,7 @@
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(573, 171);
+            this.label8.Location = new System.Drawing.Point(573, 146);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(21, 25);
             this.label8.TabIndex = 31;
@@ -543,7 +543,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(384, 171);
+            this.label7.Location = new System.Drawing.Point(384, 146);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(21, 25);
             this.label7.TabIndex = 30;
@@ -554,7 +554,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Red;
-            this.label11.Location = new System.Drawing.Point(384, 316);
+            this.label11.Location = new System.Drawing.Point(384, 291);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(21, 25);
             this.label11.TabIndex = 28;
@@ -577,7 +577,7 @@
             this.txtEmail.CustomButton.Visible = false;
             this.txtEmail.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtEmail.Lines = new string[0];
-            this.txtEmail.Location = new System.Drawing.Point(47, 369);
+            this.txtEmail.Location = new System.Drawing.Point(47, 344);
             this.txtEmail.MaxLength = 32767;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -613,7 +613,7 @@
             this.txtCelular.CustomButton.Visible = false;
             this.txtCelular.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCelular.Lines = new string[0];
-            this.txtCelular.Location = new System.Drawing.Point(49, 301);
+            this.txtCelular.Location = new System.Drawing.Point(49, 276);
             this.txtCelular.MaxLength = 32767;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.PasswordChar = '\0';
@@ -650,7 +650,7 @@
             this.txtTelefono.CustomButton.Visible = false;
             this.txtTelefono.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtTelefono.Lines = new string[0];
-            this.txtTelefono.Location = new System.Drawing.Point(439, 301);
+            this.txtTelefono.Location = new System.Drawing.Point(439, 276);
             this.txtTelefono.MaxLength = 32767;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PasswordChar = '\0';
@@ -686,7 +686,7 @@
             this.txtCPostal.CustomButton.Visible = false;
             this.txtCPostal.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCPostal.Lines = new string[0];
-            this.txtCPostal.Location = new System.Drawing.Point(608, 165);
+            this.txtCPostal.Location = new System.Drawing.Point(608, 140);
             this.txtCPostal.MaxLength = 32767;
             this.txtCPostal.Name = "txtCPostal";
             this.txtCPostal.PasswordChar = '\0';
@@ -723,7 +723,7 @@
             this.txtDepto.CustomButton.Visible = false;
             this.txtDepto.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtDepto.Lines = new string[0];
-            this.txtDepto.Location = new System.Drawing.Point(207, 234);
+            this.txtDepto.Location = new System.Drawing.Point(207, 209);
             this.txtDepto.MaxLength = 32767;
             this.txtDepto.Name = "txtDepto";
             this.txtDepto.PasswordChar = '\0';
@@ -758,7 +758,7 @@
             this.txtNumero.CustomButton.Visible = false;
             this.txtNumero.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtNumero.Lines = new string[0];
-            this.txtNumero.Location = new System.Drawing.Point(439, 165);
+            this.txtNumero.Location = new System.Drawing.Point(439, 140);
             this.txtNumero.MaxLength = 32767;
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.PasswordChar = '\0';
@@ -807,7 +807,7 @@
             this.txtBarrio.CustomButton.Visible = false;
             this.txtBarrio.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtBarrio.Lines = new string[0];
-            this.txtBarrio.Location = new System.Drawing.Point(439, 234);
+            this.txtBarrio.Location = new System.Drawing.Point(439, 209);
             this.txtBarrio.MaxLength = 32767;
             this.txtBarrio.Name = "txtBarrio";
             this.txtBarrio.PasswordChar = '\0';
@@ -843,7 +843,7 @@
             this.txtPiso.CustomButton.Visible = false;
             this.txtPiso.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtPiso.Lines = new string[0];
-            this.txtPiso.Location = new System.Drawing.Point(49, 234);
+            this.txtPiso.Location = new System.Drawing.Point(49, 209);
             this.txtPiso.MaxLength = 32767;
             this.txtPiso.Name = "txtPiso";
             this.txtPiso.PasswordChar = '\0';
@@ -878,7 +878,7 @@
             this.txtCalle.CustomButton.Visible = false;
             this.txtCalle.FontSize = MetroFramework.MetroTextBoxSize.Tall;
             this.txtCalle.Lines = new string[0];
-            this.txtCalle.Location = new System.Drawing.Point(47, 165);
+            this.txtCalle.Location = new System.Drawing.Point(47, 140);
             this.txtCalle.MaxLength = 32767;
             this.txtCalle.Name = "txtCalle";
             this.txtCalle.PasswordChar = '\0';
