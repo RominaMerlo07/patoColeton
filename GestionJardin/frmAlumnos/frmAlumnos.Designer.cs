@@ -165,7 +165,7 @@
             this.btn_Asis_Consultar.Rotation = 0D;
             this.btn_Asis_Consultar.Size = new System.Drawing.Size(370, 112);
             this.btn_Asis_Consultar.TabIndex = 86;
-            this.btn_Asis_Consultar.Text = "CONSULTAR  ASISTENCIAS        ";
+            this.btn_Asis_Consultar.Text = "CONSULTAR ASISTENCIAS        ";
             this.btn_Asis_Consultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btn_Asis_Consultar.UseVisualStyleBackColor = false;
             this.btn_Asis_Consultar.Click += new System.EventHandler(this.btn_Asis_Consultar_Click);

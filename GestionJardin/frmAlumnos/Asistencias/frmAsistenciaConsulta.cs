@@ -158,6 +158,7 @@ namespace GestionJardin
 
             lblTurno.Visible = false;
             lblSala.Visible = false;
+            btn_Informe.Visible = false;
 
             dgv_Alumnos.ClearSelection();
             cbTurno.Focus();
@@ -180,6 +181,7 @@ namespace GestionJardin
                 fechaHasta = dtp_FechaHasta.Value;
                 txtGAs_Buscar.Visible = true;
                 dgv_Alumnos.Visible = true;
+                btn_Informe.Visible = true;
                 dgv_Alumnos.ClearSelection();
 
                 dgv_Alumnos.DataSource = logAsistencia.GrillaAsistenciaConsultar(id_sala, fechaDesde.ToShortDateString(), fechaHasta.ToShortDateString());

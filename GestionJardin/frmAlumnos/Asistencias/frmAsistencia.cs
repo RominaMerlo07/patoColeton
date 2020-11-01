@@ -178,6 +178,7 @@ namespace GestionJardin
                             btnguardar.Visible = true;
                             btncancelar.Visible = true;
                             lblInfo.Visible = true;
+                            btn_Informe.Visible = true;
                             dgv_Alumnos.ClearSelection();
 
                             labelFechError.Visible = false;
@@ -427,6 +428,7 @@ namespace GestionJardin
             lblAusencias.Visible = false;
             lblErrorJustificado.Visible = false;
             lblInfo.Visible = false;
+            btn_Informe.Visible = false;
 
             
 
