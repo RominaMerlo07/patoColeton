@@ -964,7 +964,7 @@
             this.cbGenero.Style = MetroFramework.MetroColorStyle.Blue;
             this.cbGenero.TabIndex = 7;
             this.cbGenero.UseSelectable = true;
-        
+
             // 
             // txtDocumento
             // 

@@ -54,15 +54,7 @@ namespace GestionJardin
                 string apellidosE = txtApellidos.Text.Trim();
                 string documentoE = txtDocumento.Text.Trim();
                 DateTime nacimientoE = dtNacimiento.Value.Date;
-                string genero;
-                if (cbGenero.SelectedItem == null)
-                {
-                    genero = "";
-                }
-                else
-                {
-                    genero = cbGenero.SelectedItem.ToString();
-                }
+                
                 string calleE = txtCalle.Text.Trim();
                 string numeroE = txtNumero.Text.Trim();
                 string cpostalE = txtCPostal.Text.Trim();
@@ -86,10 +78,21 @@ namespace GestionJardin
 
                 entPersona personaEditar = new entPersona();
 
+                string genero;
+                if (cbGenero.SelectedItem == null)
+                {
+                    genero = "";
+                }
+                else
+                {
+                    genero = cbGenero.SelectedItem.ToString();
+                }
+
                 personaEditar.PER_ID = idPersonaBuscar;
                 personaEditar.PER_NOMBRE = nombreE;
                 personaEditar.PER_APELLIDO = apellidosE;
                 personaEditar.PER_DOCUMENTO = Convert.ToInt32(documentoE);
+                personaEditar.PER_GENERO = genero;
                 personaEditar.PER_FECHA_NAC = nacimientoE;
                 personaEditar.PER_TELEFONO = telefonoE;
                 personaEditar.PER_TELEFONO_2 = celularE;

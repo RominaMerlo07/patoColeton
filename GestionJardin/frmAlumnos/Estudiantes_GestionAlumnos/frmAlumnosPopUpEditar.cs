@@ -21,6 +21,8 @@ namespace GestionJardin
         logPersonas metPers = new logPersonas();
         logDomicilio metDomic = new logDomicilio();
         logSalas metSala = new logSalas();
+      
+        
 
         public frmAlumnosPopUpEditar(string idPersonaSelect2)
         {
@@ -47,13 +49,13 @@ namespace GestionJardin
             dtNacimiento.Value = persona.PER_FECHA_NAC;
 
 
-            if (persona.PER_GENERO.StartsWith("M"))
+            if (persona.PER_GENERO.StartsWith("MASCULINO"))
             {
-                cbGenero.SelectedIndex = cbGenero.FindStringExact("MASCULINO");
+                cbGenero.SelectedIndex = cbGenero.FindStringExact("MASCULINO");               
             }
             else
             {
-                cbGenero.SelectedIndex = cbGenero.FindStringExact("FEMENINO");
+                cbGenero.SelectedIndex = cbGenero.FindStringExact("FEMENINO");                
             }
 
 
@@ -242,15 +244,7 @@ namespace GestionJardin
                 string apellidosE = txtApellidos.Text.Trim();
                 string documentoE = txtDocumento.Text.Trim();
                 DateTime nacimientoE = dtNacimiento.Value.Date;
-                string generoE;
-                if (cbGenero.SelectedItem == null)
-                {
-                    generoE = "";
-                }
-                else
-                {
-                    generoE = cbGenero.SelectedItem.ToString();
-                }
+               
 
                 string calleE = txtCalle.Text.Trim();
                 string numeroE = txtNumero.Text.Trim();
@@ -275,11 +269,23 @@ namespace GestionJardin
 
                 entPersona personaEditar = new entPersona();
 
+                string genero;
+
+                if (cbGenero.SelectedItem == null)
+                {
+                    genero = "";
+                }
+                else
+                {
+                    genero = cbGenero.SelectedItem.ToString();
+                }
+
+
                 personaEditar.PER_ID = Convert.ToInt32(idPersonaSelect);
                 personaEditar.PER_NOMBRE = nombreE;
                 personaEditar.PER_APELLIDO = apellidosE;
                 personaEditar.PER_DOCUMENTO = Convert.ToInt32(documentoE);
-                personaEditar.PER_GENERO = generoE; //revisar
+                personaEditar.PER_GENERO = genero;//cbGenero.SelectedValue.ToString(); //revisar
                 personaEditar.PER_FECHA_NAC = nacimientoE;
                 personaEditar.PER_TELEFONO = telefonoE;
                 personaEditar.PER_TELEFONO_2 = celularE;
@@ -586,5 +592,7 @@ namespace GestionJardin
                 lblApellido.Visible = false;
             }
         }
+
+      
     }
 }

@@ -111,7 +111,7 @@
             this.btnGD_Filtrar.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnGD_Filtrar.IconChar = FontAwesome.Sharp.IconChar.Filter;
             this.btnGD_Filtrar.IconColor = System.Drawing.Color.WhiteSmoke;
-            this.btnGD_Filtrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+   //         this.btnGD_Filtrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGD_Filtrar.IconSize = 101;
             this.btnGD_Filtrar.Location = new System.Drawing.Point(938, 65);
             this.btnGD_Filtrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -120,7 +120,7 @@
             this.btnGD_Filtrar.Size = new System.Drawing.Size(102, 101);
             this.btnGD_Filtrar.TabIndex = 41;
             this.btnGD_Filtrar.TabStop = false;
-            this.btnGD_Filtrar.Click += new System.EventHandler(this.btnGD_Filtrar_Click);
+        //    this.btnGD_Filtrar.Click += new System.EventHandler(this.btnGD_Filtrar_Click);
             // 
             // btnGD_Excel
             // 
@@ -130,7 +130,7 @@
             this.btnGD_Excel.ForeColor = System.Drawing.Color.Chartreuse;
             this.btnGD_Excel.IconChar = FontAwesome.Sharp.IconChar.FileExcel;
             this.btnGD_Excel.IconColor = System.Drawing.Color.Chartreuse;
-            this.btnGD_Excel.IconFont = FontAwesome.Sharp.IconFont.Auto;
+     //       this.btnGD_Excel.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGD_Excel.IconSize = 101;
             this.btnGD_Excel.Location = new System.Drawing.Point(1073, 65);
             this.btnGD_Excel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -148,7 +148,7 @@
             this.btnGD_Pdf.ForeColor = System.Drawing.Color.Salmon;
             this.btnGD_Pdf.IconChar = FontAwesome.Sharp.IconChar.FilePdf;
             this.btnGD_Pdf.IconColor = System.Drawing.Color.Salmon;
-            this.btnGD_Pdf.IconFont = FontAwesome.Sharp.IconFont.Auto;
+   //         this.btnGD_Pdf.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGD_Pdf.IconSize = 101;
             this.btnGD_Pdf.Location = new System.Drawing.Point(1196, 65);
             this.btnGD_Pdf.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -167,7 +167,7 @@
             this.btnGD_Eliminar.ForeColor = System.Drawing.Color.Gray;
             this.btnGD_Eliminar.IconChar = FontAwesome.Sharp.IconChar.UserMinus;
             this.btnGD_Eliminar.IconColor = System.Drawing.Color.Gray;
-            this.btnGD_Eliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+        //    this.btnGD_Eliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGD_Eliminar.IconSize = 100;
             this.btnGD_Eliminar.Location = new System.Drawing.Point(1474, 620);
             this.btnGD_Eliminar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -189,7 +189,7 @@
             this.btnGD_Editar.ForeColor = System.Drawing.Color.Gray;
             this.btnGD_Editar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
             this.btnGD_Editar.IconColor = System.Drawing.Color.Gray;
-            this.btnGD_Editar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+       //     this.btnGD_Editar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGD_Editar.IconSize = 100;
             this.btnGD_Editar.Location = new System.Drawing.Point(1474, 422);
             this.btnGD_Editar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -211,7 +211,7 @@
             this.btnGD_Agregar.ForeColor = System.Drawing.Color.Lime;
             this.btnGD_Agregar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             this.btnGD_Agregar.IconColor = System.Drawing.Color.Lime;
-            this.btnGD_Agregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+       //     this.btnGD_Agregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnGD_Agregar.IconSize = 100;
             this.btnGD_Agregar.Location = new System.Drawing.Point(1474, 228);
             this.btnGD_Agregar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

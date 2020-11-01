@@ -289,17 +289,16 @@ namespace CaAD//GestionJardin
                 con.Open();
 
                 string consulta = "UPDATE T_PERSONAS SET " +
-                                                "PER_NOMBRE = " + "'" + personaEditar.PER_NOMBRE + "'" +
-                                                ", PER_APELLIDO = " + "'" + personaEditar.PER_APELLIDO + "'" +
-                                                ", PER_DOCUMENTO = " + "'" + personaEditar.PER_DOCUMENTO + "'" +
-                                                ", PER_GENERO = " + "'" + personaEditar.PER_GENERO + "'" +                                          
-                                                ", PER_FECHA_NAC = CONVERT(datetime," + "'" + personaEditar.PER_FECHA_NAC + "'" + ",103) " +
-                                                ", PER_TELEFONO = " + "'" + personaEditar.PER_TELEFONO + "'" +
-                                                ", PER_TELEFONO_2 = " + "'" + personaEditar.PER_TELEFONO_2 + "'" +
-                                                ", PER_EMAIL = " + "'" + personaEditar.PER_EMAIL + "'" +
+                                                "PER_NOMBRE = '" + personaEditar.PER_NOMBRE + "'" +
+                                                ", PER_APELLIDO = '" + personaEditar.PER_APELLIDO + "'" +
+                                                ", PER_DOCUMENTO = '" + personaEditar.PER_DOCUMENTO + "'" +
+                                                ", PER_GENERO = '" + personaEditar.PER_GENERO + "'" +                                          
+                                                ", PER_FECHA_NAC = CONVERT(datetime,'" + personaEditar.PER_FECHA_NAC + "'" + ",103) " +
+                                                ", PER_TELEFONO = '" + personaEditar.PER_TELEFONO + "'" +
+                                                ", PER_TELEFONO_2 = '" + personaEditar.PER_TELEFONO_2 + "'" +
+                                                ", PER_EMAIL = '" + personaEditar.PER_EMAIL + "'" +
                                                 " " +
-                                        "WHERE PER_ID = " + "'" + personaEditar.PER_ID + "'" +
-                                                ";";
+                                        "WHERE PER_ID = '" + personaEditar.PER_ID + "';";
 
                 cmd = new SqlCommand(consulta, con);
                 cmd.ExecuteNonQuery();
