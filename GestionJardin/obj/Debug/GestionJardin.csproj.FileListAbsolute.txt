@@ -624,3 +624,4 @@ C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\bin\Debug\CaLog.dll.c
 C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\bin\Debug\CapaEntidades.dll.config
 C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\bin\Debug\CapaAccesoDatos.dll.config
 C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.frmCobros_Consultar.resources
+C:\Users\Laura\Desktop\ProyectoSistemasCapas\GestionJardin\obj\Debug\GestionJardin.frmAsistencia_Informe.resources
