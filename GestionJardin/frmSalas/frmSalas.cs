@@ -15,7 +15,7 @@ namespace GestionJardin
 {
     public partial class frmSalas : Form
     {
-        //prueba 8521231691651
+        //prueba Nani
         logSala2 metSala = new logSala2();
 
         public frmSalas()
