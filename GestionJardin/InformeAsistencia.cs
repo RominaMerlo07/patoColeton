@@ -21,10 +21,11 @@ namespace GestionJardin
 
         logAsistencia logAsistencia = new logAsistencia();
 
-        public InformeAsistencia(string idSala, string turno, DateTime fecha)
+        public InformeAsistencia(string idSala, string turno, DateTime fecha) 
         {
             InitializeComponent();
             InformeAsistenciaBindingSource.DataSource = logAsistencia.InformeAsistencia(turno, idSala, fecha.ToShortDateString());
+            //ver con Gas porque no me muestra lo mismo que en la tabla porque???????????????
             this.reportViewer1.RefreshReport();          
 
         }
