@@ -637,22 +637,37 @@ namespace GestionJardin
         {
 
             string color = cbSala.SelectedIndex.ToString();
+
             if (string.IsNullOrWhiteSpace(cbSala.Text.Trim()) == true)
             {
                 cbSala.Style = MetroFramework.MetroColorStyle.Red;
                 cbSala.Focus();
                 lblSala.Visible = true;
-                lblSala.Text = "Por favor seleccione una sala";
+                lblSala.Text = "Por favor, seleccione una sala";
             }
-            if (color == "0")
+
+            if (color == "-1")
+            {
+                cbSala.Focus();
+                lblSala.Visible = true;
+                lblSala.Text = "Por favor, seleccione una sala";
+
+            }
+
+            else if (color == "0")
             {
                 lblSala.Visible = true;
+                lblSala.Font = new Font(lblSala.Font.Name, 12);
+                lblSala.ForeColor = Color.Gainsboro;
                 lblSala.Text = " 1 a 2 años ";
+
 
             }
             else if (color == "1")
             {
                 lblSala.Visible = true;
+                lblSala.Font = new Font(lblSala.Font.Name, 12);
+                lblSala.ForeColor = Color.Gainsboro;
                 lblSala.Text = "3 a 4 años";
             }
 
@@ -660,6 +675,8 @@ namespace GestionJardin
 
             {
                 lblSala.Visible = true;
+                lblSala.Font = new Font(lblSala.Font.Name, 12);
+                lblSala.ForeColor = Color.Gainsboro;
                 lblSala.Text = " 4 a 5 años ";
 
             }
@@ -844,13 +861,17 @@ namespace GestionJardin
                 if (color == "0")
                 {
                     lblSala.Visible = true;
+                    lblSala.Font = new Font(lblSala.Font.Name, 12);
+                    lblSala.ForeColor = Color.Gainsboro;
                     lblSala.Text = " 1 a 2 años ";
 
                 }
                 else if (color == "1")
                 {
                     lblSala.Visible = true;
-                    lblSala.Text = "3 a 4 años";
+                    lblSala.Font = new Font(lblSala.Font.Name, 12);
+                    lblSala.ForeColor = Color.Gainsboro;
+                    lblSala.Text = " 3 a 4 años ";
                 }
 
                 else if (color == "2")
@@ -858,6 +879,8 @@ namespace GestionJardin
                 {
                     lblSala.Visible = true;
                     lblSala.Text = " 4 a 5 años ";
+                    lblSala.Font = new Font(lblSala.Font.Name, 12);
+                    lblSala.ForeColor = Color.Gainsboro;
                     lblSala.ForeColor = Color.Gainsboro;
 
 
@@ -866,7 +889,7 @@ namespace GestionJardin
                 {
                     lblSala.Visible = false;
                 }
-                               
+
                 logPersonas objlogpersonas = new logPersonas();
                 string resultado = objlogpersonas.Validar_Salas(fecha_nacimineto, salas, turno);
 
@@ -875,6 +898,7 @@ namespace GestionJardin
 
                 {
                     MessageBox.Show(resultado);
+                    cbSala.SelectedIndex = -1;
                     cbSala.Focus();
 
                 }
